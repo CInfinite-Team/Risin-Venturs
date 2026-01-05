@@ -72,7 +72,7 @@ export default function Home() {
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-primary transition-all group-hover:w-full" />
               </a>
             ))}
-            <Button className="bg-linear-to-r from-primary to-indigo-600 text-white hover:scale-105 active:scale-95 transition-all uppercase tracking-widest text-xs font-bold rounded-lg px-6 h-10 border-0 shadow-lg shadow-primary/20 hover:shadow-primary/40">
+            <Button className="bg-linear-to-r from-primary to-secondary text-white hover:scale-105 active:scale-95 transition-all uppercase tracking-widest text-xs font-bold rounded-lg px-6 h-10 border-0 shadow-lg shadow-primary/20 hover:shadow-primary/40">
               Build With Us
             </Button>
           </div>
@@ -153,10 +153,10 @@ export default function Home() {
             </motion.p>
 
             <motion.div variants={fadeIn} className="flex flex-wrap gap-4">
-              <Button className="bg-linear-to-r from-primary to-indigo-600 text-white hover:bg-primary/90 hover:scale-105 active:scale-95 transition-all rounded-lg h-14 px-8 text-lg font-bold uppercase tracking-widest shadow-xl shadow-primary/20">
+              <Button className="bg-linear-to-r from-primary to-secondary text-white hover:scale-105 active:scale-95 transition-all rounded-lg h-14 px-8 text-lg font-bold uppercase tracking-widest shadow-xl shadow-primary/20">
                 Explore Our Programs
               </Button>
-              <Button variant="outline" className="border-slate-200 text-slate-900 hover:bg-slate-50 hover:border-primary/40 transition-all rounded-lg h-14 px-8 text-lg font-bold uppercase tracking-widest">
+              <Button variant="outline" className="border-slate-200 text-slate-900 hover:bg-slate-50 hover:border-accent/40 transition-all rounded-lg h-14 px-8 text-lg font-bold uppercase tracking-widest">
                 Pitch Us
               </Button>
             </motion.div>

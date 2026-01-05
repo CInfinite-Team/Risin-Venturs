@@ -44,39 +44,39 @@
 }
 
 :root {
-  /* Modern Professional Palette - Slate & Deep Ocean */
-  --background: 210 20% 98%;    /* Light Gray #F8FAFC */
-  --foreground: 222 47% 11%;    /* Deep Navy #0F172A */
+  /* User-Defined Palette: Vivid Indigo & Emerald */
+  --background: 210 20% 98%;    /* Light Gray #F9FAFB */
+  --foreground: 222 47% 7%;     /* Dark Gray #111827 */
 
-  --card: 0 0% 100%;            /* Pure White */
-  --card-foreground: 222 47% 11%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 7%;
 
   --popover: 0 0% 100%;
-  --popover-foreground: 222 47% 11%;
+  --popover-foreground: 222 47% 7%;
 
-  /* Primary: Bold Indigo/Purple #6366F1 */
-  --primary: 239 84% 67%;       
+  /* Primary: Vivid Indigo #4F46E5 */
+  --primary: 243 75% 59%;       
   --primary-foreground: 0 0% 100%;
 
-  /* Secondary: Deep Teal #0D9488 */
-  --secondary: 175 84% 31%;
+  /* Secondary: Soft Purple #6366F1 */
+  --secondary: 239 84% 67%;
   --secondary-foreground: 0 0% 100%;
 
   --muted: 210 40% 96%;
   --muted-foreground: 215 16% 47%;
 
-  /* Accent: Vibrant Cyan/Teal #22D3EE */
-  --accent: 189 94% 43%;
-  --accent-foreground: 222 47% 11%;
+  /* Accent: Emerald Green #10B981 */
+  --accent: 161 72% 40%;
+  --accent-foreground: 0 0% 100%;
 
   --destructive: 0 84% 60%;
   --destructive-foreground: 210 20% 98%;
 
   --border: 214 32% 91%;
   --input: 214 32% 91%;
-  --ring: 239 84% 67%;
+  --ring: 243 75% 59%;
 
-  --radius: 0.75rem; /* Rounded modern corners */
+  --radius: 0.75rem;
 }
 
 @layer base {

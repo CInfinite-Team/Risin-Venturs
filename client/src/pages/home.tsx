@@ -624,41 +624,114 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section id="contact" className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-primary/5" />
-        <div className="container mx-auto px-6 relative z-10 text-center">
-          <h2 className="text-5xl md:text-8xl font-heading font-bold mb-8 uppercase leading-none tracking-tighter">
-            Ready to <br/><span className="text-primary">Ascend?</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-12">
-            We are always looking for the next outlier. If you are building something that looks like science fiction, let's talk.
-          </p>
-          <Button className="bg-primary text-black hover:bg-primary/90 rounded-none h-16 px-12 text-xl font-bold uppercase tracking-widest">
-            Submit Your Pitch
-          </Button>
+      {/* Contact Section */}
+      <section id="contact" className="py-32 relative overflow-hidden bg-black">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--primary)_0%,_transparent_40%)] opacity-10" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,_transparent,_var(--card)_100%)] opacity-50" />
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-5xl md:text-7xl font-heading font-bold mb-8 uppercase leading-none tracking-tighter">
+                Ready to <br/><span className="text-primary italic">Ascend?</span>
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-md mb-12">
+                Join our network of elite founders and industry partners. Let's build the future of deep tech together.
+              </p>
+              
+              <div className="flex gap-6">
+                {["Twitter", "LinkedIn", "AngelList", "Discord"].map((platform) => (
+                  <a 
+                    key={platform} 
+                    href="#" 
+                    className="text-xs font-bold uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {platform}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-card/50 backdrop-blur-xl border border-white/10 p-10 shadow-2xl">
+              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                <div className="space-y-2">
+                  <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-muted-foreground">Full Name</label>
+                  <input 
+                    type="text" 
+                    placeholder="John Doe" 
+                    className="w-full bg-white/5 border border-white/10 h-12 px-4 text-white placeholder:text-white/20 focus:border-primary transition-colors outline-hidden"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-muted-foreground">Email Address</label>
+                  <input 
+                    type="email" 
+                    placeholder="john@startup.io" 
+                    className="w-full bg-white/5 border border-white/10 h-12 px-4 text-white placeholder:text-white/20 focus:border-primary transition-colors outline-hidden"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-muted-foreground">Project Details</label>
+                  <textarea 
+                    placeholder="Tell us about your venture..." 
+                    className="w-full bg-white/5 border border-white/10 min-h-[120px] p-4 text-white placeholder:text-white/20 focus:border-primary transition-colors outline-hidden resize-none"
+                  />
+                </div>
+                <Button className="w-full bg-primary text-black hover:bg-primary/90 rounded-none h-14 text-lg font-bold uppercase tracking-widest shadow-lg shadow-primary/10">
+                  Join Our Network
+                </Button>
+              </form>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-white/10 py-12 bg-black">
+      <footer className="bg-black border-t border-white/5 pt-24 pb-12">
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-            <div className="flex items-center gap-2">
-              <div className="w-6 h-6 bg-white text-black flex items-center justify-center font-bold text-sm leading-none">
-                R
+          <div className="grid md:grid-cols-4 gap-12 mb-24">
+            <div className="col-span-2">
+              <div className="flex items-center gap-2 mb-8">
+                <div className="w-8 h-8 bg-primary text-black flex items-center justify-center font-bold text-xl leading-none">
+                  R
+                </div>
+                <span className="font-heading font-bold text-2xl tracking-tighter uppercase">RISIN.VENTURES</span>
               </div>
-              <span className="font-heading font-bold tracking-tight">RISIN.VENTURES</span>
+              <p className="text-muted-foreground max-w-sm leading-relaxed">
+                Backing the outliers and engineering the ascent of the world's most disruptive deep tech startups.
+              </p>
             </div>
             
-            <div className="flex gap-8 text-sm text-muted-foreground">
-              <a href="#" className="hover:text-primary transition-colors">Twitter</a>
-              <a href="#" className="hover:text-primary transition-colors">LinkedIn</a>
-              <a href="#" className="hover:text-primary transition-colors">AngelList</a>
+            <div>
+              <h4 className="text-white font-bold uppercase tracking-widest text-xs mb-8">Navigation</h4>
+              <ul className="space-y-4">
+                {["About", "Programs", "Venture Studio", "Portfolio", "News"].map((link) => (
+                  <li key={link}>
+                    <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors uppercase tracking-wide">{link}</a>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            <div className="text-xs text-muted-foreground">
-              © 2024 Risin Ventures. All rights reserved.
+            <div>
+              <h4 className="text-white font-bold uppercase tracking-widest text-xs mb-8">Connect</h4>
+              <ul className="space-y-4">
+                {["Twitter", "LinkedIn", "AngelList", "Medium", "Contact"].map((link) => (
+                  <li key={link}>
+                    <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors uppercase tracking-wide">{link}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="text-[10px] text-muted-foreground uppercase tracking-[0.2em]">
+              © 2026 Risin Ventures. All rights reserved.
+            </div>
+            <div className="flex gap-8">
+              <a href="#" className="text-[10px] text-muted-foreground uppercase tracking-[0.2em] hover:text-white transition-colors">Privacy Policy</a>
+              <a href="#" className="text-[10px] text-muted-foreground uppercase tracking-[0.2em] hover:text-white transition-colors">Terms of Service</a>
             </div>
           </div>
         </div>

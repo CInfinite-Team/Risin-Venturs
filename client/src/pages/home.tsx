@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Globe, TrendingUp, Shield, Zap, Menu, X } from "lucide-react";
+import { ArrowRight, Globe, TrendingUp, Shield, Zap, Menu, X, Rocket, Cpu, Network, Building2 } from "lucide-react";
 import heroBg from "@assets/generated_images/sleek_dark_tech_background_with_animated-style_gradients.png";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -159,42 +159,59 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Philosophy Section */}
-      <section id="philosophy" className="py-32 relative">
+      {/* About Section */}
+      <section id="about" className="py-32 relative">
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-16 items-start">
-            <div>
-              <h2 className="text-4xl md:text-6xl font-heading font-bold mb-8 leading-none">
-                INVESTING IN <br/>
-                <span className="text-primary">HYPER-GROWTH</span>
-              </h2>
-              <div className="h-1 w-24 bg-primary mb-8" />
-            </div>
-            <div className="space-y-8 text-lg text-muted-foreground leading-relaxed">
-              <p>
-                The world isn't changing linearly; it's accelerating exponentially. 
-                Legacy institutions can't keep up. That's where we come in.
-              </p>
-              <p>
-                At Risin.Ventures, we don't just provide capital; we provide the 
-                orbital velocity needed to escape the gravity of the status quo. 
-                We are founders, engineers, and dreamers betting on the impossible.
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-8">
-                {[
-                  { icon: <TrendingUp className="w-6 h-6" />, title: "Scalability", desc: "Built for billions of users." },
-                  { icon: <Shield className="w-6 h-6" />, title: "Resilience", desc: "Systems that thrive in chaos." },
-                  { icon: <Zap className="w-6 h-6" />, title: "Velocity", desc: "Moving faster than the market." },
-                  { icon: <Globe className="w-6 h-6" />, title: "Impact", desc: "Changing how the world works." }
-                ].map((item, i) => (
-                  <div key={i} className="border border-white/10 p-6 hover:border-primary/50 transition-colors group">
-                    <div className="text-primary mb-4 group-hover:scale-110 transition-transform">{item.icon}</div>
-                    <h3 className="text-white font-bold uppercase tracking-wide mb-2">{item.title}</h3>
-                    <p className="text-sm">{item.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+          <div className="max-w-3xl mb-20">
+            <span className="text-primary text-sm font-bold uppercase tracking-widest mb-4 block">Our Story</span>
+            <h2 className="text-4xl md:text-6xl font-heading font-bold mb-8 leading-none">
+              TRANSFORMING IDEAS INTO <br/>
+              <span className="text-stroke text-white">GLOBAL GIANTS</span>
+            </h2>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              Founded at the intersection of capital and engineering, Risin Ventures was born from a simple realization: the brightest minds in deep tech often lack the infrastructure to scale. We don't just invest; we co-build. Our mission is to accelerate the transition to a sustainable, hyper-connected future by backing the pioneers of AI, IoT, and Blockchain.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { 
+                icon: <Building2 className="w-8 h-8" />, 
+                title: "Venture Building", 
+                desc: "We provide the blueprint and resources to turn groundbreaking research into market-ready companies." 
+              },
+              { 
+                icon: <Rocket className="w-8 h-8" />, 
+                title: "Startup Acceleration", 
+                desc: "Intensive programs designed to help early-stage ventures find product-market fit and achieve orbital velocity." 
+              },
+              { 
+                icon: <Network className="w-8 h-8" />, 
+                title: "Industry Connections", 
+                desc: "Access to an exclusive network of Fortune 500 partners, government agencies, and fellow visionaries." 
+              },
+              { 
+                icon: <Cpu className="w-8 h-8" />, 
+                title: "Deep Tech Expertise", 
+                desc: "Our team of Ph.D. engineers and technical founders speak your language and solve your hardest problems." 
+              }
+            ].map((value, i) => (
+              <motion.div 
+                key={i}
+                whileHover={{ y: -10, borderColor: "rgba(132, 255, 94, 0.5)" }}
+                className="p-8 border border-white/10 bg-card group transition-all duration-300"
+              >
+                <div className="text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
+                  {value.icon}
+                </div>
+                <h3 className="text-xl font-heading font-bold text-white mb-4 uppercase tracking-tight">
+                  {value.title}
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {value.desc}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

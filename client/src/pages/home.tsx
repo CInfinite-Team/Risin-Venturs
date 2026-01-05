@@ -44,14 +44,14 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden font-sans">
       {/* Navigation */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-background/95 backdrop-blur-md shadow-lg border-b border-primary/20 py-2" : "bg-transparent py-4"}`}>
+      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white/95 backdrop-blur-md shadow-md border-b border-primary/10 py-2" : "bg-transparent py-4"}`}>
         <div className="container mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/">
             <a className="text-2xl font-bold font-heading tracking-tighter uppercase flex items-center gap-2 group">
-              <div className="w-8 h-8 bg-primary text-black flex items-center justify-center font-bold text-xl leading-none group-hover:rotate-12 transition-transform">
+              <div className="w-8 h-8 bg-primary text-white flex items-center justify-center font-bold text-xl leading-none group-hover:rotate-12 transition-transform rounded-sm">
                 R
               </div>
-              Risin.Ventures
+              <span className="text-slate-900">Risin.Ventures</span>
             </a>
           </Link>
 
@@ -66,19 +66,19 @@ export default function Home() {
               <a 
                 key={item.label} 
                 href={item.href}
-                className="text-sm font-medium hover:text-primary transition-colors uppercase tracking-widest relative group"
+                className="text-sm font-semibold text-slate-600 hover:text-primary transition-colors uppercase tracking-widest relative group"
               >
                 {item.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-primary transition-all group-hover:w-full" />
               </a>
             ))}
-            <Button className="bg-linear-to-r from-primary to-primary/80 text-black hover:scale-105 active:scale-95 transition-all uppercase tracking-widest text-xs font-bold rounded-none px-6 h-10 border-0 shadow-lg shadow-primary/20 hover:shadow-primary/40">
+            <Button className="bg-linear-to-r from-primary to-indigo-600 text-white hover:scale-105 active:scale-95 transition-all uppercase tracking-widest text-xs font-bold rounded-lg px-6 h-10 border-0 shadow-lg shadow-primary/20 hover:shadow-primary/40">
               Build With Us
             </Button>
           </div>
 
           {/* Mobile Menu Toggle */}
-          <button className="md:hidden text-white" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <button className="md:hidden text-slate-900" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? <X /> : <Menu />}
           </button>
         </div>
@@ -115,15 +115,15 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-slate-50">
         {/* Background */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-background/40 z-10" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background z-10" />
+          <div className="absolute inset-0 bg-white/60 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-100/20 to-slate-50 z-10" />
           <img 
             src={heroBg} 
             alt="Abstract geometric background" 
-            className="w-full h-full object-cover opacity-80"
+            className="w-full h-full object-cover opacity-30 mix-blend-multiply"
           />
         </div>
 
@@ -136,7 +136,7 @@ export default function Home() {
           >
             <motion.h1 
               variants={fadeIn}
-              className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold leading-tight tracking-tighter mb-8 uppercase"
+              className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold leading-tight tracking-tighter mb-8 uppercase text-slate-900"
             >
               Building the Next <br />
               Generation of <br />
@@ -145,18 +145,18 @@ export default function Home() {
             
             <motion.p 
               variants={fadeIn}
-              className="text-xl md:text-2xl text-muted-foreground max-w-2xl mb-12 font-light"
+              className="text-xl md:text-2xl text-slate-600 max-w-2xl mb-12 font-light"
             >
               Risin Ventures specializes in scaling disruptive innovations across 
-              <span className="text-white font-medium"> AI, IoT, and Blockchain</span>. 
+              <span className="text-primary font-semibold"> AI, IoT, and Blockchain</span>. 
               We bridge the gap between breakthrough science and global markets.
             </motion.p>
 
             <motion.div variants={fadeIn} className="flex flex-wrap gap-4">
-              <Button className="bg-primary text-black hover:bg-primary/90 hover:scale-105 active:scale-95 transition-all rounded-none h-14 px-8 text-lg font-bold uppercase tracking-widest shadow-xl shadow-primary/10">
+              <Button className="bg-linear-to-r from-primary to-indigo-600 text-white hover:bg-primary/90 hover:scale-105 active:scale-95 transition-all rounded-lg h-14 px-8 text-lg font-bold uppercase tracking-widest shadow-xl shadow-primary/20">
                 Explore Our Programs
               </Button>
-              <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 hover:border-white/40 transition-all rounded-none h-14 px-8 text-lg font-bold uppercase tracking-widest">
+              <Button variant="outline" className="border-slate-200 text-slate-900 hover:bg-slate-50 hover:border-primary/40 transition-all rounded-lg h-14 px-8 text-lg font-bold uppercase tracking-widest">
                 Pitch Us
               </Button>
             </motion.div>
@@ -337,17 +337,17 @@ export default function Home() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={sectionVariants}
-        className="py-32 relative bg-black"
+        className="py-32 relative bg-slate-900"
       >
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
             <div className="max-w-2xl">
               <span className="text-primary text-sm font-bold uppercase tracking-widest mb-4 block">Proof of Concept</span>
-              <h2 className="text-4xl md:text-6xl font-heading font-bold leading-none uppercase">
-                SUCCESS <br/><span className="text-stroke text-white">MANIFOLD</span>
+              <h2 className="text-4xl md:text-6xl font-heading font-bold leading-none uppercase text-white">
+                SUCCESS <br/><span className="text-stroke text-white/40">MANIFOLD</span>
               </h2>
             </div>
-            <p className="text-muted-foreground max-w-sm text-sm uppercase tracking-widest leading-loose">
+            <p className="text-slate-400 max-w-sm text-sm uppercase tracking-widest leading-loose">
               Tangible results from the frontier of deep tech innovation.
             </p>
           </div>
@@ -379,14 +379,14 @@ export default function Home() {
               <motion.div 
                 key={i}
                 whileHover={{ y: -12, scale: 1.01 }}
-                className="bg-card border border-white/10 p-10 relative group transition-all duration-500 flex flex-col h-full shadow-lg hover:shadow-primary/5 hover:border-primary/20"
+                className="bg-slate-800/50 backdrop-blur-sm border border-white/10 p-10 relative group transition-all duration-500 flex flex-col h-full shadow-2xl rounded-2xl hover:border-primary/40"
               >
                 <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-100 transition-opacity">
                   <ArrowRight className="w-6 h-6 text-primary rotate-[-45deg]" />
                 </div>
                 
                 <div className="mb-8">
-                  <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-primary px-2 py-1 border border-primary/20 bg-primary/5">
+                  <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-primary px-3 py-1 border border-primary/20 bg-primary/10 rounded-full">
                     {study.tag}
                   </span>
                 </div>
@@ -397,18 +397,18 @@ export default function Home() {
 
                 <div className="space-y-6 flex-1">
                   <div>
-                    <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-2">Challenge</h4>
-                    <p className="text-sm text-white/80 leading-relaxed font-light italic">"{study.problem}"</p>
+                    <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Challenge</h4>
+                    <p className="text-sm text-white/90 leading-relaxed font-light italic">"{study.problem}"</p>
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-2">Solution</h4>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{study.solution}</p>
+                    <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Solution</h4>
+                    <p className="text-sm text-slate-300 leading-relaxed">{study.solution}</p>
                   </div>
                 </div>
 
                 <div className="mt-10 pt-10 border-t border-white/5">
                   <div className="flex flex-col gap-1 mb-8">
-                    <span className="text-[10px] uppercase tracking-widest text-muted-foreground">Measurable Outcome</span>
+                    <span className="text-[10px] uppercase tracking-widest text-slate-400">Measurable Outcome</span>
                     <span className="text-2xl font-heading font-bold text-primary tracking-tighter">{study.outcome}</span>
                   </div>
                   <Button variant="link" className="p-0 h-auto text-white hover:text-primary uppercase tracking-[0.2em] text-[10px] font-bold gap-2 group/btn">

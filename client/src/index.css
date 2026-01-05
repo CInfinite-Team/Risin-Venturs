@@ -44,7 +44,7 @@
 }
 
 :root {
-  /* User-Defined Palette: Vivid Indigo & Emerald */
+  /* Serious VC Palette */
   --background: 210 20% 98%;    /* Light Gray #F9FAFB */
   --foreground: 222 47% 7%;     /* Dark Gray #111827 */
 
@@ -54,29 +54,26 @@
   --popover: 0 0% 100%;
   --popover-foreground: 222 47% 7%;
 
-  /* Primary: Vivid Indigo #4F46E5 */
-  --primary: 243 75% 59%;       
+  /* Primary: Dark Indigo #2b204c */
+  --primary: 254 41% 21%;       
   --primary-foreground: 0 0% 100%;
 
-  /* Secondary: Soft Purple #6366F1 */
-  --secondary: 239 84% 67%;
+  /* Secondary: Vivid Violet #8b68f6 */
+  --secondary: 255 90% 69%;
   --secondary-foreground: 0 0% 100%;
 
   --muted: 210 40% 96%;
   --muted-foreground: 215 16% 47%;
 
-  /* Accent: Emerald Green #10B981 */
-  --accent: 161 72% 40%;
+  /* Accent: Saffron Red #952828 */
+  --accent: 0 58% 37%;
   --accent-foreground: 0 0% 100%;
-
-  --destructive: 0 84% 60%;
-  --destructive-foreground: 210 20% 98%;
 
   --border: 214 32% 91%;
   --input: 214 32% 91%;
-  --ring: 243 75% 59%;
+  --ring: 254 41% 21%;
 
-  --radius: 0.75rem;
+  --radius: 0.5rem;
 }
 
 @layer base {
@@ -87,7 +84,7 @@
     @apply font-sans antialiased bg-background text-foreground selection:bg-primary/30 selection:text-foreground;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading tracking-tight text-slate-900;
+    @apply font-heading tracking-tight text-[#2b204c];
   }
 }
 

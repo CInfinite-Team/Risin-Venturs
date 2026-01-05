@@ -1,0 +1,79 @@
+“Refine and redesign the Header and Hero (Banner) sections to be clearly distinct, visually separated, and mobile-safe. Currently, the header and banner are visually smudged together, and on mobile the banner overlaps and hides the logo. Fix this by introducing clear spatial separation, layering, and z-index control.
+
+Header Requirements:
+
+Make the header a clearly defined, standalone component with a solid or semi-transparent background (not blending into the hero).
+
+Ensure the logo is always fully visible on mobile and desktop.
+
+Add sufficient vertical padding and height consistency across breakpoints.
+
+Implement a sticky header that transitions cleanly on scroll (e.g., subtle shadow or background color change).
+
+Ensure proper z-index so the header always stays above the hero/banner.
+
+Hero / Banner Requirements:
+
+Visually separate the hero section from the header using spacing, a divider, or background contrast.
+
+Avoid background elements, gradients, or animations bleeding into the header area.
+
+On mobile, reduce hero height and reposition text so it does not collide with the header.
+
+Ensure hero typography scales correctly and remains readable on smaller screens.
+
+Mobile-Specific Fixes:
+
+Explicitly handle mobile breakpoints so header and banner do not overlap.
+
+Prevent absolute-positioned hero elements from covering the logo.
+
+Test and optimize for small screen heights.
+
+Footer Enhancement:
+
+Under the ‘About’ section in the footer, add two new links: ‘Team’ and ‘Careers’.
+
+Keep these links visually secondary but clearly discoverable.
+
+Maintain consistency with the overall typography and color system.
+
+Color Palette (Strictly Apply):
+
+Primary: #2b204c (Dark Indigo)
+
+Secondary: #8b68f6 (Vivid Violet)
+
+Accent: #952828 (Saffron Red)
+
+Neutral: #F9FAFB (Light Gray)
+
+Text: #111827 (Dark Gray)
+
+Use Dark Indigo for header background or text, Vivid Violet for gradients or highlights, Saffron Red sparingly for CTAs or emphasis.
+
+Interaction & Animation Improvements (Replace Hover-Only Behavior):
+
+The ‘News & Insights’ and ‘Our Portfolio’ sections currently rely on hover-based reveals, which do not translate well to mobile.
+
+Replace hover-only interactions with scroll-triggered or tap-friendly animations.
+
+Suggested alternatives:
+
+Scroll-based reveal animations (fade-up, slide-in, or scale-in).
+
+Persistent preview cards with expandable details on click/tap.
+
+Subtle auto-animated emphasis (e.g., slow pulse, border glow, or gradient shift).
+
+Ensure animations feel premium, restrained, and VC-grade—not playful or gimmicky.
+
+Overall Design Intent:
+
+The result should feel clean, intentional, and confident.
+
+Header and hero must feel architecturally separated.
+
+Mobile experience should feel designed-first, not adapted.
+
+The site should reflect a serious venture builder with strong execution credibility.”**

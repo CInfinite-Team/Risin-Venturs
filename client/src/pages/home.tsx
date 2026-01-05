@@ -557,6 +557,73 @@ export default function Home() {
         </div>
       </section>
 
+      {/* News & Insights Section */}
+      <section id="news" className="py-32 bg-background border-t border-white/5">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+            <div>
+              <span className="text-primary text-sm font-bold uppercase tracking-widest mb-2 block">Intelligence</span>
+              <h2 className="text-4xl md:text-5xl font-heading font-bold uppercase">NEWS & INSIGHTS</h2>
+            </div>
+            <Button variant="link" className="text-white hover:text-primary gap-2 p-0 h-auto font-bold uppercase tracking-widest text-xs">
+              All Articles <ArrowRight className="w-4 h-4" />
+            </Button>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                date: "Oct 24, 2025",
+                tag: "Funding",
+                title: "NeuroStream Secures $15M Series A to Advance Neural Interface Research",
+                link: "#"
+              },
+              {
+                date: "Oct 12, 2025",
+                tag: "Partnership",
+                title: "Risin Ventures Announces Strategic Collaboration with Global Tech Council",
+                link: "#"
+              },
+              {
+                date: "Sep 28, 2025",
+                tag: "Program Launch",
+                title: "Applications Open for 2026 Deep Tech Acceleration Cohort",
+                link: "#"
+              },
+              {
+                date: "Sep 15, 2025",
+                tag: "Insight",
+                title: "The Future of Decentralized Energy: A Thesis on Urban Flux Grids",
+                link: "#"
+              }
+            ].map((news, i) => (
+              <motion.a
+                key={i}
+                href={news.link}
+                whileHover={{ y: -5 }}
+                className="group block border-b border-white/10 pb-8 hover:border-primary/50 transition-colors"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-primary">
+                    {news.tag}
+                  </span>
+                  <div className="w-1 h-1 rounded-full bg-white/20" />
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
+                    {news.date}
+                  </span>
+                </div>
+                <h3 className="text-xl font-heading font-bold text-white group-hover:text-primary transition-colors leading-tight uppercase tracking-tight">
+                  {news.title}
+                </h3>
+                <div className="mt-6 flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold text-muted-foreground group-hover:text-white transition-colors">
+                  Read Article <ArrowRight className="w-3 h-3" />
+                </div>
+              </motion.a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section id="contact" className="py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-primary/5" />

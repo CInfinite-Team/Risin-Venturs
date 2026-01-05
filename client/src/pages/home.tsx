@@ -38,17 +38,22 @@ export default function Home() {
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
-            {["Philosophy", "Portfolio", "Team", "Contact"].map((item) => (
+            {[
+              { label: "About", href: "#about" },
+              { label: "Programs", href: "#programs" },
+              { label: "Venture Studio", href: "#philosophy" },
+              { label: "Portfolio", href: "#portfolio" }
+            ].map((item) => (
               <a 
-                key={item} 
-                href={`#${item.toLowerCase()}`}
+                key={item.label} 
+                href={item.href}
                 className="text-sm font-medium hover:text-primary transition-colors uppercase tracking-widest"
               >
-                {item}
+                {item.label}
               </a>
             ))}
-            <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-black uppercase tracking-widest text-xs font-bold rounded-none px-6">
-              Pitch Us
+            <Button className="bg-linear-to-r from-primary to-primary/80 text-black hover:scale-105 transition-transform uppercase tracking-widest text-xs font-bold rounded-none px-6 h-10 border-0 shadow-lg shadow-primary/20">
+              Build With Us
             </Button>
           </div>
 
@@ -66,16 +71,24 @@ export default function Home() {
             className="md:hidden bg-background border-b border-white/10"
           >
             <div className="flex flex-col p-6 gap-4">
-              {["Philosophy", "Portfolio", "Team", "Contact"].map((item) => (
+              {[
+                { label: "About", href: "#about" },
+                { label: "Programs", href: "#programs" },
+                { label: "Venture Studio", href: "#philosophy" },
+                { label: "Portfolio", href: "#portfolio" }
+              ].map((item) => (
                 <a 
-                  key={item} 
-                  href={`#${item.toLowerCase()}`}
+                  key={item.label} 
+                  href={item.href}
                   className="text-lg font-medium hover:text-primary uppercase"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {item}
+                  {item.label}
                 </a>
               ))}
+              <Button className="bg-linear-to-r from-primary to-primary/80 text-black uppercase tracking-widest text-sm font-bold rounded-none w-full h-12 mt-2">
+                Build With Us
+              </Button>
             </div>
           </motion.div>
         )}

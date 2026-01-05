@@ -299,28 +299,62 @@ export default function Home() {
             </Button>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { name: "NeuroStream", focus: "AI & Neural Interfaces", metric: "2M+ Nodes", desc: "Next-gen brain-computer interface for cognitive enhancement." },
+              { name: "BlockScale", focus: "L2 Blockchain", metric: "50k TPS", desc: "Hyper-scalable infrastructure for the decentralized web." },
+              { name: "QuantumLink", focus: "Quantum Computing", metric: "128 Qubits", desc: "Securing communications with quantum entanglement protocols." },
+              { name: "GeoThermal AI", focus: "Energy & IoT", metric: "30% Savings", desc: "AI-driven thermal management for sustainable industrial cooling." },
+              { name: "SynthoBio", focus: "BioTech", metric: "4.2x Yield", desc: "Computational platform for synthetic protein design." },
+              { name: "OrbitOps", focus: "SpaceTech", metric: "15 Satellites", desc: "Edge computing for autonomous satellite constellations." },
+              { name: "CyberNode", focus: "Cybersecurity", metric: "Zero Breach", desc: "Autonomous threat detection using predictive AI models." },
+              { name: "FluxGrid", focus: "Smart City", metric: "1.2M Homes", desc: "Decentralized energy distribution for future urban centers." }
+            ].map((startup, i) => (
               <motion.div 
                 key={i}
                 whileHover={{ y: -10 }}
-                className="group relative aspect-[4/3] bg-card border border-white/5 overflow-hidden"
+                className="group relative aspect-[4/5] bg-card border border-white/5 overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute inset-0 flex flex-col justify-between p-8">
-                  <div className="flex justify-between items-start">
-                    <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
-                      <span className="font-heading font-bold text-lg">0{i}</span>
+                {/* Background Pattern */}
+                <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--primary)_0%,_transparent_70%)] blur-2xl" />
+                </div>
+
+                <div className="absolute inset-0 p-8 flex flex-col h-full">
+                  <div className="flex-1">
+                    <div className="w-14 h-14 bg-white/5 border border-white/10 flex items-center justify-center mb-6">
+                      <span className="font-heading font-bold text-xl text-primary">
+                        {startup.name.charAt(0)}
+                      </span>
                     </div>
-                    <div className="px-3 py-1 border border-white/20 text-xs font-mono uppercase rounded-full">
-                      Series A
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-heading font-bold mb-2 group-hover:text-primary transition-colors">Venture {i}</h3>
-                    <p className="text-muted-foreground text-sm line-clamp-2">
-                      Revolutionizing the way we think about digital infrastructure and AI deployment.
+                    <h3 className="text-xl font-heading font-bold text-white mb-1 uppercase">
+                      {startup.name}
+                    </h3>
+                    <p className="text-xs font-mono text-primary uppercase tracking-widest">
+                      {startup.focus}
                     </p>
+                  </div>
+
+                  {/* Hover Content */}
+                  <div className="relative z-10">
+                    <div className="h-px w-full bg-white/10 mb-6" />
+                    <div className="space-y-4">
+                      <div className="translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                          {startup.desc}
+                        </p>
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs text-muted-foreground uppercase tracking-widest">Metric</span>
+                          <span className="text-sm font-bold text-white">{startup.metric}</span>
+                        </div>
+                      </div>
+                      <div className="group-hover:opacity-0 transition-opacity">
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs text-muted-foreground uppercase tracking-widest">Performance</span>
+                          <span className="text-sm font-bold text-primary">OUTPERFORM</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </motion.div>

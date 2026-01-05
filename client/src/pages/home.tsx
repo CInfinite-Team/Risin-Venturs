@@ -216,6 +216,76 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Programs Section */}
+      <section id="programs" className="py-32 bg-black/40 border-t border-white/5">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-20">
+            <span className="text-primary text-sm font-bold uppercase tracking-widest mb-4 block">Our Path</span>
+            <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6">VENTURE EVOLUTION</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+              We guide founders through every critical stage of growth, from the first line of code to global market dominance.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {[
+              {
+                phase: "01",
+                title: "Pre-Acceleration",
+                desc: "Validating core technology and refining the fundamental business thesis for deep tech innovators.",
+                color: "border-blue-500/20 hover:border-blue-500/50",
+                accent: "text-blue-400"
+              },
+              {
+                phase: "02",
+                title: "Acceleration",
+                desc: "High-intensity 12-week program focusing on rapid prototyping, market entry, and series seed readiness.",
+                color: "border-primary/20 hover:border-primary/50",
+                accent: "text-primary"
+              },
+              {
+                phase: "03",
+                title: "Post-Acceleration",
+                desc: "Long-term scaling support, international expansion strategies, and series B/C fundraising infrastructure.",
+                color: "border-purple-500/20 hover:border-purple-500/50",
+                accent: "text-purple-400"
+              }
+            ].map((program, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className={`relative p-10 bg-card border ${program.color} group transition-all duration-500 overflow-hidden`}
+              >
+                {/* Background Accent */}
+                <div className={`absolute -right-8 -top-8 text-8xl font-heading font-bold opacity-5 group-hover:opacity-10 transition-opacity`}>
+                  {program.phase}
+                </div>
+                
+                <div className={`${program.accent} text-sm font-mono mb-6 flex items-center gap-2`}>
+                  <div className={`w-2 h-2 rounded-full bg-current animate-pulse`} />
+                  PHASE {program.phase}
+                </div>
+
+                <h3 className="text-2xl md:text-3xl font-heading font-bold text-white mb-6 uppercase tracking-tight">
+                  {program.title}
+                </h3>
+                
+                <p className="text-muted-foreground mb-10 leading-relaxed min-h-[80px]">
+                  {program.desc}
+                </p>
+
+                <Button variant="outline" className="w-full border-white/10 hover:border-white/40 text-white rounded-none uppercase tracking-widest font-bold h-12">
+                  Learn More
+                </Button>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Portfolio Section */}
       <section id="portfolio" className="py-32 bg-secondary/20 border-t border-white/5">
         <div className="container mx-auto px-6">

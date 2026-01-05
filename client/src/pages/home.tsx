@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Globe, TrendingUp, Shield, Zap, Menu, X } from "lucide-react";
-import heroBg from "@assets/generated_images/abstract_dark_tech_geometric_background_with_lime_accents.png";
+import heroBg from "@assets/generated_images/sleek_dark_tech_background_with_animated-style_gradients.png";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Link } from "wouter";
@@ -103,26 +103,28 @@ export default function Home() {
           >
             <motion.h1 
               variants={fadeIn}
-              className="text-6xl md:text-8xl lg:text-9xl font-heading font-bold leading-[0.9] tracking-tighter mb-8"
+              className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold leading-tight tracking-tighter mb-8 uppercase"
             >
-              FUTURE <br />
-              <span className="text-stroke text-transparent">RISING</span>
+              Building the Next <br />
+              Generation of <br />
+              <span className="text-primary">Deep Tech Ventures</span>
             </motion.h1>
             
             <motion.p 
               variants={fadeIn}
               className="text-xl md:text-2xl text-muted-foreground max-w-2xl mb-12 font-light"
             >
-              We back the visionaries who are rewriting the code of reality. 
-              From deep tech to decentralized systems, we invest in the ascent.
+              Risin Ventures specializes in scaling disruptive innovations across 
+              <span className="text-white font-medium"> AI, IoT, and Blockchain</span>. 
+              We bridge the gap between breakthrough science and global markets.
             </motion.p>
 
             <motion.div variants={fadeIn} className="flex flex-wrap gap-4">
               <Button className="bg-primary text-black hover:bg-primary/90 rounded-none h-14 px-8 text-lg font-bold uppercase tracking-widest">
-                Explore Portfolio
+                Explore Our Programs
               </Button>
               <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 rounded-none h-14 px-8 text-lg font-bold uppercase tracking-widest">
-                Our Thesis
+                Pitch Us
               </Button>
             </motion.div>
           </motion.div>

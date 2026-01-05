@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Globe, TrendingUp, Shield, Zap, Menu, X, Rocket, Cpu, Network, Building2 } from "lucide-react";
 import heroBg from "@assets/generated_images/sleek_dark_tech_background_with_animated-style_gradients.png";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "wouter";
 
 const fadeIn = {
@@ -21,15 +21,34 @@ const stagger = {
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { 
+        duration: 0.8, 
+        ease: [0.21, 0.47, 0.32, 0.98] 
+      } 
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden font-sans">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-white/10">
-        <div className="container mx-auto px-6 h-20 flex items-center justify-between">
+      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-background/95 backdrop-blur-md shadow-lg border-b border-primary/20 py-2" : "bg-transparent py-4"}`}>
+        <div className="container mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/">
-            <a className="text-2xl font-bold font-heading tracking-tighter uppercase flex items-center gap-2">
-              <div className="w-8 h-8 bg-primary text-black flex items-center justify-center font-bold text-xl leading-none">
+            <a className="text-2xl font-bold font-heading tracking-tighter uppercase flex items-center gap-2 group">
+              <div className="w-8 h-8 bg-primary text-black flex items-center justify-center font-bold text-xl leading-none group-hover:rotate-12 transition-transform">
                 R
               </div>
               Risin.Ventures
@@ -47,12 +66,13 @@ export default function Home() {
               <a 
                 key={item.label} 
                 href={item.href}
-                className="text-sm font-medium hover:text-primary transition-colors uppercase tracking-widest"
+                className="text-sm font-medium hover:text-primary transition-colors uppercase tracking-widest relative group"
               >
                 {item.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-px bg-primary transition-all group-hover:w-full" />
               </a>
             ))}
-            <Button className="bg-linear-to-r from-primary to-primary/80 text-black hover:scale-105 transition-transform uppercase tracking-widest text-xs font-bold rounded-none px-6 h-10 border-0 shadow-lg shadow-primary/20">
+            <Button className="bg-linear-to-r from-primary to-primary/80 text-black hover:scale-105 active:scale-95 transition-all uppercase tracking-widest text-xs font-bold rounded-none px-6 h-10 border-0 shadow-lg shadow-primary/20 hover:shadow-primary/40">
               Build With Us
             </Button>
           </div>
@@ -133,10 +153,10 @@ export default function Home() {
             </motion.p>
 
             <motion.div variants={fadeIn} className="flex flex-wrap gap-4">
-              <Button className="bg-primary text-black hover:bg-primary/90 rounded-none h-14 px-8 text-lg font-bold uppercase tracking-widest">
+              <Button className="bg-primary text-black hover:bg-primary/90 hover:scale-105 active:scale-95 transition-all rounded-none h-14 px-8 text-lg font-bold uppercase tracking-widest shadow-xl shadow-primary/10">
                 Explore Our Programs
               </Button>
-              <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 rounded-none h-14 px-8 text-lg font-bold uppercase tracking-widest">
+              <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 hover:border-white/40 transition-all rounded-none h-14 px-8 text-lg font-bold uppercase tracking-widest">
                 Pitch Us
               </Button>
             </motion.div>
@@ -173,7 +193,14 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-32 relative">
+      <motion.section 
+        id="about" 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={sectionVariants}
+        className="py-32 relative"
+      >
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mb-20">
             <span className="text-primary text-sm font-bold uppercase tracking-widest mb-4 block">Our Story</span>
@@ -211,13 +238,13 @@ export default function Home() {
             ].map((value, i) => (
               <motion.div 
                 key={i}
-                whileHover={{ y: -10, borderColor: "rgba(132, 255, 94, 0.5)" }}
-                className="p-8 border border-white/10 bg-card group transition-all duration-300"
+                whileHover={{ y: -10, borderColor: "rgba(132, 255, 94, 0.5)", backgroundColor: "rgba(255,255,255,0.02)" }}
+                className="p-8 border border-white/10 bg-card group transition-all duration-300 shadow-lg hover:shadow-primary/5"
               >
                 <div className="text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
                   {value.icon}
                 </div>
-                <h3 className="text-xl font-heading font-bold text-white mb-4 uppercase tracking-tight">
+                <h3 className="text-xl font-heading font-bold text-white mb-4 uppercase tracking-tight group-hover:text-primary transition-colors">
                   {value.title}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
@@ -227,10 +254,17 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Programs Section */}
-      <section id="programs" className="py-32 bg-black/40 border-t border-white/5">
+      <motion.section 
+        id="programs" 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={sectionVariants}
+        className="py-32 bg-black/40 border-t border-white/5"
+      >
         <div className="container mx-auto px-6">
           <div className="text-center mb-20">
             <span className="text-primary text-sm font-bold uppercase tracking-widest mb-4 block">Our Path</span>
@@ -266,11 +300,8 @@ export default function Home() {
             ].map((program, i) => (
               <motion.div 
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className={`relative p-10 bg-card border ${program.color} group transition-all duration-500 overflow-hidden`}
+                whileHover={{ scale: 1.02 }}
+                className={`relative p-10 bg-card border ${program.color} group transition-all duration-500 overflow-hidden shadow-xl hover:shadow-2xl`}
               >
                 {/* Background Accent */}
                 <div className={`absolute -right-8 -top-8 text-8xl font-heading font-bold opacity-5 group-hover:opacity-10 transition-opacity`}>
@@ -290,17 +321,24 @@ export default function Home() {
                   {program.desc}
                 </p>
 
-                <Button variant="outline" className="w-full border-white/10 hover:border-white/40 text-white rounded-none uppercase tracking-widest font-bold h-12">
+                <Button variant="outline" className="w-full border-white/10 hover:border-white/40 hover:bg-white/5 text-white rounded-none uppercase tracking-widest font-bold h-12 transition-all">
                   Learn More
                 </Button>
               </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Case Studies Section */}
-      <section id="case-studies" className="py-32 relative bg-black">
+      <motion.section 
+        id="case-studies" 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={sectionVariants}
+        className="py-32 relative bg-black"
+      >
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
             <div className="max-w-2xl">
@@ -340,11 +378,8 @@ export default function Home() {
             ].map((study, i) => (
               <motion.div 
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -12 }}
-                className="bg-card border border-white/10 p-10 relative group transition-all duration-500 flex flex-col h-full"
+                whileHover={{ y: -12, scale: 1.01 }}
+                className="bg-card border border-white/10 p-10 relative group transition-all duration-500 flex flex-col h-full shadow-lg hover:shadow-primary/5 hover:border-primary/20"
               >
                 <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-100 transition-opacity">
                   <ArrowRight className="w-6 h-6 text-primary rotate-[-45deg]" />
@@ -376,26 +411,33 @@ export default function Home() {
                     <span className="text-[10px] uppercase tracking-widest text-muted-foreground">Measurable Outcome</span>
                     <span className="text-2xl font-heading font-bold text-primary tracking-tighter">{study.outcome}</span>
                   </div>
-                  <Button variant="link" className="p-0 h-auto text-white hover:text-primary uppercase tracking-[0.2em] text-[10px] font-bold gap-2">
-                    View Case Study <ArrowRight className="w-3 h-3" />
+                  <Button variant="link" className="p-0 h-auto text-white hover:text-primary uppercase tracking-[0.2em] text-[10px] font-bold gap-2 group/btn">
+                    View Case Study <ArrowRight className="w-3 h-3 group-hover/btn:translate-x-1 transition-transform" />
                   </Button>
                 </div>
               </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Portfolio Section */}
-      <section id="portfolio" className="py-32 bg-secondary/20 border-t border-white/5">
+      <motion.section 
+        id="portfolio" 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={sectionVariants}
+        className="py-32 bg-secondary/20 border-t border-white/5"
+      >
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
             <div>
               <span className="text-primary text-sm font-bold uppercase tracking-widest mb-2 block">Our Portfolio</span>
-              <h2 className="text-4xl md:text-5xl font-heading font-bold">BUILDING TOMORROW</h2>
+              <h2 className="text-4xl md:text-5xl font-heading font-bold uppercase">BUILDING TOMORROW</h2>
             </div>
-            <Button variant="link" className="text-white hover:text-primary gap-2 p-0 h-auto font-bold uppercase tracking-widest">
-              View All Companies <ArrowRight className="w-4 h-4" />
+            <Button variant="link" className="text-white hover:text-primary gap-2 p-0 h-auto font-bold uppercase tracking-widest group/all">
+              View All Companies <ArrowRight className="w-4 h-4 group-hover/all:translate-x-1 transition-transform" />
             </Button>
           </div>
 
@@ -412,8 +454,8 @@ export default function Home() {
             ].map((startup, i) => (
               <motion.div 
                 key={i}
-                whileHover={{ y: -10 }}
-                className="group relative aspect-[4/5] bg-card border border-white/5 overflow-hidden"
+                whileHover={{ y: -10, scale: 1.02 }}
+                className="group relative aspect-[4/5] bg-card border border-white/5 overflow-hidden shadow-lg hover:shadow-primary/10"
               >
                 {/* Background Pattern */}
                 <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -422,12 +464,12 @@ export default function Home() {
 
                 <div className="absolute inset-0 p-8 flex flex-col h-full">
                   <div className="flex-1">
-                    <div className="w-14 h-14 bg-white/5 border border-white/10 flex items-center justify-center mb-6">
+                    <div className="w-14 h-14 bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:border-primary/50 transition-colors">
                       <span className="font-heading font-bold text-xl text-primary">
                         {startup.name.charAt(0)}
                       </span>
                     </div>
-                    <h3 className="text-xl font-heading font-bold text-white mb-1 uppercase">
+                    <h3 className="text-xl font-heading font-bold text-white mb-1 uppercase group-hover:text-primary transition-colors">
                       {startup.name}
                     </h3>
                     <p className="text-xs font-mono text-primary uppercase tracking-widest">
@@ -448,7 +490,7 @@ export default function Home() {
                           <span className="text-sm font-bold text-white">{startup.metric}</span>
                         </div>
                       </div>
-                      <div className="group-hover:opacity-0 transition-opacity">
+                      <div className="group-hover:opacity-0 transition-opacity duration-300">
                         <div className="flex items-center justify-between">
                           <span className="text-xs text-muted-foreground uppercase tracking-widest">Performance</span>
                           <span className="text-sm font-bold text-primary">OUTPERFORM</span>
@@ -461,14 +503,21 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-32 bg-secondary/10 relative overflow-hidden">
+      <motion.section 
+        id="testimonials" 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={sectionVariants}
+        className="py-32 bg-secondary/10 relative overflow-hidden"
+      >
         <div className="container mx-auto px-6">
           <div className="flex flex-col items-center text-center mb-16">
             <span className="text-primary text-sm font-bold uppercase tracking-widest mb-4 block">Founders' Voice</span>
-            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">TRUSTED BY VISIONARIES</h2>
+            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 uppercase">TRUSTED BY VISIONARIES</h2>
           </div>
 
           <div className="flex overflow-hidden gap-6 pb-8">
@@ -530,10 +579,10 @@ export default function Home() {
               ]).map((t, i) => (
                 <div 
                   key={i} 
-                  className="min-w-[400px] max-w-[450px] bg-card p-8 border border-white/5 shadow-2xl relative group"
+                  className="min-w-[400px] max-w-[450px] bg-card p-8 border border-white/5 shadow-2xl relative group hover:border-primary/20 transition-all duration-500"
                   style={{ borderRadius: "24px" }}
                 >
-                  <div className="text-primary mb-6">
+                  <div className="text-primary mb-6 transition-transform group-hover:scale-110">
                     <Zap className="w-8 h-8 fill-primary/20" />
                   </div>
                   <p className="text-lg text-muted-foreground italic mb-8 leading-relaxed">
@@ -543,7 +592,7 @@ export default function Home() {
                     <img 
                       src={t.img} 
                       alt={t.author} 
-                      className="w-12 h-12 rounded-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                      className="w-12 h-12 rounded-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 shadow-md"
                     />
                     <div>
                       <h4 className="text-white font-bold">{t.author}</h4>
@@ -555,18 +604,25 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* News & Insights Section */}
-      <section id="news" className="py-32 bg-background border-t border-white/5">
+      <motion.section 
+        id="news" 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={sectionVariants}
+        className="py-32 bg-background border-t border-white/5"
+      >
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
             <div>
               <span className="text-primary text-sm font-bold uppercase tracking-widest mb-2 block">Intelligence</span>
               <h2 className="text-4xl md:text-5xl font-heading font-bold uppercase">NEWS & INSIGHTS</h2>
             </div>
-            <Button variant="link" className="text-white hover:text-primary gap-2 p-0 h-auto font-bold uppercase tracking-widest text-xs">
-              All Articles <ArrowRight className="w-4 h-4" />
+            <Button variant="link" className="text-white hover:text-primary gap-2 p-0 h-auto font-bold uppercase tracking-widest text-xs group/news">
+              All Articles <ArrowRight className="w-4 h-4 group-hover/news:translate-x-1 transition-transform" />
             </Button>
           </div>
 
@@ -600,8 +656,8 @@ export default function Home() {
               <motion.a
                 key={i}
                 href={news.link}
-                whileHover={{ y: -5 }}
-                className="group block border-b border-white/10 pb-8 hover:border-primary/50 transition-colors"
+                whileHover={{ y: -5, x: 5 }}
+                className="group block border-b border-white/10 pb-8 hover:border-primary/50 transition-all"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-[10px] font-mono uppercase tracking-widest text-primary">
@@ -616,16 +672,23 @@ export default function Home() {
                   {news.title}
                 </h3>
                 <div className="mt-6 flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold text-muted-foreground group-hover:text-white transition-colors">
-                  Read Article <ArrowRight className="w-3 h-3" />
+                  Read Article <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                 </div>
               </motion.a>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-32 relative overflow-hidden bg-black">
+      <motion.section 
+        id="contact" 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={sectionVariants}
+        className="py-32 relative overflow-hidden bg-black"
+      >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--primary)_0%,_transparent_40%)] opacity-10" />
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,_transparent,_var(--card)_100%)] opacity-50" />
         
@@ -644,22 +707,23 @@ export default function Home() {
                   <a 
                     key={platform} 
                     href="#" 
-                    className="text-xs font-bold uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors"
+                    className="text-xs font-bold uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors relative group"
                   >
                     {platform}
+                    <span className="absolute -bottom-1 left-0 w-0 h-px bg-primary transition-all group-hover:w-full" />
                   </a>
                 ))}
               </div>
             </div>
 
-            <div className="bg-card/50 backdrop-blur-xl border border-white/10 p-10 shadow-2xl">
+            <div className="bg-card/50 backdrop-blur-xl border border-white/10 p-10 shadow-2xl hover:border-primary/20 transition-colors">
               <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                 <div className="space-y-2">
                   <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-muted-foreground">Full Name</label>
                   <input 
                     type="text" 
                     placeholder="John Doe" 
-                    className="w-full bg-white/5 border border-white/10 h-12 px-4 text-white placeholder:text-white/20 focus:border-primary transition-colors outline-hidden"
+                    className="w-full bg-white/5 border border-white/10 h-12 px-4 text-white placeholder:text-white/20 focus:border-primary transition-all outline-hidden hover:bg-white/10"
                   />
                 </div>
                 <div className="space-y-2">
@@ -667,32 +731,32 @@ export default function Home() {
                   <input 
                     type="email" 
                     placeholder="john@startup.io" 
-                    className="w-full bg-white/5 border border-white/10 h-12 px-4 text-white placeholder:text-white/20 focus:border-primary transition-colors outline-hidden"
+                    className="w-full bg-white/5 border border-white/10 h-12 px-4 text-white placeholder:text-white/20 focus:border-primary transition-all outline-hidden hover:bg-white/10"
                   />
                 </div>
                 <div className="space-y-2">
                   <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-muted-foreground">Project Details</label>
                   <textarea 
                     placeholder="Tell us about your venture..." 
-                    className="w-full bg-white/5 border border-white/10 min-h-[120px] p-4 text-white placeholder:text-white/20 focus:border-primary transition-colors outline-hidden resize-none"
+                    className="w-full bg-white/5 border border-white/10 min-h-[120px] p-4 text-white placeholder:text-white/20 focus:border-primary transition-all outline-hidden resize-none hover:bg-white/10"
                   />
                 </div>
-                <Button className="w-full bg-primary text-black hover:bg-primary/90 rounded-none h-14 text-lg font-bold uppercase tracking-widest shadow-lg shadow-primary/10">
+                <Button className="w-full bg-primary text-black hover:bg-primary/90 hover:scale-[1.02] active:scale-[0.98] transition-all rounded-none h-14 text-lg font-bold uppercase tracking-widest shadow-lg shadow-primary/10 hover:shadow-primary/30">
                   Join Our Network
                 </Button>
               </form>
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Footer */}
       <footer className="bg-black border-t border-white/5 pt-24 pb-12">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-12 mb-24">
             <div className="col-span-2">
-              <div className="flex items-center gap-2 mb-8">
-                <div className="w-8 h-8 bg-primary text-black flex items-center justify-center font-bold text-xl leading-none">
+              <div className="flex items-center gap-2 mb-8 group cursor-pointer">
+                <div className="w-8 h-8 bg-primary text-black flex items-center justify-center font-bold text-xl leading-none group-hover:rotate-12 transition-transform">
                   R
                 </div>
                 <span className="font-heading font-bold text-2xl tracking-tighter uppercase">RISIN.VENTURES</span>
@@ -707,7 +771,10 @@ export default function Home() {
               <ul className="space-y-4">
                 {["About", "Programs", "Venture Studio", "Portfolio", "News"].map((link) => (
                   <li key={link}>
-                    <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors uppercase tracking-wide">{link}</a>
+                    <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors uppercase tracking-wide flex items-center gap-2 group">
+                      <span className="w-0 h-px bg-primary transition-all group-hover:w-4" />
+                      {link}
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -718,7 +785,10 @@ export default function Home() {
               <ul className="space-y-4">
                 {["Twitter", "LinkedIn", "AngelList", "Medium", "Contact"].map((link) => (
                   <li key={link}>
-                    <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors uppercase tracking-wide">{link}</a>
+                    <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors uppercase tracking-wide flex items-center gap-2 group">
+                      <span className="w-0 h-px bg-primary transition-all group-hover:w-4" />
+                      {link}
+                    </a>
                   </li>
                 ))}
               </ul>

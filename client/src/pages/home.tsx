@@ -363,6 +363,100 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section id="testimonials" className="py-32 bg-secondary/10 relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col items-center text-center mb-16">
+            <span className="text-primary text-sm font-bold uppercase tracking-widest mb-4 block">Founders' Voice</span>
+            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">TRUSTED BY VISIONARIES</h2>
+          </div>
+
+          <div className="flex overflow-hidden gap-6 pb-8">
+            <motion.div 
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+              className="flex gap-6 min-w-full"
+            >
+              {[
+                {
+                  quote: "Risin Ventures didn't just give us capital; they gave us a technical edge that our competitors couldn't match. Their engineering team is elite.",
+                  author: "Dr. Sarah Chen",
+                  role: "CEO, NeuroStream",
+                  img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200&h=200"
+                },
+                {
+                  quote: "The acceleration program was intense but transformative. We found product-market fit in record time and secured our Series A within 4 months.",
+                  author: "Marcus Thorne",
+                  role: "Founder, BlockScale",
+                  img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200&h=200"
+                },
+                {
+                  quote: "Access to their network of industry partners opened doors that were previously locked. A truly strategic partner for deep tech startups.",
+                  author: "Elena Rodriguez",
+                  role: "CTO, GeoThermal AI",
+                  img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=200&h=200"
+                },
+                {
+                  quote: "Their deep tech expertise is unparalleled. They understood our quantum physics thesis when no other VC could.",
+                  author: "James Wilson",
+                  role: "CEO, QuantumLink",
+                  img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200&h=200"
+                }
+              ].concat([
+                {
+                  quote: "Risin Ventures didn't just give us capital; they gave us a technical edge that our competitors couldn't match. Their engineering team is elite.",
+                  author: "Dr. Sarah Chen",
+                  role: "CEO, NeuroStream",
+                  img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200&h=200"
+                },
+                {
+                  quote: "The acceleration program was intense but transformative. We found product-market fit in record time and secured our Series A within 4 months.",
+                  author: "Marcus Thorne",
+                  role: "Founder, BlockScale",
+                  img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200&h=200"
+                },
+                {
+                  quote: "Access to their network of industry partners opened doors that were previously locked. A truly strategic partner for deep tech startups.",
+                  author: "Elena Rodriguez",
+                  role: "CTO, GeoThermal AI",
+                  img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=200&h=200"
+                },
+                {
+                  quote: "Their deep tech expertise is unparalleled. They understood our quantum physics thesis when no other VC could.",
+                  author: "James Wilson",
+                  role: "CEO, QuantumLink",
+                  img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200&h=200"
+                }
+              ]).map((t, i) => (
+                <div 
+                  key={i} 
+                  className="min-w-[400px] max-w-[450px] bg-card p-8 border border-white/5 shadow-2xl relative group"
+                  style={{ borderRadius: "24px" }}
+                >
+                  <div className="text-primary mb-6">
+                    <Zap className="w-8 h-8 fill-primary/20" />
+                  </div>
+                  <p className="text-lg text-muted-foreground italic mb-8 leading-relaxed">
+                    "{t.quote}"
+                  </p>
+                  <div className="flex items-center gap-4">
+                    <img 
+                      src={t.img} 
+                      alt={t.author} 
+                      className="w-12 h-12 rounded-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                    />
+                    <div>
+                      <h4 className="text-white font-bold">{t.author}</h4>
+                      <p className="text-xs text-primary uppercase tracking-widest">{t.role}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section id="contact" className="py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-primary/5" />

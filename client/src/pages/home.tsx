@@ -299,6 +299,93 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Case Studies Section */}
+      <section id="case-studies" className="py-32 relative bg-black">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+            <div className="max-w-2xl">
+              <span className="text-primary text-sm font-bold uppercase tracking-widest mb-4 block">Proof of Concept</span>
+              <h2 className="text-4xl md:text-6xl font-heading font-bold leading-none uppercase">
+                SUCCESS <br/><span className="text-stroke text-white">MANIFOLD</span>
+              </h2>
+            </div>
+            <p className="text-muted-foreground max-w-sm text-sm uppercase tracking-widest leading-loose">
+              Tangible results from the frontier of deep tech innovation.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                startup: "NeuroStream",
+                problem: "BCI hardware lacked high-fidelity signal processing in mobile environments.",
+                solution: "Developed an edge-AI chip that filters neural noise in real-time with <10ms latency.",
+                outcome: "$15M Series A Raised",
+                tag: "AI & Hardware"
+              },
+              {
+                startup: "BlockScale",
+                problem: "Ethereum L2s faced severe liquidity fragmentation and high bridging costs.",
+                solution: "Implemented a cross-rollup messaging protocol that unified liquidity pools.",
+                outcome: "50,000+ Active Nodes",
+                tag: "Blockchain"
+              },
+              {
+                startup: "GeoThermal AI",
+                problem: "Industrial cooling systems were operating at only 65% thermodynamic efficiency.",
+                solution: "Integrated IoT sensors with predictive ML to optimize cooling cycles dynamically.",
+                outcome: "30% Energy Reduction",
+                tag: "Clean Tech"
+              }
+            ].map((study, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -12 }}
+                className="bg-card border border-white/10 p-10 relative group transition-all duration-500 flex flex-col h-full"
+              >
+                <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-100 transition-opacity">
+                  <ArrowRight className="w-6 h-6 text-primary rotate-[-45deg]" />
+                </div>
+                
+                <div className="mb-8">
+                  <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-primary px-2 py-1 border border-primary/20 bg-primary/5">
+                    {study.tag}
+                  </span>
+                </div>
+
+                <h3 className="text-3xl font-heading font-bold text-white mb-6 uppercase tracking-tighter group-hover:text-primary transition-colors">
+                  {study.startup}
+                </h3>
+
+                <div className="space-y-6 flex-1">
+                  <div>
+                    <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-2">Challenge</h4>
+                    <p className="text-sm text-white/80 leading-relaxed font-light italic">"{study.problem}"</p>
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-2">Solution</h4>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{study.solution}</p>
+                  </div>
+                </div>
+
+                <div className="mt-10 pt-10 border-t border-white/5">
+                  <div className="flex flex-col gap-1 mb-8">
+                    <span className="text-[10px] uppercase tracking-widest text-muted-foreground">Measurable Outcome</span>
+                    <span className="text-2xl font-heading font-bold text-primary tracking-tighter">{study.outcome}</span>
+                  </div>
+                  <Button variant="link" className="p-0 h-auto text-white hover:text-primary uppercase tracking-[0.2em] text-[10px] font-bold gap-2">
+                    View Case Study <ArrowRight className="w-3 h-3" />
+                  </Button>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Portfolio Section */}
       <section id="portfolio" className="py-32 bg-secondary/20 border-t border-white/5">
         <div className="container mx-auto px-6">

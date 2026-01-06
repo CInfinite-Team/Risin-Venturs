@@ -210,9 +210,20 @@ export default function Home() {
             ].map((value, i) => (
               <div 
                 key={i}
-                className="flex flex-col p-10 border border-slate-100 bg-[#F9FAFB] transition-all duration-300 shadow-sm hover:shadow-md hover:border-[#8b68f6]/30 h-full"
+                className={`flex flex-col p-10 border transition-all duration-300 shadow-sm hover:shadow-md h-full relative overflow-hidden ${
+                  value.title === "Venture Building" 
+                    ? "border-[#8b68f6] bg-white ring-1 ring-[#8b68f6]/20" 
+                    : "border-slate-100 bg-[#F9FAFB] hover:border-[#8b68f6]/30"
+                }`}
               >
-                <div className="text-[#2b204c] mb-6">
+                {value.title === "Venture Building" && (
+                  <div className="absolute top-0 right-0">
+                    <div className="bg-[#8b68f6] text-white text-[8px] font-bold uppercase tracking-[0.2em] px-3 py-1 rounded-bl-sm">
+                      Core Differentiator
+                    </div>
+                  </div>
+                )}
+                <div className={`${value.title === "Venture Building" ? "text-[#8b68f6]" : "text-[#2b204c]"} mb-6`}>
                   {value.icon}
                 </div>
                 <h3 className="text-xl font-heading font-bold text-[#2b204c] mb-4 uppercase tracking-tight">

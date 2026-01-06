@@ -339,7 +339,7 @@ export default function Home() {
             {[
               { 
                 name: "Bigtrader", 
-                logo: "https://www.bigtrader.biz/wp-content/uploads/2023/07/BigTrader-App-Download-on-Google-store-1-300x96.png", // Using a representative image as fallback for the logo
+                logo: "/attached_assets/image_1767693167455.png",
                 website: "https://www.bigtrader.biz/",
                 desc: "A digital trading and supply chain platform enabling smarter procurement, visibility, and efficiency for commodity and goods trading businesses." 
               },

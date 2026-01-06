@@ -341,24 +341,28 @@ export default function Home() {
                 name: "Bigtrader", 
                 logo: "/attached_assets/image_1767693167455.png",
                 website: "https://www.bigtrader.biz/",
+                category: "Marketplace",
                 desc: "A digital trading and supply chain platform enabling smarter procurement, visibility, and efficiency for commodity and goods trading businesses." 
               },
               { 
                 name: "Madad Fintech", 
-                logo: "https://www.madadfintech.com/home/hero.svg", // Representational graphic as logo not directly found as PNG
+                logo: "https://www.madadfintech.com/home/hero.svg", 
                 website: "https://www.madadfintech.com/en",
+                category: "Fintech",
                 desc: "A Shariah-compliant fintech platform providing ethical digital financial solutions for individuals and underserved communities." 
               },
               { 
                 name: "iProcure", 
                 logo: "https://iprocure.ai/datacard1.svg", 
                 website: "https://iprocure.ai/",
+                category: "AI",
                 desc: "An AI-powered procurement intelligence platform helping enterprises optimize sourcing, pricing, and supplier decisions." 
               },
               { 
                 name: "Arisio", 
                 logo: "https://arisio.io/Images/HomePage/whitelogo.png", 
                 website: "https://arisio.io/",
+                category: "AI / Marketplace",
                 desc: "An AI-driven matchmaking platform connecting startups, investors, and ecosystems through intelligent application screening and discovery." 
               }
             ].map((startup, i) => (
@@ -368,8 +372,13 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="group flex flex-col p-8 border border-slate-100 bg-[#F9FAFB] shadow-sm hover:border-[#8b68f6] transition-all duration-500 h-full"
+                className="group flex flex-col p-8 border border-slate-100 bg-[#F9FAFB] shadow-sm hover:border-[#8b68f6] transition-all duration-500 h-full relative"
               >
+                <div className="absolute top-4 right-8">
+                  <span className="text-[9px] font-bold text-[#8b68f6]/60 uppercase tracking-widest px-2 py-1 bg-white border border-slate-100 rounded-full">
+                    {startup.category}
+                  </span>
+                </div>
                 <div className="h-16 flex items-center justify-start mb-8">
                   {startup.logo ? (
                     <img 

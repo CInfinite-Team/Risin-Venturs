@@ -430,11 +430,12 @@ export default function Home() {
       >
         <div className="container mx-auto px-6">
           <div className="mb-16">
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#2b204c] mb-6 uppercase">
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#2b204c] mb-2 uppercase">
               Case Studies
             </h2>
+            <p className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-6">How we build and scale real ventures</p>
             <p className="text-lg text-slate-600 leading-relaxed max-w-2xl">
-              How we build and scale real ventures. Discover how we transform high-potential ideas into high-impact enterprises from ground zero.
+              Discover how we transform high-potential ideas into high-impact enterprises from ground zero.
             </p>
           </div>
 

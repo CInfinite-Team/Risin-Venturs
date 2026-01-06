@@ -253,45 +253,50 @@ export default function Home() {
         className="py-24 md:py-32 bg-[#F9FAFB] border-y border-slate-100"
       >
         <div className="container mx-auto px-6">
-          <div className="text-center mb-20">
+          <div className="max-w-3xl mb-20">
             <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-4 block">Our Path</span>
-            <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6 uppercase">VENTURE EVOLUTION</h2>
+            <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6 uppercase">Programs</h2>
+            <p className="text-lg text-slate-600 max-w-2xl">
+              Showcasing flagship initiatives that drive innovation and celebrate entrepreneurship across the ecosystem.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {[
               {
-                phase: "01",
-                title: "Pre-Acceleration",
-                desc: "Validating core technology and refining the fundamental business thesis for deep tech innovators."
+                title: "AIX",
+                desc: "A global AI-focused summit and hackathon bringing founders, enterprises, and innovators together to build real-world AI solutions.",
+                link: "https://www.aixsummithack.com/"
               },
               {
-                phase: "02",
-                title: "Acceleration",
-                desc: "High-intensity 12-week program focusing on rapid prototyping, market entry, and seed readiness."
+                title: "Sustainova",
+                desc: "An innovation challenge focused on sustainability, climate tech, and impact-driven solutions for real-world environmental problems.",
+                link: "https://sustainovachallenge.com/"
               },
               {
-                phase: "03",
-                title: "Post-Acceleration",
-                desc: "Long-term scaling support, international expansion strategies, and series B/C fundraising."
+                title: "Entrepreneurship Awards",
+                desc: "A national platform recognizing and celebrating high-potential entrepreneurs, startups, and innovation-led businesses.",
+                link: "https://qatarentrepreneurshipawards.com/"
               }
             ].map((program, i) => (
               <div 
                 key={i}
-                className="relative p-12 bg-white border border-slate-100 shadow-sm"
+                className="flex flex-col p-12 bg-white border border-slate-100 shadow-sm hover:shadow-md hover:border-[#8b68f6]/30 transition-all duration-300 h-full"
               >
-                <div className="text-[#8b68f6] text-sm font-bold mb-6 flex items-center gap-2 uppercase tracking-widest">
-                  PHASE {program.phase}
-                </div>
                 <h3 className="text-2xl font-heading font-bold text-[#2b204c] mb-6 uppercase tracking-tight">
                   {program.title}
                 </h3>
-                <p className="text-slate-500 mb-10 leading-relaxed">
+                <p className="text-slate-500 mb-10 leading-relaxed flex-1">
                   {program.desc}
                 </p>
-                <Button variant="outline" className="w-full border-[#2b204c] text-[#2b204c] hover:bg-slate-50 rounded-sm uppercase tracking-widest font-bold h-12">
-                  Learn More
-                </Button>
+                <a 
+                  href={program.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[10px] font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-1 transition-colors group"
+                >
+                  Know More <ArrowRight size={10} className="group-hover:translate-x-1 transition-transform" />
+                </a>
               </div>
             ))}
           </div>

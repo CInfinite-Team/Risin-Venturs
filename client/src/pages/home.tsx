@@ -342,6 +342,7 @@ export default function Home() {
                 logo: "/attached_assets/image_1767693167455.png",
                 website: "https://www.bigtrader.biz/",
                 category: "Marketplace",
+                accent: "#952828", // Saffron Red from logo
                 desc: "A digital trading and supply chain platform enabling smarter procurement, visibility, and efficiency for commodity and goods trading businesses." 
               },
               { 
@@ -349,6 +350,7 @@ export default function Home() {
                 logo: "https://www.madadfintech.com/home/hero.svg", 
                 website: "https://www.madadfintech.com/en",
                 category: "Fintech",
+                accent: "#2b204c", // Dark Indigo
                 desc: "A Shariah-compliant fintech platform providing ethical digital financial solutions for individuals and underserved communities." 
               },
               { 
@@ -356,6 +358,7 @@ export default function Home() {
                 logo: "https://iprocure.ai/datacard1.svg", 
                 website: "https://iprocure.ai/",
                 category: "AI",
+                accent: "#8b68f6", // Vivid Violet
                 desc: "An AI-powered procurement intelligence platform helping enterprises optimize sourcing, pricing, and supplier decisions." 
               },
               { 
@@ -363,6 +366,7 @@ export default function Home() {
                 logo: "https://arisio.io/Images/HomePage/whitelogo.png", 
                 website: "https://arisio.io/",
                 category: "AI / Marketplace",
+                accent: "#10b981", // Emerald/Startup green
                 desc: "An AI-driven matchmaking platform connecting startups, investors, and ecosystems through intelligent application screening and discovery." 
               }
             ].map((startup, i) => (
@@ -372,10 +376,14 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="group flex flex-col p-8 border border-slate-100 bg-[#F9FAFB] shadow-sm hover:border-[#8b68f6] transition-all duration-500 h-full relative"
+                style={{ borderTopColor: startup.accent }}
+                className="group flex flex-col p-8 border border-slate-100 border-t-4 bg-[#F9FAFB] shadow-sm hover:shadow-md transition-all duration-500 h-full relative"
               >
                 <div className="absolute top-4 right-8">
-                  <span className="text-[9px] font-bold text-[#8b68f6]/60 uppercase tracking-widest px-2 py-1 bg-white border border-slate-100 rounded-full">
+                  <span 
+                    style={{ color: startup.accent, borderColor: `${startup.accent}20` }}
+                    className="text-[9px] font-bold uppercase tracking-widest px-2 py-1 bg-white border rounded-full"
+                  >
                     {startup.category}
                   </span>
                 </div>

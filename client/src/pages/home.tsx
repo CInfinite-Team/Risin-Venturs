@@ -478,10 +478,10 @@ export default function Home() {
                   <img 
                     src={study.image} 
                     alt={study.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-[0.75] saturate-[0.6] contrast-[1.1]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#2b204c]/60 to-transparent mix-blend-multiply" />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-[#2b204c]/20 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-[#2b204c]/30 mix-blend-multiply" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#2b204c]/90 via-[#2b204c]/20 to-transparent" />
                 </div>
                 <div className="p-6 flex flex-col flex-1">
                   <h3 className="text-lg font-heading font-bold text-[#2b204c] mb-3 line-clamp-2 leading-tight uppercase group-hover:text-[#8b68f6] transition-colors">
@@ -560,6 +560,15 @@ export default function Home() {
                 transition={{ delay: i * 0.1 }}
                 className="group border-b border-slate-200 pb-10 hover:border-[#8b68f6] transition-all"
               >
+                <div className="relative w-full aspect-[16/9] mb-6 overflow-hidden bg-slate-100">
+                  <div className="absolute inset-0 bg-[#2b204c]/40 mix-blend-multiply z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#2b204c]/60 to-transparent z-20" />
+                  <img 
+                    src={`https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop`} // Using a relevant generic architectural image as a placeholder for news
+                    alt={news.title}
+                    className="w-full h-full object-cover filter brightness-[0.8] saturate-[0.5] group-hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
                 <div className="flex items-center gap-3 mb-6">
                   <span className="text-[10px] font-bold uppercase tracking-widest text-[#8b68f6]">
                     {news.tag}

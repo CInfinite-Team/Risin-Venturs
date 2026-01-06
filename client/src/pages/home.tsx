@@ -434,7 +434,7 @@ export default function Home() {
               Case Studies
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed max-w-2xl">
-              Proof of execution. Discover how we build and scale high-impact ventures from ground zero.
+              How we build and scale real ventures. Discover how we transform high-potential ideas into high-impact enterprises from ground zero.
             </p>
           </div>
 

@@ -265,7 +265,7 @@ export default function Home() {
             {[
               {
                 title: "AIX",
-                logo: "https://www.aixsummithack.com/favicon.ico", 
+                logo: "/attached_assets/WhatsApp_Image_2026-01-06_at_12.39.35_PM_1767692519206.jpeg", 
                 desc: "A global AI-focused summit and hackathon bringing founders, enterprises, and innovators together to build real-world AI solutions.",
                 link: "https://www.aixsummithack.com/"
               },

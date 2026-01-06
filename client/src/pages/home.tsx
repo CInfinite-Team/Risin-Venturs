@@ -271,7 +271,7 @@ export default function Home() {
               },
               {
                 title: "Sustainova",
-                logo: "https://sustainovachallenge.com/wp-content/uploads/2025/12/Artboard-1-300x147.png",
+                logo: "/attached_assets/Risin_Sustainova-Icon_(2)_1767692205938.png",
                 desc: "An innovation challenge focused on sustainability, climate tech, and impact-driven solutions for real-world environmental problems.",
                 link: "https://sustainovachallenge.com/"
               },

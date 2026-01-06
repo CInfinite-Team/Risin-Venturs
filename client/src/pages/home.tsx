@@ -526,24 +526,28 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             {[
               {
-                date: "Oct 24, 2025",
-                tag: "Funding",
-                title: "NeuroStream Secures $15M Series A to Advance Research"
+                date: "Jan 1, 2026",
+                tag: "Event",
+                title: "Register for the Biggest AI Summit & Hackathon in the Region",
+                link: "https://risin.ventures/register-now-for-the-biggest-ai-summit-hackathon-in-the-region/"
               },
               {
-                date: "Oct 12, 2025",
-                tag: "Partnership",
-                title: "Risin Ventures Strategic Collaboration with Tech Council"
+                date: "Dec 18, 2025",
+                tag: "Award",
+                title: "Qatar Entrepreneurship Awards: Celebrating Innovation and Impact",
+                link: "https://risin.ventures/celebrating-innovation-and-impact-a-recap-of-the-qatar-entrepreneurship-awards-2024/"
               },
               {
-                date: "Sep 28, 2025",
-                tag: "Launch",
-                title: "Applications Open for 2026 Deep Tech Cohort"
+                date: "Dec 14, 2025",
+                tag: "Event",
+                title: "Join us for the AIX Summit & Hackathon - Qatar Edition",
+                link: "https://risin.ventures/join-us-for-the-aix-summit-hackathon-qatar-edition/"
               },
               {
-                date: "Sep 15, 2025",
-                tag: "Insight",
-                title: "The Future of Decentralized Energy Systems"
+                date: "Dec 3, 2025",
+                tag: "Program",
+                title: "Applications Open for the 2025 Venture Building Cohort",
+                link: "https://risin.ventures/apply-now-for-the-2025-venture-building-cohort/"
               }
             ].map((news, i) => (
               <motion.div
@@ -565,11 +569,14 @@ export default function Home() {
                 <h3 className="text-xl font-heading font-bold text-[#2b204c] group-hover:text-[#8b68f6] transition-colors leading-tight uppercase mb-6">
                   {news.title}
                 </h3>
-                <Link href="#">
-                  <a className="text-[10px] uppercase tracking-widest font-bold text-[#2b204c] flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-                    Read More <ArrowRight size={12} />
-                  </a>
-                </Link>
+                <a 
+                  href={news.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[10px] uppercase tracking-widest font-bold text-[#2b204c] flex items-center gap-2 group-hover:translate-x-1 transition-transform"
+                >
+                  Read More <ArrowRight size={12} />
+                </a>
               </motion.div>
             ))}
           </div>

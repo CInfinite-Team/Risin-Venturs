@@ -184,29 +184,33 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { 
+                icon: <Zap className="w-8 h-8" />, 
+                title: "Innovation", 
+                desc: "We identify high-impact problems and apply deep tech, data, and emerging technologies to design innovative, market-relevant solutions.",
+                link: "#about"
+              },
+              { 
                 icon: <Building2 className="w-8 h-8" />, 
                 title: "Venture Building", 
-                desc: "We provide the blueprint and resources to turn groundbreaking research into market-ready companies." 
+                desc: "From idea to execution, we co-build startups by assembling teams, shaping products, and embedding execution discipline from day one.",
+                link: "#philosophy"
               },
               { 
                 icon: <Rocket className="w-8 h-8" />, 
                 title: "Acceleration", 
-                desc: "Intensive programs designed to help early-stage ventures find product-market fit and achieve orbital velocity." 
+                desc: "We accelerate startups through structured programs, mentorship, regulatory readiness, and access to enterprise and investor networks.",
+                link: "#programs"
               },
               { 
                 icon: <Network className="w-8 h-8" />, 
-                title: "Global Network", 
-                desc: "Access to an exclusive network of Fortune 500 partners, government agencies, and fellow visionaries." 
-              },
-              { 
-                icon: <Cpu className="w-8 h-8" />, 
-                title: "Deep Tech DNA", 
-                desc: "Our team of Ph.D. engineers and technical founders speak your language and solve your hardest problems." 
+                title: "Platform", 
+                desc: "Our platform connects founders with capital, industry partners, regulators, and talent to enable scalable and sustainable growth.",
+                link: "#portfolio"
               }
             ].map((value, i) => (
               <div 
                 key={i}
-                className="p-10 border border-slate-100 bg-[#F9FAFB] transition-all duration-300 shadow-sm"
+                className="flex flex-col p-10 border border-slate-100 bg-[#F9FAFB] transition-all duration-300 shadow-sm hover:shadow-md hover:border-[#8b68f6]/30 h-full"
               >
                 <div className="text-[#2b204c] mb-6">
                   {value.icon}
@@ -214,9 +218,14 @@ export default function Home() {
                 <h3 className="text-xl font-heading font-bold text-[#2b204c] mb-4 uppercase tracking-tight">
                   {value.title}
                 </h3>
-                <p className="text-slate-500 text-sm leading-relaxed">
+                <p className="text-slate-500 text-sm leading-relaxed mb-8 flex-1">
                   {value.desc}
                 </p>
+                <Link href={value.link}>
+                  <a className="text-[10px] font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-1 transition-colors">
+                    Know More <ArrowRight size={10} />
+                  </a>
+                </Link>
               </div>
             ))}
           </div>

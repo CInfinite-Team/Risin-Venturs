@@ -429,14 +429,26 @@ export default function Home() {
         viewport={{ once: true }}
       >
         <div className="container mx-auto px-6">
-          <div className="mb-16">
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#2b204c] mb-2 uppercase">
-              Case Studies
-            </h2>
-            <p className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-6">How we build and scale real ventures</p>
-            <p className="text-lg text-slate-600 leading-relaxed max-w-2xl">
-              Discover how we transform high-potential ideas into high-impact enterprises from ground zero.
-            </p>
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#2b204c] mb-2 uppercase">
+                Case Studies
+              </h2>
+              <p className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-6">How we build and scale real ventures</p>
+              <p className="text-lg text-slate-600 leading-relaxed max-w-2xl">
+                Discover how we transform high-potential ideas into high-impact enterprises from ground zero.
+              </p>
+            </div>
+            <a 
+              href="https://risin.ventures/case-studies/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group"
+            >
+              <Button variant="link" className="text-[#2b204c] hover:text-[#8b68f6] gap-2 p-0 h-auto font-bold uppercase tracking-widest">
+                View All Blogs <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </a>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

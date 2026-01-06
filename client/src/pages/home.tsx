@@ -480,7 +480,8 @@ export default function Home() {
                     alt={study.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#2b204c]/60 to-transparent mix-blend-multiply" />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-[#2b204c]/20 via-transparent to-transparent" />
                 </div>
                 <div className="p-6 flex flex-col flex-1">
                   <h3 className="text-lg font-heading font-bold text-[#2b204c] mb-3 line-clamp-2 leading-tight uppercase group-hover:text-[#8b68f6] transition-colors">

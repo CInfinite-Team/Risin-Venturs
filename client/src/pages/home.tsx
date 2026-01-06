@@ -420,6 +420,89 @@ export default function Home() {
         </div>
       </motion.section>
 
+      {/* Case Studies Section */}
+      <motion.section 
+        id="case-studies"
+        className="py-24 bg-slate-50"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
+        <div className="container mx-auto px-6">
+          <div className="mb-16">
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#2b204c] mb-6 uppercase">
+              Case Studies
+            </h2>
+            <p className="text-lg text-slate-600 leading-relaxed max-w-2xl">
+              Proof of execution. Discover how we build and scale high-impact ventures from ground zero.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                title: "Bridging Ambition and Intelligence – AIX Summit & Hackathon",
+                image: "https://risin.ventures/wp-content/uploads/2025/12/blog-banner-aix.png",
+                summary: "Inside the high-stakes AI summit that brought together founders and enterprises to build real AI solutions.",
+                link: "https://risin.ventures/inside-the-aix-summit-hackathon-qatar-edition/"
+              },
+              {
+                title: "AI Hackathons for Enterprises: Beyond Buzzwords to Real ROI",
+                image: "https://risin.ventures/wp-content/uploads/2025/05/a-1.png",
+                summary: "Strategic sprints transforming tech experiments into high-impact engines for corporate innovation.",
+                link: "https://risin.ventures/ai-hackathons-for-enterprises-beyond-buzzwords-to-real-roi/"
+              },
+              {
+                title: "Sustainova Challenge: Empowering Sustainability in the GCC",
+                image: "https://risin.ventures/wp-content/uploads/2024/11/photo-collage.png-2.png",
+                summary: "A transformative platform bridging sustainability-focused startups with the resources to scale regionally.",
+                link: "https://risin.ventures/sustainova-challenge-empowering-startups-sustainability-stream-in-the-gcc/"
+              },
+              {
+                title: "Why Corporate Venture Studios are Important for Growing Economies",
+                image: "https://risin.ventures/wp-content/uploads/2024/07/Untitled-design-3.png",
+                summary: "How the CVS model combines corporate strength with startup agility to drive economic transformation.",
+                link: "https://risin.ventures/why-corporate-venture-studios-are-important-for-qatars-economy/"
+              }
+            ].map((study, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="group bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col h-full"
+              >
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <img 
+                    src={study.image} 
+                    alt={study.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                </div>
+                <div className="p-6 flex flex-col flex-1">
+                  <h3 className="text-lg font-heading font-bold text-[#2b204c] mb-3 line-clamp-2 leading-tight uppercase group-hover:text-[#8b68f6] transition-colors">
+                    {study.title}
+                  </h3>
+                  <p className="text-sm text-slate-500 mb-6 line-clamp-2 flex-1 leading-relaxed">
+                    {study.summary}
+                  </p>
+                  <a 
+                    href={study.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-[10px] font-bold text-[#2b204c] uppercase tracking-widest group-hover:gap-3 transition-all"
+                  >
+                    Read More <ArrowRight size={12} className="ml-2" />
+                  </a>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </motion.section>
+
       {/* News & Insights Section */}
       <motion.section 
         id="news" 

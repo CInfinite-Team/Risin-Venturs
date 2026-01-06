@@ -664,56 +664,63 @@ export default function Home() {
       </motion.section>
 
       {/* Footer */}
-      <footer className="bg-[#2b204c] text-white pt-24 pb-12">
+      <footer className="bg-[#2b204c] text-white pt-24 pb-12 border-t border-white/5">
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-12 mb-24">
-            <div className="col-span-2">
-              <div className="flex items-center gap-2 mb-8">
-                <div className="w-8 h-8 bg-white text-[#2b204c] flex items-center justify-center font-bold text-xl leading-none rounded-sm">
-                  R
-                </div>
-                <span className="font-heading font-bold text-2xl tracking-tighter uppercase">RISIN.VENTURES</span>
-              </div>
-              <p className="text-slate-300 max-w-sm leading-relaxed text-sm">
-                Backing the outliers and engineering the ascent of the world's most disruptive deep tech startups.
-              </p>
-            </div>
-            
-            <div>
-              <h4 className="text-[#8b68f6] font-bold uppercase tracking-widest text-xs mb-8">Company</h4>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+            {/* About Column */}
+            <nav aria-labelledby="footer-about">
+              <h4 id="footer-about" className="text-white font-heading font-bold text-sm uppercase tracking-[0.2em] mb-8 underline decoration-[#8b68f6]/50 underline-offset-8">About</h4>
               <ul className="space-y-4">
-                {["About", "Team", "Careers", "Programs", "Venture Studio"].map((link) => (
-                  <li key={link}>
-                    <a href="#" className="text-xs text-slate-400 hover:text-white transition-colors uppercase tracking-widest">
-                      {link}
-                    </a>
-                  </li>
-                ))}
+                <li><a href="#about" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">Team</a></li>
+                <li><a href="#contact" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">Career</a></li>
+                <li><a href="#about" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">Partners</a></li>
+                <li><a href="#case-studies" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">Case Studies</a></li>
+                <li><a href="#news" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">News and Insights</a></li>
               </ul>
-            </div>
+            </nav>
 
-            <div>
-              <h4 className="text-[#8b68f6] font-bold uppercase tracking-widest text-xs mb-8">Connect</h4>
+            {/* Programs Column */}
+            <nav aria-labelledby="footer-programs">
+              <h4 id="footer-programs" className="text-white font-heading font-bold text-sm uppercase tracking-[0.2em] mb-8 underline decoration-[#8b68f6]/50 underline-offset-8">Programs</h4>
               <ul className="space-y-4">
-                {["Twitter", "LinkedIn", "AngelList", "Contact"].map((link) => (
-                  <li key={link}>
-                    <a href="#" className="text-xs text-slate-400 hover:text-white transition-colors uppercase tracking-widest">
-                      {link}
-                    </a>
-                  </li>
-                ))}
+                <li><a href="https://www.aixsummithack.com/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">AIX</a></li>
+                <li><a href="https://sustainovachallenge.com/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">Sustainova</a></li>
+                <li><a href="https://qatarentrepreneurshipawards.com/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">Entrepreneurship Awards</a></li>
               </ul>
-            </div>
+            </nav>
+
+            {/* Venture Studio Column */}
+            <nav aria-labelledby="footer-studio">
+              <h4 id="footer-studio" className="text-white font-heading font-bold text-sm uppercase tracking-[0.2em] mb-8 underline decoration-[#8b68f6]/50 underline-offset-8">Venture Studio</h4>
+              <ul className="space-y-4">
+                <li><a href="#about" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">Innovation</a></li>
+                <li><a href="#philosophy" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">Venture Building</a></li>
+                <li><a href="#programs" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">Acceleration</a></li>
+                <li><a href="#portfolio" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">Platform</a></li>
+                <li><a href="#portfolio" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">Portfolio</a></li>
+              </ul>
+            </nav>
+
+            {/* Connect Column */}
+            <nav aria-labelledby="footer-connect">
+              <h4 id="footer-connect" className="text-white font-heading font-bold text-sm uppercase tracking-[0.2em] mb-8 underline decoration-[#8b68f6]/50 underline-offset-8">Connect</h4>
+              <ul className="space-y-4">
+                <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">LinkedIn</a></li>
+                <li><a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">YouTube</a></li>
+                <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">Facebook</a></li>
+                <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">Instagram</a></li>
+              </ul>
+            </nav>
           </div>
 
-          <div className="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="text-[10px] text-slate-500 uppercase tracking-[0.2em]">
+          <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-white/5 gap-6">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 bg-white text-[#2b204c] flex items-center justify-center font-bold text-sm rounded-sm">R</div>
+              <span className="text-sm font-bold uppercase tracking-widest text-white/90">Risin.Ventures</span>
+            </div>
+            <p className="text-xs text-slate-500 font-medium">
               © 2026 Risin Ventures. All rights reserved.
-            </div>
-            <div className="flex gap-8">
-              <a href="#" className="text-[10px] text-slate-500 uppercase tracking-[0.2em] hover:text-white transition-colors">Privacy</a>
-              <a href="#" className="text-[10px] text-slate-500 uppercase tracking-[0.2em] hover:text-white transition-colors">Terms</a>
-            </div>
+            </p>
           </div>
         </div>
       </footer>

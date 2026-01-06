@@ -1,0 +1,65 @@
+“Update the ‘Our Portfolio’ section to showcase the following four portfolio companies. Replace or add portfolio cards with accurate branding, concise descriptions, and external links as specified.
+
+Portfolio Cards (4 Total):
+
+1. Bigtrader
+
+Website: https://www.bigtrader.biz/
+
+Description (card-sized):
+‘A digital trading and supply chain platform enabling smarter procurement, visibility, and efficiency for commodity and goods trading businesses.’
+
+Logo: Fetch and use the official Bigtrader logo from the website.
+
+2. Madad Fintech
+
+Website: https://www.madadfintech.com/en
+
+Description (card-sized):
+‘A Shariah-compliant fintech platform providing ethical digital financial solutions for individuals and underserved communities.’
+
+Logo: Fetch and use the official Madad Fintech logo from the website.
+
+3. iProcure
+
+Website: https://iprocure.ai/
+
+Description (card-sized):
+‘An AI-powered procurement intelligence platform helping enterprises optimize sourcing, pricing, and supplier decisions.’
+
+Logo: Fetch and use the official iProcure logo from the website.
+
+4. Arisio
+
+Website: https://arisio.io/
+
+Description (card-sized):
+‘An AI-driven matchmaking platform connecting startups, investors, and ecosystems through intelligent application screening and discovery.’
+
+Logo: Fetch and use the official Arisio logo from the website.
+
+CTA Update:
+
+Rename the existing ‘Case Study’ or similar CTA to ‘Go to Website →’.
+
+Ensure the CTA opens the respective startup website in a new tab.
+
+Design & UX Requirements:
+
+Display logos prominently at the top of each card, with consistent sizing and padding.
+
+Keep descriptions concise and fully visible (no hover-only content).
+
+Ensure all cards are equal height and visually balanced.
+
+Maintain responsiveness and clarity on mobile devices.
+
+Use subtle scroll-based or tap-friendly animations instead of hover-only interactions.
+
+Design Intent:
+
+The section should immediately communicate portfolio credibility.
+
+Logos + short descriptions should feel clean, confident, and enterprise-ready.
+
+Avoid excessive animation or marketing language.”**

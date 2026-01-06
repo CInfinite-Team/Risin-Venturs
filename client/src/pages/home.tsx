@@ -337,10 +337,30 @@ export default function Home() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { name: "NeuroStream", focus: "AI & Neural Interfaces", desc: "Next-gen brain-computer interface for cognitive enhancement." },
-              { name: "BlockScale", focus: "L2 Blockchain", desc: "Hyper-scalable infrastructure for the decentralized web." },
-              { name: "QuantumLink", focus: "Quantum Computing", desc: "Securing communications with quantum protocols." },
-              { name: "GeoThermal AI", focus: "Energy & IoT", desc: "AI-driven thermal management for industrial cooling." }
+              { 
+                name: "Bigtrader", 
+                logo: "https://www.bigtrader.biz/wp-content/uploads/2023/07/BigTrader-App-Download-on-Google-store-1-300x96.png", // Using a representative image as fallback for the logo
+                website: "https://www.bigtrader.biz/",
+                desc: "A digital trading and supply chain platform enabling smarter procurement, visibility, and efficiency for commodity and goods trading businesses." 
+              },
+              { 
+                name: "Madad Fintech", 
+                logo: "https://www.madadfintech.com/home/hero.svg", // Representational graphic as logo not directly found as PNG
+                website: "https://www.madadfintech.com/en",
+                desc: "A Shariah-compliant fintech platform providing ethical digital financial solutions for individuals and underserved communities." 
+              },
+              { 
+                name: "iProcure", 
+                logo: "https://iprocure.ai/datacard1.svg", 
+                website: "https://iprocure.ai/",
+                desc: "An AI-powered procurement intelligence platform helping enterprises optimize sourcing, pricing, and supplier decisions." 
+              },
+              { 
+                name: "Arisio", 
+                logo: "https://arisio.io/Images/HomePage/whitelogo.png", 
+                website: "https://arisio.io/",
+                desc: "An AI-driven matchmaking platform connecting startups, investors, and ecosystems through intelligent application screening and discovery." 
+              }
             ].map((startup, i) => (
               <motion.div 
                 key={i}
@@ -348,23 +368,35 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="group p-8 border border-slate-100 bg-[#F9FAFB] shadow-sm hover:border-[#8b68f6] transition-all duration-500"
+                className="group flex flex-col p-8 border border-slate-100 bg-[#F9FAFB] shadow-sm hover:border-[#8b68f6] transition-all duration-500 h-full"
               >
-                <div className="w-12 h-12 bg-white border border-slate-100 flex items-center justify-center mb-8 font-heading font-bold text-xl text-[#2b204c]">
-                  {startup.name.charAt(0)}
+                <div className="h-16 flex items-center justify-start mb-8">
+                  {startup.logo ? (
+                    <img 
+                      src={startup.logo} 
+                      alt={`${startup.name} logo`} 
+                      className={`h-full w-auto object-contain object-left ${startup.name === "Arisio" ? "brightness-0 opacity-80" : ""}`}
+                    />
+                  ) : (
+                    <div className="w-12 h-12 bg-white border border-slate-100 flex items-center justify-center font-heading font-bold text-xl text-[#2b204c]">
+                      {startup.name.charAt(0)}
+                    </div>
+                  )}
                 </div>
                 <h3 className="text-xl font-heading font-bold text-[#2b204c] mb-2 uppercase">
                   {startup.name}
                 </h3>
-                <p className="text-xs font-bold text-[#8b68f6] uppercase tracking-widest mb-4">
-                  {startup.focus}
-                </p>
-                <p className="text-sm text-slate-500 leading-relaxed mb-6">
+                <p className="text-sm text-slate-500 leading-relaxed mb-8 flex-1">
                   {startup.desc}
                 </p>
-                <Button variant="link" className="p-0 h-auto text-[#2b204c] font-bold text-[10px] uppercase tracking-widest group-hover:translate-x-1 transition-transform">
-                  Case Study <ArrowRight size={12} className="ml-1 inline" />
-                </Button>
+                <a 
+                  href={startup.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[10px] font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-2 transition-colors group/link"
+                >
+                  Go to Website <ArrowRight size={12} className="group-hover/link:translate-x-1 transition-transform" />
+                </a>
               </motion.div>
             ))}
           </div>

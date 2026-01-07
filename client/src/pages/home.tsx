@@ -107,10 +107,9 @@ export default function Home() {
               title="Venture Studio" 
               items={[
                 { label: "Innovation", href: "#about" },
-                { label: "Venture Building", href: "#philosophy" },
+                { label: "Incubation", href: "#about" },
                 { label: "Acceleration", href: "#programs" },
-                { label: "Platform", href: "#portfolio" },
-                { label: "Portfolio", href: "#portfolio" }
+                { label: "Venture Building", href: "#philosophy" }
               ]} 
             />
             <Button className="bg-[#2b204c] text-white hover:bg-[#8b68f6] transition-all uppercase tracking-widest text-xs font-bold rounded-sm px-6 h-12 border-0 shadow-lg">
@@ -764,10 +763,9 @@ export default function Home() {
               <ul className="space-y-4">
                 {[
                   { label: "Innovation", href: "#about" },
-                  { label: "Venture Building", href: "#philosophy" },
+                  { label: "Incubation", href: "#about" },
                   { label: "Acceleration", href: "#programs" },
-                  { label: "Platform", href: "#portfolio" },
-                  { label: "Portfolio", href: "#portfolio" }
+                  { label: "Venture Building", href: "#philosophy" }
                 ].map((item) => (
                   <li key={item.label}>
                     <a href={item.href} className="text-[#2b204c] hover:text-[#8b68f6] transition-colors text-xs font-bold capitalize tracking-wider">{item.label}</a>

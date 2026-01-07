@@ -185,16 +185,16 @@ export default function Home() {
               variants={fadeIn}
               className="text-4xl md:text-7xl lg:text-8xl font-heading font-bold leading-[1.05] tracking-tighter mb-6 md:mb-8 uppercase text-[#2b204c]"
             >
-              Building the <br className="hidden md:block" />
-              Next Generation <br className="hidden md:block" />
-              of <span className="text-[#8b68f6]">Deep Tech</span>
+              The Venture <br className="hidden md:block" />
+              Studio for <br className="hidden md:block" />
+              <span className="text-[#8b68f6]">Deep Tech</span>
             </motion.h1>
             
             <motion.p 
               variants={fadeIn}
               className="text-lg md:text-2xl text-slate-600 max-w-2xl mb-10 md:mb-14 font-light leading-relaxed"
             >
-              We are a venture-builder dedicated to co-founding and scaling disruptive deep-tech enterprises. By merging execution discipline with breakthrough science, we turn bold ideas into market-leading global companies.
+              We co-build, fund, and scale the next generation of disruptive enterprises. By merging institutional discipline with breakthrough science, we transform bold ideas into global industry leaders.
             </motion.p>
 
             <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-5">

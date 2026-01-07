@@ -198,6 +198,39 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Impact Metrics Section */}
+      <section className="py-16 md:py-20 bg-white border-b border-slate-50">
+        <div className="container mx-auto px-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="flex flex-col items-center"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-24 w-full max-w-5xl mb-12">
+              {[
+                { label: "Startups Supported", value: "500+" },
+                { label: "Capital Enabled", value: "$100M+" },
+                { label: "Markets Across GCC & Beyond", value: "10+" }
+              ].map((metric, i) => (
+                <div key={i} className="flex flex-col items-center md:items-start text-center md:text-left">
+                  <span className="text-4xl md:text-6xl font-heading font-bold text-[#2b204c] mb-2 tracking-tighter">
+                    {metric.value}
+                  </span>
+                  <span className="text-sm md:text-base text-slate-500 font-medium uppercase tracking-widest">
+                    {metric.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+            <p className="text-xs md:text-sm text-slate-400 font-light italic">
+              Built through programs, venture studio initiatives, and ecosystem partnerships.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* About Section */}
       <motion.section 
         id="about" 

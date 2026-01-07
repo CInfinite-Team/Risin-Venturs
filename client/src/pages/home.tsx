@@ -192,7 +192,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] md:min-h-screen flex items-center justify-center overflow-hidden pt-32 md:pt-0 bg-[#F9FAFB] border-b border-slate-100">
+      <section className="relative min-h-[80vh] md:min-h-screen flex items-center justify-center overflow-hidden pt-40 md:pt-12 bg-[#F9FAFB] border-b border-slate-100">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-white/60 z-10" />
           <img 
@@ -211,7 +211,7 @@ export default function Home() {
           >
             <motion.h1 
               variants={fadeIn}
-              className="text-4xl md:text-7xl lg:text-8xl font-heading font-bold leading-[1.05] tracking-tighter mb-6 md:mb-8 uppercase text-[#2b204c]"
+              className="text-4xl md:text-7xl lg:text-8xl font-heading font-bold leading-[1.05] tracking-tighter mb-8 md:mb-10 uppercase text-[#2b204c]"
             >
               Building the next <br />
               generation of <span className="text-[#8b68f6]">deeptech</span>
@@ -221,7 +221,7 @@ export default function Home() {
               variants={fadeIn}
               className="text-lg md:text-2xl text-slate-600 max-w-2xl mb-10 md:mb-14 font-light leading-relaxed"
             >
-              We co-build, fund, and scale the next generation of disruptive enterprises. By merging institutional discipline with breakthrough science, we transform bold ideas into global industry leaders.
+              We co-build and scale disruptive enterprises, merging institutional discipline with breakthrough science to create global industry leaders.
             </motion.p>
 
             <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-5">

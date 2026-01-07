@@ -164,7 +164,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 md:pt-0 bg-[#F9FAFB] border-b border-slate-100">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-40 md:pt-0 bg-[#F9FAFB] border-b border-slate-100">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-white/60 z-10" />
           <img 

@@ -586,6 +586,118 @@ export default function Home() {
         </div>
       </motion.section>
 
+      {/* News & Insights Section */}
+      <motion.section 
+        id="news"
+        className="py-24 bg-white"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+            <div>
+              <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-2 block">Newsroom</span>
+              <h2 className="text-3xl md:text-5xl font-heading font-bold text-[#2b204c] mb-4 uppercase">
+                News & Insights
+              </h2>
+              <p className="text-lg text-slate-600 leading-relaxed max-w-2xl">
+                Stay updated with the latest activity, strategic partnerships, and momentum from within our deep-tech ecosystem.
+              </p>
+            </div>
+            <a 
+              href="https://risin.ventures/news-and-events/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group"
+            >
+              <Button variant="link" className="text-[#2b204c] hover:text-[#8b68f6] gap-2 p-0 h-auto font-bold uppercase tracking-widest">
+                View All News <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </a>
+          </div>
+
+          <div className="relative group">
+            <div className="flex overflow-x-auto pb-4 md:pb-0 scrollbar-hide snap-x snap-mandatory px-6 md:px-0 -mx-6 md:mx-0 md:grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                {
+                  title: "Risin Ventures and Msheireb Properties Partner for AIX Summit",
+                  date: "Dec 2025",
+                  image: "https://risin.ventures/wp-content/uploads/2025/12/blog-banner-aix.png",
+                  summary: "A landmark partnership to host the AIX Summit, fostering a new era of AI-driven innovation in the heart of Doha.",
+                  link: "https://risin.ventures/news-and-events/"
+                },
+                {
+                  title: "Bridging the Gap: Deep Tech Innovation in the GCC landscape",
+                  date: "Nov 2025",
+                  image: "https://risin.ventures/wp-content/uploads/2025/05/v-1.png",
+                  summary: "Exploring how venture building is accelerating the adoption of high-barrier technologies across the region.",
+                  link: "https://risin.ventures/news-and-events/"
+                },
+                {
+                  title: "Sustainova 2025: Empowering the Next Wave of Climate Tech",
+                  date: "Oct 2025",
+                  image: "https://risin.ventures/wp-content/uploads/2025/05/s-1.png",
+                  summary: "The latest cohort of startups tackling global environmental challenges through breakthrough scientific innovation.",
+                  link: "https://risin.ventures/news-and-events/"
+                },
+                {
+                  title: "Scaling Fintech: Madad's Strategic Expansion Plans",
+                  date: "Sept 2025",
+                  image: "https://risin.ventures/wp-content/uploads/2025/05/a-1.png",
+                  summary: "How our portfolio company Madad is redefining Shariah-compliant digital financial services globally.",
+                  link: "https://risin.ventures/news-and-events/"
+                }
+              ].map((news, i) => (
+                <motion.div 
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="group flex-shrink-0 w-[280px] md:w-auto flex flex-col bg-[#F9FAFB] border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 snap-center rounded-sm overflow-hidden"
+                >
+                  <div className="aspect-video relative overflow-hidden">
+                    <img 
+                      src={news.image} 
+                      alt={news.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute top-4 left-4 z-10">
+                      <span className="bg-[#8b68f6] text-white text-[8px] font-bold uppercase tracking-widest px-2 py-1 rounded-sm shadow-lg">
+                        Latest • {news.date}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="p-8 flex flex-col flex-1">
+                    <h3 className="text-lg font-heading font-bold text-[#2b204c] mb-4 group-hover:text-[#8b68f6] transition-colors line-clamp-2 uppercase leading-tight">
+                      {news.title}
+                    </h3>
+                    <p className="text-slate-500 text-sm leading-relaxed mb-8 line-clamp-3 flex-1">
+                      {news.summary}
+                    </p>
+                    <a 
+                      href={news.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[10px] font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-2 transition-colors group/btn"
+                    >
+                      Read More <ArrowRight size={12} className="group-hover/btn:translate-x-1 transition-transform" />
+                    </a>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+            {/* Subtle Progress Dots for Mobile */}
+            <div className="flex md:hidden justify-center gap-2 mt-6">
+              {[0, 1, 2, 3].map((dot) => (
+                <div key={dot} className={`w-2 h-2 rounded-full transition-all duration-300 ${dot === 0 ? 'bg-[#8b68f6] scale-125' : 'bg-slate-300'}`} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
       {/* Footer */}
       <footer className="bg-white border-t border-slate-100 py-24">
         <div className="container mx-auto px-6">

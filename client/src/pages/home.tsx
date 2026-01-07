@@ -619,44 +619,65 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div>
               <h2 className="text-4xl md:text-7xl font-heading font-bold mb-8 uppercase leading-none tracking-tighter text-[#2b204c]">
-                Ready to <br/><span className="text-[#8b68f6] italic">Ascend?</span>
+                Stay in the <br/><span className="text-[#8b68f6] italic">Loop</span>
               </h2>
-              <p className="text-lg md:text-xl text-slate-600 max-w-md mb-12">
-                Join our network of elite founders and industry partners. Let's build the future of deep tech.
-              </p>
-              
-              <div className="flex gap-8">
-                {["Twitter", "LinkedIn", "AngelList"].map((platform) => (
-                  <a 
-                    key={platform} 
-                    href="#" 
-                    className="text-xs font-bold uppercase tracking-widest text-slate-400 hover:text-[#2b204c] transition-colors"
-                  >
-                    {platform}
-                  </a>
-                ))}
+              <div className="space-y-6 mb-12">
+                <p className="text-lg md:text-xl text-slate-600 max-w-md leading-relaxed">
+                  Join our ecosystem for exclusive access to venture-building insights, program updates, and founder stories.
+                </p>
+                <ul className="space-y-3">
+                  {[
+                    "Venture-building insights & playbooks",
+                    "Early access to program announcements",
+                    "Founder stories & ecosystem intelligence"
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-sm text-slate-500 font-medium">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#8b68f6]" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
 
-            <div className="bg-[#F9FAFB] border border-slate-100 p-8 md:p-12 shadow-sm">
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+            <div className="bg-[#F9FAFB] border border-slate-100 p-8 md:p-12 shadow-sm relative overflow-hidden">
+              <form className="space-y-6" onSubmit={(e) => {
+                e.preventDefault();
+                const form = e.currentTarget;
+                const email = (form.elements.namedItem('email') as HTMLInputElement).value;
+                if (email) {
+                  const successMsg = document.getElementById('subscribe-success');
+                  if (successMsg) successMsg.classList.remove('hidden');
+                  form.reset();
+                  setTimeout(() => {
+                    if (successMsg) successMsg.classList.add('hidden');
+                  }, 5000);
+                }
+              }}>
                 <div className="space-y-2">
-                  <label className="text-[10px] uppercase tracking-widest font-bold text-slate-500">Full Name</label>
+                  <label htmlFor="email" className="text-[10px] uppercase tracking-widest font-bold text-slate-500">Email Address</label>
                   <input 
-                    type="text" 
-                    className="w-full bg-white border border-slate-200 h-14 px-4 text-[#111827] focus:border-[#2b204c] transition-all outline-hidden"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-[10px] uppercase tracking-widest font-bold text-slate-500">Email Address</label>
-                  <input 
+                    id="email"
+                    name="email"
                     type="email" 
-                    className="w-full bg-white border border-slate-200 h-14 px-4 text-[#111827] focus:border-[#2b204c] transition-all outline-hidden"
+                    required
+                    placeholder="name@company.com"
+                    className="w-full bg-white border border-slate-200 h-14 px-4 text-[#111827] focus:border-[#8b68f6] transition-all outline-hidden text-sm"
                   />
                 </div>
-                <Button className="w-full bg-[#952828] text-white hover:bg-[#b03030] transition-all rounded-sm h-16 text-lg font-bold uppercase tracking-widest shadow-lg">
-                  Submit Application
+                <Button type="submit" className="w-full bg-[#2b204c] text-white hover:bg-[#8b68f6] transition-all rounded-sm h-16 text-sm font-bold uppercase tracking-widest shadow-lg">
+                  Subscribe to Newsletter
                 </Button>
+                <p className="text-[10px] text-center text-slate-400 uppercase tracking-tight">
+                  No pressure. Unsubscribe at any time.
+                </p>
+                <div id="subscribe-success" className="hidden absolute inset-0 bg-white/95 flex flex-col items-center justify-center p-8 text-center animate-in fade-in duration-300">
+                  <div className="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-4">
+                    <Zap size={24} />
+                  </div>
+                  <h4 className="text-[#2b204c] font-heading font-bold uppercase mb-2">You're in!</h4>
+                  <p className="text-sm text-slate-500">Check your inbox for your first insight.</p>
+                </div>
               </form>
             </div>
           </div>

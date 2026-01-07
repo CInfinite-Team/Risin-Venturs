@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Globe, TrendingUp, Shield, Zap, Menu, X, Rocket, Cpu, Network, Building2, ChevronDown } from "lucide-react";
-import heroBg from "@assets/generated_images/sleek_dark_tech_background_with_animated-style_gradients.png";
+import heroBg from "@assets/generated_images/abstract_deep-tech_network_visualization_background.png";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
@@ -164,13 +164,13 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] md:h-screen flex items-center justify-center overflow-hidden pt-24 md:pt-0 bg-[#F9FAFB] border-b border-slate-100">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 md:pt-0 bg-[#F9FAFB] border-b border-slate-100">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-white/40 z-10" />
+          <div className="absolute inset-0 bg-white/60 z-10" />
           <img 
             src={heroBg} 
-            alt="Abstract architecture" 
-            className="w-full h-full object-cover opacity-20"
+            alt="Abstract tech background" 
+            className="w-full h-full object-cover opacity-30"
           />
         </div>
 
@@ -183,7 +183,7 @@ export default function Home() {
           >
             <motion.h1 
               variants={fadeIn}
-              className="text-4xl md:text-7xl lg:text-8xl font-heading font-bold leading-[1.1] tracking-tighter mb-6 md:mb-10 uppercase text-[#2b204c]"
+              className="text-4xl md:text-7xl lg:text-8xl font-heading font-bold leading-[1.05] tracking-tighter mb-6 md:mb-8 uppercase text-[#2b204c]"
             >
               Building the <br className="hidden md:block" />
               Next Generation <br className="hidden md:block" />
@@ -192,19 +192,17 @@ export default function Home() {
             
             <motion.p 
               variants={fadeIn}
-              className="text-lg md:text-2xl text-slate-600 max-w-2xl mb-10 md:mb-16 font-light leading-relaxed"
+              className="text-lg md:text-2xl text-slate-600 max-w-2xl mb-10 md:mb-14 font-light leading-relaxed"
             >
-              Risin Ventures specializes in scaling disruptive innovations across 
-              <span className="text-[#2b204c] font-semibold"> AI, IoT, and Blockchain</span>. 
-              Bridging breakthrough science and global markets.
+              We are a venture-builder dedicated to co-founding and scaling disruptive deep-tech enterprises. By merging execution discipline with breakthrough science, we turn bold ideas into market-leading global companies.
             </motion.p>
 
-            <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4">
-              <Button className="bg-[#2b204c] text-white hover:bg-[#8b68f6] transition-all rounded-sm h-14 md:h-16 px-10 text-base md:text-lg font-bold uppercase tracking-widest shadow-xl">
-                Our Programs
+            <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-5">
+              <Button className="bg-[#2b204c] text-white hover:bg-[#8b68f6] transition-all rounded-sm h-14 md:h-16 px-10 text-base md:text-lg font-bold uppercase tracking-widest shadow-xl border-0">
+                Build With Us
               </Button>
-              <Button variant="outline" className="border-[#2b204c] text-[#2b204c] hover:bg-slate-50 transition-all rounded-sm h-14 md:h-16 px-10 text-base md:text-lg font-bold uppercase tracking-widest">
-                Pitch Us
+              <Button variant="outline" className="border-2 border-[#2b204c] text-[#2b204c] hover:bg-slate-50 transition-all rounded-sm h-14 md:h-16 px-10 text-base md:text-lg font-bold uppercase tracking-widest bg-transparent">
+                Our Programs
               </Button>
             </motion.div>
           </motion.div>

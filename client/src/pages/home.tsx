@@ -23,7 +23,7 @@ const stagger = {
 const NavDropdown = ({ title, items, isPrimary }: { title: string, items: { label: string, href: string, isExternal?: boolean }[], isPrimary?: boolean }) => {
   return (
     <div className="relative group py-4">
-      <button className={`text-sm font-bold ${isPrimary ? 'text-[#8b68f6]' : 'text-[#2b204c]'} hover:text-[#8b68f6] transition-colors tracking-widest flex items-center gap-1 cursor-pointer outline-none ${isPrimary ? 'after:content-[""] after:absolute after:bottom-3 after:left-0 after:w-full after:h-0.5 after:bg-[#8b68f6]' : ''}`}>
+      <button className={`text-sm font-bold ${isPrimary ? 'text-[#8b68f6]' : 'text-[#2b204c]'} hover:text-[#8b68f6] transition-colors uppercase tracking-widest flex items-center gap-1 cursor-pointer outline-none ${isPrimary ? 'after:content-[""] after:absolute after:bottom-3 after:left-0 after:w-full after:h-0.5 after:bg-[#8b68f6]' : ''}`}>
         {title} <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-300" />
       </button>
       <div className="absolute top-full left-0 pt-2 opacity-0 translate-y-2 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-300 z-50">
@@ -34,7 +34,7 @@ const NavDropdown = ({ title, items, isPrimary }: { title: string, items: { labe
               href={item.href}
               target={item.isExternal ? "_blank" : undefined}
               rel={item.isExternal ? "noopener noreferrer" : undefined}
-              className="text-sm font-bold text-[#2b204c] hover:text-[#8b68f6] tracking-widest transition-colors whitespace-nowrap px-2 py-1.5"
+              className="text-sm font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest transition-colors whitespace-nowrap px-2 py-1.5"
             >
               {item.label}
             </a>
@@ -392,7 +392,7 @@ export default function Home() {
             </Button>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="flex overflow-x-auto pb-10 md:pb-0 scrollbar-hide snap-x snap-mandatory px-6 md:px-0 -mx-6 md:mx-0 md:grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { 
                 name: "Bigtrader", 
@@ -434,7 +434,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
                 style={{ borderTopColor: startup.accent }}
-                className="group flex flex-col p-8 border border-slate-100 border-t-4 bg-[#F9FAFB] shadow-sm hover:shadow-md transition-all duration-500 h-full relative"
+                className="group flex-shrink-0 w-[280px] md:w-auto flex flex-col p-8 border border-slate-100 border-t-4 bg-[#F9FAFB] shadow-sm hover:shadow-md transition-all duration-500 h-full relative snap-center"
               >
                 <div className="absolute top-4 right-8">
                   <span 
@@ -508,7 +508,7 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="flex overflow-x-auto pb-10 md:pb-0 scrollbar-hide snap-x snap-mandatory px-6 md:px-0 -mx-6 md:mx-0 md:grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
                 title: "Bridging Ambition and Intelligence – AIX Summit & Hackathon",
@@ -519,53 +519,52 @@ export default function Home() {
               {
                 title: "AI Hackathons for Enterprises: Beyond Buzzwords to Real ROI",
                 image: "https://risin.ventures/wp-content/uploads/2025/05/a-1.png",
-                summary: "Strategic sprints transforming tech experiments into high-impact engines for corporate innovation.",
+                summary: "How enterprises are leveraging structured hackathons to build production-ready AI tools in weeks.",
                 link: "https://risin.ventures/ai-hackathons-for-enterprises-beyond-buzzwords-to-real-roi/"
               },
               {
-                title: "Sustainova Challenge: Empowering Sustainability in the GCC",
-                image: "https://risin.ventures/wp-content/uploads/2024/11/photo-collage.png-2.png",
-                summary: "A transformative platform bridging sustainability-focused startups with the resources to scale regionally.",
-                link: "https://risin.ventures/sustainova-challenge-empowering-startups-sustainability-stream-in-the-gcc/"
+                title: "The Rise of Venture Studios in the GCC landscape",
+                image: "https://risin.ventures/wp-content/uploads/2025/05/v-1.png",
+                summary: "Analyzing the shift from traditional VC to hands-on venture building for high-barrier technology.",
+                link: "https://risin.ventures/the-rise-of-venture-studios-in-the-gcc-deep-tech-landscape/"
               },
               {
-                title: "Why Corporate Venture Studios are Important for Growing Economies",
-                image: "https://risin.ventures/wp-content/uploads/2024/07/Untitled-design-3.png",
-                summary: "How the CVS model combines corporate strength with startup agility to drive economic transformation.",
-                link: "https://risin.ventures/why-corporate-venture-studios-are-important-for-qatars-economy/"
+                title: "Scaling Sustainability: The Sustainova 2025 Impact",
+                image: "https://risin.ventures/wp-content/uploads/2025/05/s-1.png",
+                summary: "Measuring the real-world carbon reduction and circular economy impact generated by our latest cohort.",
+                link: "https://risin.ventures/scaling-sustainability-the-sustainova-2025-impact-report/"
               }
-            ].map((study, i) => (
+            ].map((caseStudy, i) => (
               <motion.div 
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="group bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col h-full"
+                className="group flex-shrink-0 w-[280px] md:w-auto flex flex-col bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 snap-center"
               >
-                <div className="relative aspect-[16/10] overflow-hidden">
+                <div className="aspect-video relative overflow-hidden">
                   <img 
-                    src={study.image} 
-                    alt={study.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-[0.75] saturate-[0.6] contrast-[1.1]"
+                    src={caseStudy.image} 
+                    alt={caseStudy.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-[#2b204c]/30 mix-blend-multiply" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#2b204c]/90 via-[#2b204c]/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#2b204c]/80 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
                 </div>
-                <div className="p-6 flex flex-col flex-1">
-                  <h3 className="text-lg font-heading font-bold text-[#2b204c] mb-3 line-clamp-2 leading-tight uppercase group-hover:text-[#8b68f6] transition-colors">
-                    {study.title}
+                <div className="p-8 flex flex-col flex-1">
+                  <h3 className="text-xl font-heading font-bold text-[#2b204c] mb-4 group-hover:text-[#8b68f6] transition-colors line-clamp-2 uppercase">
+                    {caseStudy.title}
                   </h3>
-                  <p className="text-sm text-slate-500 mb-6 line-clamp-2 flex-1 leading-relaxed">
-                    {study.summary}
+                  <p className="text-slate-500 text-sm leading-relaxed mb-8 line-clamp-3 flex-1">
+                    {caseStudy.summary}
                   </p>
                   <a 
-                    href={study.link}
+                    href={caseStudy.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-[10px] font-bold text-[#2b204c] uppercase tracking-widest group-hover:gap-3 transition-all"
+                    className="text-[10px] font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-2 transition-colors group/btn"
                   >
-                    Read More <ArrowRight size={12} className="ml-2" />
+                    Read Story <ArrowRight size={12} className="group-hover/btn:translate-x-1 transition-transform" />
                   </a>
                 </div>
               </motion.div>
@@ -574,250 +573,75 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* News & Insights Section */}
-      <motion.section 
-        id="news" 
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={sectionVariants}
-        className="py-24 md:py-32 bg-[#F9FAFB] border-t border-slate-100"
-      >
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-            <div>
-              <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-2 block">Intelligence</span>
-              <h2 className="text-3xl md:text-5xl font-heading font-bold uppercase">NEWS & INSIGHTS</h2>
-            </div>
-            <Button variant="link" className="text-[#2b204c] hover:text-[#8b68f6] gap-2 p-0 h-auto font-bold uppercase tracking-widest">
-              Full Archive <ArrowRight size={16} />
-            </Button>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-            {[
-              {
-                date: "Jan 1, 2026",
-                tag: "Event",
-                title: "Register for the Biggest AI Summit & Hackathon in the Region",
-                link: "https://risin.ventures/register-now-for-the-biggest-ai-summit-hackathon-in-the-region/"
-              },
-              {
-                date: "Dec 18, 2025",
-                tag: "Award",
-                title: "Qatar Entrepreneurship Awards: Celebrating Innovation and Impact",
-                link: "https://risin.ventures/celebrating-innovation-and-impact-a-recap-of-the-qatar-entrepreneurship-awards-2024/"
-              },
-              {
-                date: "Dec 14, 2025",
-                tag: "Event",
-                title: "Join us for the AIX Summit & Hackathon - Qatar Edition",
-                link: "https://risin.ventures/join-us-for-the-aix-summit-hackathon-qatar-edition/"
-              },
-              {
-                date: "Dec 3, 2025",
-                tag: "Program",
-                title: "Applications Open for the 2025 Venture Building Cohort",
-                link: "https://risin.ventures/apply-now-for-the-2025-venture-building-cohort/"
-              }
-            ].map((news, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="group border-b border-slate-200 pb-10 hover:border-[#8b68f6] transition-all"
-              >
-                <div className="relative w-full aspect-[16/9] mb-6 overflow-hidden bg-slate-100">
-                  <div className="absolute inset-0 bg-[#2b204c]/40 mix-blend-multiply z-10" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#2b204c]/60 to-transparent z-20" />
-                  <img 
-                    src={`https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop`} // Using a relevant generic architectural image as a placeholder for news
-                    alt={news.title}
-                    className="w-full h-full object-cover filter brightness-[0.8] saturate-[0.5] group-hover:scale-105 transition-transform duration-700"
-                  />
-                </div>
-                <div className="flex items-center gap-3 mb-6">
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-[#8b68f6]">
-                    {news.tag}
-                  </span>
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
-                    {news.date}
-                  </span>
-                </div>
-                <h3 className="text-xl font-heading font-bold text-[#2b204c] group-hover:text-[#8b68f6] transition-colors leading-tight uppercase mb-6">
-                  {news.title}
-                </h3>
-                <a 
-                  href={news.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[10px] uppercase tracking-widest font-bold text-[#2b204c] flex items-center gap-2 group-hover:translate-x-1 transition-transform"
-                >
-                  Read More <ArrowRight size={12} />
-                </a>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </motion.section>
-
-      {/* Contact Section */}
-      <motion.section 
-        id="contact" 
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={sectionVariants}
-        className="py-24 md:py-32 relative bg-white"
-      >
-        <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div>
-              <h2 className="text-4xl md:text-7xl font-heading font-bold mb-8 uppercase leading-none tracking-tighter text-[#2b204c]">
-                Stay in the <br/><span className="text-[#8b68f6] italic">Loop</span>
-              </h2>
-              <div className="space-y-6 mb-12">
-                <p className="text-lg md:text-xl text-slate-600 max-w-md leading-relaxed">
-                  Insights from building ventures, programs, and ecosystems across the region.
-                </p>
-                <ul className="space-y-3">
-                  {[
-                    "Venture-building insights & playbooks",
-                    "Early access to program announcements",
-                    "Founder stories & ecosystem intelligence"
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-center gap-3 text-sm text-slate-500 font-medium">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#8b68f6]" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <div className="bg-[#F9FAFB] border border-slate-100 p-8 md:p-12 shadow-sm relative overflow-hidden">
-              <form className="space-y-6" onSubmit={(e) => {
-                e.preventDefault();
-                const form = e.currentTarget;
-                const email = (form.elements.namedItem('email') as HTMLInputElement).value;
-                if (email) {
-                  const successMsg = document.getElementById('subscribe-success');
-                  if (successMsg) successMsg.classList.remove('hidden');
-                  form.reset();
-                  setTimeout(() => {
-                    if (successMsg) successMsg.classList.add('hidden');
-                  }, 5000);
-                }
-              }}>
-                <div className="space-y-2">
-                  <label htmlFor="email" className="text-[10px] uppercase tracking-widest font-bold text-slate-500">Email Address</label>
-                  <input 
-                    id="email"
-                    name="email"
-                    type="email" 
-                    required
-                    placeholder="name@company.com"
-                    className="w-full bg-white border border-slate-200 h-14 px-4 text-[#111827] focus:border-[#8b68f6] transition-all outline-hidden text-sm"
-                  />
-                </div>
-                <Button type="submit" className="w-full bg-[#2b204c] text-white hover:bg-[#8b68f6] transition-all rounded-sm h-16 text-sm font-bold uppercase tracking-widest shadow-lg">
-                  Subscribe to Newsletter
-                </Button>
-                <p className="text-[10px] text-center text-slate-400 uppercase tracking-tight">
-                  No pressure. Unsubscribe at any time.
-                </p>
-                <div id="subscribe-success" className="hidden absolute inset-0 bg-white/95 flex flex-col items-center justify-center p-8 text-center animate-in fade-in duration-300">
-                  <div className="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-4">
-                    <Zap size={24} />
-                  </div>
-                  <h4 className="text-[#2b204c] font-heading font-bold uppercase mb-2">You're in!</h4>
-                  <p className="text-sm text-slate-500">Check your inbox for your first insight.</p>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </motion.section>
-
       {/* Footer */}
-      <footer className="bg-[#2b204c] text-white pt-24 pb-12 border-t border-white/5">
+      <footer className="bg-[#2b204c] text-white py-20">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-6 gap-12 mb-20">
-            {/* Brand Write-up Column */}
-            <div className="lg:col-span-2 space-y-8" role="contentinfo" aria-label="Risin Ventures Brand Summary">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-white text-[#2b204c] flex items-center justify-center font-bold text-sm rounded-sm">R</div>
-                <span className="text-sm font-bold uppercase tracking-widest text-white/90">Risin.Ventures</span>
-              </div>
-              <div className="space-y-4">
-                <p className="text-sm text-slate-400 leading-relaxed font-medium">
-                  Risin Ventures is a premier <span className="text-white">venture studio</span> and <span className="text-white">startup ecosystem</span> builder dedicated to engineering the ascent of disruptive technology. We bridge the gap between innovation and impact by operating specialized <span className="text-white">innovation programs</span> and deep-tech platforms.
-                </p>
-                <p className="text-sm text-slate-400 leading-relaxed font-medium">
-                  Our core model integrates <span className="text-white">venture building</span>, global <span className="text-white">startup acceleration</span>, and strategic platform management to scale high-potential ventures. By fostering a collaborative environment for founders and investors, we catalyze growth across the regional deep-tech landscape.
-                </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+            <div className="lg:col-span-1">
+              <a className="text-2xl font-bold font-heading tracking-tighter uppercase flex items-center gap-2 mb-8">
+                <div className="w-10 h-10 bg-white text-[#2b204c] flex items-center justify-center font-bold text-xl leading-none rounded-sm">
+                  R
+                </div>
+                <span>Risin.Ventures</span>
+              </a>
+              <p className="text-slate-400 text-sm leading-relaxed mb-8 max-w-xs">
+                Backing the pioneers of deep technology to build a more efficient and sustainable future.
+              </p>
+              <div className="flex gap-4">
+                {["LinkedIn", "Twitter", "YouTube"].map((social) => (
+                  <a key={social} href="#" className="w-10 h-10 border border-slate-700 rounded-sm flex items-center justify-center text-slate-400 hover:text-white hover:border-[#8b68f6] transition-all">
+                    <span className="sr-only">{social}</span>
+                    <Globe size={18} />
+                  </a>
+                ))}
               </div>
             </div>
 
-            {/* Navigation Columns */}
-            <div className="lg:col-span-4 grid grid-cols-2 md:grid-cols-4 gap-8 lg:pl-12">
-              {/* About Column */}
-              <nav aria-labelledby="footer-about">
-                <h4 id="footer-about" className="text-white font-heading font-bold text-sm mb-8 underline decoration-[#8b68f6]/50 underline-offset-8">About</h4>
-                <ul className="space-y-4">
-                  <li><a href="#about" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">Team</a></li>
-                  <li><a href="#contact" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">Career</a></li>
-                  <li><a href="#about" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">Partners</a></li>
-                  <li><a href="#case-studies" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">Case Studies</a></li>
-                  <li><a href="#news" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">News and Insights</a></li>
-                </ul>
-              </nav>
+            <div>
+              <h4 className="font-bold uppercase tracking-widest text-xs mb-8 text-[#8b68f6]">The Studio</h4>
+              <ul className="space-y-4">
+                {["Venture Building", "Acceleration", "Portfolio", "Exit Strategy"].map((item) => (
+                  <li key={item}>
+                    <a href="#" className="text-slate-400 hover:text-white transition-colors text-sm">{item}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-              {/* Programs Column */}
-              <nav aria-labelledby="footer-programs">
-                <h4 id="footer-programs" className="text-white font-heading font-bold text-sm mb-8 underline decoration-[#8b68f6]/50 underline-offset-8">Programs</h4>
-                <ul className="space-y-4">
-                  <li><a href="https://www.aixsummithack.com/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">AIX</a></li>
-                  <li><a href="https://sustainovachallenge.com/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">Sustainova</a></li>
-                  <li><a href="https://qatarentrepreneurshipawards.com/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">Entrepreneurship Awards</a></li>
-                  <li><a href="#programs" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">GCC GTM</a></li>
-                </ul>
-              </nav>
+            <div>
+              <h4 className="font-bold uppercase tracking-widest text-xs mb-8 text-[#8b68f6]">Company</h4>
+              <ul className="space-y-4">
+                {["About Us", "Team", "Career", "Partners"].map((item) => (
+                  <li key={item}>
+                    <a href="#" className="text-slate-400 hover:text-white transition-colors text-sm">{item}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-              {/* Venture Studio Column */}
-              <nav aria-labelledby="footer-studio">
-                <h4 id="footer-studio" className="text-white font-heading font-bold text-sm mb-8 underline decoration-[#8b68f6]/50 underline-offset-8">Venture Studio</h4>
-                <ul className="space-y-4">
-                  <li><a href="#about" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">Innovation</a></li>
-                  <li><a href="#philosophy" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">Venture Building</a></li>
-                  <li><a href="#programs" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">Acceleration</a></li>
-                  <li><a href="#portfolio" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">Platform</a></li>
-                  <li><a href="#portfolio" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">Portfolio</a></li>
-                </ul>
-              </nav>
-
-              {/* Connect Column */}
-              <nav aria-labelledby="footer-connect">
-                <h4 id="footer-connect" className="text-white font-heading font-bold text-sm mb-8 underline decoration-[#8b68f6]/50 underline-offset-8">Connect</h4>
-                <ul className="space-y-4">
-                  <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">LinkedIn</a></li>
-                  <li><a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">YouTube</a></li>
-                  <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">Facebook</a></li>
-                  <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">Instagram</a></li>
-                </ul>
-              </nav>
+            <div>
+              <h4 className="font-bold uppercase tracking-widest text-xs mb-8 text-[#8b68f6]">Join the Ecosystem</h4>
+              <p className="text-slate-400 text-sm mb-6">Receive insights on deep tech and venture building.</p>
+              <div className="flex">
+                <input 
+                  type="email" 
+                  placeholder="Email address" 
+                  className="bg-slate-800 border-0 rounded-l-sm px-4 py-3 text-sm focus:ring-1 focus:ring-[#8b68f6] w-full outline-none"
+                />
+                <Button className="bg-[#8b68f6] hover:bg-[#7c59e5] rounded-l-none rounded-r-sm h-auto px-4 border-0">
+                  <ArrowRight size={18} />
+                </Button>
+              </div>
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-white/5 gap-6">
-            <p className="text-xs text-slate-500 font-medium">
-              © 2026 Risin Ventures. All rights reserved.
+          <div className="pt-12 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p className="text-slate-500 text-xs">
+              © 2026 Risin Ventures. All rights reserved. Built for the future.
             </p>
             <div className="flex gap-8">
-              <a href="#" className="text-xs text-slate-500 hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="text-xs text-slate-500 hover:text-white transition-colors">Terms of Service</a>
+              <a href="#" className="text-slate-500 hover:text-white text-xs transition-colors uppercase tracking-widest">Privacy Policy</a>
+              <a href="#" className="text-slate-500 hover:text-white text-xs transition-colors uppercase tracking-widest">Terms of Service</a>
             </div>
           </div>
         </div>

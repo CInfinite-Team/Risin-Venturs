@@ -476,9 +476,9 @@ export default function Home() {
               ))}
             </div>
             {/* Subtle Progress Dots for Mobile */}
-            <div className="flex md:hidden justify-center gap-1.5 mt-4">
+            <div className="flex md:hidden justify-center gap-2 mt-6">
               {[0, 1, 2, 3].map((dot) => (
-                <div key={dot} className={`w-1 h-1 rounded-full transition-all duration-300 ${dot === 0 ? 'bg-[#8b68f6] w-3' : 'bg-slate-200'}`} />
+                <div key={dot} className={`w-2 h-2 rounded-full transition-all duration-300 ${dot === 0 ? 'bg-[#8b68f6] scale-125' : 'bg-slate-300'}`} />
               ))}
             </div>
           </div>
@@ -580,9 +580,9 @@ export default function Home() {
               ))}
             </div>
             {/* Subtle Progress Dots for Mobile */}
-            <div className="flex md:hidden justify-center gap-1.5 mt-4">
+            <div className="flex md:hidden justify-center gap-2 mt-6">
               {[0, 1, 2, 3].map((dot) => (
-                <div key={dot} className={`w-1 h-1 rounded-full transition-all duration-300 ${dot === 0 ? 'bg-[#8b68f6] w-3' : 'bg-slate-200'}`} />
+                <div key={dot} className={`w-2 h-2 rounded-full transition-all duration-300 ${dot === 0 ? 'bg-[#8b68f6] scale-125' : 'bg-slate-300'}`} />
               ))}
             </div>
           </div>

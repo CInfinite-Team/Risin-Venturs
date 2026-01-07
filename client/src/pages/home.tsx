@@ -623,7 +623,7 @@ export default function Home() {
               </h2>
               <div className="space-y-6 mb-12">
                 <p className="text-lg md:text-xl text-slate-600 max-w-md leading-relaxed">
-                  Join our ecosystem for exclusive access to venture-building insights, program updates, and founder stories.
+                  Insights from building ventures, programs, and ecosystems across the region.
                 </p>
                 <ul className="space-y-3">
                   {[

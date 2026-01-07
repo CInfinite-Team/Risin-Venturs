@@ -392,87 +392,95 @@ export default function Home() {
             </Button>
           </div>
 
-          <div className="flex overflow-x-auto pb-10 md:pb-0 scrollbar-hide snap-x snap-mandatory px-6 md:px-0 -mx-6 md:mx-0 md:grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { 
-                name: "Bigtrader", 
-                logo: "/attached_assets/image_1767693167455.png",
-                website: "https://www.bigtrader.biz/",
-                category: "Marketplace",
-                accent: "#952828", // Saffron Red from logo
-                desc: "A digital trading and supply chain platform enabling smarter procurement, visibility, and efficiency for commodity and goods trading businesses." 
-              },
-              { 
-                name: "Madad Fintech", 
-                logo: "https://www.madadfintech.com/home/hero.svg", 
-                website: "https://www.madadfintech.com/en",
-                category: "Fintech",
-                accent: "#2b204c", // Dark Indigo
-                desc: "A Shariah-compliant fintech platform providing ethical digital financial solutions for individuals and underserved communities." 
-              },
-              { 
-                name: "iProcure", 
-                logo: "https://iprocure.ai/datacard1.svg", 
-                website: "https://iprocure.ai/",
-                category: "AI",
-                accent: "#8b68f6", // Vivid Violet
-                desc: "An AI-powered procurement intelligence platform helping enterprises optimize sourcing, pricing, and supplier decisions." 
-              },
-              { 
-                name: "Arisio", 
-                logo: "https://arisio.io/Images/HomePage/whitelogo.png", 
-                website: "https://arisio.io/",
-                category: "AI / Marketplace",
-                accent: "#10b981", // Emerald/Startup green
-                desc: "An AI-driven matchmaking platform connecting startups, investors, and ecosystems through intelligent application screening and discovery." 
-              }
-            ].map((startup, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                style={{ borderTopColor: startup.accent }}
-                className="group flex-shrink-0 w-[280px] md:w-auto flex flex-col p-8 border border-slate-100 border-t-4 bg-[#F9FAFB] shadow-sm hover:shadow-md transition-all duration-500 h-full relative snap-center"
-              >
-                <div className="absolute top-4 right-8">
-                  <span 
-                    style={{ color: startup.accent, borderColor: `${startup.accent}20` }}
-                    className="text-[9px] font-bold uppercase tracking-widest px-2 py-1 bg-white border rounded-full"
-                  >
-                    {startup.category}
-                  </span>
-                </div>
-                <div className="h-16 flex items-center justify-start mb-8">
-                  {startup.logo ? (
-                    <img 
-                      src={startup.logo} 
-                      alt={`${startup.name} logo`} 
-                      className={`h-full w-auto object-contain object-left ${startup.name === "Arisio" ? "brightness-0 opacity-80" : ""}`}
-                    />
-                  ) : (
-                    <div className="w-12 h-12 bg-white border border-slate-100 flex items-center justify-center font-heading font-bold text-xl text-[#2b204c]">
-                      {startup.name.charAt(0)}
-                    </div>
-                  )}
-                </div>
-                <h3 className="text-xl font-heading font-bold text-[#2b204c] mb-2 uppercase">
-                  {startup.name}
-                </h3>
-                <p className="text-sm text-slate-500 leading-relaxed mb-8 flex-1">
-                  {startup.desc}
-                </p>
-                <a 
-                  href={startup.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[10px] font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-2 transition-colors group/link"
+          <div className="relative group">
+            <div className="flex md:grid sm:grid-cols-2 lg:grid-cols-4 gap-8 overflow-x-auto pb-4 md:pb-0 scrollbar-hide snap-x snap-mandatory px-6 md:px-0 -mx-6 md:mx-0">
+              {[
+                { 
+                  name: "Bigtrader", 
+                  logo: "/attached_assets/image_1767693167455.png",
+                  website: "https://www.bigtrader.biz/",
+                  category: "Marketplace",
+                  accent: "#952828", // Saffron Red from logo
+                  desc: "A digital trading and supply chain platform enabling smarter procurement, visibility, and efficiency for commodity and goods trading businesses." 
+                },
+                { 
+                  name: "Madad Fintech", 
+                  logo: "https://www.madadfintech.com/home/hero.svg", 
+                  website: "https://www.madadfintech.com/en",
+                  category: "Fintech",
+                  accent: "#2b204c", // Dark Indigo
+                  desc: "A Shariah-compliant fintech platform providing ethical digital financial solutions for individuals and underserved communities." 
+                },
+                { 
+                  name: "iProcure", 
+                  logo: "https://iprocure.ai/datacard1.svg", 
+                  website: "https://iprocure.ai/",
+                  category: "AI",
+                  accent: "#8b68f6", // Vivid Violet
+                  desc: "An AI-powered procurement intelligence platform helping enterprises optimize sourcing, pricing, and supplier decisions." 
+                },
+                { 
+                  name: "Arisio", 
+                  logo: "https://arisio.io/Images/HomePage/whitelogo.png", 
+                  website: "https://arisio.io/",
+                  category: "AI / Marketplace",
+                  accent: "#10b981", // Emerald/Startup green
+                  desc: "An AI-driven matchmaking platform connecting startups, investors, and ecosystems through intelligent application screening and discovery." 
+                }
+              ].map((startup, i) => (
+                <motion.div 
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  style={{ borderTopColor: startup.accent }}
+                  className="group flex-shrink-0 w-[280px] md:w-auto flex flex-col p-8 border border-slate-100 border-t-4 bg-[#F9FAFB] shadow-sm hover:shadow-md transition-all duration-500 h-full relative snap-center"
                 >
-                  Go to Website <ArrowRight size={12} className="group-hover/link:translate-x-1 transition-transform" />
-                </a>
-              </motion.div>
-            ))}
+                  <div className="absolute top-4 right-8">
+                    <span 
+                      style={{ color: startup.accent, borderColor: `${startup.accent}20` }}
+                      className="text-[9px] font-bold uppercase tracking-widest px-2 py-1 bg-white border rounded-full"
+                    >
+                      {startup.category}
+                    </span>
+                  </div>
+                  <div className="h-16 flex items-center justify-start mb-8">
+                    {startup.logo ? (
+                      <img 
+                        src={startup.logo} 
+                        alt={`${startup.name} logo`} 
+                        className={`h-full w-auto object-contain object-left ${startup.name === "Arisio" ? "brightness-0 opacity-80" : ""}`}
+                      />
+                    ) : (
+                      <div className="w-12 h-12 bg-white border border-slate-100 flex items-center justify-center font-heading font-bold text-xl text-[#2b204c]">
+                        {startup.name.charAt(0)}
+                      </div>
+                    )}
+                  </div>
+                  <h3 className="text-xl font-heading font-bold text-[#2b204c] mb-2 uppercase">
+                    {startup.name}
+                  </h3>
+                  <p className="text-sm text-slate-500 leading-relaxed mb-8 flex-1">
+                    {startup.desc}
+                  </p>
+                  <a 
+                    href={startup.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[10px] font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-2 transition-colors group/link"
+                  >
+                    Go to Website <ArrowRight size={12} className="group-hover/link:translate-x-1 transition-transform" />
+                  </a>
+                </motion.div>
+              ))}
+            </div>
+            {/* Subtle Progress Dots for Mobile */}
+            <div className="flex md:hidden justify-center gap-1.5 mt-4">
+              {[0, 1, 2, 3].map((dot) => (
+                <div key={dot} className={`w-1 h-1 rounded-full transition-all duration-300 ${dot === 0 ? 'bg-[#8b68f6] w-3' : 'bg-slate-200'}`} />
+              ))}
+            </div>
           </div>
         </div>
       </motion.section>
@@ -508,67 +516,75 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="flex overflow-x-auto pb-10 md:pb-0 scrollbar-hide snap-x snap-mandatory px-6 md:px-0 -mx-6 md:mx-0 md:grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                title: "Bridging Ambition and Intelligence – AIX Summit & Hackathon",
-                image: "https://risin.ventures/wp-content/uploads/2025/12/blog-banner-aix.png",
-                summary: "Inside the high-stakes AI summit that brought together founders and enterprises to build real AI solutions.",
-                link: "https://risin.ventures/inside-the-aix-summit-hackathon-qatar-edition/"
-              },
-              {
-                title: "AI Hackathons for Enterprises: Beyond Buzzwords to Real ROI",
-                image: "https://risin.ventures/wp-content/uploads/2025/05/a-1.png",
-                summary: "How enterprises are leveraging structured hackathons to build production-ready AI tools in weeks.",
-                link: "https://risin.ventures/ai-hackathons-for-enterprises-beyond-buzzwords-to-real-roi/"
-              },
-              {
-                title: "The Rise of Venture Studios in the GCC landscape",
-                image: "https://risin.ventures/wp-content/uploads/2025/05/v-1.png",
-                summary: "Analyzing the shift from traditional VC to hands-on venture building for high-barrier technology.",
-                link: "https://risin.ventures/the-rise-of-venture-studios-in-the-gcc-deep-tech-landscape/"
-              },
-              {
-                title: "Scaling Sustainability: The Sustainova 2025 Impact",
-                image: "https://risin.ventures/wp-content/uploads/2025/05/s-1.png",
-                summary: "Measuring the real-world carbon reduction and circular economy impact generated by our latest cohort.",
-                link: "https://risin.ventures/scaling-sustainability-the-sustainova-2025-impact-report/"
-              }
-            ].map((caseStudy, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="group flex-shrink-0 w-[280px] md:w-auto flex flex-col bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 snap-center"
-              >
-                <div className="aspect-video relative overflow-hidden">
-                  <img 
-                    src={caseStudy.image} 
-                    alt={caseStudy.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#2b204c]/80 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
-                </div>
-                <div className="p-8 flex flex-col flex-1">
-                  <h3 className="text-xl font-heading font-bold text-[#2b204c] mb-4 group-hover:text-[#8b68f6] transition-colors line-clamp-2 uppercase">
-                    {caseStudy.title}
-                  </h3>
-                  <p className="text-slate-500 text-sm leading-relaxed mb-8 line-clamp-3 flex-1">
-                    {caseStudy.summary}
-                  </p>
-                  <a 
-                    href={caseStudy.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[10px] font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-2 transition-colors group/btn"
-                  >
-                    Read Story <ArrowRight size={12} className="group-hover/btn:translate-x-1 transition-transform" />
-                  </a>
-                </div>
-              </motion.div>
-            ))}
+          <div className="relative group">
+            <div className="flex overflow-x-auto pb-4 md:pb-0 scrollbar-hide snap-x snap-mandatory px-6 md:px-0 -mx-6 md:mx-0 md:grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                {
+                  title: "Bridging Ambition and Intelligence – AIX Summit & Hackathon",
+                  image: "https://risin.ventures/wp-content/uploads/2025/12/blog-banner-aix.png",
+                  summary: "Inside the high-stakes AI summit that brought together founders and enterprises to build real AI solutions.",
+                  link: "https://risin.ventures/inside-the-aix-summit-hackathon-qatar-edition/"
+                },
+                {
+                  title: "AI Hackathons for Enterprises: Beyond Buzzwords to Real ROI",
+                  image: "https://risin.ventures/wp-content/uploads/2025/05/a-1.png",
+                  summary: "How enterprises are leveraging structured hackathons to build production-ready AI tools in weeks.",
+                  link: "https://risin.ventures/ai-hackathons-for-enterprises-beyond-buzzwords-to-real-roi/"
+                },
+                {
+                  title: "The Rise of Venture Studios in the GCC landscape",
+                  image: "https://risin.ventures/wp-content/uploads/2025/05/v-1.png",
+                  summary: "Analyzing the shift from traditional VC to hands-on venture building for high-barrier technology.",
+                  link: "https://risin.ventures/the-rise-of-venture-studios-in-the-gcc-deep-tech-landscape/"
+                },
+                {
+                  title: "Scaling Sustainability: The Sustainova 2025 Impact",
+                  image: "https://risin.ventures/wp-content/uploads/2025/05/s-1.png",
+                  summary: "Measuring the real-world carbon reduction and circular economy impact generated by our latest cohort.",
+                  link: "https://risin.ventures/scaling-sustainability-the-sustainova-2025-impact-report/"
+                }
+              ].map((caseStudy, i) => (
+                <motion.div 
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="group flex-shrink-0 w-[280px] md:w-auto flex flex-col bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 snap-center"
+                >
+                  <div className="aspect-video relative overflow-hidden">
+                    <img 
+                      src={caseStudy.image} 
+                      alt={caseStudy.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#2b204c]/80 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
+                  </div>
+                  <div className="p-8 flex flex-col flex-1">
+                    <h3 className="text-xl font-heading font-bold text-[#2b204c] mb-4 group-hover:text-[#8b68f6] transition-colors line-clamp-2 uppercase">
+                      {caseStudy.title}
+                    </h3>
+                    <p className="text-slate-500 text-sm leading-relaxed mb-8 line-clamp-3 flex-1">
+                      {caseStudy.summary}
+                    </p>
+                    <a 
+                      href={caseStudy.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[10px] font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-2 transition-colors group/btn"
+                    >
+                      Read Story <ArrowRight size={12} className="group-hover/btn:translate-x-1 transition-transform" />
+                    </a>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+            {/* Subtle Progress Dots for Mobile */}
+            <div className="flex md:hidden justify-center gap-1.5 mt-4">
+              {[0, 1, 2, 3].map((dot) => (
+                <div key={dot} className={`w-1 h-1 rounded-full transition-all duration-300 ${dot === 0 ? 'bg-[#8b68f6] w-3' : 'bg-slate-200'}`} />
+              ))}
+            </div>
           </div>
         </div>
       </motion.section>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Globe, TrendingUp, Shield, Zap, Menu, X, Rocket, Cpu, Network, Building2 } from "lucide-react";
+import { ArrowRight, Globe, TrendingUp, Shield, Zap, Menu, X, Rocket, Cpu, Network, Building2, ChevronDown } from "lucide-react";
 import heroBg from "@assets/generated_images/sleek_dark_tech_background_with_animated-style_gradients.png";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
@@ -17,6 +17,32 @@ const stagger = {
       staggerChildren: 0.1
     }
   }
+};
+
+// Helper Components for Navigation
+const NavDropdown = ({ title, items }: { title: string, items: { label: string, href: string, isExternal?: boolean }[] }) => {
+  return (
+    <div className="relative group py-4">
+      <button className="text-sm font-bold text-[#2b204c] hover:text-[#8b68f6] transition-colors uppercase tracking-widest flex items-center gap-1 cursor-pointer outline-none">
+        {title} <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-300" />
+      </button>
+      <div className="absolute top-full left-0 pt-2 opacity-0 translate-y-2 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-300 z-50">
+        <div className="bg-white border border-slate-100 shadow-xl p-4 min-w-[200px] flex flex-col gap-3 rounded-sm">
+          {items.map((item) => (
+            <a 
+              key={item.label} 
+              href={item.href}
+              target={item.isExternal ? "_blank" : undefined}
+              rel={item.isExternal ? "noopener noreferrer" : undefined}
+              className="text-[10px] font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest transition-colors whitespace-nowrap"
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default function Home() {
@@ -57,20 +83,44 @@ export default function Home() {
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
-            {[
-              { label: "About", href: "#about" },
-              { label: "Programs", href: "#programs" },
-              { label: "Venture Studio", href: "#philosophy" },
-              { label: "Portfolio", href: "#portfolio" }
-            ].map((item) => (
-              <a 
-                key={item.label} 
-                href={item.href}
-                className="text-sm font-bold text-[#2b204c] hover:text-[#8b68f6] transition-colors uppercase tracking-widest"
-              >
-                {item.label}
-              </a>
-            ))}
+            <NavDropdown 
+              title="About" 
+              items={[
+                { label: "Team", href: "#about" },
+                { label: "Career", href: "#contact" },
+                { label: "Partners", href: "#about" },
+                { label: "Case Studies", href: "#case-studies" },
+                { label: "News & Insights", href: "#news" }
+              ]} 
+            />
+            <NavDropdown 
+              title="Programs" 
+              items={[
+                { label: "AIX", href: "https://www.aixsummithack.com/", isExternal: true },
+                { label: "Sustainova", href: "https://sustainovachallenge.com/", isExternal: true },
+                { label: "Entrepreneurship Awards", href: "https://qatarentrepreneurshipawards.com/", isExternal: true },
+                { label: "GCC GTM", href: "#programs" }
+              ]} 
+            />
+            <NavDropdown 
+              title="Venture Studio" 
+              items={[
+                { label: "Innovation", href: "#about" },
+                { label: "Venture Building", href: "#philosophy" },
+                { label: "Acceleration", href: "#programs" },
+                { label: "Platform", href: "#portfolio" },
+                { label: "Portfolio", href: "#portfolio" }
+              ]} 
+            />
+            <NavDropdown 
+              title="Connect" 
+              items={[
+                { label: "LinkedIn", href: "https://linkedin.com", isExternal: true },
+                { label: "YouTube", href: "https://youtube.com", isExternal: true },
+                { label: "Facebook", href: "https://facebook.com", isExternal: true },
+                { label: "Instagram", href: "https://instagram.com", isExternal: true }
+              ]} 
+            />
             <Button className="bg-[#2b204c] text-white hover:bg-[#8b68f6] transition-all uppercase tracking-widest text-xs font-bold rounded-sm px-6 h-12 border-0 shadow-lg">
               Build With Us
             </Button>
@@ -261,7 +311,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
             {[
               {
                 title: "AIX",
@@ -280,6 +330,12 @@ export default function Home() {
                 logo: "https://qatarentrepreneurshipawards.com/wp-content/uploads/2023/08/withoutyear-logo.png",
                 desc: "A national platform recognizing and celebrating high-potential entrepreneurs, startups, and innovation-led businesses.",
                 link: "https://qatarentrepreneurshipawards.com/"
+              },
+              {
+                title: "GCC GTM",
+                logo: null,
+                desc: "Accelerating global deep-tech ventures' entry into the GCC markets through strategic partnerships and localized scaling.",
+                link: "#programs"
               }
             ].map((program, i) => (
               <div 
@@ -725,6 +781,7 @@ export default function Home() {
                   <li><a href="https://www.aixsummithack.com/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">AIX</a></li>
                   <li><a href="https://sustainovachallenge.com/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">Sustainova</a></li>
                   <li><a href="https://qatarentrepreneurshipawards.com/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">Entrepreneurship Awards</a></li>
+                  <li><a href="#programs" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">GCC GTM</a></li>
                 </ul>
               </nav>
 

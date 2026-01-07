@@ -130,26 +130,63 @@ export default function Home() {
             initial={{ opacity: 0, x: "100%" }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
-            className="fixed inset-0 bg-white z-[105] md:hidden flex flex-col justify-center items-center gap-8"
+            className="fixed inset-0 bg-white z-[105] md:hidden flex flex-col p-8 pt-24 overflow-y-auto"
           >
-            {[
-              { label: "About", href: "#about" },
-              { label: "Programs", href: "#programs" },
-              { label: "Venture Studio", href: "#philosophy" },
-              { label: "Portfolio", href: "#portfolio" }
-            ].map((item) => (
-              <a 
-                key={item.label} 
-                href={item.href}
-                className="text-2xl font-bold text-[#2b204c] uppercase tracking-tighter"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.label}
-              </a>
-            ))}
-            <Button className="bg-[#2b204c] text-white uppercase tracking-widest text-sm font-bold rounded-sm w-64 h-14 mt-4">
-              Build With Us
-            </Button>
+            <div className="flex flex-col gap-8">
+              {[
+                { 
+                  title: "About", 
+                  items: [
+                    { label: "Team", href: "#about" },
+                    { label: "Career", href: "#contact" },
+                    { label: "Partners", href: "#about" },
+                    { label: "Case Studies", href: "#case-studies" },
+                    { label: "News & Insights", href: "#news" }
+                  ] 
+                },
+                { 
+                  title: "Programs", 
+                  items: [
+                    { label: "AIX", href: "https://www.aixsummithack.com/", isExternal: true },
+                    { label: "Sustainova", href: "https://sustainovachallenge.com/", isExternal: true },
+                    { label: "Entrepreneurship Awards", href: "https://qatarentrepreneurshipawards.com/", isExternal: true },
+                    { label: "GCC GTM", href: "#programs" }
+                  ] 
+                },
+                { 
+                  title: "Venture Studio", 
+                  items: [
+                    { label: "Innovation", href: "#about" },
+                    { label: "Incubation", href: "#about" },
+                    { label: "Acceleration", href: "#programs" },
+                    { label: "Venture Building", href: "#philosophy" }
+                  ] 
+                }
+              ].map((section) => (
+                <div key={section.title} className="flex flex-col gap-4">
+                  <h3 className="text-[10px] font-bold text-[#8b68f6] uppercase tracking-widest border-b border-slate-100 pb-2">
+                    {section.title}
+                  </h3>
+                  <div className="flex flex-col gap-3">
+                    {section.items.map((item) => (
+                      <a 
+                        key={item.label} 
+                        href={item.href}
+                        target={item.isExternal ? "_blank" : undefined}
+                        rel={item.isExternal ? "noopener noreferrer" : undefined}
+                        className="text-lg font-bold text-[#2b204c] capitalize"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {item.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              ))}
+              <Button className="bg-[#2b204c] text-white uppercase tracking-widest text-sm font-bold rounded-sm w-full h-14 mt-4 shadow-lg">
+                Build With Us
+              </Button>
+            </div>
           </motion.div>
         )}
       </nav>

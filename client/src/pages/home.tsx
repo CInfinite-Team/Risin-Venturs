@@ -587,22 +587,24 @@ export default function Home() {
       </motion.section>
 
       {/* Footer */}
-      <footer className="bg-[#2b204c] text-white py-20">
+      <footer className="bg-white border-t border-slate-100 py-24">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
-            <div className="lg:col-span-1">
-              <a className="text-2xl font-bold font-heading tracking-tighter uppercase flex items-center gap-2 mb-8">
-                <div className="w-10 h-10 bg-white text-[#2b204c] flex items-center justify-center font-bold text-xl leading-none rounded-sm">
-                  R
-                </div>
-                <span>Risin.Ventures</span>
-              </a>
-              <p className="text-slate-400 text-sm leading-relaxed mb-8 max-w-xs">
-                Backing the pioneers of deep technology to build a more efficient and sustainable future.
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-20">
+            <div className="lg:col-span-2">
+              <Link href="/">
+                <a className="text-2xl font-bold font-heading tracking-tighter uppercase flex items-center gap-2 mb-8">
+                  <div className="w-10 h-10 bg-[#2b204c] text-white flex items-center justify-center font-bold text-xl leading-none rounded-sm">
+                    R
+                  </div>
+                  <span className="text-[#2b204c]">Risin.Ventures</span>
+                </a>
+              </Link>
+              <p className="text-slate-500 text-sm leading-relaxed mb-8 max-w-md">
+                Risin Ventures is a boutique venture studio and investment firm specializing in deep technology. We bridge the gap between breakthrough scientific innovation and global market scale by co-building enterprises with institutional discipline and execution excellence.
               </p>
               <div className="flex gap-4">
-                {["LinkedIn", "Twitter", "YouTube"].map((social) => (
-                  <a key={social} href="#" className="w-10 h-10 border border-slate-700 rounded-sm flex items-center justify-center text-slate-400 hover:text-white hover:border-[#8b68f6] transition-all">
+                {["LinkedIn", "Twitter", "YouTube", "Instagram"].map((social) => (
+                  <a key={social} href="#" className="w-10 h-10 border border-slate-100 rounded-sm flex items-center justify-center text-slate-400 hover:text-[#8b68f6] hover:border-[#8b68f6] transition-all bg-[#F9FAFB]">
                     <span className="sr-only">{social}</span>
                     <Globe size={18} />
                   </a>
@@ -611,50 +613,81 @@ export default function Home() {
             </div>
 
             <div>
-              <h4 className="font-bold uppercase tracking-widest text-xs mb-8 text-[#8b68f6]">The Studio</h4>
+              <h4 className="font-bold uppercase tracking-widest text-[10px] mb-8 text-[#8b68f6]">About</h4>
               <ul className="space-y-4">
-                {["Venture Building", "Acceleration", "Portfolio", "Exit Strategy"].map((item) => (
-                  <li key={item}>
-                    <a href="#" className="text-slate-400 hover:text-white transition-colors text-sm">{item}</a>
+                {[
+                  { label: "Team", href: "#about" },
+                  { label: "Career", href: "#contact" },
+                  { label: "Partners", href: "#about" },
+                  { label: "Case Studies", href: "#case-studies" },
+                  { label: "News & Insights", href: "#news" }
+                ].map((item) => (
+                  <li key={item.label}>
+                    <a href={item.href} className="text-[#2b204c] hover:text-[#8b68f6] transition-colors text-xs font-bold uppercase tracking-wider">{item.label}</a>
                   </li>
                 ))}
               </ul>
             </div>
 
             <div>
-              <h4 className="font-bold uppercase tracking-widest text-xs mb-8 text-[#8b68f6]">Company</h4>
+              <h4 className="font-bold uppercase tracking-widest text-[10px] mb-8 text-[#8b68f6]">Programs</h4>
               <ul className="space-y-4">
-                {["About Us", "Team", "Career", "Partners"].map((item) => (
-                  <li key={item}>
-                    <a href="#" className="text-slate-400 hover:text-white transition-colors text-sm">{item}</a>
+                {[
+                  { label: "AIX", href: "https://www.aixsummithack.com/" },
+                  { label: "Sustainova", href: "https://sustainovachallenge.com/" },
+                  { label: "Entrepreneurship Awards", href: "https://qatarentrepreneurshipawards.com/" },
+                  { label: "GCC GTM", href: "#programs" }
+                ].map((item) => (
+                  <li key={item.label}>
+                    <a href={item.href} className="text-[#2b204c] hover:text-[#8b68f6] transition-colors text-xs font-bold uppercase tracking-wider">{item.label}</a>
                   </li>
                 ))}
               </ul>
             </div>
 
             <div>
-              <h4 className="font-bold uppercase tracking-widest text-xs mb-8 text-[#8b68f6]">Join the Ecosystem</h4>
-              <p className="text-slate-400 text-sm mb-6">Receive insights on deep tech and venture building.</p>
-              <div className="flex">
-                <input 
-                  type="email" 
-                  placeholder="Email address" 
-                  className="bg-slate-800 border-0 rounded-l-sm px-4 py-3 text-sm focus:ring-1 focus:ring-[#8b68f6] w-full outline-none"
-                />
-                <Button className="bg-[#8b68f6] hover:bg-[#7c59e5] rounded-l-none rounded-r-sm h-auto px-4 border-0">
-                  <ArrowRight size={18} />
-                </Button>
-              </div>
+              <h4 className="font-bold uppercase tracking-widest text-[10px] mb-8 text-[#8b68f6]">Venture Studio</h4>
+              <ul className="space-y-4">
+                {[
+                  { label: "Innovation", href: "#about" },
+                  { label: "Venture Building", href: "#philosophy" },
+                  { label: "Acceleration", href: "#programs" },
+                  { label: "Platform", href: "#portfolio" },
+                  { label: "Portfolio", href: "#portfolio" }
+                ].map((item) => (
+                  <li key={item.label}>
+                    <a href={item.href} className="text-[#2b204c] hover:text-[#8b68f6] transition-colors text-xs font-bold uppercase tracking-wider">{item.label}</a>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
 
-          <div className="pt-12 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
-            <p className="text-slate-500 text-xs">
-              © 2026 Risin Ventures. All rights reserved. Built for the future.
+          <div className="bg-[#2b204c] rounded-sm p-8 md:p-12 flex flex-col md:flex-row justify-between items-center gap-8 mb-20 overflow-hidden relative">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#8b68f6] opacity-10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+            <div className="relative z-10">
+              <h3 className="text-2xl md:text-3xl font-heading font-bold text-white mb-2 uppercase">Subscribe to our newsletter</h3>
+              <p className="text-slate-300 text-sm">Get the latest insights on deep tech and venture building.</p>
+            </div>
+            <div className="flex w-full md:w-auto relative z-10">
+              <input 
+                type="email" 
+                placeholder="Email address" 
+                className="bg-white/10 border border-white/20 rounded-l-sm px-6 py-4 text-sm text-white placeholder:text-slate-400 focus:ring-1 focus:ring-[#8b68f6] w-full md:min-w-[300px] outline-none transition-all"
+              />
+              <Button className="bg-[#8b68f6] hover:bg-white hover:text-[#2b204c] text-white rounded-l-none rounded-r-sm h-auto px-8 border-0 font-bold uppercase tracking-widest transition-all">
+                Subscribe
+              </Button>
+            </div>
+          </div>
+
+          <div className="pt-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p className="text-slate-400 text-[10px] font-bold uppercase tracking-[0.2em]">
+              © 2026 Risin Ventures. All rights reserved.
             </p>
             <div className="flex gap-8">
-              <a href="#" className="text-slate-500 hover:text-white text-xs transition-colors uppercase tracking-widest">Privacy Policy</a>
-              <a href="#" className="text-slate-500 hover:text-white text-xs transition-colors uppercase tracking-widest">Terms of Service</a>
+              <a href="#" className="text-slate-400 hover:text-[#2b204c] text-[10px] font-bold uppercase tracking-[0.2em] transition-colors">Privacy Policy</a>
+              <a href="#" className="text-slate-400 hover:text-[#2b204c] text-[10px] font-bold uppercase tracking-[0.2em] transition-colors">Terms of Service</a>
             </div>
           </div>
         </div>

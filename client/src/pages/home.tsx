@@ -73,11 +73,12 @@ export default function Home() {
       <nav className={`fixed top-0 w-full z-[100] transition-all duration-300 h-20 md:h-24 flex items-center ${isScrolled ? "bg-white shadow-md border-b border-slate-100" : "bg-white border-b border-slate-50"}`}>
         <div className="container mx-auto px-6 flex items-center justify-between">
           <Link href="/">
-            <a className="text-xl md:text-2xl font-bold font-heading tracking-tighter uppercase flex items-center gap-2 group z-[110]">
-              <div className="w-8 h-8 md:w-10 md:h-10 bg-[#2b204c] text-white flex items-center justify-center font-bold text-lg md:text-xl leading-none rounded-sm">
-                R
-              </div>
-              <span className="text-[#2b204c]">Risin.Ventures</span>
+            <a className="flex items-center gap-2 group z-[110]">
+              <img 
+                src="/attached_assets/RISIN_LOGO_1767787710766.png" 
+                alt="Risin Ventures Logo" 
+                className="h-12 md:h-16 w-auto object-contain"
+              />
             </a>
           </Link>
 
@@ -727,14 +728,15 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-20">
             <div className="lg:col-span-2">
               <Link href="/">
-                <a className="text-2xl font-bold font-heading tracking-tighter uppercase flex items-center gap-2 mb-8">
-                  <div className="w-10 h-10 bg-[#2b204c] text-white flex items-center justify-center font-bold text-xl leading-none rounded-sm">
-                    R
-                  </div>
-                  <span className="text-[#2b204c]">Risin.Ventures</span>
+                <a className="flex items-center gap-2 mb-8">
+                  <img 
+                    src="/attached_assets/RISIN_LOGO_1767787710766.png" 
+                    alt="Risin Ventures Logo" 
+                    className="h-12 md:h-16 w-auto object-contain"
+                  />
                 </a>
               </Link>
-              <p className="text-slate-500 text-sm leading-relaxed mb-8 max-w-md">
+              <p className="text-slate-500 text-sm leading-relaxed mb-8 max-md">
                 Risin Ventures is a boutique venture studio and investment firm specializing in deep technology. We bridge the gap between breakthrough scientific innovation and global market scale by co-building enterprises with institutional discipline and execution excellence.
               </p>
               <div className="flex gap-4">

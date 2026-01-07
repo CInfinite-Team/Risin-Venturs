@@ -155,7 +155,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-40 md:pt-0 bg-[#F9FAFB] border-b border-slate-100">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-48 md:pt-0 bg-[#F9FAFB] border-b border-slate-100">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-white/60 z-10" />
           <img 
@@ -176,7 +176,7 @@ export default function Home() {
               variants={fadeIn}
               className="text-4xl md:text-7xl lg:text-8xl font-heading font-bold leading-[1.05] tracking-tighter mb-6 md:mb-8 uppercase text-[#2b204c]"
             >
-              Building the next <br className="hidden md:block" />
+              Building the next <br />
               generation of <span className="text-[#8b68f6]">deeptech</span>
             </motion.h1>
             

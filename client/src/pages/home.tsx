@@ -20,10 +20,10 @@ const stagger = {
 };
 
 // Helper Components for Navigation
-const NavDropdown = ({ title, items }: { title: string, items: { label: string, href: string, isExternal?: boolean }[] }) => {
+const NavDropdown = ({ title, items, isPrimary }: { title: string, items: { label: string, href: string, isExternal?: boolean }[], isPrimary?: boolean }) => {
   return (
     <div className="relative group py-4">
-      <button className="text-sm font-bold text-[#2b204c] hover:text-[#8b68f6] transition-colors uppercase tracking-widest flex items-center gap-1 cursor-pointer outline-none">
+      <button className={`text-sm font-bold ${isPrimary ? 'text-[#8b68f6]' : 'text-[#2b204c]'} hover:text-[#8b68f6] transition-colors tracking-widest flex items-center gap-1 cursor-pointer outline-none ${isPrimary ? 'after:content-[""] after:absolute after:bottom-3 after:left-0 after:w-full after:h-0.5 after:bg-[#8b68f6]' : ''}`}>
         {title} <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-300" />
       </button>
       <div className="absolute top-full left-0 pt-2 opacity-0 translate-y-2 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-300 z-50">
@@ -34,7 +34,7 @@ const NavDropdown = ({ title, items }: { title: string, items: { label: string, 
               href={item.href}
               target={item.isExternal ? "_blank" : undefined}
               rel={item.isExternal ? "noopener noreferrer" : undefined}
-              className="text-[10px] font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest transition-colors whitespace-nowrap"
+              className="text-[10px] font-bold text-[#2b204c] hover:text-[#8b68f6] tracking-widest transition-colors whitespace-nowrap"
             >
               {item.label}
             </a>
@@ -95,6 +95,7 @@ export default function Home() {
             />
             <NavDropdown 
               title="Programs" 
+              isPrimary
               items={[
                 { label: "AIX", href: "https://www.aixsummithack.com/", isExternal: true },
                 { label: "Sustainova", href: "https://sustainovachallenge.com/", isExternal: true },
@@ -764,7 +765,7 @@ export default function Home() {
             <div className="lg:col-span-4 grid grid-cols-2 md:grid-cols-4 gap-8 lg:pl-12">
               {/* About Column */}
               <nav aria-labelledby="footer-about">
-                <h4 id="footer-about" className="text-white font-heading font-bold text-sm uppercase tracking-[0.2em] mb-8 underline decoration-[#8b68f6]/50 underline-offset-8">About</h4>
+                <h4 id="footer-about" className="text-white font-heading font-bold text-sm mb-8 underline decoration-[#8b68f6]/50 underline-offset-8">About</h4>
                 <ul className="space-y-4">
                   <li><a href="#about" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">Team</a></li>
                   <li><a href="#contact" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">Career</a></li>
@@ -776,7 +777,7 @@ export default function Home() {
 
               {/* Programs Column */}
               <nav aria-labelledby="footer-programs">
-                <h4 id="footer-programs" className="text-white font-heading font-bold text-sm uppercase tracking-[0.2em] mb-8 underline decoration-[#8b68f6]/50 underline-offset-8">Programs</h4>
+                <h4 id="footer-programs" className="text-white font-heading font-bold text-sm mb-8 underline decoration-[#8b68f6]/50 underline-offset-8">Programs</h4>
                 <ul className="space-y-4">
                   <li><a href="https://www.aixsummithack.com/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">AIX</a></li>
                   <li><a href="https://sustainovachallenge.com/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">Sustainova</a></li>
@@ -787,7 +788,7 @@ export default function Home() {
 
               {/* Venture Studio Column */}
               <nav aria-labelledby="footer-studio">
-                <h4 id="footer-studio" className="text-white font-heading font-bold text-sm uppercase tracking-[0.2em] mb-8 underline decoration-[#8b68f6]/50 underline-offset-8">Venture Studio</h4>
+                <h4 id="footer-studio" className="text-white font-heading font-bold text-sm mb-8 underline decoration-[#8b68f6]/50 underline-offset-8">Venture Studio</h4>
                 <ul className="space-y-4">
                   <li><a href="#about" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">Innovation</a></li>
                   <li><a href="#philosophy" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">Venture Building</a></li>
@@ -799,7 +800,7 @@ export default function Home() {
 
               {/* Connect Column */}
               <nav aria-labelledby="footer-connect">
-                <h4 id="footer-connect" className="text-white font-heading font-bold text-sm uppercase tracking-[0.2em] mb-8 underline decoration-[#8b68f6]/50 underline-offset-8">Connect</h4>
+                <h4 id="footer-connect" className="text-white font-heading font-bold text-sm mb-8 underline decoration-[#8b68f6]/50 underline-offset-8">Connect</h4>
                 <ul className="space-y-4">
                   <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">LinkedIn</a></li>
                   <li><a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#8b68f6] text-sm transition-colors">YouTube</a></li>

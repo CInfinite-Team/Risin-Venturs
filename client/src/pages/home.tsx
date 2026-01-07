@@ -27,14 +27,14 @@ const NavDropdown = ({ title, items, isPrimary }: { title: string, items: { labe
         {title} <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-300" />
       </button>
       <div className="absolute top-full left-0 pt-2 opacity-0 translate-y-2 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-300 z-50">
-        <div className="bg-white border border-slate-100 shadow-xl p-4 min-w-[200px] flex flex-col gap-3 rounded-sm">
+        <div className="bg-white border border-slate-100 shadow-xl p-4 min-w-[240px] flex flex-col gap-3 rounded-sm">
           {items.map((item) => (
             <a 
               key={item.label} 
               href={item.href}
               target={item.isExternal ? "_blank" : undefined}
               rel={item.isExternal ? "noopener noreferrer" : undefined}
-              className="text-[10px] font-bold text-[#2b204c] hover:text-[#8b68f6] tracking-widest transition-colors whitespace-nowrap"
+              className="text-sm font-bold text-[#2b204c] hover:text-[#8b68f6] tracking-widest transition-colors whitespace-nowrap px-2 py-1.5"
             >
               {item.label}
             </a>

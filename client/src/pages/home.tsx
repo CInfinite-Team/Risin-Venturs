@@ -185,9 +185,8 @@ export default function Home() {
               variants={fadeIn}
               className="text-4xl md:text-7xl lg:text-8xl font-heading font-bold leading-[1.05] tracking-tighter mb-6 md:mb-8 uppercase text-[#2b204c]"
             >
-              The Venture <br className="hidden md:block" />
-              Studio for <br className="hidden md:block" />
-              <span className="text-[#8b68f6]">Deep Tech</span>
+              The Venture Studio <br className="hidden md:block" />
+              for <span className="text-[#8b68f6]">Deep Tech</span>
             </motion.h1>
             
             <motion.p 

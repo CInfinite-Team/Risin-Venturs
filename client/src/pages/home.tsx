@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Globe, TrendingUp, Shield, Zap, Menu, X, Rocket, Cpu, Network, Building2, ChevronDown } from "lucide-react";
+import { ArrowRight, Linkedin, Facebook, Youtube, Instagram, Globe, TrendingUp, Shield, Zap, Menu, X, Rocket, Cpu, Network, Building2, ChevronDown } from "lucide-react";
 import heroBg from "@assets/generated_images/abstract_deep-tech_network_visualization_background.png";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
@@ -111,15 +111,6 @@ export default function Home() {
                 { label: "Acceleration", href: "#programs" },
                 { label: "Platform", href: "#portfolio" },
                 { label: "Portfolio", href: "#portfolio" }
-              ]} 
-            />
-            <NavDropdown 
-              title="Connect" 
-              items={[
-                { label: "LinkedIn", href: "https://linkedin.com", isExternal: true },
-                { label: "YouTube", href: "https://youtube.com", isExternal: true },
-                { label: "Facebook", href: "https://facebook.com", isExternal: true },
-                { label: "Instagram", href: "https://instagram.com", isExternal: true }
               ]} 
             />
             <Button className="bg-[#2b204c] text-white hover:bg-[#8b68f6] transition-all uppercase tracking-widest text-xs font-bold rounded-sm px-6 h-12 border-0 shadow-lg">
@@ -715,10 +706,21 @@ export default function Home() {
                 Risin Ventures is a boutique venture studio and investment firm specializing in deep technology. We bridge the gap between breakthrough scientific innovation and global market scale by co-building enterprises with institutional discipline and execution excellence.
               </p>
               <div className="flex gap-4">
-                {["LinkedIn", "Twitter", "YouTube", "Instagram"].map((social) => (
-                  <a key={social} href="#" className="w-10 h-10 border border-slate-100 rounded-sm flex items-center justify-center text-slate-400 hover:text-[#8b68f6] hover:border-[#8b68f6] transition-all bg-[#F9FAFB]">
-                    <span className="sr-only">{social}</span>
-                    <Globe size={18} />
+                {[
+                  { name: "LinkedIn", icon: <Linkedin size={18} />, href: "https://www.linkedin.com/company/risin-ventures/" },
+                  { name: "Facebook", icon: <Facebook size={18} />, href: "https://www.facebook.com/profile.php?id=100064025261207" },
+                  { name: "YouTube", icon: <Youtube size={18} />, href: "https://www.youtube.com/channel/UC2PZRHE-2nvkqRZPTPK9wNQ/featured" },
+                  { name: "Instagram", icon: <Instagram size={18} />, href: "https://www.instagram.com/risin.ventures/" }
+                ].map((social) => (
+                  <a 
+                    key={social.name} 
+                    href={social.href} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 border border-slate-100 rounded-sm flex items-center justify-center text-slate-400 hover:text-[#8b68f6] hover:border-[#8b68f6] transition-all bg-[#F9FAFB]"
+                  >
+                    <span className="sr-only">{social.name}</span>
+                    {social.icon}
                   </a>
                 ))}
               </div>

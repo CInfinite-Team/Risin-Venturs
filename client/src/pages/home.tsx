@@ -229,10 +229,10 @@ export default function Home() {
                 link: "#about"
               },
               { 
-                icon: <Building2 className="w-8 h-8" />, 
-                title: "Venture Building", 
-                desc: "From idea to execution, we co-build startups by assembling teams, shaping products, and embedding execution discipline from day one.",
-                link: "#philosophy"
+                icon: <Cpu className="w-8 h-8" />, 
+                title: "Incubation", 
+                desc: "We support early-stage founders from idea to validation, providing mentorship, resources, and structured guidance to prepare ventures for scale.",
+                link: "#about"
               },
               { 
                 icon: <Rocket className="w-8 h-8" />, 
@@ -241,10 +241,10 @@ export default function Home() {
                 link: "#programs"
               },
               { 
-                icon: <Network className="w-8 h-8" />, 
-                title: "Platform", 
-                desc: "Our platform connects founders with capital, industry partners, regulators, and talent to enable scalable and sustainable growth.",
-                link: "#portfolio"
+                icon: <Building2 className="w-8 h-8" />, 
+                title: "Venture Building", 
+                desc: "From idea to execution, we co-build startups by assembling teams, shaping products, and embedding execution discipline from day one.",
+                link: "#philosophy"
               }
             ].map((value, i) => (
               <div 

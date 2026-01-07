@@ -745,7 +745,7 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-6 gap-12 mb-20">
             {/* Brand Write-up Column */}
-            <div className="lg:col-span-2 space-y-8">
+            <div className="lg:col-span-2 space-y-8" role="contentinfo" aria-label="Risin Ventures Brand Summary">
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 bg-white text-[#2b204c] flex items-center justify-center font-bold text-sm rounded-sm">R</div>
                 <span className="text-sm font-bold uppercase tracking-widest text-white/90">Risin.Ventures</span>

@@ -430,6 +430,56 @@ export default function Home() {
         </div>
       </motion.section>
 
+      {/* Upcoming Event Section */}
+      <section className="py-12 md:py-16 bg-white border-b border-slate-100">
+        <div className="container mx-auto px-6">
+          <div className="mb-8">
+            <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest">Upcoming Event</span>
+          </div>
+          
+          <div className="flex flex-col md:flex-row items-stretch bg-[#2b204c] rounded-sm overflow-hidden">
+            {/* Event Details */}
+            <div className="flex-1 p-8 md:p-10 flex flex-col justify-center">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="bg-[#8b68f6] text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-sm">
+                  Upcoming Event
+                </span>
+              </div>
+              <h3 className="text-2xl md:text-3xl font-heading font-bold text-white mb-2 uppercase tracking-tight" data-testid="text-event-title">
+                SustAInova Roadshow – Doha
+              </h3>
+              <p className="text-[#8b68f6] font-medium text-lg mb-4" data-testid="text-event-subtitle">
+                Intersection of AI & Sustainability
+              </p>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 text-white/80 text-sm mb-4">
+                <span className="flex items-center gap-2" data-testid="text-event-date">
+                  <Calendar size={14} className="text-[#8b68f6]" />
+                  21st January 2026 | 4:00 PM – 6:00 PM
+                </span>
+                <span className="flex items-center gap-2" data-testid="text-event-location">
+                  <MapPin size={14} className="text-[#8b68f6]" />
+                  QSTP, Doha
+                </span>
+              </div>
+              <p className="text-white/70 text-sm leading-relaxed max-w-xl" data-testid="text-event-description">
+                An invite-only roundtable bringing enterprise leaders and startups together to explore real-world AI-driven sustainability outcomes.
+              </p>
+            </div>
+            
+            {/* CTA */}
+            <div className="flex items-center justify-center p-8 md:p-10 bg-[#231b3d]">
+              <a 
+                href="#" 
+                className="bg-[#8b68f6] hover:bg-[#7a5ae0] text-white font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-sm transition-colors"
+                data-testid="button-rsvp"
+              >
+                RSVP Now
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Portfolio Section */}
       <motion.section 
         id="portfolio" 

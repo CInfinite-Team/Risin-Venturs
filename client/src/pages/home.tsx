@@ -430,6 +430,34 @@ export default function Home() {
         </div>
       </motion.section>
 
+      {/* Events Strip */}
+      <section className="bg-[#2b204c] py-6">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-8">
+            <div className="flex items-center gap-4">
+              <span className="bg-[#8b68f6] text-white text-[8px] font-bold uppercase tracking-widest px-3 py-1 rounded-sm">
+                Upcoming Event
+              </span>
+              <div className="text-white">
+                <span className="font-heading font-bold text-lg md:text-xl">AIX Summit & Hackathon 2026</span>
+                <span className="mx-3 text-slate-400">•</span>
+                <span className="text-slate-300 text-sm">Feb 15–17, 2026</span>
+                <span className="mx-3 text-slate-400 hidden md:inline">•</span>
+                <span className="text-slate-300 text-sm hidden md:inline">Doha, Qatar</span>
+              </div>
+            </div>
+            <a 
+              href="https://www.aixsummithack.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-white text-[#2b204c] hover:bg-[#8b68f6] hover:text-white transition-all px-6 py-3 rounded-sm font-bold text-sm uppercase tracking-widest flex items-center gap-2"
+            >
+              RSVP Now <ArrowRight size={14} />
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Portfolio Section */}
       <motion.section 
         id="portfolio" 

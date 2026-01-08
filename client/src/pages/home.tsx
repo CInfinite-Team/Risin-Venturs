@@ -237,7 +237,7 @@ export default function Home() {
       </section>
 
       {/* Impact Metrics Section */}
-      <section className="py-16 md:py-20 bg-white border-b border-slate-50">
+      <section className="py-12 md:py-16 bg-white border-b border-slate-50">
         <div className="container mx-auto px-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -246,7 +246,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="flex flex-col items-center"
           >
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-24 w-full max-w-5xl mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 w-full max-w-5xl mb-8">
               {[
                 { label: "Startups Supported", value: "500+" },
                 { label: "Capital Enabled", value: "$100M+" },
@@ -276,10 +276,10 @@ export default function Home() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={sectionVariants}
-        className="py-24 md:py-32 relative bg-white"
+        className="py-16 md:py-24 relative bg-white"
       >
         <div className="container mx-auto px-6">
-          <div className="max-w-3xl mb-20">
+          <div className="max-w-3xl mb-12">
             <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-4 block">Our Story</span>
             <h2 className="text-3xl md:text-6xl font-heading font-bold mb-8 leading-none uppercase">
               TRANSFORMING IDEAS INTO <br/>
@@ -359,10 +359,10 @@ export default function Home() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={sectionVariants}
-        className="py-24 md:py-32 bg-[#F9FAFB] border-y border-slate-100"
+        className="py-16 md:py-24 bg-[#F9FAFB] border-y border-slate-100"
       >
         <div className="container mx-auto px-6">
-          <div className="max-w-3xl mb-20">
+          <div className="max-w-3xl mb-12">
             <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-4 block">Our Path</span>
             <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6 uppercase">Programs</h2>
             <p className="text-lg text-slate-600 max-w-2xl">
@@ -467,10 +467,10 @@ export default function Home() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={sectionVariants}
-        className="py-24 md:py-32 bg-white"
+        className="py-16 md:py-24 bg-white"
       >
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div>
               <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-2 block">Our Portfolio</span>
               <h2 className="text-3xl md:text-5xl font-heading font-bold uppercase">BUILDING TOMORROW</h2>
@@ -576,13 +576,13 @@ export default function Home() {
       {/* Case Studies Section */}
       <motion.section 
         id="case-studies"
-        className="py-24 bg-slate-50"
+        className="py-16 md:py-20 bg-slate-50"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
       >
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div>
               <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#2b204c] mb-2 uppercase">
                 Case Studies
@@ -680,13 +680,13 @@ export default function Home() {
       {/* News & Insights Section */}
       <motion.section 
         id="news"
-        className="py-24 bg-white"
+        className="py-16 md:py-20 bg-white"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
       >
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div>
               <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-2 block">Newsroom</span>
               <h2 className="text-3xl md:text-5xl font-heading font-bold text-[#2b204c] mb-4 uppercase">
@@ -790,9 +790,9 @@ export default function Home() {
       </motion.section>
 
       {/* Footer */}
-      <footer className="bg-white border-t border-slate-100 py-24">
+      <footer className="bg-white border-t border-slate-100 py-16 md:py-20">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-16">
             <div className="lg:col-span-2">
               <Link href="/">
                 <a className="flex items-center gap-2 mb-8">
@@ -877,7 +877,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="bg-[#2b204c] rounded-sm p-8 md:p-12 flex flex-col md:flex-row justify-between items-center gap-8 mb-20 overflow-hidden relative">
+          <div className="bg-[#2b204c] rounded-sm p-6 md:p-10 flex flex-col md:flex-row justify-between items-center gap-6 mb-12 overflow-hidden relative">
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#8b68f6] opacity-10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
             <div className="relative z-10">
               <h3 className="text-2xl md:text-3xl font-heading font-bold text-white mb-2 uppercase">Subscribe to our newsletter</h3>

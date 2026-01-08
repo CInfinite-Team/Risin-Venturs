@@ -430,6 +430,113 @@ export default function Home() {
         </div>
       </motion.section>
 
+      {/* Events Section */}
+      <motion.section 
+        id="events"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="py-12 md:py-16 bg-white border-b border-slate-100"
+      >
+        <div className="container mx-auto px-6">
+          <div className="flex items-center justify-between mb-8">
+            <div className="flex items-center gap-4">
+              <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest">Events</span>
+              <span className="bg-[#8b68f6]/10 text-[#8b68f6] text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+                Upcoming Event
+              </span>
+            </div>
+            <div className="hidden md:flex items-center gap-2">
+              <button 
+                onClick={() => setActiveEvent(Math.max(0, activeEvent - 1))}
+                className="w-8 h-8 flex items-center justify-center border border-slate-200 hover:border-[#8b68f6] hover:text-[#8b68f6] transition-colors rounded-sm disabled:opacity-30"
+                disabled={activeEvent === 0}
+              >
+                <ChevronLeft size={16} />
+              </button>
+              <button 
+                onClick={() => setActiveEvent(Math.min(events.length - 1, activeEvent + 1))}
+                className="w-8 h-8 flex items-center justify-center border border-slate-200 hover:border-[#8b68f6] hover:text-[#8b68f6] transition-colors rounded-sm disabled:opacity-30"
+                disabled={activeEvent === events.length - 1}
+              >
+                <ChevronRight size={16} />
+              </button>
+            </div>
+          </div>
+
+          {/* Events Carousel */}
+          <div className="overflow-hidden">
+            <motion.div 
+              className="flex transition-transform duration-500 ease-out"
+              style={{ transform: `translateX(-${activeEvent * 100}%)` }}
+            >
+              {events.map((event, i) => (
+                <div 
+                  key={i}
+                  className="w-full flex-shrink-0 px-1"
+                >
+                  <div className="flex flex-col md:flex-row items-stretch bg-gradient-to-r from-[#2b204c] to-[#3d2d6b] rounded-sm overflow-hidden">
+                    {/* Event Image */}
+                    <div className="w-full md:w-48 h-32 md:h-auto relative overflow-hidden">
+                      <div className="absolute inset-0 bg-[#8b68f6]/20" />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center">
+                          <Calendar className="text-white/80" size={24} />
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Event Content */}
+                    <div className="flex-1 p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-6">
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-xl md:text-2xl font-heading font-bold text-white mb-2 truncate">
+                          {event.title}
+                        </h3>
+                        <p className="text-white/70 text-sm leading-relaxed line-clamp-2 mb-4 md:mb-0">
+                          {event.description}
+                        </p>
+                      </div>
+                      
+                      {/* Event Details */}
+                      <div className="flex flex-wrap md:flex-nowrap items-center gap-4 md:gap-6 text-white/80 text-sm">
+                        <div className="flex items-center gap-2">
+                          <Calendar size={14} className="text-[#8b68f6]" />
+                          <span className="whitespace-nowrap">{event.date}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Clock size={14} className="text-[#8b68f6]" />
+                          <span className="whitespace-nowrap">{event.time}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <MapPin size={14} className="text-[#8b68f6]" />
+                          <span className="whitespace-nowrap">{event.location}</span>
+                        </div>
+                      </div>
+                      
+                      {/* CTA */}
+                      <Button className="bg-[#8b68f6] hover:bg-[#9d7df7] text-white font-bold uppercase tracking-widest text-xs px-6 py-3 h-auto rounded-sm shrink-0">
+                        {event.cta}
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Mobile Pagination Dots */}
+          <div className="flex md:hidden justify-center gap-2 mt-4">
+            {events.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setActiveEvent(i)}
+                className={`w-2 h-2 rounded-full transition-colors ${activeEvent === i ? 'bg-[#8b68f6]' : 'bg-slate-300'}`}
+              />
+            ))}
+          </div>
+        </div>
+      </motion.section>
+
       {/* Portfolio Section */}
       <motion.section 
         id="portfolio" 

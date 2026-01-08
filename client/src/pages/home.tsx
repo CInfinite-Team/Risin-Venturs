@@ -192,7 +192,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] md:min-h-screen flex items-center justify-center overflow-hidden pt-32 md:pt-0 bg-[#F9FAFB] border-b border-slate-100">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-48 md:pt-0 bg-[#F9FAFB] border-b border-slate-100">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-white/60 z-10" />
           <img 
@@ -237,7 +237,7 @@ export default function Home() {
       </section>
 
       {/* Impact Metrics Section */}
-      <section className="py-12 md:py-16 bg-white border-b border-slate-50">
+      <section className="py-16 md:py-20 bg-white border-b border-slate-50">
         <div className="container mx-auto px-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -246,7 +246,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="flex flex-col items-center"
           >
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 w-full max-w-5xl mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-24 w-full max-w-5xl mb-12">
               {[
                 { label: "Startups Supported", value: "500+" },
                 { label: "Capital Enabled", value: "$100M+" },
@@ -276,10 +276,10 @@ export default function Home() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={sectionVariants}
-        className="py-16 md:py-24 relative bg-white"
+        className="py-24 md:py-32 relative bg-white"
       >
         <div className="container mx-auto px-6">
-          <div className="max-w-3xl mb-12">
+          <div className="max-w-3xl mb-20">
             <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-4 block">Our Story</span>
             <h2 className="text-3xl md:text-6xl font-heading font-bold mb-8 leading-none uppercase">
               TRANSFORMING IDEAS INTO <br/>
@@ -359,10 +359,10 @@ export default function Home() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={sectionVariants}
-        className="py-16 md:py-24 bg-[#F9FAFB] border-y border-slate-100"
+        className="py-24 md:py-32 bg-[#F9FAFB] border-y border-slate-100"
       >
         <div className="container mx-auto px-6">
-          <div className="max-w-3xl mb-12">
+          <div className="max-w-3xl mb-20">
             <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-4 block">Our Path</span>
             <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6 uppercase">Programs</h2>
             <p className="text-lg text-slate-600 max-w-2xl">
@@ -430,56 +430,6 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* Upcoming Event Section */}
-      <section className="py-12 md:py-16 bg-white border-b border-slate-100">
-        <div className="container mx-auto px-6">
-          <div className="mb-8">
-            <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest">Upcoming Event</span>
-          </div>
-          
-          <div className="flex flex-col md:flex-row items-stretch bg-[#2b204c] rounded-sm overflow-hidden">
-            {/* Event Details */}
-            <div className="flex-1 p-8 md:p-10 flex flex-col justify-center">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="bg-[#8b68f6] text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-sm">
-                  Upcoming Event
-                </span>
-              </div>
-              <h3 className="text-2xl md:text-3xl font-heading font-bold text-white mb-2 uppercase tracking-tight" data-testid="text-event-title">
-                SustAInova Roadshow – Doha
-              </h3>
-              <p className="text-[#8b68f6] font-medium text-lg mb-4" data-testid="text-event-subtitle">
-                Intersection of AI & Sustainability
-              </p>
-              <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 text-white/80 text-sm mb-4">
-                <span className="flex items-center gap-2" data-testid="text-event-date">
-                  <Calendar size={14} className="text-[#8b68f6]" />
-                  21st January 2026 | 4:00 PM – 6:00 PM
-                </span>
-                <span className="flex items-center gap-2" data-testid="text-event-location">
-                  <MapPin size={14} className="text-[#8b68f6]" />
-                  QSTP, Doha
-                </span>
-              </div>
-              <p className="text-white/70 text-sm leading-relaxed max-w-xl" data-testid="text-event-description">
-                An invite-only roundtable bringing enterprise leaders and startups together to explore real-world AI-driven sustainability outcomes.
-              </p>
-            </div>
-            
-            {/* CTA */}
-            <div className="flex items-center justify-center p-8 md:p-10 bg-[#231b3d]">
-              <a 
-                href="#" 
-                className="bg-[#8b68f6] hover:bg-[#7a5ae0] text-white font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-sm transition-colors"
-                data-testid="button-rsvp"
-              >
-                RSVP Now
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Portfolio Section */}
       <motion.section 
         id="portfolio" 
@@ -487,10 +437,10 @@ export default function Home() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={sectionVariants}
-        className="py-16 md:py-24 bg-white"
+        className="py-24 md:py-32 bg-white"
       >
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-8">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
             <div>
               <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-2 block">Our Portfolio</span>
               <h2 className="text-3xl md:text-5xl font-heading font-bold uppercase">BUILDING TOMORROW</h2>
@@ -596,13 +546,13 @@ export default function Home() {
       {/* Case Studies Section */}
       <motion.section 
         id="case-studies"
-        className="py-16 md:py-24 bg-slate-50"
+        className="py-24 bg-slate-50"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
       >
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-8">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
             <div>
               <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#2b204c] mb-2 uppercase">
                 Case Studies
@@ -700,13 +650,13 @@ export default function Home() {
       {/* News & Insights Section */}
       <motion.section 
         id="news"
-        className="py-16 md:py-24 bg-white"
+        className="py-24 bg-white"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
       >
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-8">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
             <div>
               <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-2 block">Newsroom</span>
               <h2 className="text-3xl md:text-5xl font-heading font-bold text-[#2b204c] mb-4 uppercase">

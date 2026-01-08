@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Linkedin, Facebook, Youtube, Instagram, Globe, TrendingUp, Shield, Zap, Menu, X, Rocket, Cpu, Network, Building2, ChevronDown } from "lucide-react";
+import { ArrowRight, Linkedin, Facebook, Youtube, Instagram, Globe, TrendingUp, Shield, Zap, Menu, X, Rocket, Cpu, Network, Building2, ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import heroBg from "@assets/generated_images/abstract_deep-tech_network_visualization_background.png";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";

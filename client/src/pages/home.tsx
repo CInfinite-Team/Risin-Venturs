@@ -48,6 +48,7 @@ const NavDropdown = ({ title, items, isPrimary }: { title: string, items: { labe
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeEvent, setActiveEvent] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);

@@ -192,7 +192,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] md:min-h-screen flex items-center justify-center overflow-hidden pt-40 md:pt-12 bg-[#F9FAFB] border-b border-slate-100">
+      <section className="relative min-h-[80vh] md:min-h-screen flex items-center justify-center overflow-hidden pt-32 md:pt-0 bg-[#F9FAFB] border-b border-slate-100">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-white/60 z-10" />
           <img 
@@ -211,7 +211,7 @@ export default function Home() {
           >
             <motion.h1 
               variants={fadeIn}
-              className="text-4xl md:text-7xl lg:text-8xl font-heading font-bold leading-[1.05] tracking-tighter mb-8 md:mb-10 uppercase text-[#2b204c]"
+              className="text-4xl md:text-7xl lg:text-8xl font-heading font-bold leading-[1.05] tracking-tighter mb-6 md:mb-8 uppercase text-[#2b204c]"
             >
               Building the next <br />
               generation of <span className="text-[#8b68f6]">deeptech</span>
@@ -221,7 +221,7 @@ export default function Home() {
               variants={fadeIn}
               className="text-lg md:text-2xl text-slate-600 max-w-2xl mb-10 md:mb-14 font-light leading-relaxed"
             >
-              We co-build and scale disruptive enterprises, merging institutional discipline with breakthrough science to create global industry leaders.
+              We co-build, fund, and scale the next generation of disruptive enterprises. By merging institutional discipline with breakthrough science, we transform bold ideas into global industry leaders.
             </motion.p>
 
             <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-5">
@@ -427,172 +427,6 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </div>
-      </motion.section>
-
-      {/* Events Section */}
-      <motion.section 
-        id="events"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={sectionVariants}
-        className="py-12 md:py-16 bg-white border-y border-slate-100"
-      >
-        <div className="container mx-auto px-6">
-          {(() => {
-            const events: Array<{
-              id: string;
-              title: string;
-              description: string;
-              date: string;
-              time: string;
-              location: string;
-              ctaText: string;
-              ctaLink: string;
-            }> = [
-              {
-                id: "sustainova-doha-2026",
-                title: "SustAInova Roadshow – Doha",
-                description: "Exploring the intersection of AI & Sustainability with industry leaders and innovators.",
-                date: "21st January 2026",
-                time: "4:00 PM – 6:00 PM",
-                location: "QSTP, Doha",
-                ctaText: "RSVP Now",
-                ctaLink: "#"
-              }
-            ];
-
-            const [activeEvent, setActiveEvent] = React.useState<number>(0);
-            const safeActiveEvent = Math.max(0, Math.min(activeEvent, Math.max(0, events.length - 1)));
-
-            if (!events || events.length === 0) {
-              return (
-                <div className="text-center py-12">
-                  <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-4 block">Upcoming Events</span>
-                  <p className="text-slate-400 text-lg">No upcoming events at this time.</p>
-                </div>
-              );
-            }
-
-            const currentEvent = events[safeActiveEvent];
-
-            return (
-              <>
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
-                  <div>
-                    <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-2 block">Upcoming Events</span>
-                    <h2 className="text-3xl md:text-4xl font-heading font-bold uppercase text-[#2b204c]">Join Us</h2>
-                  </div>
-                  {events.length > 1 && (
-                    <div className="hidden md:flex items-center gap-2">
-                      <button 
-                        onClick={() => setActiveEvent(Math.max(0, safeActiveEvent - 1))}
-                        disabled={safeActiveEvent === 0}
-                        className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center hover:border-[#8b68f6] hover:text-[#8b68f6] transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
-                        data-testid="button-event-prev"
-                      >
-                        <ChevronLeft size={18} />
-                      </button>
-                      <button 
-                        onClick={() => setActiveEvent(Math.min(events.length - 1, safeActiveEvent + 1))}
-                        disabled={safeActiveEvent >= events.length - 1}
-                        className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center hover:border-[#8b68f6] hover:text-[#8b68f6] transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
-                        data-testid="button-event-next"
-                      >
-                        <ChevronRight size={18} />
-                      </button>
-                    </div>
-                  )}
-                </div>
-
-                {/* Desktop View */}
-                <div className="hidden md:block">
-                  {currentEvent && (
-                    <motion.div 
-                      key={currentEvent.id}
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: -20 }}
-                      className="flex items-stretch bg-gradient-to-r from-[#2b204c] to-[#3d2d6b] rounded-sm overflow-hidden"
-                      data-testid={`card-event-${currentEvent.id}`}
-                    >
-                      <div className="flex-1 p-8 md:p-10 flex flex-col justify-center">
-                        <h3 className="text-2xl md:text-3xl font-heading font-bold text-white mb-3">{currentEvent.title}</h3>
-                        <p className="text-white/70 mb-6 max-w-xl">{currentEvent.description}</p>
-                        <div className="flex flex-wrap items-center gap-6 text-sm text-white/80">
-                          <span className="flex items-center gap-2">
-                            <Calendar size={16} className="text-[#8b68f6]" />
-                            {currentEvent.date}
-                          </span>
-                          <span className="flex items-center gap-2">
-                            <Clock size={16} className="text-[#8b68f6]" />
-                            {currentEvent.time}
-                          </span>
-                          <span className="flex items-center gap-2">
-                            <MapPin size={16} className="text-[#8b68f6]" />
-                            {currentEvent.location}
-                          </span>
-                        </div>
-                      </div>
-                      <div className="flex items-center px-10 bg-[#8b68f6]/20">
-                        <a 
-                          href={currentEvent.ctaLink}
-                          className="bg-white text-[#2b204c] px-8 py-4 font-bold uppercase tracking-widest text-sm hover:bg-[#8b68f6] hover:text-white transition-colors rounded-sm"
-                          data-testid={`button-rsvp-${currentEvent.id}`}
-                        >
-                          {currentEvent.ctaText}
-                        </a>
-                      </div>
-                    </motion.div>
-                  )}
-                </div>
-
-                {/* Mobile View - Horizontal Scroll */}
-                <div className="md:hidden">
-                  <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide -mx-6 px-6">
-                    {events.map((event, index) => (
-                      <div 
-                        key={event.id}
-                        className="flex-shrink-0 w-[85vw] snap-center bg-gradient-to-br from-[#2b204c] to-[#3d2d6b] rounded-sm p-6"
-                        data-testid={`card-event-mobile-${event.id}`}
-                      >
-                        <h3 className="text-xl font-heading font-bold text-white mb-2">{event.title}</h3>
-                        <p className="text-white/70 text-sm mb-4 line-clamp-2">{event.description}</p>
-                        <div className="flex flex-col gap-2 text-xs text-white/80 mb-6">
-                          <span className="flex items-center gap-2">
-                            <Calendar size={14} className="text-[#8b68f6]" />
-                            {event.date} • {event.time}
-                          </span>
-                          <span className="flex items-center gap-2">
-                            <MapPin size={14} className="text-[#8b68f6]" />
-                            {event.location}
-                          </span>
-                        </div>
-                        <a 
-                          href={event.ctaLink}
-                          className="inline-block bg-white text-[#2b204c] px-6 py-3 font-bold uppercase tracking-widest text-xs hover:bg-[#8b68f6] hover:text-white transition-colors rounded-sm"
-                          data-testid={`button-rsvp-mobile-${event.id}`}
-                        >
-                          {event.ctaText}
-                        </a>
-                      </div>
-                    ))}
-                  </div>
-                  {events.length > 1 && (
-                    <div className="flex justify-center gap-2 mt-4">
-                      {events.map((_, index) => (
-                        <div 
-                          key={index}
-                          className={`w-2 h-2 rounded-full transition-colors ${index === safeActiveEvent ? 'bg-[#8b68f6]' : 'bg-slate-200'}`}
-                        />
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </>
-            );
-          })()}
         </div>
       </motion.section>
 

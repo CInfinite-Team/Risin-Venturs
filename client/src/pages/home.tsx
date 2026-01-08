@@ -573,216 +573,387 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* Case Studies Section */}
+      {/* Case Studies Section - Impact in Action */}
       <motion.section 
         id="case-studies"
-        className="py-16 md:py-20 bg-slate-50"
+        className="py-16 md:py-20 bg-gradient-to-b from-slate-50 to-white"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
       >
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
             <div>
-              <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#2b204c] mb-2 uppercase">
+              <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-2 block">Impact in Action</span>
+              <h2 className="text-3xl md:text-5xl font-heading font-bold text-[#2b204c] mb-3 uppercase">
                 Case Studies
               </h2>
-              <p className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-6">How we build and scale real ventures</p>
-              <p className="text-lg text-slate-600 leading-relaxed max-w-2xl">
-                Discover how we transform high-potential ideas into high-impact enterprises from ground zero.
+              <p className="text-base text-slate-600 leading-relaxed max-w-xl">
+                Discover how we transform high-potential ideas into high-impact enterprises.
               </p>
             </div>
             <a 
               href="https://risin.ventures/case-studies/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="group"
+              className="group shrink-0"
             >
-              <Button variant="link" className="text-[#2b204c] hover:text-[#8b68f6] gap-2 p-0 h-auto font-bold uppercase tracking-widest">
-                View All Blogs <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              <Button variant="link" className="text-[#2b204c] hover:text-[#8b68f6] gap-2 p-0 h-auto font-bold uppercase tracking-widest text-xs">
+                View All <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </Button>
             </a>
           </div>
 
-          <div className="relative group">
-            <div className="flex overflow-x-auto pb-4 md:pb-0 scrollbar-hide snap-x snap-mandatory px-6 md:px-0 -mx-6 md:mx-0 md:grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Desktop: Featured + Secondary Layout */}
+          <div className="hidden md:grid md:grid-cols-2 gap-6">
+            {/* Featured Card - Large */}
+            <motion.a 
+              href="https://risin.ventures/inside-the-aix-summit-hackathon-qatar-edition/"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="group relative overflow-hidden rounded-sm bg-[#2b204c] aspect-[4/3] flex flex-col justify-end cursor-pointer"
+            >
+              <img 
+                src="https://risin.ventures/wp-content/uploads/2025/12/blog-banner-aix.png" 
+                alt="AIX Summit"
+                className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700 grayscale-[30%]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#2b204c] via-[#2b204c]/60 to-transparent" />
+              <div className="relative z-10 p-8">
+                <span className="bg-[#8b68f6] text-white text-[8px] font-bold uppercase tracking-widest px-2 py-1 rounded-sm mb-4 inline-block">
+                  Featured
+                </span>
+                <h3 className="text-2xl md:text-3xl font-heading font-bold text-white mb-3 uppercase leading-tight group-hover:text-[#8b68f6] transition-colors">
+                  Bridging Ambition and Intelligence – AIX Summit & Hackathon
+                </h3>
+                <p className="text-slate-300 text-sm leading-relaxed mb-4 line-clamp-2">
+                  Inside the high-stakes AI summit that brought together founders and enterprises to build real AI solutions.
+                </p>
+                <span className="text-[10px] font-bold text-white group-hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-2 transition-colors">
+                  Read Case Study <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                </span>
+              </div>
+            </motion.a>
+
+            {/* Secondary Cards - Stacked */}
+            <div className="flex flex-col gap-4">
               {[
-                {
-                  title: "Bridging Ambition and Intelligence – AIX Summit & Hackathon",
-                  image: "https://risin.ventures/wp-content/uploads/2025/12/blog-banner-aix.png",
-                  summary: "Inside the high-stakes AI summit that brought together founders and enterprises to build real AI solutions.",
-                  link: "https://risin.ventures/inside-the-aix-summit-hackathon-qatar-edition/"
-                },
                 {
                   title: "AI Hackathons for Enterprises: Beyond Buzzwords to Real ROI",
                   image: "https://risin.ventures/wp-content/uploads/2025/05/a-1.png",
-                  summary: "How enterprises are leveraging structured hackathons to build production-ready AI tools in weeks.",
+                  outcome: "Production-ready AI tools delivered in weeks, not months.",
                   link: "https://risin.ventures/ai-hackathons-for-enterprises-beyond-buzzwords-to-real-roi/"
                 },
                 {
-                  title: "The Rise of Venture Studios in the GCC landscape",
+                  title: "The Rise of Venture Studios in the GCC",
                   image: "https://risin.ventures/wp-content/uploads/2025/05/v-1.png",
-                  summary: "Analyzing the shift from traditional VC to hands-on venture building for high-barrier technology.",
+                  outcome: "Shifting from traditional VC to hands-on venture building.",
                   link: "https://risin.ventures/the-rise-of-venture-studios-in-the-gcc-deep-tech-landscape/"
                 },
                 {
-                  title: "Scaling Sustainability: The Sustainova 2025 Impact",
+                  title: "Scaling Sustainability: Sustainova 2025 Impact",
                   image: "https://risin.ventures/wp-content/uploads/2025/05/s-1.png",
-                  summary: "Measuring the real-world carbon reduction and circular economy impact generated by our latest cohort.",
+                  outcome: "Measurable carbon reduction through our latest cohort.",
                   link: "https://risin.ventures/scaling-sustainability-the-sustainova-2025-impact-report/"
                 }
-              ].map((caseStudy, i) => (
-                <motion.div 
+              ].map((study, i) => (
+                <motion.a 
                   key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  href={study.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="group flex-shrink-0 w-[280px] md:w-auto flex flex-col bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 snap-center"
+                  className="group flex gap-4 bg-white border border-slate-100 p-4 rounded-sm hover:shadow-lg hover:border-[#8b68f6]/30 transition-all duration-300 cursor-pointer"
                 >
-                  <div className="aspect-video relative overflow-hidden">
+                  <div className="w-24 h-20 shrink-0 overflow-hidden rounded-sm">
                     <img 
-                      src={caseStudy.image} 
-                      alt={caseStudy.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      src={study.image} 
+                      alt={study.title}
+                      className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#2b204c]/80 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
                   </div>
-                  <div className="p-8 flex flex-col flex-1">
-                    <h3 className="text-xl font-heading font-bold text-[#2b204c] mb-4 group-hover:text-[#8b68f6] transition-colors line-clamp-2 uppercase">
-                      {caseStudy.title}
-                    </h3>
-                    <p className="text-slate-500 text-sm leading-relaxed mb-8 line-clamp-3 flex-1">
-                      {caseStudy.summary}
-                    </p>
-                    <a 
-                      href={caseStudy.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[10px] font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-2 transition-colors group/btn"
-                    >
-                      Read Story <ArrowRight size={12} className="group-hover/btn:translate-x-1 transition-transform" />
-                    </a>
+                  <div className="flex flex-col justify-center flex-1 min-w-0">
+                    <h4 className="text-sm font-heading font-bold text-[#2b204c] group-hover:text-[#8b68f6] transition-colors uppercase leading-tight line-clamp-2 mb-1">
+                      {study.title}
+                    </h4>
+                    <p className="text-xs text-slate-500 line-clamp-1 mb-2">{study.outcome}</p>
+                    <span className="text-[9px] font-bold text-[#8b68f6] uppercase tracking-widest flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                      Read More <ArrowRight size={10} />
+                    </span>
                   </div>
-                </motion.div>
+                </motion.a>
               ))}
             </div>
-            {/* Subtle Progress Dots for Mobile */}
-            <div className="flex md:hidden justify-center gap-2 mt-6">
+          </div>
+
+          {/* Mobile: Horizontal Scroll */}
+          <div className="md:hidden">
+            <div className="flex overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory px-6 -mx-6 gap-4">
+              {[
+                {
+                  title: "Bridging Ambition and Intelligence – AIX Summit",
+                  image: "https://risin.ventures/wp-content/uploads/2025/12/blog-banner-aix.png",
+                  summary: "Inside the high-stakes AI summit that brought together founders and enterprises.",
+                  link: "https://risin.ventures/inside-the-aix-summit-hackathon-qatar-edition/"
+                },
+                {
+                  title: "AI Hackathons for Enterprises",
+                  image: "https://risin.ventures/wp-content/uploads/2025/05/a-1.png",
+                  summary: "How enterprises leverage hackathons to build production-ready AI tools.",
+                  link: "https://risin.ventures/ai-hackathons-for-enterprises-beyond-buzzwords-to-real-roi/"
+                },
+                {
+                  title: "The Rise of Venture Studios",
+                  image: "https://risin.ventures/wp-content/uploads/2025/05/v-1.png",
+                  summary: "Analyzing the shift to hands-on venture building.",
+                  link: "https://risin.ventures/the-rise-of-venture-studios-in-the-gcc-deep-tech-landscape/"
+                },
+                {
+                  title: "Sustainova 2025 Impact",
+                  image: "https://risin.ventures/wp-content/uploads/2025/05/s-1.png",
+                  summary: "Measuring real-world carbon reduction from our cohort.",
+                  link: "https://risin.ventures/scaling-sustainability-the-sustainova-2025-impact-report/"
+                }
+              ].map((study, i) => (
+                <a 
+                  key={i}
+                  href={study.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-shrink-0 w-[260px] snap-center bg-white border border-slate-100 rounded-sm overflow-hidden shadow-sm"
+                >
+                  <div className="aspect-video relative">
+                    <img src={study.image} alt={study.title} className="w-full h-full object-cover" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#2b204c]/60 to-transparent" />
+                  </div>
+                  <div className="p-4">
+                    <h4 className="text-sm font-heading font-bold text-[#2b204c] uppercase mb-2 line-clamp-2">{study.title}</h4>
+                    <p className="text-xs text-slate-500 line-clamp-2 mb-3">{study.summary}</p>
+                    <span className="text-[9px] font-bold text-[#8b68f6] uppercase tracking-widest flex items-center gap-1">
+                      Read Case Study <ArrowRight size={10} />
+                    </span>
+                  </div>
+                </a>
+              ))}
+            </div>
+            <div className="flex justify-center gap-2 mt-4">
               {[0, 1, 2, 3].map((dot) => (
-                <div key={dot} className={`w-2 h-2 rounded-full transition-all duration-300 ${dot === 0 ? 'bg-[#8b68f6] scale-125' : 'bg-slate-300'}`} />
+                <div key={dot} className={`w-1.5 h-1.5 rounded-full ${dot === 0 ? 'bg-[#8b68f6]' : 'bg-slate-300'}`} />
               ))}
             </div>
           </div>
         </div>
       </motion.section>
 
-      {/* News & Insights Section */}
+      {/* News & Insights Section - Editorial Layout */}
       <motion.section 
         id="news"
-        className="py-16 md:py-20 bg-white"
+        className="py-16 md:py-20 bg-[#F9FAFB] border-t border-slate-100"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
       >
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
             <div>
               <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-2 block">Newsroom</span>
-              <h2 className="text-3xl md:text-5xl font-heading font-bold text-[#2b204c] mb-4 uppercase">
+              <h2 className="text-3xl md:text-5xl font-heading font-bold text-[#2b204c] mb-3 uppercase">
                 News & Insights
               </h2>
-              <p className="text-lg text-slate-600 leading-relaxed max-w-2xl">
-                Stay updated with the latest activity, strategic partnerships, and momentum from within our deep-tech ecosystem.
+              <p className="text-base text-slate-600 leading-relaxed max-w-xl">
+                Stay updated with the latest activity and momentum from our ecosystem.
               </p>
             </div>
             <a 
               href="https://risin.ventures/news-and-events/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="group"
+              className="group shrink-0"
             >
-              <Button variant="link" className="text-[#2b204c] hover:text-[#8b68f6] gap-2 p-0 h-auto font-bold uppercase tracking-widest">
-                View All News <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              <Button variant="link" className="text-[#2b204c] hover:text-[#8b68f6] gap-2 p-0 h-auto font-bold uppercase tracking-widest text-xs">
+                View All <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </Button>
             </a>
           </div>
 
-          <div className="relative group">
-            <div className="flex overflow-x-auto pb-4 md:pb-0 scrollbar-hide snap-x snap-mandatory px-6 md:px-0 -mx-6 md:mx-0 md:grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Desktop: Asymmetric Editorial Layout */}
+          <div className="hidden md:grid md:grid-cols-3 gap-6">
+            {/* Tall Featured Card */}
+            <motion.a 
+              href="https://risin.ventures/news-and-events/"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="group row-span-2 bg-white rounded-sm overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer flex flex-col"
+            >
+              <div className="aspect-[4/3] relative overflow-hidden">
+                <img 
+                  src="https://risin.ventures/wp-content/uploads/2025/12/blog-banner-aix.png" 
+                  alt="AIX Partnership"
+                  className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                />
+                <div className="absolute top-4 left-4">
+                  <span className="bg-[#2b204c] text-white text-[8px] font-bold uppercase tracking-widest px-2 py-1 rounded-sm">
+                    Partnership
+                  </span>
+                </div>
+              </div>
+              <div className="p-6 flex flex-col flex-1">
+                <span className="text-[10px] text-slate-400 font-bold uppercase tracking-widest mb-2">Dec 2025</span>
+                <h3 className="text-xl font-heading font-bold text-[#2b204c] group-hover:text-[#8b68f6] transition-colors uppercase leading-tight mb-3">
+                  Risin Ventures and Msheireb Properties Partner for AIX Summit
+                </h3>
+                <p className="text-sm text-slate-500 leading-relaxed mb-4 flex-1">
+                  A landmark partnership to host the AIX Summit, fostering a new era of AI-driven innovation in the heart of Doha.
+                </p>
+                <span className="text-[10px] font-bold text-[#8b68f6] uppercase tracking-widest flex items-center gap-2 border-t border-slate-100 pt-4 group-hover:gap-3 transition-all">
+                  Read More <ArrowRight size={12} />
+                </span>
+              </div>
+            </motion.a>
+
+            {/* Staggered Secondary Cards */}
+            {[
+              {
+                title: "Bridging the Gap: Deep Tech Innovation in the GCC",
+                date: "Nov 2025",
+                category: "Insight",
+                image: "https://risin.ventures/wp-content/uploads/2025/05/v-1.png",
+                excerpt: "Exploring how venture building is accelerating high-barrier technology adoption.",
+                link: "https://risin.ventures/news-and-events/"
+              },
+              {
+                title: "Sustainova 2025: Empowering Climate Tech",
+                date: "Oct 2025",
+                category: "Event",
+                image: "https://risin.ventures/wp-content/uploads/2025/05/s-1.png",
+                excerpt: "The latest cohort tackling global environmental challenges.",
+                link: "https://risin.ventures/news-and-events/"
+              },
+              {
+                title: "Scaling Fintech: Madad's Strategic Expansion",
+                date: "Sept 2025",
+                category: "News",
+                image: "https://risin.ventures/wp-content/uploads/2025/05/a-1.png",
+                excerpt: "Redefining Shariah-compliant digital financial services globally.",
+                link: "https://risin.ventures/news-and-events/"
+              },
+              {
+                title: "Qatar Entrepreneurship Awards 2025 Winners",
+                date: "Aug 2025",
+                category: "Event",
+                image: "https://risin.ventures/wp-content/uploads/2024/07/8-e1720681356719.jpg",
+                excerpt: "Celebrating high-potential entrepreneurs and innovation-led businesses.",
+                link: "https://risin.ventures/news-and-events/"
+              }
+            ].map((news, i) => (
+              <motion.a 
+                key={i}
+                href={news.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="group bg-white rounded-sm overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer flex gap-4 p-4"
+              >
+                <div className="w-20 h-20 shrink-0 overflow-hidden rounded-sm">
+                  <img 
+                    src={news.image} 
+                    alt={news.title}
+                    className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-500"
+                  />
+                </div>
+                <div className="flex flex-col justify-center min-w-0 flex-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-[8px] font-bold text-[#8b68f6] uppercase tracking-widest">{news.category}</span>
+                    <span className="text-[8px] text-slate-400">•</span>
+                    <span className="text-[8px] text-slate-400 uppercase tracking-widest">{news.date}</span>
+                  </div>
+                  <h4 className="text-sm font-heading font-bold text-[#2b204c] group-hover:text-[#8b68f6] transition-colors uppercase leading-tight line-clamp-2 mb-1">
+                    {news.title}
+                  </h4>
+                  <p className="text-[11px] text-slate-500 line-clamp-1">{news.excerpt}</p>
+                </div>
+              </motion.a>
+            ))}
+          </div>
+
+          {/* Mobile: Single Card Swipe */}
+          <div className="md:hidden">
+            <div className="flex overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory px-6 -mx-6 gap-4">
               {[
                 {
-                  title: "Risin Ventures and Msheireb Properties Partner for AIX Summit",
+                  title: "Risin Ventures and Msheireb Partner for AIX",
                   date: "Dec 2025",
+                  category: "Partnership",
                   image: "https://risin.ventures/wp-content/uploads/2025/12/blog-banner-aix.png",
-                  summary: "A landmark partnership to host the AIX Summit, fostering a new era of AI-driven innovation in the heart of Doha.",
+                  excerpt: "A landmark partnership for AI-driven innovation in Doha.",
                   link: "https://risin.ventures/news-and-events/"
                 },
                 {
-                  title: "Bridging the Gap: Deep Tech Innovation in the GCC landscape",
+                  title: "Deep Tech Innovation in the GCC",
                   date: "Nov 2025",
+                  category: "Insight",
                   image: "https://risin.ventures/wp-content/uploads/2025/05/v-1.png",
-                  summary: "Exploring how venture building is accelerating the adoption of high-barrier technologies across the region.",
+                  excerpt: "Accelerating high-barrier technology adoption across the region.",
                   link: "https://risin.ventures/news-and-events/"
                 },
                 {
-                  title: "Sustainova 2025: Empowering the Next Wave of Climate Tech",
+                  title: "Sustainova 2025: Empowering Climate Tech",
                   date: "Oct 2025",
+                  category: "Event",
                   image: "https://risin.ventures/wp-content/uploads/2025/05/s-1.png",
-                  summary: "The latest cohort of startups tackling global environmental challenges through breakthrough scientific innovation.",
+                  excerpt: "The latest cohort tackling environmental challenges.",
                   link: "https://risin.ventures/news-and-events/"
                 },
                 {
-                  title: "Scaling Fintech: Madad's Strategic Expansion Plans",
+                  title: "Madad's Strategic Expansion",
                   date: "Sept 2025",
+                  category: "News",
                   image: "https://risin.ventures/wp-content/uploads/2025/05/a-1.png",
-                  summary: "How our portfolio company Madad is redefining Shariah-compliant digital financial services globally.",
+                  excerpt: "Redefining Shariah-compliant financial services globally.",
                   link: "https://risin.ventures/news-and-events/"
                 }
               ].map((news, i) => (
-                <motion.div 
+                <a 
                   key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="group flex-shrink-0 w-[280px] md:w-auto flex flex-col bg-[#F9FAFB] border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 snap-center rounded-sm overflow-hidden"
+                  href={news.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-shrink-0 w-[280px] snap-center bg-white rounded-sm overflow-hidden shadow-sm"
                 >
-                  <div className="aspect-video relative overflow-hidden">
-                    <img 
-                      src={news.image} 
-                      alt={news.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute top-4 left-4 z-10">
-                      <span className="bg-[#8b68f6] text-white text-[8px] font-bold uppercase tracking-widest px-2 py-1 rounded-sm shadow-lg">
-                        Latest • {news.date}
+                  <div className="aspect-video relative">
+                    <img src={news.image} alt={news.title} className="w-full h-full object-cover" />
+                    <div className="absolute top-3 left-3">
+                      <span className="bg-[#2b204c] text-white text-[7px] font-bold uppercase tracking-widest px-2 py-1 rounded-sm">
+                        {news.category}
                       </span>
                     </div>
                   </div>
-                  <div className="p-8 flex flex-col flex-1">
-                    <h3 className="text-lg font-heading font-bold text-[#2b204c] mb-4 group-hover:text-[#8b68f6] transition-colors line-clamp-2 uppercase leading-tight">
-                      {news.title}
-                    </h3>
-                    <p className="text-slate-500 text-sm leading-relaxed mb-8 line-clamp-3 flex-1">
-                      {news.summary}
-                    </p>
-                    <a 
-                      href={news.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[10px] font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-2 transition-colors group/btn"
-                    >
-                      Read More <ArrowRight size={12} className="group-hover/btn:translate-x-1 transition-transform" />
-                    </a>
+                  <div className="p-4">
+                    <span className="text-[9px] text-slate-400 font-bold uppercase tracking-widest mb-1 block">{news.date}</span>
+                    <h4 className="text-sm font-heading font-bold text-[#2b204c] uppercase mb-2 line-clamp-2 leading-tight">{news.title}</h4>
+                    <p className="text-xs text-slate-500 line-clamp-2 mb-3">{news.excerpt}</p>
+                    <span className="text-[9px] font-bold text-[#8b68f6] uppercase tracking-widest flex items-center gap-1">
+                      Read More <ArrowRight size={10} />
+                    </span>
                   </div>
-                </motion.div>
+                </a>
               ))}
             </div>
-            {/* Subtle Progress Dots for Mobile */}
-            <div className="flex md:hidden justify-center gap-2 mt-6">
+            <div className="flex justify-center gap-2 mt-4">
               {[0, 1, 2, 3].map((dot) => (
-                <div key={dot} className={`w-2 h-2 rounded-full transition-all duration-300 ${dot === 0 ? 'bg-[#8b68f6] scale-125' : 'bg-slate-300'}`} />
+                <div key={dot} className={`w-1.5 h-1.5 rounded-full ${dot === 0 ? 'bg-[#8b68f6]' : 'bg-slate-300'}`} />
               ))}
             </div>
           </div>

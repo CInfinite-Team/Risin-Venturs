@@ -236,8 +236,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Impact Metrics Section */}
-      <section className="py-12 md:py-16 bg-white border-b border-slate-50">
+      {/* Impact Metrics Section - Small spacing */}
+      <section className="py-10 md:py-12 bg-white border-b border-slate-50">
         <div className="container mx-auto px-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -276,11 +276,11 @@ export default function Home() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={sectionVariants}
-        className="py-16 md:py-24 relative bg-white"
+        className="py-16 md:py-20 relative bg-white"
       >
         <div className="container mx-auto px-6">
-          <div className="max-w-3xl mb-12">
-            <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-4 block">Our Story</span>
+          <div className="max-w-3xl mb-10">
+            <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-3 block">Our Story</span>
             <h2 className="text-3xl md:text-6xl font-heading font-bold mb-8 leading-none uppercase">
               TRANSFORMING IDEAS INTO <br/>
               <span className="text-stroke text-[#2b204c]">GLOBAL GIANTS</span>
@@ -359,11 +359,11 @@ export default function Home() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={sectionVariants}
-        className="py-16 md:py-24 bg-[#F9FAFB] border-y border-slate-100"
+        className="py-16 md:py-20 bg-[#F9FAFB] border-y border-slate-100"
       >
         <div className="container mx-auto px-6">
-          <div className="max-w-3xl mb-12">
-            <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-4 block">Our Path</span>
+          <div className="max-w-3xl mb-10">
+            <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-3 block">Our Path</span>
             <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6 uppercase">Programs</h2>
             <p className="text-lg text-slate-600 max-w-2xl">
               Showcasing flagship initiatives that drive innovation and celebrate entrepreneurship across the ecosystem.
@@ -467,10 +467,10 @@ export default function Home() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={sectionVariants}
-        className="py-16 md:py-24 bg-white"
+        className="py-16 md:py-20 bg-white"
       >
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
             <div>
               <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-2 block">Our Portfolio</span>
               <h2 className="text-3xl md:text-5xl font-heading font-bold uppercase">BUILDING TOMORROW</h2>
@@ -582,7 +582,7 @@ export default function Home() {
         viewport={{ once: true }}
       >
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
             <div>
               <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#2b204c] mb-2 uppercase">
                 Case Studies
@@ -686,7 +686,7 @@ export default function Home() {
         viewport={{ once: true }}
       >
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
             <div>
               <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-2 block">Newsroom</span>
               <h2 className="text-3xl md:text-5xl font-heading font-bold text-[#2b204c] mb-4 uppercase">

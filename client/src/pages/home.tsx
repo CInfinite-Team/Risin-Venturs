@@ -751,7 +751,7 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* News & Insights Section - Editorial Layout */}
+      {/* News & Insights Section - Magazine Grid Layout */}
       <motion.section 
         id="news"
         className="py-16 md:py-20 bg-[#F9FAFB] border-t border-slate-100"
@@ -782,9 +782,9 @@ export default function Home() {
             </a>
           </div>
 
-          {/* Desktop: Asymmetric Editorial Layout */}
+          {/* Desktop: Magazine Grid - 1 Large Featured + 4 Smaller Cards */}
           <div className="hidden md:grid md:grid-cols-3 gap-6">
-            {/* Tall Featured Card */}
+            {/* Large Featured Card - Spans 2 rows */}
             <motion.a 
               href="https://risin.ventures/news-and-events/"
               target="_blank"
@@ -798,60 +798,65 @@ export default function Home() {
                 <img 
                   src="https://risin.ventures/wp-content/uploads/2025/12/blog-banner-aix.png" 
                   alt="AIX Partnership"
-                  className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute top-4 left-4">
-                  <span className="bg-[#2b204c] text-white text-[8px] font-bold uppercase tracking-widest px-2 py-1 rounded-sm">
-                    Partnership
+                  <span className="bg-[#8b68f6] text-white text-[9px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-sm">
+                    Featured
                   </span>
                 </div>
               </div>
               <div className="p-6 flex flex-col flex-1">
-                <span className="text-[10px] text-slate-400 font-bold uppercase tracking-widest mb-2">Dec 2025</span>
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="text-[10px] font-bold text-[#8b68f6] uppercase tracking-widest">Partnership</span>
+                  <span className="w-1 h-1 rounded-full bg-slate-300"></span>
+                  <span className="text-[10px] text-slate-400 uppercase tracking-widest">Dec 2025</span>
+                </div>
                 <h3 className="text-xl font-heading font-bold text-[#2b204c] group-hover:text-[#8b68f6] transition-colors uppercase leading-tight mb-3">
                   Risin Ventures and Msheireb Properties Partner for AIX Summit
                 </h3>
                 <p className="text-sm text-slate-500 leading-relaxed mb-4 flex-1">
-                  A landmark partnership to host the AIX Summit, fostering a new era of AI-driven innovation in the heart of Doha.
+                  A landmark partnership to host the AIX Summit, fostering a new era of AI-driven innovation in the heart of Doha. This collaboration marks a significant milestone in the region's deep tech ecosystem.
                 </p>
-                <span className="text-[10px] font-bold text-[#8b68f6] uppercase tracking-widest flex items-center gap-2 border-t border-slate-100 pt-4 group-hover:gap-3 transition-all">
-                  Read More <ArrowRight size={12} />
+                <span className="text-[10px] font-bold text-[#2b204c] group-hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-2 border-t border-slate-100 pt-4 transition-all">
+                  Read Full Story <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
                 </span>
               </div>
             </motion.a>
 
-            {/* Staggered Secondary Cards */}
+            {/* 4 Smaller Cards - 2x2 Grid */}
             {[
               {
                 title: "Bridging the Gap: Deep Tech Innovation in the GCC",
                 date: "Nov 2025",
                 category: "Insight",
                 image: "https://risin.ventures/wp-content/uploads/2025/05/v-1.png",
-                excerpt: "Exploring how venture building is accelerating high-barrier technology adoption.",
+                excerpt: "Exploring how venture building is accelerating high-barrier technology adoption across the region.",
                 link: "https://risin.ventures/news-and-events/"
               },
               {
-                title: "Sustainova 2025: Empowering Climate Tech",
+                title: "Sustainova 2025: Empowering the Next Wave of Climate Tech",
                 date: "Oct 2025",
                 category: "Event",
                 image: "https://risin.ventures/wp-content/uploads/2025/05/s-1.png",
-                excerpt: "The latest cohort tackling global environmental challenges.",
+                excerpt: "The latest cohort of startups tackling global environmental challenges through breakthrough innovation.",
                 link: "https://risin.ventures/news-and-events/"
               },
               {
-                title: "Scaling Fintech: Madad's Strategic Expansion",
+                title: "Scaling Fintech: Madad's Strategic Expansion Plans",
                 date: "Sept 2025",
                 category: "News",
                 image: "https://risin.ventures/wp-content/uploads/2025/05/a-1.png",
-                excerpt: "Redefining Shariah-compliant digital financial services globally.",
+                excerpt: "How our portfolio company Madad is redefining Shariah-compliant digital financial services globally.",
                 link: "https://risin.ventures/news-and-events/"
               },
               {
-                title: "Qatar Entrepreneurship Awards 2025 Winners",
+                title: "Qatar Entrepreneurship Awards 2025 Winners Announced",
                 date: "Aug 2025",
                 category: "Event",
                 image: "https://risin.ventures/wp-content/uploads/2024/07/8-e1720681356719.jpg",
-                excerpt: "Celebrating high-potential entrepreneurs and innovation-led businesses.",
+                excerpt: "Celebrating high-potential entrepreneurs and innovation-led businesses shaping the future.",
                 link: "https://risin.ventures/news-and-events/"
               }
             ].map((news, i) => (
@@ -864,31 +869,35 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="group bg-white rounded-sm overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer flex gap-4 p-4"
+                className="group bg-white rounded-sm overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer flex flex-col"
               >
-                <div className="w-20 h-20 shrink-0 overflow-hidden rounded-sm">
+                <div className="aspect-[16/9] relative overflow-hidden">
                   <img 
                     src={news.image} 
                     alt={news.title}
-                    className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
                   />
-                </div>
-                <div className="flex flex-col justify-center min-w-0 flex-1">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="text-[8px] font-bold text-[#8b68f6] uppercase tracking-widest">{news.category}</span>
-                    <span className="text-[8px] text-slate-400">•</span>
-                    <span className="text-[8px] text-slate-400 uppercase tracking-widest">{news.date}</span>
+                  <div className="absolute top-3 left-3">
+                    <span className="bg-[#2b204c] text-white text-[8px] font-bold uppercase tracking-widest px-2 py-1 rounded-sm">
+                      {news.category}
+                    </span>
                   </div>
-                  <h4 className="text-sm font-heading font-bold text-[#2b204c] group-hover:text-[#8b68f6] transition-colors uppercase leading-tight line-clamp-2 mb-1">
+                </div>
+                <div className="p-4 flex flex-col flex-1">
+                  <span className="text-[9px] text-slate-400 font-bold uppercase tracking-widest mb-2">{news.date}</span>
+                  <h4 className="text-sm font-heading font-bold text-[#2b204c] group-hover:text-[#8b68f6] transition-colors uppercase leading-tight line-clamp-2 mb-2">
                     {news.title}
                   </h4>
-                  <p className="text-[11px] text-slate-500 line-clamp-1">{news.excerpt}</p>
+                  <p className="text-[11px] text-slate-500 line-clamp-2 mb-3 flex-1">{news.excerpt}</p>
+                  <span className="text-[9px] font-bold text-[#8b68f6] uppercase tracking-widest flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                    Read More <ArrowRight size={10} className="group-hover:translate-x-0.5 transition-transform" />
+                  </span>
                 </div>
               </motion.a>
             ))}
           </div>
 
-          {/* Mobile: Single Card Swipe */}
+          {/* Mobile: Horizontal Swipe Cards */}
           <div className="md:hidden">
             <div className="flex overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory px-6 -mx-6 gap-4">
               {[

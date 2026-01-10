@@ -265,6 +265,11 @@ export default function Home() {
             <p className="text-xs md:text-sm text-slate-400 font-light italic">
               Built through programs, venture studio initiatives, and ecosystem partnerships.
             </p>
+            <div className="flex justify-center gap-2 mt-6">
+              <span className="w-8 h-0.5 bg-[#8b68f6]"></span>
+              <span className="w-8 h-0.5 bg-[#952828]"></span>
+              <span className="w-8 h-0.5 bg-[#2b204c]"></span>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -331,7 +336,7 @@ export default function Home() {
               >
                 {value.title === "Venture Building" && (
                   <div className="absolute top-0 right-0">
-                    <div className="bg-[#8b68f6] text-white text-[8px] font-bold uppercase tracking-[0.2em] px-3 py-1 rounded-bl-sm">
+                    <div className="bg-[#952828] text-white text-[8px] font-bold uppercase tracking-[0.2em] px-3 py-1 rounded-bl-sm">
                       Core Differentiator
                     </div>
                   </div>
@@ -450,7 +455,7 @@ export default function Home() {
               <div className="absolute top-0 right-0 w-64 h-64 bg-[#8b68f6] opacity-10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
               <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#8b68f6] opacity-10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
               <div className="relative z-10 flex flex-col items-center gap-4">
-                <span className="bg-[#8b68f6] text-white text-[9px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-sm">
+                <span className="bg-[#952828] text-white text-[9px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-sm">
                   Invite-Only Event • Limited Seats
                 </span>
                 <h4 className="font-heading font-bold text-2xl md:text-3xl text-white uppercase">
@@ -650,7 +655,7 @@ export default function Home() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#2b204c] via-[#2b204c]/60 to-transparent" />
               <div className="relative z-10 p-8">
-                <span className="bg-[#8b68f6] text-white text-[8px] font-bold uppercase tracking-widest px-2 py-1 rounded-sm mb-4 inline-block">
+                <span className="bg-[#952828] text-white text-[8px] font-bold uppercase tracking-widest px-2 py-1 rounded-sm mb-4 inline-block">
                   Featured
                 </span>
                 <h3 className="text-2xl md:text-3xl font-heading font-bold text-white mb-3 uppercase leading-tight group-hover:text-[#8b68f6] transition-colors">
@@ -829,7 +834,7 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute top-4 left-4">
-                  <span className="bg-[#8b68f6] text-white text-[9px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-sm">
+                  <span className="bg-[#952828] text-white text-[9px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-sm">
                     Featured
                   </span>
                 </div>

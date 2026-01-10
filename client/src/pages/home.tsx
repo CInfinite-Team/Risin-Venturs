@@ -430,32 +430,51 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* Events Strip */}
-      <section className="bg-[#2b204c] py-6">
+      {/* Events Strip - Featured Event */}
+      <section className="py-10 md:py-12 bg-white">
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-8">
-            <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-4">
-              <span className="bg-[#8b68f6] text-white text-[8px] font-bold uppercase tracking-widest px-3 py-1 rounded-sm w-fit">
-                Invite-Only Event
-              </span>
-              <div className="text-white flex flex-col md:flex-row md:items-center gap-1 md:gap-0">
-                <span className="font-heading font-bold text-lg md:text-xl">SustAInova Roadshow – Doha</span>
-                <span className="mx-3 text-slate-400 hidden md:inline">•</span>
-                <span className="text-slate-300 text-sm">AI & Sustainability</span>
-                <span className="mx-3 text-slate-400 hidden md:inline">•</span>
-                <span className="text-slate-300 text-sm">21st Jan 2026, 4:00 PM – 6:00 PM</span>
-                <span className="mx-3 text-slate-400 hidden md:inline">•</span>
-                <span className="text-slate-300 text-sm hidden md:inline">QSTP, Doha</span>
-              </div>
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-6">
+              <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-2 block">Don't Miss Out</span>
+              <h3 className="text-2xl md:text-3xl font-heading font-bold text-[#2b204c] uppercase">Upcoming Event</h3>
             </div>
-            <a 
-              href="https://sustainovachallenge.com/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="bg-white text-[#2b204c] hover:bg-[#8b68f6] hover:text-white transition-all px-6 py-3 rounded-sm font-bold text-sm uppercase tracking-widest flex items-center gap-2 shrink-0"
-            >
-              RSVP Now <ArrowRight size={14} />
-            </a>
+            <div className="bg-[#2b204c] rounded-sm p-6 md:p-10 flex flex-col items-center text-center gap-6 overflow-hidden relative">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[#8b68f6] opacity-10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#8b68f6] opacity-10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
+              <div className="relative z-10 flex flex-col items-center gap-4">
+                <span className="bg-[#8b68f6] text-white text-[9px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-sm">
+                  Invite-Only Event • Limited Seats
+                </span>
+                <h4 className="font-heading font-bold text-2xl md:text-3xl text-white uppercase">
+                  SustAInova Roadshow – Doha
+                </h4>
+                <div className="flex flex-wrap justify-center gap-3 md:gap-6 text-sm">
+                  <span className="text-slate-300 flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#8b68f6]"></span>
+                    AI & Sustainability
+                  </span>
+                  <span className="text-slate-300 flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#8b68f6]"></span>
+                    21st Jan 2026, 4:00 PM – 6:00 PM
+                  </span>
+                  <span className="text-slate-300 flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#8b68f6]"></span>
+                    QSTP, Doha
+                  </span>
+                </div>
+                <p className="text-slate-400 text-sm max-w-lg mt-2">
+                  Join industry leaders and innovators to explore the intersection of AI and sustainability. Secure your spot before it's gone.
+                </p>
+              </div>
+              <a 
+                href="https://sustainovachallenge.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="relative z-10 bg-white text-[#2b204c] hover:bg-[#8b68f6] hover:text-white transition-all px-8 py-3 rounded-sm font-bold text-sm uppercase tracking-widest flex items-center gap-2 mt-2"
+              >
+                RSVP Now <ArrowRight size={14} />
+              </a>
+            </div>
           </div>
         </div>
       </section>

@@ -279,15 +279,19 @@ export default function Home() {
         className="py-16 md:py-20 relative bg-white"
       >
         <div className="container mx-auto px-6">
-          <div className="max-w-3xl mb-10">
-            <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-3 block">Our Story</span>
-            <h2 className="text-3xl md:text-6xl font-heading font-bold mb-8 leading-none uppercase">
-              TRANSFORMING IDEAS INTO <br/>
-              <span className="text-stroke text-[#2b204c]">GLOBAL GIANTS</span>
-            </h2>
-            <p className="text-lg md:text-xl text-slate-600 leading-relaxed">
-              Founded at the intersection of capital and engineering, Risin Ventures was born from a simple realization: the brightest minds in deep tech often lack the infrastructure to scale. We don't just invest; we co-build. Our mission is to accelerate the transition to a sustainable future by backing the pioneers of AI, IoT, and Blockchain.
-            </p>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-12">
+            <div className="md:w-1/2">
+              <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-3 block">Our Story</span>
+              <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold leading-none uppercase">
+                TRANSFORMING IDEAS INTO <br className="hidden md:block"/>
+                <span className="text-stroke text-[#2b204c]">GLOBAL GIANTS</span>
+              </h2>
+            </div>
+            <div className="md:w-1/2">
+              <p className="text-lg md:text-xl text-slate-600 leading-relaxed">
+                Founded at the intersection of capital and engineering, Risin Ventures was born from a simple realization: the brightest minds in deep tech often lack the infrastructure to scale. We don't just invest; we co-build. Our mission is to accelerate the transition to a sustainable future by backing the pioneers of AI, IoT, and Blockchain.
+              </p>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -362,12 +366,16 @@ export default function Home() {
         className="py-16 md:py-20 bg-[#F9FAFB] border-y border-slate-100"
       >
         <div className="container mx-auto px-6">
-          <div className="max-w-3xl mb-10">
-            <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-3 block">Our Path</span>
-            <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6 uppercase">Programs</h2>
-            <p className="text-lg text-slate-600 max-w-2xl">
-              Showcasing flagship initiatives that drive innovation and celebrate entrepreneurship across the ecosystem.
-            </p>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+            <div className="md:w-1/2">
+              <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-3 block">Our Path</span>
+              <h2 className="text-3xl md:text-5xl font-heading font-bold leading-none uppercase">Programs</h2>
+            </div>
+            <div className="md:w-1/2">
+              <p className="text-lg text-slate-600 leading-relaxed">
+                Showcasing flagship initiatives that drive innovation and celebrate entrepreneurship across the ecosystem.
+              </p>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">

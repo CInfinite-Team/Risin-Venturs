@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Target, Eye, Lightbulb, Users, Globe, Zap, CheckCircle, Linkedin, Facebook, Youtube, Instagram } from "lucide-react";
+import { ArrowRight, Target, Eye, Lightbulb, Users, Globe, Zap, CheckCircle } from "lucide-react";
 import { Link } from "wouter";
-import { Button } from "@/components/ui/button";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -15,32 +16,7 @@ const sectionVariants = {
 export default function About() {
   return (
     <div className="min-h-screen bg-white font-sans">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <Link href="/">
-              <a className="flex items-center gap-2">
-                <img 
-                  src="/attached_assets/RISIN_LOGO_1767787710766.png" 
-                  alt="Risin Ventures Logo" 
-                  className="h-10 md:h-12 w-auto object-contain"
-                />
-              </a>
-            </Link>
-            <div className="hidden md:flex items-center gap-8">
-              <Link href="/about"><a className="text-[#8b68f6] font-bold text-sm uppercase tracking-widest">About</a></Link>
-              <Link href="/#programs"><a className="text-[#2b204c] hover:text-[#8b68f6] font-bold text-sm uppercase tracking-widest transition-colors">Programs</a></Link>
-              <Link href="/#portfolio"><a className="text-[#2b204c] hover:text-[#8b68f6] font-bold text-sm uppercase tracking-widest transition-colors">Portfolio</a></Link>
-              <a href="https://risin.ventures/contact/" target="_blank" rel="noopener noreferrer">
-                <Button className="bg-[#2b204c] hover:bg-[#8b68f6] text-white rounded-sm px-6 py-2 font-bold text-sm uppercase tracking-widest transition-all">
-                  Contact
-                </Button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Header />
 
       {/* Hero Section */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-gradient-to-b from-slate-50 to-white">
@@ -246,41 +222,7 @@ export default function About() {
         </div>
       </motion.section>
 
-      {/* Footer */}
-      <footer className="bg-[#F9FAFB] border-t border-slate-100 py-12">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <Link href="/">
-              <a>
-                <img 
-                  src="/attached_assets/RISIN_LOGO_1767787710766.png" 
-                  alt="Risin Ventures Logo" 
-                  className="h-10 w-auto object-contain"
-                />
-              </a>
-            </Link>
-            <div className="flex gap-4">
-              {[
-                { name: "LinkedIn", icon: <Linkedin size={18} />, href: "https://www.linkedin.com/company/risin-ventures/" },
-                { name: "Facebook", icon: <Facebook size={18} />, href: "https://www.facebook.com/profile.php?id=100064025261207" },
-                { name: "YouTube", icon: <Youtube size={18} />, href: "https://www.youtube.com/channel/UC2PZRHE-2nvkqRZPTPK9wNQ/featured" },
-                { name: "Instagram", icon: <Instagram size={18} />, href: "https://www.instagram.com/risin.ventures/" }
-              ].map((social) => (
-                <a 
-                  key={social.name} 
-                  href={social.href} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 border border-slate-200 rounded-sm flex items-center justify-center text-slate-400 hover:text-[#8b68f6] hover:border-[#8b68f6] transition-all bg-white"
-                >
-                  {social.icon}
-                </a>
-              ))}
-            </div>
-            <p className="text-xs text-slate-400">© 2025 Risin Ventures. All Rights Reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

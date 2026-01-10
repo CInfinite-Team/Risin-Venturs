@@ -87,11 +87,12 @@ export default function Home() {
             <NavDropdown 
               title="About" 
               items={[
-                { label: "Team", href: "#about" },
-                { label: "Career", href: "#contact" },
-                { label: "Partners", href: "#about" },
-                { label: "Case Studies", href: "#case-studies" },
-                { label: "News & Insights", href: "#news" }
+                { label: "About Us", href: "/about" },
+                { label: "Team", href: "/team" },
+                { label: "Career", href: "/careers" },
+                { label: "Partners", href: "/partners" },
+                { label: "Case Studies", href: "/case-studies" },
+                { label: "News & Insights", href: "/news" }
               ]} 
             />
             <NavDropdown 
@@ -137,11 +138,12 @@ export default function Home() {
                 { 
                   title: "About", 
                   items: [
-                    { label: "Team", href: "#about" },
-                    { label: "Career", href: "#contact" },
-                    { label: "Partners", href: "#about" },
-                    { label: "Case Studies", href: "#case-studies" },
-                    { label: "News & Insights", href: "#news" }
+                    { label: "About Us", href: "/about" },
+                    { label: "Team", href: "/team" },
+                    { label: "Career", href: "/careers" },
+                    { label: "Partners", href: "/partners" },
+                    { label: "Case Studies", href: "/case-studies" },
+                    { label: "News & Insights", href: "/news" }
                   ] 
                 },
                 { 
@@ -1046,14 +1048,15 @@ export default function Home() {
                 <h4 className="font-bold uppercase tracking-widest text-[10px] mb-6 md:mb-8 text-[#8b68f6]">About</h4>
                 <ul className="space-y-3 md:space-y-4">
                   {[
-                    { label: "Team", href: "#about" },
-                    { label: "Career", href: "#contact" },
-                    { label: "Partners", href: "#about" },
-                    { label: "Case Studies", href: "#case-studies" },
-                    { label: "News & Insights", href: "#news" }
+                    { label: "About Us", href: "/about" },
+                    { label: "Team", href: "/team" },
+                    { label: "Career", href: "/careers" },
+                    { label: "Partners", href: "/partners" },
+                    { label: "Case Studies", href: "/case-studies" },
+                    { label: "News & Insights", href: "/news" }
                   ].map((item) => (
                     <li key={item.label}>
-                      <a href={item.href} className="text-[#2b204c] hover:text-[#8b68f6] transition-colors text-xs font-bold capitalize tracking-wider">{item.label}</a>
+                      <Link href={item.href}><a className="text-[#2b204c] hover:text-[#8b68f6] transition-colors text-xs font-bold capitalize tracking-wider">{item.label}</a></Link>
                     </li>
                   ))}
                 </ul>

@@ -1034,24 +1034,43 @@ export default function Home() {
               </div>
             </div>
 
-            <div>
-              <h4 className="font-bold uppercase tracking-widest text-[10px] mb-8 text-[#8b68f6]">About</h4>
-              <ul className="space-y-4">
-                {[
-                  { label: "Team", href: "#about" },
-                  { label: "Career", href: "#contact" },
-                  { label: "Partners", href: "#about" },
-                  { label: "Case Studies", href: "#case-studies" },
-                  { label: "News & Insights", href: "#news" }
-                ].map((item) => (
-                  <li key={item.label}>
-                    <a href={item.href} className="text-[#2b204c] hover:text-[#8b68f6] transition-colors text-xs font-bold capitalize tracking-wider">{item.label}</a>
-                  </li>
-                ))}
-              </ul>
+            {/* Mobile: 2-column grid for About & Programs, then Venture Studio below */}
+            {/* Desktop: 3 separate columns */}
+            <div className="grid grid-cols-2 md:grid-cols-1 gap-8 md:gap-0">
+              <div>
+                <h4 className="font-bold uppercase tracking-widest text-[10px] mb-6 md:mb-8 text-[#8b68f6]">About</h4>
+                <ul className="space-y-3 md:space-y-4">
+                  {[
+                    { label: "Team", href: "#about" },
+                    { label: "Career", href: "#contact" },
+                    { label: "Partners", href: "#about" },
+                    { label: "Case Studies", href: "#case-studies" },
+                    { label: "News & Insights", href: "#news" }
+                  ].map((item) => (
+                    <li key={item.label}>
+                      <a href={item.href} className="text-[#2b204c] hover:text-[#8b68f6] transition-colors text-xs font-bold capitalize tracking-wider">{item.label}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="md:hidden">
+                <h4 className="font-bold uppercase tracking-widest text-[10px] mb-6 text-[#8b68f6]">Programs</h4>
+                <ul className="space-y-3">
+                  {[
+                    { label: "AIX", href: "https://www.aixsummithack.com/" },
+                    { label: "Sustainova", href: "https://sustainovachallenge.com/" },
+                    { label: "Entrepreneurship Awards", href: "https://qatarentrepreneurshipawards.com/" },
+                    { label: "GCC GTM", href: "#programs" }
+                  ].map((item) => (
+                    <li key={item.label}>
+                      <a href={item.href} className="text-[#2b204c] hover:text-[#8b68f6] transition-colors text-xs font-bold capitalize tracking-wider">{item.label}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
-            <div>
+            <div className="hidden md:block">
               <h4 className="font-bold uppercase tracking-widest text-[10px] mb-8 text-[#8b68f6]">Programs</h4>
               <ul className="space-y-4">
                 {[
@@ -1068,8 +1087,8 @@ export default function Home() {
             </div>
 
             <div>
-              <h4 className="font-bold uppercase tracking-widest text-[10px] mb-8 text-[#8b68f6]">Venture Studio</h4>
-              <ul className="space-y-4">
+              <h4 className="font-bold uppercase tracking-widest text-[10px] mb-6 md:mb-8 text-[#8b68f6]">Venture Studio</h4>
+              <ul className="space-y-3 md:space-y-4">
                 {[
                   { label: "Innovation", href: "#about" },
                   { label: "Incubation", href: "#about" },

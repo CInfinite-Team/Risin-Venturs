@@ -95,10 +95,8 @@ export default function Header() {
           <NavDropdown title="About" items={aboutItems} />
           <NavDropdown title="Programs" isPrimary items={programsItems} />
           <NavDropdown title="Venture Studio" items={ventureStudioItems} />
-          <Link href="/build-with-us">
-            <Button className="bg-[#2b204c] text-white hover:bg-[#8b68f6] transition-all uppercase tracking-widest text-xs font-bold rounded-sm px-6 h-12 border-0 shadow-lg">
-              Build With Us
-            </Button>
+          <Link href="/build-with-us" className="bg-[#2b204c] text-white hover:bg-[#8b68f6] transition-all uppercase tracking-widest text-xs font-bold rounded-sm px-6 h-12 border-0 shadow-lg inline-flex items-center justify-center">
+            Build With Us
           </Link>
         </div>
 
@@ -152,14 +150,13 @@ export default function Header() {
                 </div>
               </div>
             ))}
-            <button
-              onClick={() => handleNavClick("/build-with-us")}
-              className="w-full"
+            <Link 
+              href="/build-with-us"
+              onClick={() => setIsMenuOpen(false)}
+              className="bg-[#2b204c] text-white uppercase tracking-widest text-sm font-bold rounded-sm w-full h-14 mt-4 shadow-lg inline-flex items-center justify-center"
             >
-              <Button className="bg-[#2b204c] text-white uppercase tracking-widest text-sm font-bold rounded-sm w-full h-14 mt-4 shadow-lg">
-                Build With Us
-              </Button>
-            </button>
+              Build With Us
+            </Link>
           </div>
         </motion.div>
       )}

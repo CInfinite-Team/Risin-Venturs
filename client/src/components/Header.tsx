@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { motion } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -24,10 +24,12 @@ const NavDropdown = ({ title, items, isPrimary }: { title: string, items: { labe
                 {item.label}
               </a>
             ) : (
-              <Link key={item.label} href={item.href}>
-                <a className="text-sm font-bold text-[#2b204c] hover:text-[#8b68f6] capitalize tracking-widest transition-colors whitespace-nowrap px-2 py-1.5">
-                  {item.label}
-                </a>
+              <Link 
+                key={item.label} 
+                href={item.href}
+                className="text-sm font-bold text-[#2b204c] hover:text-[#8b68f6] capitalize tracking-widest transition-colors whitespace-nowrap px-2 py-1.5"
+              >
+                {item.label}
               </Link>
             )
           ))}
@@ -40,6 +42,7 @@ const NavDropdown = ({ title, items, isPrimary }: { title: string, items: { labe
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [, setLocation] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -70,17 +73,20 @@ export default function Header() {
     { label: "Acceleration", href: "/#programs" }
   ];
 
+  const handleNavClick = (href: string) => {
+    setIsMenuOpen(false);
+    setLocation(href);
+  };
+
   return (
     <nav className={`fixed top-0 w-full z-[100] transition-all duration-300 h-20 md:h-24 flex items-center ${isScrolled ? "bg-white shadow-md border-b border-slate-100" : "bg-white border-b border-slate-50"}`}>
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <Link href="/">
-          <a className="flex items-center gap-2 group z-[110]">
-            <img 
-              src="/attached_assets/RISIN_LOGO_1767787710766.png" 
-              alt="Risin Ventures Logo" 
-              className="h-12 md:h-16 w-auto object-contain"
-            />
-          </a>
+        <Link href="/" className="flex items-center gap-2 group z-[110]">
+          <img 
+            src="/attached_assets/RISIN_LOGO_1767787710766.png" 
+            alt="Risin Ventures Logo" 
+            className="h-12 md:h-16 w-auto object-contain"
+          />
         </Link>
 
         {/* Desktop Nav */}
@@ -89,11 +95,9 @@ export default function Header() {
           <NavDropdown title="Programs" isPrimary items={programsItems} />
           <NavDropdown title="Venture Studio" items={ventureStudioItems} />
           <Link href="/build-with-us">
-            <a>
-              <Button className="bg-[#2b204c] text-white hover:bg-[#8b68f6] transition-all uppercase tracking-widest text-xs font-bold rounded-sm px-6 h-12 border-0 shadow-lg">
-                Build With Us
-              </Button>
-            </a>
+            <Button className="bg-[#2b204c] text-white hover:bg-[#8b68f6] transition-all uppercase tracking-widest text-xs font-bold rounded-sm px-6 h-12 border-0 shadow-lg">
+              Build With Us
+            </Button>
           </Link>
         </div>
 
@@ -135,26 +139,26 @@ export default function Header() {
                         {item.label}
                       </a>
                     ) : (
-                      <Link key={item.label} href={item.href}>
-                        <a 
-                          className="text-lg font-bold text-[#2b204c] capitalize"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          {item.label}
-                        </a>
-                      </Link>
+                      <button
+                        key={item.label}
+                        onClick={() => handleNavClick(item.href)}
+                        className="text-lg font-bold text-[#2b204c] capitalize text-left"
+                      >
+                        {item.label}
+                      </button>
                     )
                   ))}
                 </div>
               </div>
             ))}
-            <Link href="/build-with-us">
-              <a onClick={() => setIsMenuOpen(false)}>
-                <Button className="bg-[#2b204c] text-white uppercase tracking-widest text-sm font-bold rounded-sm w-full h-14 mt-4 shadow-lg">
-                  Build With Us
-                </Button>
-              </a>
-            </Link>
+            <button
+              onClick={() => handleNavClick("/build-with-us")}
+              className="w-full"
+            >
+              <Button className="bg-[#2b204c] text-white uppercase tracking-widest text-sm font-bold rounded-sm w-full h-14 mt-4 shadow-lg">
+                Build With Us
+              </Button>
+            </button>
           </div>
         </motion.div>
       )}

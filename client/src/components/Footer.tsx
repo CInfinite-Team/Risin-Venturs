@@ -8,14 +8,12 @@ export default function Footer() {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-16">
           <div className="lg:col-span-2">
-            <Link href="/">
-              <a className="flex items-center gap-2 mb-8">
-                <img 
-                  src="/attached_assets/RISIN_LOGO_1767787710766.png" 
-                  alt="Risin Ventures Logo" 
-                  className="h-12 md:h-16 w-auto object-contain"
-                />
-              </a>
+            <Link href="/" className="flex items-center gap-2 mb-8">
+              <img 
+                src="/attached_assets/RISIN_LOGO_1767787710766.png" 
+                alt="Risin Ventures Logo" 
+                className="h-12 md:h-16 w-auto object-contain"
+              />
             </Link>
             <p className="text-slate-500 text-sm leading-relaxed mb-8 max-w-md">
               Risin Ventures is a boutique venture studio and investment firm specializing in deep technology. We bridge the gap between breakthrough scientific innovation and global market scale by co-building enterprises with institutional discipline and execution excellence.
@@ -57,7 +55,7 @@ export default function Footer() {
                   { label: "Get in Touch", href: "/contact" }
                 ].map((item) => (
                   <li key={item.label}>
-                    <Link href={item.href}><a className="text-[#2b204c] hover:text-[#8b68f6] transition-colors text-xs font-bold capitalize tracking-wider">{item.label}</a></Link>
+                    <Link href={item.href} className="text-[#2b204c] hover:text-[#8b68f6] transition-colors text-xs font-bold capitalize tracking-wider">{item.label}</Link>
                   </li>
                 ))}
               </ul>
@@ -131,10 +129,8 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 mb-8 text-center">
-          <Link href="/contact">
-            <a className="text-[#8b68f6] hover:text-[#2b204c] text-sm font-medium transition-colors inline-flex items-center gap-2">
-              Get in Touch with Risin Ventures →
-            </a>
+          <Link href="/contact" className="text-[#8b68f6] hover:text-[#2b204c] text-sm font-medium transition-colors inline-flex items-center gap-2">
+            Get in Touch with Risin Ventures →
           </Link>
         </div>
 

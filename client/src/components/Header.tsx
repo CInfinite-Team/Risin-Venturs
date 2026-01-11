@@ -56,7 +56,8 @@ export default function Header() {
     { label: "Career", href: "/careers" },
     { label: "Partners", href: "/partners" },
     { label: "Case Studies", href: "/case-studies" },
-    { label: "News & Insights", href: "/news" }
+    { label: "News & Insights", href: "/news" },
+    { label: "Get in Touch", href: "/contact" }
   ];
 
   const programsItems = [

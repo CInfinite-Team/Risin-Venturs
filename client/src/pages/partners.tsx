@@ -198,11 +198,11 @@ export default function Partners() {
           <p className="text-slate-300 max-w-xl mx-auto mb-8">
             We're always looking for strategic partners who share our vision for innovation. Let's explore how we can create value together.
           </p>
-          <a href="https://risin.ventures/contact/" target="_blank" rel="noopener noreferrer">
+          <Link href="/contact?from=partner">
             <Button className="bg-white text-[#2b204c] hover:bg-[#8b68f6] hover:text-white rounded-sm px-8 py-3 font-bold text-sm uppercase tracking-widest transition-all">
               Get in Touch <ArrowRight size={16} className="ml-2 inline" />
             </Button>
-          </a>
+          </Link>
         </div>
       </motion.section>
 

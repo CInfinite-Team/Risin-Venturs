@@ -948,7 +948,7 @@ export default function BuildWithUs() {
               >
                 Apply Now <ArrowRight size={16} className="ml-2 inline" />
               </Button>
-              <Link href="/partners">
+              <Link href="/contact?from=partner">
                 <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 rounded-sm px-10 py-5 h-auto font-bold text-sm uppercase tracking-widest transition-all">
                   Partner With Us
                 </Button>

@@ -53,7 +53,8 @@ export default function Footer() {
                   { label: "Career", href: "/careers" },
                   { label: "Partners", href: "/partners" },
                   { label: "Case Studies", href: "/case-studies" },
-                  { label: "News & Insights", href: "/news" }
+                  { label: "News & Insights", href: "/news" },
+                  { label: "Get in Touch", href: "/contact" }
                 ].map((item) => (
                   <li key={item.label}>
                     <Link href={item.href}><a className="text-[#2b204c] hover:text-[#8b68f6] transition-colors text-xs font-bold capitalize tracking-wider">{item.label}</a></Link>
@@ -129,7 +130,15 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="pt-8 mb-8 text-center">
+          <Link href="/contact">
+            <a className="text-[#8b68f6] hover:text-[#2b204c] text-sm font-medium transition-colors inline-flex items-center gap-2">
+              Get in Touch with Risin Ventures →
+            </a>
+          </Link>
+        </div>
+
+        <div className="pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-slate-400 text-[10px] font-bold uppercase tracking-[0.2em]">
             © 2026 Risin Ventures. All rights reserved.
           </p>

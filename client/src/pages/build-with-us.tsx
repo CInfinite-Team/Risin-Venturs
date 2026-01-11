@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
-import { ArrowRight, Lightbulb, Users, Rocket, CheckCircle, Cpu, Banknote, Leaf, Network, Target, Zap, Building2, ChevronRight } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, Lightbulb, Users, Rocket, CheckCircle, Cpu, Banknote, Leaf, ChevronRight, X, Upload, Sparkles, Building2, Car, CreditCard } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
@@ -23,10 +24,419 @@ const fadeUp = {
   })
 };
 
+const countries = [
+  "Qatar", "UAE", "Saudi Arabia", "Oman", "Kuwait", "Bahrain", 
+  "India", "United States", "United Kingdom", "Germany", "France", 
+  "Canada", "Australia", "Singapore", "Other"
+];
+
+const ideaOptions = [
+  {
+    id: "hashecm",
+    name: "Hashecm",
+    tagline: "AI-Driven Document Intelligence",
+    description: "Enterprise content collaboration platform with AI-powered document processing, intelligent search, and workflow automation.",
+    icon: <Sparkles className="w-6 h-6" />,
+    color: "bg-[#8b68f6]"
+  },
+  {
+    id: "nufin",
+    name: "Nufin",
+    tagline: "Next-Gen Fintech Solutions",
+    description: "Banking and financial services platform currently in stealth mode, pursuing CBO Qatar regulatory approval for innovative payment solutions.",
+    icon: <CreditCard className="w-6 h-6" />,
+    color: "bg-[#2b204c]"
+  },
+  {
+    id: "urbano",
+    name: "Urbano",
+    tagline: "AI & IoT Urban Mobility",
+    description: "Smart parking, valet services, car wash, EV charging, and multimodal ticketing—all powered by AI and IoT technology.",
+    icon: <Car className="w-6 h-6" />,
+    color: "bg-[#952828]"
+  }
+];
+
+interface FormData {
+  fullName: string;
+  email: string;
+  phone: string;
+  linkedin: string;
+  location: string;
+  founderJourney: string;
+  startupExperience: string;
+  launchTimeline: string;
+  thesisAlignment: string;
+  howHeard: string;
+  ideaDescription: string;
+  teamDescription: string;
+  referralName: string;
+  selectedIdea?: string;
+}
+
+const initialFormData: FormData = {
+  fullName: "",
+  email: "",
+  phone: "",
+  linkedin: "",
+  location: "",
+  founderJourney: "",
+  startupExperience: "",
+  launchTimeline: "",
+  thesisAlignment: "",
+  howHeard: "",
+  ideaDescription: "",
+  teamDescription: "",
+  referralName: "",
+  selectedIdea: ""
+};
+
+function ApplicationForm({ 
+  formData, 
+  setFormData, 
+  onSubmit, 
+  isSubmitting,
+  showIdeaSelection = false,
+  title = "Start the Conversation",
+  subtitle = "Tell us about yourself and what you're building. We review every application personally."
+}: { 
+  formData: FormData; 
+  setFormData: (data: FormData) => void; 
+  onSubmit: () => void;
+  isSubmitting: boolean;
+  showIdeaSelection?: boolean;
+  title?: string;
+  subtitle?: string;
+}) {
+  return (
+    <div className="space-y-6">
+      <div className="mb-8">
+        <h3 className="text-2xl md:text-3xl font-heading font-bold text-[#2b204c] mb-3 uppercase">{title}</h3>
+        <p className="text-slate-600">{subtitle}</p>
+      </div>
+
+      {showIdeaSelection && (
+        <div className="mb-8">
+          <label className="block text-sm font-bold text-[#2b204c] mb-4 uppercase tracking-wider">
+            Select a Concept Track <span className="text-slate-400 font-normal normal-case">(optional)</span>
+          </label>
+          <div className="grid gap-4">
+            {ideaOptions.map((idea) => (
+              <button
+                key={idea.id}
+                type="button"
+                onClick={() => setFormData({ ...formData, selectedIdea: formData.selectedIdea === idea.id ? "" : idea.id })}
+                className={`p-5 rounded-sm border-2 transition-all text-left ${
+                  formData.selectedIdea === idea.id 
+                    ? "border-[#8b68f6] bg-[#8b68f6]/5 shadow-lg" 
+                    : "border-slate-200 hover:border-[#8b68f6]/50 hover:bg-slate-50"
+                }`}
+              >
+                <div className="flex items-start gap-4">
+                  <div className={`w-12 h-12 ${idea.color} rounded-sm flex items-center justify-center text-white flex-shrink-0`}>
+                    {idea.icon}
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between mb-1">
+                      <h4 className="font-bold text-[#2b204c]">{idea.name}</h4>
+                      {formData.selectedIdea === idea.id && (
+                        <CheckCircle size={18} className="text-[#8b68f6]" />
+                      )}
+                    </div>
+                    <p className="text-sm text-[#8b68f6] font-medium mb-1">{idea.tagline}</p>
+                    <p className="text-sm text-slate-500">{idea.description}</p>
+                  </div>
+                </div>
+              </button>
+            ))}
+          </div>
+          <p className="text-xs text-slate-400 mt-3">
+            Interested in joining one of our active ventures? Select above, or leave blank to propose your own idea.
+          </p>
+        </div>
+      )}
+
+      <div className="grid md:grid-cols-2 gap-6">
+        <div>
+          <label className="block text-sm font-bold text-[#2b204c] mb-2">
+            Full Name <span className="text-[#952828]">*</span>
+          </label>
+          <input
+            type="text"
+            value={formData.fullName}
+            onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+            placeholder="Your full name"
+            className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#8b68f6] focus:ring-2 focus:ring-[#8b68f6]/20 outline-none transition-all"
+            data-testid="input-fullname"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-bold text-[#2b204c] mb-2">
+            Email <span className="text-[#952828]">*</span>
+          </label>
+          <input
+            type="email"
+            value={formData.email}
+            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            placeholder="your@email.com"
+            className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#8b68f6] focus:ring-2 focus:ring-[#8b68f6]/20 outline-none transition-all"
+            data-testid="input-email"
+          />
+        </div>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-6">
+        <div>
+          <label className="block text-sm font-bold text-[#2b204c] mb-2">
+            Phone Number
+          </label>
+          <input
+            type="tel"
+            value={formData.phone}
+            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+            placeholder="+974 XXXX XXXX"
+            className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#8b68f6] focus:ring-2 focus:ring-[#8b68f6]/20 outline-none transition-all"
+            data-testid="input-phone"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-bold text-[#2b204c] mb-2">
+            LinkedIn Profile <span className="text-[#952828]">*</span>
+          </label>
+          <input
+            type="url"
+            value={formData.linkedin}
+            onChange={(e) => setFormData({ ...formData, linkedin: e.target.value })}
+            placeholder="linkedin.com/in/yourprofile"
+            className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#8b68f6] focus:ring-2 focus:ring-[#8b68f6]/20 outline-none transition-all"
+            data-testid="input-linkedin"
+          />
+        </div>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-6">
+        <div>
+          <label className="block text-sm font-bold text-[#2b204c] mb-2">
+            Location <span className="text-[#952828]">*</span>
+          </label>
+          <select
+            value={formData.location}
+            onChange={(e) => setFormData({ ...formData, location: e.target.value })}
+            className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#8b68f6] focus:ring-2 focus:ring-[#8b68f6]/20 outline-none transition-all bg-white"
+            data-testid="select-location"
+          >
+            <option value="">Select your location</option>
+            {countries.map((country) => (
+              <option key={country} value={country}>{country}</option>
+            ))}
+          </select>
+        </div>
+        <div>
+          <label className="block text-sm font-bold text-[#2b204c] mb-2">
+            Founder Journey Stage <span className="text-[#952828]">*</span>
+          </label>
+          <select
+            value={formData.founderJourney}
+            onChange={(e) => setFormData({ ...formData, founderJourney: e.target.value })}
+            className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#8b68f6] focus:ring-2 focus:ring-[#8b68f6]/20 outline-none transition-all bg-white"
+            data-testid="select-journey"
+          >
+            <option value="">Where are you in your journey?</option>
+            <option value="ideation">Ideation - I have an idea</option>
+            <option value="mvp">MVP - Building or testing a product</option>
+            <option value="early-revenue">Early Revenue - Generating traction</option>
+          </select>
+        </div>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-6">
+        <div>
+          <label className="block text-sm font-bold text-[#2b204c] mb-2">
+            Startup Experience
+          </label>
+          <select
+            value={formData.startupExperience}
+            onChange={(e) => setFormData({ ...formData, startupExperience: e.target.value })}
+            className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#8b68f6] focus:ring-2 focus:ring-[#8b68f6]/20 outline-none transition-all bg-white"
+            data-testid="select-experience"
+          >
+            <option value="">Your startup experience</option>
+            <option value="prior-founder">Prior Founder</option>
+            <option value="team-member">Team member of an early-stage startup</option>
+            <option value="new">New to startups</option>
+          </select>
+        </div>
+        <div>
+          <label className="block text-sm font-bold text-[#2b204c] mb-2">
+            Launch Timeline <span className="text-[#952828]">*</span>
+          </label>
+          <select
+            value={formData.launchTimeline}
+            onChange={(e) => setFormData({ ...formData, launchTimeline: e.target.value })}
+            className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#8b68f6] focus:ring-2 focus:ring-[#8b68f6]/20 outline-none transition-all bg-white"
+            data-testid="select-timeline"
+          >
+            <option value="">When do you want to launch?</option>
+            <option value="now">Now - Ready to go</option>
+            <option value="3-6-months">3-6 Months</option>
+            <option value="6-plus-months">More than 6 months</option>
+            <option value="other">Other / Flexible</option>
+          </select>
+        </div>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-6">
+        <div>
+          <label className="block text-sm font-bold text-[#2b204c] mb-2">
+            Thesis Alignment <span className="text-[#952828]">*</span>
+          </label>
+          <select
+            value={formData.thesisAlignment}
+            onChange={(e) => setFormData({ ...formData, thesisAlignment: e.target.value })}
+            className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#8b68f6] focus:ring-2 focus:ring-[#8b68f6]/20 outline-none transition-all bg-white"
+            data-testid="select-thesis"
+          >
+            <option value="">Which thesis fits your idea?</option>
+            <option value="deep-tech">Deep Tech (AI, IoT, Cloud)</option>
+            <option value="fintech">Fintech</option>
+            <option value="sustainability">Sustainability</option>
+          </select>
+        </div>
+        <div>
+          <label className="block text-sm font-bold text-[#2b204c] mb-2">
+            How did you hear about us? <span className="text-[#952828]">*</span>
+          </label>
+          <select
+            value={formData.howHeard}
+            onChange={(e) => setFormData({ ...formData, howHeard: e.target.value })}
+            className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#8b68f6] focus:ring-2 focus:ring-[#8b68f6]/20 outline-none transition-all bg-white"
+            data-testid="select-source"
+          >
+            <option value="">Select an option</option>
+            <option value="investor-vc">Investor / VC Firm</option>
+            <option value="advisor-partner">Industry Advisor / Partner</option>
+            <option value="linkedin">LinkedIn</option>
+            <option value="press-media">Press / Media</option>
+            <option value="website">Risin Ventures Website</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <label className="block text-sm font-bold text-[#2b204c] mb-2">
+          Tell us about your idea
+        </label>
+        <textarea
+          value={formData.ideaDescription}
+          onChange={(e) => setFormData({ ...formData, ideaDescription: e.target.value })}
+          placeholder="Share your vision—the problem you're solving, your proposed solution, target market, and business model. We're genuinely curious about what excites you."
+          rows={4}
+          className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#8b68f6] focus:ring-2 focus:ring-[#8b68f6]/20 outline-none transition-all resize-none"
+          data-testid="textarea-idea"
+        />
+      </div>
+
+      <div>
+        <label className="block text-sm font-bold text-[#2b204c] mb-2">
+          Tell us about yourself and your co-founders
+        </label>
+        <textarea
+          value={formData.teamDescription}
+          onChange={(e) => setFormData({ ...formData, teamDescription: e.target.value })}
+          placeholder="Share your background, relevant experience, and links to your portfolio, GitHub, awards, or previous work. Who's on your team?"
+          rows={3}
+          className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#8b68f6] focus:ring-2 focus:ring-[#8b68f6]/20 outline-none transition-all resize-none"
+          data-testid="textarea-team"
+        />
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-6">
+        <div>
+          <label className="block text-sm font-bold text-[#2b204c] mb-2">
+            Upload Pitch Deck
+          </label>
+          <div className="border-2 border-dashed border-slate-200 rounded-sm p-6 text-center hover:border-[#8b68f6]/50 transition-colors cursor-pointer group">
+            <Upload className="w-8 h-8 mx-auto mb-2 text-slate-400 group-hover:text-[#8b68f6] transition-colors" />
+            <p className="text-sm text-slate-500">Drop your pitch deck here or <span className="text-[#8b68f6] font-medium">browse</span></p>
+            <p className="text-xs text-slate-400 mt-1">PDF, PPT up to 10MB</p>
+          </div>
+        </div>
+        <div>
+          <label className="block text-sm font-bold text-[#2b204c] mb-2">
+            Referral Name
+          </label>
+          <input
+            type="text"
+            value={formData.referralName}
+            onChange={(e) => setFormData({ ...formData, referralName: e.target.value })}
+            placeholder="Were you referred by someone in our network?"
+            className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#8b68f6] focus:ring-2 focus:ring-[#8b68f6]/20 outline-none transition-all"
+            data-testid="input-referral"
+          />
+          <p className="text-xs text-slate-400 mt-2">If someone connected to Risin recommended you, let us know.</p>
+        </div>
+      </div>
+
+      <div className="pt-4">
+        <Button
+          onClick={onSubmit}
+          disabled={isSubmitting}
+          className="w-full md:w-auto bg-[#8b68f6] hover:bg-[#2b204c] text-white rounded-sm px-12 py-4 h-auto font-bold text-sm uppercase tracking-widest transition-all disabled:opacity-50"
+          data-testid="button-submit"
+        >
+          {isSubmitting ? "Submitting..." : "Submit Application"}
+          <ArrowRight size={16} className="ml-2 inline" />
+        </Button>
+        <p className="text-xs text-slate-400 mt-4">
+          By submitting, you agree to our review process. We aim to respond within 5-7 business days.
+        </p>
+      </div>
+    </div>
+  );
+}
+
 export default function BuildWithUs() {
+  const [primaryFormData, setPrimaryFormData] = useState<FormData>(initialFormData);
+  const [ideaFormData, setIdeaFormData] = useState<FormData>(initialFormData);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+
+  const handleSubmit = (formType: "primary" | "idea") => {
+    setIsSubmitting(true);
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setShowSuccess(true);
+      if (formType === "idea") {
+        setIsModalOpen(false);
+      }
+      setTimeout(() => setShowSuccess(false), 5000);
+    }, 1500);
+  };
+
+  const scrollToForm = () => {
+    document.getElementById("application-form")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="min-h-screen bg-white font-sans">
       <Header />
+
+      {/* Success Toast */}
+      <AnimatePresence>
+        {showSuccess && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="fixed top-24 left-1/2 -translate-x-1/2 z-[200] bg-[#2b204c] text-white px-8 py-4 rounded-sm shadow-2xl flex items-center gap-3"
+          >
+            <CheckCircle size={20} className="text-[#8b68f6]" />
+            <span className="font-medium">Application submitted successfully! We'll be in touch soon.</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-to-b from-[#2b204c] to-[#1a1432] relative overflow-hidden">
@@ -50,18 +460,21 @@ export default function BuildWithUs() {
               Risin Ventures partners with visionary founders to co-create startups that are investor-ready—from ideation through validation to scale.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="https://risin.ventures/venture-builder/#get-in-touch-form" target="_blank" rel="noopener noreferrer">
-                <Button className="bg-[#8b68f6] hover:bg-white hover:text-[#2b204c] text-white rounded-sm px-8 py-4 h-auto font-bold text-sm uppercase tracking-widest transition-all w-full sm:w-auto">
-                  Apply to Build <ArrowRight size={16} className="ml-2 inline" />
-                </Button>
-              </a>
-              <Link href="/case-studies">
-                <a>
-                  <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 rounded-sm px-8 py-4 h-auto font-bold text-sm uppercase tracking-widest transition-all w-full sm:w-auto">
-                    View Case Studies
-                  </Button>
-                </a>
-              </Link>
+              <Button 
+                onClick={scrollToForm}
+                className="bg-[#8b68f6] hover:bg-white hover:text-[#2b204c] text-white rounded-sm px-8 py-4 h-auto font-bold text-sm uppercase tracking-widest transition-all w-full sm:w-auto"
+                data-testid="button-apply-hero"
+              >
+                Start the Conversation <ArrowRight size={16} className="ml-2 inline" />
+              </Button>
+              <Button 
+                onClick={() => setIsModalOpen(true)}
+                variant="outline" 
+                className="border-white/30 text-white hover:bg-white/10 rounded-sm px-8 py-4 h-auto font-bold text-sm uppercase tracking-widest transition-all w-full sm:w-auto"
+                data-testid="button-join-venture"
+              >
+                Join an Active Venture
+              </Button>
             </div>
           </motion.div>
         </div>
@@ -82,6 +495,23 @@ export default function BuildWithUs() {
           </div>
         </motion.div>
       </section>
+
+      {/* Soft CTA Strip */}
+      <div className="bg-[#8b68f6]/5 border-y border-[#8b68f6]/10 py-4">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-[#2b204c] text-center md:text-left">
+              <span className="font-bold">Have a bold idea?</span> We'd love to hear it. Every application is reviewed by our founding team.
+            </p>
+            <button 
+              onClick={scrollToForm}
+              className="text-sm font-bold text-[#8b68f6] hover:text-[#2b204c] transition-colors flex items-center gap-2 whitespace-nowrap"
+            >
+              Tell us what you're building <ArrowRight size={14} />
+            </button>
+          </div>
+        </div>
+      </div>
 
       {/* What is Venture Builder */}
       <motion.section 
@@ -135,6 +565,28 @@ export default function BuildWithUs() {
           </div>
         </div>
       </motion.section>
+
+      {/* Inline CTA Card */}
+      <div className="container mx-auto px-6 -mt-6 mb-12 relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-gradient-to-r from-[#2b204c] to-[#1a1432] rounded-sm p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6"
+        >
+          <div>
+            <h3 className="text-xl md:text-2xl font-heading font-bold text-white mb-2">Interested in joining one of our active ventures?</h3>
+            <p className="text-slate-300">Explore co-founder opportunities with Hashecm, Nufin, or Urbano.</p>
+          </div>
+          <Button
+            onClick={() => setIsModalOpen(true)}
+            className="bg-white text-[#2b204c] hover:bg-[#8b68f6] hover:text-white rounded-sm px-8 py-4 h-auto font-bold text-sm uppercase tracking-widest transition-all whitespace-nowrap"
+            data-testid="button-explore-ventures"
+          >
+            Explore Ventures
+          </Button>
+        </motion.div>
+      </div>
 
       {/* Our Approach - 3 Steps */}
       <motion.section 
@@ -269,6 +721,41 @@ export default function BuildWithUs() {
                 <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Primary Application Form - Inline */}
+      <motion.section 
+        id="application-form"
+        className="py-16 md:py-24 bg-[#F9FAFB] scroll-mt-24"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={sectionVariants}
+      >
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-12">
+              <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-3 block">Apply Now</span>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#2b204c] uppercase mb-4">
+                Get in Touch
+              </h2>
+              <p className="text-slate-600">
+                Ready to partner with us? We'd love to hear from you. Reach out to discuss investment opportunities or learn more about how we can support your vision.
+              </p>
+            </div>
+            
+            <div className="bg-white p-8 md:p-12 rounded-sm border border-slate-100 shadow-lg">
+              <ApplicationForm
+                formData={primaryFormData}
+                setFormData={setPrimaryFormData}
+                onSubmit={() => handleSubmit("primary")}
+                isSubmitting={isSubmitting}
+                title="Tell us what you're building"
+                subtitle="Share your vision. We read every application personally and respond within a week."
+              />
+            </div>
           </div>
         </div>
       </motion.section>
@@ -450,72 +937,98 @@ export default function BuildWithUs() {
               Let's Build Something <br className="hidden md:block"/>Extraordinary Together
             </h2>
             <p className="text-slate-300 max-w-2xl mx-auto mb-10 text-lg">
-              If you're ready to build something impactful from scratch and want the structure, support, and ambition to grow fast—join our Venture Builder.
+              Whether you're ready to apply or just want to explore—we're here to help ambitious founders turn their visions into reality.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://risin.ventures/venture-builder/#get-in-touch-form" target="_blank" rel="noopener noreferrer">
-                <Button className="bg-[#8b68f6] hover:bg-white hover:text-[#2b204c] text-white rounded-sm px-10 py-4 h-auto font-bold text-sm uppercase tracking-widest transition-all w-full sm:w-auto shadow-lg shadow-[#8b68f6]/30">
-                  Apply Now <ArrowRight size={16} className="ml-2 inline" />
+              <Button 
+                onClick={scrollToForm}
+                className="bg-[#8b68f6] hover:bg-white hover:text-[#2b204c] text-white rounded-sm px-10 py-5 h-auto font-bold text-sm uppercase tracking-widest transition-all"
+                data-testid="button-apply-bottom"
+              >
+                Apply Now <ArrowRight size={16} className="ml-2 inline" />
+              </Button>
+              <Link href="/partners">
+                <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 rounded-sm px-10 py-5 h-auto font-bold text-sm uppercase tracking-widest transition-all">
+                  Partner With Us
                 </Button>
-              </a>
-              <a href="https://risin.ventures/contact/" target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 rounded-sm px-10 py-4 h-auto font-bold text-sm uppercase tracking-widest transition-all w-full sm:w-auto">
-                  Contact Us
-                </Button>
-              </a>
+              </Link>
             </div>
-            <p className="text-slate-500 text-xs mt-8 uppercase tracking-widest">
-              Submit your pitch deck and let's start a conversation
-            </p>
           </motion.div>
         </div>
       </motion.section>
 
       {/* Cross-links */}
-      <motion.section 
-        className="py-16 md:py-20 bg-white"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={sectionVariants}
-      >
+      <section className="py-12 bg-white border-t border-slate-100">
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-6">
-            <Link href="/case-studies">
-              <a className="group block p-8 bg-[#F9FAFB] rounded-sm border border-slate-100 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all">
-                <Target className="w-8 h-8 text-[#8b68f6] mb-4" />
-                <h3 className="text-lg font-heading font-bold text-[#2b204c] uppercase group-hover:text-[#8b68f6] transition-colors mb-2">Case Studies</h3>
-                <p className="text-slate-500 text-sm mb-4">See how we've helped founders build successful ventures.</p>
-                <span className="text-[10px] font-bold text-[#8b68f6] uppercase tracking-widest flex items-center gap-2">
-                  Explore <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
-                </span>
-              </a>
+          <div className="flex flex-wrap justify-center gap-8 text-sm">
+            <Link href="/case-studies" className="text-[#2b204c] hover:text-[#8b68f6] transition-colors font-medium">
+              View Case Studies →
             </Link>
-            <Link href="/#portfolio">
-              <a className="group block p-8 bg-[#F9FAFB] rounded-sm border border-slate-100 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all">
-                <Building2 className="w-8 h-8 text-[#2b204c] mb-4" />
-                <h3 className="text-lg font-heading font-bold text-[#2b204c] uppercase group-hover:text-[#8b68f6] transition-colors mb-2">Portfolio</h3>
-                <p className="text-slate-500 text-sm mb-4">Meet the companies in our portfolio.</p>
-                <span className="text-[10px] font-bold text-[#8b68f6] uppercase tracking-widest flex items-center gap-2">
-                  Explore <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
-                </span>
-              </a>
+            <Link href="/about" className="text-[#2b204c] hover:text-[#8b68f6] transition-colors font-medium">
+              Learn About Us →
             </Link>
-            <Link href="/partners">
-              <a className="group block p-8 bg-[#F9FAFB] rounded-sm border border-slate-100 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all">
-                <Network className="w-8 h-8 text-[#952828] mb-4" />
-                <h3 className="text-lg font-heading font-bold text-[#2b204c] uppercase group-hover:text-[#8b68f6] transition-colors mb-2">Our Partners</h3>
-                <p className="text-slate-500 text-sm mb-4">Strategic partners powering our ecosystem.</p>
-                <span className="text-[10px] font-bold text-[#8b68f6] uppercase tracking-widest flex items-center gap-2">
-                  Explore <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
-                </span>
-              </a>
+            <Link href="/team" className="text-[#2b204c] hover:text-[#8b68f6] transition-colors font-medium">
+              Meet Our Team →
             </Link>
           </div>
         </div>
-      </motion.section>
+      </section>
 
       <Footer />
+
+      {/* Idea-Based Form Modal */}
+      <AnimatePresence>
+        {isModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+            onClick={() => setIsModalOpen(false)}
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ duration: 0.3 }}
+              className="bg-white rounded-sm w-full max-w-3xl max-h-[90vh] overflow-y-auto shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Modal Header */}
+              <div className="sticky top-0 bg-white border-b border-slate-100 p-6 flex items-center justify-between z-10">
+                <div>
+                  <span className="text-[#8b68f6] text-xs font-bold uppercase tracking-widest mb-1 block">Join a Venture</span>
+                  <h2 className="text-xl font-heading font-bold text-[#2b204c] uppercase">Co-Founder Opportunities</h2>
+                </div>
+                <button
+                  onClick={() => setIsModalOpen(false)}
+                  className="w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center transition-colors"
+                  data-testid="button-close-modal"
+                >
+                  <X size={20} className="text-slate-600" />
+                </button>
+              </div>
+
+              {/* Modal Body */}
+              <div className="p-6 md:p-8">
+                <p className="text-slate-600 mb-8">
+                  We're actively building three ventures and looking for exceptional co-founders. Select one that aligns with your expertise and passion, or apply with your own idea.
+                </p>
+
+                <ApplicationForm
+                  formData={ideaFormData}
+                  setFormData={setIdeaFormData}
+                  onSubmit={() => handleSubmit("idea")}
+                  isSubmitting={isSubmitting}
+                  showIdeaSelection={true}
+                  title="Join Our Active Ventures"
+                  subtitle="Select a concept track below, or leave blank to propose your own idea."
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

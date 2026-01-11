@@ -11,6 +11,7 @@ import Careers from "@/pages/careers";
 import Partners from "@/pages/partners";
 import CaseStudies from "@/pages/case-studies";
 import News from "@/pages/news";
+import BuildWithUs from "@/pages/build-with-us";
 
 function Router() {
   return (
@@ -22,6 +23,7 @@ function Router() {
       <Route path="/partners" component={Partners} />
       <Route path="/case-studies" component={CaseStudies} />
       <Route path="/news" component={News} />
+      <Route path="/build-with-us" component={BuildWithUs} />
       <Route component={NotFound} />
     </Switch>
   );

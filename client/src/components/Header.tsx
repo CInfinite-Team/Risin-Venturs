@@ -64,10 +64,10 @@ export default function Header() {
   ];
 
   const ventureStudioItems = [
+    { label: "Build With Us", href: "/build-with-us" },
     { label: "Innovation", href: "/#philosophy" },
     { label: "Incubation", href: "/#philosophy" },
-    { label: "Acceleration", href: "/#programs" },
-    { label: "Venture Building", href: "/#philosophy" }
+    { label: "Acceleration", href: "/#programs" }
   ];
 
   return (
@@ -88,11 +88,13 @@ export default function Header() {
           <NavDropdown title="About" items={aboutItems} />
           <NavDropdown title="Programs" isPrimary items={programsItems} />
           <NavDropdown title="Venture Studio" items={ventureStudioItems} />
-          <a href="https://risin.ventures/contact/" target="_blank" rel="noopener noreferrer">
-            <Button className="bg-[#2b204c] text-white hover:bg-[#8b68f6] transition-all uppercase tracking-widest text-xs font-bold rounded-sm px-6 h-12 border-0 shadow-lg">
-              Build With Us
-            </Button>
-          </a>
+          <Link href="/build-with-us">
+            <a>
+              <Button className="bg-[#2b204c] text-white hover:bg-[#8b68f6] transition-all uppercase tracking-widest text-xs font-bold rounded-sm px-6 h-12 border-0 shadow-lg">
+                Build With Us
+              </Button>
+            </a>
+          </Link>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -146,11 +148,13 @@ export default function Header() {
                 </div>
               </div>
             ))}
-            <a href="https://risin.ventures/contact/" target="_blank" rel="noopener noreferrer">
-              <Button className="bg-[#2b204c] text-white uppercase tracking-widest text-sm font-bold rounded-sm w-full h-14 mt-4 shadow-lg">
-                Build With Us
-              </Button>
-            </a>
+            <Link href="/build-with-us">
+              <a onClick={() => setIsMenuOpen(false)}>
+                <Button className="bg-[#2b204c] text-white uppercase tracking-widest text-sm font-bold rounded-sm w-full h-14 mt-4 shadow-lg">
+                  Build With Us
+                </Button>
+              </a>
+            </Link>
           </div>
         </motion.div>
       )}

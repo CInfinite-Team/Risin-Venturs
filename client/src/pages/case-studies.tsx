@@ -4,6 +4,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -263,6 +264,7 @@ export default function CaseStudies() {
       </motion.section>
 
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }

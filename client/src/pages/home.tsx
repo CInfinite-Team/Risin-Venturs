@@ -4,6 +4,7 @@ import heroBg from "@assets/generated_images/abstract_deep-tech_network_visualiz
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -1140,6 +1141,7 @@ export default function Home() {
           </div>
         </div>
       </footer>
+      <ScrollToTop />
     </div>
   );
 }

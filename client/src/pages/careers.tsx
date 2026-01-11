@@ -30,7 +30,7 @@ export default function Careers() {
             className="max-w-4xl"
           >
             <div className="flex items-center gap-2 mb-4">
-              <Link href="/about"><a className="text-slate-400 text-sm font-bold uppercase tracking-widest hover:text-[#8b68f6] transition-colors">About</a></Link>
+              <Link href="/about" className="text-slate-400 text-sm font-bold uppercase tracking-widest hover:text-[#8b68f6] transition-colors">About</Link>
               <span className="text-slate-300">/</span>
               <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest">Careers</span>
             </div>

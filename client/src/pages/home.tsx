@@ -73,14 +73,12 @@ export default function Home() {
       {/* Navigation */}
       <nav className={`fixed top-0 w-full z-[100] transition-all duration-300 h-20 md:h-24 flex items-center ${isScrolled ? "bg-white shadow-md border-b border-slate-100" : "bg-white border-b border-slate-50"}`}>
         <div className="container mx-auto px-6 flex items-center justify-between">
-          <Link href="/">
-            <a className="flex items-center gap-2 group z-[110]">
-              <img 
-                src="/attached_assets/RISIN_LOGO_1767787710766.png" 
-                alt="Risin Ventures Logo" 
-                className="h-12 md:h-16 w-auto object-contain"
-              />
-            </a>
+          <Link href="/" className="flex items-center gap-2 group z-[110]">
+            <img 
+              src="/attached_assets/RISIN_LOGO_1767787710766.png" 
+              alt="Risin Ventures Logo" 
+              className="h-12 md:h-16 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -1057,7 +1055,7 @@ export default function Home() {
                     { label: "News & Insights", href: "/news" }
                   ].map((item) => (
                     <li key={item.label}>
-                      <Link href={item.href}><a className="text-[#2b204c] hover:text-[#8b68f6] transition-colors text-xs font-bold capitalize tracking-wider">{item.label}</a></Link>
+                      <Link href={item.href} className="text-[#2b204c] hover:text-[#8b68f6] transition-colors text-xs font-bold capitalize tracking-wider">{item.label}</Link>
                     </li>
                   ))}
                 </ul>

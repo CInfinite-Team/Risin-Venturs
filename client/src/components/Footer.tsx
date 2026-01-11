@@ -129,8 +129,10 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 mb-8 text-center">
-          <Link href="/contact" className="text-[#8b68f6] hover:text-[#2b204c] text-sm font-medium transition-colors inline-flex items-center gap-2">
-            Get in Touch with Risin Ventures →
+          <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3">Have a Question?</h4>
+          <Link href="/contact" className="text-xl md:text-2xl font-heading font-bold text-[#2b204c] hover:text-[#8b68f6] transition-colors inline-flex items-center gap-3 uppercase tracking-wide">
+            Get in Touch
+            <span className="text-[#8b68f6]">→</span>
           </Link>
         </div>
 

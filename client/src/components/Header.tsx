@@ -61,9 +61,9 @@ export default function Header() {
   ];
 
   const programsItems = [
-    { label: "AIX", href: "https://www.aixsummithack.com/", isExternal: true },
-    { label: "Sustainova", href: "https://sustainovachallenge.com/", isExternal: true },
-    { label: "Entrepreneurship Awards", href: "https://qatarentrepreneurshipawards.com/", isExternal: true },
+    { label: "AIX Summit & Hackathon", href: "/programs/aix" },
+    { label: "Sustainova Challenge", href: "/programs/sustainova" },
+    { label: "Entrepreneurship Awards", href: "/programs/entrepreneurship-awards" },
     { label: "GCC GTM", href: "/#programs" }
   ];
 

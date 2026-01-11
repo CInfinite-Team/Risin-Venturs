@@ -13,6 +13,9 @@ import CaseStudies from "@/pages/case-studies";
 import News from "@/pages/news";
 import BuildWithUs from "@/pages/build-with-us";
 import Contact from "@/pages/contact";
+import AIX from "@/pages/programs/aix";
+import Sustainova from "@/pages/programs/sustainova";
+import EntrepreneurshipAwards from "@/pages/programs/entrepreneurship-awards";
 
 function Router() {
   return (
@@ -26,6 +29,9 @@ function Router() {
       <Route path="/news" component={News} />
       <Route path="/build-with-us" component={BuildWithUs} />
       <Route path="/contact" component={Contact} />
+      <Route path="/programs/aix" component={AIX} />
+      <Route path="/programs/sustainova" component={Sustainova} />
+      <Route path="/programs/entrepreneurship-awards" component={EntrepreneurshipAwards} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "wouter";
+import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 const NavDropdown = ({ title, items, isPrimary }: { title: string, items: { label: string, href: string, isExternal?: boolean }[], isPrimary?: boolean }) => {
   return (
@@ -42,7 +41,6 @@ const NavDropdown = ({ title, items, isPrimary }: { title: string, items: { labe
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [, setLocation] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -73,11 +71,6 @@ export default function Header() {
     { label: "Incubation", href: "/#philosophy" },
     { label: "Acceleration", href: "/#programs" }
   ];
-
-  const handleNavClick = (href: string) => {
-    setIsMenuOpen(false);
-    setLocation(href);
-  };
 
   return (
     <nav className={`fixed top-0 w-full z-[100] transition-all duration-300 h-20 md:h-24 flex items-center ${isScrolled ? "bg-white shadow-md border-b border-slate-100" : "bg-white border-b border-slate-50"}`}>
@@ -138,13 +131,14 @@ export default function Header() {
                         {item.label}
                       </a>
                     ) : (
-                      <button
+                      <Link
                         key={item.label}
-                        onClick={() => handleNavClick(item.href)}
+                        href={item.href}
+                        onClick={() => setIsMenuOpen(false)}
                         className="text-lg font-bold text-[#2b204c] capitalize text-left"
                       >
                         {item.label}
-                      </button>
+                      </Link>
                     )
                   ))}
                 </div>

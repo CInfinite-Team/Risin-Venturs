@@ -110,15 +110,18 @@ export default function Footer() {
         </div>
 
         {/* Get in Touch CTA Banner */}
-        <div className="bg-gradient-to-r from-[#2b204c] via-[#3d2d6b] to-[#2b204c] rounded-sm p-8 md:p-12 mb-8 relative overflow-hidden">
-          <div className="absolute top-0 right-1/4 w-64 h-64 bg-[#8b68f6] opacity-20 rounded-full blur-[100px]"></div>
-          <div className="absolute bottom-0 left-1/4 w-48 h-48 bg-[#8b68f6] opacity-10 rounded-full blur-[80px]"></div>
-          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="text-center md:text-left">
-              <span className="text-[#8b68f6] text-[10px] font-bold uppercase tracking-[0.2em] mb-2 block">Have a Question?</span>
-              <h3 className="text-2xl md:text-3xl font-heading font-bold text-white uppercase">Let's Start a Conversation</h3>
+        <div className="bg-[#F9FAFB] border border-slate-200 rounded-sm p-8 md:p-10 mb-8">
+          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
+            <div className="w-16 h-16 md:w-20 md:h-20 bg-[#8b68f6]/10 rounded-sm flex items-center justify-center flex-shrink-0">
+              <svg className="w-8 h-8 md:w-10 md:h-10 text-[#8b68f6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+              </svg>
             </div>
-            <Link href="/contact" className="inline-flex items-center gap-3 bg-[#8b68f6] hover:bg-white text-white hover:text-[#2b204c] px-10 py-4 rounded-sm font-bold uppercase tracking-widest text-sm transition-all shadow-lg hover:shadow-xl whitespace-nowrap">
+            <div className="flex-1 text-center md:text-left">
+              <h3 className="text-xl md:text-2xl font-heading font-bold text-[#2b204c] uppercase mb-1">Ready to Build Something Great?</h3>
+              <p className="text-slate-500 text-sm">Let's discuss how we can help bring your vision to life.</p>
+            </div>
+            <Link href="/contact" className="inline-flex items-center gap-3 border-2 border-[#2b204c] text-[#2b204c] hover:bg-[#2b204c] hover:text-white px-8 py-4 rounded-sm font-bold uppercase tracking-widest text-sm transition-all whitespace-nowrap">
               Get in Touch
               <span>→</span>
             </Link>

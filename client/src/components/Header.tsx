@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { motion } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
 
@@ -41,6 +41,12 @@ const NavDropdown = ({ title, items, isPrimary }: { title: string, items: { labe
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [, navigate] = useLocation();
+
+  const handleMobileNavClick = (href: string) => {
+    setIsMenuOpen(false);
+    navigate(href);
+  };
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -131,26 +137,26 @@ export default function Header() {
                         {item.label}
                       </a>
                     ) : (
-                      <Link
+                      <button
                         key={item.label}
-                        href={item.href}
-                        onClick={() => setIsMenuOpen(false)}
-                        className="text-lg font-bold text-[#2b204c] capitalize text-left"
+                        type="button"
+                        onClick={() => handleMobileNavClick(item.href)}
+                        className="text-lg font-bold text-[#2b204c] capitalize text-left w-full"
                       >
                         {item.label}
-                      </Link>
+                      </button>
                     )
                   ))}
                 </div>
               </div>
             ))}
-            <Link 
-              href="/build-with-us"
-              onClick={() => setIsMenuOpen(false)}
+            <button
+              type="button"
+              onClick={() => handleMobileNavClick("/build-with-us")}
               className="bg-[#2b204c] text-white uppercase tracking-widest text-sm font-bold rounded-sm w-full h-14 mt-4 shadow-lg inline-flex items-center justify-center"
             >
               Build With Us
-            </Link>
+            </button>
           </div>
         </motion.div>
       )}

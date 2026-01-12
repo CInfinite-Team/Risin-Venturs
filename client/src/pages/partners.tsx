@@ -142,18 +142,18 @@ export default function Partners() {
             {partnerLogos.investors.map((logo, i) => (
               <div 
                 key={`investor-1-${i}`} 
-                className="flex-shrink-0 w-28 h-28 md:w-36 md:h-36 mx-3 bg-white rounded-sm border border-slate-100 flex items-center justify-center hover:shadow-lg hover:border-[#8b68f6]/30 transition-all"
+                className="flex-shrink-0 w-32 h-32 mx-3 bg-white rounded-sm border border-slate-100 flex items-center justify-center hover:shadow-lg hover:border-[#8b68f6]/30 transition-all"
               >
-                <img src={logo} alt={`Investor ${i + 1}`} className="max-h-16 md:max-h-20 max-w-[80%] object-contain filter grayscale hover:grayscale-0 transition-all" />
+                <img src={logo} alt={`Investor ${i + 1}`} className="max-h-16 max-w-[75%] object-contain filter grayscale hover:grayscale-0 transition-all" />
               </div>
             ))}
             {/* Duplicate set for seamless loop */}
             {partnerLogos.investors.map((logo, i) => (
               <div 
                 key={`investor-2-${i}`} 
-                className="flex-shrink-0 w-28 h-28 md:w-36 md:h-36 mx-3 bg-white rounded-sm border border-slate-100 flex items-center justify-center hover:shadow-lg hover:border-[#8b68f6]/30 transition-all"
+                className="flex-shrink-0 w-32 h-32 mx-3 bg-white rounded-sm border border-slate-100 flex items-center justify-center hover:shadow-lg hover:border-[#8b68f6]/30 transition-all"
               >
-                <img src={logo} alt={`Investor ${i + 1}`} className="max-h-16 md:max-h-20 max-w-[80%] object-contain filter grayscale hover:grayscale-0 transition-all" />
+                <img src={logo} alt={`Investor ${i + 1}`} className="max-h-16 max-w-[75%] object-contain filter grayscale hover:grayscale-0 transition-all" />
               </div>
             ))}
           </div>
@@ -173,10 +173,10 @@ export default function Partners() {
             <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-3 block">Innovation Network</span>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#2b204c] uppercase">Ecosystem Partners</h2>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="flex flex-wrap justify-center gap-4">
             {partnerLogos.ecosystem.map((logo, i) => (
-              <div key={i} className="bg-[#F9FAFB] rounded-sm border border-slate-100 flex items-center justify-center aspect-square hover:shadow-lg hover:border-[#8b68f6]/30 transition-all p-6">
-                <img src={logo} alt={`Ecosystem Partner ${i + 1}`} className="max-h-14 md:max-h-16 max-w-[75%] object-contain filter grayscale hover:grayscale-0 transition-all" />
+              <div key={i} className="bg-[#F9FAFB] rounded-sm border border-slate-100 flex items-center justify-center w-32 h-32 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all">
+                <img src={logo} alt={`Ecosystem Partner ${i + 1}`} className="max-h-16 max-w-[75%] object-contain filter grayscale hover:grayscale-0 transition-all" />
               </div>
             ))}
           </div>
@@ -196,10 +196,10 @@ export default function Partners() {
             <span className="text-[#2b204c] text-sm font-bold uppercase tracking-widest mb-3 block">Market Access</span>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#2b204c] uppercase">GTM Partners</h2>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="flex flex-wrap justify-center gap-4">
             {partnerLogos.gtm.map((logo, i) => (
-              <div key={i} className="bg-white rounded-sm border border-slate-100 flex items-center justify-center aspect-square hover:shadow-lg hover:border-[#8b68f6]/30 transition-all p-6">
-                <img src={logo} alt={`GTM Partner ${i + 1}`} className="max-h-14 md:max-h-16 max-w-[75%] object-contain filter grayscale hover:grayscale-0 transition-all" />
+              <div key={i} className="bg-white rounded-sm border border-slate-100 flex items-center justify-center w-32 h-32 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all">
+                <img src={logo} alt={`GTM Partner ${i + 1}`} className="max-h-16 max-w-[75%] object-contain filter grayscale hover:grayscale-0 transition-all" />
               </div>
             ))}
           </div>

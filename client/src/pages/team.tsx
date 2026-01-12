@@ -15,6 +15,37 @@ const sectionVariants = {
   }
 };
 
+const advisors = [
+  {
+    name: "Advisor Name",
+    role: "Strategic Advisor",
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face",
+    bio: "Industry veteran with deep expertise in technology and venture building.",
+    linkedin: "#"
+  },
+  {
+    name: "Advisor Name",
+    role: "Technical Advisor",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face",
+    bio: "Expert in deep tech with extensive experience in AI and blockchain.",
+    linkedin: "#"
+  },
+  {
+    name: "Advisor Name",
+    role: "Investment Advisor",
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&crop=face",
+    bio: "Seasoned investor with a track record of successful exits in MENA region.",
+    linkedin: "#"
+  },
+  {
+    name: "Advisor Name",
+    role: "Ecosystem Advisor",
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face",
+    bio: "Ecosystem builder with connections across GCC startup communities.",
+    linkedin: "#"
+  }
+];
+
 const teamMembers = [
   {
     name: "Awdesh Chetal",
@@ -97,6 +128,34 @@ export default function Team() {
         </div>
       </section>
 
+      {/* Team Description */}
+      <motion.section 
+        className="py-12 md:py-16 bg-white border-b border-slate-100"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={sectionVariants}
+      >
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="bg-gradient-to-br from-[#8b68f6]/5 to-[#2b204c]/5 rounded-sm p-8 md:p-12 border border-[#8b68f6]/10">
+              <h2 className="text-2xl md:text-3xl font-heading font-bold text-[#2b204c] mb-6 uppercase">
+                We Complement Each Other
+              </h2>
+              <p className="text-slate-600 leading-relaxed text-lg mb-6">
+                At Risin, we're more than colleagues—we're a team that genuinely enjoys working together. Our diverse backgrounds and complementary skills create a dynamic where strategy meets execution, and creativity meets discipline.
+              </p>
+              <p className="text-slate-600 leading-relaxed text-lg mb-6">
+                We bring decades of combined experience solving real-world problems using innovation tools—from AI and IoT to blockchain and beyond. But what truly sets us apart is the fun we have while doing it.
+              </p>
+              <p className="text-[#2b204c] font-bold text-lg">
+                We are builders of startups. We are builders of communities. <span className="text-[#8b68f6]">This is Risin.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
       {/* Team Grid */}
       <motion.section 
         className="py-16 md:py-20 bg-white"
@@ -136,6 +195,61 @@ export default function Team() {
                   <h3 className="text-lg font-heading font-bold text-[#2b204c] mb-1 uppercase">{member.name}</h3>
                   <span className="text-[#8b68f6] text-xs font-bold uppercase tracking-widest block mb-3">{member.role}</span>
                   <p className="text-slate-500 text-sm leading-relaxed line-clamp-3">{member.bio}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Advisors Section */}
+      <motion.section 
+        className="py-16 md:py-20 bg-[#F9FAFB]"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={sectionVariants}
+      >
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-12">
+            <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-3 block">Guidance</span>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#2b204c] uppercase">Our Advisors</h2>
+            <p className="text-slate-600 mt-4 max-w-2xl mx-auto">
+              Industry leaders who guide our strategic direction and bring invaluable expertise to our ventures.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            {advisors.map((advisor, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="group bg-white rounded-sm overflow-hidden border border-slate-100 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all"
+              >
+                <div className="aspect-square relative overflow-hidden">
+                  <img 
+                    src={advisor.image} 
+                    alt={advisor.name}
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#2b204c]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  {advisor.linkedin !== "#" && (
+                    <a 
+                      href={advisor.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute bottom-4 right-4 w-10 h-10 bg-white rounded-sm flex items-center justify-center text-[#2b204c] hover:bg-[#8b68f6] hover:text-white transition-all opacity-0 group-hover:opacity-100"
+                    >
+                      <Linkedin size={18} />
+                    </a>
+                  )}
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-heading font-bold text-[#2b204c] mb-1 uppercase">{advisor.name}</h3>
+                  <span className="text-[#8b68f6] text-xs font-bold uppercase tracking-widest block mb-3">{advisor.role}</span>
+                  <p className="text-slate-500 text-sm leading-relaxed line-clamp-3">{advisor.bio}</p>
                 </div>
               </motion.div>
             ))}

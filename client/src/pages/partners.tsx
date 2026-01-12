@@ -142,18 +142,18 @@ export default function Partners() {
             {partnerLogos.investors.map((logo, i) => (
               <div 
                 key={`investor-1-${i}`} 
-                className="flex-shrink-0 w-32 h-32 mx-3 bg-white rounded-sm border border-slate-100 flex items-center justify-center hover:shadow-lg hover:border-[#8b68f6]/30 transition-all"
+                className="flex-shrink-0 w-40 h-40 mx-3 bg-white rounded-sm border border-slate-100 flex items-center justify-center hover:shadow-lg hover:border-[#8b68f6]/30 transition-all"
               >
-                <img src={logo} alt={`Investor ${i + 1}`} className="max-h-16 max-w-[75%] object-contain filter grayscale hover:grayscale-0 transition-all" />
+                <img src={logo} alt={`Investor ${i + 1}`} className="max-h-20 max-w-[75%] object-contain filter grayscale hover:grayscale-0 transition-all" />
               </div>
             ))}
             {/* Duplicate set for seamless loop */}
             {partnerLogos.investors.map((logo, i) => (
               <div 
                 key={`investor-2-${i}`} 
-                className="flex-shrink-0 w-32 h-32 mx-3 bg-white rounded-sm border border-slate-100 flex items-center justify-center hover:shadow-lg hover:border-[#8b68f6]/30 transition-all"
+                className="flex-shrink-0 w-40 h-40 mx-3 bg-white rounded-sm border border-slate-100 flex items-center justify-center hover:shadow-lg hover:border-[#8b68f6]/30 transition-all"
               >
-                <img src={logo} alt={`Investor ${i + 1}`} className="max-h-16 max-w-[75%] object-contain filter grayscale hover:grayscale-0 transition-all" />
+                <img src={logo} alt={`Investor ${i + 1}`} className="max-h-20 max-w-[75%] object-contain filter grayscale hover:grayscale-0 transition-all" />
               </div>
             ))}
           </div>
@@ -175,8 +175,8 @@ export default function Partners() {
           </div>
           <div className="flex flex-wrap justify-center gap-4">
             {partnerLogos.ecosystem.map((logo, i) => (
-              <div key={i} className="bg-[#F9FAFB] rounded-sm border border-slate-100 flex items-center justify-center w-32 h-32 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all">
-                <img src={logo} alt={`Ecosystem Partner ${i + 1}`} className="max-h-16 max-w-[75%] object-contain filter grayscale hover:grayscale-0 transition-all" />
+              <div key={i} className="bg-[#F9FAFB] rounded-sm border border-slate-100 flex items-center justify-center w-40 h-40 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all">
+                <img src={logo} alt={`Ecosystem Partner ${i + 1}`} className="max-h-20 max-w-[75%] object-contain filter grayscale hover:grayscale-0 transition-all" />
               </div>
             ))}
           </div>
@@ -198,8 +198,8 @@ export default function Partners() {
           </div>
           <div className="flex flex-wrap justify-center gap-4">
             {partnerLogos.gtm.map((logo, i) => (
-              <div key={i} className="bg-white rounded-sm border border-slate-100 flex items-center justify-center w-32 h-32 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all">
-                <img src={logo} alt={`GTM Partner ${i + 1}`} className="max-h-16 max-w-[75%] object-contain filter grayscale hover:grayscale-0 transition-all" />
+              <div key={i} className="bg-white rounded-sm border border-slate-100 flex items-center justify-center w-40 h-40 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all">
+                <img src={logo} alt={`GTM Partner ${i + 1}`} className="max-h-20 max-w-[75%] object-contain filter grayscale hover:grayscale-0 transition-all" />
               </div>
             ))}
           </div>

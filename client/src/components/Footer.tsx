@@ -63,13 +63,13 @@ export default function Footer() {
               <h4 className="font-bold uppercase tracking-widest text-[10px] mb-6 text-[#8b68f6]">Programs</h4>
               <ul className="space-y-3">
                 {[
-                  { label: "AIX", href: "https://www.aixsummithack.com/" },
-                  { label: "Sustainova", href: "https://sustainovachallenge.com/" },
-                  { label: "Entrepreneurship Awards", href: "https://qatarentrepreneurshipawards.com/" },
+                  { label: "AIX Summit & Hackathon", href: "/programs/aix" },
+                  { label: "Sustainova Challenge", href: "/programs/sustainova" },
+                  { label: "Entrepreneurship Awards", href: "/programs/entrepreneurship-awards" },
                   { label: "GCC GTM", href: "/#programs" }
                 ].map((item) => (
                   <li key={item.label}>
-                    <a href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined} className="text-[#2b204c] hover:text-[#8b68f6] transition-colors text-xs font-bold capitalize tracking-wider">{item.label}</a>
+                    <Link href={item.href} className="text-[#2b204c] hover:text-[#8b68f6] transition-colors text-xs font-bold capitalize tracking-wider">{item.label}</Link>
                   </li>
                 ))}
               </ul>
@@ -80,13 +80,13 @@ export default function Footer() {
             <h4 className="font-bold uppercase tracking-widest text-[10px] mb-8 text-[#8b68f6]">Programs</h4>
             <ul className="space-y-4">
               {[
-                { label: "AIX", href: "https://www.aixsummithack.com/" },
-                { label: "Sustainova", href: "https://sustainovachallenge.com/" },
-                { label: "Entrepreneurship Awards", href: "https://qatarentrepreneurshipawards.com/" },
+                { label: "AIX Summit & Hackathon", href: "/programs/aix" },
+                { label: "Sustainova Challenge", href: "/programs/sustainova" },
+                { label: "Entrepreneurship Awards", href: "/programs/entrepreneurship-awards" },
                 { label: "GCC GTM", href: "/#programs" }
               ].map((item) => (
                 <li key={item.label}>
-                  <a href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined} className="text-[#2b204c] hover:text-[#8b68f6] transition-colors text-xs font-bold capitalize tracking-wider">{item.label}</a>
+                  <Link href={item.href} className="text-[#2b204c] hover:text-[#8b68f6] transition-colors text-xs font-bold capitalize tracking-wider">{item.label}</Link>
                 </li>
               ))}
             </ul>

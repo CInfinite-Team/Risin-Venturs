@@ -20,7 +20,13 @@ const partnerLogos = {
     "https://risin.ventures/wp-content/uploads/2024/06/logo-23.png",
     "https://risin.ventures/wp-content/uploads/2024/06/logo-24.png",
     "https://risin.ventures/wp-content/uploads/2024/06/logo-25.png",
-    "https://risin.ventures/wp-content/uploads/2024/06/logo-26.png"
+    "https://risin.ventures/wp-content/uploads/2024/06/logo-26.png",
+    "https://risin.ventures/wp-content/uploads/2024/06/logo-17.png",
+    "https://risin.ventures/wp-content/uploads/2024/06/logo-18.png",
+    "https://risin.ventures/wp-content/uploads/2024/06/logo-19.png",
+    "https://risin.ventures/wp-content/uploads/2024/06/logo-20.png",
+    "https://risin.ventures/wp-content/uploads/2024/06/logo-21.png",
+    "https://risin.ventures/wp-content/uploads/2024/06/logo-22.png"
   ],
   ecosystem: [
     "https://risin.ventures/wp-content/uploads/2024/06/logo-1.png",
@@ -115,9 +121,9 @@ export default function Partners() {
         </div>
       </motion.section>
 
-      {/* Our Investors */}
+      {/* Our Investors - Auto-scrolling Slider */}
       <motion.section 
-        className="py-16 md:py-20 bg-[#F9FAFB]"
+        className="py-16 md:py-20 bg-[#F9FAFB] overflow-hidden"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -128,10 +134,26 @@ export default function Partners() {
             <span className="text-[#952828] text-sm font-bold uppercase tracking-widest mb-3 block">Capital Partners</span>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#2b204c] uppercase">Our Investors</h2>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        </div>
+        {/* Infinite Scrolling Slider */}
+        <div className="relative">
+          <div className="flex animate-scroll-left">
+            {/* First set of logos */}
             {partnerLogos.investors.map((logo, i) => (
-              <div key={i} className="bg-white p-8 rounded-sm border border-slate-100 flex items-center justify-center aspect-[3/2] hover:shadow-md transition-shadow">
-                <img src={logo} alt={`Investor ${i + 1}`} className="max-h-16 w-auto object-contain filter grayscale hover:grayscale-0 transition-all" />
+              <div 
+                key={`investor-1-${i}`} 
+                className="flex-shrink-0 w-40 h-40 md:w-48 md:h-48 mx-3 bg-white rounded-sm border border-slate-100 flex items-center justify-center hover:shadow-lg hover:border-[#8b68f6]/30 transition-all"
+              >
+                <img src={logo} alt={`Investor ${i + 1}`} className="max-h-24 md:max-h-28 max-w-[80%] object-contain filter grayscale hover:grayscale-0 transition-all" />
+              </div>
+            ))}
+            {/* Duplicate set for seamless loop */}
+            {partnerLogos.investors.map((logo, i) => (
+              <div 
+                key={`investor-2-${i}`} 
+                className="flex-shrink-0 w-40 h-40 md:w-48 md:h-48 mx-3 bg-white rounded-sm border border-slate-100 flex items-center justify-center hover:shadow-lg hover:border-[#8b68f6]/30 transition-all"
+              >
+                <img src={logo} alt={`Investor ${i + 1}`} className="max-h-24 md:max-h-28 max-w-[80%] object-contain filter grayscale hover:grayscale-0 transition-all" />
               </div>
             ))}
           </div>
@@ -153,8 +175,8 @@ export default function Partners() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {partnerLogos.ecosystem.map((logo, i) => (
-              <div key={i} className="bg-[#F9FAFB] p-8 rounded-sm border border-slate-100 flex items-center justify-center aspect-[3/2] hover:shadow-md transition-shadow">
-                <img src={logo} alt={`Ecosystem Partner ${i + 1}`} className="max-h-16 w-auto object-contain filter grayscale hover:grayscale-0 transition-all" />
+              <div key={i} className="bg-[#F9FAFB] rounded-sm border border-slate-100 flex items-center justify-center aspect-square hover:shadow-lg hover:border-[#8b68f6]/30 transition-all p-6">
+                <img src={logo} alt={`Ecosystem Partner ${i + 1}`} className="max-h-20 md:max-h-24 max-w-[80%] object-contain filter grayscale hover:grayscale-0 transition-all" />
               </div>
             ))}
           </div>
@@ -176,8 +198,8 @@ export default function Partners() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {partnerLogos.gtm.map((logo, i) => (
-              <div key={i} className="bg-white p-8 rounded-sm border border-slate-100 flex items-center justify-center aspect-[3/2] hover:shadow-md transition-shadow">
-                <img src={logo} alt={`GTM Partner ${i + 1}`} className="max-h-16 w-auto object-contain filter grayscale hover:grayscale-0 transition-all" />
+              <div key={i} className="bg-white rounded-sm border border-slate-100 flex items-center justify-center aspect-square hover:shadow-lg hover:border-[#8b68f6]/30 transition-all p-6">
+                <img src={logo} alt={`GTM Partner ${i + 1}`} className="max-h-20 md:max-h-24 max-w-[80%] object-contain filter grayscale hover:grayscale-0 transition-all" />
               </div>
             ))}
           </div>

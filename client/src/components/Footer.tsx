@@ -109,16 +109,18 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Floating CTA Card */}
-        <div className="bg-gradient-to-br from-[#8b68f6] to-[#6b4ed8] rounded-sm p-8 md:p-10 mb-8 text-center relative overflow-hidden shadow-xl">
-          <div className="absolute top-0 left-0 w-32 h-32 bg-white opacity-10 rounded-full -translate-x-1/2 -translate-y-1/2 blur-2xl"></div>
-          <div className="absolute bottom-0 right-0 w-48 h-48 bg-[#2b204c] opacity-20 rounded-full translate-x-1/4 translate-y-1/4 blur-3xl"></div>
-          <div className="relative z-10">
-            <span className="inline-block text-white/60 text-[10px] font-bold uppercase tracking-[0.2em] mb-3">Ready to discuss your next venture?</span>
-            <h3 className="text-2xl md:text-3xl font-heading font-bold text-white mb-6 uppercase">Let's Start a Conversation</h3>
-            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-[#2b204c] hover:bg-[#2b204c] hover:text-white px-10 py-4 rounded-sm font-bold uppercase tracking-widest text-sm transition-all shadow-lg hover:shadow-xl">
+        {/* Get in Touch CTA Banner */}
+        <div className="bg-gradient-to-r from-[#2b204c] via-[#3d2d6b] to-[#2b204c] rounded-sm p-8 md:p-12 mb-8 relative overflow-hidden">
+          <div className="absolute top-0 right-1/4 w-64 h-64 bg-[#8b68f6] opacity-20 rounded-full blur-[100px]"></div>
+          <div className="absolute bottom-0 left-1/4 w-48 h-48 bg-[#8b68f6] opacity-10 rounded-full blur-[80px]"></div>
+          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="text-center md:text-left">
+              <span className="text-[#8b68f6] text-[10px] font-bold uppercase tracking-[0.2em] mb-2 block">Have a Question?</span>
+              <h3 className="text-2xl md:text-3xl font-heading font-bold text-white uppercase">Let's Start a Conversation</h3>
+            </div>
+            <Link href="/contact" className="inline-flex items-center gap-3 bg-[#8b68f6] hover:bg-white text-white hover:text-[#2b204c] px-10 py-4 rounded-sm font-bold uppercase tracking-widest text-sm transition-all shadow-lg hover:shadow-xl whitespace-nowrap">
               Get in Touch
-              <span className="text-[#8b68f6]">→</span>
+              <span>→</span>
             </Link>
           </div>
         </div>

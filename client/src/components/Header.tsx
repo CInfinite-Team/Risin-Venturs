@@ -41,12 +41,11 @@ const NavDropdown = ({ title, items, isPrimary }: { title: string, items: { labe
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [, navigate] = useLocation();
+  const [location] = useLocation();
 
-  const handleMobileNavClick = (href: string) => {
+  useEffect(() => {
     setIsMenuOpen(false);
-    navigate(href);
-  };
+  }, [location]);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -137,26 +136,24 @@ export default function Header() {
                         {item.label}
                       </a>
                     ) : (
-                      <button
+                      <Link
                         key={item.label}
-                        type="button"
-                        onClick={() => handleMobileNavClick(item.href)}
-                        className="text-lg font-bold text-[#2b204c] capitalize text-left w-full"
+                        href={item.href}
+                        className="text-lg font-bold text-[#2b204c] capitalize text-left"
                       >
                         {item.label}
-                      </button>
+                      </Link>
                     )
                   ))}
                 </div>
               </div>
             ))}
-            <button
-              type="button"
-              onClick={() => handleMobileNavClick("/build-with-us")}
+            <Link
+              href="/build-with-us"
               className="bg-[#2b204c] text-white uppercase tracking-widest text-sm font-bold rounded-sm w-full h-14 mt-4 shadow-lg inline-flex items-center justify-center"
             >
               Build With Us
-            </button>
+            </Link>
           </div>
         </motion.div>
       )}

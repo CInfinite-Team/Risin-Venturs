@@ -69,32 +69,11 @@ const teamMembers = [
     linkedin: "https://www.linkedin.com/in/mohamed-rabie-69434a2a/"
   },
   {
-    name: "Jenita Robert",
-    role: "Project Specialist",
-    image: "https://risin.ventures/wp-content/uploads/2024/06/Photo-Jenita-Robert-1.jpg",
-    bio: "Project management professional with over 5 years of experience, demonstrating a commitment to excellence. Proven track record in successfully managing projects.",
-    linkedin: "https://www.linkedin.com/in/jenitarobert/"
-  },
-  {
-    name: "Saja Abdelwahab",
-    role: "Startups Specialist",
-    image: "https://risin.ventures/wp-content/uploads/2024/06/Saja-1.jpg",
-    bio: "Results-driven Business Development Consultant with extensive experience in legal, startup, and social enterprise sectors. Proven success in fostering entrepreneurial development.",
-    linkedin: "https://www.linkedin.com/in/saja-abdelwahab/"
-  },
-  {
     name: "Janasri Reshika",
     role: "Startups Coordinator",
     image: "https://risin.ventures/wp-content/uploads/2024/06/Janasri-1.jpg",
     bio: "Instrumental in organizing a GCC-based challenge for tech startups. Specialized in market research, startup feasibility, and relationship building.",
     linkedin: "https://www.linkedin.com/in/janasri-reshika-484031141/"
-  },
-  {
-    name: "Samruddhi Gharpure",
-    role: "PMO Innovation Consultant",
-    image: "https://risin.ventures/wp-content/uploads/2024/06/Photo-Samruddhi-1.jpg",
-    bio: "Dynamic project management professional, with a proven record of leading teams. Recognized for implementing effective communication strategies and risk management.",
-    linkedin: "https://www.linkedin.com/in/samruddhigharpure/"
   }
 ];
 

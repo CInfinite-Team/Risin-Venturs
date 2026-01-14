@@ -1,17 +1,20 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Handshake, TrendingUp, Building2 } from "lucide-react";
+import { ArrowRight, Handshake, TrendingUp, Building2, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
+import { useCallback } from "react";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: { 
     opacity: 1, 
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" }
+    transition: { duration: 0.6 }
   }
 };
 
@@ -48,6 +51,60 @@ const partnerLogos = {
     "https://risin.ventures/wp-content/uploads/2024/06/logo-15.png",
     "https://risin.ventures/wp-content/uploads/2024/06/logo-16.png"
   ]
+};
+
+const PartnerLogoCarousel = ({ logos, autoplay = false, loop = false }: { logos: string[], autoplay?: boolean, loop?: boolean }) => {
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { loop, align: "start", containScroll: "trimSnaps" }, 
+    autoplay ? [Autoplay({ delay: 2000, stopOnInteraction: false })] : []
+  );
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
+  return (
+    <div className="relative group">
+      <div className="overflow-hidden" ref={emblaRef}>
+        <div className="flex touch-pan-y">
+          {logos.map((logo, i) => (
+            <div 
+              key={i} 
+              className="flex-[0_0_50%] min-w-0 sm:flex-[0_0_33.33%] md:flex-[0_0_25%] lg:flex-[0_0_20%] pl-4"
+            >
+              <div className="bg-white rounded-sm border border-slate-100 flex items-center justify-center aspect-square hover:shadow-lg hover:border-[#8b68f6]/30 transition-all">
+                <img 
+                  src={logo} 
+                  alt={`Partner ${i + 1}`} 
+                  className="w-[70%] h-auto object-contain filter grayscale hover:grayscale-0 transition-all" 
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      {/* Navigation Arrows - Visible on Mobile and Desktop */}
+      <button 
+        onClick={scrollPrev}
+        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 bg-white border border-slate-200 text-slate-500 rounded-full w-10 h-10 flex items-center justify-center shadow-md hover:bg-[#8b68f6] hover:text-white transition-all focus:outline-none"
+        aria-label="Previous slide"
+      >
+        <ChevronLeft size={20} />
+      </button>
+      <button 
+        onClick={scrollNext}
+        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 bg-white border border-slate-200 text-slate-500 rounded-full w-10 h-10 flex items-center justify-center shadow-md hover:bg-[#8b68f6] hover:text-white transition-all focus:outline-none"
+        aria-label="Next slide"
+      >
+        <ChevronRight size={20} />
+      </button>
+    </div>
+  );
 };
 
 export default function Partners() {
@@ -121,9 +178,9 @@ export default function Partners() {
         </div>
       </motion.section>
 
-      {/* Our Investors - Auto-scrolling Slider */}
+      {/* Our Investors - Faster Carousel with Arrows */}
       <motion.section 
-        className="py-16 md:py-20 bg-[#F9FAFB] overflow-hidden"
+        className="py-16 md:py-20 bg-[#F9FAFB]"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -134,28 +191,8 @@ export default function Partners() {
             <span className="text-[#952828] text-sm font-bold uppercase tracking-widest mb-3 block">Capital Partners</span>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#2b204c] uppercase">Our Investors</h2>
           </div>
-        </div>
-        {/* Infinite Scrolling Slider */}
-        <div className="relative">
-          <div className="flex animate-scroll-left">
-            {/* First set of logos */}
-            {partnerLogos.investors.map((logo, i) => (
-              <div 
-                key={`investor-1-${i}`} 
-                className="flex-shrink-0 w-40 h-40 mx-3 bg-white rounded-sm border border-slate-100 flex items-center justify-center hover:shadow-lg hover:border-[#8b68f6]/30 transition-all"
-              >
-                <img src={logo} alt={`Investor ${i + 1}`} className="max-h-20 max-w-[75%] object-contain filter grayscale hover:grayscale-0 transition-all" />
-              </div>
-            ))}
-            {/* Duplicate set for seamless loop */}
-            {partnerLogos.investors.map((logo, i) => (
-              <div 
-                key={`investor-2-${i}`} 
-                className="flex-shrink-0 w-40 h-40 mx-3 bg-white rounded-sm border border-slate-100 flex items-center justify-center hover:shadow-lg hover:border-[#8b68f6]/30 transition-all"
-              >
-                <img src={logo} alt={`Investor ${i + 1}`} className="max-h-20 max-w-[75%] object-contain filter grayscale hover:grayscale-0 transition-all" />
-              </div>
-            ))}
+          <div className="px-4 md:px-12">
+            <PartnerLogoCarousel logos={partnerLogos.investors} autoplay={true} loop={true} />
           </div>
         </div>
       </motion.section>
@@ -173,10 +210,17 @@ export default function Partners() {
             <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-3 block">Innovation Network</span>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#2b204c] uppercase">Ecosystem Partners</h2>
           </div>
-          <div className="flex flex-wrap justify-center gap-4">
+          
+          {/* Mobile Carousel */}
+          <div className="block md:hidden px-4">
+            <PartnerLogoCarousel logos={partnerLogos.ecosystem} />
+          </div>
+
+          {/* Desktop Grid */}
+          <div className="hidden md:flex flex-wrap justify-center gap-4">
             {partnerLogos.ecosystem.map((logo, i) => (
               <div key={i} className="bg-[#F9FAFB] rounded-sm border border-slate-100 flex items-center justify-center w-40 h-40 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all">
-                <img src={logo} alt={`Ecosystem Partner ${i + 1}`} className="max-h-20 max-w-[75%] object-contain filter grayscale hover:grayscale-0 transition-all" />
+                <img src={logo} alt={`Ecosystem Partner ${i + 1}`} className="w-[70%] h-auto object-contain filter grayscale hover:grayscale-0 transition-all" />
               </div>
             ))}
           </div>
@@ -196,10 +240,19 @@ export default function Partners() {
             <span className="text-[#2b204c] text-sm font-bold uppercase tracking-widest mb-3 block">Market Access</span>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#2b204c] uppercase">GTM Partners</h2>
           </div>
-          <div className="flex flex-wrap justify-center gap-4">
+
+          {/* Mobile Carousel */}
+          <div className="block md:hidden px-4">
+            <div className="bg-white p-4 rounded-sm border border-slate-100">
+               <PartnerLogoCarousel logos={partnerLogos.gtm} />
+            </div>
+          </div>
+
+          {/* Desktop Grid */}
+          <div className="hidden md:flex flex-wrap justify-center gap-4">
             {partnerLogos.gtm.map((logo, i) => (
               <div key={i} className="bg-white rounded-sm border border-slate-100 flex items-center justify-center w-40 h-40 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all">
-                <img src={logo} alt={`GTM Partner ${i + 1}`} className="max-h-20 max-w-[75%] object-contain filter grayscale hover:grayscale-0 transition-all" />
+                <img src={logo} alt={`GTM Partner ${i + 1}`} className="w-[70%] h-auto object-contain filter grayscale hover:grayscale-0 transition-all" />
               </div>
             ))}
           </div>

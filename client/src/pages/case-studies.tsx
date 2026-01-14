@@ -29,7 +29,7 @@ const caseStudies = [
     image: "https://risin.ventures/wp-content/uploads/2025/05/a-1.png",
     date: "May 2025",
     excerpt: "How enterprises are leveraging structured hackathons to build production-ready AI tools in weeks, not months.",
-    link: "https://risin.ventures/ai-hackathons-for-enterprises-beyond-buzzwords-to-real-roi/",
+    link: "/case-studies/ai-hackathons",
     featured: false
   },
   {
@@ -37,7 +37,7 @@ const caseStudies = [
     image: "https://risin.ventures/wp-content/uploads/2024/11/photo-collage.png-2.png",
     date: "November 2024",
     excerpt: "The Sustainova Challenge is establishing itself as a transformative platform for sustainability-focused startups in the GCC.",
-    link: "https://risin.ventures/sustainova-challenge-empowering-startups-sustainability-stream-in-the-gcc/",
+    link: "/case-studies/sustainova-challenge",
     featured: false
   },
   {
@@ -45,7 +45,7 @@ const caseStudies = [
     image: "https://risin.ventures/wp-content/uploads/2024/07/Untitled-design-3.png",
     date: "August 2024",
     excerpt: "Corporate Venture Studios combine the best of both worlds to help businesses stay ahead of the curve.",
-    link: "https://risin.ventures/why-corporate-venture-studios-are-important-for-qatars-economy/",
+    link: "/case-studies/corporate-venture-studios",
     featured: false
   },
   {
@@ -53,7 +53,7 @@ const caseStudies = [
     image: "https://risin.ventures/wp-content/uploads/2024/07/hk1-e1720358238143.jpg",
     date: "July 2024",
     excerpt: "The development of the innovation ecosystem is accelerated when coders and techies are matched with real-time use cases.",
-    link: "https://risin.ventures/empowering-innovation-through-corporate-hackathons-a-story-of-code-camp-hackathon/",
+    link: "/case-studies/empowering-innovation",
     featured: false
   },
   {
@@ -61,7 +61,7 @@ const caseStudies = [
     image: "https://risin.ventures/wp-content/uploads/2024/06/31-e1720361297587.jpeg",
     date: "June 2024",
     excerpt: "An intake program acts as a launchpad, providing new businesses with the resources, mentorship, and guidance needed to succeed.",
-    link: "https://risin.ventures/ideacamp_casestudy/",
+    link: "/case-studies/ideas-to-impact",
     featured: false
   },
   {
@@ -69,7 +69,7 @@ const caseStudies = [
     image: "https://risin.ventures/wp-content/uploads/2024/07/aib3.jpg",
     date: "May 2024",
     excerpt: "Qatar's innovative startups have continually emerged, but the funding landscape has not kept pace.",
-    link: "https://risin.ventures/bridging-the-investment-gap-the-impact-of-the-angel-investors-bootcamp-in-qatar/",
+    link: "/case-studies/bridging-investment",
     featured: false
   }
 ];

@@ -17,6 +17,12 @@ import AIX from "@/pages/programs/aix";
 import Sustainova from "@/pages/programs/sustainova";
 import EntrepreneurshipAwards from "@/pages/programs/entrepreneurship-awards";
 import AIXSummitCaseStudy from "@/pages/case-studies/aix-summit";
+import AIHackathonsCaseStudy from "@/pages/case-studies/ai-hackathons";
+import SustainovaChallengeCaseStudy from "@/pages/case-studies/sustainova-challenge";
+import CorporateVentureStudiosCaseStudy from "@/pages/case-studies/corporate-venture-studios";
+import EmpoweringInnovationCaseStudy from "@/pages/case-studies/empowering-innovation";
+import IdeasToImpactCaseStudy from "@/pages/case-studies/ideas-to-impact";
+import BridgingInvestmentCaseStudy from "@/pages/case-studies/bridging-investment";
 
 function Router() {
   return (
@@ -34,6 +40,12 @@ function Router() {
       <Route path="/programs/sustainova" component={Sustainova} />
       <Route path="/programs/entrepreneurship-awards" component={EntrepreneurshipAwards} />
       <Route path="/case-studies/aix-summit" component={AIXSummitCaseStudy} />
+      <Route path="/case-studies/ai-hackathons" component={AIHackathonsCaseStudy} />
+      <Route path="/case-studies/sustainova-challenge" component={SustainovaChallengeCaseStudy} />
+      <Route path="/case-studies/corporate-venture-studios" component={CorporateVentureStudiosCaseStudy} />
+      <Route path="/case-studies/empowering-innovation" component={EmpoweringInnovationCaseStudy} />
+      <Route path="/case-studies/ideas-to-impact" component={IdeasToImpactCaseStudy} />
+      <Route path="/case-studies/bridging-investment" component={BridgingInvestmentCaseStudy} />
       <Route component={NotFound} />
     </Switch>
   );

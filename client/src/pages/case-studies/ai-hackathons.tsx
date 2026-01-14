@@ -1,0 +1,427 @@
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { ArrowRight, Calendar, Target, Zap, Share2, Linkedin, Twitter, Facebook, MessageSquare, Send, CheckCircle } from "lucide-react";
+import { Link } from "wouter";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { toast } from "@/hooks/use-toast";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
+
+const sectionVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" }
+  }
+};
+
+export default function AIHackathonsCaseStudy() {
+  const [commentForm, setCommentForm] = useState({ name: "", email: "", website: "", message: "" });
+
+  const handleCommentSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast({
+      title: "Comment Submitted",
+      description: "Thank you for sharing your thoughts! Your comment is awaiting moderation.",
+    });
+    setCommentForm({ name: "", email: "", website: "", message: "" });
+  };
+
+  return (
+    <div className="min-h-screen bg-white font-sans">
+      <Header />
+
+      {/* Hero Section */}
+      <section className="pt-24 pb-10 md:pt-32 md:pb-12 bg-gradient-to-b from-slate-50 to-white">
+        <div className="container mx-auto px-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-5xl mx-auto text-center"
+          >
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <Link href="/case-studies" className="text-slate-400 text-sm font-bold uppercase tracking-widest hover:text-[#8b68f6] transition-colors">Case Studies</Link>
+              <span className="text-slate-300">/</span>
+              <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest">AI Hackathons</span>
+            </div>
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold text-[#2b204c] mb-6 uppercase leading-tight">
+              AI Hackathons for Enterprises <br className="hidden md:block"/>
+              <span className="text-stroke">Beyond Buzzwords to Real ROI</span>
+            </h1>
+            <div className="flex items-center justify-center gap-6 text-sm text-slate-500 font-bold uppercase tracking-widest">
+              <span className="flex items-center gap-2"><Calendar size={16} className="text-[#8b68f6]" /> May 2025</span>
+              <span className="flex items-center gap-2"><Target size={16} className="text-[#8b68f6]" /> Enterprise Innovation</span>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Main Content Area */}
+      <section className="py-8 md:py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="grid lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
+            
+            {/* Left Column: Narrative Content */}
+            <div className="lg:col-span-2">
+              <motion.div 
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={sectionVariants}
+                className="prose prose-lg prose-slate max-w-none"
+              >
+                <img 
+                  src="https://risin.ventures/wp-content/uploads/2025/05/a-1.png" 
+                  alt="AI Hackathons Banner" 
+                  className="w-full rounded-sm mb-12 shadow-lg"
+                />
+
+                <p className="text-slate-600 leading-relaxed mb-8">
+                  In today’s fast-moving innovation landscape, enterprises are increasingly turning to <strong>AI hackathons not just as tech experiments—but as strategic engines for open innovation</strong>. These short, high-impact sprints offer a powerful way to <strong>test new ideas, prototype fast, and seed a pipeline of commercial-ready solutions</strong>.
+                </p>
+                <p className="text-slate-600 leading-relaxed mb-8">
+                  For organizations considering setting up an <strong>in-house venture builder or innovation lab</strong>, an AI hackathon is the <strong>ideal starting point</strong>. It lets you:
+                </p>
+                <ul className="space-y-4 mb-12">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-[#8b68f6] mt-1 flex-shrink-0" />
+                    <span className="text-slate-600">Source and test <strong>real-world use cases from within the organization</strong></span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-[#8b68f6] mt-1 flex-shrink-0" />
+                    <span className="text-slate-600">Validate solutions in a low-risk, high-speed environment</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-[#8b68f6] mt-1 flex-shrink-0" />
+                    <span className="text-slate-600">Build a <strong>commercialization pipeline</strong> without long development cycles</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-[#8b68f6] mt-1 flex-shrink-0" />
+                    <span className="text-slate-600">Identify <strong>internal champions and external collaborators</strong> for future ventures</span>
+                  </li>
+                </ul>
+
+                <p className="text-slate-600 leading-relaxed mb-12">
+                  As AI moves from experimentation to enterprise adoption, more organizations are exploring AI hackathons as a fast, cost-effective path to innovation. But is it worth the time, effort, and money? The answer lies in <strong>selecting the right use case, having clear goals</strong>, and treating the hackathon not as a one-off event, but as a <strong>launchpad for real solutions</strong>.
+                </p>
+
+                <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">What Kind of Enterprises Should Consider AI Hackathons?</h3>
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  AI hackathons aren’t for everyone. They’re ideal for <strong>enterprises that have scale</strong>, complexity, and data at their core. Specifically:
+                </p>
+                <div className="grid gap-6 mb-12">
+                  <div className="border-l-4 border-[#8b68f6] pl-6 py-2">
+                    <h5 className="font-bold text-[#2b204c] mb-1">Data-Rich Companies</h5>
+                    <p className="text-slate-600 text-sm">If you’re sitting on a mountain of customer, operational, or transactional data, an AI hackathon is the perfect place to start extracting value from it.</p>
+                  </div>
+                  <div className="border-l-4 border-[#8b68f6] pl-6 py-2">
+                    <h5 className="font-bold text-[#2b204c] mb-1">Process-Heavy Operations</h5>
+                    <p className="text-slate-600 text-sm">Organizations with <strong>complex but mature workflows</strong> (e.g., banking, telecom, logistics, utilities) are well positioned to see quick wins with AI automation.</p>
+                  </div>
+                  <div className="border-l-4 border-[#8b68f6] pl-6 py-2">
+                    <h5 className="font-bold text-[#2b204c] mb-1">Customer-Facing Businesses</h5>
+                    <p className="text-slate-600 text-sm">High-volume customer support, onboarding, or personalization needs? AI can dramatically improve responsiveness and efficiency.</p>
+                  </div>
+                </div>
+
+                <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">Why Participate, and How to Choose the Right Use Case?</h3>
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  Most enterprises join hackathons with two goals in mind:
+                </p>
+                <ol className="list-decimal pl-6 space-y-2 mb-6 text-slate-600 font-bold">
+                  <li>To prototype AI solutions that solve internal pain points.</li>
+                  <li>To tap into external talent and fresh thinking.</li>
+                </ol>
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  To get the most out of it, <strong>don’t just bring ideas—bring problems</strong>. The best use cases are aligned with business impact, feasible within 48–72 hours, and dependent on real-world data.
+                </p>
+                
+                <img 
+                  src="https://risin.ventures/wp-content/uploads/2025/05/Untitled-design-20.png" 
+                  alt="AI Hackathon Strategy" 
+                  className="w-full rounded-sm mb-12 shadow-md"
+                />
+
+                <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">Is There an ROI? How Do You Measure It?</h3>
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  The short answer: <strong>Yes—if approached strategically.</strong>
+                </p>
+                
+                <div className="bg-[#F9FAFB] border border-slate-100 rounded-sm p-8 mb-12">
+                  <h4 className="text-lg font-heading font-bold text-[#2b204c] uppercase mb-6 border-b border-slate-200 pb-4">Cost vs. Return Analysis</h4>
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div>
+                      <h5 className="font-bold text-[#952828] mb-4 uppercase text-xs tracking-widest">Traditional Development</h5>
+                      <ul className="space-y-3 text-sm text-slate-600">
+                        <li className="flex justify-between border-b border-slate-100 pb-2">
+                          <span>Timeline</span>
+                          <span className="font-bold">8–12 weeks</span>
+                        </li>
+                        <li className="flex justify-between border-b border-slate-100 pb-2">
+                          <span>Prototype Cost</span>
+                          <span className="font-bold">$40k – $60k</span>
+                        </li>
+                        <li className="flex justify-between border-b border-slate-100 pb-2">
+                          <span>Hiring Expert Talent</span>
+                          <span className="font-bold">$20k – $30k</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 className="font-bold text-[#8b68f6] mb-4 uppercase text-xs tracking-widest">Hackathon Impact</h5>
+                      <ul className="space-y-3 text-sm text-slate-600">
+                        <li className="flex justify-between border-b border-slate-100 pb-2">
+                          <span>Timeline</span>
+                          <span className="font-bold">2–3 days</span>
+                        </li>
+                        <li className="flex justify-between border-b border-slate-100 pb-2">
+                          <span>Output</span>
+                          <span className="font-bold">Deployable Prototype</span>
+                        </li>
+                        <li className="flex justify-between border-b border-slate-100 pb-2">
+                          <span>Talent Access</span>
+                          <span className="font-bold">Pre-vetted Innovators</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="mt-6 pt-4 border-t border-slate-200 text-center">
+                    <p className="text-[#2b204c] font-bold text-sm">ROI = Cost Avoided + Acceleration Achieved</p>
+                  </div>
+                </div>
+
+                <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">What Happens After the Hackathon?</h3>
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  The hackathon isn’t the finish line—it’s the starting point. Your post-hackathon path could be:
+                </p>
+                <ul className="space-y-4 mb-8">
+                  <li className="flex items-start gap-3">
+                    <span className="w-1.5 h-1.5 bg-[#8b68f6] rounded-full mt-2.5 flex-shrink-0"></span>
+                    <span className="text-slate-600"><strong>Work with the winning team</strong> to polish and deploy the solution with real users</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-1.5 h-1.5 bg-[#8b68f6] rounded-full mt-2.5 flex-shrink-0"></span>
+                    <span className="text-slate-600"><strong>Absorb the prototype internally</strong>, assign a product owner, and build out the production version</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-1.5 h-1.5 bg-[#8b68f6] rounded-full mt-2.5 flex-shrink-0"></span>
+                    <span className="text-slate-600">Partner with a venture studio to <strong>commercialize the product as a new internal tool</strong></span>
+                  </li>
+                </ul>
+                
+                <div className="bg-[#fff1f1] border-l-4 border-[#952828] p-6 mb-12">
+                  <p className="text-[#952828] font-bold italic">
+                    “Don’t enter a hackathon unless you have a commercialization strategy and a committed budget.”
+                  </p>
+                </div>
+
+                <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">Conclusion</h3>
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  An AI hackathon isn’t just about innovation theater. When done right, it can <strong>unlock real business value</strong>, surface top-tier AI talent, and reduce both cost and time to solution. For enterprises serious about leveraging AI, <strong>a hackathon is not a gamble—it’s a strategic shortcut</strong>.
+                </p>
+
+                <div className="bg-[#2b204c] text-white p-8 rounded-sm text-center mb-16">
+                  <h3 className="text-xl font-heading font-bold uppercase mb-4">Ready to run an AI Hackathon?</h3>
+                  <p className="text-slate-300 mb-6">
+                    At Risin Ventures, we specialize in curating enterprise-grade AI challenges and guiding ideas all the way to commercialization.
+                  </p>
+                  <Link href="/contact">
+                    <Button className="bg-white text-[#2b204c] hover:bg-[#8b68f6] hover:text-white rounded-sm px-8 font-bold text-sm uppercase tracking-widest transition-all">
+                      Let's Talk
+                    </Button>
+                  </Link>
+                </div>
+
+                {/* Comment Section */}
+                <div id="comments" className="bg-[#F9FAFB] border border-slate-100 rounded-sm p-8 md:p-10">
+                  <div className="flex items-center gap-3 mb-6">
+                    <MessageSquare className="text-[#8b68f6]" size={24} />
+                    <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase">Leave a Comment</h3>
+                  </div>
+                  <p className="text-slate-500 text-sm mb-8">
+                    Your email address will not be published. Required fields are marked *
+                  </p>
+                  <form onSubmit={handleCommentSubmit} className="space-y-6">
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label htmlFor="name" className="text-xs font-bold uppercase tracking-widest text-[#2b204c]">Name *</label>
+                        <Input 
+                          id="name" 
+                          value={commentForm.name}
+                          onChange={(e) => setCommentForm({...commentForm, name: e.target.value})}
+                          required 
+                          placeholder="Your Name" 
+                          className="bg-white border-slate-200 focus:border-[#8b68f6] rounded-sm" 
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label htmlFor="email" className="text-xs font-bold uppercase tracking-widest text-[#2b204c]">Email *</label>
+                        <Input 
+                          id="email" 
+                          type="email" 
+                          value={commentForm.email}
+                          onChange={(e) => setCommentForm({...commentForm, email: e.target.value})}
+                          required 
+                          placeholder="your@email.com" 
+                          className="bg-white border-slate-200 focus:border-[#8b68f6] rounded-sm" 
+                        />
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <label htmlFor="website" className="text-xs font-bold uppercase tracking-widest text-[#2b204c]">Website</label>
+                      <Input 
+                        id="website" 
+                        type="url" 
+                        value={commentForm.website}
+                        onChange={(e) => setCommentForm({...commentForm, website: e.target.value})}
+                        placeholder="https://yourwebsite.com" 
+                        className="bg-white border-slate-200 focus:border-[#8b68f6] rounded-sm" 
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label htmlFor="message" className="text-xs font-bold uppercase tracking-widest text-[#2b204c]">Message *</label>
+                      <Textarea 
+                        id="message" 
+                        value={commentForm.message}
+                        onChange={(e) => setCommentForm({...commentForm, message: e.target.value})}
+                        required 
+                        placeholder="Type your comment here..." 
+                        className="bg-white border-slate-200 focus:border-[#8b68f6] rounded-sm min-h-[150px]" 
+                      />
+                    </div>
+                    <Button type="submit" className="bg-[#2b204c] text-white hover:bg-[#8b68f6] rounded-sm px-8 py-3 font-bold text-sm uppercase tracking-widest transition-all w-full md:w-auto">
+                      Post Comment <Send size={16} className="ml-2" />
+                    </Button>
+                  </form>
+                </div>
+
+              </motion.div>
+            </div>
+
+            {/* Right Column: Sidebar */}
+            <div className="lg:col-span-1">
+              <div className="sticky top-32 space-y-8">
+                
+                {/* Share Card */}
+                <div className="bg-white border border-slate-100 p-6 rounded-sm shadow-sm">
+                  <span className="text-[#8b68f6] text-xs font-bold uppercase tracking-widest block mb-4">Share This Story</span>
+                  <div className="flex gap-3">
+                    <button className="w-10 h-10 rounded-sm bg-[#F9FAFB] text-[#2b204c] hover:bg-[#0077b5] hover:text-white flex items-center justify-center transition-all">
+                      <Linkedin size={18} />
+                    </button>
+                    <button className="w-10 h-10 rounded-sm bg-[#F9FAFB] text-[#2b204c] hover:bg-[#1DA1F2] hover:text-white flex items-center justify-center transition-all">
+                      <Twitter size={18} />
+                    </button>
+                    <button className="w-10 h-10 rounded-sm bg-[#F9FAFB] text-[#2b204c] hover:bg-[#1877F2] hover:text-white flex items-center justify-center transition-all">
+                      <Facebook size={18} />
+                    </button>
+                    <button className="w-10 h-10 rounded-sm bg-[#F9FAFB] text-[#2b204c] hover:bg-[#8b68f6] hover:text-white flex items-center justify-center transition-all">
+                      <Share2 size={18} />
+                    </button>
+                  </div>
+                </div>
+
+                {/* Related Programs */}
+                <div className="bg-[#F9FAFB] border border-slate-100 p-6 rounded-sm">
+                  <span className="text-[#8b68f6] text-xs font-bold uppercase tracking-widest block mb-4">Related Programs</span>
+                  <ul className="space-y-4">
+                    <li>
+                      <Link href="/programs/aix">
+                        <a className="group block">
+                          <h4 className="font-bold text-[#2b204c] text-sm mb-1 group-hover:text-[#8b68f6] transition-colors">AIX Summit & Hackathon</h4>
+                          <span className="text-xs text-slate-500">Flagship AI innovation program</span>
+                        </a>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/programs/sustainova">
+                        <a className="group block">
+                          <h4 className="font-bold text-[#2b204c] text-sm mb-1 group-hover:text-[#8b68f6] transition-colors">Sustainova Challenge</h4>
+                          <span className="text-xs text-slate-500">Sustainability innovation stream</span>
+                        </a>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Related Case Studies Sidebar */}
+                <div className="bg-white border border-slate-100 p-6 rounded-sm">
+                  <span className="text-[#2b204c] text-xs font-bold uppercase tracking-widest block mb-4">More Case Studies</span>
+                  <div className="space-y-6">
+                    <Link href="/case-studies/aix-summit">
+                      <a className="group block">
+                        <div className="aspect-video bg-slate-100 rounded-sm overflow-hidden mb-3">
+                          <img src="https://risin.ventures/wp-content/uploads/2025/12/blog-banner-aix.png" alt="AIX Summit" className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+                        </div>
+                        <h4 className="font-bold text-[#2b204c] text-sm leading-snug group-hover:text-[#8b68f6] transition-colors">Inside the AIX Summit & Hackathon Qatar Edition</h4>
+                      </a>
+                    </Link>
+                    <Link href="/case-studies/sustainova-challenge">
+                      <a className="group block">
+                        <div className="aspect-video bg-slate-100 rounded-sm overflow-hidden mb-3">
+                          <img src="https://risin.ventures/wp-content/uploads/2024/11/photo-collage.png-2.png" alt="Sustainova" className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+                        </div>
+                        <h4 className="font-bold text-[#2b204c] text-sm leading-snug group-hover:text-[#8b68f6] transition-colors">Sustainova Challenge: Empowering Sustainability</h4>
+                      </a>
+                    </Link>
+                  </div>
+                </div>
+
+                {/* CTA */}
+                <div className="bg-gradient-to-br from-[#2b204c] to-[#1a1333] p-6 rounded-sm text-white text-center">
+                  <Zap size={32} className="text-[#8b68f6] mx-auto mb-4" />
+                  <h4 className="font-bold uppercase mb-2">Have an Idea?</h4>
+                  <p className="text-xs text-slate-300 mb-6">We help founders transform ideas into scalable ventures.</p>
+                  <Link href="/contact">
+                    <Button className="w-full bg-white text-[#2b204c] hover:bg-[#8b68f6] hover:text-white font-bold text-xs uppercase tracking-widest transition-all">
+                      Get In Touch
+                    </Button>
+                  </Link>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Discovery Section: Related Content Bottom */}
+      <section className="py-16 bg-[#F9FAFB] border-t border-slate-200">
+        <div className="container mx-auto px-6">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-2xl font-heading font-bold text-[#2b204c] uppercase">Discover More</h2>
+            <Link href="/case-studies" className="text-sm font-bold text-[#8b68f6] uppercase tracking-widest hover:text-[#2b204c] transition-colors flex items-center gap-2">
+              View All <ArrowRight size={16} />
+            </Link>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { title: "Corporate Venture Studios Explained", image: "https://risin.ventures/wp-content/uploads/2024/07/Untitled-design-3.png", link: "/case-studies/corporate-venture-studios" },
+              { title: "Empowering Innovation via Hackathons", image: "https://risin.ventures/wp-content/uploads/2024/07/hk1-e1720358238143.jpg", link: "/case-studies/empowering-innovation" },
+              { title: "Qatar's Startup Ecosystem Path", image: "https://risin.ventures/wp-content/uploads/2024/06/31-e1720361297587.jpeg", link: "/case-studies/ideas-to-impact" }
+            ].map((item, i) => (
+              <Link key={i} href={item.link}>
+                <a className="group bg-white border border-slate-100 rounded-sm overflow-hidden hover:shadow-md transition-all">
+                  <div className="aspect-[2/1] overflow-hidden">
+                    <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  </div>
+                  <div className="p-4">
+                    <h4 className="font-bold text-[#2b204c] text-sm uppercase leading-tight group-hover:text-[#8b68f6] transition-colors">{item.title}</h4>
+                  </div>
+                </a>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+      <ScrollToTop />
+    </div>
+  );
+}

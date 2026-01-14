@@ -82,18 +82,10 @@ export default function IdeasToImpactCaseStudy() {
                 />
 
                 <p className="text-slate-600 leading-relaxed mb-8">
-                  In the world of startups, an intake program acts as a launchpad, providing new businesses with the resources, mentorship, and guidance needed to turn their ideas into successful ventures. Globally, these programs are often seen as pre-incubation programs that offer essential support to early-stage startups; they tailor their support to the unique needs of each startup, helping them achieve key milestones and prepare for successful incubation and scaling.
-                </p>
-                <p className="text-slate-600 leading-relaxed mb-12">
-                  As <strong>Hyperthink Systems and Risin Ventures</strong>, along with the Ministry of Communications and Information Technology’s startup arm, the Digital Incubation Center (DIC), we identified the immense potential to boost Qatar’s startup space. We’ve been committed to finding and supporting the right startups and talented individuals, helping to build a vibrant entrepreneurial community.
-                </p>
-
-                <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">A Fresh Approach to Incubation</h3>
-                <p className="text-slate-600 leading-relaxed mb-6">
-                  DIC along with HTS organized eight successful editions, but the previous editions primarily focused on local talent and resources. However, a recurring challenge we faced was the repetition of ideas and solutions, which limited the diversity of innovation.
+                  In the world of startups, an intake program acts as a launchpad, providing new businesses with the resources, <a href="https://risin.ventures/pillars/#mentoring-training" className="text-[#8b68f6] hover:underline">mentorship</a>, and guidance needed to turn their ideas into successful ventures. Globally, these programs are often seen as pre-incubation programs that offer essential support to early-stage startups; they tailor their support to the unique needs of each startup, helping them achieve key milestones and prepare for successful incubation and scaling.
                 </p>
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  We realized the need for a fresh approach. To bring in unique ideas and perspectives, we decided to accept applications from startups at different stages and outside the country as well.
+                  As <a href="https://hyperthinksys.com/" className="text-[#8b68f6] hover:underline">Hyperthink Systems</a> and <a href="https://risin.ventures/" className="text-[#8b68f6] hover:underline">Risin Ventures</a>, along with the Ministry of Communications and Information Technology’s startup arm, the Digital Incubation Center (DIC), we identified the immense potential to boost Qatar’s startup space. We’ve been committed to finding and supporting the right startups and talented individuals, helping to build a vibrant entrepreneurial community.
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-6 mb-12">
@@ -109,48 +101,62 @@ export default function IdeasToImpactCaseStudy() {
                   />
                 </div>
 
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  In recent years, Qatar’s startup ecosystem has grown significantly, becoming a lively and dynamic hub in the Middle East. Key initiatives, strategic investments, and major events like the Web Summit Qatar 2024 have attracted global attention and positioned Qatar as a top destination for tech innovation and startups.
+                </p>
+                <p className="text-slate-600 leading-relaxed mb-12">
+                  DIC along with HTS organized eight successful editions, but the previous editions primarily focused on local talent and resources, supporting several promising startups. However, a recurring challenge we faced was the repetition of ideas and solutions, which limited the diversity of innovation. We realized the need for a fresh approach. To bring in unique ideas and perspectives, we decided to accept applications from startups at different stages and outside the country as well.
+                </p>
+
                 <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">The 9th Edition: Transforming the Landscape</h3>
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  With this momentum, we launched the <strong>9th edition of the Startup Intake Program</strong> with a clear goal: to transform Qatar’s startup landscape. This program was carefully designed to meet the needs of startups at different stages of their development using a dual-cohort approach.
+                  With this momentum, we launched the 9th edition of the <a href="https://risin.ventures/pillars/#startup-incubator" className="text-[#8b68f6] hover:underline">Startup Intake Program</a> with a clear goal: to transform Qatar’s startup landscape. This program was carefully designed to meet the needs of startups at different stages of their development. We used a dual-cohort approach, targeting both early-stage startups with new ideas and more advanced startups looking to grow.
                 </p>
                 
-                <div className="bg-[#F9FAFB] border border-slate-100 rounded-sm p-8 mb-12">
-                  <h4 className="text-lg font-heading font-bold text-[#2b204c] uppercase mb-6 border-b border-slate-200 pb-4">Program Impact</h4>
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div>
-                      <h5 className="font-bold text-[#8b68f6] mb-2 uppercase text-xs tracking-widest">Global Reach</h5>
-                      <p className="text-sm text-slate-600">Applications from over <strong>30 countries</strong> selected through a thorough screening process.</p>
-                    </div>
-                    <div>
-                      <h5 className="font-bold text-[#8b68f6] mb-2 uppercase text-xs tracking-widest">Selected Startups</h5>
-                      <p className="text-sm text-slate-600"><strong>150 promising startups</strong> selected from sectors like Fintech, Edtech, Healthtech, and logistics.</p>
-                    </div>
-                  </div>
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  Out of the numerous of applications from over 30 countries, we selected 150 promising startups through a thorough screening process. These startups, came from various sectors like Fintech, Edtech, Healthtech, Logitech, etc, bringing a diverse mix of ideas and innovations.
+                </p>
+                 <p className="text-slate-600 leading-relaxed mb-12">
+                  The program began with six in-depth training modules for each track separately, covering essential topics like product development, market validation, and scaling strategies. These sessions helped entrepreneurs gain the skills and knowledge they needed to refine their business models and prepare for growth.
+                </p>
+                
+                 <div className="mb-12">
+                  <img 
+                    src="https://risin.ventures/wp-content/uploads/2024/07/ic99.png" 
+                    alt="Intake Program Sectors" 
+                    className="w-full rounded-sm shadow-md mb-4"
+                  />
+                   <img 
+                    src="https://risin.ventures/wp-content/uploads/2024/07/WhatsApp-Image-2024-05-15-at-10.45.05-AM-1024x768.jpeg" 
+                    alt="Mentor Mania Mentorship Intake Program" 
+                    className="w-full rounded-sm shadow-md"
+                  />
                 </div>
-
-                <img 
-                  src="https://risin.ventures/wp-content/uploads/2024/07/WhatsApp-Image-2024-05-15-at-10.45.05-AM-1024x768.jpeg" 
-                  alt="Mentor Mania" 
-                  className="w-full rounded-sm mb-12 shadow-md"
-                />
 
                 <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">Mentorship and Growth</h3>
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  Mentorship was one of the highlights of our program. With the participation of over <strong>20 mentors who provided more than 250 hours of expert guidance</strong>, startups received personalized support and invaluable feedback.
+                  <a href="https://risin.ventures/pillars/#mentoring-training" className="text-[#8b68f6] hover:underline">Mentorship</a> was one of the highlights of our program, started during the training period and spread over six weeks. With the participation of over 20 mentors who provided more than 250 hours of expert guidance, startups received personalized support and invaluable feedback. We also organized ‘Mentor Mania’, a dedicated networking event to facilitate networking and collaboration between mentors and startups, providing the new cohort of startups with access to experienced mentors and valuable guidance. The startups also attended other networking events and sessions, where they connected with key stakeholders, potential investors, and industry leaders.
                 </p>
                 <p className="text-slate-600 leading-relaxed mb-12">
-                  We also organized ‘Mentor Mania’, a dedicated networking event to facilitate collaboration between mentors and startups.
+                  The startups were finely vetted by the mentors, the internal team and finally by a panel of judges for each track. The program concluded with a closing ceremony where 25 startups were awarded with incubation services worth over 500 thousand Qatari riyal each out of which 5 winners from growth track and idea track were also awarded cash prizes of five hundred and fifty thousand Qatari riyals. We celebrated the startups’ achievements and showcased their potential to investors and industry leaders. Many startups moved from the idea stage to product development, achieving significant milestones and gaining market traction.
+                </p>
+                
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  The program attracted investor interest, with some startups securing <a href="https://risin.ventures/partners/" className="text-[#8b68f6] hover:underline">partnerships</a> and potential fundings. The Startup Intake Program had a big impact beyond the immediate success of its participants entering the incubation program. It helped foster collaboration, innovation, and strategic partnerships, contributing to the growth and diversity of Qatar’s startup ecosystem. This positioned Qatar as a leading hub for entrepreneurship and innovation.
                 </p>
 
                 <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">Conclusion</h3>
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  We are set out to incubating these promising startups across different phases of their growth journey. Our incubation program offers curated training, mentorship, go-to-market access, funding, coworking space, and industry connections. We hope to raise unicorns from this cohort and inspire future entrepreneurs to become change makers.
+                  We are set out to incubating these promising startups across different phases of their growth journey. Our <a href="https://risin.ventures/pillars/#startup-incubator" className="text-[#8b68f6] hover:underline">incubation program</a> offers curated training, mentorship, go to market access, funding, co working space and not to mention industry connections and vibrant community access. We hope to raise unicorns from this cohort and inspire the future entrepreneurs to become change makers.
+                </p>
+                 <p className="text-slate-600 leading-relaxed mb-6">
+                  While there is still much ground to cover, we remain committed in our journey to shape the future of Qatar’s startup ecosystem, driving innovation and prosperity for years to come.
                 </p>
 
                 <div className="bg-[#2b204c] text-white p-8 rounded-sm text-center mb-16">
                   <h3 className="text-xl font-heading font-bold uppercase mb-4">Join Our Next Cohort</h3>
                   <p className="text-slate-300 mb-6">
-                    Ready to take your startup to the next level? Apply for our incubation program today.
+                    To learn more, reach out to our team today!
                   </p>
                   <Link href="/contact">
                     <Button className="bg-white text-[#2b204c] hover:bg-[#8b68f6] hover:text-white rounded-sm px-8 font-bold text-sm uppercase tracking-widest transition-all">

@@ -81,19 +81,22 @@ export default function EmpoweringInnovationCaseStudy() {
                   className="w-full rounded-sm mb-12 shadow-lg"
                 />
 
-                <p className="text-slate-600 leading-relaxed mb-8">
-                  Incubation programs and startups have always thrived on their close association with enterprises or corporates. The development of the innovation ecosystem is significantly accelerated when coders and techies are matched with real-time use cases or problem statements from enterprises. The ideal platform for this collaboration is the <strong>enterprise-focused hackathon</strong>, a format that has gained immense popularity across the globe.
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  Incubation programs and startups have always thrived on their close association with enterprises or corporates. The development of the innovation ecosystem is significantly accelerated when coders and techies are matched with real-time use cases or problem statements from enterprises. The ideal platform for this collaboration is the <a href="https://risin.ventures/pillars/#corporate-programs" className="text-[#8b68f6] hover:underline">enterprise-focused hackathon</a>, a format that has gained immense popularity across the globe. These hackathons not only solve pressing corporate issues but also foster a symbiotic relationship between companies and the tech community.
                 </p>
                 <p className="text-slate-600 leading-relaxed mb-12">
-                  These hackathons not only solve pressing corporate issues but also foster a symbiotic relationship between companies and the tech community. Recognizing the value of this approach, the Digital Incubation Centre, an arm of the Ministry of Communications and Information Technology (MCIT) in Qatar, mandated <strong>Hyperthink Systems / Risin Ventures</strong> to encourage the local ecosystem through such programs.
+                  Recognizing the value of this approach, the Digital Incubation Centre, an arm of the Ministry of Communications and Information Technology (MCIT) in Qatar, mandated <a href="https://hyperthinksys.com/" className="text-[#8b68f6] hover:underline">Hyperthink Systems</a>/ <a href="https://risin.ventures/" className="text-[#8b68f6] hover:underline">Risin Ventures</a> to encourage the local ecosystem through such programs.
                 </p>
 
                 <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">2019: Laying the Foundation at QITCOM</h3>
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  Qatar IT Conference and Exhibition (QITCOM) provided the platform for the first edition of the hackathon. When the national vision of Qatar intersected with the MOTC strategy to build the ecosystem, key themes emerged: Smart Cities, Smart Industry, Healthcare, Transport, and Solutions for the Abled.
+                  Qatar IT Conference and Exhibition (QITCOM), the largest showcase in Qatar for innovative and new technologies until 2019, provided the platform for the first edition of the hackathon. On one side, we have the national vision of Qatar and on the other, the MOTC strategy to build the ecosystem. When these two intersected, the themes that emerged were Smart Cities, Smart Industry, Healthcare, Transport, and Solutions for the Abled. Surprisingly, many enterprises matched these themes and came forward.
                 </p>
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  Hackathon Partners of 2019 QITCOM included major players like <strong>Ooredoo, the Supreme Committee, Qatar Airways, Hamad International Airport, Mada Assistive Technology, and Hamad Medical Corporation</strong>.
+                  A new set of challenges arose when a government-sponsored program gained traction to steer the digital transformation of corporations. The team was flooded with use cases – a good problem to have, but we could only pick five to fit the program design. After carefully vetting and selecting the <a href="https://acute-avocado-8f4.notion.site/Use-cases-of-Hackathons-426c7b590ff24db39afee32df82aa3b6" className="text-[#8b68f6] hover:underline">five use cases</a>, the corporations also came forward to award QAR 25,000 to the winner of each challenge.
+                </p>
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  Hackathon <a href="https://risin.ventures/partners/" className="text-[#8b68f6] hover:underline">Partners</a> of 2019 QITCOM: Ooredoo, the Supreme Committee, Qatar Airways, Hamad International Airport, Mada Assistive Technology, and Hamad Medical Corporation.
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-6 mb-12">
@@ -111,15 +114,27 @@ export default function EmpoweringInnovationCaseStudy() {
 
                 <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">2022: The Rise of Codecamp</h3>
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  After the pandemic, the 2022 edition kicked off with a new branding: <strong>“Codecamp.”</strong> The name resonates with the community of coders camping at a place to bring out solutions to the problems or challenges posed by enterprises.
+                  The success of the 2019 edition was paused due to the pandemic, which impacted the entire world and especially programs involving in-person events. However, after the pandemic fears settled, the 2022 edition kicked off with a new name and branding called “Codecamp.” The name resonates with the community of coders camping at a place to bring out solutions to the problems or challenges posed by enterprises.
                 </p>
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  The themes selected for the 2022 Codecamp were <strong>Smart Banking, Healthcare, and Assistive Technologies</strong>. Partners included Mada Assistive Technology, Hamad Medical Corporation, and Qatar National Bank (QNB).
+                  Although the program is still under DIC, the sponsor changed from MOTC to MCIT. The format, strategy, and execution remained the same for the 2022 edition, but the themes were updated. The themes selected for the 2022 Codecamp were Smart Banking, Healthcare, and Assistive Technologies, all coinciding with MCIT strategy and QNV 2030. The two partners from the previous editions – Mada Assistive Technology and Hamad Medical Corporation – participated again. The third partner, from the banking industry, was a well-known organization across the Middle East – Qatar National Bank. All three partners furnished use cases pertaining to the selected themes, which were later taken to the challenge (Codecamp).
+                </p>
+                <p className="text-slate-600 leading-relaxed mb-12">
+                  It is worth noting that in both editions, the technologies remained the same. Participants utilized Mobile Applications, AI/ML, Mobility, IoT, NLP, and Cloud Computing technologies provided by partners including Microsoft, Google, and the Tasmu Platform, or openly sourced.
                 </p>
 
                 <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">2023: Expanding Horizons</h3>
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  The most recent edition in 2023 highlighted Human Development, Environmental Development, and Digital Transformation. Collaborating with <strong>Snoonu, KPMG, and Milaha</strong>, the hackathon leveraged AI/ML, Data Analytics, NLP, Web Development, and Geospatial Data.
+                  The most recent edition in 2023 highlighted Human Development, Environmental Development, and Digital Transformation. Collaborating with Snoonu, KPMG, and Milaha, the hackathon leveraged AI/ML, Data Analytics, NLP, Web Development, and Geospatial Data and Mapping Services. Five use cases were tackled, with the total award amount returning to QAR 125,000.
+                </p>
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  What made these hackathons particularly thrilling was the announcement of challenges on the day of the event, ensuring a fair and exciting competition for all participants. Across the three editions, over 1,000 coders, designers, and hustlers participated, with many flying in from neighboring countries and beyond.
+                </p>
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  To enhance the experience, over 50 mentors from various domains and industries were involved, broadening the participants’ perspectives and guiding them through their challenges. Workshops on delivering the perfect pitch, introductions to different tools, design thinking, and prototype building were conducted, directly contributing to enhancing the delivery of solutions to the enterprises.
+                </p>
+                <p className="text-slate-600 leading-relaxed mb-12">
+                  A rigorous two-tier judging process ensured the elimination and selection of the right team. Initially, the enterprise use case owners evaluated the solutions, followed by a pool of judges from the ecosystem and industry. This ensured that multiple teams working on each use case were thoroughly assessed, identifying the top 2-3 teams who then presented their solutions to the final judging panel. The final judging panel picked the team and solution that best fit the use case/problem statement posed by enterprises.
                 </p>
 
                 <div className="bg-[#F9FAFB] border border-slate-100 rounded-sm p-8 mb-12">
@@ -150,13 +165,16 @@ export default function EmpoweringInnovationCaseStudy() {
 
                 <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">Conclusion</h3>
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  The Codecamp or Hackathon series has not only fostered innovation but also created a vibrant community of tech enthusiasts, enterprises, and mentors, all working together to solve real-world problems. This collaborative spirit and the tangible outcomes achieved underscore the immense value of enterprise-driven hackathons in driving meaningful change.
+                  Over the three editions, 14 teams emerged as winners, receiving cash prizes worth QAR 350,000. The true success of these hackathons lay in the opportunities they provided to the tech community. The innovative solutions developed during the events often spun off into offerings or products for startups, further fueling the local innovation ecosystem.
+                </p>
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  The Codecamp or Hackathon series has not only fostered innovation but also created a vibrant community of tech enthusiasts, enterprises, and mentors, all working together to solve real-world problems. This collaborative spirit and the tangible outcomes achieved underscore the immense value of enterprise-driven hackathons in driving meaningful change and development.
                 </p>
 
                 <div className="bg-[#2b204c] text-white p-8 rounded-sm text-center mb-16">
                   <h3 className="text-xl font-heading font-bold uppercase mb-4">Want to Host a Corporate Hackathon?</h3>
                   <p className="text-slate-300 mb-6">
-                    Partner with us to drive innovation within your organization through structured hackathon programs.
+                    To learn more, reach out to our team today!
                   </p>
                   <Link href="/contact">
                     <Button className="bg-white text-[#2b204c] hover:bg-[#8b68f6] hover:text-white rounded-sm px-8 font-bold text-sm uppercase tracking-widest transition-all">

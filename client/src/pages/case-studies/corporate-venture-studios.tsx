@@ -81,19 +81,14 @@ export default function CorporateVentureStudiosCaseStudy() {
                   className="w-full rounded-sm mb-12 shadow-lg"
                 />
 
-                <p className="text-slate-600 leading-relaxed mb-8">
+                <p className="text-slate-600 leading-relaxed mb-6">
                   In today’s fast-paced world, businesses need to stay ahead of the curve to survive and thrive. One powerful way to do this is through <strong>Corporate Venture Studios (CVS)</strong>. These studios combine the best of both worlds: the innovation of startups and the resources of big companies. This model is gaining popularity worldwide, with its focus on economic growth and innovation, is in a great position to benefit from this approach.
                 </p>
 
                 <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">What is a Corporate Venture Studio?</h3>
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  A Corporate Venture Studio is like a startup factory inside a big company. Instead of only investing in startups and maintaining an arm length distance like what a traditional VC firm does, the company actively creates and builds new businesses from scratch.
+                  A Corporate Venture Studio is like a startup factory inside a big company. Instead of only <a href="https://risin.ventures/pillars/#investment-programs" className="text-[#8b68f6] hover:underline">investing</a> in startups and maintaining an arm length distance like what a traditional VC firm does, the company actively creates and builds new businesses from scratch. This means they find opportunities, put together teams, provide funding, and guide these new ventures to success. The ventures created are from the problem statements which arises out of the value chain problems within the organization or from their peers.
                 </p>
-                <div className="bg-[#F9FAFB] border-l-4 border-[#8b68f6] p-6 mb-8">
-                  <p className="text-slate-600 italic">
-                    "They find opportunities, put together teams, provide funding, and guide these new ventures to success. The ventures created are from the problem statements which arises out of the value chain problems within the organization or from their peers."
-                  </p>
-                </div>
 
                 <div className="grid md:grid-cols-2 gap-6 mb-12">
                   <img 
@@ -110,38 +105,19 @@ export default function CorporateVentureStudiosCaseStudy() {
 
                 <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">Shift in Innovation from R&D to CVS</h3>
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  Traditionally, innovation within large corporations has been driven by Research and Development (R&D) departments. These teams focus on enhancing existing products and technologies within the company’s core business. However, R&D processes can be slow and constrained by the company’s existing structures and goals.
+                  Traditionally, innovation within large corporations has been driven by Research and Development (R&D) departments. These teams focus on enhancing existing products and technologies within the company’s core business. However, R&D processes can be slow and constrained by the company’s existing structures and goals. As the pace of technological change accelerates, many companies are finding that R&D alone is not enough to stay competitive.
                 </p>
-                <p className="text-slate-600 leading-relaxed mb-6">
+                <p className="text-slate-600 leading-relaxed mb-12">
                   This is where Corporate Venture Studios come in. CVS represents a shift towards a more dynamic and entrepreneurial approach to innovation. By creating new ventures outside the core business, companies can explore radical new ideas and business models without being hindered by their existing processes. This flexibility allows quicker iteration and adaptation, making it easier to stay ahead of market trends and technological advancements.
                 </p>
 
-                <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">The Risin Ventures Advantage</h3>
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  Partners in the venture-building space add significant value by offering deep expertise and experience in the startup ecosystem, providing access to skilled founders, marketers, and developers, and leveraging a robust network of mentors, partner companies, and potential investors.
+                  Partners in the <a href="https://risin.ventures/pillars/#venture-builder" className="text-[#8b68f6] hover:underline">venture-building</a> space add significant value by offering deep expertise and experience in the startup ecosystem, providing access to skilled founders, marketers, and developers, and leveraging a robust network of mentors, partner companies, and potential investors. They help accelerate the growth of new businesses and facilitate risk sharing, allowing companies to spread the risks and rewards of new ventures, thereby reducing the burden on the corporate and enhancing the chances of success.
                 </p>
                 <p className="text-slate-600 leading-relaxed mb-8">
-                  Risin Ventures offers a comprehensive suite of services designed to support every stage of venture creation and growth:
+                  <a href="https://risin.ventures/" className="text-[#8b68f6] hover:underline">Risin Ventures</a> offers a comprehensive suite of services designed to support every stage of venture creation and growth. Our offerings include ideation and validation, team scouting and matchmaking, <a href="https://risin.ventures/pillars/#mentoring-training" className="text-[#8b68f6] hover:underline">mentorship and support</a>, and access to capital. By leveraging these experience and resources, Risin Ventures can help companies navigate the intricacies of building new ventures and achieve greater success.
                 </p>
-                <div className="grid grid-cols-2 gap-4 mb-12">
-                  <div className="flex items-center gap-3 bg-[#F9FAFB] p-4 rounded-sm border border-slate-50">
-                    <Lightbulb className="text-[#8b68f6]" />
-                    <span className="font-bold text-[#2b204c] text-sm">Ideation & Validation</span>
-                  </div>
-                  <div className="flex items-center gap-3 bg-[#F9FAFB] p-4 rounded-sm border border-slate-50">
-                    <Users className="text-[#8b68f6]" />
-                    <span className="font-bold text-[#2b204c] text-sm">Team Scouting</span>
-                  </div>
-                  <div className="flex items-center gap-3 bg-[#F9FAFB] p-4 rounded-sm border border-slate-50">
-                    <Target className="text-[#8b68f6]" />
-                    <span className="font-bold text-[#2b204c] text-sm">Mentorship</span>
-                  </div>
-                  <div className="flex items-center gap-3 bg-[#F9FAFB] p-4 rounded-sm border border-slate-50">
-                    <Building2 className="text-[#8b68f6]" />
-                    <span className="font-bold text-[#2b204c] text-sm">Access to Capital</span>
-                  </div>
-                </div>
-
+                
                 <img 
                   src="https://risin.ventures/wp-content/uploads/2024/07/Risin-Venture-Studio-V1.0-e1722175043886-1024x430.png" 
                   alt="Risin Venture Studio Model" 
@@ -150,13 +126,13 @@ export default function CorporateVentureStudiosCaseStudy() {
 
                 <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">Conclusion</h3>
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  Corporate Venture Studios offer a powerful way for companies to drive innovation and economic growth, especially in growing economies. By combining the strengths of big companies with the agility of startups, CVS can help companies stay competitive and contribute to the nation’s vision for a diversified and innovative economy.
+                  Corporate Venture Studios offer a powerful way for companies to drive innovation and economic growth, especially in growing economies. By combining the strengths of big companies with the agility of startups, CVS can help companies stay competitive and contribute to the nation’s vision for a diversified and innovative economy. For mid to large corporations, now is the perfect time to explore the potential of Corporate Venture Studios and help shape the future of the country’s innovation landscape.
                 </p>
 
                 <div className="bg-[#2b204c] text-white p-8 rounded-sm text-center mb-16">
                   <h3 className="text-xl font-heading font-bold uppercase mb-4">Start Your Venture Studio Journey</h3>
                   <p className="text-slate-300 mb-6">
-                    For mid to large corporations, now is the perfect time to explore the potential of Corporate Venture Studios and help shape the future of the country’s innovation landscape.
+                    To learn more, reach out to our team today!
                   </p>
                   <Link href="/contact">
                     <Button className="bg-white text-[#2b204c] hover:bg-[#8b68f6] hover:text-white rounded-sm px-8 font-bold text-sm uppercase tracking-widest transition-all">

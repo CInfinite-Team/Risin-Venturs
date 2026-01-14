@@ -81,13 +81,13 @@ export default function AIHackathonsCaseStudy() {
                   className="w-full rounded-sm mb-12 shadow-lg"
                 />
 
-                <p className="text-slate-600 leading-relaxed mb-8">
+                <p className="text-slate-600 leading-relaxed mb-6">
                   In today’s fast-moving innovation landscape, enterprises are increasingly turning to <strong>AI hackathons not just as tech experiments—but as strategic engines for open innovation</strong>. These short, high-impact sprints offer a powerful way to <strong>test new ideas, prototype fast, and seed a pipeline of commercial-ready solutions</strong>.
                 </p>
-                <p className="text-slate-600 leading-relaxed mb-8">
+                <p className="text-slate-600 leading-relaxed mb-6">
                   For organizations considering setting up an <strong>in-house venture builder or innovation lab</strong>, an AI hackathon is the <strong>ideal starting point</strong>. It lets you:
                 </p>
-                <ul className="space-y-4 mb-12">
+                <ul className="space-y-4 mb-8">
                   <li className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-[#8b68f6] mt-1 flex-shrink-0" />
                     <span className="text-slate-600">Source and test <strong>real-world use cases from within the organization</strong></span>
@@ -106,28 +106,34 @@ export default function AIHackathonsCaseStudy() {
                   </li>
                 </ul>
 
-                <p className="text-slate-600 leading-relaxed mb-12">
+                <p className="text-slate-600 leading-relaxed mb-8">
                   As AI moves from experimentation to enterprise adoption, more organizations are exploring AI hackathons as a fast, cost-effective path to innovation. But is it worth the time, effort, and money? The answer lies in <strong>selecting the right use case, having clear goals</strong>, and treating the hackathon not as a one-off event, but as a <strong>launchpad for real solutions</strong>.
+                </p>
+                <p className="text-slate-600 leading-relaxed mb-12">
+                  Here’s how forward-thinking enterprises can make the most of AI hackathons.
                 </p>
 
                 <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">What Kind of Enterprises Should Consider AI Hackathons?</h3>
                 <p className="text-slate-600 leading-relaxed mb-6">
                   AI hackathons aren’t for everyone. They’re ideal for <strong>enterprises that have scale</strong>, complexity, and data at their core. Specifically:
                 </p>
-                <div className="grid gap-6 mb-12">
-                  <div className="border-l-4 border-[#8b68f6] pl-6 py-2">
-                    <h5 className="font-bold text-[#2b204c] mb-1">Data-Rich Companies</h5>
-                    <p className="text-slate-600 text-sm">If you’re sitting on a mountain of customer, operational, or transactional data, an AI hackathon is the perfect place to start extracting value from it.</p>
-                  </div>
-                  <div className="border-l-4 border-[#8b68f6] pl-6 py-2">
-                    <h5 className="font-bold text-[#2b204c] mb-1">Process-Heavy Operations</h5>
-                    <p className="text-slate-600 text-sm">Organizations with <strong>complex but mature workflows</strong> (e.g., banking, telecom, logistics, utilities) are well positioned to see quick wins with AI automation.</p>
-                  </div>
-                  <div className="border-l-4 border-[#8b68f6] pl-6 py-2">
-                    <h5 className="font-bold text-[#2b204c] mb-1">Customer-Facing Businesses</h5>
-                    <p className="text-slate-600 text-sm">High-volume customer support, onboarding, or personalization needs? AI can dramatically improve responsiveness and efficiency.</p>
-                  </div>
-                </div>
+                <ul className="space-y-6 mb-8">
+                    <li>
+                        <strong className="text-[#2b204c] block mb-1">Data-Rich Companies</strong>
+                        <span className="text-slate-600">If you’re sitting on a mountain of customer, operational, or transactional data, an AI hackathon is the perfect place to start extracting value from it.</span>
+                    </li>
+                    <li>
+                        <strong className="text-[#2b204c] block mb-1">Process-Heavy Operations</strong>
+                        <span className="text-slate-600">Organizations with <strong>complex but mature workflows</strong> (e.g., banking, telecom, logistics, utilities) are well positioned to see quick wins with AI automation.</span>
+                    </li>
+                    <li>
+                        <strong className="text-[#2b204c] block mb-1">Customer-Facing Businesses</strong>
+                        <span className="text-slate-600">High-volume customer support, onboarding, or personalization needs? AI can dramatically improve responsiveness and efficiency.</span>
+                    </li>
+                </ul>
+                <p className="text-slate-600 leading-relaxed mb-12">
+                    Industries like <strong>financial services, healthcare, manufacturing, government services</strong>, and <strong>e-commerce</strong> are particularly well-suited.
+                </p>
 
                 <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">Why Participate, and How to Choose the Right Use Case?</h3>
                 <p className="text-slate-600 leading-relaxed mb-6">
@@ -138,7 +144,23 @@ export default function AIHackathonsCaseStudy() {
                   <li>To tap into external talent and fresh thinking.</li>
                 </ol>
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  To get the most out of it, <strong>don’t just bring ideas—bring problems</strong>. The best use cases are aligned with business impact, feasible within 48–72 hours, and dependent on real-world data.
+                  To get the most out of it, <strong>don’t just bring ideas—bring problems</strong>. The best use cases are:
+                </p>
+                <ul className="list-disc pl-6 space-y-2 mb-6 text-slate-600">
+                    <li>Aligned with business impact (cost reduction, risk mitigation, or revenue growth)</li>
+                    <li>Feasible within 48–72 hours (hackathon time frame)</li>
+                    <li>Dependent on real-world data and internal systems (giving it enterprise relevance)</li>
+                </ul>
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  Examples include:
+                </p>
+                 <ul className="list-disc pl-6 space-y-2 mb-6 text-slate-600">
+                    <li>Automating compliance checks in finance</li>
+                    <li>Intelligent ticket triaging in customer support</li>
+                    <li>Document summarization and insight extraction for procurement teams</li>
+                </ul>
+                <p className="text-slate-600 leading-relaxed mb-8">
+                  Collaborate with internal stakeholders beforehand to <strong>prioritize one or two strategic pain points</strong> and prepare anonymized data if needed.
                 </p>
                 
                 <img 
@@ -151,47 +173,38 @@ export default function AIHackathonsCaseStudy() {
                 <p className="text-slate-600 leading-relaxed mb-6">
                   The short answer: <strong>Yes—if approached strategically.</strong>
                 </p>
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  Let’s look at the cost vs. return.
+                </p>
                 
-                <div className="bg-[#F9FAFB] border border-slate-100 rounded-sm p-8 mb-12">
-                  <h4 className="text-lg font-heading font-bold text-[#2b204c] uppercase mb-6 border-b border-slate-200 pb-4">Cost vs. Return Analysis</h4>
+                <div className="bg-[#F9FAFB] border border-slate-100 rounded-sm p-8 mb-8">
                   <div className="grid md:grid-cols-2 gap-8">
                     <div>
-                      <h5 className="font-bold text-[#952828] mb-4 uppercase text-xs tracking-widest">Traditional Development</h5>
-                      <ul className="space-y-3 text-sm text-slate-600">
-                        <li className="flex justify-between border-b border-slate-100 pb-2">
-                          <span>Timeline</span>
-                          <span className="font-bold">8–12 weeks</span>
-                        </li>
-                        <li className="flex justify-between border-b border-slate-100 pb-2">
-                          <span>Prototype Cost</span>
-                          <span className="font-bold">$40k – $60k</span>
-                        </li>
-                        <li className="flex justify-between border-b border-slate-100 pb-2">
-                          <span>Hiring Expert Talent</span>
-                          <span className="font-bold">$20k – $30k</span>
-                        </li>
+                      <h5 className="font-bold text-[#952828] mb-4 uppercase text-xs tracking-widest">What you invest</h5>
+                      <ul className="space-y-3 text-sm text-slate-600 list-disc pl-4">
+                        <li><strong>Sponsorship cost</strong> to participate or run the hackathon</li>
+                        <li><strong>Time of internal stakeholders and tech teams</strong> during ideation and mentoring</li>
                       </ul>
+                      <div className="mt-6">
+                        <h5 className="font-bold text-[#952828] mb-2 uppercase text-xs tracking-widest">Cost outside the hackathon</h5>
+                        <ul className="space-y-3 text-sm text-slate-600 list-disc pl-4">
+                            <li>Building the same AI prototype externally could take <strong>8–12 weeks and $40,000–$60,000</strong></li>
+                            <li>Scouting & hiring cost of a 3–4 AI Experts would cost <strong>$20,000–$30,000</strong></li>
+                        </ul>
+                      </div>
                     </div>
                     <div>
-                      <h5 className="font-bold text-[#8b68f6] mb-4 uppercase text-xs tracking-widest">Hackathon Impact</h5>
-                      <ul className="space-y-3 text-sm text-slate-600">
-                        <li className="flex justify-between border-b border-slate-100 pb-2">
-                          <span>Timeline</span>
-                          <span className="font-bold">2–3 days</span>
-                        </li>
-                        <li className="flex justify-between border-b border-slate-100 pb-2">
-                          <span>Output</span>
-                          <span className="font-bold">Deployable Prototype</span>
-                        </li>
-                        <li className="flex justify-between border-b border-slate-100 pb-2">
-                          <span>Talent Access</span>
-                          <span className="font-bold">Pre-vetted Innovators</span>
-                        </li>
+                      <h5 className="font-bold text-[#8b68f6] mb-4 uppercase text-xs tracking-widest">What you get from the hackathon</h5>
+                      <ul className="space-y-3 text-sm text-slate-600 list-disc pl-4">
+                        <li>A <strong>tangible, deployable prototype</strong> in 2–3 days</li>
+                        <li><strong>Access to pre-vetted talent and tech</strong></li>
+                        <li>A starting point for internal productization or further co-development</li>
                       </ul>
                     </div>
                   </div>
-                  <div className="mt-6 pt-4 border-t border-slate-200 text-center">
-                    <p className="text-[#2b204c] font-bold text-sm">ROI = Cost Avoided + Acceleration Achieved</p>
+                  <div className="mt-8 pt-4 border-t border-slate-200 text-center">
+                    <p className="text-[#2b204c] font-bold text-lg">ROI = Cost Avoided + Acceleration Achieved</p>
+                    <p className="text-slate-500 text-sm mt-2">Hackathons give you a working prototype at a fraction of the traditional development cost and time.</p>
                   </div>
                 </div>
 
@@ -199,30 +212,31 @@ export default function AIHackathonsCaseStudy() {
                 <p className="text-slate-600 leading-relaxed mb-6">
                   The hackathon isn’t the finish line—it’s the starting point. Your post-hackathon path could be:
                 </p>
-                <ul className="space-y-4 mb-8">
-                  <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 bg-[#8b68f6] rounded-full mt-2.5 flex-shrink-0"></span>
-                    <span className="text-slate-600"><strong>Work with the winning team</strong> to polish and deploy the solution with real users</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 bg-[#8b68f6] rounded-full mt-2.5 flex-shrink-0"></span>
-                    <span className="text-slate-600"><strong>Absorb the prototype internally</strong>, assign a product owner, and build out the production version</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 bg-[#8b68f6] rounded-full mt-2.5 flex-shrink-0"></span>
-                    <span className="text-slate-600">Partner with a venture studio to <strong>commercialize the product as a new internal tool</strong></span>
-                  </li>
+                <ul className="list-disc pl-6 space-y-4 mb-8 text-slate-600">
+                  <li><strong>Work with the winning team</strong> to polish and deploy the solution with real users</li>
+                  <li><strong>Absorb the prototype internally</strong>, assign a product owner, and build out the production version</li>
+                  <li>Partner with a venture studio or tech team to <strong>commercialize the product as a new internal tool</strong></li>
+                  <li>Transfer the prototype to Internal Venture builder and let the team decide the commercialization and product development strategy.</li>
                 </ul>
                 
                 <div className="bg-[#fff1f1] border-l-4 border-[#952828] p-6 mb-12">
-                  <p className="text-[#952828] font-bold italic">
+                  <p className="text-[#952828] font-bold italic mb-2">
+                    But here’s the golden rule:
+                  </p>
+                  <p className="text-[#952828] font-bold text-lg">
                     “Don’t enter a hackathon unless you have a commercialization strategy and a committed budget.”
+                  </p>
+                   <p className="text-[#952828] text-sm mt-2">
+                    Winning prototypes often die due to lack of follow-through. To avoid this, make sure your leadership is aligned and that the <strong>business unit “owns” the next steps</strong>.
                   </p>
                 </div>
 
                 <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">Conclusion</h3>
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  An AI hackathon isn’t just about innovation theater. When done right, it can <strong>unlock real business value</strong>, surface top-tier AI talent, and reduce both cost and time to solution. For enterprises serious about leveraging AI, <strong>a hackathon is not a gamble—it’s a strategic shortcut</strong>.
+                  An AI hackathon isn’t just about innovation theater. When done right, it can <strong>unlock real business value</strong>, surface top-tier AI talent, and reduce both cost and time to solution.
+                </p>
+                <p className="text-slate-600 leading-relaxed mb-6">
+                    For enterprises serious about leveraging AI, <strong>a hackathon is not a gamble—it’s a strategic shortcut</strong>.
                 </p>
 
                 <div className="bg-[#2b204c] text-white p-8 rounded-sm text-center mb-16">

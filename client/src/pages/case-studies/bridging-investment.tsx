@@ -81,21 +81,17 @@ export default function BridgingInvestmentCaseStudy() {
                   className="w-full rounded-sm mb-12 shadow-lg"
                 />
 
-                <p className="text-slate-600 leading-relaxed mb-8">
-                  Since we began empowering entrepreneurs in 2017, we have observed that Qatar’s ecosystem has grown. Innovative startups have continually emerged, contributing to a booming business environment. However, the funding landscape has not kept pace, especially in the areas of startups and innovation. This gap in investment has created significant challenges for both startups seeking capital and investors looking for promising opportunities.
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  Since we began empowering entrepreneurs in 2017, we have observed that Qatar’s grow. Innovative startups have continually emerged, contributing to a booming business environment. However, the funding landscape has not kept pace, especially in the areas of startups and innovation. This gap in investment has created significant challenges for both startups seeking capital and investors looking for promising opportunities.
                 </p>
                 <p className="text-slate-600 leading-relaxed mb-12">
-                  To better address the needs of the entrepreneurial ecosystem, we conducted an in-depth market analysis. We found that both startups and investors were missing critical components necessary for their growth. Startups often lack a clear understanding of how High Net Worth Individuals (HNIs) invest, while many investors are unfamiliar with the innovation ecosystem.
+                  To better address the needs of the entrepreneurial ecosystem, we conducted an in-depth market analysis. We found that both startups and investors were missing critical components necessary for their growth. Startups often lack a clear understanding of how High Net Worth Individuals (HNIs) invest and manage their portfolios, leaving them in the dark about securing funding. Conversely, many investors are unfamiliar with the innovation ecosystem and the startup world, where the tech landscape and its potential are not well understood.
                 </p>
 
-                <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">Qatar’s Investment Landscape</h3>
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  The investment opportunities in Qatar are vast and diverse, yet traditional investment approaches have not fully embraced the startup market. Qatar’s investment landscape includes its abundant natural resources and extends to strategic initiatives in infrastructure, education, healthcare, and technology.
+                  The investment opportunities in Qatar are vast and diverse, yet traditional investment approaches have not fully embraced the startup market. Qatar’s investment landscape includes its abundant natural resources, particularly in natural gas, and extends to strategic initiatives in infrastructure, education, healthcare, and technology. However, these sectors have yet to fully integrate with the startup ecosystem.
                 </p>
-                <p className="text-slate-600 leading-relaxed mb-6">
-                  By bridging this gap, we can unlock new opportunities for both startups and investors, fostering a more robust and dynamic entrepreneurial ecosystem in Qatar.
-                </p>
-
+                
                 <div className="grid md:grid-cols-2 gap-6 mb-12">
                   <img 
                     src="https://risin.ventures/wp-content/uploads/2024/07/aib2.jpg" 
@@ -108,54 +104,90 @@ export default function BridgingInvestmentCaseStudy() {
                     className="w-full rounded-sm shadow-md h-full object-cover"
                   />
                 </div>
-
-                <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">The Solution: AIB & SIRP</h3>
+                
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  The first pivotal step in this journey was receiving a mandate from MCIT. This mandate empowered us to structure the Angels Investment program effectively and align it with national economic goals.
+                  For example, despite Qatar’s significant advancements in technology and infrastructure, there remains a gap in venture capital and angel investments dedicated to nurturing tech startups. This has limited the growth potential of innovative enterprises that could otherwise contribute substantially to the economy. By bridging this gap, we can unlock new opportunities for both <a href="https://risin.ventures/join-us/#startups" className="text-[#8b68f6] hover:underline">startups</a> and <a href="https://risin.ventures/join-us/#investors" className="text-[#8b68f6] hover:underline">investors</a>, fostering a more robust and dynamic entrepreneurial ecosystem in Qatar.
                 </p>
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  Our <strong>AIB (Angel Investment Bootcamp)</strong> and <strong>SIRP (Startup Investment Readiness Program)</strong> are unique initiatives in Qatar, addressing the lack of comprehensive support in a market with a limited number of angel investors.
+                  Through our efforts, we aim to facilitate a better understanding between startups and investors, providing the necessary support and knowledge to bridge this divide. Our goal is to create an environment where startups can thrive with adequate funding and investors can confidently explore the innovative landscape, driving mutual growth and success.
+                </p>
+                <p className="text-slate-600 leading-relaxed mb-12">
+                   However, the current funding landscape does not fully leverage these opportunities. With a limited number of angel investors, startups struggle to access the capital needed to scale and innovate.
+                </p>
+                
+                <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">The Solution: AIB & SIRP</h3>
+                 <p className="text-slate-600 leading-relaxed mb-6">
+                   After thoroughly analyzing and identifying the gaps in the ecosystem, we developed a comprehensive strategy and roadmap to improve the funding scene in the country. This plan was proposed and discussed with our principal, the Ministry of Communications, and Information Technology (MCIT). With their vision alignment and sponsorship, the design of the program was finalized and the launch was announced immediately.
+                 </p>
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  The first pivotal step in this journey was receiving a mandate from MCIT. This mandate empowered us to structure the Angels Investment program effectively and align it with national economic goals. At the core, the program offered HNIs in-house training to become well-versed in local market dynamics while simultaneously preparing startups to attract investments. This dual approach led to the creation of the AIB/SIRP program, designed to foster a robust investment ecosystem within Qatar.
+                </p>
+                
+                <div className="grid md:grid-cols-2 gap-6 mb-12">
+                   <img 
+                    src="https://risin.ventures/wp-content/uploads/2024/07/aib1.png" 
+                    alt="AIB Model" 
+                    className="w-full rounded-sm shadow-md h-full object-cover"
+                  />
+                   <img 
+                    src="https://risin.ventures/wp-content/uploads/2024/07/DSC05292-1024x683.jpg" 
+                    alt="Bootcamp Session" 
+                    className="w-full rounded-sm shadow-md h-full object-cover"
+                  />
+                </div>
+                
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  Our AIB (Angel Investment Bootcamp) and SIRP (Startup Investment Readiness Program) are unique initiatives in Qatar, addressing the lack of comprehensive support in a market with a limited number of angel investors. By offering specialized <a href="https://risin.ventures/pillars/#mentoring-training" className="text-[#8b68f6] hover:underline">training</a> and fostering critical connections, <a href="https://risin.ventures/" className="text-[#8b68f6] hover:underline">Risin Ventures</a> is pivotal in enhancing Qatar’s investment ecosystem and promoting a more dynamic entrepreneurial environment.
+                </p>
+                <p className="text-slate-600 leading-relaxed mb-12">
+                   The AIB is a four-day intensive training program designed to educate investors about their roles, teach them how to identify promising startups, and maximize their investment returns. Meanwhile, the SIRP equips startups with the knowledge to select suitable investors and understand term sheets, ultimately helping them scale and grow.
                 </p>
 
                 <div className="bg-[#F9FAFB] border border-slate-100 rounded-sm p-8 mb-12">
                   <div className="grid md:grid-cols-2 gap-8">
                     <div>
                       <h5 className="font-bold text-[#8b68f6] mb-2 uppercase text-xs tracking-widest">Angel Investment Bootcamp (AIB)</h5>
-                      <p className="text-sm text-slate-600">Equips investors with foundational knowledge of startup dynamics, investment strategies, and due diligence.</p>
+                      <p className="text-sm text-slate-600">Equips investors with foundational knowledge of startup dynamics, personalized investment strategies, and techniques for generating deal flow and managing portfolios, enhancing their decision-making and maximizing returns. It covers valuation methods and overcoming valuation gaps, providing tools for accurate valuation and smoother negotiations. AIB also focuses on due diligence, investment documentation, and understanding various funding instruments, ensuring comprehensive risk assessment and proper governance.</p>
                     </div>
                     <div>
                       <h5 className="font-bold text-[#8b68f6] mb-2 uppercase text-xs tracking-widest">Startup Investment Readiness (SIRP)</h5>
-                      <p className="text-sm text-slate-600">Prepares startups to navigate the funding landscape, craft compelling pitches, and understand term sheets.</p>
+                      <p className="text-sm text-slate-600">Prepares startups to navigate the funding landscape, craft compelling pitches, understand term sheets, and practice pitching, thereby increasing their chances of securing investments and building confidence in their presentations.</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="mb-12">
-                  <img 
-                    src="https://risin.ventures/wp-content/uploads/2024/07/DSC05292-1024x683.jpg" 
-                    alt="Pitch Day" 
-                    className="w-full rounded-sm shadow-md"
-                  />
-                </div>
 
                 <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">Impact & Results</h3>
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  Over the course of four days, both investors and startups received extensive training. Out of 30+ startups from the DIC incubation, the top 8 were selected to pitch on demo day.
+                  Over the course of four days, both investors and startups received extensive training, providing them with the knowledge and skills to collaborate effectively. Out of 30+ startups from the DIC incubation trained in the program, the top 8 were selected to pitch on demo day. This merit-based selection focused on traction, product-market fit (PMF), and readiness to raise funds.
                 </p>
-                <div className="grid gap-6 mb-8">
-                  <div className="border-l-4 border-[#8b68f6] pl-6 py-2">
-                    <h5 className="font-bold text-[#2b204c] mb-1">30+ Investors</h5>
-                    <p className="text-slate-600 text-sm">Selected from more than 50 applicants, showing keen interest in the program.</p>
-                  </div>
-                  <div className="border-l-4 border-[#8b68f6] pl-6 py-2">
-                    <h5 className="font-bold text-[#2b204c] mb-1">QAR 7 Million+</h5>
-                    <p className="text-slate-600 text-sm">Funding announced for three startups from the AIB/SIRP program within 2 months.</p>
-                  </div>
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  The final demo day attracted not only the trained angel investors but also many other local investors, VCs, and institutions. Over 30 investors, selected from more than 50 applicants, showed keen interest in the program. This enthusiasm highlighted the investors’ eagerness to learn about the entrepreneurial ecosystem and contribute to it.
+                </p>
+                
+                 <div className="grid md:grid-cols-2 gap-6 mb-12">
+                   <img 
+                    src="https://risin.ventures/wp-content/uploads/2024/07/Dan-e1720362221378.png" 
+                    alt="Demo Day" 
+                    className="w-full rounded-sm shadow-md h-full object-cover"
+                  />
+                   <img 
+                    src="https://risin.ventures/wp-content/uploads/2024/07/DSC01044-1024x683.jpg" 
+                    alt="Investors" 
+                    className="w-full rounded-sm shadow-md h-full object-cover"
+                  />
                 </div>
+
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  The program also created a substantial network of experienced individuals who trained participants and facilitated connections between investors and startups. Post-program, we continued to nurture these connections, leading to potential investments. Notably, three startups from the AIB/SIRP program announced funding of over QAR 7 million – amounts from major entities and private investors within DIC/MCIT program which was held 2 months later “MTD” Make the deal program.
+                </p>
+                 <p className="text-slate-600 leading-relaxed mb-12">
+                  This initiative underscores the significant impact of well-structured training and networking in fostering a thriving investment ecosystem and supporting the growth of innovative startups in Qatar.
+                </p>
 
                 <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">Conclusion</h3>
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  By emphasizing education and readiness, we aim to unlock the full potential of Qatar’s entrepreneurial and investment landscapes. We have successfully designed this model for future executions, and a playbook has been well established with potentials of resulting in numerous deals between startups and investors.
+                  By emphasizing education and readiness, we aim to unlock the full potential of Qatar’s entrepreneurial and <a href="https://risin.ventures/pillars/#investment-programs" className="text-[#8b68f6] hover:underline">investment</a> landscapes, ensuring that both startups and investors can thrive and contribute to the country’s journey towards becoming a knowledge-based economy and a global hub for innovation. We have successfully designed this model for the future executions, and a playbook has been well established with potentials of its resulting in numerous deals between startups and investors.
                 </p>
 
                 <div className="bg-[#2b204c] text-white p-8 rounded-sm text-center mb-16">

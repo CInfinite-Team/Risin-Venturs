@@ -81,7 +81,7 @@ export default function SustainovaChallengeCaseStudy() {
                   className="w-full rounded-sm mb-12 shadow-lg"
                 />
 
-                <p className="text-slate-600 leading-relaxed mb-8">
+                <p className="text-slate-600 leading-relaxed mb-6">
                   The <a href="https://sustainovachallenge.com/" target="_blank" rel="noopener noreferrer" className="text-[#8b68f6] font-bold hover:underline">Sustainova Challenge</a>, powered by Risin Ventures, is establishing itself as a transformative platform for sustainability-focused startups in the GCC region. Recently, two impactful editions were held in Riyadh and Dubai, bringing together innovators, investors, and enterprises committed to creating a sustainable future.
                 </p>
                 <p className="text-slate-600 leading-relaxed mb-12">
@@ -90,7 +90,7 @@ export default function SustainovaChallengeCaseStudy() {
 
                 <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">Spotlight on Winners</h3>
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  From the <strong>150+</strong> application received from each country, organizers had a hard time choosing the top 10 startups who will go on the stage. The competitions culminated in the recognition of standout startups in each edition:
+                  From the <strong>150+</strong> application received from each country, organizers had a hard time choosing the top 10 startups who will go on the stage. A few of the startups that were dropped out of pitching were extremely good however a fair evaluation based on traction, impact, scalability and founders profile ensured top 10 startups from each country pitching for country challenge. The competitions culminated in the recognition of standout startups in each edition:
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-6 mb-12">
@@ -116,7 +116,7 @@ export default function SustainovaChallengeCaseStudy() {
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-6 mb-12">
+                <div className="grid md:grid-cols-2 gap-6 mb-6">
                   <img 
                     src="https://risin.ventures/wp-content/uploads/2024/11/photo-collage.png.png" 
                     alt="Riyadh Pitching" 
@@ -128,46 +128,46 @@ export default function SustainovaChallengeCaseStudy() {
                     className="w-full rounded-sm shadow-md"
                   />
                 </div>
+                <p className="text-slate-600 leading-relaxed mb-12 italic text-sm text-center">
+                    These startups impressed the judges and investors with their scalable solutions across climate tech, SaaS platforms, and sustainable agriculture, reflecting the region’s commitment to driving environmental change.
+                </p>
 
                 <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">Key Trends and Insights</h3>
                 <p className="text-slate-600 leading-relaxed mb-6">
                   The Sustainova Challenge unveiled key trends shaping the sustainability ecosystem in the GCC:
                 </p>
-                <ul className="space-y-4 mb-12">
-                  <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 bg-[#8b68f6] rounded-full mt-2.5 flex-shrink-0"></span>
-                    <span className="text-slate-600"><strong>Emergence of Climate Tech:</strong> Many startups showcased innovative climate tech solutions, particularly SaaS-based platforms that enable enterprises to measure and reduce their carbon footprints.</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 bg-[#8b68f6] rounded-full mt-2.5 flex-shrink-0"></span>
-                    <span className="text-slate-600"><strong>Collaborative Solutions:</strong> Startups in carbon offsetting and emission reductions demonstrated how partnerships with governments and NGOs are creating new opportunities for impact.</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 bg-[#8b68f6] rounded-full mt-2.5 flex-shrink-0"></span>
-                    <span className="text-slate-600"><strong>Rise of Agripreneurs:</strong> Innovative entrepreneurs leveraging AI-driven pest detection, sensor-based irrigation, vertical farming, and hydroponics.</span>
-                  </li>
-                </ul>
+                <ol className="list-decimal pl-6 space-y-4 mb-12 text-slate-600">
+                    <li>
+                        <strong>Emergence of Climate Tech</strong>
+                        <br/>
+                        Many startups showcased innovative climate tech solutions, particularly <strong>SaaS-based platforms</strong> that enable enterprises to measure and reduce their carbon footprints. This highlights the growing interest and commitment of large organizations to environmental sustainability.
+                    </li>
+                    <li>
+                        <strong>Collaborative Solutions</strong>
+                        <br/>
+                        Startups in <strong>carbon offsetting through forestation</strong> and <strong>measuring emission reductions</strong> demonstrated how partnerships with governments, NGOs, and private enterprises are creating new opportunities for impact.
+                    </li>
+                    <li>
+                        <strong>Rise of Agripreneurs</strong>
+                        <br/>
+                        The event also spotlighted <strong>technology agriculturists (Agripreneurs)</strong>—innovative entrepreneurs leveraging technology like:
+                         <ul className="list-disc pl-6 mt-2 space-y-1">
+                             <li><strong>AI-driven pest detection</strong>,</li>
+                             <li><strong>Sensor-based irrigation</strong>,</li>
+                             <li><strong>Vertical farming, aquaponics, and hydroponics</strong>. These solutions not only optimize crop production but also empower other farmers to adopt efficient and sustainable practices.</li>
+                         </ul>
+                    </li>
+                </ol>
 
                 <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">Real Impact</h3>
                 <p className="text-slate-600 leading-relaxed mb-6">
                   The Sustainova Challenge proved to be more than just a competition; it became a launchpad for startups to connect with stakeholders and unlock growth opportunities:
                 </p>
-                <div className="bg-[#2b204c] text-white p-8 rounded-sm mb-12">
-                  <div className="grid md:grid-cols-3 gap-8 text-center">
-                    <div>
-                      <div className="text-3xl font-heading font-bold mb-2">25+</div>
-                      <div className="text-xs uppercase tracking-widest opacity-80">Startups Gained Visibility</div>
-                    </div>
-                    <div>
-                      <div className="text-3xl font-heading font-bold mb-2">50+</div>
-                      <div className="text-xs uppercase tracking-widest opacity-80">Tailored Meetings</div>
-                    </div>
-                    <div>
-                      <div className="text-3xl font-heading font-bold mb-2">GCC</div>
-                      <div className="text-xs uppercase tracking-widest opacity-80">Region-wide Impact</div>
-                    </div>
-                  </div>
-                </div>
+                <ul className="list-disc pl-6 space-y-4 mb-12 text-slate-600">
+                  <li><strong>Global Recognition</strong>: 25+ startups gained international visibility.</li>
+                  <li><strong>One-on-One Connections</strong>: Over 50 tailored meetings with investors, enterprise partners, and government entities directly contributed to startups securing acceleration program placements, investment interests, and business deals.</li>
+                  <li><strong>Sector-wide Influence</strong>: Startups are inspiring a new wave of entrepreneurs to jump into sustainability-driven ventures, driving long-term impact.</li>
+                </ul>
 
                 <div className="mb-12">
                   <img 
@@ -182,9 +182,18 @@ export default function SustainovaChallengeCaseStudy() {
                   />
                 </div>
 
+                <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">Partners and Collaborators</h3>
+                <p className="text-slate-600 leading-relaxed mb-12">
+                  The success of the Sustainova Challenge was augmented by its visionary partners, including <strong>CODE of MCIT</strong>, <strong>MEWA</strong>, <strong>Icon Training</strong>, <strong>Roland Berger, and Phoenix Ventures</strong>. Their support in resources, mentorship, and network access played a vital role in empowering startups to refine and scale their solutions.
+                </p>
+
+
                 <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">A Vision for the Future</h3>
                 <p className="text-slate-600 leading-relaxed mb-6">
                   The inaugural editions of the Sustainova Challenge mark a significant milestone in building a thriving ecosystem for sustainability-led ventures in the GCC. With plans to conduct more regional editions and a <strong>grand finale to identify the GCC’s top three startups</strong>, the program is paving the way for the emergence of unicorns in the sustainability space.
+                </p>
+                <p className="text-slate-600 leading-relaxed mb-6">
+                    By fostering innovation and supporting entrepreneurs, Sustainova aims to enable impactful solutions that reduce carbon emissions, contribute to the circular economy, and address critical challenges like food security and resource efficiency.
                 </p>
                 <p className="text-slate-600 leading-relaxed font-bold mb-6">
                   Together, we are shaping a more sustainable and prosperous future for the GCC and beyond.

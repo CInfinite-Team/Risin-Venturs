@@ -36,7 +36,7 @@ export default function AIHackathonsCaseStudy() {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-24 pb-10 md:pt-32 md:pb-12 bg-gradient-to-b from-slate-50 to-white">
+      <section className="pt-24 pb-4 md:pt-32 md:pb-6 bg-gradient-to-b from-slate-50 to-white">
         <div className="container mx-auto px-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -62,7 +62,7 @@ export default function AIHackathonsCaseStudy() {
       </section>
 
       {/* Main Content Area */}
-      <section className="py-8 md:py-16 bg-white">
+      <section className="pt-4 md:pt-8 pb-8 md:pb-16 bg-white">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
             

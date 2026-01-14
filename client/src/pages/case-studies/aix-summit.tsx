@@ -45,7 +45,7 @@ export default function AIXSummitCaseStudy() {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-gradient-to-b from-slate-50 to-white">
+      <section className="pt-24 pb-10 md:pt-32 md:pb-12 bg-gradient-to-b from-slate-50 to-white">
         <div className="container mx-auto px-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -53,12 +53,12 @@ export default function AIXSummitCaseStudy() {
             transition={{ duration: 0.8 }}
             className="max-w-5xl mx-auto text-center"
           >
-            <div className="flex items-center justify-center gap-2 mb-6">
+            <div className="flex items-center justify-center gap-2 mb-4">
               <Link href="/case-studies" className="text-slate-400 text-sm font-bold uppercase tracking-widest hover:text-[#8b68f6] transition-colors">Case Studies</Link>
               <span className="text-slate-300">/</span>
               <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest">AIX Summit</span>
             </div>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold text-[#2b204c] mb-8 uppercase leading-tight">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold text-[#2b204c] mb-6 uppercase leading-tight">
               Bridging Ambition and Intelligence <br className="hidden md:block"/>
               <span className="text-stroke">Inside the AIX Summit</span>
             </h1>
@@ -71,7 +71,7 @@ export default function AIXSummitCaseStudy() {
       </section>
 
       {/* Main Content Area */}
-      <section className="py-12 md:py-20 bg-white">
+      <section className="py-8 md:py-16 bg-white">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
             

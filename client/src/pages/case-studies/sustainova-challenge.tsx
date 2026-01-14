@@ -42,9 +42,9 @@ export default function SustainovaChallengeCaseStudy() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-5xl mx-auto text-center"
+            className="max-w-5xl mr-auto text-left"
           >
-            <div className="flex items-center justify-center gap-2 mb-4">
+            <div className="flex items-center justify-start gap-2 mb-4">
               <Link href="/case-studies" className="text-slate-400 text-sm font-bold uppercase tracking-widest hover:text-[#8b68f6] transition-colors">Case Studies</Link>
               <span className="text-slate-300">/</span>
               <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest">Sustainova</span>
@@ -53,7 +53,7 @@ export default function SustainovaChallengeCaseStudy() {
               Sustainova Challenge <br className="hidden md:block"/>
               <span className="text-stroke">Empowering Sustainability in GCC</span>
             </h1>
-            <div className="flex items-center justify-center gap-6 text-sm text-slate-500 font-bold uppercase tracking-widest">
+            <div className="flex items-center justify-start gap-6 text-sm text-slate-500 font-bold uppercase tracking-widest">
               <span className="flex items-center gap-2"><Calendar size={16} className="text-[#8b68f6]" /> November 2024</span>
               <span className="flex items-center gap-2"><Target size={16} className="text-[#8b68f6]" /> Climate Tech</span>
             </div>

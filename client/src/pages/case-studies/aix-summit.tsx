@@ -21,11 +21,11 @@ const sectionVariants = {
 
 const stats = [
   { label: "Community Pulse", value: "80+ Teams", desc: "Over 300 innovators and AI experts from 20+ countries." },
-  { label: "Reach", value: "6.1M+", desc: "Impressions with a massive digital footprint." },
-  { label: "Dedication", value: "100+ Hours", desc: "Mentoring hours from 25+ industry experts." },
-  { label: "Rigorous Vetting", value: "100 Pitches", desc: "Competitive funnel from 536 applications." },
-  { label: "Incentive", value: "$20,000", desc: "Prize pool awarded to 4 winning teams." },
-  { label: "Summit Gravity", value: "150+ CXOs", desc: "C-suite leaders engaged in roundtables." },
+  { label: "Reach", value: "6.1M+ Impressions", desc: "A massive digital footprint with a reach exceeding 1.85 million people." },
+  { label: "Dedication", value: "100+ Mentoring Hours", desc: "Direct access to 25+ industry mentors and experts over 3 days." },
+  { label: "Rigorous Vetting", value: "100 Pitches", desc: "A competitive funnel that started with 536 applications." },
+  { label: "Incentive", value: "$20,000 Prize Pool", desc: "Awarded to 4 winning teams solving critical sector challenges." },
+  { label: "Summit Gravity", value: "150+ CXOs", desc: "C-suite leaders engaged in 8 roundtables and 4 panel discussions." },
 ];
 
 export default function AIXSummitCaseStudy() {
@@ -141,7 +141,10 @@ export default function AIXSummitCaseStudy() {
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="w-1.5 h-1.5 bg-[#8b68f6] rounded-full mt-2.5 flex-shrink-0"></span>
-                    <span className="text-slate-600"><strong>Enterprise AI:</strong> Automating “Contract Lifecycle Management (CLM)” and AI-Powered Customer Support for SMEs (Ooredoo).</span>
+                    <span className="text-slate-600"><strong>Enterprise AI:</strong><br/>
+                      1. Automating “Contract Lifecycle Management (CLM)” and customer support for SMEs for QDB<br/>
+                      2. AI-Powered Customer Support Assistant for SMEs for Ooredoo
+                    </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="w-1.5 h-1.5 bg-[#8b68f6] rounded-full mt-2.5 flex-shrink-0"></span>
@@ -159,6 +162,17 @@ export default function AIXSummitCaseStudy() {
                   <p className="text-xs text-slate-400 mt-2 text-center italic">Mentors guiding teams through technical challenges.</p>
                 </div>
 
+                <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">Participant Innovation: From Ideas to Impact</h3>
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  The quality of talent was exceptional. We saw teams like <strong>Crudbot</strong> (Fintech), <strong>Codenova</strong> (Enterprise), <strong>Binary Bridges</strong> (Investment), <strong>X-Force</strong> (Enterprise) rise to the top by delivering solutions that were not only technically robust but also practically feasible.
+                </p>
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  “It pushed me to think creatively… the atmosphere was full of innovation and energy,” shared one of the winners, echoing the sentiment of a cohort that refused to play it safe.
+                </p>
+                <p className="text-slate-600 leading-relaxed mb-12">
+                  “Mentorship and feedback throughout the Hackathon changed how I approach building with AI – under real constraints said another participant”
+                </p>
+
                 <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">The Summit Side: Where Builders Meet Believers</h3>
                 <p className="text-slate-600 leading-relaxed mb-8">
                   While the hackathon hummed downstairs, the AIX Summit brought together over 150 CXOs to discuss the “Future of Enterprise AI Integration”. Keynote speaker Dr. Pascal Dutru (Advisor to MCIT Qatar) emphasized that AI’s true value lies in its seamless integration into business processes and public services.
@@ -174,7 +188,26 @@ export default function AIXSummitCaseStudy() {
                   <p className="text-xs text-slate-400 mt-2 text-center italic">Industry leaders discussing the future of AI in Qatar.</p>
                 </div>
 
-                <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">Ecosystem Transformation</h3>
+                <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">Why the AIX Hackathon and Summit Really Mattered</h3>
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  In a world saturated with “AI hype,” the AIX Hackathon was a vital reality check. It mattered because it moved AI out of the lab and into the hands of those solving Qatar’s most pressing business challenges.
+                </p>
+                <ul className="space-y-4 mb-12">
+                  <li className="flex items-start gap-3">
+                    <span className="w-1.5 h-1.5 bg-[#8b68f6] rounded-full mt-2.5 flex-shrink-0"></span>
+                    <span className="text-slate-600"><strong>Validation of Local Talent:</strong> With 536 applications narrowed down to 81 competing teams, the event proved that the “talent” for a high-tech economy is already here in the region.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-1.5 h-1.5 bg-[#8b68f6] rounded-full mt-2.5 flex-shrink-0"></span>
+                    <span className="text-slate-600"><strong>The “Builder-Believer” Bridge:</strong> By hosting 150+ CXOs alongside the developers, the Summit created a rare space where technical feasibility met commercial strategy.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-1.5 h-1.5 bg-[#8b68f6] rounded-full mt-2.5 flex-shrink-0"></span>
+                    <span className="text-slate-600"><strong>Tangible Prototypes:</strong> This wasn’t a talk shop. Over 70 AI-driven solutions were developed in just 48 hours, targeting sectors like Fintech, Enterprise, and Investment.</span>
+                  </li>
+                </ul>
+
+                <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">Ecosystem Transformation: The Changes Brought to Qatar</h3>
                 <p className="text-slate-600 leading-relaxed mb-6">
                   The impact of this three-day event ripples far beyond the award ceremony.
                 </p>
@@ -206,14 +239,32 @@ export default function AIXSummitCaseStudy() {
                 <div className="bg-[#2b204c] text-white p-8 rounded-sm text-center mb-16">
                   <h3 className="text-xl font-heading font-bold uppercase mb-4">Risin Ventures: Powering Enterprise Open Innovation</h3>
                   <p className="text-slate-300 mb-6">
-                    At Risin Ventures, we believe that the biggest breakthroughs happen at the intersection of enterprise scale and startup agility. We work with enterprises to co-create AI products that are secure, scalable, and strategically aligned.
+                    At Risin Ventures, we believe that the biggest breakthroughs happen at the intersection of enterprise scale and startup agility.
                   </p>
+                  <ul className="text-left space-y-4 mb-8 max-w-2xl mx-auto">
+                    <li className="flex items-start gap-3">
+                      <span className="w-1.5 h-1.5 bg-[#8b68f6] rounded-full mt-2.5 flex-shrink-0"></span>
+                      <span className="text-slate-300 text-sm"><strong>Open Innovation for Enterprises:</strong> We help large organizations navigate the complex AI landscape through <a href="https://risin.ventures/pillars/#corporate-programs" className="text-[#8b68f6] hover:underline">Open Innovation programs</a>. By matching corporate “pain points” with a global network of vetted innovators, we accelerate the journey from problem to Proof of Concept (POC).</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="w-1.5 h-1.5 bg-[#8b68f6] rounded-full mt-2.5 flex-shrink-0"></span>
+                      <span className="text-slate-300 text-sm"><strong>Building the Future:</strong> As a <a href="https://risin.ventures/pillars/#venture-builder" className="text-[#8b68f6] hover:underline">venture studio</a>, we don’t just advise; we build. We work with enterprises to co-create AI products that are secure, scalable, and strategically aligned with their long-term goals.</span>
+                    </li>
+                  </ul>
                   <Link href="/contact">
                     <Button className="bg-white text-[#2b204c] hover:bg-[#8b68f6] hover:text-white rounded-sm px-8 font-bold text-sm uppercase tracking-widest transition-all">
                       Partner With Us
                     </Button>
                   </Link>
                 </div>
+
+                <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">Impact and Beyond</h3>
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  The AIX Summit & Hackathon 2025 proved that Qatar is no longer just a consumer of technology – it is a creator. By bringing together the “builders” (hackers) and the “believers” (investors and CXOs), we’ve sparked a flame that will continue to burn well after the awards are handed out.
+                </p>
+                <p className="text-slate-600 leading-relaxed font-bold mb-12">
+                  Are you ready for the next wave of AI? Stay tuned to <a href="https://risin.ventures/" className="text-[#2b204c] hover:text-[#8b68f6]">Risin Ventures</a> as we continue to push the boundaries of what’s possible in the region.
+                </p>
 
                 {/* Comment Section */}
                 <div id="comments" className="bg-[#F9FAFB] border border-slate-100 rounded-sm p-8 md:p-10">

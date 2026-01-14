@@ -1,7 +1,11 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Calendar, Users, Target, Zap, Share2, Linkedin, Twitter, Facebook } from "lucide-react";
+import { ArrowRight, Calendar, Users, Target, Zap, Share2, Linkedin, Twitter, Facebook, MessageSquare, Send } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { toast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -25,6 +29,17 @@ const stats = [
 ];
 
 export default function AIXSummitCaseStudy() {
+  const [commentForm, setCommentForm] = useState({ name: "", email: "", website: "", message: "" });
+
+  const handleCommentSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast({
+      title: "Comment Submitted",
+      description: "Thank you for sharing your thoughts! Your comment is awaiting moderation.",
+    });
+    setCommentForm({ name: "", email: "", website: "", message: "" });
+  };
+
   return (
     <div className="min-h-screen bg-white font-sans">
       <Header />
@@ -105,11 +120,21 @@ export default function AIXSummitCaseStudy() {
                   </div>
                 </div>
 
+                {/* Image 1: After Stats */}
+                <div className="mb-12">
+                  <img 
+                    src="https://risin.ventures/wp-content/uploads/elementor/thumbs/1.JPG-scaled-rgwznmemk9y78vjp3f325wlygy6ggjodbozgba5he4.jpg" 
+                    alt="AIX Summit Participants" 
+                    className="w-full rounded-sm shadow-md"
+                  />
+                  <p className="text-xs text-slate-400 mt-2 text-center italic">Participants collaborating during the 48-hour hackathon sprint.</p>
+                </div>
+
                 <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">Program Design: Themes That Matter</h3>
                 <p className="text-slate-600 leading-relaxed mb-6">
                   The hackathon wasn’t a “build-anything” free-for-all. It was anchored in three high-impact themes:
                 </p>
-                <ul className="space-y-4 mb-12">
+                <ul className="space-y-4 mb-8">
                   <li className="flex items-start gap-3">
                     <span className="w-1.5 h-1.5 bg-[#8b68f6] rounded-full mt-2.5 flex-shrink-0"></span>
                     <span className="text-slate-600"><strong>Fintech AI:</strong> Tackling the “Regulatory Navigator & Readiness Evaluator” use case with QDB.</span>
@@ -124,11 +149,36 @@ export default function AIXSummitCaseStudy() {
                   </li>
                 </ul>
 
+                {/* Image 2: After Themes */}
+                <div className="mb-12">
+                  <img 
+                    src="https://risin.ventures/wp-content/uploads/elementor/thumbs/7-rgx0eyjfrwyhb9fbn28zfrrrzv9i9dk1405i6old9g.jpg" 
+                    alt="AIX Summit Mentorship" 
+                    className="w-full rounded-sm shadow-md"
+                  />
+                  <p className="text-xs text-slate-400 mt-2 text-center italic">Mentors guiding teams through technical challenges.</p>
+                </div>
+
+                <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">The Summit Side: Where Builders Meet Believers</h3>
+                <p className="text-slate-600 leading-relaxed mb-8">
+                  While the hackathon hummed downstairs, the AIX Summit brought together over 150 CXOs to discuss the “Future of Enterprise AI Integration”. Keynote speaker Dr. Pascal Dutru (Advisor to MCIT Qatar) emphasized that AI’s true value lies in its seamless integration into business processes and public services.
+                </p>
+
+                {/* Image 3: After Summit */}
+                <div className="mb-12">
+                  <img 
+                    src="https://risin.ventures/wp-content/uploads/elementor/thumbs/WhatsApp-Image-2025-10-27-at-4.08.47-PM-2-rgx10cdbxpixqphqs0hda27nr7bczg6kzdpeaebecw.jpeg" 
+                    alt="AIX Summit Panel Discussion" 
+                    className="w-full rounded-sm shadow-md"
+                  />
+                  <p className="text-xs text-slate-400 mt-2 text-center italic">Industry leaders discussing the future of AI in Qatar.</p>
+                </div>
+
                 <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-6">Ecosystem Transformation</h3>
                 <p className="text-slate-600 leading-relaxed mb-6">
                   The impact of this three-day event ripples far beyond the award ceremony.
                 </p>
-                <div className="grid gap-6 mb-12">
+                <div className="grid gap-6 mb-8">
                   <div className="border-l-4 border-[#8b68f6] pl-6 py-2">
                     <h5 className="font-bold text-[#2b204c] mb-1">Creation of a “Pipeline”</h5>
                     <p className="text-slate-600 text-sm">The hackathon identified a “top 12” tier of AI teams now ready for acceleration or corporate integration.</p>
@@ -143,7 +193,17 @@ export default function AIXSummitCaseStudy() {
                   </div>
                 </div>
 
-                <div className="bg-[#2b204c] text-white p-8 rounded-sm text-center">
+                 {/* Image 4: After Ecosystem */}
+                <div className="mb-12">
+                  <img 
+                    src="https://risin.ventures/wp-content/uploads/elementor/thumbs/11-scaled-rgx190frg8x5tq1de6nxxzo1p518gdgp9sixp6vk80.jpg" 
+                    alt="AIX Summit Closing Ceremony" 
+                    className="w-full rounded-sm shadow-md"
+                  />
+                  <p className="text-xs text-slate-400 mt-2 text-center italic">Closing ceremony celebrating the winners and participants.</p>
+                </div>
+
+                <div className="bg-[#2b204c] text-white p-8 rounded-sm text-center mb-16">
                   <h3 className="text-xl font-heading font-bold uppercase mb-4">Risin Ventures: Powering Enterprise Open Innovation</h3>
                   <p className="text-slate-300 mb-6">
                     At Risin Ventures, we believe that the biggest breakthroughs happen at the intersection of enterprise scale and startup agility. We work with enterprises to co-create AI products that are secure, scalable, and strategically aligned.
@@ -153,6 +213,69 @@ export default function AIXSummitCaseStudy() {
                       Partner With Us
                     </Button>
                   </Link>
+                </div>
+
+                {/* Comment Section */}
+                <div id="comments" className="bg-[#F9FAFB] border border-slate-100 rounded-sm p-8 md:p-10">
+                  <div className="flex items-center gap-3 mb-6">
+                    <MessageSquare className="text-[#8b68f6]" size={24} />
+                    <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase">Leave a Comment</h3>
+                  </div>
+                  <p className="text-slate-500 text-sm mb-8">
+                    Your email address will not be published. Required fields are marked *
+                  </p>
+                  <form onSubmit={handleCommentSubmit} className="space-y-6">
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label htmlFor="name" className="text-xs font-bold uppercase tracking-widest text-[#2b204c]">Name *</label>
+                        <Input 
+                          id="name" 
+                          value={commentForm.name}
+                          onChange={(e) => setCommentForm({...commentForm, name: e.target.value})}
+                          required 
+                          placeholder="Your Name" 
+                          className="bg-white border-slate-200 focus:border-[#8b68f6] rounded-sm" 
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label htmlFor="email" className="text-xs font-bold uppercase tracking-widest text-[#2b204c]">Email *</label>
+                        <Input 
+                          id="email" 
+                          type="email" 
+                          value={commentForm.email}
+                          onChange={(e) => setCommentForm({...commentForm, email: e.target.value})}
+                          required 
+                          placeholder="your@email.com" 
+                          className="bg-white border-slate-200 focus:border-[#8b68f6] rounded-sm" 
+                        />
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <label htmlFor="website" className="text-xs font-bold uppercase tracking-widest text-[#2b204c]">Website</label>
+                      <Input 
+                        id="website" 
+                        type="url" 
+                        value={commentForm.website}
+                        onChange={(e) => setCommentForm({...commentForm, website: e.target.value})}
+                        placeholder="https://yourwebsite.com" 
+                        className="bg-white border-slate-200 focus:border-[#8b68f6] rounded-sm" 
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label htmlFor="message" className="text-xs font-bold uppercase tracking-widest text-[#2b204c]">Message *</label>
+                      <Textarea 
+                        id="message" 
+                        value={commentForm.message}
+                        onChange={(e) => setCommentForm({...commentForm, message: e.target.value})}
+                        required 
+                        placeholder="Type your comment here..." 
+                        className="bg-white border-slate-200 focus:border-[#8b68f6] rounded-sm min-h-[150px]" 
+                      />
+                    </div>
+                    <Button type="submit" className="bg-[#2b204c] text-white hover:bg-[#8b68f6] rounded-sm px-8 py-3 font-bold text-sm uppercase tracking-widest transition-all w-full md:w-auto">
+                      Post Comment <Send size={16} className="ml-2" />
+                    </Button>
+                  </form>
                 </div>
 
               </motion.div>

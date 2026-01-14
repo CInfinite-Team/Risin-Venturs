@@ -21,7 +21,7 @@ const caseStudies = [
     image: "https://risin.ventures/wp-content/uploads/2025/12/blog-banner-aix.png",
     date: "December 2025",
     excerpt: "Inside the high-stakes AI summit that brought together founders and enterprises to build real AI solutions.",
-    link: "https://risin.ventures/inside-the-aix-summit-hackathon-qatar-edition/",
+    link: "/case-studies/aix-summit",
     featured: true
   },
   {

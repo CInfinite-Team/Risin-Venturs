@@ -287,49 +287,35 @@ export default function GTM() {
         </div>
       </motion.section>
 
-      {/* Partners Strip */}
-      <section className="py-12 bg-[#F9FAFB] border-y border-slate-100">
+      {/* Ecosystem & Partners */}
+      <section className="py-16 bg-[#F9FAFB] border-y border-slate-100">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-8">
-            <span className="text-[#2b204c] text-xs font-bold uppercase tracking-widest">Ecosystem & Partners</span>
+          <div className="text-center mb-10">
+            <span className="text-[#2b204c] text-sm font-bold uppercase tracking-widest">Ecosystem Partners</span>
           </div>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-            {partners.map((logo, i) => (
-              <img key={i} src={logo} alt="Partner Logo" className="h-12 w-auto object-contain mix-blend-multiply" />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Ongoing Program Strip */}
-      <section className="py-10 md:py-12 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-[#2b204c] rounded-sm p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 overflow-hidden relative">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-[#8b68f6] opacity-10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
-              
-              <div className="relative z-10 flex flex-col items-start gap-2 text-left">
-                <span className="bg-[#952828] text-white text-[9px] font-bold uppercase tracking-widest px-3 py-1 rounded-sm">
-                  Ongoing Program
-                </span>
-                <h4 className="font-heading font-bold text-xl md:text-2xl text-white uppercase">
-                  SustAInova Roadshow – Doha
-                </h4>
-                <div className="flex flex-wrap gap-4 text-xs text-slate-300">
-                  <span className="flex items-center gap-1.5"><Calendar size={12} className="text-[#8b68f6]" /> 21st Jan 2026</span>
-                  <span className="flex items-center gap-1.5"><MapPin size={12} className="text-[#8b68f6]" /> QSTP, Doha</span>
-                </div>
-              </div>
-              
-              <a 
-                href="https://sustainovachallenge.com/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="relative z-10 bg-white text-[#2b204c] hover:bg-[#8b68f6] hover:text-white transition-all px-6 py-3 rounded-sm font-bold text-xs uppercase tracking-widest flex items-center gap-2 whitespace-nowrap"
+          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16">
+            {[
+              { name: "QSTP", url: "https://placehold.co/200x80/transparent/2b204c?text=QSTP" },
+              { name: "QDB", url: "https://placehold.co/200x80/transparent/2b204c?text=QDB" },
+              { name: "QFC", url: "https://placehold.co/200x80/transparent/2b204c?text=QFC" },
+              { name: "Monsha’at", url: "https://placehold.co/200x80/transparent/2b204c?text=Monsha%E2%80%99at" },
+              { name: "CODE", url: "https://placehold.co/200x80/transparent/2b204c?text=CODE" },
+              { name: "QFTH", url: "https://placehold.co/200x80/transparent/2b204c?text=QFTH" },
+              { name: "Itqan", url: "https://placehold.co/200x80/transparent/2b204c?text=Itqan" }, // Using placeholder for consistency, but I have the asset if needed
+              { name: "DTVC", url: "https://placehold.co/200x80/transparent/2b204c?text=DTVC" }
+            ].map((partner, i) => (
+              <motion.div 
+                key={i}
+                whileHover={{ scale: 1.1, filter: "grayscale(0%)" }}
+                className="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100 cursor-pointer"
               >
-                RSVP Now <ArrowRight size={14} />
-              </a>
-            </div>
+                <img 
+                  src={partner.url} 
+                  alt={`${partner.name} Logo`} 
+                  className="h-16 md:h-20 w-auto object-contain mix-blend-multiply" 
+                />
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -375,6 +361,29 @@ export default function GTM() {
           </div>
         </div>
       </motion.section>
+
+      {/* Upcoming Programs Strip */}
+      <section className="py-12 bg-white border-t border-slate-100">
+        <div className="container mx-auto px-6">
+          <div className="flex items-center gap-4 mb-6">
+            <div className="h-px bg-slate-200 flex-1"></div>
+            <span className="text-[#2b204c] text-xs font-bold uppercase tracking-widest">Upcoming Programs</span>
+            <div className="h-px bg-slate-200 flex-1"></div>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-[#F9FAFB] border border-slate-100 border-dashed rounded-sm p-8 flex flex-col items-center justify-center text-center gap-4 group hover:border-[#8b68f6]/30 transition-all">
+              <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center text-slate-400 group-hover:bg-[#8b68f6]/10 group-hover:text-[#8b68f6] transition-colors">
+                <Calendar size={20} />
+              </div>
+              <div>
+                <h4 className="font-heading font-bold text-lg text-[#2b204c] uppercase mb-1">More Programs Coming Soon</h4>
+                <p className="text-slate-500 text-sm">Stay tuned for new market access and innovation initiatives across the GCC.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <Footer />
       <ScrollToTop />

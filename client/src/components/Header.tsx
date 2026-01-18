@@ -67,7 +67,7 @@ export default function Header() {
     { label: "AIX Summit & Hackathon", href: "/programs/aix" },
     { label: "Sustainova Challenge", href: "/programs/sustainova" },
     { label: "Entrepreneurship Awards", href: "/programs/entrepreneurship-awards" },
-    { label: "GCC GTM", href: "/#programs" }
+    { label: "Go-To-Market (GTM)", href: "/programs/gtm" }
   ];
 
   const ventureStudioItems = [

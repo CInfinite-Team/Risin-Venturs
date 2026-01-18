@@ -1,0 +1,89 @@
+Create a new Program page titled “Go-To-Market (GTM)” aligned with the design, layout, and UX patterns of existing Program pages on the website.
+
+Content Inspiration:
+Use the attached GTM image as the primary inspiration for structure, messaging, and section hierarchy. Adapt the content to fit the website’s typography, spacing, and brand tone.
+
+Page Structure & Content Requirements:
+
+Hero Section
+
+Title: Your Gateway to Qatar & GCC Market Access
+
+Subtitle/Tag: Go-To-Market – Qatar & GCC
+
+Short intro highlighting market access via Risin Ventures
+
+Use event/engagement imagery similar to the attached visual
+
+Focus Sectors
+
+Display as inline tags or icon-based chips:
+
+AI (B2B), Fintech, SaaS, Deep Tech, Climate Tech, HealthTech, IoT, Smart Cities
+
+Value Proposition Section
+
+Two-column or card layout:
+
+Selected Startups Gain
+
+Access to decision-makers & investors
+
+Curated 1:1 B2B & B2G meetings
+
+Exposure to GCC-aligned VC funds
+
+Market-entry insights for Qatar & GCC
+
+Startup pod + access to major regional events
+
+Program Highlights
+
+Ecosystem engagement
+
+VC / Investor pitch sessions
+
+High-impact networking
+
+Government & enterprise partnerships
+
+Program Timeline / Format
+
+Clearly highlight program duration, key milestones, and regional exposure
+
+CTA Section
+
+Primary CTA: “Register Interest” / “Apply for GTM Program”
+
+Secondary CTA: “Talk to Us”
+
+CTA should route to existing contact or application flow
+
+Ecosystem & Partners
+
+Display partner logos in a clean, horizontal strip (similar to other programs)
+
+Design Guidelines:
+
+Match existing Programs UI (spacing, card style, iconography)
+
+Maintain current brand colors and Montserrat font
+
+Ensure mobile-first responsiveness (stacked cards, swipe-friendly sections)
+
+Keep layout clean, premium, and execution-focused
+
+Navigation & Linking:
+
+Add GTM under Programs in the header
+
+Cross-link from:
+
+Venture Studio
+
+Case Studies
+
+Build With Us
+
+Goal:
+Position GTM as a flagship, execution-led market access program that signals credibility, regional depth, and strong ecosystem access.

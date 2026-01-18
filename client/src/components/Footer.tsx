@@ -66,7 +66,7 @@ export default function Footer() {
                   { label: "AIX Summit & Hackathon", href: "/programs/aix" },
                   { label: "Sustainova Challenge", href: "/programs/sustainova" },
                   { label: "Entrepreneurship Awards", href: "/programs/entrepreneurship-awards" },
-                  { label: "GCC GTM", href: "/#programs" }
+                  { label: "Go-To-Market (GTM)", href: "/programs/gtm" }
                 ].map((item) => (
                   <li key={item.label}>
                     <Link href={item.href} className="text-[#2b204c] hover:text-[#8b68f6] transition-colors text-xs font-bold capitalize tracking-wider">{item.label}</Link>
@@ -83,7 +83,7 @@ export default function Footer() {
                 { label: "AIX Summit & Hackathon", href: "/programs/aix" },
                 { label: "Sustainova Challenge", href: "/programs/sustainova" },
                 { label: "Entrepreneurship Awards", href: "/programs/entrepreneurship-awards" },
-                { label: "GCC GTM", href: "/#programs" }
+                { label: "Go-To-Market (GTM)", href: "/programs/gtm" }
               ].map((item) => (
                 <li key={item.label}>
                   <Link href={item.href} className="text-[#2b204c] hover:text-[#8b68f6] transition-colors text-xs font-bold capitalize tracking-wider">{item.label}</Link>

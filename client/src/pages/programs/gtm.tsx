@@ -202,32 +202,61 @@ export default function GTM() {
       </section>
 
       {/* Program Timeline Bar */}
-      <section className="bg-[#8b68f6] py-6 border-y border-white/10">
+      <section className="bg-[#8b68f6] py-6 border-y border-white/10 relative overflow-hidden">
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 text-center md:text-left">
-            <div className="flex items-center gap-3">
-              <Calendar className="text-white w-6 h-6" />
-              <div>
-                <span className="block text-white/70 text-xs font-bold uppercase tracking-widest">Program Dates</span>
-                <span className="text-white font-bold text-lg">1st - 4th Feb, 2026</span>
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-12 text-center md:text-left">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 flex-1">
+              <div className="flex items-center gap-3 relative">
+                 <motion.span 
+                   initial={{ opacity: 0, y: 5 }}
+                   whileInView={{ opacity: 1, y: 0 }}
+                   transition={{ delay: 0.2, duration: 0.5 }}
+                   className="absolute -top-6 left-0 md:-left-2 bg-white/20 backdrop-blur-sm text-white text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full"
+                 >
+                   Upcoming Program
+                 </motion.span>
+                <Calendar className="text-white w-6 h-6" />
+                <div>
+                  <span className="block text-white/70 text-xs font-bold uppercase tracking-widest">Program Dates</span>
+                  <span className="text-white font-bold text-lg">1st - 4th Feb, 2026</span>
+                </div>
+              </div>
+              <div className="hidden md:block w-px h-10 bg-white/20"></div>
+              <div className="flex items-center gap-3">
+                <MapPin className="text-white w-6 h-6" />
+                <div>
+                  <span className="block text-white/70 text-xs font-bold uppercase tracking-widest">Location</span>
+                  <span className="text-white font-bold text-lg">Doha, Qatar</span>
+                </div>
+              </div>
+              <div className="hidden md:block w-px h-10 bg-white/20"></div>
+              <div className="flex items-center gap-3">
+                <Rocket className="text-white w-6 h-6" />
+                <div>
+                  <span className="block text-white/70 text-xs font-bold uppercase tracking-widest">Format</span>
+                  <span className="text-white font-bold text-lg">In-Person Immersion</span>
+                </div>
               </div>
             </div>
-            <div className="hidden md:block w-px h-10 bg-white/20"></div>
-            <div className="flex items-center gap-3">
-              <MapPin className="text-white w-6 h-6" />
-              <div>
-                <span className="block text-white/70 text-xs font-bold uppercase tracking-widest">Location</span>
-                <span className="text-white font-bold text-lg">Doha, Qatar</span>
-              </div>
-            </div>
-            <div className="hidden md:block w-px h-10 bg-white/20"></div>
-            <div className="flex items-center gap-3">
-              <Rocket className="text-white w-6 h-6" />
-              <div>
-                <span className="block text-white/70 text-xs font-bold uppercase tracking-widest">Format</span>
-                <span className="text-white font-bold text-lg">In-Person Immersion</span>
-              </div>
-            </div>
+
+            <div className="hidden lg:block w-px h-10 bg-white/20"></div>
+            
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button className="bg-white text-[#8b68f6] hover:bg-white/90 font-bold uppercase tracking-widest text-xs px-6 py-2 h-auto shadow-lg rounded-sm transition-all whitespace-nowrap">
+                  Register Now
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
+                <DialogHeader>
+                  <DialogTitle className="text-2xl font-bold text-[#2b204c] uppercase">Apply for GTM Program</DialogTitle>
+                  <DialogDescription>
+                    Fill out the form below to register your interest for the upcoming cohort.
+                  </DialogDescription>
+                </DialogHeader>
+                <RegistrationForm />
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </section>

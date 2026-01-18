@@ -293,7 +293,7 @@ export default function GTM() {
           <div className="text-center mb-10">
             <span className="text-[#2b204c] text-sm font-bold uppercase tracking-widest">Ecosystem Partners</span>
           </div>
-          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16">
+          <div className="flex flex-wrap justify-center items-center gap-6">
             {[
               { name: "QSTP", url: "https://placehold.co/200x80/transparent/2b204c?text=QSTP" },
               { name: "QDB", url: "https://placehold.co/200x80/transparent/2b204c?text=QDB" },
@@ -301,18 +301,18 @@ export default function GTM() {
               { name: "Monsha’at", url: "https://placehold.co/200x80/transparent/2b204c?text=Monsha%E2%80%99at" },
               { name: "CODE", url: "https://placehold.co/200x80/transparent/2b204c?text=CODE" },
               { name: "QFTH", url: "https://placehold.co/200x80/transparent/2b204c?text=QFTH" },
-              { name: "Itqan", url: "https://placehold.co/200x80/transparent/2b204c?text=Itqan" }, // Using placeholder for consistency, but I have the asset if needed
+              { name: "Itqan", url: "https://placehold.co/200x80/transparent/2b204c?text=Itqan" }, 
               { name: "DTVC", url: "https://placehold.co/200x80/transparent/2b204c?text=DTVC" }
             ].map((partner, i) => (
               <motion.div 
                 key={i}
-                whileHover={{ scale: 1.1, filter: "grayscale(0%)" }}
-                className="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100 cursor-pointer"
+                whileHover={{ scale: 1.05 }}
+                className="bg-white rounded-sm border border-slate-100 flex items-center justify-center w-40 h-40 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all"
               >
                 <img 
                   src={partner.url} 
                   alt={`${partner.name} Logo`} 
-                  className="h-16 md:h-20 w-auto object-contain mix-blend-multiply" 
+                  className="w-[70%] h-auto object-contain filter grayscale hover:grayscale-0 transition-all" 
                 />
               </motion.div>
             ))}

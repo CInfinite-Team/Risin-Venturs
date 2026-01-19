@@ -222,9 +222,9 @@ export default function Portfolio() {
           <p className="text-slate-300 max-w-xl mx-auto mb-8">
             Are you building a deep tech venture in the GCC? Let's discuss how we can help you scale.
           </p>
-          <Link href="/contact">
+          <Link href="/build-with-us">
             <Button className="bg-[#8b68f6] hover:bg-white hover:text-[#2b204c] text-white rounded-sm px-10 py-5 h-auto font-bold text-sm uppercase tracking-widest transition-all">
-              Apply for Funding
+              Build with us
             </Button>
           </Link>
         </div>

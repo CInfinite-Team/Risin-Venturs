@@ -18,6 +18,10 @@ import Sustainova from "@/pages/programs/sustainova";
 import EntrepreneurshipAwards from "@/pages/programs/entrepreneurship-awards";
 import GTM from "@/pages/programs/gtm";
 import Portfolio from "@/pages/portfolio";
+import Innovation from "@/pages/venture-studio/innovation";
+import Incubation from "@/pages/venture-studio/incubation";
+import Acceleration from "@/pages/venture-studio/acceleration";
+import VentureStudio from "@/pages/venture-studio/studio";
 import AIXSummitCaseStudy from "@/pages/case-studies/aix-summit";
 import AIHackathonsCaseStudy from "@/pages/case-studies/ai-hackathons";
 import SustainovaChallengeCaseStudy from "@/pages/case-studies/sustainova-challenge";
@@ -35,6 +39,10 @@ function Router() {
       <Route path="/careers" component={Careers} />
       <Route path="/partners" component={Partners} />
       <Route path="/portfolio" component={Portfolio} />
+      <Route path="/venture-studio/innovation" component={Innovation} />
+      <Route path="/venture-studio/incubation" component={Incubation} />
+      <Route path="/venture-studio/acceleration" component={Acceleration} />
+      <Route path="/venture-studio/studio" component={VentureStudio} />
       <Route path="/case-studies" component={CaseStudies} />
       <Route path="/news" component={News} />
       <Route path="/build-with-us" component={BuildWithUs} />

@@ -73,9 +73,10 @@ export default function Header() {
 
   const ventureStudioItems = [
     { label: "Build With Us", href: "/build-with-us" },
-    { label: "Innovation", href: "/#philosophy" },
-    { label: "Incubation", href: "/#philosophy" },
-    { label: "Acceleration", href: "/#programs" }
+    { label: "Innovation", href: "/venture-studio/innovation" },
+    { label: "Incubation", href: "/venture-studio/incubation" },
+    { label: "Acceleration", href: "/venture-studio/acceleration" },
+    { label: "Venture Studio", href: "/venture-studio/studio" }
   ];
 
   return (

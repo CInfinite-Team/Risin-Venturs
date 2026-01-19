@@ -97,10 +97,10 @@ export default function Footer() {
             <h4 className="font-bold uppercase tracking-widest text-[10px] mb-6 md:mb-8 text-[#8b68f6]">Venture Studio</h4>
             <ul className="space-y-3 md:space-y-4">
               {[
-                { label: "Innovation", href: "/#philosophy" },
-                { label: "Incubation", href: "/#philosophy" },
-                { label: "Acceleration", href: "/#programs" },
-                { label: "Venture Building", href: "/#philosophy" }
+                { label: "Innovation", href: "/venture-studio/innovation" },
+                { label: "Incubation", href: "/venture-studio/incubation" },
+                { label: "Acceleration", href: "/venture-studio/acceleration" },
+                { label: "Venture Building", href: "/venture-studio/studio" }
               ].map((item) => (
                 <li key={item.label}>
                   <a href={item.href} className="text-[#2b204c] hover:text-[#8b68f6] transition-colors text-xs font-bold capitalize tracking-wider">{item.label}</a>

@@ -48,6 +48,7 @@ export default function Footer() {
                 {[
                   { label: "About Us", href: "/about" },
                   { label: "Team", href: "/team" },
+                  { label: "Portfolio", href: "/portfolio" },
                   { label: "Career", href: "/careers" },
                   { label: "Partners", href: "/partners" },
                   { label: "Case Studies", href: "/case-studies" },

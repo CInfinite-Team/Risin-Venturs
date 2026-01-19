@@ -522,9 +522,11 @@ export default function Home() {
               <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-2 block">Our Portfolio</span>
               <h2 className="text-3xl md:text-5xl font-heading font-bold uppercase">BUILDING TOMORROW</h2>
             </div>
-            <Button variant="link" className="text-[#2b204c] hover:text-[#8b68f6] gap-2 p-0 h-auto font-bold uppercase tracking-widest">
-              View All <ArrowRight size={16} />
-            </Button>
+            <Link href="/portfolio">
+              <Button variant="link" className="text-[#2b204c] hover:text-[#8b68f6] gap-2 p-0 h-auto font-bold uppercase tracking-widest">
+                View All <ArrowRight size={16} />
+              </Button>
+            </Link>
           </div>
 
           <div className="relative group">

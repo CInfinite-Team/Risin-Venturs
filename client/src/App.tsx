@@ -17,6 +17,7 @@ import AIX from "@/pages/programs/aix";
 import Sustainova from "@/pages/programs/sustainova";
 import EntrepreneurshipAwards from "@/pages/programs/entrepreneurship-awards";
 import GTM from "@/pages/programs/gtm";
+import Portfolio from "@/pages/portfolio";
 import AIXSummitCaseStudy from "@/pages/case-studies/aix-summit";
 import AIHackathonsCaseStudy from "@/pages/case-studies/ai-hackathons";
 import SustainovaChallengeCaseStudy from "@/pages/case-studies/sustainova-challenge";
@@ -33,6 +34,7 @@ function Router() {
       <Route path="/team" component={Team} />
       <Route path="/careers" component={Careers} />
       <Route path="/partners" component={Partners} />
+      <Route path="/portfolio" component={Portfolio} />
       <Route path="/case-studies" component={CaseStudies} />
       <Route path="/news" component={News} />
       <Route path="/build-with-us" component={BuildWithUs} />

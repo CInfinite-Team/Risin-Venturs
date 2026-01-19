@@ -1,0 +1,110 @@
+DEV PROMPT — Create Dedicated Portfolio Page (Under About)
+
+Create a new “Portfolio” page under the About section and link it from both the Header navigation and the Home page Portfolio section. This page should present Risin Ventures’ portfolio companies in a structured, premium, venture-grade layout.
+
+1️⃣ Page Placement & Navigation
+
+Add a new page: About → Portfolio
+
+Update navigation:
+
+Header → About dropdown → Portfolio
+
+Home page “Our Portfolio” section → View All Portfolio CTA linking to this page
+
+Maintain consistent breadcrumb and footer linking
+
+2️⃣ Portfolio Companies to Display (Total: 8)
+From Home Page (existing)
+
+BigTrader
+
+Madad Fintech
+
+Arisio
+
+Iprocure (if already present on homepage; otherwise keep the 4 currently shown)
+
+Additional Companies (from screenshot)
+
+hashECM
+AI-driven document intelligence and management platform for enterprises to work, collaborate, and extract value from documents and content.
+
+Energygo
+Clean energy and sustainability-focused platform (use content exactly as shown in screenshot / existing description).
+
+Nufin
+A new-age financial services and banking solution provider. Currently in stealth mode, working on fintech regulatory approval from the Central Bank of Qatar.
+
+Urbano
+Urban mobility platform delivering AI- and IoT-driven solutions including smart parking valet management, car wash, EV charging, and multimodal travel & ticketing.
+
+3️⃣ Layout & UI Guidelines
+
+Grid layout (desktop): 3–4 cards per row
+
+Mobile:
+
+Single-column cards
+
+Comfortable spacing and readable typography
+
+Each card must include:
+
+Company logo (prominent, legible)
+
+Short 2–3 line description
+
+Optional sector tag (Fintech, AI, Mobility, Energy, SaaS, etc.)
+
+Card style:
+
+Rounded corners
+
+Subtle border or soft shadow
+
+Hover: gentle lift + border highlight (no aggressive animation)
+
+4️⃣ Visual & Branding Consistency
+
+Match Home page:
+
+Color palette
+
+Typography (Montserrat)
+
+Iconography style
+
+Avoid overcrowding text
+
+Maintain premium, institutional, venture-studio aesthetic
+
+5️⃣ UX Enhancements
+
+Add a subtle filter or grouping (optional):
+
+By sector (Fintech, AI, Mobility, Energy)
+
+On card click:
+
+Either expand slightly (micro-interaction)
+
+Or open company website in a new tab (if applicable)
+
+6️⃣ SEO & Content
+
+Page title: Portfolio | Risin Ventures
+
+Meta description focused on:
+
+Venture building
+
+Portfolio companies
+
+GCC & global innovation
+
+Ensure logos are optimized and accessible (alt text)
+
+7️⃣ Goal of the Page
+
+Showcase Risin Ventures as a credible venture builder with real operating companies, reinforce scale and legitimacy, and encourage founders, partners, and investors to explore deeper across the site.

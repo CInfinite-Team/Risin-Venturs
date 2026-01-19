@@ -97,23 +97,24 @@ export default function Portfolio() {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-br from-[#2b204c] to-[#1a1333] text-white">
-        <div className="container mx-auto px-6 text-center">
+      <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-gradient-to-b from-slate-50 to-white">
+        <div className="container mx-auto px-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto"
+            className="max-w-4xl"
           >
-            <div className="flex items-center justify-center gap-2 mb-6">
-              <Link href="/about" className="text-white/60 text-sm font-bold uppercase tracking-widest hover:text-[#8b68f6] transition-colors">About</Link>
-              <span className="text-white/40">/</span>
+            <div className="flex items-center gap-2 mb-4">
+              <Link href="/about" className="text-slate-400 text-sm font-bold uppercase tracking-widest hover:text-[#8b68f6] transition-colors">About</Link>
+              <span className="text-slate-300">/</span>
               <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest">Portfolio</span>
             </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold mb-6 uppercase leading-none">
-              Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8b68f6] to-cyan-400">Portfolio</span>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-[#2b204c] mb-6 uppercase leading-none">
+              Building <br className="hidden md:block"/>
+              <span className="text-stroke">Tomorrow</span>
             </h1>
-            <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl">
               We build and back the next generation of deep tech giants. Explore the companies that are reshaping industries across the GCC and beyond.
             </p>
           </motion.div>
@@ -130,7 +131,7 @@ export default function Portfolio() {
               { value: "10+", label: "Markets Reached" },
               { value: "8", label: "Venture Companies" }
             ].map((metric, i) => (
-              <div key={i} className="text-center">
+              <div key={i} className="text-center md:text-left">
                 <span className="block text-3xl md:text-4xl font-heading font-bold text-[#2b204c] mb-1">{metric.value}</span>
                 <span className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-widest">{metric.label}</span>
               </div>
@@ -140,62 +141,70 @@ export default function Portfolio() {
       </section>
 
       {/* Filter & Grid */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-6">
           
-          {/* Filters */}
-          <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-12">
-            {sectors.map((sector) => (
-              <button
-                key={sector}
-                onClick={() => setFilter(sector)}
-                className={`px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all ${
-                  filter === sector 
-                    ? "bg-[#8b68f6] text-white shadow-md" 
-                    : "bg-white text-slate-500 border border-slate-200 hover:border-[#8b68f6] hover:text-[#8b68f6]"
-                }`}
-              >
-                {sector}
-              </button>
-            ))}
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-12">
+            <div className="md:w-1/2">
+              <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-3 block">Our Ventures</span>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#2b204c] uppercase leading-tight">
+                Portfolio Companies
+              </h2>
+            </div>
+            
+            {/* Filters - Align Right */}
+            <div className="flex flex-wrap gap-2 md:justify-end">
+              {sectors.map((sector) => (
+                <button
+                  key={sector}
+                  onClick={() => setFilter(sector)}
+                  className={`px-4 py-2 rounded-sm text-[10px] font-bold uppercase tracking-widest transition-all border ${
+                    filter === sector 
+                      ? "bg-[#2b204c] text-white border-[#2b204c]" 
+                      : "bg-white text-slate-500 border-slate-200 hover:border-[#8b68f6] hover:text-[#8b68f6]"
+                  }`}
+                >
+                  {sector}
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Portfolio Grid */}
           <motion.div 
             layout
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {filteredData.map((company) => (
               <motion.div
                 layout
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
+                exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.3 }}
                 key={company.id}
-                className="group bg-white rounded-lg border border-slate-100 p-6 md:p-8 hover:shadow-xl hover:border-[#8b68f6]/30 hover:-translate-y-1 transition-all duration-300 flex flex-col h-full relative overflow-hidden"
+                className="group bg-[#F9FAFB] rounded-sm border border-slate-100 p-8 hover:border-[#8b68f6]/30 transition-all duration-300 flex flex-col h-full relative overflow-hidden"
               >
-                <div className="h-16 mb-6 flex items-center justify-start">
-                  <img src={company.logo} alt={`${company.name} Logo`} className="h-10 md:h-12 w-auto object-contain mix-blend-multiply" />
+                <div className="h-12 w-12 bg-[#8b68f6]/10 rounded-sm flex items-center justify-center mb-6 text-[#8b68f6]">
+                  {/* Replaced Image with Icon Placeholder style if needed or keep image but styled consistently */}
+                   <img src={company.logo} alt={`${company.name} Logo`} className="h-8 w-auto object-contain mix-blend-multiply" />
                 </div>
                 
                 <div className="mb-4">
-                  <span className="inline-block px-2 py-1 bg-[#F9FAFB] border border-slate-100 rounded text-[10px] font-bold text-[#8b68f6] uppercase tracking-wider mb-3">
+                  <span className="text-[10px] font-bold text-[#8b68f6] uppercase tracking-widest block mb-2">
                     {company.sector}
                   </span>
-                  <h3 className="text-xl font-heading font-bold text-[#2b204c] mb-3 group-hover:text-[#8b68f6] transition-colors">
+                  <h3 className="text-xl font-heading font-bold text-[#2b204c] mb-3 uppercase group-hover:text-[#8b68f6] transition-colors">
                     {company.name}
                   </h3>
-                  <p className="text-slate-500 text-xs md:text-sm leading-relaxed line-clamp-4">
+                  <p className="text-slate-500 text-sm leading-relaxed">
                     {company.desc}
                   </p>
                 </div>
                 
-                <div className="mt-auto pt-6 border-t border-slate-50 flex justify-between items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-[10px] font-bold text-[#2b204c] uppercase tracking-widest">View Details</span>
-                  <div className="w-8 h-8 rounded-full bg-[#8b68f6]/10 flex items-center justify-center text-[#8b68f6]">
-                    <ArrowRight size={14} />
-                  </div>
+                <div className="mt-auto pt-6 border-t border-slate-100 flex justify-between items-center">
+                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest group-hover:text-[#2b204c] transition-colors">View Details</span>
+                  <ArrowRight size={16} className="text-slate-300 group-hover:text-[#8b68f6] transition-colors" />
                 </div>
               </motion.div>
             ))}

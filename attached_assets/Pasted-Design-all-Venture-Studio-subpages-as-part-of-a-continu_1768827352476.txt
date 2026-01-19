@@ -1,0 +1,105 @@
+Design all Venture Studio subpages as part of a continuous “venture-building journey,” where each page feels distinct yet clearly connected to the others through narrative flow, visual cues, and contextual cross-links.
+
+1️⃣ Page Structure & Flow
+
+Each page should follow a story arc rather than rigid sections:
+
+The Challenge (Why this matters)
+
+Our Approach (How Risin intervenes)
+
+Execution in Action (Programs, tools, partners)
+
+Proof & Impact (Case studies, examples)
+
+Next Step (CTA + cross-navigation)
+
+Avoid repetitive layouts; instead:
+
+Alternate text–visual sections
+
+Use subtle section separators (lines, gradients, patterns)
+
+2️⃣ Cross-Navigation as a Journey
+
+Add a “Where this leads next” strip at the bottom of each page:
+
+Innovation → Incubation
+
+Incubation → Acceleration
+
+Acceleration → Venture Studio
+
+Venture Studio → Portfolio
+
+Include:
+
+Short teaser line
+
+Single CTA button
+
+This replaces traditional breadcrumb reliance
+
+3️⃣ Visual Identity Rules
+
+Consistent:
+
+Typography
+
+Spacing system
+
+Color palette
+
+Distinct per page:
+
+One accent color per subpage
+
+One signature icon or motif
+
+No large hero banners; use editorial headers with context-setting copy
+
+4️⃣ Content Density & Readability
+
+Content blocks should be:
+
+Skimmable
+
+Visually broken into short paragraphs
+
+Supported by callouts, pull quotes, or stat highlights
+
+Long-form content only where it adds authority (e.g., Innovation, Venture Studio)
+
+5️⃣ Mobile-First Storytelling
+
+Mobile users should experience:
+
+Vertical narrative flow
+
+Clear section transitions
+
+Sticky bottom CTA (non-intrusive)
+
+Avoid dense grids on mobile; prefer:
+
+Cards
+
+Swipeable insights
+
+Collapsible sections
+
+6️⃣ SEO & Discoverability
+
+Each page optimized for:
+
+Venture building
+
+Innovation programs
+
+Incubation & acceleration in GCC
+
+Internal links embedded naturally within content (not only at the end)
+
+7️⃣ Success Criteria
+
+A visitor landing on any one Venture Studio page should naturally continue to at least one more page without needing to return to the menu.

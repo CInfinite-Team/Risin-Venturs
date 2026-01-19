@@ -1,0 +1,237 @@
+1️⃣ Innovation Page
+
+Focus: Open Innovation, Corporate Innovation, Enterprise Hackathons
+
+Content Direction
+
+Explain Risin Ventures’ role in:
+
+Open innovation programs
+
+Corporate & government-led innovation challenges
+
+AI & deep-tech hackathons for measurable ROI
+
+Take inspiration from:
+
+AIX Summit & Hackathon website
+
+Corporate innovation blog content from Risin Ventures
+
+Required Sections
+
+What We Do in Innovation
+
+Open Innovation
+
+Corporate Innovation
+
+Hackathons as execution engines
+
+Why It Works
+
+Talent discovery
+
+Rapid prototyping
+
+Enterprise adoption
+
+Case Studies & Insights
+
+Cross-link:
+
+AI Hackathons case study
+
+Empowering Innovation case study
+
+Download Innovation Playbook
+
+Gated form:
+
+Fields: Name, Mobile Number, Company
+
+On submit → provide Canva playbook download link
+
+Subtle trust messaging (no spam, enterprise-grade)
+
+CTA
+
+“Talk to Us About Innovation Programs”
+
+2️⃣ Incubation Page
+
+Focus: Pre-Incubation + Incubation with Governments, Universities & Enterprises
+
+Content Direction
+
+Explain two layers:
+
+Pre-Incubation: Funnel creation, idea validation, early talent
+
+Incubation: Cohort-based programs, mentoring, demo days
+
+Reference:
+
+Government & university partnerships
+
+DIC (MCIT Qatar) as ecosystem inspiration
+
+Required Sections
+
+Pre-Incubation Programs
+
+Idea sourcing
+
+University & government collaboration
+
+Incubation Programs
+
+Structured cohorts
+
+Peer learning
+
+Enterprise exposure
+
+How We Deliver
+
+Mentors
+
+Training
+
+Demo days
+
+Case Studies
+
+Cross-link:
+
+Ideas to Impact case study
+
+IdeaCamp reference
+
+CTA
+
+“Partner With Us on Incubation Programs”
+
+3️⃣ Acceleration Page
+
+Focus: Scaling Market-Ready Startups
+
+Content Direction
+
+Position acceleration as:
+
+Growth
+
+Go-to-market
+
+Industrial adoption
+
+Clearly define focus sectors and AI as core enabler
+
+Required Sections
+
+Acceleration Overview
+
+Who it’s for
+
+What stage
+
+Focus Sectors
+
+Precision Healthcare & MedTech
+
+Environment, Water & Sustainability
+
+Smart Cities, Transport & Logistics
+
+Energy & Industrial Intelligence
+
+Fintech
+
+Our Support
+
+Product enhancement
+
+GTM
+
+Scaling
+
+Mentorship
+
+How We Execute
+
+Cloud & tech support
+
+Industry POCs
+
+Funding access
+
+Industrial data
+
+IP support
+
+Partner Programs
+
+Highlight QFTH
+
+CTA: “Explore Fintech Acceleration with QFTH” (external link)
+
+4️⃣ Venture Studio Page
+
+Focus: In-House Studio + Corporate Venture Studios
+
+Content Direction
+
+Explain:
+
+Risin’s internal venture creation engine
+
+Corporate venture studios as economic drivers
+
+Connect directly to Portfolio page
+
+Required Sections
+
+In-House Venture Studio
+
+Idea → Build → Scale
+
+Founder-in-residence model
+
+Tech, capital, execution support
+
+Corporate Venture Studios
+
+Why enterprises build startups
+
+Qatar & GCC relevance
+
+Case Studies & Insights
+
+Cross-link:
+
+Corporate Venture Studios case study
+
+Blog on importance for Qatar’s economy
+
+Portfolio Connection
+
+CTA: “Explore Our Portfolio”
+
+CTA
+
+“Build a Venture With Us”
+
+🎯 UX & Engagement Goals
+
+Encourage deep internal navigation
+
+Keep users within ecosystem (Programs ↔ Venture Studio ↔ Case Studies ↔ Portfolio)
+
+Establish Risin Ventures as:
+
+Operator
+
+Builder
+
+Ecosystem architect

@@ -68,6 +68,7 @@ export default function EntrepreneurshipAwards() {
 
       {/* Hero Section */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-br from-amber-900 via-amber-800 to-orange-900 relative overflow-hidden">
+        {/* ... existing hero content ... */}
         <div className="absolute inset-0">
           <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-amber-400 rounded-full blur-[150px] opacity-20"></div>
           <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-orange-300 rounded-full blur-[100px] opacity-20"></div>
@@ -104,6 +105,19 @@ export default function EntrepreneurshipAwards() {
               </Link>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Image Placeholder - Full Width Ceremony */}
+      <section className="py-16 bg-white pb-0">
+        <div className="container mx-auto px-6">
+          <div className="w-full h-[500px] bg-slate-100 rounded-sm relative overflow-hidden">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="text-slate-400 font-bold uppercase tracking-widest text-sm bg-white/50 px-4 py-2 rounded-sm backdrop-blur-sm border border-slate-200">
+                Program image to be added: Awards Gala Night Atmosphere
+              </span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -150,6 +164,27 @@ export default function EntrepreneurshipAwards() {
         </div>
       </motion.section>
 
+      {/* Image Placeholder - Split Layout (Networking) */}
+      <section className="py-16 bg-white border-t border-slate-100">
+        <div className="container mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+             <div className="order-2 md:order-1 h-[400px] bg-slate-100 rounded-sm relative overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-slate-400 font-bold uppercase tracking-widest text-sm bg-white/50 px-4 py-2 rounded-sm backdrop-blur-sm border border-slate-200 text-center">
+                    Program image to be added: <br/> Networking at the Gala
+                  </span>
+                </div>
+             </div>
+             <div className="order-1 md:order-2">
+               <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-4">Connect with the Best</h3>
+               <p className="text-slate-600 leading-relaxed">
+                 The awards ceremony isn't just about trophies—it's about gathering the entire ecosystem in one room. From ministers to angel investors, this is the premier networking event of the year.
+               </p>
+             </div>
+          </div>
+        </div>
+      </section>
+
       {/* Award Categories */}
       <motion.section 
         className="py-16 md:py-24 bg-[#F9FAFB]"
@@ -182,6 +217,19 @@ export default function EntrepreneurshipAwards() {
           </div>
         </div>
       </motion.section>
+
+      {/* Image Placeholder - Winners Group Shot */}
+      <section className="pb-16 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="w-full h-[400px] bg-slate-100 rounded-sm relative overflow-hidden">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="text-slate-400 font-bold uppercase tracking-widest text-sm bg-white/50 px-4 py-2 rounded-sm backdrop-blur-sm border border-slate-200">
+                Program image to be added: Winners Group Photo
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* 2024 Winners */}
       <motion.section 

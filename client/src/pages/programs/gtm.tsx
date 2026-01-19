@@ -201,6 +201,19 @@ export default function GTM() {
         </div>
       </section>
 
+      {/* Image Placeholder - Full Width Program Launch */}
+      <section className="py-16 bg-white pb-0">
+        <div className="container mx-auto px-6">
+          <div className="w-full h-[500px] bg-slate-100 rounded-sm relative overflow-hidden">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="text-slate-400 font-bold uppercase tracking-widest text-sm bg-white/50 px-4 py-2 rounded-sm backdrop-blur-sm border border-slate-200">
+                Program image to be added: Doha Skyline or Business District
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Program Timeline Bar */}
       <section className="bg-[#8b68f6] py-6 border-y border-white/10 relative overflow-hidden">
         <div className="container mx-auto px-6">
@@ -261,6 +274,27 @@ export default function GTM() {
         </div>
       </section>
 
+      {/* Image Placeholder - Split Layout (Workshops) */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+             <div className="h-[400px] bg-slate-100 rounded-sm relative overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-slate-400 font-bold uppercase tracking-widest text-sm bg-white/50 px-4 py-2 rounded-sm backdrop-blur-sm border border-slate-200 text-center">
+                    Program image to be added: <br/> GTM Workshop / Session
+                  </span>
+                </div>
+             </div>
+             <div>
+               <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-4">Immersive Experience</h3>
+               <p className="text-slate-600 leading-relaxed">
+                 Our program goes beyond theory. We take you inside the boardrooms and government offices that matter, giving you a firsthand understanding of the local business landscape.
+               </p>
+             </div>
+          </div>
+        </div>
+      </section>
+
       {/* Value Proposition */}
       <motion.section 
         className="py-16 md:py-24 bg-white"
@@ -315,6 +349,27 @@ export default function GTM() {
           </div>
         </div>
       </motion.section>
+
+      {/* Image Placeholder - Split Layout Alternate (Networking) */}
+      <section className="py-16 bg-[#F9FAFB] border-t border-slate-100">
+        <div className="container mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+             <div className="order-2 md:order-1">
+               <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-4">High-Level Networking</h3>
+               <p className="text-slate-600 leading-relaxed">
+                 Access exclusive networking events with local partners, potential clients, and fellow founders. Build the relationships that will drive your expansion.
+               </p>
+             </div>
+             <div className="order-1 md:order-2 h-[400px] bg-white border border-slate-200 rounded-sm relative overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-slate-400 font-bold uppercase tracking-widest text-sm bg-slate-50 px-4 py-2 rounded-sm border border-slate-200 text-center">
+                    Program image to be added: <br/> Networking Event
+                  </span>
+                </div>
+             </div>
+          </div>
+        </div>
+      </section>
 
       {/* Ecosystem & Partners */}
       <section className="py-16 bg-[#F9FAFB] border-y border-slate-100">

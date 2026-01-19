@@ -40,6 +40,19 @@ export default function Incubation() {
           </motion.div>
         </div>
       </section>
+      
+      {/* Image Placeholder - Hero/Context */}
+      <section className="pb-16 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="w-full h-[400px] bg-slate-100 rounded-sm relative overflow-hidden">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="text-slate-400 font-bold uppercase tracking-widest text-sm bg-white/50 px-4 py-2 rounded-sm backdrop-blur-sm border border-slate-200">
+                Actual program image to be uploaded: Cohort Mentoring Session
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* The Two Layers */}
       <section className="py-20 bg-[#F9FAFB]">
@@ -84,6 +97,19 @@ export default function Incubation() {
               </ul>
             </div>
 
+          </div>
+        </div>
+      </section>
+      
+      {/* Image Placeholder - Mid Page */}
+      <section className="bg-[#F9FAFB] pb-20">
+        <div className="container mx-auto px-6">
+           <div className="w-full h-[300px] bg-white border border-slate-100 rounded-sm relative overflow-hidden">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="text-slate-400 font-bold uppercase tracking-widest text-sm bg-slate-50 px-4 py-2 rounded-sm border border-slate-200">
+                Actual program image to be uploaded: Demo Day Pitching
+              </span>
+            </div>
           </div>
         </div>
       </section>

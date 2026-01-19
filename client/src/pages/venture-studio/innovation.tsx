@@ -86,6 +86,19 @@ export default function Innovation() {
           </motion.div>
         </div>
       </section>
+      
+      {/* Image Placeholder - Contextual */}
+      <section className="pb-16 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="w-full h-[400px] bg-slate-100 rounded-sm relative overflow-hidden group">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="text-slate-400 font-bold uppercase tracking-widest text-sm bg-white/50 px-4 py-2 rounded-sm backdrop-blur-sm border border-slate-200">
+                Actual program image to be uploaded: Hackathon Teams Collaborating
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* What We Do */}
       <section className="py-16 bg-[#F9FAFB] border-y border-slate-100">
@@ -134,6 +147,27 @@ export default function Innovation() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Image Placeholder - Split Layout Alternate */}
+      <section className="py-16 bg-white border-b border-slate-100">
+        <div className="container mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="order-2 md:order-1 h-[300px] bg-slate-100 rounded-sm relative overflow-hidden">
+               <div className="absolute inset-0 flex items-center justify-center">
+                <span className="text-slate-400 font-bold uppercase tracking-widest text-xs bg-white/50 px-4 py-2 rounded-sm backdrop-blur-sm border border-slate-200 text-center">
+                  Actual program image to be uploaded: <br/> Workshop Session
+                </span>
+              </div>
+            </div>
+            <div className="order-1 md:order-2">
+              <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-4">Hands-On Execution</h3>
+              <p className="text-slate-500 leading-relaxed">
+                Theory is fine, but we prefer action. Our innovation programs are designed to get teams out of the meeting room and into the field, prototyping solutions with real users.
+              </p>
             </div>
           </div>
         </div>

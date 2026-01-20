@@ -379,7 +379,7 @@ export default function VentureBuilder() {
         </div>
       </section>
 
-      {/* Technology Enablement (NEW) */}
+      {/* Technology Enablement (Existing) */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mb-12">
@@ -413,7 +413,39 @@ export default function VentureBuilder() {
         </div>
       </section>
 
-      {/* OEM & Tech Partners (NEW) */}
+      {/* Domain Focus (NEW) */}
+      <section className="py-16 bg-[#F9FAFB] border-t border-slate-100">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl">
+            <h3 className="text-sm font-bold text-[#2b204c] uppercase tracking-widest mb-6">Domains we actively build and scale ventures in</h3>
+            <div className="flex flex-wrap gap-4">
+              {[
+                "AI (B2B)",
+                "Fintech",
+                "SaaS",
+                "Deep Tech",
+                "Climate Tech",
+                "HealthTech",
+                "IoT",
+                "Smart Cities"
+              ].map((domain, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.05 }}
+                  className="px-6 py-3 rounded-full border border-[#8b68f6]/20 bg-white text-[#2b204c] font-medium text-sm hover:border-[#8b68f6] hover:bg-[#8b68f6]/5 hover:text-[#8b68f6] transition-all cursor-default shadow-sm"
+                >
+                  {domain}
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* OEM & Tech Partners (Existing) */}
       <section className="py-16 bg-white border-t border-slate-100">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center gap-12">

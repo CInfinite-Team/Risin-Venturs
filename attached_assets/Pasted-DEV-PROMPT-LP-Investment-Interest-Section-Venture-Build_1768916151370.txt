@@ -1,0 +1,131 @@
+DEV PROMPT — LP Investment Interest Section (Venture Builder)
+
+Add a compact, high-impact section on the Venture Builder page inviting Limited Partners (LPs) and strategic investors to express interest in investing in the Venture Builder. This section should communicate urgency, scarcity, and strong financial upside while maintaining a professional, institutional tone.
+
+1️⃣ Section Placement
+
+Place the section:
+
+After Current Builds
+
+Or just before the final page CTA
+
+Ensure it feels intentional, not promotional
+
+2️⃣ Messaging Direction (Tone & Intent)
+
+Convey:
+
+Limited allocation
+
+Active deal flow
+
+Early entry advantage
+
+Avoid:
+
+Overpromising returns
+
+Aggressive marketing language
+
+Sample headline style (developer to refine copy):
+
+“Now Raising: Venture Builder Allocation”
+
+“Partner With the Venture Builder Shaping the Next Wave of Deep Tech”
+
+Supporting message should emphasize:
+
+Proven venture-building capability
+
+Active portfolio creation
+
+Institutional partnerships
+
+Early LP advantage before close
+
+3️⃣ Visual Treatment
+
+Compact highlighted block:
+
+Soft accent background
+
+Thin border or subtle gradient
+
+Clear visual separation from content sections
+
+No large hero or banner
+
+4️⃣ LP Interest Form (Attached to CTA)
+
+CTA Button:
+
+Text options:
+
+Express LP Interest
+
+Invest in the Venture Builder
+
+Request LP Information
+
+Form Behavior:
+
+Opens in:
+
+Modal / popup or
+
+Inline expandable form (preferred for credibility)
+
+Form Fields (Minimal & Serious):
+
+Full Name
+
+Organization / Fund Name
+
+Email
+
+Investment Interest Range (dropdown)
+
+Geography
+
+Optional note
+
+5️⃣ Urgency & FOMO Elements (Subtle)
+
+Small supporting cues:
+
+“Limited LP slots available”
+
+“First close approaching”
+
+“By invitation and referral”
+
+Optional micro-badge:
+
+“Currently Raising”
+
+6️⃣ Trust Signals (Optional but Recommended)
+
+Small line below form:
+
+“Selective LP onboarding”
+
+“Institutional & strategic partners only”
+
+No financial promises or numbers
+
+7️⃣ Mobile Experience
+
+CTA remains prominent but non-intrusive
+
+Modal must be:
+
+Fast
+
+Minimal scrolling
+
+Easy to close
+
+🎯 Goal
+
+Make qualified LPs feel they are early, selected, and at risk of missing access—while reinforcing Risin Ventures as a disciplined, execution-driven venture builder.

@@ -7,7 +7,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import { ArrowRight, Hammer, Briefcase, TrendingUp, Layers, Cpu, Cloud, Database, Code, Zap, Shield, Server, Box, Globe, Smartphone, CreditCard, Sparkles, Car, CheckCircle, Upload, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from "@/components/ui/dialog";
 
 import image1 from "@assets/20231119_125834_(2)_1768914492428.jpg";
 import image2 from "@assets/7RV04162_1768914492429.JPG";
@@ -247,8 +247,153 @@ function ApplicationForm({
   );
 }
 
+// LP Form Component
+function LPInterestForm({ onClose }: { onClose: () => void }) {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    organization: "",
+    email: "",
+    investmentRange: "",
+    geography: "",
+    note: ""
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleSubmit = () => {
+    setIsSubmitting(true);
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSuccess(true);
+    }, 1500);
+  };
+
+  if (isSuccess) {
+    return (
+      <div className="text-center py-10">
+        <div className="w-16 h-16 bg-[#2b204c] text-white rounded-full flex items-center justify-center mx-auto mb-4">
+          <CheckCircle size={32} />
+        </div>
+        <h3 className="text-2xl font-bold text-[#2b204c] mb-2">Interest Registered</h3>
+        <p className="text-slate-600 mb-6">Thank you for your interest in partnering with Risin Venture Builder. Our investment relations team will be in touch shortly.</p>
+        <Button onClick={onClose} className="bg-[#2b204c] text-white w-full uppercase tracking-widest font-bold">
+          Close
+        </Button>
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-4 py-2">
+      <div className="bg-[#F9FAFB] p-4 border border-slate-100 rounded-sm mb-4">
+        <p className="text-xs text-slate-500 italic">
+          <span className="font-bold text-[#2b204c]">Note:</span> This is an expression of interest only and does not constitute a commitment to invest. Opportunities are available to accredited investors only.
+        </p>
+      </div>
+      
+      <div className="grid md:grid-cols-2 gap-4">
+        <div>
+          <label className="block text-xs font-bold text-[#2b204c] mb-1 uppercase tracking-wider">
+            Full Name <span className="text-[#952828]">*</span>
+          </label>
+          <input
+            type="text"
+            value={formData.fullName}
+            onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+            className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#2b204c] outline-none transition-all text-sm"
+            placeholder="Your Name"
+          />
+        </div>
+        <div>
+          <label className="block text-xs font-bold text-[#2b204c] mb-1 uppercase tracking-wider">
+            Organization / Fund <span className="text-[#952828]">*</span>
+          </label>
+          <input
+            type="text"
+            value={formData.organization}
+            onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
+            className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#2b204c] outline-none transition-all text-sm"
+            placeholder="Company Name"
+          />
+        </div>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-4">
+        <div>
+          <label className="block text-xs font-bold text-[#2b204c] mb-1 uppercase tracking-wider">
+            Email Address <span className="text-[#952828]">*</span>
+          </label>
+          <input
+            type="email"
+            value={formData.email}
+            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#2b204c] outline-none transition-all text-sm"
+            placeholder="work@email.com"
+          />
+        </div>
+        <div>
+          <label className="block text-xs font-bold text-[#2b204c] mb-1 uppercase tracking-wider">
+            Geography <span className="text-[#952828]">*</span>
+          </label>
+          <input
+            type="text"
+            value={formData.geography}
+            onChange={(e) => setFormData({ ...formData, geography: e.target.value })}
+            className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#2b204c] outline-none transition-all text-sm"
+            placeholder="e.g. GCC, Europe, Asia"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label className="block text-xs font-bold text-[#2b204c] mb-1 uppercase tracking-wider">
+          Investment Interest Range <span className="text-[#952828]">*</span>
+        </label>
+        <select
+          value={formData.investmentRange}
+          onChange={(e) => setFormData({ ...formData, investmentRange: e.target.value })}
+          className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#2b204c] outline-none transition-all text-sm bg-white"
+        >
+          <option value="">Select Range</option>
+          <option value="<500k">Under $500k</option>
+          <option value="500k-1m">$500k - $1M</option>
+          <option value="1m-5m">$1M - $5M</option>
+          <option value="5m+">$5M+</option>
+        </select>
+      </div>
+
+      <div>
+        <label className="block text-xs font-bold text-[#2b204c] mb-1 uppercase tracking-wider">
+          Optional Note
+        </label>
+        <textarea
+          value={formData.note}
+          onChange={(e) => setFormData({ ...formData, note: e.target.value })}
+          rows={2}
+          className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#2b204c] outline-none transition-all text-sm resize-none"
+          placeholder="Any specific questions or context?"
+        />
+      </div>
+
+      <div className="pt-2">
+        <Button 
+          onClick={handleSubmit} 
+          disabled={isSubmitting}
+          className="w-full bg-[#2b204c] hover:bg-[#8b68f6] text-white rounded-sm py-4 font-bold uppercase tracking-widest text-xs transition-all"
+        >
+          {isSubmitting ? "Submitting..." : "Submit Interest"}
+        </Button>
+        <p className="text-[10px] text-center text-slate-400 mt-3">
+          Selective LP onboarding. Institutional & strategic partners prioritized.
+        </p>
+      </div>
+    </div>
+  );
+}
+
 export default function VentureBuilder() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLPModalOpen, setIsLPModalOpen] = useState(false);
   const [selectedVenture, setSelectedVenture] = useState<string>("");
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -527,8 +672,58 @@ export default function VentureBuilder() {
         </div>
       </section>
 
+      {/* LP Allocation Section (NEW) */}
+      <section className="bg-white py-12 border-t border-slate-100">
+        <div className="container mx-auto px-6">
+          <div className="bg-[#2b204c]/5 border border-[#2b204c]/10 rounded-sm p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+            <div className="relative z-10 max-w-2xl">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="bg-[#2b204c] text-white text-[9px] font-bold uppercase tracking-widest px-2 py-1 rounded-sm">Currently Raising</span>
+                <span className="text-[#952828] text-xs font-bold uppercase tracking-widest flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 bg-[#952828] rounded-full animate-pulse"></span>
+                  Limited LP Allocation
+                </span>
+              </div>
+              <h3 className="text-2xl md:text-3xl font-heading font-bold text-[#2b204c] mb-3 uppercase">
+                Partner With the Venture Builder Shaping the Next Wave of Deep Tech
+              </h3>
+              <p className="text-slate-600 text-sm md:text-base leading-relaxed mb-0">
+                Gain early access to our high-growth portfolio. We offer limited allocation for strategic LPs and institutional partners seeking active deal flow and proven execution.
+              </p>
+            </div>
+            
+            <div className="relative z-10 flex flex-col items-center gap-3 shrink-0">
+              <Dialog open={isLPModalOpen} onOpenChange={setIsLPModalOpen}>
+                <DialogTrigger asChild>
+                  <Button className="bg-[#2b204c] text-white hover:bg-[#8b68f6] rounded-sm px-8 py-6 h-auto font-bold uppercase tracking-widest text-sm shadow-md transition-all whitespace-nowrap w-full md:w-auto">
+                    Request LP Information
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-xl max-h-[90vh] overflow-y-auto">
+                  <DialogHeader>
+                    <DialogTitle className="text-[#2b204c] font-heading font-bold text-xl uppercase">
+                      Investment Interest
+                    </DialogTitle>
+                    <DialogDescription>
+                      Complete the form below to receive information about our current fund allocation and LP opportunities.
+                    </DialogDescription>
+                  </DialogHeader>
+                  <LPInterestForm onClose={() => setIsLPModalOpen(false)} />
+                </DialogContent>
+              </Dialog>
+              <p className="text-[10px] text-slate-400 font-medium uppercase tracking-wider">
+                By Invitation & Referral Only
+              </p>
+            </div>
+
+            {/* Background Decor */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#8b68f6] opacity-5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+          </div>
+        </div>
+      </section>
+
       {/* Primary CTA - Join a Venture */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white border-t border-slate-100">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl font-heading font-bold text-[#2b204c] uppercase mb-6">
             Have an idea or want to build with us?

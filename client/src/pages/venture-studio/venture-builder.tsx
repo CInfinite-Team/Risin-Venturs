@@ -1,11 +1,16 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JourneyNav from "@/components/JourneyNav";
 import ScrollToTop from "@/components/ScrollToTop";
-import { ArrowRight, Hammer, Briefcase, TrendingUp, Layers, Cpu, Cloud, Database, Code, Zap, Shield, Server, Box, Globe, Smartphone } from "lucide-react";
+import { ArrowRight, Hammer, Briefcase, TrendingUp, Layers, Cpu, Cloud, Database, Code, Zap, Shield, Server, Box, Globe, Smartphone, CreditCard, Sparkles, Car, CheckCircle, Upload, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState, useEffect } from "react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+
+import image1 from "@assets/stock_images/modern_tech_office_t_5c1f97f1.jpg";
+import image2 from "@assets/stock_images/modern_tech_office_t_9bd36b12.jpg";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -50,8 +55,8 @@ const partners = [
   { name: "Microsoft", logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" },
   { name: "Google Cloud", logo: "https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" },
   { name: "IBM", logo: "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" },
-  { name: "Alteryx", logo: "https://upload.wikimedia.org/wikipedia/commons/e/e4/Alteryx_Logo.png" }, // Placeholder might be needed if this fails
-  { name: "Dataiku", logo: "https://upload.wikimedia.org/wikipedia/commons/2/23/Dataiku_Logo.svg" } // Placeholder might be needed
+  { name: "Alteryx", logo: "https://upload.wikimedia.org/wikipedia/commons/e/e4/Alteryx_Logo.png" }, 
+  { name: "Dataiku", logo: "https://upload.wikimedia.org/wikipedia/commons/2/23/Dataiku_Logo.svg" } 
 ];
 
 const currentBuilds = [
@@ -84,7 +89,187 @@ function CreditCardIcon() {
   )
 }
 
+// --- Application Form Logic (Simplified from BuildWithUs) ---
+
+const ideaOptions = [
+  {
+    id: "hashecm",
+    name: "Hashecm",
+    tagline: "AI-Driven Document Intelligence",
+    description: "Enterprise content collaboration platform with AI-powered document processing, intelligent search, and workflow automation.",
+    icon: <Sparkles className="w-6 h-6" />,
+    color: "bg-[#8b68f6]"
+  },
+  {
+    id: "nufin",
+    name: "Nufin",
+    tagline: "Next-Gen Fintech Solutions",
+    description: "Banking and financial services platform currently in stealth mode, pursuing CBO Qatar regulatory approval for innovative payment solutions.",
+    icon: <CreditCard className="w-6 h-6" />,
+    color: "bg-[#2b204c]"
+  },
+  {
+    id: "urbano",
+    name: "Urbano",
+    tagline: "AI & IoT Urban Mobility",
+    description: "Smart parking, valet services, car wash, EV charging, and multimodal ticketing—all powered by AI and IoT technology.",
+    icon: <Car className="w-6 h-6" />,
+    color: "bg-[#952828]"
+  }
+];
+
+interface FormData {
+  fullName: string;
+  email: string;
+  linkedin: string;
+  selectedIdea?: string;
+  role: string;
+  message: string;
+}
+
+const initialFormData: FormData = {
+  fullName: "",
+  email: "",
+  linkedin: "",
+  selectedIdea: "",
+  role: "",
+  message: ""
+};
+
+function ApplicationForm({ 
+  formData, 
+  setFormData, 
+  onSubmit, 
+  isSubmitting,
+  selectedVentureId
+}: { 
+  formData: FormData; 
+  setFormData: (data: FormData) => void; 
+  onSubmit: () => void;
+  isSubmitting: boolean;
+  selectedVentureId?: string;
+}) {
+  const selectedVenture = ideaOptions.find(opt => opt.id === selectedVentureId);
+
+  return (
+    <div className="space-y-6 py-4">
+      {selectedVenture && (
+        <div className="bg-[#F9FAFB] p-4 rounded-sm border border-slate-100 flex items-start gap-4 mb-6">
+          <div className={`w-10 h-10 ${selectedVenture.color} rounded-sm flex items-center justify-center text-white shrink-0`}>
+            {selectedVenture.icon}
+          </div>
+          <div>
+            <h4 className="font-bold text-[#2b204c] text-sm uppercase tracking-wider">Applying for: {selectedVenture.name}</h4>
+            <p className="text-xs text-slate-500">{selectedVenture.tagline}</p>
+          </div>
+        </div>
+      )}
+
+      <div className="space-y-4">
+        <div>
+          <label className="block text-xs font-bold text-[#2b204c] mb-1 uppercase tracking-wider">
+            Full Name <span className="text-[#952828]">*</span>
+          </label>
+          <input
+            type="text"
+            value={formData.fullName}
+            onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+            placeholder="John Doe"
+            required
+            className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#8b68f6] focus:ring-2 focus:ring-[#8b68f6]/20 outline-none transition-all text-sm"
+          />
+        </div>
+        <div>
+          <label className="block text-xs font-bold text-[#2b204c] mb-1 uppercase tracking-wider">
+            Email <span className="text-[#952828]">*</span>
+          </label>
+          <input
+            type="email"
+            value={formData.email}
+            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            placeholder="john@example.com"
+            required
+            className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#8b68f6] focus:ring-2 focus:ring-[#8b68f6]/20 outline-none transition-all text-sm"
+          />
+        </div>
+        <div>
+          <label className="block text-xs font-bold text-[#2b204c] mb-1 uppercase tracking-wider">
+            LinkedIn Profile <span className="text-[#952828]">*</span>
+          </label>
+          <input
+            type="url"
+            value={formData.linkedin}
+            onChange={(e) => setFormData({ ...formData, linkedin: e.target.value })}
+            placeholder="linkedin.com/in/yourprofile"
+            required
+            className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#8b68f6] focus:ring-2 focus:ring-[#8b68f6]/20 outline-none transition-all text-sm"
+          />
+        </div>
+        <div>
+          <label className="block text-xs font-bold text-[#2b204c] mb-1 uppercase tracking-wider">
+            Role Interest <span className="text-[#952828]">*</span>
+          </label>
+          <select
+             value={formData.role}
+             onChange={(e) => setFormData({ ...formData, role: e.target.value })}
+             className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#8b68f6] focus:ring-2 focus:ring-[#8b68f6]/20 outline-none transition-all text-sm bg-white"
+          >
+            <option value="">Select a role</option>
+            <option value="engineering">Engineering / Tech</option>
+            <option value="product">Product Management</option>
+            <option value="growth">Growth / Marketing</option>
+            <option value="operations">Operations</option>
+            <option value="founder">Co-Founder</option>
+          </select>
+        </div>
+        <div>
+          <label className="block text-xs font-bold text-[#2b204c] mb-1 uppercase tracking-wider">
+            Why this venture?
+          </label>
+          <textarea
+            value={formData.message}
+            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+            placeholder="Briefly tell us why you're a good fit..."
+            rows={3}
+            className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#8b68f6] focus:ring-2 focus:ring-[#8b68f6]/20 outline-none transition-all text-sm resize-none"
+          />
+        </div>
+      </div>
+
+      <Button
+        onClick={onSubmit}
+        disabled={isSubmitting}
+        className="w-full bg-[#8b68f6] hover:bg-[#2b204c] text-white rounded-sm py-4 h-auto font-bold text-sm uppercase tracking-widest transition-all disabled:opacity-50"
+      >
+        {isSubmitting ? "Sending..." : "Submit Application"}
+      </Button>
+    </div>
+  );
+}
+
 export default function VentureBuilder() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedVenture, setSelectedVenture] = useState<string>("");
+  const [formData, setFormData] = useState<FormData>(initialFormData);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const openApplyModal = (ventureId: string) => {
+    setSelectedVenture(ventureId);
+    setFormData(prev => ({ ...prev, selectedIdea: ventureId }));
+    setIsModalOpen(true);
+    setIsSuccess(false);
+  };
+
+  const handleSubmit = () => {
+    setIsSubmitting(true);
+    // Simulate API call
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSuccess(true);
+    }, 1500);
+  };
+
   return (
     <div className="min-h-screen bg-white font-sans">
       <Header />
@@ -112,9 +297,23 @@ export default function VentureBuilder() {
           </motion.div>
         </div>
       </section>
+
+      {/* Image Placeholder - Contextual */}
+      <section className="pb-16 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="w-full h-[400px] bg-slate-100 rounded-sm relative overflow-hidden group">
+            <img 
+              src={image1} 
+              alt="Venture Building Team" 
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60"></div>
+          </div>
+        </div>
+      </section>
       
       {/* Execution Focus (Existing) */}
-      <section className="py-20 bg-[#F9FAFB]">
+      <section className="py-20 bg-[#F9FAFB] border-y border-slate-100">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12">
             
@@ -229,8 +428,6 @@ export default function VentureBuilder() {
                  {partners.map((partner, i) => (
                    <div key={i} className="h-24 bg-[#F9FAFB] border border-slate-100 rounded-sm flex items-center justify-center p-6 hover:shadow-md transition-shadow">
                      <div className="text-slate-400 font-bold text-xl uppercase">{partner.name}</div>
-                     {/* In a real scenario, use images. For now, text fallback if images break or for simplicity */}
-                     {/* <img src={partner.logo} alt={partner.name} className="max-h-8 max-w-full grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" /> */}
                    </div>
                  ))}
                </div>
@@ -240,26 +437,33 @@ export default function VentureBuilder() {
       </section>
 
       {/* Current Builds (NEW) */}
-      <section className="py-20 bg-[#F9FAFB]">
+      <section className="py-20 bg-[#F9FAFB] border-t border-slate-100">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <span className="text-[#2b204c] text-sm font-bold uppercase tracking-widest mb-3 block">Portfolio Spotlight</span>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#2b204c] uppercase">Currently Building</h2>
           </div>
+
+          {/* New Section Image for Context */}
+          <div className="w-full h-[350px] bg-slate-100 rounded-sm relative overflow-hidden group mb-12">
+            <img 
+              src={image2} 
+              alt="Team Collaborating" 
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60"></div>
+            <div className="absolute bottom-0 left-0 p-8 md:p-12">
+               <h3 className="text-white text-2xl md:text-3xl font-heading font-bold uppercase mb-2">From Stealth to Scale</h3>
+               <p className="text-slate-200 max-w-xl">
+                 Our portfolio companies are solving critical challenges in finance, urban mobility, and enterprise intelligence.
+               </p>
+            </div>
+          </div>
           
           <div className="grid md:grid-cols-3 gap-8">
             {currentBuilds.map((build, i) => (
-              <div key={i} className="bg-white p-0 rounded-sm border border-slate-100 hover:shadow-xl transition-all relative overflow-hidden group flex flex-col">
-                <div className="h-48 bg-slate-100 relative overflow-hidden">
-                  {/* Image Placeholder */}
-                  <div className="absolute inset-0 flex items-center justify-center bg-slate-200">
-                    <span className="text-slate-400 font-bold uppercase tracking-widest text-[10px] text-center px-4">
-                      Venture Image: {build.name}
-                    </span>
-                  </div>
-                </div>
-                
-                <div className="p-8 flex-1 flex flex-col">
+              <div key={i} className="bg-white p-8 rounded-sm border border-slate-100 hover:shadow-xl transition-all relative overflow-hidden group flex flex-col h-full">
+                <div className="flex-1 flex flex-col">
                   <div className="absolute top-0 left-0 w-1 h-full bg-[#8b68f6] opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   <div className="flex justify-between items-start mb-6">
                     <div className="bg-slate-50 p-3 rounded-sm border border-slate-100">
@@ -277,11 +481,13 @@ export default function VentureBuilder() {
                   <p className="text-slate-600 text-sm leading-relaxed mb-6 flex-1">
                     {build.desc}
                   </p>
-                  <Link href={`/build-with-us?venture=${build.id}`}>
-                    <div className="pt-6 border-t border-slate-50 flex items-center text-[#8b68f6] font-bold text-xs uppercase tracking-widest group-hover:translate-x-1 transition-transform cursor-pointer">
-                      Join Venture <ArrowRight size={14} className="ml-2" />
-                    </div>
-                  </Link>
+                  
+                  <div 
+                    onClick={() => openApplyModal(build.id)}
+                    className="pt-6 border-t border-slate-50 flex items-center text-[#8b68f6] font-bold text-xs uppercase tracking-widest group-hover:translate-x-1 transition-transform cursor-pointer"
+                  >
+                    Join Venture <ArrowRight size={14} className="ml-2" />
+                  </div>
                 </div>
               </div>
             ))}
@@ -316,6 +522,41 @@ export default function VentureBuilder() {
       
       <Footer />
       <ScrollToTop />
+
+      {/* Application Modal */}
+      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-[#2b204c] font-heading font-bold text-2xl uppercase">
+              Join the Team
+            </DialogTitle>
+            <DialogDescription>
+              We're looking for exceptional talent to build the future with us.
+            </DialogDescription>
+          </DialogHeader>
+
+          {isSuccess ? (
+             <div className="text-center py-10">
+               <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                 <CheckCircle size={32} />
+               </div>
+               <h3 className="text-2xl font-bold text-[#2b204c] mb-2">Application Received!</h3>
+               <p className="text-slate-600 mb-6">Thanks for your interest in {ideaOptions.find(o => o.id === selectedVenture)?.name || "Risin Ventures"}. We'll review your profile and get back to you shortly.</p>
+               <Button onClick={() => setIsModalOpen(false)} className="bg-[#2b204c] text-white w-full uppercase tracking-widest font-bold">
+                 Close
+               </Button>
+             </div>
+          ) : (
+            <ApplicationForm 
+              formData={formData}
+              setFormData={setFormData}
+              onSubmit={handleSubmit}
+              isSubmitting={isSubmitting}
+              selectedVentureId={selectedVenture}
+            />
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

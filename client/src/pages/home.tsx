@@ -307,25 +307,25 @@ export default function Home() {
                 icon: <Zap className="w-8 h-8" />, 
                 title: "Innovation", 
                 desc: "We identify high-impact problems and apply deep tech, data, and emerging technologies to design innovative, market-relevant solutions.",
-                link: "#about"
+                link: "/venture-studio/innovation"
               },
               { 
                 icon: <Cpu className="w-8 h-8" />, 
                 title: "Incubation", 
                 desc: "We support early-stage founders from idea to validation, providing mentorship, resources, and structured guidance to prepare ventures for scale.",
-                link: "#about"
+                link: "/venture-studio/incubation"
               },
               { 
                 icon: <Rocket className="w-8 h-8" />, 
                 title: "Acceleration", 
                 desc: "We accelerate startups through structured programs, mentorship, regulatory readiness, and access to enterprise and investor networks.",
-                link: "#programs"
+                link: "/venture-studio/acceleration"
               },
               { 
                 icon: <Building2 className="w-8 h-8" />, 
                 title: "Venture Building", 
                 desc: "From idea to execution, we co-build startups by assembling teams, shaping products, and embedding execution discipline from day one.",
-                link: "#philosophy"
+                link: "/venture-studio/venture-builder"
               }
             ].map((value, i) => (
               <div 

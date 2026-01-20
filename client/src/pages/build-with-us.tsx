@@ -73,6 +73,8 @@ interface FormData {
   teamDescription: string;
   referralName: string;
   selectedIdea?: string;
+  role?: string;
+  message?: string;
 }
 
 const initialFormData: FormData = {
@@ -89,8 +91,164 @@ const initialFormData: FormData = {
   ideaDescription: "",
   teamDescription: "",
   referralName: "",
-  selectedIdea: ""
+  selectedIdea: "",
+  role: "",
+  message: ""
 };
+
+function SimpleApplicationForm({ 
+  formData, 
+  setFormData, 
+  onSubmit, 
+  isSubmitting,
+  showIdeaSelection = false,
+  title = "Start the Conversation",
+  subtitle = "Tell us about yourself and what you're building. We review every application personally."
+}: { 
+  formData: FormData; 
+  setFormData: (data: FormData) => void; 
+  onSubmit: () => void;
+  isSubmitting: boolean;
+  showIdeaSelection?: boolean;
+  title?: string;
+  subtitle?: string;
+}) {
+  return (
+    <div className="space-y-6">
+      <div className="mb-8">
+        <h3 className="text-2xl md:text-3xl font-heading font-bold text-[#2b204c] mb-3 uppercase">{title}</h3>
+        <p className="text-slate-600">{subtitle}</p>
+      </div>
+
+      {showIdeaSelection && (
+        <div className="mb-8">
+          <label className="block text-sm font-bold text-[#2b204c] mb-4 uppercase tracking-wider">
+            Select a Concept Track <span className="text-slate-400 font-normal normal-case">(optional)</span>
+          </label>
+          <div className="grid gap-4">
+            {ideaOptions.map((idea) => (
+              <button
+                key={idea.id}
+                type="button"
+                onClick={() => setFormData({ ...formData, selectedIdea: formData.selectedIdea === idea.id ? "" : idea.id })}
+                className={`p-5 rounded-sm border-2 transition-all text-left ${
+                  formData.selectedIdea === idea.id 
+                    ? "border-[#8b68f6] bg-[#8b68f6]/5 shadow-lg" 
+                    : "border-slate-200 hover:border-[#8b68f6]/50 hover:bg-slate-50"
+                }`}
+              >
+                <div className="flex items-start gap-4">
+                  <div className={`w-12 h-12 ${idea.color} rounded-sm flex items-center justify-center text-white flex-shrink-0`}>
+                    {idea.icon}
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between mb-1">
+                      <h4 className="font-bold text-[#2b204c]">{idea.name}</h4>
+                      {formData.selectedIdea === idea.id && (
+                        <CheckCircle size={18} className="text-[#8b68f6]" />
+                      )}
+                    </div>
+                    <p className="text-sm text-[#8b68f6] font-medium mb-1">{idea.tagline}</p>
+                    <p className="text-sm text-slate-500">{idea.description}</p>
+                  </div>
+                </div>
+              </button>
+            ))}
+          </div>
+          <p className="text-xs text-slate-400 mt-3">
+            Interested in joining one of our active ventures? Select above, or leave blank to propose your own idea.
+          </p>
+        </div>
+      )}
+
+      <div className="space-y-4">
+        <div>
+          <label className="block text-xs font-bold text-[#2b204c] mb-1 uppercase tracking-wider">
+            Full Name <span className="text-[#952828]">*</span>
+          </label>
+          <input
+            type="text"
+            value={formData.fullName}
+            onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+            placeholder="John Doe"
+            required
+            className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#8b68f6] focus:ring-2 focus:ring-[#8b68f6]/20 outline-none transition-all text-sm"
+            data-testid="input-simple-fullname"
+          />
+        </div>
+        <div>
+          <label className="block text-xs font-bold text-[#2b204c] mb-1 uppercase tracking-wider">
+            Email <span className="text-[#952828]">*</span>
+          </label>
+          <input
+            type="email"
+            value={formData.email}
+            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            placeholder="john@example.com"
+            required
+            className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#8b68f6] focus:ring-2 focus:ring-[#8b68f6]/20 outline-none transition-all text-sm"
+            data-testid="input-simple-email"
+          />
+        </div>
+        <div>
+          <label className="block text-xs font-bold text-[#2b204c] mb-1 uppercase tracking-wider">
+            LinkedIn Profile <span className="text-[#952828]">*</span>
+          </label>
+          <input
+            type="url"
+            value={formData.linkedin}
+            onChange={(e) => setFormData({ ...formData, linkedin: e.target.value })}
+            placeholder="linkedin.com/in/yourprofile"
+            required
+            className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#8b68f6] focus:ring-2 focus:ring-[#8b68f6]/20 outline-none transition-all text-sm"
+            data-testid="input-simple-linkedin"
+          />
+        </div>
+        <div>
+          <label className="block text-xs font-bold text-[#2b204c] mb-1 uppercase tracking-wider">
+            Role Interest <span className="text-[#952828]">*</span>
+          </label>
+          <select
+             value={formData.role || ""}
+             onChange={(e) => setFormData({ ...formData, role: e.target.value })}
+             className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#8b68f6] focus:ring-2 focus:ring-[#8b68f6]/20 outline-none transition-all text-sm bg-white"
+             data-testid="select-simple-role"
+          >
+            <option value="">Select a role</option>
+            <option value="engineering">Engineering / Tech</option>
+            <option value="product">Product Management</option>
+            <option value="growth">Growth / Marketing</option>
+            <option value="operations">Operations</option>
+            <option value="founder">Co-Founder</option>
+          </select>
+        </div>
+        <div>
+          <label className="block text-xs font-bold text-[#2b204c] mb-1 uppercase tracking-wider">
+            Why this venture?
+          </label>
+          <textarea
+            value={formData.message || ""}
+            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+            placeholder="Briefly tell us why you're a good fit..."
+            rows={3}
+            className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#8b68f6] focus:ring-2 focus:ring-[#8b68f6]/20 outline-none transition-all text-sm resize-none"
+            data-testid="textarea-simple-message"
+          />
+        </div>
+      </div>
+
+      <Button
+        onClick={onSubmit}
+        disabled={isSubmitting}
+        className="w-full bg-[#8b68f6] hover:bg-[#2b204c] text-white rounded-sm py-4 h-auto font-bold text-sm uppercase tracking-widest transition-all disabled:opacity-50"
+        data-testid="button-simple-submit"
+      >
+        {isSubmitting ? "Sending..." : "Submit Application"}
+      </Button>
+    </div>
+  );
+}
+
 
 function ApplicationForm({ 
   formData, 
@@ -1026,7 +1184,7 @@ export default function BuildWithUs() {
                   We're actively building three ventures and looking for exceptional co-founders. Select one that aligns with your expertise and passion, or apply with your own idea.
                 </p>
 
-                <ApplicationForm
+                <SimpleApplicationForm
                   formData={ideaFormData}
                   setFormData={setIdeaFormData}
                   onSubmit={() => handleSubmit("idea")}

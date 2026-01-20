@@ -733,7 +733,7 @@ export default function VentureBuilder() {
           </p>
           <Link href="/build-with-us">
             <Button className="bg-[#2b204c] text-white hover:bg-[#8b68f6] rounded-sm px-12 py-6 font-bold uppercase tracking-widest text-sm shadow-lg hover:shadow-xl transition-all">
-              Join a Venture <ArrowRight size={16} className="ml-2" />
+              Build with us <ArrowRight size={16} className="ml-2" />
             </Button>
           </Link>
         </div>

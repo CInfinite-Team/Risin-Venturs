@@ -9,8 +9,8 @@ import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
-import image1 from "@assets/stock_images/modern_tech_office_t_5c1f97f1.jpg";
-import image2 from "@assets/stock_images/modern_tech_office_t_9bd36b12.jpg";
+import image1 from "@assets/20231119_125834_(2)_1768914492428.jpg";
+import image2 from "@assets/7RV04162_1768914492429.JPG";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },

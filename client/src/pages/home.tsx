@@ -227,12 +227,16 @@ export default function Home() {
             </motion.p>
 
             <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-5">
-              <Button className="bg-[#2b204c] text-white hover:bg-[#8b68f6] transition-all rounded-sm h-14 md:h-16 px-10 text-base md:text-lg font-bold uppercase tracking-widest shadow-xl border-0">
-                Build With Us
-              </Button>
-              <Button variant="outline" className="border-2 border-[#2b204c] text-[#2b204c] hover:bg-slate-50 transition-all rounded-sm h-14 md:h-16 px-10 text-base md:text-lg font-bold uppercase tracking-widest bg-transparent">
-                Our Programs
-              </Button>
+              <Link href="/build-with-us">
+                <Button className="bg-[#2b204c] text-white hover:bg-[#8b68f6] transition-all rounded-sm h-14 md:h-16 px-10 text-base md:text-lg font-bold uppercase tracking-widest shadow-xl border-0">
+                  Build With Us
+                </Button>
+              </Link>
+              <a href="#programs">
+                <Button variant="outline" className="border-2 border-[#2b204c] text-[#2b204c] hover:bg-slate-50 transition-all rounded-sm h-14 md:h-16 px-10 text-base md:text-lg font-bold uppercase tracking-widest bg-transparent">
+                  Our Programs
+                </Button>
+              </a>
             </motion.div>
           </motion.div>
         </div>

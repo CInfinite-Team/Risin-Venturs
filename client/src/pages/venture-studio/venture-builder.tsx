@@ -56,18 +56,21 @@ const partners = [
 
 const currentBuilds = [
   {
+    id: "hashecm",
     name: "hashECM",
     status: "Scaling",
     desc: "AI-driven document intelligence and enterprise content platform automating workflows for large organizations.",
     icon: <Server className="w-8 h-8 text-[#8b68f6]" />
   },
   {
+    id: "nufin",
     name: "Nufin",
     status: "Stealth",
     desc: "New-age fintech and banking solution pursuing regulatory approval to redefine digital banking.",
     icon: <CreditCardIcon />
   },
   {
+    id: "urbano",
     name: "Urbano",
     status: "In Build",
     desc: "AI & IoT-driven urban mobility platform connecting parking, EV charging, and multimodal travel.",
@@ -246,26 +249,39 @@ export default function VentureBuilder() {
           
           <div className="grid md:grid-cols-3 gap-8">
             {currentBuilds.map((build, i) => (
-              <div key={i} className="bg-white p-8 rounded-sm border border-slate-100 hover:shadow-xl transition-all relative overflow-hidden group">
-                <div className="absolute top-0 left-0 w-1 h-full bg-[#8b68f6] opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div className="flex justify-between items-start mb-6">
-                  <div className="bg-slate-50 p-3 rounded-sm border border-slate-100">
-                    {build.icon}
+              <div key={i} className="bg-white p-0 rounded-sm border border-slate-100 hover:shadow-xl transition-all relative overflow-hidden group flex flex-col">
+                <div className="h-48 bg-slate-100 relative overflow-hidden">
+                  {/* Image Placeholder */}
+                  <div className="absolute inset-0 flex items-center justify-center bg-slate-200">
+                    <span className="text-slate-400 font-bold uppercase tracking-widest text-[10px] text-center px-4">
+                      Venture Image: {build.name}
+                    </span>
                   </div>
-                  <span className={`text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full ${
-                    build.status === 'Scaling' ? 'bg-green-100 text-green-700' : 
-                    build.status === 'Stealth' ? 'bg-slate-100 text-slate-700' : 
-                    'bg-blue-100 text-blue-700'
-                  }`}>
-                    {build.status}
-                  </span>
                 </div>
-                <h3 className="text-2xl font-bold text-[#2b204c] mb-3">{build.name}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed mb-6">
-                  {build.desc}
-                </p>
-                <div className="pt-6 border-t border-slate-50 flex items-center text-[#8b68f6] font-bold text-xs uppercase tracking-widest group-hover:translate-x-1 transition-transform cursor-pointer">
-                  Learn More <ArrowRight size={14} className="ml-2" />
+                
+                <div className="p-8 flex-1 flex flex-col">
+                  <div className="absolute top-0 left-0 w-1 h-full bg-[#8b68f6] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="flex justify-between items-start mb-6">
+                    <div className="bg-slate-50 p-3 rounded-sm border border-slate-100">
+                      {build.icon}
+                    </div>
+                    <span className={`text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full ${
+                      build.status === 'Scaling' ? 'bg-green-100 text-green-700' : 
+                      build.status === 'Stealth' ? 'bg-slate-100 text-slate-700' : 
+                      'bg-blue-100 text-blue-700'
+                    }`}>
+                      {build.status}
+                    </span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-[#2b204c] mb-3">{build.name}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed mb-6 flex-1">
+                    {build.desc}
+                  </p>
+                  <Link href={`/build-with-us?venture=${build.id}`}>
+                    <div className="pt-6 border-t border-slate-50 flex items-center text-[#8b68f6] font-bold text-xs uppercase tracking-widest group-hover:translate-x-1 transition-transform cursor-pointer">
+                      Join Venture <ArrowRight size={14} className="ml-2" />
+                    </div>
+                  </Link>
                 </div>
               </div>
             ))}

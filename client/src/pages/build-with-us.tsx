@@ -404,6 +404,16 @@ export default function BuildWithUs() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
 
+  // Check for URL query params to pre-select venture
+  useState(() => {
+    const params = new URLSearchParams(window.location.search);
+    const venture = params.get("venture");
+    if (venture) {
+      setIdeaFormData(prev => ({ ...prev, selectedIdea: venture }));
+      setIsModalOpen(true);
+    }
+  });
+
   const handleSubmit = (formType: "primary" | "idea") => {
     setIsSubmitting(true);
     setTimeout(() => {

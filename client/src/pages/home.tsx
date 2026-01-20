@@ -389,42 +389,41 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative">
-            <div className="flex md:grid md:grid-cols-4 overflow-x-auto md:overflow-visible pb-6 md:pb-0 scrollbar-hide snap-x snap-mandatory px-6 -mx-6 md:px-0 md:mx-0 gap-4 md:gap-8">
-              {[
-                {
-                  title: "AIX",
-                  logo: "/attached_assets/WhatsApp_Image_2026-01-06_at_12.39.35_PM_1767692519206.jpeg", 
-                  desc: "A global AI-focused summit and hackathon bringing founders, enterprises, and innovators together to build real-world AI solutions.",
-                  link: "/programs/aix",
-                  isExternal: false
-                },
-                {
-                  title: "Sustainova",
-                  logo: "/attached_assets/Risin_Sustainova-Icon_(2)_1767692205938.png",
-                  desc: "An innovation challenge focused on sustainability, climate tech, and impact-driven solutions for real-world environmental problems.",
-                  link: "/programs/sustainova",
-                  isExternal: false
-                },
-                {
-                  title: "Entrepreneurship Awards",
-                  logo: "https://qatarentrepreneurshipawards.com/wp-content/uploads/2023/08/withoutyear-logo.png",
-                  desc: "A national platform recognizing and celebrating high-potential entrepreneurs, startups, and innovation-led businesses.",
-                  link: "/programs/entrepreneurship-awards",
-                  isExternal: false
-                },
-                {
-                  title: "GCC GTM",
-                  logo: null,
-                  desc: "Accelerating global deep-tech ventures' entry into the GCC markets through strategic partnerships and localized scaling.",
-                  link: "/programs/gtm",
-                  isExternal: false
-                }
-              ].map((program, i) => (
-                <div 
-                  key={i}
-                  className="flex-shrink-0 w-[85%] md:w-auto snap-center md:snap-align-none flex flex-col p-8 md:p-12 bg-white border border-slate-100 shadow-sm hover:shadow-md hover:border-[#8b68f6]/30 transition-all duration-300 h-full"
-                >
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            {[
+              {
+                title: "AIX",
+                logo: "/attached_assets/WhatsApp_Image_2026-01-06_at_12.39.35_PM_1767692519206.jpeg", 
+                desc: "A global AI-focused summit and hackathon bringing founders, enterprises, and innovators together to build real-world AI solutions.",
+                link: "/programs/aix",
+                isExternal: false
+              },
+              {
+                title: "Sustainova",
+                logo: "/attached_assets/Risin_Sustainova-Icon_(2)_1767692205938.png",
+                desc: "An innovation challenge focused on sustainability, climate tech, and impact-driven solutions for real-world environmental problems.",
+                link: "/programs/sustainova",
+                isExternal: false
+              },
+              {
+                title: "Entrepreneurship Awards",
+                logo: "https://qatarentrepreneurshipawards.com/wp-content/uploads/2023/08/withoutyear-logo.png",
+                desc: "A national platform recognizing and celebrating high-potential entrepreneurs, startups, and innovation-led businesses.",
+                link: "/programs/entrepreneurship-awards",
+                isExternal: false
+              },
+              {
+                title: "GCC GTM",
+                logo: null,
+                desc: "Accelerating global deep-tech ventures' entry into the GCC markets through strategic partnerships and localized scaling.",
+                link: "/programs/gtm",
+                isExternal: false
+              }
+            ].map((program, i) => (
+              <div 
+                key={i}
+                className="flex flex-col p-12 bg-white border border-slate-100 shadow-sm hover:shadow-md hover:border-[#8b68f6]/30 transition-all duration-300 h-full"
+              >
                 {program.logo && (
                   <div className="mb-8 h-8 md:h-10 w-auto flex items-start">
                     <img 
@@ -458,12 +457,6 @@ export default function Home() {
                   </Link>
                 )}
               </div>
-            ))}
-          </div>
-          {/* Subtle Progress Dots for Mobile */}
-          <div className="flex md:hidden justify-center gap-2 mt-6">
-            {[0, 1, 2, 3].map((dot) => (
-              <div key={dot} className={`w-2 h-2 rounded-full transition-all duration-300 ${dot === 0 ? 'bg-[#8b68f6] scale-125' : 'bg-slate-300'}`} />
             ))}
           </div>
         </div>

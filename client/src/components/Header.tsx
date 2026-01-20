@@ -76,7 +76,7 @@ export default function Header() {
     { label: "Innovation", href: "/venture-studio/innovation" },
     { label: "Incubation", href: "/venture-studio/incubation" },
     { label: "Acceleration", href: "/venture-studio/acceleration" },
-    { label: "Venture Studio", href: "/venture-studio/studio" }
+    { label: "Venture Builder", href: "/venture-studio/venture-builder" }
   ];
 
   return (

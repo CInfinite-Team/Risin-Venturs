@@ -100,7 +100,7 @@ export default function Footer() {
                 { label: "Innovation", href: "/venture-studio/innovation" },
                 { label: "Incubation", href: "/venture-studio/incubation" },
                 { label: "Acceleration", href: "/venture-studio/acceleration" },
-                { label: "Venture Building", href: "/venture-studio/studio" }
+                { label: "Venture Builder", href: "/venture-studio/venture-builder" }
               ].map((item) => (
                 <li key={item.label}>
                   <a href={item.href} className="text-[#2b204c] hover:text-[#8b68f6] transition-colors text-xs font-bold capitalize tracking-wider">{item.label}</a>

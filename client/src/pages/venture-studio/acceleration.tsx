@@ -151,10 +151,10 @@ export default function Acceleration() {
       </section>
 
       <JourneyNav 
-        title="Venture Studio"
+        title="Venture Builder"
         description="Innovation and acceleration are just parts of the puzzle. The ultimate expression of our work is building entire companies from scratch."
-        link="/venture-studio/studio"
-        cta="Enter the Studio"
+        link="/venture-studio/venture-builder"
+        cta="Enter Venture Builder"
         accentColor="#2b204c"
       />
       

@@ -1,0 +1,161 @@
+DEV PROMPT — Rename & Enhance Venture Studio Subpage → Venture Builder
+
+Rename the existing subpage “Venture Studio” (under the Venture Studio section) to “Venture Builder” and enhance the page with a strong technical-execution layer that explains how Risin Ventures supports startups with technology, platforms, and enterprise-grade infrastructure.
+
+1️⃣ Page Rename & Routing
+
+Rename:
+
+Venture Studio → Venture Builder
+
+Update:
+
+URL slug
+
+Navigation links
+
+Internal cross-links
+
+Ensure all cards and CTAs under Venture Studio now point to Venture Builder
+
+2️⃣ Page Structure (High-Level Flow)
+
+Page intro (unchanged tone, venture-builder positioning)
+
+Execution focus (existing content)
+
+Technology Enablement (NEW)
+
+OEM & Technology Partners (NEW)
+
+Current Builds (NEW)
+
+CTA: Join a Venture
+
+3️⃣ Technology Enablement Section (NEW)
+
+Purpose:
+Explain how Risin Ventures provides deep technical support beyond capital and mentorship.
+
+Content Direction (inspired by Hyperthink Systems):
+
+Product & platform engineering
+
+AI-first architecture
+
+Cloud-native & scalable systems
+
+Data platforms & intelligence
+
+IoT & enterprise integrations
+
+LLM & applied AI use cases
+
+Format:
+
+Short intro paragraph
+
+4–6 capability cards or blocks (icon + short explanation)
+
+Avoid product-level jargon; focus on startup acceleration through tech
+
+4️⃣ OEM & Technology Partners Section (NEW)
+
+Purpose:
+Show credibility and ecosystem leverage.
+
+Content:
+
+Brief explanation of:
+
+How OEM partnerships reduce build time
+
+Enable enterprise-grade scalability
+
+Improve security, compliance, and GTM readiness
+
+Display partner logos in a clean, uniform grid:
+
+AWS
+
+IBM
+
+Microsoft
+
+Google
+
+Alteryx
+
+Dataiku
+
+Design Rules:
+
+Uniform logo size
+
+Neutral background
+
+No heavy animation
+
+Mobile-friendly horizontal scroll if needed
+
+5️⃣ Current Builds Section (NEW)
+
+Purpose:
+Show real execution and ventures being built today.
+
+Companies to Feature:
+
+hashECM
+AI-driven document intelligence and enterprise content platform
+
+Nufin
+New-age fintech and banking solution, currently in stealth, pursuing regulatory approval
+
+Urbano
+AI & IoT-driven urban mobility platform (parking, EV charging, car wash, multimodal travel)
+
+Layout:
+
+Individual cards per venture
+
+Each card includes:
+
+Logo
+
+2–3 line description
+
+Status tag (e.g., “In Build”, “Stealth”, “Scaling”)
+
+6️⃣ Primary CTA — Join a Venture
+
+Add a strong but subtle CTA at the end of the page:
+
+Button text: Join a Venture
+
+CTA should:
+
+Lead to existing “Build with Us” / venture form
+
+Be visually distinct but not aggressive
+
+Optional supporting text:
+
+“Have an idea or want to build with us?”
+
+7️⃣ UX & Design Consistency
+
+Match typography, spacing, and color palette used across:
+
+Venture Studio pages
+
+Programs pages
+
+Left-aligned headings
+
+No oversized hero section
+
+Mobile-first readability
+
+🎯 Goal
+
+Position Venture Builder as a hands-on execution engine — combining capital, talent, platforms, and enterprise technology — not just a studio in name.

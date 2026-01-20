@@ -389,7 +389,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 overflow-x-auto pb-8 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0 snap-x snap-mandatory scrollbar-hide">
             {[
               {
                 title: "AIX",
@@ -422,10 +422,10 @@ export default function Home() {
             ].map((program, i) => (
               <div 
                 key={i}
-                className="flex flex-col p-12 bg-white border border-slate-100 shadow-sm hover:shadow-md hover:border-[#8b68f6]/30 transition-all duration-300 h-full"
+                className="min-w-[85vw] sm:min-w-[350px] md:min-w-0 snap-center flex flex-col p-8 md:p-12 bg-white border border-slate-100 shadow-sm hover:shadow-md hover:border-[#8b68f6]/30 transition-all duration-300 h-full rounded-sm"
               >
                 {program.logo && (
-                  <div className="mb-8 h-8 md:h-10 w-auto flex items-start">
+                  <div className="mb-6 md:mb-8 h-8 md:h-10 w-auto flex items-start">
                     <img 
                       src={program.logo} 
                       alt={`${program.title} logo`} 
@@ -433,10 +433,10 @@ export default function Home() {
                     />
                   </div>
                 )}
-                <h3 className="text-2xl font-heading font-bold text-[#2b204c] mb-6 uppercase tracking-tight">
+                <h3 className="text-xl md:text-2xl font-heading font-bold text-[#2b204c] mb-4 md:mb-6 uppercase tracking-tight">
                   {program.title}
                 </h3>
-                <p className="text-slate-500 mb-10 leading-relaxed flex-1">
+                <p className="text-sm md:text-base text-slate-500 mb-8 md:mb-10 leading-relaxed flex-1">
                   {program.desc}
                 </p>
                 {program.isExternal ? (
@@ -444,20 +444,27 @@ export default function Home() {
                     href={program.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[10px] font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-1 transition-colors group"
+                    className="text-[10px] font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-1 transition-colors group mt-auto"
                   >
                     Know More <ArrowRight size={10} className="group-hover:translate-x-1 transition-transform" />
                   </a>
                 ) : (
                   <Link 
                     href={program.link}
-                    className="text-[10px] font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-1 transition-colors group"
+                    className="text-[10px] font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-1 transition-colors group mt-auto"
                   >
                     Know More <ArrowRight size={10} className="group-hover:translate-x-1 transition-transform" />
                   </Link>
                 )}
               </div>
             ))}
+          </div>
+          
+          {/* Mobile Swipe Indicator */}
+          <div className="flex md:hidden justify-center gap-2 mt-2">
+            <div className="text-[10px] text-slate-400 font-medium uppercase tracking-widest flex items-center gap-2 animate-pulse">
+              Swipe to explore <ArrowRight size={12} />
+            </div>
           </div>
         </div>
       </motion.section>

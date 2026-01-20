@@ -275,7 +275,7 @@ function LPInterestForm({ onClose }: { onClose: () => void }) {
           <CheckCircle size={32} />
         </div>
         <h3 className="text-2xl font-bold text-[#2b204c] mb-2">Interest Registered</h3>
-        <p className="text-slate-600 mb-6">Thank you for your interest in partnering with Risin Venture Builder. Our investment relations team will be in touch shortly.</p>
+        <p className="text-slate-600 mb-6">Thank you for expressing interest in partnering with Risin Venture Builder. Our Investment Relations team will review your profile and contact you regarding relevant allocation opportunities.</p>
         <Button onClick={onClose} className="bg-[#2b204c] text-white w-full uppercase tracking-widest font-bold">
           Close
         </Button>
@@ -287,7 +287,7 @@ function LPInterestForm({ onClose }: { onClose: () => void }) {
     <div className="space-y-4 py-2">
       <div className="bg-[#F9FAFB] p-4 border border-slate-100 rounded-sm mb-4">
         <p className="text-xs text-slate-500 italic">
-          <span className="font-bold text-[#2b204c]">Note:</span> This is an expression of interest only and does not constitute a commitment to invest. Opportunities are available to accredited investors only.
+          <span className="font-bold text-[#2b204c]">Disclaimer:</span> This inquiry form is for informational purposes only. It does not constitute an offer to sell or a solicitation of an offer to buy any securities. Access to investment opportunities is strictly limited to accredited investors and qualified purchasers.
         </p>
       </div>
       
@@ -313,7 +313,7 @@ function LPInterestForm({ onClose }: { onClose: () => void }) {
             value={formData.organization}
             onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
             className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#2b204c] outline-none transition-all text-sm"
-            placeholder="Company Name"
+            placeholder="e.g. Family Office, VC, Angel"
           />
         </div>
       </div>
@@ -321,14 +321,14 @@ function LPInterestForm({ onClose }: { onClose: () => void }) {
       <div className="grid md:grid-cols-2 gap-4">
         <div>
           <label className="block text-xs font-bold text-[#2b204c] mb-1 uppercase tracking-wider">
-            Email Address <span className="text-[#952828]">*</span>
+            Business Email <span className="text-[#952828]">*</span>
           </label>
           <input
             type="email"
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#2b204c] outline-none transition-all text-sm"
-            placeholder="work@email.com"
+            placeholder="name@organization.com"
           />
         </div>
         <div>
@@ -340,14 +340,14 @@ function LPInterestForm({ onClose }: { onClose: () => void }) {
             value={formData.geography}
             onChange={(e) => setFormData({ ...formData, geography: e.target.value })}
             className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#2b204c] outline-none transition-all text-sm"
-            placeholder="e.g. GCC, Europe, Asia"
+            placeholder="Primary Region"
           />
         </div>
       </div>
 
       <div>
         <label className="block text-xs font-bold text-[#2b204c] mb-1 uppercase tracking-wider">
-          Investment Interest Range <span className="text-[#952828]">*</span>
+          Target Allocation / Interest Range <span className="text-[#952828]">*</span>
         </label>
         <select
           value={formData.investmentRange}
@@ -364,14 +364,14 @@ function LPInterestForm({ onClose }: { onClose: () => void }) {
 
       <div>
         <label className="block text-xs font-bold text-[#2b204c] mb-1 uppercase tracking-wider">
-          Optional Note
+          Inquiry Context (Optional)
         </label>
         <textarea
           value={formData.note}
           onChange={(e) => setFormData({ ...formData, note: e.target.value })}
           rows={2}
           className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#2b204c] outline-none transition-all text-sm resize-none"
-          placeholder="Any specific questions or context?"
+          placeholder="Please specify if you are a strategic partner, family office, or institutional investor."
         />
       </div>
 
@@ -381,10 +381,10 @@ function LPInterestForm({ onClose }: { onClose: () => void }) {
           disabled={isSubmitting}
           className="w-full bg-[#2b204c] hover:bg-[#8b68f6] text-white rounded-sm py-4 font-bold uppercase tracking-widest text-xs transition-all"
         >
-          {isSubmitting ? "Submitting..." : "Submit Interest"}
+          {isSubmitting ? "Processing..." : "Submit Expression of Interest"}
         </Button>
         <p className="text-[10px] text-center text-slate-400 mt-3">
-          Selective LP onboarding. Institutional & strategic partners prioritized.
+          By submitting this form, you certify that you are an accredited investor or qualified purchaser.
         </p>
       </div>
     </div>

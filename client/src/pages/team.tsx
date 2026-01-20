@@ -27,7 +27,7 @@ const advisors = [
     name: "Advisor Name",
     role: "Technical Advisor",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face",
-    bio: "Expert in deep tech with extensive experience in AI and blockchain.",
+    bio: "Expert in deep tech with extensive experience in AI and deeptech.",
     linkedin: "#"
   },
   {
@@ -125,7 +125,7 @@ export default function Team() {
                 At Risin, we're more than colleagues—we're a team that genuinely enjoys working together. Our diverse backgrounds and complementary skills create a dynamic where strategy meets execution, and creativity meets discipline.
               </p>
               <p className="text-slate-600 leading-relaxed text-lg mb-6">
-                We bring decades of combined experience solving real-world problems using innovation tools—from AI and IoT to blockchain and beyond. But what truly sets us apart is the fun we have while doing it.
+                We bring decades of combined experience solving real-world problems using innovation tools—from AI and IoT to deeptech and beyond. But what truly sets us apart is the fun we have while doing it.
               </p>
               <p className="text-[#2b204c] font-bold text-lg">
                 We are builders of startups. We are builders of communities. <span className="text-[#8b68f6]">This is Risin.</span>

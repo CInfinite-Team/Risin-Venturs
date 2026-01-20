@@ -300,7 +300,7 @@ export default function Home() {
             </div>
             <div className="md:w-1/2">
               <p className="text-lg md:text-xl text-slate-600 leading-relaxed">
-                Founded at the intersection of capital and engineering, Risin Ventures was born from a simple realization: the brightest minds in deep tech often lack the infrastructure to scale. We don't just invest; we co-build. Our mission is to accelerate the transition to a sustainable future by backing the pioneers of AI, IoT, and Blockchain.
+                Founded at the intersection of capital and engineering, Risin Ventures was born from a simple realization: the brightest minds in deep tech often lack the infrastructure to scale. We don't just invest; we co-build. Our mission is to accelerate the transition to a sustainable future by backing the pioneers of AI, IoT, and Deeptech.
               </p>
             </div>
           </div>

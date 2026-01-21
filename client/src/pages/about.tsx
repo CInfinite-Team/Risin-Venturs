@@ -189,6 +189,32 @@ export default function About() {
         </div>
       </motion.section>
 
+      {/* Parent Company Section */}
+      <motion.section 
+        className="py-12 bg-white border-t border-slate-100"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={sectionVariants}
+      >
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
+             <h3 className="text-sm font-bold text-[#2b204c] uppercase tracking-widest mb-3">Backed By Excellence</h3>
+             <p className="text-slate-600 leading-relaxed text-sm mb-4">
+               Risin Ventures is a proud subsidiary of <span className="font-bold text-[#2b204c]">Hyperthink Systems</span>, a global technology leader with over a decade of expertise in delivering cutting-edge IT and engineering solutions worldwide.
+             </p>
+             <a 
+               href="https://hyperthinksys.com/" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               className="text-[10px] font-bold text-[#8b68f6] hover:text-[#2b204c] uppercase tracking-widest flex items-center gap-2 transition-colors group"
+             >
+               Visit Hyperthink Systems <ArrowRight size={10} className="group-hover:translate-x-1 transition-transform" />
+             </a>
+          </div>
+        </div>
+      </motion.section>
+
       {/* Cross-links Section */}
       <motion.section 
         className="py-16 md:py-20 bg-white"

@@ -206,7 +206,7 @@ export default function AIX() {
             <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-3 block">What to Expect</span>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#2b204c] uppercase">Program Highlights</h2>
           </div>
-          <div className="flex overflow-x-auto gap-6 pb-8 -mx-6 px-6 scrollbar-hide snap-x snap-mandatory">
+          <div className="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 pb-8 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0 scrollbar-hide snap-x snap-mandatory md:snap-none">
             {highlights.map((item, i) => (
               <motion.div 
                 key={i}
@@ -214,13 +214,13 @@ export default function AIX() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white p-8 rounded-sm border border-slate-100 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all group min-w-[280px] md:min-w-[320px] snap-center flex-shrink-0"
+                className="bg-white p-8 rounded-sm border border-slate-100 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all group min-w-[280px] md:min-w-0 snap-center md:snap-align-none flex-shrink-0 md:flex-shrink"
               >
                 <div className="w-14 h-14 bg-[#8b68f6]/10 rounded-sm flex items-center justify-center mb-6 text-[#8b68f6] group-hover:bg-[#8b68f6] group-hover:text-white transition-all">
                   {item.icon}
                 </div>
                 <h3 className="text-lg font-heading font-bold text-[#2b204c] mb-3 uppercase">{item.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{item.description}</p>
+                <p className="text-slate-600 text-sm leading-relaxed whitespace-normal">{item.description}</p>
               </motion.div>
             ))}
           </div>

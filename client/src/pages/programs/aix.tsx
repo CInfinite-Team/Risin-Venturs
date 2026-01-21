@@ -214,7 +214,7 @@ export default function AIX() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white p-8 rounded-sm border border-slate-100 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all group min-w-[280px] md:min-w-0 snap-center md:snap-align-none flex-shrink-0 md:flex-shrink"
+                className="bg-white p-8 rounded-sm border border-slate-100 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all group w-[85vw] sm:w-[320px] md:w-auto snap-center md:snap-align-none flex-shrink-0 md:flex-shrink"
               >
                 <div className="w-14 h-14 bg-[#8b68f6]/10 rounded-sm flex items-center justify-center mb-6 text-[#8b68f6] group-hover:bg-[#8b68f6] group-hover:text-white transition-all">
                   {item.icon}

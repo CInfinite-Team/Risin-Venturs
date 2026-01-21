@@ -191,25 +191,28 @@ export default function About() {
 
       {/* Parent Company Section */}
       <motion.section 
-        className="py-12 bg-white border-t border-slate-100"
+        className="py-16 md:py-24 bg-white border-t border-slate-100"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={sectionVariants}
       >
         <div className="container mx-auto px-6">
-          <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
-             <h3 className="text-sm font-bold text-[#2b204c] uppercase tracking-widest mb-3">Backed By Excellence</h3>
-             <p className="text-slate-600 leading-relaxed text-sm mb-4">
+          <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+             <h3 className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-4">Backed By Excellence</h3>
+             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-[#2b204c] uppercase mb-8">
+               Strategic Heritage
+             </h2>
+             <p className="text-slate-600 leading-relaxed text-lg md:text-xl mb-8 font-light">
                Risin Ventures is a proud subsidiary of <span className="font-bold text-[#2b204c]">Hyperthink Systems</span>, a global technology leader with over a decade of expertise in delivering cutting-edge IT and engineering solutions worldwide.
              </p>
              <a 
                href="https://hyperthinksys.com/" 
                target="_blank" 
                rel="noopener noreferrer"
-               className="text-[10px] font-bold text-[#8b68f6] hover:text-[#2b204c] uppercase tracking-widest flex items-center gap-2 transition-colors group"
+               className="text-xs font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-2 transition-colors group border-b-2 border-[#2b204c] hover:border-[#8b68f6] pb-1"
              >
-               Visit Hyperthink Systems <ArrowRight size={10} className="group-hover:translate-x-1 transition-transform" />
+               Visit Hyperthink Systems <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
              </a>
           </div>
         </div>

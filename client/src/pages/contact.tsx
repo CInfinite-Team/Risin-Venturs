@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { ArrowRight, Mail, Phone, MapPin, Clock, Send, CheckCircle } from "lucide-react";
 import { Link, useSearch } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -24,7 +23,6 @@ interface FormData {
   company: string;
   inquiryType: string;
   message: string;
-  isAccredited?: boolean;
 }
 
 const initialFormData: FormData = {
@@ -33,8 +31,7 @@ const initialFormData: FormData = {
   phone: "",
   company: "",
   inquiryType: "",
-  message: "",
-  isAccredited: false
+  message: ""
 };
 
 const inquiryTypes = [
@@ -282,28 +279,6 @@ export default function Contact() {
                     ))}
                   </select>
                 </div>
-
-                {formData.inquiryType === 'investment' && (
-                  <div className="bg-slate-50 p-6 rounded-sm border border-slate-200 animate-in fade-in slide-in-from-top-2">
-                    <h4 className="font-heading font-bold text-[#2b204c] mb-4 text-sm uppercase tracking-wider">Investor Certification</h4>
-                    
-                    <div className="flex items-start gap-3 mb-4">
-                       <Checkbox 
-                         id="accredited" 
-                         checked={formData.isAccredited} 
-                         onCheckedChange={(checked) => setFormData({...formData, isAccredited: checked as boolean})}
-                         className="mt-1 border-slate-300 data-[state=checked]:bg-[#8b68f6] data-[state=checked]:border-[#8b68f6]"
-                       />
-                       <label htmlFor="accredited" className="text-sm text-slate-600 leading-normal cursor-pointer select-none">
-                         I certify that I am an <strong>Accredited Investor</strong> as defined by relevant securities regulations (e.g., net worth exceeding $1M or annual income exceeding $200k). I understand the risks associated with venture capital investments.
-                       </label>
-                    </div>
-
-                    <div className="text-[10px] text-slate-400 italic border-t border-slate-200 pt-3 leading-relaxed">
-                      <strong className="text-slate-500">Regulatory Disclaimer:</strong> This inquiry form is for informational purposes and preliminary interest only. It does not constitute an offer to sell or a solicitation of an offer to buy any securities. Any future investment opportunity will be available only to accredited investors and will be subject to satisfying applicable regulatory requirements and definitive legal documentation.
-                    </div>
-                  </div>
-                )}
 
                 <div>
                   <label className="block text-sm font-bold text-[#2b204c] mb-2">

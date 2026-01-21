@@ -15,7 +15,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -139,6 +139,19 @@ const RegistrationForm = () => {
 };
 
 export default function GTM() {
+  const [activeHighlight, setActiveHighlight] = useState(0);
+  const highlightsRef = useRef<HTMLDivElement>(null);
+
+  const handleHighlightScroll = () => {
+    if (!highlightsRef.current) return;
+    const scrollLeft = highlightsRef.current.scrollLeft;
+    const cardWidth = highlightsRef.current.children[0]?.clientWidth || 0;
+    if (cardWidth > 0) {
+      const index = Math.round(scrollLeft / cardWidth);
+      setActiveHighlight(index);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white font-sans">
       <Header />
@@ -340,18 +353,43 @@ export default function GTM() {
             </div>
 
             {/* Column 2 - Highlights */}
-            <div className="flex overflow-x-auto gap-6 pb-4 -mx-6 px-6 md:mx-0 md:px-0 md:pb-0 md:flex-col md:overflow-visible scrollbar-hide snap-x snap-mandatory">
-              {highlights.map((item, i) => (
-                <div key={i} className="bg-white p-6 rounded-sm border border-slate-200 flex items-start gap-4 hover:shadow-md transition-all min-w-[280px] md:min-w-0 snap-center flex-shrink-0">
-                  <div className="w-12 h-12 bg-[#2b204c] text-white rounded-sm flex items-center justify-center shrink-0">
-                    {item.icon}
+            <div className="flex flex-col gap-4">
+              <div 
+                ref={highlightsRef}
+                onScroll={handleHighlightScroll}
+                className="flex overflow-x-auto gap-6 pb-4 -mx-6 px-6 md:mx-0 md:px-0 md:pb-0 md:flex-col md:overflow-visible scrollbar-hide snap-x snap-mandatory"
+              >
+                {highlights.map((item, i) => (
+                  <div key={i} className="bg-white p-6 rounded-sm border border-slate-200 flex items-start gap-4 hover:shadow-md transition-all w-[85vw] sm:w-[300px] md:w-auto snap-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-[#2b204c] text-white rounded-sm flex items-center justify-center shrink-0">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-bold text-[#2b204c] mb-2 uppercase">{item.title}</h4>
+                      <p className="text-slate-500 text-sm leading-relaxed whitespace-normal">{item.description}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="text-lg font-bold text-[#2b204c] mb-2 uppercase">{item.title}</h4>
-                    <p className="text-slate-500 text-sm leading-relaxed">{item.description}</p>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
+
+              {/* Mobile Pagination Dots */}
+              <div className="flex justify-center gap-2 md:hidden">
+                {highlights.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => {
+                      if (highlightsRef.current) {
+                        const cardWidth = highlightsRef.current.children[0]?.clientWidth || 0;
+                        highlightsRef.current.scrollTo({ left: i * cardWidth, behavior: 'smooth' });
+                      }
+                    }}
+                    className={`h-2 rounded-full transition-all duration-300 ${
+                      activeHighlight === i ? "bg-[#8b68f6] w-6" : "bg-slate-200 w-2"
+                    }`}
+                    aria-label={`Go to slide ${i + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>

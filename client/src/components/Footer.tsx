@@ -148,14 +148,10 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-center items-center gap-6">
           <p className="text-slate-400 text-[10px] font-bold uppercase tracking-[0.2em]">
             © 2026 Risin Ventures. All rights reserved.
           </p>
-          <div className="flex gap-8">
-            <a href="#" className="text-slate-400 hover:text-[#2b204c] text-[10px] font-bold uppercase tracking-[0.2em] transition-colors">Privacy Policy</a>
-            <a href="#" className="text-slate-400 hover:text-[#2b204c] text-[10px] font-bold uppercase tracking-[0.2em] transition-colors">Terms of Service</a>
-          </div>
         </div>
       </div>
     </footer>

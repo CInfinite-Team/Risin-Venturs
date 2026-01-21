@@ -558,6 +558,67 @@ export default function VentureBuilder() {
         </div>
       </section>
 
+      {/* Proprietary Platforms (NEW) */}
+      <section className="py-20 bg-[#F9FAFB] border-t border-slate-100">
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mb-12">
+            <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-3 block">Product Acceleration</span>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#2b204c] uppercase mb-6">
+              In-House Platforms
+            </h2>
+            <p className="text-slate-600 leading-relaxed text-lg">
+              Our proprietary platforms and products dramatically accelerate development cycles, allowing our ventures to skip months of groundwork and focus on value creation from day one.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Knower AI",
+                desc: "An advanced AI platform that accelerates intelligent automation and data processing capabilities for our startups.",
+                link: "https://hyperthinksys.com/knower-ai-platform/",
+                icon: <Cpu className="w-8 h-8" />
+              },
+              {
+                title: "HyperThings IoT",
+                desc: "A robust IoT platform enabling rapid deployment of connected devices and smart city solutions at scale.",
+                link: "https://hyperthinksys.com/hyperthings-iot-platform/",
+                icon: <Zap className="w-8 h-8" />
+              },
+              {
+                title: "LLM Applications",
+                desc: "Enterprise-ready LLM frameworks that allow our ventures to integrate generative AI features securely and quickly.",
+                link: "https://hyperthinksys.com/news-llm-application/",
+                icon: <Sparkles className="w-8 h-8" />
+              }
+            ].map((platform, i) => (
+              <motion.a 
+                key={i}
+                href={platform.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-white p-8 rounded-sm border border-slate-100 hover:shadow-xl hover:border-[#8b68f6]/30 transition-all group flex flex-col h-full"
+              >
+                <div className="w-14 h-14 bg-[#F9FAFB] rounded-sm flex items-center justify-center text-[#2b204c] group-hover:text-[#8b68f6] group-hover:bg-[#8b68f6]/10 transition-colors mb-6">
+                  {platform.icon}
+                </div>
+                <h3 className="text-xl font-bold text-[#2b204c] mb-3 group-hover:text-[#8b68f6] transition-colors">{platform.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed mb-6 flex-1">
+                  {platform.desc}
+                </p>
+                <div className="flex items-center text-[#2b204c] text-xs font-bold uppercase tracking-widest group-hover:translate-x-1 transition-transform mt-auto">
+                  Learn More <ArrowRight size={14} className="ml-2" />
+                </div>
+              </motion.a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Domain Focus (NEW) */}
       <section className="py-16 bg-[#F9FAFB] border-t border-slate-100">
         <div className="container mx-auto px-6">

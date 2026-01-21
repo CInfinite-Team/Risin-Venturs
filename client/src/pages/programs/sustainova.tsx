@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowRight, ExternalLink, Leaf, Globe, Handshake, Award, Target, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ProgramSlider } from "@/components/ProgramSlider";
 
 import image1 from "@assets/DSC_0570_1768830927689.jpg";
 import image2 from "@assets/DSC_0559_1768830927689.jpg";
@@ -204,25 +203,7 @@ export default function Sustainova() {
             <span className="text-emerald-600 text-sm font-bold uppercase tracking-widest mb-3 block">Why Apply</span>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#2b204c] uppercase">Benefits for Startups</h2>
           </div>
-          
-          {/* Mobile Slider */}
-          <div className="block md:hidden -mx-6 px-6">
-            <ProgramSlider 
-              items={benefits}
-              renderItem={(item, i) => (
-                <div className="bg-white p-8 rounded-sm border border-slate-100 h-full flex flex-col shadow-sm">
-                   <div className="w-14 h-14 bg-emerald-100 rounded-sm flex items-center justify-center mb-6 text-emerald-600 shrink-0">
-                     {item.icon}
-                   </div>
-                   <h3 className="text-lg font-heading font-bold text-[#2b204c] mb-3 uppercase whitespace-normal break-words">{item.title}</h3>
-                   <p className="text-slate-600 text-sm leading-relaxed whitespace-normal break-words flex-1">{item.description}</p>
-                </div>
-              )}
-            />
-          </div>
-
-          {/* Desktop Grid */}
-          <div className="hidden md:flex overflow-x-auto gap-6 pb-8 -mx-6 px-6 scrollbar-hide snap-x snap-mandatory">
+          <div className="flex overflow-x-auto gap-6 pb-8 -mx-6 px-6 scrollbar-hide snap-x snap-mandatory">
             {benefits.map((item, i) => (
               <motion.div 
                 key={i}

@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowRight, ExternalLink, Globe, TrendingUp, Handshake, Users, Calendar, MapPin, Building2, Rocket, Zap, Shield, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ProgramSlider } from "@/components/ProgramSlider";
 
 import image1 from "@assets/37_1768831230868.jpeg";
 import image2 from "@assets/16_1768831230877.jpeg";
@@ -341,28 +340,9 @@ export default function GTM() {
             </div>
 
             {/* Column 2 - Highlights */}
-            {/* Mobile Slider */}
-            <div className="block md:hidden -mx-6 px-6">
-              <ProgramSlider 
-                items={highlights}
-                renderItem={(item, i) => (
-                  <div className="bg-white p-6 rounded-sm border border-slate-200 h-full flex flex-col gap-4 shadow-sm">
-                    <div className="w-12 h-12 bg-[#2b204c] text-white rounded-sm flex items-center justify-center shrink-0">
-                      {item.icon}
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-bold text-[#2b204c] mb-2 uppercase whitespace-normal break-words">{item.title}</h4>
-                      <p className="text-slate-500 text-sm leading-relaxed whitespace-normal break-words">{item.description}</p>
-                    </div>
-                  </div>
-                )}
-              />
-            </div>
-
-            {/* Desktop List */}
-            <div className="hidden md:flex flex-col gap-6">
+            <div className="flex overflow-x-auto gap-6 pb-4 -mx-6 px-6 md:mx-0 md:px-0 md:pb-0 md:flex-col md:overflow-visible scrollbar-hide snap-x snap-mandatory">
               {highlights.map((item, i) => (
-                <div key={i} className="bg-white p-6 rounded-sm border border-slate-200 flex items-start gap-4 hover:shadow-md transition-all">
+                <div key={i} className="bg-white p-6 rounded-sm border border-slate-200 flex items-start gap-4 hover:shadow-md transition-all min-w-[280px] md:min-w-0 snap-center flex-shrink-0">
                   <div className="w-12 h-12 bg-[#2b204c] text-white rounded-sm flex items-center justify-center shrink-0">
                     {item.icon}
                   </div>
@@ -405,35 +385,7 @@ export default function GTM() {
           <div className="text-center mb-10">
             <span className="text-[#2b204c] text-sm font-bold uppercase tracking-widest">Ecosystem Partners</span>
           </div>
-          
-          {/* Mobile Slider */}
-          <div className="block md:hidden -mx-6 px-6">
-            <ProgramSlider 
-              items={[
-                { name: "QSTP", url: "https://placehold.co/200x80/transparent/2b204c?text=QSTP" },
-                { name: "QDB", url: "https://placehold.co/200x80/transparent/2b204c?text=QDB" },
-                { name: "QFC", url: "https://placehold.co/200x80/transparent/2b204c?text=QFC" },
-                { name: "Monsha’at", url: "https://placehold.co/200x80/transparent/2b204c?text=Monsha%E2%80%99at" },
-                { name: "CODE", url: "https://placehold.co/200x80/transparent/2b204c?text=CODE" },
-                { name: "QFTH", url: "https://placehold.co/200x80/transparent/2b204c?text=QFTH" },
-                { name: "Itqan", url: "https://placehold.co/200x80/transparent/2b204c?text=Itqan" }, 
-                { name: "DTVC", url: "https://placehold.co/200x80/transparent/2b204c?text=DTVC" }
-              ]}
-              renderItem={(partner, i) => (
-                <div className="bg-white rounded-sm border border-slate-100 flex items-center justify-center h-40 hover:shadow-lg transition-all shadow-sm">
-                  <img 
-                    src={partner.url} 
-                    alt={`${partner.name} Logo`} 
-                    className="w-[70%] h-auto object-contain filter grayscale hover:grayscale-0 transition-all" 
-                  />
-                </div>
-              )}
-              slideClassName="flex-[0_0_50%]"
-            />
-          </div>
-
-          {/* Desktop Grid */}
-          <div className="hidden md:flex overflow-x-auto gap-6 pb-8 items-center scrollbar-hide snap-x snap-mandatory -mx-6 px-6 md:mx-0 md:px-0">
+          <div className="flex overflow-x-auto gap-6 pb-8 items-center scrollbar-hide snap-x snap-mandatory -mx-6 px-6 md:mx-0 md:px-0">
             {[
               { name: "QSTP", url: "https://placehold.co/200x80/transparent/2b204c?text=QSTP" },
               { name: "QDB", url: "https://placehold.co/200x80/transparent/2b204c?text=QDB" },

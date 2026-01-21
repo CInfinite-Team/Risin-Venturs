@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowRight, ExternalLink, Award, Star, Users, Briefcase, Trophy, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ProgramSlider } from "@/components/ProgramSlider";
 
 import image1 from "@assets/Hussein_Sayed_(10)_1768830815435.JPG";
 import image2 from "@assets/Hussein_Sayed_(28)_1768830815439.JPG";
@@ -253,23 +252,7 @@ export default function EntrepreneurshipAwards() {
             <span className="text-amber-600 text-sm font-bold uppercase tracking-widest mb-3 block">2024 Recap</span>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#2b204c] uppercase">Featured Winners</h2>
           </div>
-
-          {/* Mobile Slider */}
-          <div className="block md:hidden -mx-6 px-6">
-            <ProgramSlider 
-              items={winners2024}
-              renderItem={(winner, i) => (
-                <div className="bg-[#F9FAFB] p-8 rounded-sm border border-slate-100 h-full flex flex-col shadow-sm">
-                   <div className="text-xs font-bold text-amber-600 uppercase tracking-widest mb-2 whitespace-normal break-words">{winner.category}</div>
-                   <h3 className="text-xl font-heading font-bold text-[#2b204c] mb-3 whitespace-normal break-words">{winner.winner}</h3>
-                   <p className="text-slate-600 text-sm leading-relaxed whitespace-normal break-words flex-1">{winner.description}</p>
-                </div>
-              )}
-            />
-          </div>
-
-          {/* Desktop Grid */}
-          <div className="hidden md:flex overflow-x-auto gap-6 pb-8 -mx-6 px-6 scrollbar-hide snap-x snap-mandatory">
+          <div className="flex overflow-x-auto gap-6 pb-8 -mx-6 px-6 scrollbar-hide snap-x snap-mandatory">
             {winners2024.map((winner, i) => (
               <motion.div 
                 key={i}

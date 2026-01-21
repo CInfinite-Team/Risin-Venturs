@@ -340,9 +340,9 @@ export default function GTM() {
             </div>
 
             {/* Column 2 - Highlights */}
-            <div className="grid grid-cols-1 gap-6">
+            <div className="flex overflow-x-auto gap-6 pb-4 -mx-6 px-6 md:mx-0 md:px-0 md:pb-0 md:flex-col md:overflow-visible scrollbar-hide snap-x snap-mandatory">
               {highlights.map((item, i) => (
-                <div key={i} className="bg-white p-6 rounded-sm border border-slate-200 flex items-start gap-4 hover:shadow-md transition-all">
+                <div key={i} className="bg-white p-6 rounded-sm border border-slate-200 flex items-start gap-4 hover:shadow-md transition-all min-w-[280px] md:min-w-0 snap-center flex-shrink-0">
                   <div className="w-12 h-12 bg-[#2b204c] text-white rounded-sm flex items-center justify-center shrink-0">
                     {item.icon}
                   </div>
@@ -385,7 +385,7 @@ export default function GTM() {
           <div className="text-center mb-10">
             <span className="text-[#2b204c] text-sm font-bold uppercase tracking-widest">Ecosystem Partners</span>
           </div>
-          <div className="flex flex-wrap justify-center items-center gap-6">
+          <div className="flex overflow-x-auto gap-6 pb-8 items-center scrollbar-hide snap-x snap-mandatory -mx-6 px-6 md:mx-0 md:px-0">
             {[
               { name: "QSTP", url: "https://placehold.co/200x80/transparent/2b204c?text=QSTP" },
               { name: "QDB", url: "https://placehold.co/200x80/transparent/2b204c?text=QDB" },
@@ -399,7 +399,7 @@ export default function GTM() {
               <motion.div 
                 key={i}
                 whileHover={{ scale: 1.05 }}
-                className="bg-white rounded-sm border border-slate-100 flex items-center justify-center w-40 h-40 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all"
+                className="bg-white rounded-sm border border-slate-100 flex items-center justify-center min-w-[160px] h-40 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all snap-center flex-shrink-0"
               >
                 <img 
                   src={partner.url} 

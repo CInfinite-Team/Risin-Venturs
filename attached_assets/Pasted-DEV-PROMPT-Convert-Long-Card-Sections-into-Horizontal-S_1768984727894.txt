@@ -1,0 +1,131 @@
+DEV PROMPT — Convert Long Card Sections into Horizontal Sliders (Programs Pages)
+
+Across the following Program pages, replace vertically stacked card sections with horizontal sliders to reduce page length, improve scannability, and enhance UX—especially on mobile.
+
+1️⃣ AIX Programs Page
+
+URL: /programs/aix
+
+Section to Update
+
+“What to Expect”
+
+Change Required
+
+Replace vertical card listing with:
+
+Horizontal swipeable slider
+
+Cards slide left ↔ right
+
+Show:
+
+Desktop: 2–3 cards partially visible
+
+Mobile: 1 card + peek of next card
+
+2️⃣ Sustainova Page
+
+URL: /programs/sustainova
+
+Section to Update
+
+“Why Apply”
+
+Change Required
+
+Convert existing stacked cards into:
+
+Horizontal slider
+
+No auto-scroll
+
+User-controlled swipe only
+
+3️⃣ Entrepreneurship Awards Page
+
+URL: /programs/entrepreneurship-awards
+
+Section to Update
+
+“2024 Recap”
+
+Change Required
+
+Replace vertical card layout with:
+
+Horizontal slider
+
+Maintain existing content and visuals
+
+Reduce vertical scroll length significantly
+
+4️⃣ GCC GTM Page
+
+URL: /programs/gtm
+
+A. Cards Section
+
+Section: “Why Join”
+
+Change Required
+
+Convert stacked cards into:
+
+Horizontal slider (same behavior as other program pages)
+
+B. Logos Section (Same Page)
+
+Change Required
+
+Replace vertically listed logos with:
+
+Horizontal logo slider
+
+Left → right motion
+
+Uniform logo size
+
+Clear spacing and legibility
+
+Mobile:
+
+Swipeable
+
+Desktop:
+
+Optional subtle auto-scroll OR manual arrows
+
+🔧 Slider UX & Behavior (Applies to All)
+
+Smooth swipe, no lag or resistance
+
+No aggressive snapping
+
+Visual cues:
+
+Partial next card visible OR subtle arrows
+
+Disable auto-scroll for content cards
+
+Enable touch-friendly swipe on mobile
+
+Prevent vertical scroll conflict
+
+🎨 Design Consistency
+
+Maintain:
+
+Existing card design
+
+Typography
+
+Colors
+
+No redesign of cards—layout change only
+
+Ensure alignment with rest of the Programs pages
+
+🎯 Goal
+
+Reduce page length, improve engagement, and create a modern, premium browsing experience without overwhelming users with long vertical sections.

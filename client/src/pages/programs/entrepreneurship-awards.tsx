@@ -252,15 +252,15 @@ export default function EntrepreneurshipAwards() {
             <span className="text-amber-600 text-sm font-bold uppercase tracking-widest mb-3 block">2024 Recap</span>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#2b204c] uppercase">Featured Winners</h2>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="flex overflow-x-auto gap-6 pb-8 -mx-6 px-6 scrollbar-hide snap-x snap-mandatory">
             {winners2024.map((winner, i) => (
               <motion.div 
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-[#F9FAFB] p-8 rounded-sm border border-slate-100 hover:shadow-lg transition-all"
+                className="bg-[#F9FAFB] p-8 rounded-sm border border-slate-100 hover:shadow-lg transition-all min-w-[300px] md:min-w-[350px] snap-center flex-shrink-0"
               >
                 <div className="text-xs font-bold text-amber-600 uppercase tracking-widest mb-2">{winner.category}</div>
                 <h3 className="text-xl font-heading font-bold text-[#2b204c] mb-3">{winner.winner}</h3>

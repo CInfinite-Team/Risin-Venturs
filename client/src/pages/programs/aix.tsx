@@ -206,15 +206,15 @@ export default function AIX() {
             <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-3 block">What to Expect</span>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#2b204c] uppercase">Program Highlights</h2>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="flex overflow-x-auto gap-6 pb-8 -mx-6 px-6 scrollbar-hide snap-x snap-mandatory">
             {highlights.map((item, i) => (
               <motion.div 
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white p-8 rounded-sm border border-slate-100 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all group"
+                className="bg-white p-8 rounded-sm border border-slate-100 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all group min-w-[280px] md:min-w-[320px] snap-center flex-shrink-0"
               >
                 <div className="w-14 h-14 bg-[#8b68f6]/10 rounded-sm flex items-center justify-center mb-6 text-[#8b68f6] group-hover:bg-[#8b68f6] group-hover:text-white transition-all">
                   {item.icon}

@@ -331,10 +331,10 @@ export default function GTM() {
 
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
             {/* Column 1 */}
-            <div className="bg-[#F9FAFB] p-8 md:p-10 rounded-sm border border-slate-100 hover:border-[#8b68f6]/30 transition-all">
-              <h3 className="text-2xl font-heading font-bold text-[#2b204c] mb-6 uppercase flex items-center gap-3">
-                <span className="w-10 h-10 bg-[#8b68f6]/10 text-[#8b68f6] rounded-full flex items-center justify-center text-sm">01</span>
-                Selected Startups Gain
+            <div className="bg-[#F9FAFB] p-6 md:p-10 rounded-sm border border-slate-100 hover:border-[#8b68f6]/30 transition-all">
+              <h3 className="text-2xl font-heading font-bold text-[#2b204c] mb-6 uppercase flex items-start gap-3">
+                <span className="w-10 h-10 bg-[#8b68f6]/10 text-[#8b68f6] rounded-full flex items-center justify-center text-sm shrink-0 mt-1">01</span>
+                <span className="flex-1">Selected Startups Gain</span>
               </h3>
               <ul className="space-y-4">
                 {[
@@ -357,11 +357,11 @@ export default function GTM() {
               <div 
                 ref={highlightsRef}
                 onScroll={handleHighlightScroll}
-                className="flex overflow-x-auto gap-6 pb-4 -mx-6 px-6 md:mx-0 md:px-0 md:pb-0 md:flex-col md:overflow-visible scrollbar-hide snap-x snap-mandatory"
+                className="flex overflow-x-auto gap-6 pb-4 -mx-6 px-6 md:mx-0 md:px-0 md:pb-0 md:grid md:grid-cols-2 md:overflow-visible scrollbar-hide snap-x snap-mandatory"
               >
                 {highlights.map((item, i) => (
-                  <div key={i} className="bg-white p-6 rounded-sm border border-slate-200 flex items-start gap-4 hover:shadow-md transition-all w-[85vw] sm:w-[300px] md:w-auto snap-center flex-shrink-0">
-                    <div className="w-12 h-12 bg-[#2b204c] text-white rounded-sm flex items-center justify-center shrink-0">
+                  <div key={i} className="bg-white p-6 rounded-sm border border-slate-200 block hover:shadow-md transition-all w-[85vw] sm:w-[300px] md:w-auto snap-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-[#2b204c] text-white rounded-sm flex items-center justify-center mb-4">
                       {item.icon}
                     </div>
                     <div>

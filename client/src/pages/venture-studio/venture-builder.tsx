@@ -6,7 +6,7 @@ import JourneyNav from "@/components/JourneyNav";
 import ScrollToTop from "@/components/ScrollToTop";
 import { ArrowRight, Hammer, Briefcase, TrendingUp, Layers, Cpu, Cloud, Database, Code, Zap, Shield, Server, Box, Globe, Smartphone, CreditCard, Sparkles, Car, CheckCircle, Upload, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from "@/components/ui/dialog";
 
 import image1 from "@assets/20231119_125834_(2)_1768914492428.jpg";
@@ -399,6 +399,12 @@ export default function VentureBuilder() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
+  // Slider refs and state
+  const [activeTechCap, setActiveTechCap] = useState(0);
+  const techCapSliderRef = useRef<HTMLDivElement>(null);
+  const [activePlatform, setActivePlatform] = useState(0);
+  const platformSliderRef = useRef<HTMLDivElement>(null);
+
   const openApplyModal = (ventureId: string) => {
     setSelectedVenture(ventureId);
     setFormData(prev => ({ ...prev, selectedIdea: ventureId }));
@@ -413,6 +419,26 @@ export default function VentureBuilder() {
       setIsSubmitting(false);
       setIsSuccess(true);
     }, 1500);
+  };
+
+  const handleTechCapScroll = () => {
+    if (!techCapSliderRef.current) return;
+    const scrollLeft = techCapSliderRef.current.scrollLeft;
+    const cardWidth = techCapSliderRef.current.children[0]?.clientWidth || 0;
+    if (cardWidth > 0) {
+      const index = Math.round(scrollLeft / cardWidth);
+      setActiveTechCap(index);
+    }
+  };
+
+  const handlePlatformScroll = () => {
+    if (!platformSliderRef.current) return;
+    const scrollLeft = platformSliderRef.current.scrollLeft;
+    const cardWidth = platformSliderRef.current.children[0]?.clientWidth || 0;
+    if (cardWidth > 0) {
+      const index = Math.round(scrollLeft / cardWidth);
+      setActivePlatform(index);
+    }
   };
 
   return (
@@ -537,7 +563,11 @@ export default function VentureBuilder() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div 
+            ref={techCapSliderRef}
+            onScroll={handleTechCapScroll}
+            className="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 pb-8 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0 scrollbar-hide snap-x snap-mandatory md:snap-none"
+          >
             {techCapabilities.map((cap, i) => (
               <motion.div 
                 key={i}
@@ -545,7 +575,7 @@ export default function VentureBuilder() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="p-8 bg-[#F9FAFB] border border-slate-100 rounded-sm hover:border-[#8b68f6]/30 hover:shadow-lg transition-all group"
+                className="p-8 bg-[#F9FAFB] border border-slate-100 rounded-sm hover:border-[#8b68f6]/30 hover:shadow-lg transition-all group w-[85vw] sm:w-[320px] md:w-auto snap-center md:snap-align-none flex-shrink-0 md:flex-shrink"
               >
                 <div className="w-12 h-12 bg-white rounded-sm border border-slate-100 flex items-center justify-center mb-6 text-[#2b204c] group-hover:text-[#8b68f6] transition-colors shadow-sm">
                   {cap.icon}
@@ -553,6 +583,25 @@ export default function VentureBuilder() {
                 <h3 className="text-lg font-bold text-[#2b204c] uppercase mb-3">{cap.title}</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">{cap.desc}</p>
               </motion.div>
+            ))}
+          </div>
+
+          {/* Mobile Pagination Dots */}
+          <div className="flex justify-center gap-2 md:hidden mt-4">
+            {techCapabilities.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => {
+                  if (techCapSliderRef.current) {
+                    const cardWidth = techCapSliderRef.current.children[0]?.clientWidth || 0;
+                    techCapSliderRef.current.scrollTo({ left: i * cardWidth, behavior: 'smooth' });
+                  }
+                }}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  activeTechCap === i ? "bg-[#8b68f6] w-6" : "bg-slate-200 w-2"
+                }`}
+                aria-label={`Go to slide ${i + 1}`}
+              />
             ))}
           </div>
         </div>
@@ -571,7 +620,11 @@ export default function VentureBuilder() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div 
+            ref={platformSliderRef}
+            onScroll={handlePlatformScroll}
+            className="flex overflow-x-auto md:grid md:grid-cols-3 gap-8 pb-8 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0 scrollbar-hide snap-x snap-mandatory md:snap-none"
+          >
             {[
               {
                 title: "Knower AI",
@@ -601,7 +654,7 @@ export default function VentureBuilder() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white p-8 rounded-sm border border-slate-100 hover:shadow-xl hover:border-[#8b68f6]/30 transition-all group flex flex-col h-full"
+                className="bg-white p-8 rounded-sm border border-slate-100 hover:shadow-xl hover:border-[#8b68f6]/30 transition-all group flex flex-col h-full w-[85vw] sm:w-[320px] md:w-auto snap-center md:snap-align-none flex-shrink-0 md:flex-shrink"
               >
                 <div className="w-14 h-14 bg-[#F9FAFB] rounded-sm flex items-center justify-center text-[#2b204c] group-hover:text-[#8b68f6] group-hover:bg-[#8b68f6]/10 transition-colors mb-6">
                   {platform.icon}
@@ -614,6 +667,25 @@ export default function VentureBuilder() {
                   Learn More <ArrowRight size={14} className="ml-2" />
                 </div>
               </motion.a>
+            ))}
+          </div>
+
+          {/* Mobile Pagination Dots */}
+          <div className="flex justify-center gap-2 md:hidden mt-4">
+            {[0, 1, 2].map((_, i) => (
+              <button
+                key={i}
+                onClick={() => {
+                  if (platformSliderRef.current) {
+                    const cardWidth = platformSliderRef.current.children[0]?.clientWidth || 0;
+                    platformSliderRef.current.scrollTo({ left: i * cardWidth, behavior: 'smooth' });
+                  }
+                }}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  activePlatform === i ? "bg-[#8b68f6] w-6" : "bg-slate-200 w-2"
+                }`}
+                aria-label={`Go to slide ${i + 1}`}
+              />
             ))}
           </div>
         </div>

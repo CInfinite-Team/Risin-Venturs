@@ -24,19 +24,23 @@ export default function Acceleration() {
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="max-w-4xl"
+            className="w-full"
           >
             <div className="flex items-center gap-2 mb-6">
               <span className="w-8 h-0.5 bg-[#0ea5e9]"></span>
               <span className="text-[#0ea5e9] text-sm font-bold uppercase tracking-widest">Venture Studio / Acceleration</span>
             </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-[#2b204c] mb-8 uppercase leading-none">
-              Scaling for <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0ea5e9] to-blue-600">Global Impact</span>
-            </h1>
-            <p className="text-xl text-slate-600 leading-relaxed max-w-2xl border-l-4 border-[#0ea5e9]/20 pl-6">
-              Growth is the only metric that matters. Our acceleration programs are designed for market-ready startups looking to secure funding, enter new markets, and achieve industrial adoption.
-            </p>
+
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-[#2b204c] uppercase leading-none">
+                Scaling for <br/>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0ea5e9] to-blue-600">Global Impact</span>
+              </h1>
+              
+              <p className="text-xl text-slate-600 leading-relaxed border-l-4 border-[#0ea5e9]/20 pl-6 lg:mt-4">
+                Growth is the only metric that matters. Our acceleration programs are designed for market-ready startups looking to secure funding, enter new markets, and achieve industrial adoption.
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>

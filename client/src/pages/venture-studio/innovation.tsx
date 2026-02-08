@@ -73,19 +73,23 @@ export default function Innovation() {
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="max-w-4xl"
+            className="w-full"
           >
             <div className="flex items-center gap-2 mb-6">
               <span className="w-8 h-0.5 bg-[#8b68f6]"></span>
               <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest">Venture Studio / Innovation</span>
             </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-[#2b204c] mb-8 uppercase leading-none">
-              The Engine of <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8b68f6] to-cyan-400">Future Growth</span>
-            </h1>
-            <p className="text-xl text-slate-600 leading-relaxed max-w-2xl border-l-4 border-[#8b68f6]/20 pl-6">
-              Innovation isn't just about ideas—it's about survival. In a rapidly evolving deep tech landscape, organizations that fail to adapt, stagnate. We bridge the gap between corporate ambition and startup agility.
-            </p>
+
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-[#2b204c] uppercase leading-none">
+                The Engine of <br/>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8b68f6] to-cyan-400">Future Growth</span>
+              </h1>
+              
+              <p className="text-xl text-slate-600 leading-relaxed border-l-4 border-[#8b68f6]/20 pl-6 lg:mt-4">
+                Innovation isn't just about ideas—it's about survival. In a rapidly evolving deep tech landscape, organizations that fail to adapt, stagnate. We bridge the gap between corporate ambition and startup agility.
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>

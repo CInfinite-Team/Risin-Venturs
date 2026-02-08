@@ -103,7 +103,7 @@ export default function Team() {
                 <span className="text-stroke">Risin Ventures</span>
               </h1>
               
-              <p className="text-lg md:text-xl text-slate-600 leading-relaxed lg:mt-4">
+              <p className="text-lg md:text-xl text-slate-600 leading-relaxed border-l-4 border-[#8b68f6]/20 pl-6 lg:mt-4">
                 A diverse team of entrepreneurs, engineers, and ecosystem builders dedicated to transforming ideas into impactful ventures.
               </p>
             </div>

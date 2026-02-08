@@ -7,6 +7,9 @@ import ScrollToTop from "@/components/ScrollToTop";
 import { ArrowRight, Rocket, Globe, Zap, Database, Leaf, HeartPulse, Wallet } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+import image1 from "@assets/DSC05576_1770534741762.jpg";
+import image2 from "@assets/DSC05347_1770534741763.jpg";
+
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -48,12 +51,13 @@ export default function Acceleration() {
       {/* Image Placeholder - Context */}
       <section className="pb-16 bg-white">
         <div className="container mx-auto px-6">
-          <div className="w-full h-[400px] bg-slate-100 rounded-sm relative overflow-hidden">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-slate-400 font-bold uppercase tracking-widest text-sm bg-white/50 px-4 py-2 rounded-sm backdrop-blur-sm border border-slate-200">
-                Actual program image to be uploaded: Startup Founder Meeting
-              </span>
-            </div>
+          <div className="w-full h-[400px] bg-slate-100 rounded-sm relative overflow-hidden group">
+            <img 
+              src={image1} 
+              alt="Startup Founder Meeting" 
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60"></div>
           </div>
         </div>
       </section>
@@ -99,12 +103,13 @@ export default function Acceleration() {
                  We connect our portfolio companies directly with decision-makers in major industrial conglomerates for pilots and commercial agreements.
                </p>
             </div>
-            <div className="h-[300px] bg-slate-100 rounded-sm relative overflow-hidden">
-               <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-slate-400 font-bold uppercase tracking-widest text-xs bg-white/50 px-4 py-2 rounded-sm backdrop-blur-sm border border-slate-200 text-center">
-                  Actual program image to be uploaded: <br/> Enterprise Pilot Signing
-                </span>
-              </div>
+            <div className="h-[300px] bg-slate-100 rounded-sm relative overflow-hidden group">
+               <img 
+                 src={image2} 
+                 alt="Enterprise Pilot Signing" 
+                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+               />
+               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-40"></div>
             </div>
           </div>
         </div>

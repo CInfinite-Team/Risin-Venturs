@@ -89,20 +89,24 @@ export default function Team() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl"
+            className="w-full"
           >
             <div className="flex items-center gap-2 mb-4">
               <Link href="/about" className="text-slate-400 text-sm font-bold uppercase tracking-widest hover:text-[#8b68f6] transition-colors">About</Link>
               <span className="text-slate-300">/</span>
               <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest">Team</span>
             </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-[#2b204c] mb-6 uppercase leading-none">
-              The People Behind <br className="hidden md:block"/>
-              <span className="text-stroke">Risin Ventures</span>
-            </h1>
-            <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl">
-              A diverse team of entrepreneurs, engineers, and ecosystem builders dedicated to transforming ideas into impactful ventures.
-            </p>
+            
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-[#2b204c] uppercase leading-none">
+                The People Behind <br className="hidden md:block"/>
+                <span className="text-stroke">Risin Ventures</span>
+              </h1>
+              
+              <p className="text-lg md:text-xl text-slate-600 leading-relaxed lg:mt-4">
+                A diverse team of entrepreneurs, engineers, and ecosystem builders dedicated to transforming ideas into impactful ventures.
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>

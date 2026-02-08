@@ -27,19 +27,23 @@ export default function Incubation() {
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="max-w-4xl"
+            className="w-full"
           >
             <div className="flex items-center gap-2 mb-6">
               <span className="w-8 h-0.5 bg-[#952828]"></span>
               <span className="text-[#952828] text-sm font-bold uppercase tracking-widest">Venture Studio / Incubation</span>
             </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-[#2b204c] mb-8 uppercase leading-none">
-              Nurturing <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#952828] to-orange-400">The Seeds of Impact</span>
-            </h1>
-            <p className="text-xl text-slate-600 leading-relaxed max-w-2xl border-l-4 border-[#952828]/20 pl-6">
-              Great ideas are fragile. Without the right structure, mentorship, and validation, even the most promising concepts fail. We provide the soil, sun, and water for early-stage ventures to take root.
-            </p>
+            
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-[#2b204c] uppercase leading-none">
+                Nurturing <br/>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#952828] to-orange-400">The Seeds of Impact</span>
+              </h1>
+              
+              <p className="text-xl text-slate-600 leading-relaxed border-l-4 border-[#952828]/20 pl-6 lg:mt-4">
+                Great ideas are fragile. Without the right structure, mentorship, and validation, even the most promising concepts fail. We provide the soil, sun, and water for early-stage ventures to take root.
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>

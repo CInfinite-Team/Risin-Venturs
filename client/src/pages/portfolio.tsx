@@ -103,20 +103,23 @@ export default function Portfolio() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl"
+            className="w-full"
           >
             <div className="flex items-center gap-2 mb-4">
               <Link href="/about" className="text-slate-400 text-sm font-bold uppercase tracking-widest hover:text-[#8b68f6] transition-colors">About</Link>
               <span className="text-slate-300">/</span>
               <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest">Portfolio</span>
             </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-[#2b204c] mb-6 uppercase leading-none">
-              Building <br className="hidden md:block"/>
-              <span className="text-stroke">Tomorrow</span>
-            </h1>
-            <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl">
-              We build and back the next generation of deep tech giants. Explore the companies that are reshaping industries across the GCC and beyond.
-            </p>
+            
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-[#2b204c] uppercase leading-none">
+                Building <br className="hidden md:block"/>
+                <span className="text-stroke">Tomorrow</span>
+              </h1>
+              <p className="text-lg md:text-xl text-slate-600 leading-relaxed border-l-4 border-[#8b68f6]/20 pl-6 lg:mt-4">
+                We build and back the next generation of deep tech giants. Explore the companies that are reshaping industries across the GCC and beyond.
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>

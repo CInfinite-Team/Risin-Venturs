@@ -97,20 +97,23 @@ export default function News() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl"
+            className="w-full"
           >
             <div className="flex items-center gap-2 mb-4">
               <Link href="/about" className="text-slate-400 text-sm font-bold uppercase tracking-widest hover:text-[#8b68f6] transition-colors">About</Link>
               <span className="text-slate-300">/</span>
               <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest">News & Insights</span>
             </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-[#2b204c] mb-6 uppercase leading-none">
-              News & <br className="hidden md:block"/>
-              <span className="text-stroke">Insights</span>
-            </h1>
-            <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl">
-              Stay updated with the latest activity, strategic partnerships, and momentum from within our deep-tech ecosystem.
-            </p>
+            
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-[#2b204c] uppercase leading-none">
+                News & <br className="hidden md:block"/>
+                <span className="text-stroke">Insights</span>
+              </h1>
+              <p className="text-lg md:text-xl text-slate-600 leading-relaxed border-l-4 border-[#8b68f6]/20 pl-6 lg:mt-4">
+                Stay updated with the latest activity, strategic partnerships, and momentum from within our deep-tech ecosystem.
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>

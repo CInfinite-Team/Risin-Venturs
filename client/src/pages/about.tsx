@@ -32,8 +32,8 @@ export default function About() {
               <div>
                 <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-4 block">About Us</span>
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-[#2b204c] mb-6 uppercase leading-none">
-                  Building the Future of <br className="hidden md:block"/>
-                  <span className="text-stroke">Deep Tech</span>
+                  BUILDING THE FUTURE OF <br className="hidden md:block"/>
+                  <span className="text-stroke">INNOVATION & ENTREPRENEURSHIP</span>
                 </h1>
               </div>
               <p className="text-lg md:text-xl text-slate-600 leading-relaxed border-l-4 border-[#8b68f6]/20 pl-6 lg:mt-12">

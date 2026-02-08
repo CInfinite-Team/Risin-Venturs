@@ -452,19 +452,23 @@ export default function VentureBuilder() {
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="max-w-4xl"
+            className="w-full"
           >
             <div className="flex items-center gap-2 mb-6">
               <span className="w-8 h-0.5 bg-[#2b204c]"></span>
               <span className="text-[#2b204c] text-sm font-bold uppercase tracking-widest">Venture Builder</span>
             </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-[#2b204c] mb-8 uppercase leading-none">
-              Engineering <br/>
-              <span className="text-stroke text-[#2b204c]">Success</span>
-            </h1>
-            <p className="text-xl text-slate-600 leading-relaxed max-w-2xl border-l-4 border-[#2b204c] pl-6">
-              We are a hands-on execution engine. We combine capital, elite talent, robust platforms, and enterprise technology to build market-defining companies from the ground up.
-            </p>
+            
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-[#2b204c] uppercase leading-none">
+                Engineering <br/>
+                <span className="text-stroke text-[#2b204c]">Success</span>
+              </h1>
+              
+              <p className="text-xl text-slate-600 leading-relaxed border-l-4 border-[#2b204c] pl-6 lg:mt-4">
+                We are a hands-on execution engine. We combine capital, elite talent, robust platforms, and enterprise technology to build market-defining companies from the ground up.
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>

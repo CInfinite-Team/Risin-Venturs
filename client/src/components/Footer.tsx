@@ -3,11 +3,34 @@ import { Linkedin, Facebook, Youtube, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Footer() {
+  const aboutLinks = [
+    { label: "About Us", href: "/about" },
+    { label: "Team", href: "/team" },
+    { label: "Portfolio", href: "/portfolio" },
+    { label: "Career", href: "/careers" },
+    { label: "Partners", href: "/partners" },
+    { label: "Case Studies", href: "/case-studies" },
+    { label: "News & Insights", href: "/news" }
+  ];
+
+  const mainPrograms = [
+    { label: "Innovation", href: "/venture-studio/innovation" },
+    { label: "Incubation", href: "/venture-studio/incubation" },
+    { label: "Acceleration", href: "/venture-studio/acceleration" }
+  ];
+
+  const otherPrograms = [
+    { label: "AIX Summit & Hackathon", href: "/programs/aix" },
+    { label: "Sustainova Challenge", href: "/programs/sustainova" },
+    { label: "Entrepreneurship Awards", href: "/programs/entrepreneurship-awards" },
+    { label: "Go-To-Market (GTM)", href: "/programs/gtm" }
+  ];
+
   return (
     <footer className="bg-white border-t border-slate-100 py-16 md:py-20">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-16">
-          <div className="lg:col-span-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 mb-16">
+          <div className="lg:col-span-4">
             <Link href="/" className="flex items-center gap-2 mb-8">
               <img 
                 src="/attached_assets/RISIN_LOGO_1767787710766.png" 
@@ -39,53 +62,10 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Mobile: 2-column grid for About & Programs, then Venture Studio below */}
-          {/* Desktop: 3 separate columns */}
-          <div className="grid grid-cols-2 md:grid-cols-1 gap-8 md:gap-0">
-            <div>
-              <h4 className="font-bold uppercase tracking-widest text-[10px] mb-6 md:mb-8 text-[#8b68f6]">About</h4>
-              <ul className="space-y-3 md:space-y-4">
-                {[
-                  { label: "About Us", href: "/about" },
-                  { label: "Team", href: "/team" },
-                  { label: "Portfolio", href: "/portfolio" },
-                  { label: "Career", href: "/careers" },
-                  { label: "Partners", href: "/partners" },
-                  { label: "Case Studies", href: "/case-studies" },
-                  { label: "News & Insights", href: "/news" }
-                ].map((item) => (
-                  <li key={item.label}>
-                    <Link href={item.href} className="text-[#2b204c] hover:text-[#8b68f6] transition-colors text-xs font-bold capitalize tracking-wider">{item.label}</Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="md:hidden">
-              <h4 className="font-bold uppercase tracking-widest text-[10px] mb-6 text-[#8b68f6]">Programs</h4>
-              <ul className="space-y-3">
-                {[
-                  { label: "AIX Summit & Hackathon", href: "/programs/aix" },
-                  { label: "Sustainova Challenge", href: "/programs/sustainova" },
-                  { label: "Entrepreneurship Awards", href: "/programs/entrepreneurship-awards" },
-                  { label: "Go-To-Market (GTM)", href: "/programs/gtm" }
-                ].map((item) => (
-                  <li key={item.label}>
-                    <Link href={item.href} className="text-[#2b204c] hover:text-[#8b68f6] transition-colors text-xs font-bold capitalize tracking-wider">{item.label}</Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <div className="hidden md:block">
-            <h4 className="font-bold uppercase tracking-widest text-[10px] mb-8 text-[#8b68f6]">Programs</h4>
-            <ul className="space-y-4">
-              {[
-                { label: "AIX Summit & Hackathon", href: "/programs/aix" },
-                { label: "Sustainova Challenge", href: "/programs/sustainova" },
-                { label: "Entrepreneurship Awards", href: "/programs/entrepreneurship-awards" },
-                { label: "Go-To-Market (GTM)", href: "/programs/gtm" }
-              ].map((item) => (
+          <div className="lg:col-span-2">
+            <h4 className="font-bold uppercase tracking-widest text-[10px] mb-6 md:mb-8 text-[#8b68f6]">About</h4>
+            <ul className="space-y-3">
+              {aboutLinks.map((item) => (
                 <li key={item.label}>
                   <Link href={item.href} className="text-[#2b204c] hover:text-[#8b68f6] transition-colors text-xs font-bold capitalize tracking-wider">{item.label}</Link>
                 </li>
@@ -93,19 +73,39 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
-            <h4 className="font-bold uppercase tracking-widest text-[10px] mb-6 md:mb-8 text-[#8b68f6]">Venture Studio</h4>
-            <ul className="space-y-3 md:space-y-4">
-              {[
-                { label: "Innovation", href: "/venture-studio/innovation" },
-                { label: "Incubation", href: "/venture-studio/incubation" },
-                { label: "Acceleration", href: "/venture-studio/acceleration" },
-                { label: "Venture Builder", href: "/venture-studio/venture-builder" }
-              ].map((item) => (
+          <div className="lg:col-span-3">
+            <h4 className="font-bold uppercase tracking-widest text-[10px] mb-6 md:mb-8 text-[#8b68f6]">Programs</h4>
+            <ul className="space-y-3 mb-6">
+              {mainPrograms.map((item) => (
                 <li key={item.label}>
-                  <a href={item.href} className="text-[#2b204c] hover:text-[#8b68f6] transition-colors text-xs font-bold capitalize tracking-wider">{item.label}</a>
+                  <Link href={item.href} className="text-[#2b204c] hover:text-[#8b68f6] transition-colors text-xs font-bold capitalize tracking-wider">{item.label}</Link>
                 </li>
               ))}
+            </ul>
+            
+            <h5 className="font-bold uppercase tracking-widest text-[9px] mb-4 text-slate-400">Other Programs</h5>
+            <ul className="space-y-3 pl-2 border-l border-slate-100">
+              {otherPrograms.map((item) => (
+                <li key={item.label}>
+                  <Link href={item.href} className="text-[#2b204c] hover:text-[#8b68f6] transition-colors text-xs font-bold capitalize tracking-wider block">{item.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="lg:col-span-3">
+            <h4 className="font-bold uppercase tracking-widest text-[10px] mb-6 md:mb-8 text-[#8b68f6]">Venture Builder</h4>
+            <ul className="space-y-3">
+              <li>
+                <Link href="/venture-studio/venture-builder" className="text-[#2b204c] hover:text-[#8b68f6] transition-colors text-xs font-bold capitalize tracking-wider">
+                  Venture Builder
+                </Link>
+              </li>
+              <li>
+                <Link href="/build-with-us" className="text-[#2b204c] hover:text-[#8b68f6] transition-colors text-xs font-bold capitalize tracking-wider">
+                  Build With Us
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

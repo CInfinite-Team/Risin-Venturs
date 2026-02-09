@@ -113,8 +113,8 @@ export default function Portfolio() {
             
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-[#2b204c] uppercase leading-none">
-                Building <br className="hidden md:block"/>
-                <span className="text-stroke">Tomorrow</span>
+                BUILDING TOMORROW'S <br className="hidden md:block"/>
+                <span className="text-stroke">LEADERS</span>
               </h1>
               <p className="text-lg md:text-xl text-slate-600 leading-relaxed border-l-4 border-[#8b68f6]/20 pl-6 lg:mt-4">
                 We build and back the next generation of deep tech giants. Explore the companies that are reshaping industries across the GCC and beyond.

@@ -107,8 +107,8 @@ export default function News() {
             
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-[#2b204c] uppercase leading-none">
-                News & <br className="hidden md:block"/>
-                <span className="text-stroke">Insights</span>
+                INNOVATION <br className="hidden md:block"/>
+                <span className="text-stroke">IN MOTION</span>
               </h1>
               <p className="text-lg md:text-xl text-slate-600 leading-relaxed border-l-4 border-[#8b68f6]/20 pl-6 lg:mt-4">
                 Stay updated with the latest activity, strategic partnerships, and momentum from within our deep-tech ecosystem.

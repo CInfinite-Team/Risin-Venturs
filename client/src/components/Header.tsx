@@ -154,7 +154,7 @@ export default function Header() {
     { label: "Incubation", href: "/venture-studio/incubation" },
     { label: "Acceleration", href: "/venture-studio/acceleration" },
     { 
-      label: "Other Programs", 
+      label: "Our Programs", 
       href: "#",
       children: [
         { label: "AIX Summit & Hackathon", href: "/programs/aix" },

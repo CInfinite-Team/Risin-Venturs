@@ -83,7 +83,7 @@ export default function Footer() {
               ))}
             </ul>
             
-            <h5 className="font-bold uppercase tracking-widest text-[9px] mb-4 text-slate-400">Other Programs</h5>
+            <h5 className="font-bold uppercase tracking-widest text-[9px] mb-4 text-slate-400">Our Programs</h5>
             <ul className="space-y-3 pl-2 border-l border-slate-100">
               {otherPrograms.map((item) => (
                 <li key={item.label}>

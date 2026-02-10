@@ -30,8 +30,7 @@ export default function Acceleration() {
             className="w-full"
           >
             <div className="flex items-center gap-2 mb-6">
-              <span className="w-8 h-0.5 bg-[#0ea5e9]"></span>
-              <span className="text-[#0ea5e9] text-sm font-bold uppercase tracking-widest">Venture Studio / Acceleration</span>
+              <span className="text-[#0ea5e9] text-sm font-bold uppercase tracking-widest">Programs / Acceleration</span>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">

@@ -76,7 +76,6 @@ export default function Innovation() {
             className="w-full"
           >
             <div className="flex items-center gap-2 mb-6">
-              <span className="w-8 h-0.5 bg-[#8b68f6]"></span>
               <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest">Programs / Innovation</span>
             </div>
 

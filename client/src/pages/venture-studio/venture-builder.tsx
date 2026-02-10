@@ -446,7 +446,7 @@ export default function VentureBuilder() {
       <Header />
       
       {/* 1. New Hero Section */}
-      <section className="pt-32 pb-20 md:pt-40 md:pb-32 bg-white relative overflow-hidden">
+      <section className="pt-32 pb-20 md:pt-40 md:pb-32 bg-[#2b204c] relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
           <motion.div 
             initial="hidden"
@@ -455,24 +455,24 @@ export default function VentureBuilder() {
             className="max-w-4xl"
           >
             <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-4 block">Venture Builder</span>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-[#2b204c] uppercase leading-none mb-6">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white uppercase leading-none mb-6">
               Co-Building and Scaling <br/>
-              <span className="text-stroke">Market-Defining Ventures</span>
+              <span className="text-stroke text-white">Market-Defining Ventures</span>
             </h1>
             
-            <p className="text-xl text-slate-600 leading-relaxed mb-8 max-w-2xl">
+            <p className="text-xl text-slate-300 leading-relaxed mb-8 max-w-2xl">
               We combine capital, elite talent, and enterprise-grade execution to build the next generation of deep tech giants.
             </p>
 
             <Link href="/build-with-us">
-              <Button className="bg-[#2b204c] text-white hover:bg-[#8b68f6] rounded-sm px-10 py-6 h-auto font-bold uppercase tracking-widest text-sm shadow-lg hover:shadow-xl transition-all">
+              <Button className="bg-white text-[#2b204c] hover:bg-[#8b68f6] hover:text-white rounded-sm px-10 py-6 h-auto font-bold uppercase tracking-widest text-sm shadow-lg hover:shadow-xl transition-all">
                 Apply Now
               </Button>
             </Link>
           </motion.div>
         </div>
         {/* Abstract Background Element */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#8b68f6]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#8b68f6]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
       </section>
 
       {/* 2. Risin Ventures Fund Section (New) */}

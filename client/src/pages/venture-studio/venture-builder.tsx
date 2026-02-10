@@ -457,7 +457,7 @@ export default function VentureBuilder() {
             <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-4 block">Venture Builder</span>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white uppercase leading-none mb-6">
               Co-Building and Scaling <br/>
-              <span className="text-stroke text-white">Market-Defining Ventures</span>
+              <span className="text-white">Market-Defining Ventures</span>
             </h1>
             
             <p className="text-xl text-slate-300 leading-relaxed mb-8 max-w-2xl">

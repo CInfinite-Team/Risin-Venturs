@@ -1,0 +1,132 @@
+DEV / DESIGN PROMPT — Hero Banner “WOW” Upgrade (3 Concepts)
+
+Objective:
+The current banner image lacks impact. Redesign the hero banner visual to deliver a jaw-dropping first impression that instantly communicates venture building, deep tech, scale, and global ambition.
+
+Provide 3 distinct visual concepts before final implementation.
+
+🔹 Global Constraints (Apply to All 3 Options)
+
+Must align with Risin Ventures brand:
+
+Dark Indigo #2b204c
+
+Vivid Violet #8b68f6
+
+Saffron Red #952828 (accent only)
+
+Should feel:
+
+Premium
+
+Tech-forward
+
+Institutional yet bold
+
+Must not overpower text or CTA buttons
+
+Fully responsive (desktop + mobile)
+
+Performance-safe (no heavy video files)
+
+🅾️ OPTION 1 — “Living Venture Ecosystem” (Subtle Motion / GIF)
+
+Concept:
+
+Abstract network of nodes representing:
+
+Startups
+
+Capital
+
+Talent
+
+Markets
+
+Nodes softly pulse and connect, symbolizing venture creation & scale
+
+Motion is slow, elegant, and ambient
+
+Execution:
+
+Lightweight looping GIF or CSS/SVG animation
+
+Gradient background using Dark Indigo → Violet
+
+Occasional accent glow in Saffron Red
+
+Emotion:
+
+“This is where ventures are born.”
+
+🅾️ OPTION 2 — “From Idea to Impact” (Cinematic Static Art)
+
+Concept:
+
+A high-end, illustrated or AI-generated visual showing:
+
+Left: abstract idea / blueprint / neural patterns
+
+Right: cityscape, industry, global network
+
+Transition visually shows venture evolution
+
+Execution:
+
+Static hero image with parallax scroll effect
+
+Subtle grain / depth for premium feel
+
+Clear negative space for headline + CTAs
+
+Emotion:
+
+“We turn breakthrough ideas into real companies.”
+
+🅾️ OPTION 3 — “The Venture Builder Signature” (Brand-Led Minimal Art)
+
+Concept:
+
+Ultra-minimal, bold brand expression:
+
+Large abstract shapes
+
+Geometric layers
+
+Custom pattern inspired by Risin’s venture flywheel
+
+No literal imagery — pure brand authority
+
+Execution:
+
+SVG / CSS layered background
+
+Micro-animation on load (fade + slide)
+
+Extremely fast load time
+
+Emotion:
+
+“Confident. Institutional. Global.”
+
+🧭 Selection Criteria (Before Finalizing)
+
+Which option:
+
+Feels most venture-builder-led
+
+Elevates brand perception instantly
+
+Works best on mobile
+
+Shortlist one final concept for production
+
+✅ Final Outcome
+
+A hero banner that:
+
+Stops the scroll
+
+Signals credibility + ambition
+
+Makes founders, partners, and LPs want to explore further

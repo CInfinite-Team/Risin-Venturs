@@ -29,11 +29,13 @@ import CorporateVentureStudiosCaseStudy from "@/pages/case-studies/corporate-ven
 import EmpoweringInnovationCaseStudy from "@/pages/case-studies/empowering-innovation";
 import IdeasToImpactCaseStudy from "@/pages/case-studies/ideas-to-impact";
 import BridgingInvestmentCaseStudy from "@/pages/case-studies/bridging-investment";
+import HeroConcepts from "@/pages/hero-concepts";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/hero-concepts" component={HeroConcepts} />
       <Route path="/about" component={About} />
       <Route path="/team" component={Team} />
       <Route path="/careers" component={Careers} />

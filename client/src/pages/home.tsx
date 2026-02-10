@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Globe, TrendingUp, Shield, Zap, Menu, X, Rocket, Cpu, Network, Building2, ChevronDown } from "lucide-react";
-import heroBg from "@/assets/hero-concepts/option1-network.png";
+import heroBg from "@/assets/hero-concepts/option6-core.png";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { Link } from "wouter";

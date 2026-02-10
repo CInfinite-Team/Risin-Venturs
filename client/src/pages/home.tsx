@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Globe, TrendingUp, Shield, Zap, Menu, X, Rocket, Cpu, Network, Building2, ChevronDown } from "lucide-react";
-import heroBg from "@assets/generated_images/abstract_deep-tech_network_visualization_background.png";
+import heroBg from "@/assets/hero-concepts/option3-minimal.png";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
@@ -114,11 +114,6 @@ export default function Home() {
                 { label: "Venture Building", href: "#philosophy" }
               ]} 
             />
-            <Link href="/hero-concepts">
-               <a className="text-sm font-bold text-[#952828] hover:text-[#8b68f6] transition-colors uppercase tracking-widest flex items-center gap-1 cursor-pointer">
-                 Concepts
-               </a>
-            </Link>
             <Button className="bg-[#2b204c] text-white hover:bg-[#8b68f6] transition-all uppercase tracking-widest text-xs font-bold rounded-sm px-6 h-12 border-0 shadow-lg">
               Build With Us
             </Button>
@@ -143,7 +138,6 @@ export default function Home() {
                 { 
                   title: "About", 
                   items: [
-                    { label: "Design Concepts", href: "/hero-concepts" },
                     { label: "About Us", href: "/about" },
                     { label: "Team", href: "/team" },
                     { label: "Career", href: "/careers" },
@@ -200,13 +194,13 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-56 md:pt-12 bg-[#F9FAFB] border-b border-slate-100">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-56 md:pt-12 bg-[#2b204c] border-b border-slate-100">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-white/60 z-10" />
+          <div className="absolute inset-0 bg-[#2b204c]/30 z-10" />
           <img 
             src={heroBg} 
             alt="Abstract tech background" 
-            className="w-full h-full object-cover opacity-30"
+            className="w-full h-full object-cover opacity-100"
           />
         </div>
 
@@ -219,7 +213,7 @@ export default function Home() {
           >
             <motion.h1 
               variants={fadeIn}
-              className="text-4xl md:text-7xl lg:text-8xl font-heading font-bold leading-[1.05] tracking-tighter mb-6 md:mb-8 uppercase text-[#2b204c]"
+              className="text-4xl md:text-7xl lg:text-8xl font-heading font-bold leading-[1.05] tracking-tighter mb-6 md:mb-8 uppercase text-white"
             >
               Building the next <br />
               generation of <span className="text-[#8b68f6]">deeptech</span>
@@ -227,19 +221,19 @@ export default function Home() {
             
             <motion.p 
               variants={fadeIn}
-              className="text-lg md:text-2xl text-slate-600 max-w-2xl mb-10 md:mb-14 font-light leading-relaxed"
+              className="text-lg md:text-2xl text-slate-200 max-w-2xl mb-10 md:mb-14 font-light leading-relaxed"
             >
               We co-build, fund, and scale the next generation of disruptive enterprises. By merging institutional discipline with breakthrough science, we transform bold ideas into global industry leaders.
             </motion.p>
 
             <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-5">
               <Link href="/build-with-us">
-                <Button className="bg-[#2b204c] text-white hover:bg-[#8b68f6] transition-all rounded-sm h-14 md:h-16 px-10 text-base md:text-lg font-bold uppercase tracking-widest shadow-xl border-0">
+                <Button className="bg-[#8b68f6] text-white hover:bg-[#7a5bd6] transition-all rounded-sm h-14 md:h-16 px-10 text-base md:text-lg font-bold uppercase tracking-widest shadow-xl border-0">
                   Build With Us
                 </Button>
               </Link>
               <a href="#programs">
-                <Button variant="outline" className="border-2 border-[#2b204c] text-[#2b204c] hover:bg-slate-50 transition-all rounded-sm h-14 md:h-16 px-10 text-base md:text-lg font-bold uppercase tracking-widest bg-transparent">
+                <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#2b204c] transition-all rounded-sm h-14 md:h-16 px-10 text-base md:text-lg font-bold uppercase tracking-widest bg-transparent">
                   Our Programs
                 </Button>
               </a>

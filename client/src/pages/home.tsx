@@ -356,10 +356,8 @@ export default function Home() {
                 <p className="text-slate-500 text-sm leading-relaxed mb-8 flex-1">
                   {value.desc}
                 </p>
-                <Link href={value.link}>
-                  <a className="text-[10px] font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-1 transition-colors">
+                <Link href={value.link} className="text-[10px] font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-1 transition-colors cursor-pointer">
                     Know More <ArrowRight size={10} />
-                  </a>
                 </Link>
               </div>
             ))}

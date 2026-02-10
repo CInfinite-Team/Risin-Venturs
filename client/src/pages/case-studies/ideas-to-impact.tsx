@@ -49,9 +49,9 @@ export default function IdeasToImpactCaseStudy() {
               <span className="text-slate-300">/</span>
               <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest">Startup Ecosystem</span>
             </div>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold text-[#2b204c] mb-6 uppercase leading-tight">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold text-black mb-6 uppercase leading-tight">
               From Ideas to Impact <br className="hidden md:block"/>
-              <span className="text-stroke">Qatar's Path to a Thriving Ecosystem</span>
+              <span>Qatar's Path to a Thriving Ecosystem</span>
             </h1>
             <div className="flex items-center justify-start gap-6 text-sm text-slate-500 font-bold uppercase tracking-widest">
               <span className="flex items-center gap-2"><Calendar size={16} className="text-[#8b68f6]" /> June 2024</span>

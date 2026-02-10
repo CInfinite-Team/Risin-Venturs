@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Globe, TrendingUp, Shield, Zap, Menu, X, Rocket, Cpu, Network, Building2, ChevronDown } from "lucide-react";
-import heroBg from "@assets/generated_images/abstract_deep-tech_network_visualization_background.png";
+import heroBg from "@/assets/hero-concepts/option3-minimal.png";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
@@ -114,11 +114,6 @@ export default function Home() {
                 { label: "Venture Building", href: "#philosophy" }
               ]} 
             />
-            <Link href="/hero-concepts">
-               <a className="text-sm font-bold text-[#952828] hover:text-[#8b68f6] transition-colors uppercase tracking-widest flex items-center gap-1 cursor-pointer">
-                 Concepts
-               </a>
-            </Link>
             <Button className="bg-[#2b204c] text-white hover:bg-[#8b68f6] transition-all uppercase tracking-widest text-xs font-bold rounded-sm px-6 h-12 border-0 shadow-lg">
               Build With Us
             </Button>
@@ -143,7 +138,6 @@ export default function Home() {
                 { 
                   title: "About", 
                   items: [
-                    { label: "Design Concepts", href: "/hero-concepts" },
                     { label: "About Us", href: "/about" },
                     { label: "Team", href: "/team" },
                     { label: "Career", href: "/careers" },

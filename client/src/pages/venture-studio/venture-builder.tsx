@@ -445,50 +445,68 @@ export default function VentureBuilder() {
     <div className="min-h-screen bg-white font-sans">
       <Header />
       
-      {/* Editorial Header */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-white">
-        <div className="container mx-auto px-6">
+      {/* 1. New Hero Section */}
+      <section className="pt-32 pb-20 md:pt-40 md:pb-32 bg-white relative overflow-hidden">
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div 
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="w-full"
+            className="max-w-4xl"
           >
-            <div className="flex items-center gap-2 mb-6">
-              <span className="w-8 h-0.5 bg-[#2b204c]"></span>
-              <span className="text-[#2b204c] text-sm font-bold uppercase tracking-widest">Venture Builder</span>
-            </div>
+            <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-4 block">Venture Builder</span>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-[#2b204c] uppercase leading-none mb-6">
+              Co-Building and Scaling <br/>
+              <span className="text-stroke">Market-Defining Ventures</span>
+            </h1>
             
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-[#2b204c] uppercase leading-none">
-                Engineering <br/>
-                <span className="text-stroke text-[#2b204c]">Success</span>
-              </h1>
-              
-              <p className="text-xl text-slate-600 leading-relaxed border-l-4 border-[#2b204c] pl-6 lg:mt-4">
-                We are a hands-on execution engine. We combine capital, elite talent, robust platforms, and enterprise technology to build market-defining companies from the ground up.
-              </p>
-            </div>
+            <p className="text-xl text-slate-600 leading-relaxed mb-8 max-w-2xl">
+              We combine capital, elite talent, and enterprise-grade execution to build the next generation of deep tech giants.
+            </p>
+
+            <Link href="/build-with-us">
+              <Button className="bg-[#2b204c] text-white hover:bg-[#8b68f6] rounded-sm px-10 py-6 h-auto font-bold uppercase tracking-widest text-sm shadow-lg hover:shadow-xl transition-all">
+                Apply Now
+              </Button>
+            </Link>
           </motion.div>
+        </div>
+        {/* Abstract Background Element */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#8b68f6]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+      </section>
+
+      {/* 2. Risin Ventures Fund Section (New) */}
+      <section className="py-20 bg-[#F9FAFB] border-y border-slate-100">
+        <div className="container mx-auto px-6">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 className="text-3xl font-heading font-bold text-[#2b204c] uppercase mb-6">Risin Ventures Fund</h2>
+                    <p className="text-slate-600 leading-relaxed text-lg mb-6">
+                        Bridging the gap between early-stage innovation and institutional scale. We don't just invest; we co-build, de-risk, and accelerate deep tech ventures through our integrated studio model.
+                    </p>
+                    <p className="text-slate-600 leading-relaxed text-lg">
+                        Our fund provides the capital fuel while our studio provides the execution engine, creating a unique advantage for founders and investors alike.
+                    </p>
+                </div>
+                <div className="grid grid-cols-2 gap-6">
+                    {[
+                        { value: "15+", label: "Startups Built" },
+                        { value: "10+", label: "Markets Reached" },
+                        { value: "85%", label: "Follow-on Success" },
+                        { value: "$100M+", label: "Capital Enabled" }
+                    ].map((metric, i) => (
+                        <div key={i} className="bg-white p-6 rounded-sm border border-slate-100 shadow-sm">
+                            <div className="text-3xl font-heading font-bold text-[#8b68f6] mb-2">{metric.value}</div>
+                            <div className="text-xs font-bold text-[#2b204c] uppercase tracking-widest">{metric.label}</div>
+                        </div>
+                    ))}
+                </div>
+            </div>
         </div>
       </section>
 
-      {/* Image Placeholder - Contextual */}
-      <section className="pb-16 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="w-full h-[400px] bg-slate-100 rounded-sm relative overflow-hidden group">
-            <img 
-              src={image1} 
-              alt="Venture Building Team" 
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60"></div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Execution Focus (Existing) */}
-      <section className="py-20 bg-[#F9FAFB] border-y border-slate-100">
+      {/* 3. In-House & Corporate Studio (Existing) */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12">
             
@@ -500,7 +518,7 @@ export default function VentureBuilder() {
                    Our internal factory for deep tech startups. We identify white spaces in the market and deploy our own resources to capture them.
                  </p>
               </div>
-              <div className="bg-white p-8 rounded-sm border border-slate-100 flex-1 relative overflow-hidden group hover:border-[#2b204c]/30 transition-colors">
+              <div className="bg-[#F9FAFB] p-8 rounded-sm border border-slate-100 flex-1 relative overflow-hidden group hover:border-[#2b204c]/30 transition-colors">
                 <div className="relative z-10 space-y-8">
                   {[
                     { title: "Ideation", desc: "Rigorous validation of market problems." },
@@ -550,6 +568,53 @@ export default function VentureBuilder() {
               </div>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Domains We Actively Build (Moved & Updated) */}
+      <section className="py-16 bg-[#F9FAFB] border-t border-slate-100">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl">
+            <h3 className="text-sm font-bold text-[#2b204c] uppercase tracking-widest mb-6">Domains we actively build and scale ventures in</h3>
+            <div className="flex flex-wrap gap-4">
+              {[
+                "Deep Tech",
+                "AI (B2B)",
+                "SaaS",
+                "Smart City",
+                "Climate Tech",
+                "Sustainability",
+                "IoT",
+                "AIoT",
+                "Mobility"
+              ].map((domain, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.05 }}
+                  className="px-6 py-3 rounded-full border border-[#8b68f6]/20 bg-white text-[#2b204c] font-medium text-sm hover:border-[#8b68f6] hover:bg-[#8b68f6]/5 hover:text-[#8b68f6] transition-all cursor-default shadow-sm"
+                >
+                  {domain}
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Image Placeholder - Contextual (Moved here as separator) */}
+      <section className="bg-white">
+        <div className="container mx-auto px-6">
+          <div className="w-full h-[400px] bg-slate-100 rounded-sm relative overflow-hidden group">
+            <img 
+              src={image1} 
+              alt="Venture Building Team" 
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60"></div>
           </div>
         </div>
       </section>
@@ -695,38 +760,6 @@ export default function VentureBuilder() {
         </div>
       </section>
 
-      {/* Domain Focus (NEW) */}
-      <section className="py-16 bg-[#F9FAFB] border-t border-slate-100">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl">
-            <h3 className="text-sm font-bold text-[#2b204c] uppercase tracking-widest mb-6">Domains we actively build and scale ventures in</h3>
-            <div className="flex flex-wrap gap-4">
-              {[
-                "AI (B2B)",
-                "Fintech",
-                "SaaS",
-                "Deep Tech",
-                "Climate Tech",
-                "HealthTech",
-                "IoT",
-                "Smart Cities"
-              ].map((domain, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.05 }}
-                  className="px-6 py-3 rounded-full border border-[#8b68f6]/20 bg-white text-[#2b204c] font-medium text-sm hover:border-[#8b68f6] hover:bg-[#8b68f6]/5 hover:text-[#8b68f6] transition-all cursor-default shadow-sm"
-                >
-                  {domain}
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* OEM & Tech Partners (Existing) */}
       <section className="py-16 bg-white border-t border-slate-100">
         <div className="container mx-auto px-6">
@@ -750,7 +783,7 @@ export default function VentureBuilder() {
         </div>
       </section>
 
-      {/* Current Builds (NEW) */}
+      {/* Current Builds (Existing) */}
       <section className="py-20 bg-[#F9FAFB] border-t border-slate-100">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
@@ -758,7 +791,7 @@ export default function VentureBuilder() {
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#2b204c] uppercase">Currently Building</h2>
           </div>
 
-          {/* New Section Image for Context */}
+          {/* Section Image for Context */}
           <div className="w-full h-[350px] bg-slate-100 rounded-sm relative overflow-hidden group mb-12">
             <img 
               src={image2} 
@@ -809,7 +842,7 @@ export default function VentureBuilder() {
         </div>
       </section>
 
-      {/* LP Allocation Section (NEW) */}
+      {/* LP Allocation Section (Existing) */}
       <section className="bg-white py-12 border-t border-slate-100">
         <div className="container mx-auto px-6">
           <div className="bg-[#2b204c]/5 border border-[#2b204c]/10 rounded-sm p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">

@@ -1,0 +1,137 @@
+Objective:
+Refine the Venture Builder page to improve clarity, hierarchy, credibility, and conversion while staying consistent with the existing Risin Ventures design system and UX patterns.
+
+1️⃣ Add a New Hero Section (Top of Page)
+
+Create a new hero section at the very top of the Venture Builder page.
+
+Hero should visually and contextually resonate with venture building (founder creation, co-building, scale, deep tech).
+
+Include:
+
+Strong headline focused on co-building and scaling ventures
+
+Short supporting subtext (1–2 lines)
+
+Primary CTA button: “Apply Now”
+
+CTA should hyperlink to the Apply Now section of the “Build With Us” page
+
+Ensure hero spacing and typography match other top-level pages (Programs, About, Venture Studio).
+
+2️⃣ Reposition Existing Content
+
+Move all existing Venture Builder page content below the newly created hero section.
+
+Do not remove content unless specified—only restructure for better hierarchy.
+
+3️⃣ Add “Risin Ventures Fund” Section (Below Hero)
+
+Insert a new section immediately under the hero section titled:
+“Risin Ventures Fund”
+
+Layout:
+
+Left column: Fund overview write-up
+
+Brief, investor-focused description
+
+Emphasize venture builder + capital + execution advantage
+
+Right column: Impact metrics (2–4 metrics)
+
+Example format:
+
+XX+ startups built
+
+XX+ markets
+
+XX% follow-on success
+
+$XXM+ capital enabled
+
+Each metric should include a short one-line descriptor
+
+Design should feel credible, institutional, and investor-ready (not promotional).
+
+4️⃣ Section Order Adjustment
+
+Reorder sections as follows:
+
+Hero section
+
+Risin Ventures Fund section
+
+In-house Venture Studio
+
+Corporate Venture Studio
+
+Domains We Actively Build
+
+5️⃣ Update “Domains We Actively Build” Section
+
+Keep this section below both:
+
+In-house Studio
+
+Corporate Studio
+
+Remove all existing domains and retain only the following:
+
+Deep Tech
+
+AI (B2B)
+
+SaaS
+
+Smart City
+
+Climate Tech
+
+Sustainability
+
+IoT
+
+AIoT
+
+Mobility
+
+Display domains as:
+
+Clean tags / pills / cards
+
+Consistent with other domain or category UI across the site
+
+6️⃣ UX & Design Notes
+
+Maintain consistency with:
+
+Fonts
+
+Colors
+
+Button styles
+
+Section spacing used across the website
+
+Ensure:
+
+Clear vertical flow
+
+No excessive white space
+
+Mobile-first responsiveness
+
+CTA buttons should be visible but not aggressive
+
+✅ Final Outcome
+
+The Venture Builder page should:
+
+Instantly communicate what Risin builds
+
+Show capital + execution credibility
+
+Nudge founders and LPs toward action
+
+Feel aligned with the rest of the website ecosystem

@@ -490,7 +490,7 @@ export default function VentureBuilder() {
                 </div>
                 <div className="grid grid-cols-2 gap-6">
                     {[
-                        { value: "15+", label: "Startups Built" },
+                        { value: "8", label: "Startups Built" },
                         { value: "10+", label: "Markets Reached" },
                         { value: "85%", label: "Follow-on Success" },
                         { value: "$100M+", label: "Capital Enabled" }

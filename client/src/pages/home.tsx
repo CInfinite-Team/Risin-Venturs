@@ -480,36 +480,36 @@ export default function Home() {
               <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#8b68f6] opacity-10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
               <div className="relative z-10 flex flex-col items-center gap-4">
                 <span className="bg-[#952828] text-white text-[9px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-sm">
-                  Invite-Only Event • Limited Seats
+                  Applications Open • National Platform
                 </span>
                 <h4 className="font-heading font-bold text-2xl md:text-3xl text-white uppercase">
-                  SustAInova Roadshow – Doha
+                  Qatar Entrepreneurship Awards
                 </h4>
                 <div className="flex flex-wrap justify-center gap-3 md:gap-6 text-sm">
                   <span className="text-slate-300 flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#8b68f6]"></span>
-                    AI & Sustainability
+                    Celebrating Excellence
                   </span>
                   <span className="text-slate-300 flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#8b68f6]"></span>
-                    21st Jan 2026, 4:00 PM – 6:00 PM
+                    Date: TBA
                   </span>
                   <span className="text-slate-300 flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#8b68f6]"></span>
-                    QSTP, Doha
+                    Time: TBA
                   </span>
                 </div>
                 <p className="text-slate-400 text-sm max-w-lg mt-2">
-                  Join industry leaders and innovators to explore the intersection of AI and sustainability. Secure your spot before it's gone.
+                  Recognizing and celebrating excellence and innovation in ICT and digital entrepreneurship across Qatar and the wider region.
                 </p>
               </div>
               <a 
-                href="https://sustainovachallenge.com/" 
+                href="https://qatarentrepreneurshipawards.com/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="relative z-10 bg-white text-[#2b204c] hover:bg-[#8b68f6] hover:text-white transition-all px-8 py-3 rounded-sm font-bold text-sm uppercase tracking-widest flex items-center gap-2 mt-2"
               >
-                RSVP Now <ArrowRight size={14} />
+                Apply Now <ArrowRight size={14} />
               </a>
             </div>
           </div>

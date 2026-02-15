@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Globe, TrendingUp, Shield, Zap, Menu, X, Rocket, Cpu, Network, Building2, ChevronDown } from "lucide-react";
 import heroBg from "@/assets/hero-concepts/option6-core.png";
 import gccGtmLogo from "@assets/GCC_GTM_with_ascending_gradient_arrow_1771153840911.png";
+import sustainovaLogo from "@assets/Sustain_Nova__1771154173735.png";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
@@ -399,7 +400,7 @@ export default function Home() {
               },
               {
                 title: "Sustainova",
-                logo: "/attached_assets/Risin_Sustainova-Icon_(2)_1767692205938.png",
+                logo: sustainovaLogo,
                 desc: "An innovation challenge focused on sustainability, climate tech, and impact-driven solutions for real-world environmental problems.",
                 link: "/programs/sustainova",
                 isExternal: false

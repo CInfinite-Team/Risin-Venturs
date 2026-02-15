@@ -469,7 +469,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="flex md:grid md:grid-cols-3 gap-8 overflow-x-auto pb-4 md:pb-0 scrollbar-hide snap-x snap-mandatory px-6 md:px-0 -mx-6 md:mx-0">
             {[
               { 
                 icon: <Zap className="w-8 h-8" />, 
@@ -492,7 +492,7 @@ export default function Home() {
             ].map((value, i) => (
               <div 
                 key={i}
-                className="flex flex-col p-10 border border-slate-100 bg-[#F9FAFB] transition-all duration-300 shadow-sm hover:shadow-md hover:border-[#8b68f6]/30 h-full relative overflow-hidden group"
+                className="flex-shrink-0 w-[280px] md:w-auto snap-center flex flex-col p-10 border border-slate-100 bg-[#F9FAFB] transition-all duration-300 shadow-sm hover:shadow-md hover:border-[#8b68f6]/30 h-full relative overflow-hidden group"
               >
                 <div className="text-[#2b204c] group-hover:text-[#8b68f6] transition-colors mb-6">
                   {value.icon}
@@ -507,6 +507,12 @@ export default function Home() {
                     Know More <ArrowRight size={10} />
                 </Link>
               </div>
+            ))}
+          </div>
+          {/* Subtle Progress Dots for Mobile */}
+          <div className="flex md:hidden justify-center gap-2 mt-6">
+            {[0, 1, 2].map((dot) => (
+              <div key={dot} className={`w-2 h-2 rounded-full transition-all duration-300 ${dot === 0 ? 'bg-[#8b68f6] scale-125' : 'bg-slate-300'}`} />
             ))}
           </div>
         </div>
@@ -534,7 +540,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 overflow-x-auto pb-8 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0 snap-x snap-mandatory scrollbar-hide">
+          <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-8 overflow-x-auto pb-4 md:pb-0 scrollbar-hide snap-x snap-mandatory px-6 md:px-0 -mx-6 md:mx-0">
             {[
               {
                 title: "AIX",
@@ -567,7 +573,7 @@ export default function Home() {
             ].map((program, i) => (
               <div 
                 key={i}
-                className="min-w-[85vw] sm:min-w-[350px] md:min-w-0 snap-center flex flex-col p-8 md:p-12 bg-white border border-slate-100 shadow-sm hover:shadow-md hover:border-[#8b68f6]/30 transition-all duration-300 h-full rounded-sm"
+                className="flex-shrink-0 w-[280px] md:w-auto snap-center flex flex-col p-8 md:p-12 bg-white border border-slate-100 shadow-sm hover:shadow-md hover:border-[#8b68f6]/30 transition-all duration-300 h-full rounded-sm"
               >
                 {program.logo && (
                   <div className="mb-6 md:mb-8 h-8 md:h-10 w-auto flex items-start">
@@ -606,10 +612,10 @@ export default function Home() {
           </div>
           
           {/* Mobile Swipe Indicator */}
-          <div className="flex md:hidden justify-center gap-2 mt-2">
-            <div className="text-[10px] text-slate-400 font-medium uppercase tracking-widest flex items-center gap-2 animate-pulse">
-              Swipe to explore <ArrowRight size={12} />
-            </div>
+          <div className="flex md:hidden justify-center gap-2 mt-6">
+            {[0, 1, 2, 3].map((dot) => (
+              <div key={dot} className={`w-2 h-2 rounded-full transition-all duration-300 ${dot === 0 ? 'bg-[#8b68f6] scale-125' : 'bg-slate-300'}`} />
+            ))}
           </div>
         </div>
       </motion.section>

@@ -4,11 +4,11 @@ import heroBg from "@/assets/hero-concepts/option6-core.png";
 import gccGtmLogo from "@assets/GCC_GTM_with_ascending_gradient_arrow_1771153840911.png";
 import sustainovaLogo from "@assets/Sustain_Nova__1771154173735.png";
 import aixLogo from "@assets/AIX_LOGO_1771154224181.png";
-import qdbLogo from "@assets/image_1771154794810.png";
-import qstpLogo from "@assets/image_1771154807637.png";
-import mtcitLogo from "@assets/image_1771154850059.png";
-import codeLogo from "@assets/image_1771154887141.png";
-import quLogo from "@assets/image_1771154912976.png";
+import qdbLogo from "@assets/image_1771155231377.png";
+import qstpLogo from "@assets/image_1771155256224.png";
+import mtcitLogo from "@assets/image_1771155334710.png";
+import codeLogo from "@assets/image_1771155293821.png";
+import quLogo from "@assets/image_1771155208266.png";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
@@ -307,11 +307,11 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="flex flex-nowrap md:flex-wrap overflow-x-auto md:overflow-visible items-center justify-start md:justify-center gap-8 md:gap-16 pb-4 md:pb-0 scrollbar-hide">
             {/* Logo Row */}
-            <img src={qdbLogo} alt="Qatar Development Bank" className="h-10 md:h-14 w-auto object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0" />
-            <img src={qstpLogo} alt="Qatar Science & Technology Park" className="h-8 md:h-12 w-auto object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0" />
-            <img src={mtcitLogo} alt="Ministry of Transport, Communications and Information Technology" className="h-10 md:h-14 w-auto object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0" />
-            <img src={codeLogo} alt="Center of Digital Entrepreneurship" className="h-8 md:h-12 w-auto object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0" />
-            <img src={quLogo} alt="Qatar University" className="h-10 md:h-14 w-auto object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0" />
+            <img src={qdbLogo} alt="Qatar Development Bank" className="h-[32px] md:h-[40px] lg:h-[48px] w-auto object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0" />
+            <img src={qstpLogo} alt="Qatar Science & Technology Park" className="h-[32px] md:h-[40px] lg:h-[48px] w-auto object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0" />
+            <img src={mtcitLogo} alt="Ministry of Transport, Communications and Information Technology" className="h-[32px] md:h-[40px] lg:h-[48px] w-auto object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0" />
+            <img src={codeLogo} alt="Center of Digital Entrepreneurship" className="h-[32px] md:h-[40px] lg:h-[48px] w-auto object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0" />
+            <img src={quLogo} alt="Qatar University" className="h-[32px] md:h-[40px] lg:h-[48px] w-auto object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0" />
           </div>
         </div>
       </section>

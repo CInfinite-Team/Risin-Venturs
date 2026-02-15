@@ -4,6 +4,11 @@ import heroBg from "@/assets/hero-concepts/option6-core.png";
 import gccGtmLogo from "@assets/GCC_GTM_with_ascending_gradient_arrow_1771153840911.png";
 import sustainovaLogo from "@assets/Sustain_Nova__1771154173735.png";
 import aixLogo from "@assets/AIX_LOGO_1771154224181.png";
+import qdbLogo from "@assets/image_1771154794810.png";
+import qstpLogo from "@assets/image_1771154807637.png";
+import mtcitLogo from "@assets/image_1771154850059.png";
+import codeLogo from "@assets/image_1771154887141.png";
+import quLogo from "@assets/image_1771154912976.png";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
@@ -235,7 +240,7 @@ export default function Home() {
                 variants={fadeIn}
                 className="text-lg text-slate-300 max-w-xl mb-8 font-light leading-relaxed"
               >
-                We co-build, fund, and scale the next generation of disruptive enterprises in AI, Climate, and SaaS. By bridging government vision with enterprise collaboration, we transform bold ideas into global industry leaders.
+                Co-building, funding, and scaling disruptive deep tech enterprises in AI, Climate, and SaaS. Transforming bold ideas into global industry leaders.
               </motion.p>
 
               <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4">
@@ -298,29 +303,15 @@ export default function Home() {
       </section>
 
       {/* Trusted By / Collaboration Section */}
-      <section className="py-10 bg-white border-b border-slate-100">
+      <section className="py-8 bg-white border-b border-slate-100 overflow-hidden">
         <div className="container mx-auto px-6">
-          <p className="text-center text-xs font-bold text-slate-400 uppercase tracking-[0.2em] mb-8">
-            In Strategic Collaboration With
-          </p>
-          
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-            {/* Logo Placeholders - Replace with actual SVGs/Images */}
-            <div className="h-8 md:h-10 flex items-center justify-center">
-               <span className="text-[#2b204c] font-bold text-xl md:text-2xl font-heading">QDB</span>
-            </div>
-            <div className="h-8 md:h-10 flex items-center justify-center">
-               <span className="text-[#2b204c] font-bold text-xl md:text-2xl font-heading">QSTP</span>
-            </div>
-            <div className="h-8 md:h-10 flex items-center justify-center">
-               <span className="text-[#2b204c] font-bold text-xl md:text-2xl font-heading">MTCIT</span>
-            </div>
-            <div className="h-8 md:h-10 flex items-center justify-center">
-               <span className="text-[#2b204c] font-bold text-xl md:text-2xl font-heading">CODE</span>
-            </div>
-            <div className="h-8 md:h-10 flex items-center justify-center">
-               <span className="text-[#2b204c] font-bold text-xl md:text-2xl font-heading">QU</span>
-            </div>
+          <div className="flex flex-nowrap md:flex-wrap overflow-x-auto md:overflow-visible items-center justify-start md:justify-center gap-8 md:gap-16 pb-4 md:pb-0 scrollbar-hide">
+            {/* Logo Row */}
+            <img src={qdbLogo} alt="Qatar Development Bank" className="h-10 md:h-14 w-auto object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0" />
+            <img src={qstpLogo} alt="Qatar Science & Technology Park" className="h-8 md:h-12 w-auto object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0" />
+            <img src={mtcitLogo} alt="Ministry of Transport, Communications and Information Technology" className="h-10 md:h-14 w-auto object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0" />
+            <img src={codeLogo} alt="Center of Digital Entrepreneurship" className="h-8 md:h-12 w-auto object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0" />
+            <img src={quLogo} alt="Qatar University" className="h-10 md:h-14 w-auto object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0" />
           </div>
         </div>
       </section>

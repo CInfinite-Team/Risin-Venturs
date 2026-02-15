@@ -3,6 +3,7 @@ import { ArrowRight, Globe, TrendingUp, Shield, Zap, Menu, X, Rocket, Cpu, Netwo
 import heroBg from "@/assets/hero-concepts/option6-core.png";
 import gccGtmLogo from "@assets/GCC_GTM_with_ascending_gradient_arrow_1771153840911.png";
 import sustainovaLogo from "@assets/Sustain_Nova__1771154173735.png";
+import aixLogo from "@assets/AIX_LOGO_1771154224181.png";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
@@ -393,7 +394,7 @@ export default function Home() {
             {[
               {
                 title: "AIX",
-                logo: "/attached_assets/WhatsApp_Image_2026-01-06_at_12.39.35_PM_1767692519206.jpeg", 
+                logo: aixLogo, 
                 desc: "A global AI-focused summit and hackathon bringing founders, enterprises, and innovators together to build real-world AI solutions.",
                 link: "/programs/aix",
                 isExternal: false

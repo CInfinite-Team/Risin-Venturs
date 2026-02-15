@@ -982,7 +982,7 @@ export default function BuildWithUs() {
                 <div className="text-xs text-slate-400 uppercase tracking-widest">Years Experience</div>
               </div>
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-sm p-6 text-center">
-                <div className="text-4xl md:text-5xl font-heading font-bold text-white mb-2">15+</div>
+                <div className="text-4xl md:text-5xl font-heading font-bold text-white mb-2">8+</div>
                 <div className="text-xs text-slate-400 uppercase tracking-widest">Portfolio Companies</div>
               </div>
             </div>

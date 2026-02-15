@@ -856,22 +856,25 @@ export default function BuildWithUs() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               { 
-                icon: <Cpu className="w-10 h-10" />, 
+                icon: <Cpu className="w-6 h-6" />, 
                 title: "Deep Tech", 
                 desc: "IoT and AI are transforming industries through automation, intelligent systems, and data-driven insights. We back foundational technologies that drive efficiency and innovation across sectors.",
-                image: "https://risin.ventures/wp-content/uploads/2025/06/deeptech-300x300.webp"
+                color: "text-[#2b204c]",
+                borderColor: "border-[#2b204c]"
               },
               { 
-                icon: <Banknote className="w-10 h-10" />, 
+                icon: <Banknote className="w-6 h-6" />, 
                 title: "Fintech", 
                 desc: "Fintech is redefining access to capital and financial services, especially in emerging markets. Our focus is on ventures building inclusive, efficient, and scalable financial infrastructure.",
-                image: "https://risin.ventures/wp-content/uploads/2025/06/fintech-300x300.png"
+                color: "text-[#8b68f6]",
+                borderColor: "border-[#8b68f6]"
               },
               { 
-                icon: <Leaf className="w-10 h-10" />, 
+                icon: <Leaf className="w-6 h-6" />, 
                 title: "Sustainability", 
                 desc: "With climate change and resource challenges accelerating, sustainability is both a market need and a global priority. We invest in solutions that promote clean energy and long-term resilience.",
-                image: "https://risin.ventures/wp-content/uploads/2025/06/sustainability-300x300.png"
+                color: "text-[#952828]",
+                borderColor: "border-[#952828]"
               }
             ].map((item, i) => (
               <motion.div 
@@ -881,12 +884,12 @@ export default function BuildWithUs() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="group bg-[#F9FAFB] p-8 rounded-sm border border-slate-100 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all text-center"
+                className="group bg-white p-8 rounded-sm border border-slate-100 hover:shadow-lg transition-all text-left flex flex-col items-start h-full"
               >
-                <div className="w-20 h-20 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white shadow-lg">
-                  <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                <div className={`p-3 rounded-sm bg-slate-50 mb-6 ${item.color}`}>
+                  {item.icon}
                 </div>
-                <h3 className="text-xl font-heading font-bold text-[#2b204c] mb-4 uppercase">{item.title}</h3>
+                <h3 className={`text-xl font-heading font-bold mb-4 uppercase ${item.color} border-l-4 pl-3 ${item.borderColor}`}>{item.title}</h3>
                 <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}

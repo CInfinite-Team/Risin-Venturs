@@ -776,7 +776,7 @@ export default function BuildWithUs() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="flex md:grid md:grid-cols-3 gap-6 md:gap-8 overflow-x-auto pb-8 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0 snap-x snap-mandatory scrollbar-hide">
             {[
               { 
                 icon: <Lightbulb className="w-8 h-8" />, 
@@ -807,7 +807,7 @@ export default function BuildWithUs() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="group bg-white p-8 rounded-sm border border-slate-100 hover:shadow-xl hover:border-[#8b68f6]/30 transition-all relative overflow-hidden"
+                className="group min-w-[85vw] sm:min-w-[350px] md:min-w-0 snap-center bg-white p-8 rounded-sm border border-slate-100 hover:shadow-xl hover:border-[#8b68f6]/30 transition-all relative overflow-hidden h-full"
               >
                 <div className="absolute top-0 right-0 text-[120px] font-heading font-bold text-slate-50 leading-none -translate-y-4 translate-x-4 select-none">
                   {item.step}
@@ -819,6 +819,13 @@ export default function BuildWithUs() {
                 <p className="text-slate-500 leading-relaxed relative z-10">{item.desc}</p>
               </motion.div>
             ))}
+          </div>
+          
+          {/* Mobile Swipe Indicator */}
+          <div className="flex md:hidden justify-center gap-2 mt-2 mb-8">
+            <div className="text-[10px] text-slate-400 font-medium uppercase tracking-widest flex items-center gap-2 animate-pulse">
+              Swipe to explore <ArrowRight size={12} />
+            </div>
           </div>
           
           {/* Connection line for desktop */}
@@ -853,7 +860,7 @@ export default function BuildWithUs() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="flex md:grid md:grid-cols-3 gap-6 md:gap-6 overflow-x-auto pb-8 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0 snap-x snap-mandatory scrollbar-hide">
             {[
               { 
                 icon: <Cpu className="w-6 h-6" />, 
@@ -884,7 +891,7 @@ export default function BuildWithUs() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="group bg-white p-8 rounded-sm border border-slate-100 hover:shadow-lg transition-all text-left flex flex-col items-start h-full"
+                className="group min-w-[85vw] sm:min-w-[350px] md:min-w-0 snap-center bg-white p-8 rounded-sm border border-slate-100 hover:shadow-lg transition-all text-left flex flex-col items-start h-full"
               >
                 <div className={`p-3 rounded-sm bg-slate-50 mb-6 ${item.color}`}>
                   {item.icon}
@@ -893,6 +900,13 @@ export default function BuildWithUs() {
                 <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
+          </div>
+          
+          {/* Mobile Swipe Indicator */}
+          <div className="flex md:hidden justify-center gap-2 mt-2">
+            <div className="text-[10px] text-slate-400 font-medium uppercase tracking-widest flex items-center gap-2 animate-pulse">
+              Swipe to explore <ArrowRight size={12} />
+            </div>
           </div>
         </div>
       </motion.section>
@@ -1061,7 +1075,7 @@ export default function BuildWithUs() {
             <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-3 block">Explore More</span>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#2b204c] uppercase">Our Flagship Programs</h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="flex md:grid md:grid-cols-3 gap-6 md:gap-6 overflow-x-auto pb-8 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0 snap-x snap-mandatory scrollbar-hide">
             {[
               { title: "AIX Summit & Hackathon", desc: "AI-focused innovation challenge for enterprises and startups", link: "https://www.aixsummithack.com/", external: true, color: "bg-[#8b68f6]" },
               { title: "Sustainova Challenge", desc: "Sustainability-focused startup acceleration program", link: "https://sustainovachallenge.com/", external: true, color: "bg-[#2b204c]" },
@@ -1072,7 +1086,7 @@ export default function BuildWithUs() {
                 href={item.link}
                 target={item.external ? "_blank" : undefined}
                 rel={item.external ? "noopener noreferrer" : undefined}
-                className="group block p-8 bg-white rounded-sm border border-slate-100 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all"
+                className="group min-w-[85vw] sm:min-w-[350px] md:min-w-0 snap-center block p-8 bg-white rounded-sm border border-slate-100 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all h-full"
               >
                 <div className={`w-2 h-12 ${item.color} rounded-sm mb-6`}></div>
                 <h3 className="text-xl font-heading font-bold text-[#2b204c] mb-2 uppercase group-hover:text-[#8b68f6] transition-colors">{item.title}</h3>
@@ -1082,6 +1096,13 @@ export default function BuildWithUs() {
                 </span>
               </a>
             ))}
+          </div>
+          
+          {/* Mobile Swipe Indicator */}
+          <div className="flex md:hidden justify-center gap-2 mt-2">
+            <div className="text-[10px] text-slate-400 font-medium uppercase tracking-widest flex items-center gap-2 animate-pulse">
+              Swipe to explore <ArrowRight size={12} />
+            </div>
           </div>
         </div>
       </motion.section>

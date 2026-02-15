@@ -197,51 +197,131 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-56 md:pt-12 bg-[#2b204c] border-b border-slate-100">
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-28 md:pt-0 bg-[#2b204c] border-b border-slate-100">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[#2b204c]/30 z-10" />
+           {/* Background gradient/overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#2b204c] via-[#2b204c] to-[#2b204c]/90 z-10" />
           <img 
             src={heroBg} 
             alt="Abstract tech background" 
-            className="w-full h-full object-cover opacity-100"
+            className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-overlay"
           />
         </div>
 
         <div className="container relative z-20 px-6">
-          <motion.div 
-            initial="initial"
-            animate="animate"
-            variants={stagger}
-            className="max-w-4xl"
-          >
-            <motion.h1 
-              variants={fadeIn}
-              className="text-4xl md:text-7xl lg:text-8xl font-heading font-bold leading-[1.05] tracking-tighter mb-6 md:mb-8 uppercase text-white"
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <motion.div 
+              initial="initial"
+              animate="animate"
+              variants={stagger}
+              className="max-w-2xl"
             >
-              Building the next <br />
-              generation of <span className="text-[#8b68f6]">deeptech</span>
-            </motion.h1>
-            
-            <motion.p 
-              variants={fadeIn}
-              className="text-lg md:text-2xl text-slate-200 max-w-2xl mb-10 md:mb-14 font-light leading-relaxed"
-            >
-              We co-build, fund, and scale the next generation of disruptive enterprises. By merging institutional discipline with breakthrough science, we transform bold ideas into global industry leaders.
-            </motion.p>
+              <motion.div variants={fadeIn} className="inline-block mb-4">
+                <span className="bg-[#8b68f6]/10 text-[#8b68f6] border border-[#8b68f6]/20 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest backdrop-blur-sm">
+                  Venture Studio • Deep Tech • Ecosystem
+                </span>
+              </motion.div>
+              
+              <motion.h1 
+                variants={fadeIn}
+                className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold leading-[1.1] tracking-tighter mb-6 uppercase text-white"
+              >
+                Building the Next <br />
+                Generation of <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8b68f6] to-[#b39bfb]">Deep Tech</span>
+              </motion.h1>
+              
+              <motion.p 
+                variants={fadeIn}
+                className="text-lg text-slate-300 max-w-xl mb-8 font-light leading-relaxed"
+              >
+                We co-build, fund, and scale the next generation of disruptive enterprises in AI, Climate, and SaaS. By bridging government vision with enterprise collaboration, we transform bold ideas into global industry leaders.
+              </motion.p>
 
-            <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-5">
-              <Link href="/build-with-us">
-                <Button className="bg-[#8b68f6] text-white hover:bg-[#7a5bd6] transition-all rounded-sm h-14 md:h-16 px-10 text-base md:text-lg font-bold uppercase tracking-widest shadow-xl border-0">
-                  Build With Us
-                </Button>
-              </Link>
-              <a href="#programs">
-                <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#2b204c] transition-all rounded-sm h-14 md:h-16 px-10 text-base md:text-lg font-bold uppercase tracking-widest bg-transparent">
-                  Our Programs
-                </Button>
-              </a>
+              <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4">
+                <Link href="/build-with-us">
+                  <Button className="bg-[#8b68f6] text-white hover:bg-[#7a5bd6] transition-all rounded-sm h-14 px-8 text-base font-bold uppercase tracking-widest shadow-xl border-0 w-full sm:w-auto">
+                    Build With Us
+                  </Button>
+                </Link>
+                <Link href="/partners">
+                  <Button variant="outline" className="border-white/20 text-white hover:bg-white hover:text-[#2b204c] transition-all rounded-sm h-14 px-8 text-base font-bold uppercase tracking-widest bg-white/5 w-full sm:w-auto backdrop-blur-sm">
+                    Partner With Us
+                  </Button>
+                </Link>
+              </motion.div>
             </motion.div>
-          </motion.div>
+
+            {/* Right Visual */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="hidden lg:block relative h-[600px] w-full"
+            >
+               {/* Abstract 3D/Tech Visual Representation */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#8b68f6]/20 to-transparent rounded-full blur-3xl opacity-30 animate-pulse"></div>
+              <img 
+                src={heroBg} 
+                alt="Deep Tech Innovation" 
+                className="w-full h-full object-contain drop-shadow-2xl relative z-10 mask-image-gradient"
+                style={{ maskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)' }}
+              />
+              
+              {/* Floating Cards / Elements Animation */}
+              <div className="absolute top-1/4 -right-10 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-sm z-20 shadow-2xl animate-float">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-[#8b68f6] rounded-sm flex items-center justify-center text-white">
+                    <Rocket size={20} />
+                  </div>
+                  <div>
+                    <div className="text-white text-xs font-bold uppercase">Venture Building</div>
+                    <div className="text-slate-300 text-[10px]">From Zero to One</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="absolute bottom-1/4 -left-10 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-sm z-20 shadow-2xl animate-float-delayed">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-[#2b204c] border border-white/20 rounded-sm flex items-center justify-center text-white">
+                    <Network size={20} />
+                  </div>
+                  <div>
+                    <div className="text-white text-xs font-bold uppercase">Ecosystem</div>
+                    <div className="text-slate-300 text-[10px]">Strategic Partnerships</div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trusted By / Collaboration Section */}
+      <section className="py-10 bg-white border-b border-slate-100">
+        <div className="container mx-auto px-6">
+          <p className="text-center text-xs font-bold text-slate-400 uppercase tracking-[0.2em] mb-8">
+            In Strategic Collaboration With
+          </p>
+          
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+            {/* Logo Placeholders - Replace with actual SVGs/Images */}
+            <div className="h-8 md:h-10 flex items-center justify-center">
+               <span className="text-[#2b204c] font-bold text-xl md:text-2xl font-heading">QDB</span>
+            </div>
+            <div className="h-8 md:h-10 flex items-center justify-center">
+               <span className="text-[#2b204c] font-bold text-xl md:text-2xl font-heading">QSTP</span>
+            </div>
+            <div className="h-8 md:h-10 flex items-center justify-center">
+               <span className="text-[#2b204c] font-bold text-xl md:text-2xl font-heading">MTCIT</span>
+            </div>
+            <div className="h-8 md:h-10 flex items-center justify-center">
+               <span className="text-[#2b204c] font-bold text-xl md:text-2xl font-heading">CODE</span>
+            </div>
+            <div className="h-8 md:h-10 flex items-center justify-center">
+               <span className="text-[#2b204c] font-bold text-xl md:text-2xl font-heading">QU</span>
+            </div>
+          </div>
         </div>
       </section>
 

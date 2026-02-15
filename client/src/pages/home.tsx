@@ -346,19 +346,29 @@ export default function Home() {
       </section>
 
       {/* Trusted By / Collaboration Section */}
-      <section className="pt-16 pb-16 md:pt-20 md:pb-20 bg-white border-b border-slate-100 overflow-hidden">
-        <div className="container mx-auto px-6">
-          <p className="text-center text-slate-400 text-base md:text-lg font-medium mb-12 md:mb-16 tracking-wide">
-            Strategic Ecosystem Partners
-          </p>
+      <section className="py-20 md:py-24 bg-[#F7F8FC] border-t border-slate-100/50 overflow-hidden">
+        <div className="container mx-auto px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-2xl md:text-3xl font-medium text-[#2b204c] mb-4 tracking-tight">
+              Strategic Ecosystem Partners
+            </h2>
+            <p className="text-slate-500 text-sm md:text-base font-light mb-16 max-w-2xl mx-auto leading-relaxed">
+              Working alongside leading institutions advancing innovation across Qatar and the GCC.
+            </p>
+          </motion.div>
 
-          <div className="flex flex-nowrap md:flex-wrap overflow-x-auto md:overflow-visible items-center justify-start md:justify-center gap-8 md:gap-16 lg:gap-20 pb-4 md:pb-0 scrollbar-hide">
+          <div className="flex flex-nowrap md:flex-wrap overflow-x-auto md:overflow-visible items-center justify-start md:justify-center gap-12 md:gap-20 pb-4 md:pb-0 scrollbar-hide">
             {/* Logo Row */}
-            <img src={qdbLogo} alt="Qatar Development Bank" className="h-[60px] md:h-[72px] lg:h-[96px] w-auto object-contain grayscale opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0" />
-            <img src={qstpLogo} alt="Qatar Science & Technology Park" className="h-[60px] md:h-[72px] lg:h-[96px] w-auto object-contain grayscale opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0" />
-            <img src={mtcitLogo} alt="Ministry of Transport, Communications and Information Technology" className="h-[60px] md:h-[72px] lg:h-[96px] w-auto object-contain grayscale opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0" />
-            <img src={codeLogo} alt="Center of Digital Entrepreneurship" className="h-[50px] md:h-[60px] lg:h-[80px] w-auto object-contain grayscale opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0" />
-            <img src={quLogo} alt="Qatar University" className="h-[60px] md:h-[72px] lg:h-[96px] w-auto object-contain grayscale opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0" />
+            <img src={qdbLogo} alt="Qatar Development Bank" className="h-[60px] md:h-[90px] w-auto object-contain opacity-85 hover:opacity-100 hover:scale-105 transition-all duration-200 flex-shrink-0" />
+            <img src={qstpLogo} alt="Qatar Science & Technology Park" className="h-[60px] md:h-[90px] w-auto object-contain opacity-85 hover:opacity-100 hover:scale-105 transition-all duration-200 flex-shrink-0" />
+            <img src={mtcitLogo} alt="Ministry of Transport, Communications and Information Technology" className="h-[60px] md:h-[90px] w-auto object-contain opacity-85 hover:opacity-100 hover:scale-105 transition-all duration-200 flex-shrink-0" />
+            <img src={codeLogo} alt="Center of Digital Entrepreneurship" className="h-[50px] md:h-[80px] w-auto object-contain opacity-85 hover:opacity-100 hover:scale-105 transition-all duration-200 flex-shrink-0" />
+            <img src={quLogo} alt="Qatar University" className="h-[60px] md:h-[90px] w-auto object-contain opacity-85 hover:opacity-100 hover:scale-105 transition-all duration-200 flex-shrink-0" />
           </div>
         </div>
       </section>

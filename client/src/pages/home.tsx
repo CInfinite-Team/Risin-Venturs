@@ -424,7 +424,7 @@ export default function Home() {
                 className="min-w-[85vw] sm:min-w-[350px] md:min-w-0 snap-center flex flex-col p-8 md:p-12 bg-white border border-slate-100 shadow-sm hover:shadow-md hover:border-[#8b68f6]/30 transition-all duration-300 h-full rounded-sm"
               >
                 {program.logo && (
-                  <div className={`mb-6 md:mb-8 w-auto flex items-start ${program.title === "GCC GTM" ? "h-12 md:h-[60px]" : "h-8 md:h-10"}`}>
+                  <div className="mb-6 md:mb-8 h-8 md:h-10 w-auto flex items-start">
                     <img 
                       src={program.logo} 
                       alt={`${program.title} logo`} 

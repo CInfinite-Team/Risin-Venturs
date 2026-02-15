@@ -96,6 +96,47 @@ const initialFormData: FormData = {
   message: ""
 };
 
+const MobileCarousel = ({ items, renderItem, className = "" }: { items: any[], renderItem: (item: any, index: number) => React.ReactNode, className?: string }) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    const container = e.currentTarget;
+    const scrollPosition = container.scrollLeft;
+    const itemWidth = container.offsetWidth * 0.85; // Approximate item width based on 85vw
+    const index = Math.round(scrollPosition / itemWidth);
+    setActiveIndex(Math.min(Math.max(0, index), items.length - 1));
+  };
+
+  return (
+    <div className={`md:hidden ${className}`}>
+      <div 
+        className="flex gap-4 overflow-x-auto pb-6 -mx-6 px-6 snap-x snap-mandatory scrollbar-hide"
+        onScroll={handleScroll}
+      >
+        {items.map((item, i) => (
+          <div key={i} className="min-w-[85vw] snap-center">
+            {renderItem(item, i)}
+          </div>
+        ))}
+        {/* Spacer to allow the last item to be fully viewed if needed, though snap-center usually handles this well with padding */}
+        <div className="min-w-[4vw]" /> 
+      </div>
+      
+      {/* Dotted Indicators */}
+      <div className="flex justify-center gap-2 mt-2">
+        {items.map((_, i) => (
+          <div 
+            key={i} 
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              i === activeIndex ? "bg-[#8b68f6] w-4" : "bg-slate-300"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
 function SimpleApplicationForm({ 
   formData, 
   setFormData, 
@@ -776,7 +817,8 @@ export default function BuildWithUs() {
             </p>
           </div>
           
-          <div className="flex md:grid md:grid-cols-3 gap-6 md:gap-8 overflow-x-auto pb-8 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0 snap-x snap-mandatory scrollbar-hide">
+          {/* Desktop Grid */}
+          <div className="hidden md:grid md:grid-cols-3 gap-8">
             {[
               { 
                 icon: <Lightbulb className="w-8 h-8" />, 
@@ -807,7 +849,7 @@ export default function BuildWithUs() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="group min-w-[85vw] sm:min-w-[350px] md:min-w-0 snap-center bg-white p-8 rounded-sm border border-slate-100 hover:shadow-xl hover:border-[#8b68f6]/30 transition-all relative overflow-hidden h-full"
+                className="group bg-white p-8 rounded-sm border border-slate-100 hover:shadow-xl hover:border-[#8b68f6]/30 transition-all relative overflow-hidden h-full"
               >
                 <div className="absolute top-0 right-0 text-[120px] font-heading font-bold text-slate-50 leading-none -translate-y-4 translate-x-4 select-none">
                   {item.step}
@@ -820,13 +862,45 @@ export default function BuildWithUs() {
               </motion.div>
             ))}
           </div>
-          
-          {/* Mobile Swipe Indicator */}
-          <div className="flex md:hidden justify-center gap-2 mt-2 mb-8">
-            <div className="text-[10px] text-slate-400 font-medium uppercase tracking-widest flex items-center gap-2 animate-pulse">
-              Swipe to explore <ArrowRight size={12} />
-            </div>
-          </div>
+
+          {/* Mobile Carousel */}
+          <MobileCarousel 
+            items={[
+              { 
+                icon: <Lightbulb className="w-8 h-8" />, 
+                step: "01", 
+                title: "Ideation", 
+                desc: "We identify market opportunities and validate innovative solutions through deep research and analysis. Multiple concepts are tested in parallel to find the best fit.",
+                color: "bg-[#8b68f6]"
+              },
+              { 
+                icon: <Users className="w-8 h-8" />, 
+                step: "02", 
+                title: "Team Building", 
+                desc: "We assemble world-class teams of entrepreneurs, operators, and domain experts to execute on the vision. Cross-functional support at every stage.",
+                color: "bg-[#2b204c]"
+              },
+              { 
+                icon: <Rocket className="w-8 h-8" />, 
+                step: "03", 
+                title: "Execution", 
+                desc: "We provide hands-on support, capital, and strategic guidance to scale companies from zero to market leaders. Access to investors and acquisition paths.",
+                color: "bg-[#952828]"
+              }
+            ]}
+            renderItem={(item, i) => (
+              <div className="group bg-white p-8 rounded-sm border border-slate-100 shadow-sm h-full relative overflow-hidden">
+                <div className="absolute top-0 right-0 text-[100px] font-heading font-bold text-slate-50 leading-none -translate-y-2 translate-x-2 select-none">
+                  {item.step}
+                </div>
+                <div className={`w-14 h-14 ${item.color} rounded-sm flex items-center justify-center mb-6 text-white relative z-10`}>
+                  {item.icon}
+                </div>
+                <h3 className="text-lg font-heading font-bold text-[#2b204c] mb-3 uppercase relative z-10">{item.title}</h3>
+                <p className="text-slate-500 text-sm leading-relaxed relative z-10">{item.desc}</p>
+              </div>
+            )}
+          />
           
           {/* Connection line for desktop */}
           <div className="hidden md:flex justify-center mt-8">
@@ -860,7 +934,8 @@ export default function BuildWithUs() {
             </p>
           </div>
           
-          <div className="flex md:grid md:grid-cols-3 gap-6 md:gap-6 overflow-x-auto pb-8 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0 snap-x snap-mandatory scrollbar-hide">
+          {/* Desktop Grid */}
+          <div className="hidden md:grid md:grid-cols-3 gap-6">
             {[
               { 
                 icon: <Cpu className="w-6 h-6" />, 
@@ -891,7 +966,7 @@ export default function BuildWithUs() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="group min-w-[85vw] sm:min-w-[350px] md:min-w-0 snap-center bg-white p-8 rounded-sm border border-slate-100 hover:shadow-lg transition-all text-left flex flex-col items-start h-full"
+                className="group bg-white p-8 rounded-sm border border-slate-100 hover:shadow-lg transition-all text-left flex flex-col items-start h-full"
               >
                 <div className={`p-3 rounded-sm bg-slate-50 mb-6 ${item.color}`}>
                   {item.icon}
@@ -901,13 +976,42 @@ export default function BuildWithUs() {
               </motion.div>
             ))}
           </div>
-          
-          {/* Mobile Swipe Indicator */}
-          <div className="flex md:hidden justify-center gap-2 mt-2">
-            <div className="text-[10px] text-slate-400 font-medium uppercase tracking-widest flex items-center gap-2 animate-pulse">
-              Swipe to explore <ArrowRight size={12} />
-            </div>
-          </div>
+
+          {/* Mobile Carousel */}
+          <MobileCarousel 
+            items={[
+              { 
+                icon: <Cpu className="w-6 h-6" />, 
+                title: "Deep Tech", 
+                desc: "IoT and AI are transforming industries through automation, intelligent systems, and data-driven insights. We back foundational technologies that drive efficiency and innovation across sectors.",
+                color: "text-[#2b204c]",
+                borderColor: "border-[#2b204c]"
+              },
+              { 
+                icon: <Banknote className="w-6 h-6" />, 
+                title: "Fintech", 
+                desc: "Fintech is redefining access to capital and financial services, especially in emerging markets. Our focus is on ventures building inclusive, efficient, and scalable financial infrastructure.",
+                color: "text-[#8b68f6]",
+                borderColor: "border-[#8b68f6]"
+              },
+              { 
+                icon: <Leaf className="w-6 h-6" />, 
+                title: "Sustainability", 
+                desc: "With climate change and resource challenges accelerating, sustainability is both a market need and a global priority. We invest in solutions that promote clean energy and long-term resilience.",
+                color: "text-[#952828]",
+                borderColor: "border-[#952828]"
+              }
+            ]}
+            renderItem={(item, i) => (
+              <div className="group bg-white p-8 rounded-sm border border-slate-100 shadow-sm text-left flex flex-col items-start h-full">
+                <div className={`p-3 rounded-sm bg-slate-50 mb-6 ${item.color}`}>
+                  {item.icon}
+                </div>
+                <h3 className={`text-xl font-heading font-bold mb-4 uppercase ${item.color} border-l-4 pl-3 ${item.borderColor}`}>{item.title}</h3>
+                <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            )}
+          />
         </div>
       </motion.section>
 
@@ -1075,7 +1179,8 @@ export default function BuildWithUs() {
             <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-3 block">Explore More</span>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#2b204c] uppercase">Our Flagship Programs</h2>
           </div>
-          <div className="flex md:grid md:grid-cols-3 gap-6 md:gap-6 overflow-x-auto pb-8 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0 snap-x snap-mandatory scrollbar-hide">
+          {/* Desktop Grid */}
+          <div className="hidden md:grid md:grid-cols-3 gap-6">
             {[
               { title: "AIX Summit & Hackathon", desc: "AI-focused innovation challenge for enterprises and startups", link: "https://www.aixsummithack.com/", external: true, color: "bg-[#8b68f6]" },
               { title: "Sustainova Challenge", desc: "Sustainability-focused startup acceleration program", link: "https://sustainovachallenge.com/", external: true, color: "bg-[#2b204c]" },
@@ -1086,7 +1191,7 @@ export default function BuildWithUs() {
                 href={item.link}
                 target={item.external ? "_blank" : undefined}
                 rel={item.external ? "noopener noreferrer" : undefined}
-                className="group min-w-[85vw] sm:min-w-[350px] md:min-w-0 snap-center block p-8 bg-white rounded-sm border border-slate-100 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all h-full"
+                className="group block p-8 bg-white rounded-sm border border-slate-100 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all h-full"
               >
                 <div className={`w-2 h-12 ${item.color} rounded-sm mb-6`}></div>
                 <h3 className="text-xl font-heading font-bold text-[#2b204c] mb-2 uppercase group-hover:text-[#8b68f6] transition-colors">{item.title}</h3>
@@ -1097,13 +1202,30 @@ export default function BuildWithUs() {
               </a>
             ))}
           </div>
-          
-          {/* Mobile Swipe Indicator */}
-          <div className="flex md:hidden justify-center gap-2 mt-2">
-            <div className="text-[10px] text-slate-400 font-medium uppercase tracking-widest flex items-center gap-2 animate-pulse">
-              Swipe to explore <ArrowRight size={12} />
-            </div>
-          </div>
+
+          {/* Mobile Carousel */}
+          <MobileCarousel 
+            items={[
+              { title: "AIX Summit & Hackathon", desc: "AI-focused innovation challenge for enterprises and startups", link: "https://www.aixsummithack.com/", external: true, color: "bg-[#8b68f6]" },
+              { title: "Sustainova Challenge", desc: "Sustainability-focused startup acceleration program", link: "https://sustainovachallenge.com/", external: true, color: "bg-[#2b204c]" },
+              { title: "Entrepreneurship Awards", desc: "Celebrating Qatar's most innovative founders", link: "https://qatarentrepreneurshipawards.com/", external: true, color: "bg-[#952828]" }
+            ]}
+            renderItem={(item, i) => (
+              <a 
+                href={item.link}
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener noreferrer" : undefined}
+                className="group block p-8 bg-white rounded-sm border border-slate-100 shadow-sm transition-all h-full"
+              >
+                <div className={`w-2 h-12 ${item.color} rounded-sm mb-6`}></div>
+                <h3 className="text-lg font-heading font-bold text-[#2b204c] mb-2 uppercase group-hover:text-[#8b68f6] transition-colors">{item.title}</h3>
+                <p className="text-slate-500 text-sm mb-4">{item.desc}</p>
+                <span className="text-[10px] font-bold text-[#8b68f6] uppercase tracking-widest flex items-center gap-2">
+                  Learn More <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                </span>
+              </a>
+            )}
+          />
         </div>
       </motion.section>
 

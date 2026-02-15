@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { ArrowRight, Globe, TrendingUp, Shield, Zap, Menu, X, Rocket, Cpu, Network, Building2, ChevronDown } from "lucide-react";
 import heroBg from "@/assets/hero-concepts/option6-core.png";
 import gccGtmLogo from "@assets/GCC_GTM_with_ascending_gradient_arrow_1771153840911.png";
@@ -10,7 +10,7 @@ import mtcitLogo from "@assets/image_1771155334710.png";
 import codeLogo from "@assets/image_1771155293821.png";
 import quLogo from "@assets/image_1771155208266.png";
 import { Button } from "@/components/ui/button";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 import ScrollToTop from "@/components/ScrollToTop";
 import Footer from "@/components/Footer";
@@ -52,6 +52,49 @@ const NavDropdown = ({ title, items, isPrimary }: { title: string, items: { labe
         </div>
       </div>
     </div>
+  );
+};
+
+// Helper Component for Counting Animation
+const CountUp = ({ from = 0, to, duration = 2, prefix = "", suffix = "", delay = 0 }: { from?: number, to: number, duration?: number, prefix?: string, suffix?: string, delay?: number }) => {
+  const [count, setCount] = useState(from);
+  const nodeRef = useRef(null);
+  const inView = useInView(nodeRef, { once: true, margin: "-50px" });
+
+  useEffect(() => {
+    if (inView) {
+      let startTime: number | null = null;
+      let animationFrame: number;
+
+      const animate = (timestamp: number) => {
+        if (!startTime) startTime = timestamp;
+        const progress = Math.min((timestamp - startTime) / (duration * 1000), 1);
+        
+        // Ease out quart
+        const easeOut = 1 - Math.pow(1 - progress, 4);
+        
+        setCount(Math.floor(from + (to - from) * easeOut));
+
+        if (progress < 1) {
+          animationFrame = requestAnimationFrame(animate);
+        }
+      };
+
+      const timer = setTimeout(() => {
+        animationFrame = requestAnimationFrame(animate);
+      }, delay * 1000);
+
+      return () => {
+        clearTimeout(timer);
+        cancelAnimationFrame(animationFrame);
+      };
+    }
+  }, [inView, from, to, duration, delay]);
+
+  return (
+    <span ref={nodeRef} className="tabular-nums">
+      {prefix}{count}{suffix}
+    </span>
   );
 };
 
@@ -332,17 +375,25 @@ export default function Home() {
           >
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 w-full max-w-5xl mb-8">
               {[
-                { label: "Startups Supported", value: "500+" },
-                { label: "Capital Enabled", value: "$100M+" },
-                { label: "Markets Across GCC & Beyond", value: "10+" }
+                { label: "Startups Supported", value: 500, suffix: "+", prefix: "" },
+                { label: "Capital Enabled", value: 100, suffix: "M+", prefix: "$" },
+                { label: "Markets Across GCC & Beyond", value: 10, suffix: "+", prefix: "" }
               ].map((metric, i) => (
                 <div key={i} className="flex flex-col items-center md:items-start text-center md:text-left">
                   <span className="text-4xl md:text-6xl font-heading font-bold text-[#2b204c] mb-2 tracking-tighter">
-                    {metric.value}
+                    <CountUp to={metric.value} suffix={metric.suffix} prefix={metric.prefix} delay={i * 0.2} />
                   </span>
                   <span className="text-sm md:text-base text-slate-500 font-medium uppercase tracking-widest">
                     {metric.label}
                   </span>
+                  {/* Option A: Progressive Fill Bar (Subtle) */}
+                  <motion.div 
+                    initial={{ width: 0 }}
+                    whileInView={{ width: "40px" }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.5 + (i * 0.2), ease: "easeOut" }}
+                    className="h-1 bg-[#8b68f6] mt-4 rounded-full"
+                  />
                 </div>
               ))}
             </div>

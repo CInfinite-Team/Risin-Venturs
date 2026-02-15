@@ -204,10 +204,11 @@ function SimpleApplicationForm({
 
       <div className="space-y-4">
         <div>
-          <label className="block text-xs font-bold text-[#2b204c] mb-1 uppercase tracking-wider">
+          <label htmlFor="fullName" className="block text-xs font-bold text-[#2b204c] mb-1 uppercase tracking-wider">
             Full Name <span className="text-[#952828]">*</span>
           </label>
           <input
+            id="fullName"
             type="text"
             value={formData.fullName}
             onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
@@ -218,10 +219,11 @@ function SimpleApplicationForm({
           />
         </div>
         <div>
-          <label className="block text-xs font-bold text-[#2b204c] mb-1 uppercase tracking-wider">
+          <label htmlFor="email" className="block text-xs font-bold text-[#2b204c] mb-1 uppercase tracking-wider">
             Email <span className="text-[#952828]">*</span>
           </label>
           <input
+            id="email"
             type="email"
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -232,10 +234,11 @@ function SimpleApplicationForm({
           />
         </div>
         <div>
-          <label className="block text-xs font-bold text-[#2b204c] mb-1 uppercase tracking-wider">
+          <label htmlFor="linkedin" className="block text-xs font-bold text-[#2b204c] mb-1 uppercase tracking-wider">
             LinkedIn Profile <span className="text-[#952828]">*</span>
           </label>
           <input
+            id="linkedin"
             type="url"
             value={formData.linkedin}
             onChange={(e) => setFormData({ ...formData, linkedin: e.target.value })}
@@ -246,10 +249,11 @@ function SimpleApplicationForm({
           />
         </div>
         <div>
-          <label className="block text-xs font-bold text-[#2b204c] mb-1 uppercase tracking-wider">
+          <label htmlFor="role" className="block text-xs font-bold text-[#2b204c] mb-1 uppercase tracking-wider">
             Role Interest <span className="text-[#952828]">*</span>
           </label>
           <select
+             id="role"
              value={formData.role || ""}
              onChange={(e) => setFormData({ ...formData, role: e.target.value })}
              className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#8b68f6] focus:ring-2 focus:ring-[#8b68f6]/20 outline-none transition-all text-sm bg-white"
@@ -264,10 +268,11 @@ function SimpleApplicationForm({
           </select>
         </div>
         <div>
-          <label className="block text-xs font-bold text-[#2b204c] mb-1 uppercase tracking-wider">
+          <label htmlFor="message" className="block text-xs font-bold text-[#2b204c] mb-1 uppercase tracking-wider">
             Why this venture?
           </label>
           <textarea
+            id="message"
             value={formData.message || ""}
             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
             placeholder="Briefly tell us why you're a good fit..."
@@ -358,10 +363,11 @@ function ApplicationForm({
 
       <div className="grid md:grid-cols-2 gap-6">
         <div>
-          <label className="block text-sm font-bold text-[#2b204c] mb-2">
+          <label htmlFor="app-fullname" className="block text-sm font-bold text-[#2b204c] mb-2">
             Full Name <span className="text-[#952828]">*</span>
           </label>
           <input
+            id="app-fullname"
             type="text"
             value={formData.fullName}
             onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
@@ -371,10 +377,11 @@ function ApplicationForm({
           />
         </div>
         <div>
-          <label className="block text-sm font-bold text-[#2b204c] mb-2">
+          <label htmlFor="app-email" className="block text-sm font-bold text-[#2b204c] mb-2">
             Email <span className="text-[#952828]">*</span>
           </label>
           <input
+            id="app-email"
             type="email"
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -387,10 +394,11 @@ function ApplicationForm({
 
       <div className="grid md:grid-cols-2 gap-6">
         <div>
-          <label className="block text-sm font-bold text-[#2b204c] mb-2">
+          <label htmlFor="app-phone" className="block text-sm font-bold text-[#2b204c] mb-2">
             Phone Number
           </label>
           <input
+            id="app-phone"
             type="tel"
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -400,10 +408,11 @@ function ApplicationForm({
           />
         </div>
         <div>
-          <label className="block text-sm font-bold text-[#2b204c] mb-2">
+          <label htmlFor="app-linkedin" className="block text-sm font-bold text-[#2b204c] mb-2">
             LinkedIn Profile <span className="text-[#952828]">*</span>
           </label>
           <input
+            id="app-linkedin"
             type="url"
             value={formData.linkedin}
             onChange={(e) => setFormData({ ...formData, linkedin: e.target.value })}
@@ -416,10 +425,11 @@ function ApplicationForm({
 
       <div className="grid md:grid-cols-2 gap-6">
         <div>
-          <label className="block text-sm font-bold text-[#2b204c] mb-2">
+          <label htmlFor="app-location" className="block text-sm font-bold text-[#2b204c] mb-2">
             Location <span className="text-[#952828]">*</span>
           </label>
           <select
+            id="app-location"
             value={formData.location}
             onChange={(e) => setFormData({ ...formData, location: e.target.value })}
             className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#8b68f6] focus:ring-2 focus:ring-[#8b68f6]/20 outline-none transition-all bg-white"
@@ -432,10 +442,11 @@ function ApplicationForm({
           </select>
         </div>
         <div>
-          <label className="block text-sm font-bold text-[#2b204c] mb-2">
+          <label htmlFor="app-journey" className="block text-sm font-bold text-[#2b204c] mb-2">
             Founder Journey Stage <span className="text-[#952828]">*</span>
           </label>
           <select
+            id="app-journey"
             value={formData.founderJourney}
             onChange={(e) => setFormData({ ...formData, founderJourney: e.target.value })}
             className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#8b68f6] focus:ring-2 focus:ring-[#8b68f6]/20 outline-none transition-all bg-white"
@@ -451,10 +462,11 @@ function ApplicationForm({
 
       <div className="grid md:grid-cols-2 gap-6">
         <div>
-          <label className="block text-sm font-bold text-[#2b204c] mb-2">
+          <label htmlFor="app-experience" className="block text-sm font-bold text-[#2b204c] mb-2">
             Startup Experience
           </label>
           <select
+            id="app-experience"
             value={formData.startupExperience}
             onChange={(e) => setFormData({ ...formData, startupExperience: e.target.value })}
             className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#8b68f6] focus:ring-2 focus:ring-[#8b68f6]/20 outline-none transition-all bg-white"
@@ -467,10 +479,11 @@ function ApplicationForm({
           </select>
         </div>
         <div>
-          <label className="block text-sm font-bold text-[#2b204c] mb-2">
+          <label htmlFor="app-timeline" className="block text-sm font-bold text-[#2b204c] mb-2">
             Launch Timeline <span className="text-[#952828]">*</span>
           </label>
           <select
+            id="app-timeline"
             value={formData.launchTimeline}
             onChange={(e) => setFormData({ ...formData, launchTimeline: e.target.value })}
             className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#8b68f6] focus:ring-2 focus:ring-[#8b68f6]/20 outline-none transition-all bg-white"
@@ -487,10 +500,11 @@ function ApplicationForm({
 
       <div className="grid md:grid-cols-2 gap-6">
         <div>
-          <label className="block text-sm font-bold text-[#2b204c] mb-2">
+          <label htmlFor="app-thesis" className="block text-sm font-bold text-[#2b204c] mb-2">
             Thesis Alignment <span className="text-[#952828]">*</span>
           </label>
           <select
+            id="app-thesis"
             value={formData.thesisAlignment}
             onChange={(e) => setFormData({ ...formData, thesisAlignment: e.target.value })}
             className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#8b68f6] focus:ring-2 focus:ring-[#8b68f6]/20 outline-none transition-all bg-white"
@@ -503,10 +517,11 @@ function ApplicationForm({
           </select>
         </div>
         <div>
-          <label className="block text-sm font-bold text-[#2b204c] mb-2">
+          <label htmlFor="app-source" className="block text-sm font-bold text-[#2b204c] mb-2">
             How did you hear about us? <span className="text-[#952828]">*</span>
           </label>
           <select
+            id="app-source"
             value={formData.howHeard}
             onChange={(e) => setFormData({ ...formData, howHeard: e.target.value })}
             className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#8b68f6] focus:ring-2 focus:ring-[#8b68f6]/20 outline-none transition-all bg-white"
@@ -524,10 +539,11 @@ function ApplicationForm({
       </div>
 
       <div>
-        <label className="block text-sm font-bold text-[#2b204c] mb-2">
+        <label htmlFor="app-idea" className="block text-sm font-bold text-[#2b204c] mb-2">
           Tell us about your idea
         </label>
         <textarea
+          id="app-idea"
           value={formData.ideaDescription}
           onChange={(e) => setFormData({ ...formData, ideaDescription: e.target.value })}
           placeholder="Share your vision—the problem you're solving, your proposed solution, target market, and business model. We're genuinely curious about what excites you."
@@ -538,10 +554,11 @@ function ApplicationForm({
       </div>
 
       <div>
-        <label className="block text-sm font-bold text-[#2b204c] mb-2">
+        <label htmlFor="app-team" className="block text-sm font-bold text-[#2b204c] mb-2">
           Tell us about yourself and your co-founders
         </label>
         <textarea
+          id="app-team"
           value={formData.teamDescription}
           onChange={(e) => setFormData({ ...formData, teamDescription: e.target.value })}
           placeholder="Share your background, relevant experience, and links to your portfolio, GitHub, awards, or previous work. Who's on your team?"
@@ -563,10 +580,11 @@ function ApplicationForm({
           </div>
         </div>
         <div>
-          <label className="block text-sm font-bold text-[#2b204c] mb-2">
+          <label htmlFor="app-referral" className="block text-sm font-bold text-[#2b204c] mb-2">
             Referral Name
           </label>
           <input
+            id="app-referral"
             type="text"
             value={formData.referralName}
             onChange={(e) => setFormData({ ...formData, referralName: e.target.value })}

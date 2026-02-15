@@ -137,7 +137,9 @@ export default function Footer() {
             <p className="text-slate-300 text-sm">Get the latest insights on deep tech and venture building.</p>
           </div>
           <div className="flex w-full md:w-auto relative z-10">
+            <label htmlFor="newsletter-email" className="sr-only">Email address</label>
             <input 
+              id="newsletter-email"
               type="email" 
               placeholder="Email address" 
               className="bg-white/10 border border-white/20 rounded-l-sm px-6 py-4 text-sm text-white placeholder:text-slate-400 focus:ring-1 focus:ring-[#8b68f6] w-full md:min-w-[300px] outline-none transition-all"

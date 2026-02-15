@@ -17,28 +17,28 @@ const sectionVariants = {
 
 const advisors = [
   {
-    name: "Advisor Name",
+    name: "Dr. Amin Al-Yaqout",
     role: "Strategic Advisor",
     image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face",
     bio: "Industry veteran with deep expertise in technology and venture building.",
     linkedin: "#"
   },
   {
-    name: "Advisor Name",
+    name: "Sarah Al-Mansoori",
     role: "Technical Advisor",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face",
     bio: "Expert in deep tech with extensive experience in AI and deeptech.",
     linkedin: "#"
   },
   {
-    name: "Advisor Name",
+    name: "Khalid Al-Thani",
     role: "Investment Advisor",
     image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&crop=face",
     bio: "Seasoned investor with a track record of successful exits in MENA region.",
     linkedin: "#"
   },
   {
-    name: "Advisor Name",
+    name: "Noura Al-Kaabi",
     role: "Ecosystem Advisor",
     image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face",
     bio: "Ecosystem builder with connections across GCC startup communities.",

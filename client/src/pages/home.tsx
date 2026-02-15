@@ -512,8 +512,8 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16 max-w-3xl mx-auto">
             <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-3 block">Our Services</span>
-            <h2 className="text-3xl md:text-5xl font-heading font-bold leading-none uppercase mb-6">
-              Supporting the <span className="text-stroke text-[#2b204c]">Full Lifecycle</span>
+            <h2 className="text-3xl md:text-5xl font-heading font-bold leading-none uppercase mb-6 text-[#2b204c]">
+              Supporting the Full Lifecycle
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed">
               We provide tailored support for founders at every stage of their journey, from initial spark to global scale.

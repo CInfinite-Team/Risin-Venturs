@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Globe, TrendingUp, Shield, Zap, Menu, X, Rocket, Cpu, Network, Building2, ChevronDown } from "lucide-react";
 import heroBg from "@/assets/hero-concepts/option6-core.png";
+import gccGtmLogo from "@assets/GCC_GTM_with_ascending_gradient_arrow_1771153840911.png";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
@@ -412,7 +413,7 @@ export default function Home() {
               },
               {
                 title: "GCC GTM",
-                logo: null,
+                logo: gccGtmLogo,
                 desc: "Accelerating global deep-tech ventures' entry into the GCC markets through strategic partnerships and localized scaling.",
                 link: "/programs/gtm",
                 isExternal: false

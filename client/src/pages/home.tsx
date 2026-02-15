@@ -358,9 +358,100 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* Venture Building Section (Core Differentiator) */}
       <motion.section 
-        id="about" 
+        id="venture-building"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={sectionVariants}
+        className="py-16 md:py-24 relative bg-[#F9FAFB] border-b border-slate-100"
+      >
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+            <div className="lg:w-1/2">
+              <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-3 block">Core Differentiator</span>
+              <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold leading-none uppercase mb-6">
+                Venture <br/>
+                <span className="text-[#2b204c]">Building</span>
+              </h2>
+              <p className="text-lg text-slate-600 leading-relaxed mb-8">
+                From idea to execution, we co-build startups by assembling teams, shaping products, and embedding execution discipline from day one. We don't just invest; we are operational partners.
+              </p>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-[#8b68f6]/10 flex items-center justify-center shrink-0">
+                    <Rocket className="text-[#8b68f6] w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-[#2b204c] mb-2 uppercase text-sm tracking-wide">Co-Building</h4>
+                    <p className="text-sm text-slate-500 leading-relaxed">Hands-on operational support to build products and teams.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-[#8b68f6]/10 flex items-center justify-center shrink-0">
+                    <TrendingUp className="text-[#8b68f6] w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-[#2b204c] mb-2 uppercase text-sm tracking-wide">Capital + Execution</h4>
+                    <p className="text-sm text-slate-500 leading-relaxed">Bridging the gap between funding and operational excellence.</p>
+                  </div>
+                </div>
+              </div>
+
+              <Link href="/venture-studio/venture-builder">
+                <Button className="bg-[#2b204c] text-white hover:bg-[#8b68f6] transition-all uppercase tracking-widest text-xs font-bold rounded-sm px-8 h-12 shadow-lg">
+                  Explore Venture Building
+                </Button>
+              </Link>
+            </div>
+            
+            <div className="lg:w-1/2 relative">
+               <div className="absolute inset-0 bg-gradient-to-tr from-[#8b68f6]/20 to-transparent rounded-full blur-3xl opacity-30"></div>
+               <div className="relative bg-white border border-slate-100 p-8 md:p-12 rounded-sm shadow-xl">
+                 <div className="flex items-center justify-between mb-8 border-b border-slate-50 pb-6">
+                   <div className="flex items-center gap-4">
+                     <div className="w-12 h-12 bg-[#2b204c] text-white flex items-center justify-center rounded-sm">
+                       <Building2 size={24} />
+                     </div>
+                     <div>
+                       <h3 className="text-lg font-bold text-[#2b204c] uppercase">The Studio Model</h3>
+                       <p className="text-xs text-slate-400 uppercase tracking-widest">Systematic Innovation</p>
+                     </div>
+                   </div>
+                   <div className="bg-[#952828] text-white text-[9px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">
+                     Proven
+                   </div>
+                 </div>
+                 
+                 <div className="space-y-6">
+                   {[
+                     { step: "01", title: "Ideation & Validation", desc: " rigorous market testing" },
+                     { step: "02", title: "Team Assembly", desc: "Recruiting technical & commercial co-founders" },
+                     { step: "03", title: "Product Development", desc: "MVP build & iteration" },
+                     { step: "04", title: "Go-to-Market", desc: "First customers & revenue" },
+                     { step: "05", title: "Scale & Spin-out", desc: "Growth capital & independence" }
+                   ].map((item, i) => (
+                     <div key={i} className="flex items-center gap-4 group">
+                       <span className="text-xs font-bold text-slate-300 group-hover:text-[#8b68f6] transition-colors font-mono">{item.step}</span>
+                       <div className="h-px bg-slate-100 flex-1 group-hover:bg-[#8b68f6]/30 transition-colors"></div>
+                       <div className="text-right">
+                         <h4 className="text-sm font-bold text-[#2b204c] uppercase">{item.title}</h4>
+                         <p className="text-[10px] text-slate-400 uppercase tracking-wide">{item.desc}</p>
+                       </div>
+                     </div>
+                   ))}
+                 </div>
+               </div>
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Services Section (Acceleration, Incubation, Innovation) */}
+      <motion.section 
+        id="services" 
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
@@ -368,22 +459,17 @@ export default function Home() {
         className="py-16 md:py-20 relative bg-white"
       >
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-12">
-            <div className="md:w-1/2">
-              <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-3 block">Our Story</span>
-              <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold leading-none uppercase">
-                TRANSFORMING IDEAS INTO <br className="hidden md:block"/>
-                <span className="text-stroke text-[#2b204c]">GLOBAL GIANTS</span>
-              </h2>
-            </div>
-            <div className="md:w-1/2">
-              <p className="text-lg md:text-xl text-slate-600 leading-relaxed">
-                Founded at the intersection of capital and engineering, Risin Ventures was born from a simple realization: the brightest minds in deep tech often lack the infrastructure to scale. We don't just invest; we co-build. Our mission is to accelerate the transition to a sustainable future by backing the pioneers of AI, IoT, and Deeptech.
-              </p>
-            </div>
+          <div className="text-center mb-16 max-w-3xl mx-auto">
+            <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-3 block">Our Services</span>
+            <h2 className="text-3xl md:text-5xl font-heading font-bold leading-none uppercase mb-6">
+              Supporting the <span className="text-stroke text-[#2b204c]">Full Lifecycle</span>
+            </h2>
+            <p className="text-lg text-slate-600 leading-relaxed">
+              We provide tailored support for founders at every stage of their journey, from initial spark to global scale.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { 
                 icon: <Zap className="w-8 h-8" />, 
@@ -402,30 +488,13 @@ export default function Home() {
                 title: "Acceleration", 
                 desc: "We accelerate startups through structured programs, mentorship, regulatory readiness, and access to enterprise and investor networks.",
                 link: "/venture-studio/acceleration"
-              },
-              { 
-                icon: <Building2 className="w-8 h-8" />, 
-                title: "Venture Building", 
-                desc: "From idea to execution, we co-build startups by assembling teams, shaping products, and embedding execution discipline from day one.",
-                link: "/venture-studio/venture-builder"
               }
             ].map((value, i) => (
               <div 
                 key={i}
-                className={`flex flex-col p-10 border transition-all duration-300 shadow-sm hover:shadow-md h-full relative overflow-hidden ${
-                  value.title === "Venture Building" 
-                    ? "border-[#8b68f6] bg-white ring-1 ring-[#8b68f6]/20" 
-                    : "border-slate-100 bg-[#F9FAFB] hover:border-[#8b68f6]/30"
-                }`}
+                className="flex flex-col p-10 border border-slate-100 bg-[#F9FAFB] transition-all duration-300 shadow-sm hover:shadow-md hover:border-[#8b68f6]/30 h-full relative overflow-hidden group"
               >
-                {value.title === "Venture Building" && (
-                  <div className="absolute top-0 right-0">
-                    <div className="bg-[#952828] text-white text-[8px] font-bold uppercase tracking-[0.2em] px-3 py-1 rounded-bl-sm">
-                      Core Differentiator
-                    </div>
-                  </div>
-                )}
-                <div className={`${value.title === "Venture Building" ? "text-[#8b68f6]" : "text-[#2b204c]"} mb-6`}>
+                <div className="text-[#2b204c] group-hover:text-[#8b68f6] transition-colors mb-6">
                   {value.icon}
                 </div>
                 <h3 className="text-xl font-heading font-bold text-[#2b204c] mb-4 uppercase tracking-tight">
@@ -434,7 +503,7 @@ export default function Home() {
                 <p className="text-slate-500 text-sm leading-relaxed mb-8 flex-1">
                   {value.desc}
                 </p>
-                <Link href={value.link} className="text-[10px] font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-1 transition-colors cursor-pointer">
+                <Link href={value.link} className="text-[10px] font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-1 transition-colors cursor-pointer mt-auto">
                     Know More <ArrowRight size={10} />
                 </Link>
               </div>
@@ -886,6 +955,46 @@ export default function Home() {
           </div>
         </div>
       </motion.section>
+
+      {/* Final CTA Section */}
+      <section className="py-20 md:py-28 bg-[#2b204c] relative overflow-hidden">
+         <div className="absolute inset-0 bg-gradient-to-r from-[#2b204c] to-[#2b204c]/90 z-10"></div>
+         {/* Abstract background elements */}
+         <div className="absolute top-0 right-0 w-full h-full opacity-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-overlay z-0"></div>
+         <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#8b68f6] rounded-full blur-[100px] opacity-30 z-0"></div>
+         <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-[#952828] rounded-full blur-[100px] opacity-20 z-0"></div>
+
+         <div className="container mx-auto px-6 relative z-20 text-center">
+           <motion.div
+             initial={{ opacity: 0, y: 30 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             viewport={{ once: true }}
+             transition={{ duration: 0.8 }}
+             className="max-w-4xl mx-auto"
+           >
+             <h2 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-8 uppercase leading-none tracking-tighter">
+               Ready to Build the <br/>
+               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8b68f6] to-[#b39bfb]">Future?</span>
+             </h2>
+             <p className="text-lg md:text-xl text-slate-300 mb-12 font-light leading-relaxed max-w-2xl mx-auto">
+               Whether you're a founder with a bold vision or an enterprise looking to innovate, we're your partner in building what's next.
+             </p>
+             
+             <div className="flex flex-col sm:flex-row justify-center gap-6">
+               <Link href="/build-with-us">
+                 <Button className="bg-[#8b68f6] text-white hover:bg-[#7a5bd6] transition-all rounded-sm h-16 px-10 text-lg font-bold uppercase tracking-widest shadow-2xl border-0 w-full sm:w-auto hover:scale-105 transform duration-300">
+                   Build With Us
+                 </Button>
+               </Link>
+               <Link href="/partners">
+                 <Button variant="outline" className="border-white/20 text-white hover:bg-white hover:text-[#2b204c] transition-all rounded-sm h-16 px-10 text-lg font-bold uppercase tracking-widest bg-white/5 w-full sm:w-auto backdrop-blur-sm hover:scale-105 transform duration-300">
+                   Partner With Us
+                 </Button>
+               </Link>
+             </div>
+           </motion.div>
+         </div>
+      </section>
 
       <Footer />
       <ScrollToTop />

@@ -245,7 +245,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-28 md:pt-0 bg-[#2b204c] border-b border-slate-100">
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-32 md:pt-0 bg-[#2b204c] border-b border-slate-100">
         <div className="absolute inset-0 z-0">
            {/* Background gradient/overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#2b204c] via-[#2b204c] to-[#2b204c]/90 z-10" />
@@ -257,23 +257,23 @@ export default function Home() {
         </div>
 
         <div className="container relative z-20 px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left Content */}
             <motion.div 
               initial="initial"
               animate="animate"
               variants={stagger}
-              className="max-w-2xl"
+              className="max-w-3xl"
             >
-              <motion.div variants={fadeIn} className="inline-block mb-4">
-                <span className="bg-[#8b68f6]/10 text-[#8b68f6] border border-[#8b68f6]/20 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest backdrop-blur-sm">
+              <motion.div variants={fadeIn} className="inline-block mb-6">
+                <span className="bg-[#8b68f6]/10 text-[#8b68f6] border border-[#8b68f6]/20 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide backdrop-blur-sm">
                   Venture Studio • Deep Tech • Ecosystem
                 </span>
               </motion.div>
               
               <motion.h1 
                 variants={fadeIn}
-                className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold leading-[1.1] tracking-tighter mb-6 uppercase text-white"
+                className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold leading-[1.05] tracking-tight mb-8 text-white"
               >
                 Building the Next <br />
                 Generation of <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8b68f6] to-[#b39bfb]">Deep Tech</span>
@@ -281,19 +281,19 @@ export default function Home() {
               
               <motion.p 
                 variants={fadeIn}
-                className="text-lg text-slate-300 max-w-xl mb-8 font-light leading-relaxed"
+                className="text-lg md:text-xl text-slate-300 max-w-xl mb-10 font-light leading-relaxed"
               >
                 Co-building and funding disruptive deep tech enterprises in AI, Climate, and SaaS.
               </motion.p>
 
-              <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4">
+              <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-5">
                 <Link href="/build-with-us">
-                  <Button className="bg-[#8b68f6] text-white hover:bg-[#7a5bd6] transition-all rounded-sm h-14 px-8 text-base font-bold uppercase tracking-widest shadow-xl border-0 w-full sm:w-auto">
+                  <Button className="bg-[#8b68f6] text-white hover:bg-[#7a5bd6] transition-all rounded-sm h-14 px-8 text-base font-semibold tracking-wide shadow-lg hover:shadow-xl border-0 w-full sm:w-auto">
                     Build With Us
                   </Button>
                 </Link>
                 <Link href="/partners">
-                  <Button variant="outline" className="border-white/20 text-white hover:bg-white hover:text-[#2b204c] transition-all rounded-sm h-14 px-8 text-base font-bold uppercase tracking-widest bg-white/5 w-full sm:w-auto backdrop-blur-sm">
+                  <Button variant="outline" className="border-white/20 text-white hover:bg-white hover:text-[#2b204c] transition-all rounded-sm h-14 px-8 text-base font-semibold tracking-wide bg-white/5 w-full sm:w-auto backdrop-blur-sm">
                     Partner With Us
                   </Button>
                 </Link>
@@ -346,7 +346,7 @@ export default function Home() {
       </section>
 
       {/* Trusted By / Collaboration Section */}
-      <section className="py-20 md:py-24 bg-[#F7F8FC] border-t border-slate-100/50 overflow-hidden">
+      <section className="py-24 md:py-32 bg-[#F7F8FC] border-t border-slate-100/50 overflow-hidden">
         <div className="container mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -354,15 +354,16 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-2xl md:text-3xl font-medium text-[#2b204c] mb-4 tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-medium text-[#2b204c] mb-6 tracking-tight">
               Strategic Ecosystem Partners
             </h2>
-            <p className="text-slate-500 text-sm md:text-base font-light mb-16 max-w-2xl mx-auto leading-relaxed">
+            <div className="w-16 h-0.5 bg-[#2b204c]/10 mx-auto mb-6"></div>
+            <p className="text-slate-500 text-base md:text-lg font-light mb-20 max-w-2xl mx-auto leading-relaxed">
               Working alongside leading institutions advancing innovation across Qatar and the GCC.
             </p>
           </motion.div>
 
-          <div className="flex flex-nowrap md:flex-wrap overflow-x-auto md:overflow-visible items-center justify-start md:justify-center gap-12 md:gap-20 pb-4 md:pb-0 scrollbar-hide">
+          <div className="flex flex-nowrap md:flex-wrap overflow-x-auto md:overflow-visible items-center justify-start md:justify-center gap-12 md:gap-24 pb-4 md:pb-0 scrollbar-hide">
             {/* Logo Row */}
             <img src={qdbLogo} alt="Qatar Development Bank" className="h-[60px] md:h-[90px] w-auto object-contain opacity-85 hover:opacity-100 hover:scale-105 transition-all duration-200 flex-shrink-0" />
             <img src={qstpLogo} alt="Qatar Science & Technology Park" className="h-[60px] md:h-[90px] w-auto object-contain opacity-85 hover:opacity-100 hover:scale-105 transition-all duration-200 flex-shrink-0" />
@@ -374,7 +375,7 @@ export default function Home() {
       </section>
 
       {/* Impact Metrics Section - Small spacing */}
-      <section className="py-10 md:py-12 bg-white border-b border-slate-50">
+      <section className="py-16 md:py-20 bg-white border-b border-slate-50">
         <div className="container mx-auto px-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -383,38 +384,33 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="flex flex-col items-center"
           >
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 w-full max-w-5xl mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-24 w-full max-w-6xl mb-12">
               {[
                 { label: "Startups Supported", value: 500, suffix: "+", prefix: "" },
                 { label: "Capital Enabled", value: 100, suffix: "M+", prefix: "$" },
                 { label: "Markets Across GCC & Beyond", value: 10, suffix: "+", prefix: "" }
               ].map((metric, i) => (
-                <div key={i} className="flex flex-col items-center md:items-start text-center md:text-left">
-                  <span className="text-4xl md:text-6xl font-heading font-bold text-[#2b204c] mb-2 tracking-tighter">
+                <div key={i} className="flex flex-col items-center md:items-start text-center md:text-left group">
+                  <span className="text-5xl md:text-7xl font-heading font-bold text-[#2b204c] mb-3 tracking-tighter">
                     <CountUp to={metric.value} suffix={metric.suffix} prefix={metric.prefix} delay={i * 0.2} />
                   </span>
-                  <span className="text-sm md:text-base text-slate-500 font-medium uppercase tracking-widest">
+                  <span className="text-sm md:text-base text-slate-500 font-medium tracking-wide">
                     {metric.label}
                   </span>
                   {/* Option A: Progressive Fill Bar (Subtle) */}
                   <motion.div 
                     initial={{ width: 0 }}
-                    whileInView={{ width: "40px" }}
+                    whileInView={{ width: "60px" }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, delay: 0.5 + (i * 0.2), ease: "easeOut" }}
-                    className="h-1 bg-[#8b68f6] mt-4 rounded-full"
+                    className="h-1 bg-[#8b68f6] mt-6 rounded-full opacity-80"
                   />
                 </div>
               ))}
             </div>
-            <p className="text-xs md:text-sm text-slate-400 font-light italic">
+            <p className="text-sm text-slate-400 font-light italic tracking-wide">
               Built through venture studio initiatives and ecosystem partnerships.
             </p>
-            <div className="flex justify-center gap-2 mt-6">
-              <span className="w-8 h-0.5 bg-[#8b68f6]"></span>
-              <span className="w-8 h-0.5 bg-[#952828]"></span>
-              <span className="w-8 h-0.5 bg-[#2b204c]"></span>
-            </div>
           </motion.div>
         </div>
       </section>
@@ -426,37 +422,40 @@ export default function Home() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={sectionVariants}
-        className="py-16 md:py-24 relative bg-[#F9FAFB] border-b border-slate-100"
+        className="py-24 md:py-32 relative bg-[#F9FAFB] border-b border-slate-100"
       >
         <div className="container mx-auto px-6">
-          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+          <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
             <div className="lg:w-1/2">
-              <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-3 block">Core Differentiator</span>
-              <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold leading-none uppercase mb-6">
+              <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-4 block">Core Differentiator</span>
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold leading-none tracking-tight mb-8 text-[#2b204c]">
                 Venture <br/>
-                <span className="text-[#2b204c]">Building</span>
+                <span className="relative inline-block">
+                  Building
+                  <span className="absolute bottom-2 left-0 w-full h-3 bg-[#8b68f6]/10 -z-10 transform -rotate-1"></span>
+                </span>
               </h2>
-              <p className="text-xl text-[#2b204c] font-medium leading-relaxed mb-8 border-l-4 border-[#8b68f6] pl-6">
+              <p className="text-2xl text-[#2b204c] font-medium leading-relaxed mb-10 border-l-4 border-[#8b68f6] pl-6 py-1">
                 We don't just invest; we build.
               </p>
               
-              <div className="flex flex-col gap-4 mb-8">
+              <div className="flex flex-col gap-6 mb-10">
                 {[
                   "Co-Building",
                   "Capital + Execution",
                   "Market Access"
                 ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-4">
-                    <div className="w-8 h-8 rounded-full bg-[#8b68f6]/10 flex items-center justify-center shrink-0">
-                      <ArrowRight className="text-[#8b68f6] w-4 h-4" />
+                  <div key={i} className="flex items-center gap-5 group">
+                    <div className="w-10 h-10 rounded-full bg-white border border-slate-100 flex items-center justify-center shrink-0 shadow-sm group-hover:border-[#8b68f6]/30 transition-colors">
+                      <ArrowRight className="text-[#8b68f6] w-5 h-5" />
                     </div>
-                    <span className="font-bold text-[#2b204c] uppercase text-sm tracking-wide">{item}</span>
+                    <span className="font-bold text-[#2b204c] text-lg tracking-tight">{item}</span>
                   </div>
                 ))}
               </div>
 
               <Link href="/venture-studio/venture-builder">
-                <Button className="bg-[#2b204c] text-white hover:bg-[#8b68f6] transition-all uppercase tracking-widest text-xs font-bold rounded-sm px-8 h-12 shadow-lg">
+                <Button className="bg-[#2b204c] text-white hover:bg-[#8b68f6] transition-all text-sm font-bold rounded-sm px-10 h-14 shadow-lg hover:shadow-xl tracking-wide">
                   Explore Venture Building
                 </Button>
               </Link>
@@ -464,36 +463,36 @@ export default function Home() {
             
             <div className="lg:w-1/2 relative">
                <div className="absolute inset-0 bg-gradient-to-tr from-[#8b68f6]/20 to-transparent rounded-full blur-3xl opacity-30"></div>
-               <div className="relative bg-white border border-slate-100 p-8 md:p-12 rounded-sm shadow-xl">
-                 <div className="flex items-center justify-between mb-8 border-b border-slate-50 pb-6">
-                   <div className="flex items-center gap-4">
-                     <div className="w-12 h-12 bg-[#2b204c] text-white flex items-center justify-center rounded-sm">
-                       <Building2 size={24} />
+               <div className="relative bg-white border border-slate-100 p-10 md:p-14 rounded-sm shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-shadow duration-500">
+                 <div className="flex items-center justify-between mb-10 border-b border-slate-50 pb-8">
+                   <div className="flex items-center gap-5">
+                     <div className="w-14 h-14 bg-[#2b204c] text-white flex items-center justify-center rounded-sm shadow-md">
+                       <Building2 size={28} />
                      </div>
                      <div>
-                       <h3 className="text-lg font-bold text-[#2b204c] uppercase">The Studio Model</h3>
-                       <p className="text-xs text-slate-400 uppercase tracking-widest">Systematic Innovation</p>
+                       <h3 className="text-xl font-bold text-[#2b204c] tracking-tight">The Studio Model</h3>
+                       <p className="text-xs text-slate-400 font-bold uppercase tracking-widest mt-1">Systematic Innovation</p>
                      </div>
                    </div>
-                   <div className="bg-[#952828] text-white text-[9px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">
-                     Proven
+                   <div className="bg-[#F9FAFB] text-[#2b204c] border border-slate-100 text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
+                     Proven Process
                    </div>
                  </div>
                  
-                 <div className="space-y-6">
+                 <div className="space-y-8">
                    {[
-                     { step: "01", title: "Ideation & Validation", desc: " rigorous market testing" },
+                     { step: "01", title: "Ideation & Validation", desc: "Rigorous market testing" },
                      { step: "02", title: "Team Assembly", desc: "Recruiting technical & commercial co-founders" },
                      { step: "03", title: "Product Development", desc: "MVP build & iteration" },
                      { step: "04", title: "Go-to-Market", desc: "First customers & revenue" },
                      { step: "05", title: "Scale & Spin-out", desc: "Growth capital & independence" }
                    ].map((item, i) => (
-                     <div key={i} className="flex items-center gap-4 group">
+                     <div key={i} className="flex items-center gap-5 group">
                        <span className="text-xs font-bold text-slate-300 group-hover:text-[#8b68f6] transition-colors font-mono">{item.step}</span>
                        <div className="h-px bg-slate-100 flex-1 group-hover:bg-[#8b68f6]/30 transition-colors"></div>
                        <div className="text-right">
-                         <h4 className="text-sm font-bold text-[#2b204c] uppercase">{item.title}</h4>
-                         <p className="text-[10px] text-slate-400 uppercase tracking-wide">{item.desc}</p>
+                         <h4 className="text-base font-bold text-[#2b204c] tracking-tight mb-1">{item.title}</h4>
+                         <p className="text-[11px] text-slate-400 font-medium uppercase tracking-wide">{item.desc}</p>
                        </div>
                      </div>
                    ))}
@@ -511,15 +510,16 @@ export default function Home() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={sectionVariants}
-        className="py-16 md:py-20 relative bg-white"
+        className="py-24 md:py-32 relative bg-white"
       >
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16 max-w-3xl mx-auto">
-            <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-3 block">Our Services</span>
-            <h2 className="text-3xl md:text-5xl font-heading font-bold leading-none uppercase mb-6 text-[#2b204c]">
-              Supporting the Full Lifecycle
+          <div className="text-center mb-20 max-w-3xl mx-auto">
+            <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-4 block">Our Services</span>
+            <h2 className="text-4xl md:text-6xl font-heading font-bold leading-none tracking-tight mb-8 text-[#2b204c]">
+              Supporting the <br/>Full Lifecycle
             </h2>
-            <p className="text-lg text-slate-600 leading-relaxed">
+            <div className="w-16 h-0.5 bg-[#8b68f6] mx-auto mb-8"></div>
+            <p className="text-lg text-slate-600 leading-relaxed font-light">
               Tailored support from initial spark to global scale.
             </p>
           </div>
@@ -547,27 +547,27 @@ export default function Home() {
             ].map((value, i) => (
               <div 
                 key={i}
-                className="flex-shrink-0 w-[280px] md:w-auto snap-center flex flex-col p-10 border border-slate-100 bg-[#F9FAFB] transition-all duration-300 shadow-sm hover:shadow-md hover:border-[#8b68f6]/30 h-full relative overflow-hidden group"
+                className="flex-shrink-0 w-[300px] md:w-auto snap-center flex flex-col p-10 md:p-12 border border-slate-100 bg-[#F9FAFB] transition-all duration-300 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.1)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:translate-y-[-2px] h-full relative overflow-hidden group rounded-sm"
               >
-                <div className="text-[#2b204c] group-hover:text-[#8b68f6] transition-colors mb-6">
+                <div className="text-[#2b204c] group-hover:text-[#8b68f6] transition-colors mb-8">
                   {value.icon}
                 </div>
-                <h3 className="text-xl font-heading font-bold text-[#2b204c] mb-4 uppercase tracking-tight">
+                <h3 className="text-2xl font-bold text-[#2b204c] mb-4 tracking-tight">
                   {value.title}
                 </h3>
-                <p className="text-slate-500 text-sm leading-relaxed mb-8 flex-1">
+                <p className="text-slate-600 text-base leading-relaxed mb-8 flex-1 font-light">
                   {value.desc}
                 </p>
-                <Link href={value.link} className="text-[10px] font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-1 transition-colors cursor-pointer mt-auto">
-                    Know More <ArrowRight size={10} />
+                <Link href={value.link} className="text-xs font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-2 transition-colors cursor-pointer mt-auto">
+                    Know More <ArrowRight size={12} />
                 </Link>
               </div>
             ))}
           </div>
           {/* Subtle Progress Dots for Mobile */}
-          <div className="flex md:hidden justify-center gap-2 mt-6">
+          <div className="flex md:hidden justify-center gap-2 mt-8">
             {[0, 1, 2].map((dot) => (
-              <div key={dot} className={`w-2 h-2 rounded-full transition-all duration-300 ${dot === 0 ? 'bg-[#8b68f6] scale-125' : 'bg-slate-300'}`} />
+              <div key={dot} className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${dot === 0 ? 'bg-[#8b68f6] scale-125' : 'bg-slate-300'}`} />
             ))}
           </div>
         </div>
@@ -580,17 +580,17 @@ export default function Home() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={sectionVariants}
-        className="py-16 md:py-20 bg-[#F9FAFB] border-y border-slate-100"
+        className="py-24 md:py-32 bg-[#F9FAFB] border-y border-slate-100"
       >
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16">
             <div className="md:w-1/2">
-              <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-3 block">Our Path</span>
-              <h2 className="text-3xl md:text-5xl font-heading font-bold leading-none uppercase">Programs</h2>
+              <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-4 block">Our Path</span>
+              <h2 className="text-4xl md:text-6xl font-heading font-bold leading-none tracking-tight text-[#2b204c]">Programs</h2>
             </div>
-            <div className="md:w-1/2">
-              <p className="text-lg text-slate-600 leading-relaxed">
-                Flagship initiatives driving innovation across the ecosystem.
+            <div className="md:w-1/2 md:text-right">
+              <p className="text-lg text-slate-600 leading-relaxed font-light">
+                Flagship initiatives driving innovation <br className="hidden md:block"/> across the ecosystem.
               </p>
             </div>
           </div>
@@ -628,21 +628,21 @@ export default function Home() {
             ].map((program, i) => (
               <div 
                 key={i}
-                className="flex-shrink-0 w-[280px] md:w-auto snap-center flex flex-col p-8 md:p-12 bg-white border border-slate-100 shadow-sm hover:shadow-md hover:border-[#8b68f6]/30 transition-all duration-300 h-full rounded-sm"
+                className="flex-shrink-0 w-[280px] md:w-auto snap-center flex flex-col p-10 bg-white border border-slate-100 shadow-[0_2px_8px_-2px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:border-[#8b68f6]/20 transition-all duration-300 h-full rounded-sm group"
               >
                 {program.logo && (
-                  <div className="mb-6 md:mb-8 h-8 md:h-10 w-auto flex items-start">
+                  <div className="mb-8 h-10 w-auto flex items-start">
                     <img 
                       src={program.logo} 
                       alt={`${program.title} logo`} 
-                      className="h-full w-auto object-contain object-left filter brightness-90 hover:brightness-100 transition-all"
+                      className="h-full w-auto object-contain object-left filter brightness-95 hover:brightness-100 transition-all"
                     />
                   </div>
                 )}
-                <h3 className="text-xl md:text-2xl font-heading font-bold text-[#2b204c] mb-4 md:mb-6 uppercase tracking-tight">
+                <h3 className="text-xl md:text-2xl font-bold text-[#2b204c] mb-4 tracking-tight">
                   {program.title}
                 </h3>
-                <p className="text-sm md:text-base text-slate-500 mb-8 md:mb-10 leading-relaxed flex-1">
+                <p className="text-sm md:text-base text-slate-600 mb-8 leading-relaxed flex-1 font-light">
                   {program.desc}
                 </p>
                 {program.isExternal ? (
@@ -650,16 +650,16 @@ export default function Home() {
                     href={program.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[10px] font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-1 transition-colors group mt-auto"
+                    className="text-xs font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-2 transition-colors group mt-auto"
                   >
-                    Know More <ArrowRight size={10} className="group-hover:translate-x-1 transition-transform" />
+                    Know More <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
                   </a>
                 ) : (
                   <Link 
                     href={program.link}
-                    className="text-[10px] font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-1 transition-colors group mt-auto"
+                    className="text-xs font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-2 transition-colors group mt-auto"
                   >
-                    Know More <ArrowRight size={10} className="group-hover:translate-x-1 transition-transform" />
+                    Know More <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
                   </Link>
                 )}
               </div>
@@ -667,9 +667,9 @@ export default function Home() {
           </div>
           
           {/* Mobile Swipe Indicator */}
-          <div className="flex md:hidden justify-center gap-2 mt-6">
+          <div className="flex md:hidden justify-center gap-2 mt-8">
             {[0, 1, 2, 3].map((dot) => (
-              <div key={dot} className={`w-2 h-2 rounded-full transition-all duration-300 ${dot === 0 ? 'bg-[#8b68f6] scale-125' : 'bg-slate-300'}`} />
+              <div key={dot} className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${dot === 0 ? 'bg-[#8b68f6] scale-125' : 'bg-slate-300'}`} />
             ))}
           </div>
         </div>
@@ -731,17 +731,17 @@ export default function Home() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={sectionVariants}
-        className="py-16 md:py-20 bg-white"
+        className="py-24 md:py-32 bg-white"
       >
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
             <div>
-              <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-2 block">Our Portfolio</span>
-              <h2 className="text-3xl md:text-5xl font-heading font-bold uppercase">BUILDING TOMORROW</h2>
+              <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-4 block">Our Portfolio</span>
+              <h2 className="text-4xl md:text-6xl font-heading font-bold tracking-tight text-[#2b204c]">Building Tomorrow</h2>
             </div>
             <Link href="/portfolio">
-              <Button variant="link" className="text-[#2b204c] hover:text-[#8b68f6] gap-2 p-0 h-auto font-bold uppercase tracking-widest">
-                View All <ArrowRight size={16} />
+              <Button variant="link" className="text-[#2b204c] hover:text-[#8b68f6] gap-2 p-0 h-auto font-bold uppercase tracking-widest text-xs">
+                View All <ArrowRight size={14} />
               </Button>
             </Link>
           </div>
@@ -789,17 +789,17 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
                   style={{ borderTopColor: startup.accent }}
-                  className="group flex-shrink-0 w-[280px] md:w-auto flex flex-col p-8 border border-slate-100 border-t-4 bg-[#F9FAFB] shadow-sm hover:shadow-md transition-all duration-500 h-full relative snap-center"
+                  className="group flex-shrink-0 w-[280px] md:w-auto flex flex-col p-10 border border-slate-100 border-t-4 bg-[#F9FAFB] shadow-[0_2px_8px_-2px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-500 h-full relative snap-center rounded-sm"
                 >
-                  <div className="absolute top-4 right-8">
+                  <div className="absolute top-6 right-8">
                     <span 
                       style={{ color: startup.accent, borderColor: `${startup.accent}20` }}
-                      className="text-[9px] font-bold uppercase tracking-widest px-2 py-1 bg-white border rounded-full"
+                      className="text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 bg-white border rounded-full"
                     >
                       {startup.category}
                     </span>
                   </div>
-                  <div className="h-16 flex items-center justify-start mb-8">
+                  <div className="h-16 flex items-center justify-start mb-10">
                     {startup.logo ? (
                       <img 
                         src={startup.logo} 
@@ -812,10 +812,10 @@ export default function Home() {
                       </div>
                     )}
                   </div>
-                  <h3 className="text-xl font-heading font-bold text-[#2b204c] mb-2 uppercase">
+                  <h3 className="text-xl font-bold text-[#2b204c] mb-3 tracking-tight">
                     {startup.name}
                   </h3>
-                  <p className="text-sm text-slate-500 leading-relaxed mb-8 flex-1">
+                  <p className="text-sm text-slate-600 leading-relaxed mb-8 flex-1 font-light">
                     {startup.desc}
                   </p>
                   <a 
@@ -824,15 +824,15 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="text-[10px] font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-2 transition-colors group/link"
                   >
-                    Go to Website <ArrowRight size={12} className="group-hover/link:translate-x-1 transition-transform" />
+                    Go to Website <ArrowRight size={10} className="group-hover/link:translate-x-1 transition-transform" />
                   </a>
                 </motion.div>
               ))}
             </div>
             {/* Subtle Progress Dots for Mobile */}
-            <div className="flex md:hidden justify-center gap-2 mt-6">
+            <div className="flex md:hidden justify-center gap-2 mt-8">
               {[0, 1, 2, 3].map((dot) => (
-                <div key={dot} className={`w-2 h-2 rounded-full transition-all duration-300 ${dot === 0 ? 'bg-[#8b68f6] scale-125' : 'bg-slate-300'}`} />
+                <div key={dot} className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${dot === 0 ? 'bg-[#8b68f6] scale-125' : 'bg-slate-300'}`} />
               ))}
             </div>
           </div>

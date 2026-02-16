@@ -283,7 +283,7 @@ export default function Home() {
                 variants={fadeIn}
                 className="text-lg md:text-xl text-slate-300 max-w-xl mb-10 font-light leading-relaxed"
               >
-                Co-building and funding disruptive deep tech enterprises in AI, Climate, and SaaS.
+                Co-building and funding disruptive startups in deep tech, IoT, AI & AIoT technology.
               </motion.p>
 
               <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-5">

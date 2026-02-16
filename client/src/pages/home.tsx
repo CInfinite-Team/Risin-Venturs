@@ -283,7 +283,7 @@ export default function Home() {
                 variants={fadeIn}
                 className="text-lg text-slate-300 max-w-xl mb-8 font-light leading-relaxed"
               >
-                Co-building, funding, and scaling disruptive deep tech enterprises in AI, Climate, and SaaS. Transforming bold ideas into global industry leaders.
+                Co-building and funding disruptive deep tech enterprises in AI, Climate, and SaaS.
               </motion.p>
 
               <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4">
@@ -408,7 +408,7 @@ export default function Home() {
               ))}
             </div>
             <p className="text-xs md:text-sm text-slate-400 font-light italic">
-              Built through programs, venture studio initiatives, and ecosystem partnerships.
+              Built through venture studio initiatives and ecosystem partnerships.
             </p>
             <div className="flex justify-center gap-2 mt-6">
               <span className="w-8 h-0.5 bg-[#8b68f6]"></span>
@@ -436,29 +436,23 @@ export default function Home() {
                 Venture <br/>
                 <span className="text-[#2b204c]">Building</span>
               </h2>
-              <p className="text-lg text-slate-600 leading-relaxed mb-8">
-                From idea to execution, we co-build startups by assembling teams, shaping products, and embedding execution discipline from day one. We don't just invest; we are operational partners.
+              <p className="text-xl text-[#2b204c] font-medium leading-relaxed mb-8 border-l-4 border-[#8b68f6] pl-6">
+                We don't just invest; we build.
               </p>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-[#8b68f6]/10 flex items-center justify-center shrink-0">
-                    <Rocket className="text-[#8b68f6] w-5 h-5" />
+              <div className="flex flex-col gap-4 mb-8">
+                {[
+                  "Co-Building",
+                  "Capital + Execution",
+                  "Market Access"
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-4">
+                    <div className="w-8 h-8 rounded-full bg-[#8b68f6]/10 flex items-center justify-center shrink-0">
+                      <ArrowRight className="text-[#8b68f6] w-4 h-4" />
+                    </div>
+                    <span className="font-bold text-[#2b204c] uppercase text-sm tracking-wide">{item}</span>
                   </div>
-                  <div>
-                    <h4 className="font-bold text-[#2b204c] mb-2 uppercase text-sm tracking-wide">Co-Building</h4>
-                    <p className="text-sm text-slate-500 leading-relaxed">Hands-on operational support to build products and teams.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-[#8b68f6]/10 flex items-center justify-center shrink-0">
-                    <TrendingUp className="text-[#8b68f6] w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-[#2b204c] mb-2 uppercase text-sm tracking-wide">Capital + Execution</h4>
-                    <p className="text-sm text-slate-500 leading-relaxed">Bridging the gap between funding and operational excellence.</p>
-                  </div>
-                </div>
+                ))}
               </div>
 
               <Link href="/venture-studio/venture-builder">
@@ -526,7 +520,7 @@ export default function Home() {
               Supporting the Full Lifecycle
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed">
-              We provide tailored support for founders at every stage of their journey, from initial spark to global scale.
+              Tailored support from initial spark to global scale.
             </p>
           </div>
 
@@ -535,19 +529,19 @@ export default function Home() {
               { 
                 icon: <Zap className="w-8 h-8" />, 
                 title: "Innovation", 
-                desc: "We identify high-impact problems and apply deep tech, data, and emerging technologies to design innovative, market-relevant solutions.",
+                desc: "Designing market-relevant solutions using deep tech.",
                 link: "/venture-studio/innovation"
               },
               { 
                 icon: <Cpu className="w-8 h-8" />, 
                 title: "Incubation", 
-                desc: "We support early-stage founders from idea to validation, providing mentorship, resources, and structured guidance to prepare ventures for scale.",
+                desc: "Guiding early-stage founders from idea to validation.",
                 link: "/venture-studio/incubation"
               },
               { 
                 icon: <Rocket className="w-8 h-8" />, 
                 title: "Acceleration", 
-                desc: "We accelerate startups through structured programs, mentorship, regulatory readiness, and access to enterprise and investor networks.",
+                desc: "Scaling startups through access to enterprise networks.",
                 link: "/venture-studio/acceleration"
               }
             ].map((value, i) => (
@@ -596,7 +590,7 @@ export default function Home() {
             </div>
             <div className="md:w-1/2">
               <p className="text-lg text-slate-600 leading-relaxed">
-                Showcasing flagship initiatives that drive innovation and celebrate entrepreneurship across the ecosystem.
+                Flagship initiatives driving innovation across the ecosystem.
               </p>
             </div>
           </div>
@@ -606,28 +600,28 @@ export default function Home() {
               {
                 title: "AIX",
                 logo: aixLogo, 
-                desc: "A global AI-focused summit and hackathon bringing founders, enterprises, and innovators together to build real-world AI solutions.",
+                desc: "Building real-world AI solutions.",
                 link: "/programs/aix",
                 isExternal: false
               },
               {
                 title: "Sustainova",
                 logo: sustainovaLogo,
-                desc: "An innovation challenge focused on sustainability, climate tech, and impact-driven solutions for real-world environmental problems.",
+                desc: "Innovation challenge for climate tech.",
                 link: "/programs/sustainova",
                 isExternal: false
               },
               {
                 title: "Entrepreneurship Awards",
                 logo: "https://qatarentrepreneurshipawards.com/wp-content/uploads/2023/08/withoutyear-logo.png",
-                desc: "A national platform recognizing and celebrating high-potential entrepreneurs, startups, and innovation-led businesses.",
+                desc: "Celebrating high-potential entrepreneurs.",
                 link: "/programs/entrepreneurship-awards",
                 isExternal: false
               },
               {
                 title: "GCC GTM",
                 logo: gccGtmLogo,
-                desc: "Accelerating global deep-tech ventures' entry into the GCC markets through strategic partnerships and localized scaling.",
+                desc: "Accelerating global deep-tech ventures.",
                 link: "/programs/gtm",
                 isExternal: false
               }
@@ -714,7 +708,7 @@ export default function Home() {
                   </span>
                 </div>
                 <p className="text-slate-400 text-sm max-w-lg mt-2">
-                  Recognizing and celebrating excellence and innovation in ICT and digital entrepreneurship across Qatar and the wider region.
+                  Recognizing and celebrating excellence in ICT and digital entrepreneurship.
                 </p>
               </div>
               <a 
@@ -761,7 +755,7 @@ export default function Home() {
                   website: "https://www.bigtrader.biz/",
                   category: "Marketplace",
                   accent: "#952828", // Saffron Red from logo
-                  desc: "A digital trading and supply chain platform enabling smarter procurement, visibility, and efficiency for commodity and goods trading businesses." 
+                  desc: "Smarter procurement and supply chain efficiency." 
                 },
                 { 
                   name: "Madad Fintech", 
@@ -769,7 +763,7 @@ export default function Home() {
                   website: "https://www.madadfintech.com/en",
                   category: "Fintech",
                   accent: "#2b204c", // Dark Indigo
-                  desc: "A Shariah-compliant fintech platform providing ethical digital financial solutions for individuals and underserved communities." 
+                  desc: "Ethical digital financial solutions for everyone." 
                 },
                 { 
                   name: "iProcure", 
@@ -777,7 +771,7 @@ export default function Home() {
                   website: "https://iprocure.ai/",
                   category: "AI",
                   accent: "#8b68f6", // Vivid Violet
-                  desc: "An AI-powered procurement intelligence platform helping enterprises optimize sourcing, pricing, and supplier decisions." 
+                  desc: "AI-powered procurement intelligence." 
                 },
                 { 
                   name: "Arisio", 
@@ -785,7 +779,7 @@ export default function Home() {
                   website: "https://arisio.io/",
                   category: "AI / Marketplace",
                   accent: "#10b981", // Emerald/Startup green
-                  desc: "An AI-driven matchmaking platform connecting startups, investors, and ecosystems through intelligent application screening and discovery." 
+                  desc: "Connecting startups, investors, and ecosystems." 
                 }
               ].map((startup, i) => (
                 <motion.div 

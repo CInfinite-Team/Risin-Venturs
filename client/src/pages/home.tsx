@@ -346,8 +346,8 @@ export default function Home() {
       </section>
 
       {/* Trusted By / Collaboration Section */}
-      <section className="py-20 md:py-24 bg-[#F7F8FC] border-t border-slate-100/50 overflow-hidden relative">
-        <div className="container mx-auto px-6 text-center relative z-10">
+      <section className="py-20 md:py-24 bg-[#F7F8FC] border-t border-slate-100/50 overflow-hidden">
+        <div className="container mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -370,26 +370,12 @@ export default function Home() {
             <img src={codeLogo} alt="Center of Digital Entrepreneurship" className="h-[50px] md:h-[80px] w-auto object-contain opacity-85 hover:opacity-100 hover:scale-105 transition-all duration-200 flex-shrink-0" />
             <img src={quLogo} alt="Qatar University" className="h-[60px] md:h-[90px] w-auto object-contain opacity-85 hover:opacity-100 hover:scale-105 transition-all duration-200 flex-shrink-0" />
           </div>
-          
-          <div className="mt-20 md:mt-24 border-t border-slate-200/50 w-full max-w-lg mx-auto"></div>
-          <p className="mt-6 text-slate-400 text-sm font-medium tracking-wide">
-            Together, we have enabled measurable impact.
-          </p>
         </div>
-        
-        {/* Soft gradient fade to next section */}
-        <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-b from-transparent to-[#14122b]/5 pointer-events-none"></div>
       </section>
 
-      {/* Impact Metrics Section - Deep Tech Style */}
-      <section className="py-20 md:py-28 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #14122b, #1f1a3d)' }}>
-        {/* Subtle background effects */}
-        <div className="absolute inset-0 z-0">
-             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#8b68f6]/10 rounded-full blur-[100px] opacity-40"></div>
-             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#2b204c]/40 rounded-full blur-[100px] opacity-40"></div>
-        </div>
-
-        <div className="container mx-auto px-6 relative z-10">
+      {/* Impact Metrics Section - Small spacing */}
+      <section className="py-10 md:py-12 bg-white border-b border-slate-50">
+        <div className="container mx-auto px-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -397,35 +383,37 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="flex flex-col items-center"
           >
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8 w-full max-w-6xl">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 w-full max-w-5xl mb-8">
               {[
                 { label: "Startups Supported", value: 500, suffix: "+", prefix: "" },
                 { label: "Capital Enabled", value: 100, suffix: "M+", prefix: "$" },
-                { label: "Markets Across GCC", value: 10, suffix: "+", prefix: "" }
+                { label: "Markets Across GCC & Beyond", value: 10, suffix: "+", prefix: "" }
               ].map((metric, i) => (
-                <div key={i} className="flex flex-col items-center text-center group">
-                  <span className="text-[56px] md:text-[88px] lg:text-[96px] font-heading font-bold text-white mb-2 tracking-tighter leading-none group-hover:text-[#8b68f6] transition-colors duration-500">
-                    <CountUp to={metric.value} suffix={metric.suffix} prefix={metric.prefix} delay={i * 0.15} />
+                <div key={i} className="flex flex-col items-center md:items-start text-center md:text-left">
+                  <span className="text-4xl md:text-6xl font-heading font-bold text-[#2b204c] mb-2 tracking-tighter">
+                    <CountUp to={metric.value} suffix={metric.suffix} prefix={metric.prefix} delay={i * 0.2} />
                   </span>
-                  <span className="text-sm md:text-base text-slate-300/80 font-medium uppercase tracking-[0.2em]">
+                  <span className="text-sm md:text-base text-slate-500 font-medium uppercase tracking-widest">
                     {metric.label}
                   </span>
-                  {/* Option A: Progressive Fill Bar (Subtle - Grows Left to Right) */}
+                  {/* Option A: Progressive Fill Bar (Subtle) */}
                   <motion.div 
                     initial={{ width: 0 }}
-                    whileInView={{ width: "100%" }}
+                    whileInView={{ width: "40px" }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.5 + (i * 0.15), ease: "easeOut" }}
-                    className="h-0.5 bg-gradient-to-r from-[#8b68f6] to-transparent mt-6 rounded-full max-w-[120px]"
+                    transition={{ duration: 0.8, delay: 0.5 + (i * 0.2), ease: "easeOut" }}
+                    className="h-1 bg-[#8b68f6] mt-4 rounded-full"
                   />
                 </div>
               ))}
             </div>
-            
-            <div className="mt-16 flex justify-center gap-3 opacity-30">
-              <span className="w-1.5 h-1.5 rounded-full bg-white"></span>
-              <span className="w-1.5 h-1.5 rounded-full bg-white"></span>
-              <span className="w-1.5 h-1.5 rounded-full bg-white"></span>
+            <p className="text-xs md:text-sm text-slate-400 font-light italic">
+              Built through programs, venture studio initiatives, and ecosystem partnerships.
+            </p>
+            <div className="flex justify-center gap-2 mt-6">
+              <span className="w-8 h-0.5 bg-[#8b68f6]"></span>
+              <span className="w-8 h-0.5 bg-[#952828]"></span>
+              <span className="w-8 h-0.5 bg-[#2b204c]"></span>
             </div>
           </motion.div>
         </div>

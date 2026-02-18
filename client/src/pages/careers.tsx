@@ -167,28 +167,35 @@ export default function Careers() {
           </div>
           
           {/* Jobs Table */}
-          <div className="bg-white rounded-sm border border-slate-100 overflow-hidden max-w-4xl mx-auto">
-            <div className="hidden md:grid grid-cols-4 gap-4 p-4 bg-[#2b204c] text-white text-xs font-bold uppercase tracking-widest">
-              <span>Position</span>
-              <span>Department</span>
-              <span>Location</span>
-              <span>Type</span>
-            </div>
-            
-            {/* Empty State */}
-            <div className="p-12 text-center">
-              <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Briefcase className="w-8 h-8 text-slate-400" />
+          <div className="bg-white rounded-sm border border-slate-100 overflow-hidden max-w-5xl mx-auto shadow-sm">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 p-6 bg-[#F9FAFB] border-b border-slate-100 items-center">
+              <div className="col-span-1 md:col-span-3">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+                   <div>
+                      <h3 className="font-heading font-bold text-[#2b204c] text-lg">Full Stack Developer</h3>
+                      <span className="md:hidden text-xs text-slate-400 font-medium uppercase tracking-widest mt-1 block">Engineering</span>
+                   </div>
+                   <div className="flex items-center gap-2 text-slate-600 text-sm">
+                      <Globe size={16} className="text-[#8b68f6]" />
+                      <span>Doha, Qatar</span>
+                   </div>
+                   <div className="flex items-center gap-2 text-slate-600 text-sm">
+                      <Briefcase size={16} className="text-[#8b68f6]" />
+                      <span>Full-Time</span>
+                   </div>
+                </div>
               </div>
-              <h3 className="text-xl font-heading font-bold text-[#2b204c] mb-3 uppercase">No Open Positions</h3>
-              <p className="text-slate-500 mb-6 max-w-md mx-auto">
-                We don't have any open positions at the moment, but we're always looking for exceptional talent. Send us your resume and we'll keep you in mind for future opportunities.
-              </p>
-              <a href="mailto:careers@risin.ventures">
-                <Button className="bg-[#8b68f6] hover:bg-[#2b204c] text-white rounded-sm px-8 py-3 font-bold text-sm uppercase tracking-widest transition-all">
-                  Send Your Resume
-                </Button>
-              </a>
+              <div className="col-span-1 text-right">
+                <a 
+                  href="https://www.linkedin.com/jobs/view/4353123084/?trackingId=5vFKtYxnTGeaJMqapf%2Fa0g%3D%3D" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  <Button className="w-full md:w-auto bg-[#2b204c] hover:bg-[#8b68f6] text-white rounded-sm px-6 font-bold text-xs uppercase tracking-widest transition-all">
+                    Apply Now
+                  </Button>
+                </a>
+              </div>
             </div>
           </div>
         </div>

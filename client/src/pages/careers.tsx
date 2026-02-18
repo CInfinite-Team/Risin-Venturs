@@ -172,8 +172,8 @@ export default function Careers() {
               <div className="col-span-1 md:col-span-3">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
                    <div>
-                      <h3 className="font-heading font-bold text-[#2b204c] text-lg">Full Stack Developer</h3>
-                      <span className="md:hidden text-xs text-slate-400 font-medium uppercase tracking-widest mt-1 block">Engineering</span>
+                      <h3 className="font-heading font-bold text-[#2b204c] text-lg">Business Development Specialist</h3>
+                      <span className="md:hidden text-xs text-slate-400 font-medium uppercase tracking-widest mt-1 block">Commercial</span>
                    </div>
                    <div className="flex items-center gap-2 text-slate-600 text-sm">
                       <Globe size={16} className="text-[#8b68f6]" />

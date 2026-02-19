@@ -256,14 +256,14 @@ export default function Home() {
           />
         </div>
 
-        <div className="container relative z-20 px-6 mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="container relative z-20 px-6 xl:px-12 mx-auto max-w-[1400px]">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-24 items-center min-h-[calc(100vh-80px)]">
             {/* Left Content */}
             <motion.div 
               initial="initial"
               animate="animate"
               variants={stagger}
-              className="max-w-3xl w-full"
+              className="max-w-3xl w-full flex flex-col justify-center"
             >
               <motion.div variants={fadeIn} className="inline-block mb-5">
                 <span className="bg-[#8b68f6]/10 text-[#8b68f6] border border-[#8b68f6]/20 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide backdrop-blur-sm">
@@ -273,7 +273,7 @@ export default function Home() {
               
               <motion.h1 
                 variants={fadeIn}
-                className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold leading-[1.05] tracking-tight mb-6 text-white"
+                className="text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] 2xl:text-8xl font-heading font-bold leading-[1.1] tracking-tight mb-6 text-white"
               >
                 Building the Next <br />
                 Generation of <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8b68f6] to-[#b39bfb]">Deep Tech</span>
@@ -305,24 +305,24 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.2 }}
-              className="relative w-full flex items-center justify-center"
+              className="relative w-full flex items-center justify-center lg:justify-end"
             >
                {/* Metrics Grid */}
-              <div className="grid grid-cols-2 gap-4 w-full max-w-lg">
-                <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-sm">
-                  <h3 className="text-4xl font-heading font-bold text-white mb-1">$100M+</h3>
+              <div className="grid grid-cols-2 gap-4 w-full max-w-lg xl:max-w-xl">
+                <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 xl:p-8 rounded-sm hover:bg-white/10 transition-colors duration-300">
+                  <h3 className="text-3xl xl:text-4xl font-heading font-bold text-white mb-1">$100M+</h3>
                   <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">Capital Enabled</p>
                 </div>
-                <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-sm">
-                  <h3 className="text-4xl font-heading font-bold text-white mb-1">8</h3>
+                <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 xl:p-8 rounded-sm hover:bg-white/10 transition-colors duration-300">
+                  <h3 className="text-3xl xl:text-4xl font-heading font-bold text-white mb-1">8</h3>
                   <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">Active Ventures</p>
                 </div>
-                <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-sm">
-                  <h3 className="text-4xl font-heading font-bold text-white mb-1">15+</h3>
+                <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 xl:p-8 rounded-sm hover:bg-white/10 transition-colors duration-300">
+                  <h3 className="text-3xl xl:text-4xl font-heading font-bold text-white mb-1">15+</h3>
                   <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">Gov't Partners</p>
                 </div>
-                <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-sm">
-                  <h3 className="text-4xl font-heading font-bold text-white mb-1">500+</h3>
+                <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 xl:p-8 rounded-sm hover:bg-white/10 transition-colors duration-300">
+                  <h3 className="text-3xl xl:text-4xl font-heading font-bold text-white mb-1">500+</h3>
                   <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">Startups Supported</p>
                 </div>
               </div>

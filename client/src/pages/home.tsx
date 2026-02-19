@@ -245,7 +245,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center overflow-hidden pt-24 md:pt-0 bg-[#2b204c] border-b border-slate-100">
+      <section className="relative min-h-screen flex items-center pt-32 pb-20 lg:pt-0 lg:pb-0 bg-[#2b204c] border-b border-slate-100 box-border">
         <div className="absolute inset-0 z-0">
            {/* Background gradient/overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#2b204c] via-[#2b204c] to-[#2b204c]/90 z-10" />
@@ -256,14 +256,14 @@ export default function Home() {
           />
         </div>
 
-        <div className="container relative z-20 px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="container relative z-20 px-6 mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left Content */}
             <motion.div 
               initial="initial"
               animate="animate"
               variants={stagger}
-              className="max-w-3xl"
+              className="max-w-3xl w-full"
             >
               <motion.div variants={fadeIn} className="inline-block mb-5">
                 <span className="bg-[#8b68f6]/10 text-[#8b68f6] border border-[#8b68f6]/20 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide backdrop-blur-sm">

@@ -311,7 +311,7 @@ export default function Home() {
               <div className="grid grid-cols-2 gap-4 w-full max-w-lg">
                 <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-sm">
                   <h3 className="text-4xl font-heading font-bold text-white mb-1">$100M+</h3>
-                  <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">Capital Deployed</p>
+                  <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">Capital Enabled</p>
                 </div>
                 <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-sm">
                   <h3 className="text-4xl font-heading font-bold text-white mb-1">8</h3>

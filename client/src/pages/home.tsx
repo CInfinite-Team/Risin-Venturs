@@ -300,44 +300,30 @@ export default function Home() {
               </motion.div>
             </motion.div>
 
-            {/* Right Visual */}
+            {/* Right Visual / Metrics */}
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.2 }}
-              className="hidden lg:block relative h-[600px] w-full"
+              className="relative w-full flex items-center justify-center"
             >
-               {/* Abstract 3D/Tech Visual Representation */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#8b68f6]/20 to-transparent rounded-full blur-3xl opacity-30 animate-pulse"></div>
-              <img 
-                src={heroBg} 
-                alt="Deep Tech Innovation" 
-                className="w-full h-full object-contain drop-shadow-2xl relative z-10 mask-image-gradient"
-                style={{ maskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)' }}
-              />
-              
-              {/* Floating Cards / Elements Animation */}
-              <div className="absolute top-1/4 -right-10 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-sm z-20 shadow-2xl animate-float">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-[#8b68f6] rounded-sm flex items-center justify-center text-white">
-                    <Rocket size={20} />
-                  </div>
-                  <div>
-                    <div className="text-white text-xs font-bold uppercase">Venture Building</div>
-                    <div className="text-slate-300 text-[10px]">From Zero to One</div>
-                  </div>
+               {/* Metrics Grid */}
+              <div className="grid grid-cols-2 gap-4 w-full max-w-lg">
+                <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-sm">
+                  <h3 className="text-4xl font-heading font-bold text-white mb-1">$100M+</h3>
+                  <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">Capital Deployed</p>
                 </div>
-              </div>
-
-              <div className="absolute bottom-1/4 -left-10 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-sm z-20 shadow-2xl animate-float-delayed">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-[#2b204c] border border-white/20 rounded-sm flex items-center justify-center text-white">
-                    <Network size={20} />
-                  </div>
-                  <div>
-                    <div className="text-white text-xs font-bold uppercase">Ecosystem</div>
-                    <div className="text-slate-300 text-[10px]">Strategic Partnerships</div>
-                  </div>
+                <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-sm">
+                  <h3 className="text-4xl font-heading font-bold text-white mb-1">8</h3>
+                  <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">Active Ventures</p>
+                </div>
+                <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-sm">
+                  <h3 className="text-4xl font-heading font-bold text-white mb-1">15+</h3>
+                  <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">Gov't Partners</p>
+                </div>
+                <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-sm">
+                  <h3 className="text-4xl font-heading font-bold text-white mb-1">500+</h3>
+                  <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">Startups Supported</p>
                 </div>
               </div>
             </motion.div>
@@ -374,47 +360,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Impact Metrics Section - Small spacing */}
-      <section className="py-12 md:py-16 bg-white border-b border-slate-50">
-        <div className="container mx-auto px-6">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="flex flex-col items-center"
-          >
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 w-full max-w-6xl mb-8">
-              {[
-                { label: "Startups Supported", value: 500, suffix: "+", prefix: "" },
-                { label: "Capital Enabled", value: 100, suffix: "M+", prefix: "$" },
-                { label: "Markets Across GCC & Beyond", value: 10, suffix: "+", prefix: "" }
-              ].map((metric, i) => (
-                <div key={i} className="flex flex-col items-center md:items-start text-center md:text-left group">
-                  <span className="text-5xl md:text-7xl font-heading font-bold text-[#2b204c] mb-2 tracking-tighter">
-                    <CountUp to={metric.value} suffix={metric.suffix} prefix={metric.prefix} delay={i * 0.2} />
-                  </span>
-                  <span className="text-sm md:text-base text-slate-500 font-medium tracking-wide">
-                    {metric.label}
-                  </span>
-                  {/* Option A: Progressive Fill Bar (Subtle) */}
-                  <motion.div 
-                    initial={{ width: 0 }}
-                    whileInView={{ width: "60px" }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.5 + (i * 0.2), ease: "easeOut" }}
-                    className="h-1 bg-[#8b68f6] mt-4 rounded-full opacity-80"
-                  />
-                </div>
-              ))}
-            </div>
-            <p className="text-sm text-slate-400 font-light italic tracking-wide">
-              Built through venture studio initiatives and ecosystem partnerships.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
+      {/* Impact Metrics Section - REMOVED since metrics moved to hero */}
+      
       {/* Venture Building Section (Core Differentiator) */}
       <motion.section 
         id="venture-building"

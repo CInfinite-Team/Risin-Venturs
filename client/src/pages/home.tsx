@@ -245,7 +245,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-32 pb-20 lg:pt-0 lg:pb-0 bg-[#2b204c] border-b border-slate-100 box-border">
+      <section className="relative flex items-center pt-32 pb-20 lg:pt-20 lg:pb-10  bg-[#2b204c] border-b border-slate-100 box-border">
         <div className="absolute inset-0 z-0">
            {/* Background gradient/overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#2b204c] via-[#2b204c] to-[#2b204c]/90 z-10" />
@@ -273,7 +273,7 @@ export default function Home() {
               
               <motion.h1 
                 variants={fadeIn}
-                className="text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] 2xl:text-8xl font-heading font-bold leading-[1.1] tracking-tight mb-6 text-white"
+                className="text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-heading font-bold leading-[1.1] tracking-tight mb-6 text-white"
               >
                 Building the Next <br />
                 Generation of <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8b68f6] to-[#b39bfb]">Deep Tech</span>

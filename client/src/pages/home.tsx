@@ -698,7 +698,7 @@ export default function Home() {
               {[
                 { 
                   name: "Bigtrader", 
-                  logo: "/attached_assets/image_1767693167455.png",
+                  logo: "src/assets/HomePortfolio/Bigtrader.png",
                   website: "https://www.bigtrader.biz/",
                   category: "Marketplace",
                   accent: "#952828", // Saffron Red from logo
@@ -706,7 +706,7 @@ export default function Home() {
                 },
                 { 
                   name: "Madad Fintech", 
-                  logo: "https://www.madadfintech.com/home/hero.svg", 
+                  logo: "src/assets/HomePortfolio/Madad.png", 
                   website: "https://www.madadfintech.com/en",
                   category: "Fintech",
                   accent: "#2b204c", // Dark Indigo
@@ -714,7 +714,7 @@ export default function Home() {
                 },
                 { 
                   name: "iProcure", 
-                  logo: "https://iprocure.ai/datacard1.svg", 
+                  logo: "src/assets/HomePortfolio/Iprocure.png", 
                   website: "https://iprocure.ai/",
                   category: "AI",
                   accent: "#8b68f6", // Vivid Violet
@@ -722,7 +722,7 @@ export default function Home() {
                 },
                 { 
                   name: "Arisio", 
-                  logo: "https://arisio.io/Images/HomePage/whitelogo.png", 
+                  logo: "src/assets/HomePortfolio/Arisio.png", 
                   website: "https://arisio.io/",
                   category: "AI / Marketplace",
                   accent: "#10b981", // Emerald/Startup green
@@ -738,26 +738,25 @@ export default function Home() {
                   style={{ borderTopColor: startup.accent }}
                   className="group flex-shrink-0 w-[280px] md:w-auto flex flex-col p-8 border border-slate-100 border-t-4 bg-[#F9FAFB] shadow-[0_2px_8px_-2px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-500 h-full relative snap-center rounded-sm"
                 >
-                  <div className="absolute top-6 right-8">
-                    <span 
-                      style={{ color: startup.accent, borderColor: `${startup.accent}20` }}
-                      className="text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 bg-white border rounded-full"
-                    >
-                      {startup.category}
-                    </span>
-                  </div>
-                  <div className="h-16 flex items-center justify-start mb-8">
+              
+                  <div className="h-16 flex items-start justify-between mb-8">
                     {startup.logo ? (
                       <img 
                         src={startup.logo} 
                         alt={`${startup.name} logo`} 
-                        className={`h-full w-auto object-contain object-left ${startup.name === "Arisio" ? "brightness-0 opacity-80" : ""}`}
+                        className={`h-full w-auto object-contain object-left `}
                       />
                     ) : (
                       <div className="w-12 h-12 bg-white border border-slate-100 flex items-center justify-center font-heading font-bold text-xl text-[#2b204c]">
                         {startup.name.charAt(0)}
                       </div>
                     )}
+                      <span 
+                      style={{ color: startup.accent, borderColor: `${startup.accent}20` }}
+                      className="text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 bg-white border rounded-full"
+                    >
+                      {startup.category}
+                    </span>
                   </div>
                   <h3 className="text-xl font-bold text-[#2b204c] mb-3 tracking-tight">
                     {startup.name}

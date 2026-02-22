@@ -385,7 +385,7 @@ export default function Home() {
       </section>
 
       {/* Trusted By / Collaboration Section */}
-      <section className="py-16 md:py-24 bg-[#F7F8FC] border-t border-slate-100/50 overflow-hidden">
+      <section className="py-10 md:py-16 bg-[#F7F8FC] border-t border-slate-100/50 overflow-hidden">
         <div className="container mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -417,7 +417,7 @@ export default function Home() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={sectionVariants}
-        className="py-16 md:py-24 relative bg-[#F9FAFB] border-b border-slate-100"
+        className="py-10 md:py-16 relative bg-[#F9FAFB] border-b border-slate-100"
       >
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
@@ -505,7 +505,7 @@ export default function Home() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={sectionVariants}
-        className="py-16 md:py-24 relative bg-white"
+        className="py-10 md:py-16 relative bg-white"
       >
         <div className="container mx-auto px-6">
           <div className="text-center mb-12 max-w-3xl mx-auto">
@@ -627,7 +627,7 @@ export default function Home() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={sectionVariants}
-        className="py-16 md:py-24 bg-[#F9FAFB] border-y border-slate-100"
+        className="py-10 md:py-16 bg-[#F9FAFB] border-y border-slate-100"
       >
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-12">
@@ -858,7 +858,7 @@ export default function Home() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={sectionVariants}
-        className="py-16 md:py-24 bg-white"
+        className="py-10 md:py-16 bg-white"
       >
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
@@ -1054,10 +1054,50 @@ export default function Home() {
         </div>
       </motion.section>
 
+      {/* Final CTA Section */}
+      <section className="py-20 md:py-28 bg-[#2b204c] relative overflow-hidden">
+         <div className="absolute inset-0 bg-gradient-to-r from-[#2b204c] to-[#2b204c]/90 z-10"></div>
+         {/* Abstract background elements */}
+         <div className="absolute top-0 right-0 w-full h-full opacity-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-overlay z-0"></div>
+         <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#8b68f6] rounded-full blur-[100px] opacity-30 z-0"></div>
+         <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-[#952828] rounded-full blur-[100px] opacity-20 z-0"></div>
+
+         <div className="container mx-auto px-6 relative z-20 text-center">
+           <motion.div
+             initial={{ opacity: 0, y: 30 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             viewport={{ once: true }}
+             transition={{ duration: 0.8 }}
+             className="max-w-4xl mx-auto"
+           >
+             <h2 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-8 uppercase leading-none tracking-tighter">
+               Ready to Build the <br/>
+               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8b68f6] to-[#b39bfb]">Future?</span>
+             </h2>
+             <p className="text-lg md:text-xl text-slate-300 mb-12 font-light leading-relaxed max-w-2xl mx-auto">
+               Whether you're a founder with a bold vision or an enterprise looking to innovate, we're your partner in building what's next.
+             </p>
+             
+             <div className="flex flex-col sm:flex-row justify-center gap-6">
+               <Link href="/build-with-us">
+                 <Button className="bg-[#8b68f6] text-white hover:bg-[#7a5bd6] transition-all rounded-sm h-16 px-10 text-lg font-bold uppercase tracking-widest shadow-2xl border-0 w-full sm:w-auto hover:scale-105 transform duration-300">
+                   Build With Us
+                 </Button>
+               </Link>
+               <Link href="/partners">
+                 <Button variant="outline" className="border-white/20 text-white hover:bg-white hover:text-[#2b204c] transition-all rounded-sm h-16 px-10 text-lg font-bold uppercase tracking-widest bg-white/5 w-full sm:w-auto backdrop-blur-sm hover:scale-105 transform duration-300">
+                   Partner With Us
+                 </Button>
+               </Link>
+             </div>
+           </motion.div>
+         </div>
+      </section>
+      
       {/* Case Studies Section - Impact in Action */}
       <motion.section 
         id="case-studies"
-        className="py-16 md:py-24 bg-gradient-to-b from-slate-50 to-white"
+        className="py-10 md:py-16 bg-gradient-to-b from-slate-50 to-white"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
@@ -1232,45 +1272,7 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* Final CTA Section */}
-      <section className="py-20 md:py-28 bg-[#2b204c] relative overflow-hidden">
-         <div className="absolute inset-0 bg-gradient-to-r from-[#2b204c] to-[#2b204c]/90 z-10"></div>
-         {/* Abstract background elements */}
-         <div className="absolute top-0 right-0 w-full h-full opacity-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-overlay z-0"></div>
-         <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#8b68f6] rounded-full blur-[100px] opacity-30 z-0"></div>
-         <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-[#952828] rounded-full blur-[100px] opacity-20 z-0"></div>
 
-         <div className="container mx-auto px-6 relative z-20 text-center">
-           <motion.div
-             initial={{ opacity: 0, y: 30 }}
-             whileInView={{ opacity: 1, y: 0 }}
-             viewport={{ once: true }}
-             transition={{ duration: 0.8 }}
-             className="max-w-4xl mx-auto"
-           >
-             <h2 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-8 uppercase leading-none tracking-tighter">
-               Ready to Build the <br/>
-               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8b68f6] to-[#b39bfb]">Future?</span>
-             </h2>
-             <p className="text-lg md:text-xl text-slate-300 mb-12 font-light leading-relaxed max-w-2xl mx-auto">
-               Whether you're a founder with a bold vision or an enterprise looking to innovate, we're your partner in building what's next.
-             </p>
-             
-             <div className="flex flex-col sm:flex-row justify-center gap-6">
-               <Link href="/build-with-us">
-                 <Button className="bg-[#8b68f6] text-white hover:bg-[#7a5bd6] transition-all rounded-sm h-16 px-10 text-lg font-bold uppercase tracking-widest shadow-2xl border-0 w-full sm:w-auto hover:scale-105 transform duration-300">
-                   Build With Us
-                 </Button>
-               </Link>
-               <Link href="/partners">
-                 <Button variant="outline" className="border-white/20 text-white hover:bg-white hover:text-[#2b204c] transition-all rounded-sm h-16 px-10 text-lg font-bold uppercase tracking-widest bg-white/5 w-full sm:w-auto backdrop-blur-sm hover:scale-105 transform duration-300">
-                   Partner With Us
-                 </Button>
-               </Link>
-             </div>
-           </motion.div>
-         </div>
-      </section>
 
       <Footer />
       <ScrollToTop />

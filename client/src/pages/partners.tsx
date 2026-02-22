@@ -199,7 +199,7 @@ export default function Partners() {
           
           {/* Mobile Carousel */}
           <div className="block md:hidden px-4">
-            <PartnerLogoCarousel logos={partnerLogos.ecosystem} />
+            <PartnerLogoCarousel autoplay={true} loop={true} logos={partnerLogos.ecosystem} />
           </div>
 
           {/* Desktop Grid */}
@@ -230,7 +230,7 @@ export default function Partners() {
           {/* Mobile Carousel */}
           <div className="block md:hidden px-4">
             <div className="bg-white p-4 rounded-sm border border-slate-100">
-               <PartnerLogoCarousel logos={partnerLogos.gtm} />
+               <PartnerLogoCarousel autoplay={true} loop={true} logos={partnerLogos.gtm} />
             </div>
           </div>
 

@@ -19,7 +19,7 @@ const sectionVariants = {
 };
 
 // Using import.meta.glob to dynamically load all images from the investors folder
-const investorModules = import.meta.glob('/src/assets/investors/*', { eager: true }) as Record<string, { default: string }>;
+const investorModules = import.meta.glob('/src/assets/Investors/*', { eager: true }) as Record<string, { default: string }>;
 const investorLogos = Object.values(investorModules).map(module => module.default);
 
 // Using import.meta.glob to dynamically load all images from the GTM Partners folder

@@ -26,18 +26,13 @@ const investorLogos = Object.values(investorModules).map(module => module.defaul
 const gtmModules = import.meta.glob('/src/assets/GTM Partners/*', { eager: true }) as Record<string, { default: string }>;
 const gtmLogos = Object.values(gtmModules).map(module => module.default);
 
+// Using import.meta.glob to dynamically load all images from the Ecosystem Partners folder
+const ecosystemModules = import.meta.glob('/src/assets/Ecosystem Partners/*', { eager: true }) as Record<string, { default: string }>;
+const ecosystemLogos = Object.values(ecosystemModules).map(module => module.default);
+
 const partnerLogos = {
   investors: investorLogos,
-  ecosystem: [
-    "https://risin.ventures/wp-content/uploads/2024/06/logo-1.png",
-    "https://risin.ventures/wp-content/uploads/2024/06/logo-2.png",
-    "https://risin.ventures/wp-content/uploads/2024/06/logo-3.png",
-    "https://risin.ventures/wp-content/uploads/2024/06/logo-4.png",
-    "https://risin.ventures/wp-content/uploads/2024/06/logo-5.png",
-    "https://risin.ventures/wp-content/uploads/2024/06/logo-6.png",
-    "https://risin.ventures/wp-content/uploads/2024/06/logo-7.png",
-    "https://risin.ventures/wp-content/uploads/2024/06/logo-8.png"
-  ],
+  ecosystem: ecosystemLogos,
   gtm: gtmLogos
 };
 

@@ -18,19 +18,12 @@ const sectionVariants = {
   }
 };
 
+// Using import.meta.glob to dynamically load all images from the investors folder
+const investorModules = import.meta.glob('/src/assets/investors/*', { eager: true }) as Record<string, { default: string }>;
+const investorLogos = Object.values(investorModules).map(module => module.default);
+
 const partnerLogos = {
-  investors: [
-    "https://risin.ventures/wp-content/uploads/2024/06/logo-23.png",
-    "https://risin.ventures/wp-content/uploads/2024/06/logo-24.png",
-    "https://risin.ventures/wp-content/uploads/2024/06/logo-25.png",
-    "https://risin.ventures/wp-content/uploads/2024/06/logo-26.png",
-    "https://risin.ventures/wp-content/uploads/2024/06/logo-17.png",
-    "https://risin.ventures/wp-content/uploads/2024/06/logo-18.png",
-    "https://risin.ventures/wp-content/uploads/2024/06/logo-19.png",
-    "https://risin.ventures/wp-content/uploads/2024/06/logo-20.png",
-    "https://risin.ventures/wp-content/uploads/2024/06/logo-21.png",
-    "https://risin.ventures/wp-content/uploads/2024/06/logo-22.png"
-  ],
+  investors: investorLogos,
   ecosystem: [
     "https://risin.ventures/wp-content/uploads/2024/06/logo-1.png",
     "https://risin.ventures/wp-content/uploads/2024/06/logo-2.png",

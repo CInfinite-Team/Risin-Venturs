@@ -13,10 +13,11 @@ import arisioLogo from "@/assets/HomePortfolio/Arisio.png";
 import { PartnerLogoCarousel, partnerLogos } from "@/pages/partners";
 
 import { Button } from "@/components/ui/button";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Link } from "wouter";
 import ScrollToTop from "@/components/ScrollToTop";
 import Footer from "@/components/Footer";
+import useEmblaCarousel from "embla-carousel-react";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -104,6 +105,55 @@ const CountUp = ({ from = 0, to, duration = 2, prefix = "", suffix = "", delay =
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const [servicesEmblaRef, servicesEmblaApi] = useEmblaCarousel({ loop: false, align: 'start', containScroll: 'trimSnaps' });
+  const [servicesSelectedIndex, setServicesSelectedIndex] = useState(0);
+
+  const [programsEmblaRef, programsEmblaApi] = useEmblaCarousel({ loop: false, align: 'start', containScroll: 'trimSnaps' });
+  const [programsSelectedIndex, setProgramsSelectedIndex] = useState(0);
+
+  const [portfolioEmblaRef, portfolioEmblaApi] = useEmblaCarousel({ loop: false, align: 'start', containScroll: 'trimSnaps' });
+  const [portfolioSelectedIndex, setPortfolioSelectedIndex] = useState(0);
+
+  const onSelectServices = useCallback(() => {
+    if (!servicesEmblaApi) return;
+    setServicesSelectedIndex(servicesEmblaApi.selectedScrollSnap());
+  }, [servicesEmblaApi, setServicesSelectedIndex]);
+
+  const onSelectPrograms = useCallback(() => {
+    if (!programsEmblaApi) return;
+    setProgramsSelectedIndex(programsEmblaApi.selectedScrollSnap());
+  }, [programsEmblaApi, setProgramsSelectedIndex]);
+
+  const onSelectPortfolio = useCallback(() => {
+    if (!portfolioEmblaApi) return;
+    setPortfolioSelectedIndex(portfolioEmblaApi.selectedScrollSnap());
+  }, [portfolioEmblaApi, setPortfolioSelectedIndex]);
+
+  useEffect(() => {
+    if (!servicesEmblaApi) return;
+    onSelectServices();
+    servicesEmblaApi.on('select', onSelectServices);
+    servicesEmblaApi.on('reInit', onSelectServices);
+  }, [servicesEmblaApi, onSelectServices]);
+
+  useEffect(() => {
+    if (!programsEmblaApi) return;
+    onSelectPrograms();
+    programsEmblaApi.on('select', onSelectPrograms);
+    programsEmblaApi.on('reInit', onSelectPrograms);
+  }, [programsEmblaApi, onSelectPrograms]);
+
+  useEffect(() => {
+    if (!portfolioEmblaApi) return;
+    onSelectPortfolio();
+    portfolioEmblaApi.on('select', onSelectPortfolio);
+    portfolioEmblaApi.on('reInit', onSelectPortfolio);
+  }, [portfolioEmblaApi, onSelectPortfolio]);
+
+  const scrollToService = useCallback((index: number) => servicesEmblaApi?.scrollTo(index), [servicesEmblaApi]);
+  const scrollToProgram = useCallback((index: number) => programsEmblaApi?.scrollTo(index), [programsEmblaApi]);
+  const scrollToPortfolio = useCallback((index: number) => portfolioEmblaApi?.scrollTo(index), [portfolioEmblaApi]);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -469,7 +519,8 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="flex md:grid md:grid-cols-3 gap-8 overflow-x-auto pb-4 md:pb-0 scrollbar-hide snap-x snap-mandatory px-6 md:px-0 -mx-6 md:mx-0">
+          {/* Desktop Version */}
+          <div className="hidden md:grid md:grid-cols-3 gap-8">
             {[
               { 
                 icon: <Zap className="w-8 h-8" />, 
@@ -492,7 +543,7 @@ export default function Home() {
             ].map((value, i) => (
               <div 
                 key={i}
-                className="flex-shrink-0 w-[300px] md:w-auto snap-center flex flex-col p-8 md:p-10 border border-slate-100 bg-[#F9FAFB] transition-all duration-300 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.1)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:translate-y-[-2px] h-full relative overflow-hidden group rounded-sm"
+                className="flex flex-col p-10 border border-slate-100 bg-[#F9FAFB] transition-all duration-300 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.1)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:translate-y-[-2px] h-full relative overflow-hidden group rounded-sm"
               >
                 <div className="text-[#2b204c] group-hover:text-[#8b68f6] transition-colors mb-6">
                   {value.icon}
@@ -509,11 +560,62 @@ export default function Home() {
               </div>
             ))}
           </div>
-          {/* Subtle Progress Dots for Mobile */}
-          <div className="flex md:hidden justify-center gap-2 mt-6">
-            {[0, 1, 2].map((dot) => (
-              <div key={dot} className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${dot === 0 ? 'bg-[#8b68f6] scale-125' : 'bg-slate-300'}`} />
-            ))}
+
+          {/* Mobile Carousel Version */}
+          <div className="md:hidden">
+            <div className="overflow-hidden" ref={servicesEmblaRef}>
+              <div className="flex touch-pan-y">
+                {[
+                  { 
+                    icon: <Zap className="w-8 h-8" />, 
+                    title: "Innovation", 
+                    desc: "Designing market-relevant solutions using deep tech.",
+                    link: "/venture-studio/innovation"
+                  },
+                  { 
+                    icon: <Cpu className="w-8 h-8" />, 
+                    title: "Incubation", 
+                    desc: "Guiding early-stage founders from idea to validation.",
+                    link: "/venture-studio/incubation"
+                  },
+                  { 
+                    icon: <Rocket className="w-8 h-8" />, 
+                    title: "Acceleration", 
+                    desc: "Scaling startups through access to enterprise networks.",
+                    link: "/venture-studio/acceleration"
+                  }
+                ].map((value, i) => (
+                  <div key={i} className="flex-[0_0_85%] min-w-0 pr-4 pl-1 pb-4 snap-center">
+                    <div className="flex flex-col p-8 border border-slate-100 bg-[#F9FAFB] transition-all duration-300 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.1)] h-full relative overflow-hidden group rounded-sm">
+                      <div className="text-[#2b204c] group-hover:text-[#8b68f6] transition-colors mb-6">
+                        {value.icon}
+                      </div>
+                      <h3 className="text-2xl font-bold text-[#2b204c] mb-3 tracking-tight">
+                        {value.title}
+                      </h3>
+                      <p className="text-slate-600 text-base leading-relaxed mb-6 flex-1 font-light">
+                        {value.desc}
+                      </p>
+                      <Link href={value.link} className="text-xs font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-2 transition-colors cursor-pointer mt-auto">
+                          Know More <ArrowRight size={12} />
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* Functional Dots for Mobile */}
+            <div className="flex justify-center gap-2 mt-4">
+              {[0, 1, 2].map((dot) => (
+                <button 
+                  key={dot} 
+                  onClick={() => scrollToService(dot)}
+                  aria-label={`Go to slide ${dot + 1}`}
+                  className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${servicesSelectedIndex === dot ? 'bg-[#8b68f6] scale-125' : 'bg-slate-300'}`} 
+                />
+              ))}
+            </div>
           </div>
         </div>
       </motion.section>
@@ -540,7 +642,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-8 overflow-x-auto pb-4 md:pb-0 scrollbar-hide snap-x snap-mandatory px-6 md:px-0 -mx-6 md:mx-0">
+          {/* Desktop Version */}
+          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
                 title: "AIX",
@@ -573,7 +676,7 @@ export default function Home() {
             ].map((program, i) => (
               <div 
                 key={i}
-                className="flex-shrink-0 w-[280px] md:w-auto snap-center flex flex-col p-8 bg-white border border-slate-100 shadow-[0_2px_8px_-2px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:border-[#8b68f6]/20 transition-all duration-300 h-full rounded-sm group"
+                className="flex flex-col p-8 bg-white border border-slate-100 shadow-[0_2px_8px_-2px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:border-[#8b68f6]/20 transition-all duration-300 h-full rounded-sm group"
               >
                 {program.logo && (
                   <div className="mb-6 h-10 w-auto flex items-start">
@@ -610,12 +713,91 @@ export default function Home() {
               </div>
             ))}
           </div>
-          
-          {/* Mobile Swipe Indicator */}
-          <div className="flex md:hidden justify-center gap-2 mt-6">
-            {[0, 1, 2, 3].map((dot) => (
-              <div key={dot} className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${dot === 0 ? 'bg-[#8b68f6] scale-125' : 'bg-slate-300'}`} />
-            ))}
+
+          {/* Mobile Carousel Version */}
+          <div className="md:hidden">
+            <div className="overflow-hidden" ref={programsEmblaRef}>
+              <div className="flex touch-pan-y">
+                {[
+                  {
+                    title: "AIX",
+                    logo: aixLogo, 
+                    desc: "Building real-world AI solutions.",
+                    link: "/programs/aix",
+                    isExternal: false
+                  },
+                  {
+                    title: "Sustainova",
+                    logo: sustainovaLogo,
+                    desc: "Innovation challenge for climate tech.",
+                    link: "/programs/sustainova",
+                    isExternal: false
+                  },
+                  {
+                    title: "Entrepreneurship Awards",
+                    logo: "https://qatarentrepreneurshipawards.com/wp-content/uploads/2023/08/withoutyear-logo.png",
+                    desc: "Celebrating high-potential entrepreneurs.",
+                    link: "/programs/entrepreneurship-awards",
+                    isExternal: false
+                  },
+                  {
+                    title: "GCC GTM",
+                    logo: gccGtmLogo,
+                    desc: "Accelerating global deep-tech ventures.",
+                    link: "/programs/gtm",
+                    isExternal: false
+                  }
+                ].map((program, i) => (
+                  <div key={i} className="flex-[0_0_85%] min-w-0 pr-4 pl-1 pb-4 snap-center">
+                    <div className="flex flex-col p-8 bg-white border border-slate-100 shadow-[0_2px_8px_-2px_rgba(0,0,0,0.05)] h-full rounded-sm group">
+                      {program.logo && (
+                        <div className="mb-6 h-10 w-auto flex items-start">
+                          <img 
+                            src={program.logo} 
+                            alt={`${program.title} logo`} 
+                            className="h-full w-auto object-contain object-left filter brightness-95"
+                          />
+                        </div>
+                      )}
+                      <h3 className="text-xl md:text-2xl font-bold text-[#2b204c] mb-3 tracking-tight">
+                        {program.title}
+                      </h3>
+                      <p className="text-sm md:text-base text-slate-600 mb-6 leading-relaxed flex-1 font-light">
+                        {program.desc}
+                      </p>
+                      {program.isExternal ? (
+                        <a 
+                          href={program.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-2 transition-colors group mt-auto"
+                        >
+                          Know More <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                        </a>
+                      ) : (
+                        <Link 
+                          href={program.link}
+                          className="text-xs font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-2 transition-colors group mt-auto"
+                        >
+                          Know More <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                        </Link>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* Functional Dots for Mobile */}
+            <div className="flex justify-center gap-2 mt-4">
+              {[0, 1, 2, 3].map((dot) => (
+                <button 
+                  key={dot} 
+                  onClick={() => scrollToProgram(dot)}
+                  aria-label={`Go to slide ${dot + 1}`}
+                  className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${programsSelectedIndex === dot ? 'bg-[#8b68f6] scale-125' : 'bg-slate-300'}`} 
+                />
+              ))}
+            </div>
           </div>
         </div>
       </motion.section>
@@ -692,93 +874,182 @@ export default function Home() {
           </div>
 
           <div className="relative group">
-            <div className="flex md:grid sm:grid-cols-2 lg:grid-cols-4 gap-8 overflow-x-auto pb-4 md:pb-0 scrollbar-hide snap-x snap-mandatory px-6 md:px-0 -mx-6 md:mx-0">
-              {[
-                { 
-                  name: "Bigtrader", 
-                  logo: bigtraderLogo,
-                  website: "https://www.bigtrader.biz/",
-                  category: "Marketplace",
-                  accent: "#952828", // Saffron Red from logo
-                  desc: "Smarter procurement and supply chain efficiency." 
-                },
-                { 
-                  name: "Madad Fintech", 
-                  logo: madadLogo, 
-                  website: "https://www.madadfintech.com/en",
-                  category: "Fintech",
-                  accent: "#2b204c", // Dark Indigo
-                  desc: "Ethical digital financial solutions for everyone." 
-                },
-                { 
-                  name: "iProcure", 
-                  logo: iprocureLogo, 
-                  website: "https://iprocure.ai/",
-                  category: "AI",
-                  accent: "#8b68f6", // Vivid Violet
-                  desc: "AI-powered procurement intelligence." 
-                },
-                { 
-                  name: "Arisio", 
-                  logo: arisioLogo, 
-                  website: "https://arisio.io/",
-                  category: "AI / Marketplace",
-                  accent: "#10b981", // Emerald/Startup green
-                  desc: "Connecting startups, investors, and ecosystems." 
-                }
-              ].map((startup, i) => (
-                <motion.div 
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  style={{ borderTopColor: startup.accent }}
-                  className="group flex-shrink-0 w-[280px] md:w-auto flex flex-col p-8 border border-slate-100 border-t-4 bg-[#F9FAFB] shadow-[0_2px_8px_-2px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-500 h-full relative snap-center rounded-sm"
-                >
-              
-                  <div className="h-16 flex items-start justify-between mb-8">
-                    {startup.logo ? (
-                      <img 
-                        src={startup.logo} 
-                        alt={`${startup.name} logo`} 
-                        className={`h-full w-auto object-contain object-left `}
-                      />
-                    ) : (
-                      <div className="w-12 h-12 bg-white border border-slate-100 flex items-center justify-center font-heading font-bold text-xl text-[#2b204c]">
-                        {startup.name.charAt(0)}
-                      </div>
-                    )}
-                      <span 
-                      style={{ color: startup.accent, borderColor: `${startup.accent}20` }}
-                      className="text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 bg-white border rounded-full"
-                    >
-                      {startup.category}
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-bold text-[#2b204c] mb-3 tracking-tight">
-                    {startup.name}
-                  </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed mb-6 flex-1 font-light">
-                    {startup.desc}
-                  </p>
-                  <a 
-                    href={startup.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[10px] font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-2 transition-colors group/link"
+          {/* Desktop Version */}
+          <div className="hidden md:grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { 
+                name: "Bigtrader", 
+                logo: bigtraderLogo,
+                website: "https://www.bigtrader.biz/",
+                category: "Marketplace",
+                accent: "#952828", // Saffron Red from logo
+                desc: "Smarter procurement and supply chain efficiency." 
+              },
+              { 
+                name: "Madad Fintech", 
+                logo: madadLogo, 
+                website: "https://www.madadfintech.com/en",
+                category: "Fintech",
+                accent: "#2b204c", // Dark Indigo
+                desc: "Ethical digital financial solutions for everyone." 
+              },
+              { 
+                name: "iProcure", 
+                logo: iprocureLogo, 
+                website: "https://iprocure.ai/",
+                category: "AI",
+                accent: "#8b68f6", // Vivid Violet
+                desc: "AI-powered procurement intelligence." 
+              },
+              { 
+                name: "Arisio", 
+                logo: arisioLogo, 
+                website: "https://arisio.io/",
+                category: "AI / Marketplace",
+                accent: "#10b981", // Emerald/Startup green
+                desc: "Connecting startups, investors, and ecosystems." 
+              }
+            ].map((startup, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                style={{ borderTopColor: startup.accent }}
+                className="group flex flex-col p-8 border border-slate-100 border-t-4 bg-[#F9FAFB] shadow-[0_2px_8px_-2px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-500 h-full relative rounded-sm"
+              >
+            
+                <div className="flex items-start justify-between gap-4 mb-8">
+                  {startup.logo ? (
+                    <img 
+                      src={startup.logo} 
+                      alt={`${startup.name} logo`} 
+                      className={`h-12 w-auto object-contain object-left shrink`}
+                    />
+                  ) : (
+                    <div className="w-12 h-12 shrink-0 bg-white border border-slate-100 flex items-center justify-center font-heading font-bold text-xl text-[#2b204c]">
+                      {startup.name.charAt(0)}
+                    </div>
+                  )}
+                    <span 
+                    style={{ color: startup.accent, borderColor: `${startup.accent}20` }}
+                    className="text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 bg-white border rounded-full shrink-0 whitespace-nowrap"
                   >
-                    Go to Website <ArrowRight size={10} className="group-hover/link:translate-x-1 transition-transform" />
-                  </a>
-                </motion.div>
-              ))}
+                    {startup.category}
+                  </span>
+                </div>
+                <h3 className="text-xl font-bold text-[#2b204c] mb-3 tracking-tight">
+                  {startup.name}
+                </h3>
+                <p className="text-sm text-slate-600 leading-relaxed mb-6 flex-1 font-light">
+                  {startup.desc}
+                </p>
+                <a 
+                  href={startup.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[10px] font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-2 transition-colors group/link"
+                >
+                  Go to Website <ArrowRight size={10} className="group-hover/link:translate-x-1 transition-transform" />
+                </a>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Mobile Carousel Version */}
+          <div className="md:hidden mt-8">
+            <div className="overflow-hidden" ref={portfolioEmblaRef}>
+              <div className="flex touch-pan-y">
+                {[
+                  { 
+                    name: "Bigtrader", 
+                    logo: bigtraderLogo,
+                    website: "https://www.bigtrader.biz/",
+                    category: "Marketplace",
+                    accent: "#952828", // Saffron Red from logo
+                    desc: "Smarter procurement and supply chain efficiency." 
+                  },
+                  { 
+                    name: "Madad Fintech", 
+                    logo: madadLogo, 
+                    website: "https://www.madadfintech.com/en",
+                    category: "Fintech",
+                    accent: "#2b204c", // Dark Indigo
+                    desc: "Ethical digital financial solutions for everyone." 
+                  },
+                  { 
+                    name: "iProcure", 
+                    logo: iprocureLogo, 
+                    website: "https://iprocure.ai/",
+                    category: "AI",
+                    accent: "#8b68f6", // Vivid Violet
+                    desc: "AI-powered procurement intelligence." 
+                  },
+                  { 
+                    name: "Arisio", 
+                    logo: arisioLogo, 
+                    website: "https://arisio.io/",
+                    category: "AI / Marketplace",
+                    accent: "#10b981", // Emerald/Startup green
+                    desc: "Connecting startups, investors, and ecosystems." 
+                  }
+                ].map((startup, i) => (
+                  <div key={i} className="flex-[0_0_auto] w-[85vw] min-w-[300px] max-w-[95vw] pr-4 pl-1 pb-4 snap-center">
+                    <div 
+                      style={{ borderTopColor: startup.accent }}
+                      className="flex flex-col p-8 border border-slate-100 border-t-4 bg-[#F9FAFB] shadow-[0_2px_8px_-2px_rgba(0,0,0,0.05)] h-full relative rounded-sm"
+                    >
+                      <div className="flex items-start justify-between gap-4 mb-8">
+                        {startup.logo ? (
+                          <img 
+                            src={startup.logo} 
+                            alt={`${startup.name} logo`} 
+                            className={`h-12 w-auto object-contain object-left shrink`}
+                          />
+                        ) : (
+                          <div className="w-12 h-12 shrink-0 bg-white border border-slate-100 flex items-center justify-center font-heading font-bold text-xl text-[#2b204c]">
+                            {startup.name.charAt(0)}
+                          </div>
+                        )}
+                        <span 
+                          style={{ color: startup.accent, borderColor: `${startup.accent}20` }}
+                          className="text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 bg-white border rounded-full shrink-0 whitespace-nowrap"
+                        >
+                          {startup.category}
+                        </span>
+                      </div>
+                      <h3 className="text-xl font-bold text-[#2b204c] mb-3 tracking-tight">
+                        {startup.name}
+                      </h3>
+                      <p className="text-sm text-slate-600 leading-relaxed mb-6 flex-1 font-light">
+                        {startup.desc}
+                      </p>
+                      <a 
+                        href={startup.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[10px] font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-2 transition-colors group/link"
+                      >
+                        Go to Website <ArrowRight size={10} className="group-hover/link:translate-x-1 transition-transform" />
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-            {/* Subtle Progress Dots for Mobile */}
-            <div className="flex md:hidden justify-center gap-2 mt-6">
+            {/* Functional Dots for Mobile */}
+            <div className="flex justify-center gap-2 mt-4">
               {[0, 1, 2, 3].map((dot) => (
-                <div key={dot} className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${dot === 0 ? 'bg-[#8b68f6] scale-125' : 'bg-slate-300'}`} />
+                <button 
+                  key={dot} 
+                  onClick={() => scrollToPortfolio(dot)}
+                  aria-label={`Go to slide ${dot + 1}`}
+                  className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${portfolioSelectedIndex === dot ? 'bg-[#8b68f6] scale-125' : 'bg-slate-300'}`} 
+                />
               ))}
             </div>
+          </div>
           </div>
         </div>
       </motion.section>

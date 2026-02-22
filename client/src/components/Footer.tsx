@@ -136,15 +136,15 @@ export default function Footer() {
             <h3 className="text-2xl md:text-3xl font-heading font-bold text-white mb-2 uppercase">Subscribe to our newsletter</h3>
             <p className="text-slate-300 text-sm">Get the latest insights on deep tech and venture building.</p>
           </div>
-          <div className="flex w-full md:w-auto relative z-10">
+          <div className="flex flex-col sm:flex-row w-full md:w-auto relative z-10 gap-2 sm:gap-0">
             <label htmlFor="newsletter-email" className="sr-only">Email address</label>
             <input 
               id="newsletter-email"
               type="email" 
               placeholder="Email address" 
-              className="bg-white/10 border border-white/20 rounded-l-sm px-6 py-4 text-sm text-white placeholder:text-slate-400 focus:ring-1 focus:ring-[#8b68f6] w-full md:min-w-[300px] outline-none transition-all"
+              className="bg-white/10 border border-white/20 sm:rounded-l-sm sm:rounded-r-none rounded-sm px-6 py-4 text-sm text-white placeholder:text-slate-400 focus:ring-1 focus:ring-[#8b68f6] w-full md:min-w-[300px] outline-none transition-all min-w-0"
             />
-            <Button className="bg-[#8b68f6] hover:bg-white hover:text-[#2b204c] text-white rounded-l-none rounded-r-sm h-auto px-8 border-0 font-bold uppercase tracking-widest transition-all">
+            <Button className="bg-[#8b68f6] hover:bg-white hover:text-[#2b204c] text-white sm:rounded-l-none sm:rounded-r-sm rounded-sm h-auto py-4 sm:py-0 px-8 border-0 font-bold uppercase tracking-widest transition-all whitespace-nowrap">
               Subscribe
             </Button>
           </div>

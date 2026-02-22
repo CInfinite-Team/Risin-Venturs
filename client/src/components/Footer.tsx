@@ -33,7 +33,7 @@ export default function Footer() {
           <div className="lg:col-span-4">
             <Link href="/" className="flex items-center gap-2 mb-8">
               <img 
-                src="/attached_assets/RISIN_LOGO_1767787710766.png" 
+                src="/favicon.svg" 
                 alt="Risin Ventures Logo" 
                 className="h-12 md:h-16 w-auto object-contain"
               />

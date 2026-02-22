@@ -22,6 +22,10 @@ const sectionVariants = {
 const investorModules = import.meta.glob('/src/assets/investors/*', { eager: true }) as Record<string, { default: string }>;
 const investorLogos = Object.values(investorModules).map(module => module.default);
 
+// Using import.meta.glob to dynamically load all images from the GTM Partners folder
+const gtmModules = import.meta.glob('/src/assets/GTM Partners/*', { eager: true }) as Record<string, { default: string }>;
+const gtmLogos = Object.values(gtmModules).map(module => module.default);
+
 const partnerLogos = {
   investors: investorLogos,
   ecosystem: [
@@ -34,16 +38,7 @@ const partnerLogos = {
     "https://risin.ventures/wp-content/uploads/2024/06/logo-7.png",
     "https://risin.ventures/wp-content/uploads/2024/06/logo-8.png"
   ],
-  gtm: [
-    "https://risin.ventures/wp-content/uploads/2024/06/logo-9.png",
-    "https://risin.ventures/wp-content/uploads/2024/06/logo-10.png",
-    "https://risin.ventures/wp-content/uploads/2024/06/logo-11.png",
-    "https://risin.ventures/wp-content/uploads/2024/06/logo-12.png",
-    "https://risin.ventures/wp-content/uploads/2024/06/logo-13.png",
-    "https://risin.ventures/wp-content/uploads/2024/06/logo-14.png",
-    "https://risin.ventures/wp-content/uploads/2024/06/logo-15.png",
-    "https://risin.ventures/wp-content/uploads/2024/06/logo-16.png"
-  ]
+  gtm: gtmLogos
 };
 
 const PartnerLogoCarousel = ({ logos, autoplay = false, loop = false }: { logos: string[], autoplay?: boolean, loop?: boolean }) => {

@@ -219,7 +219,7 @@ export default function GTM() {
       </section>
 
       {/* Image Placeholder - Full Width Program Launch */}
-      <section className="py-16 bg-white pb-0">
+      <section className="py-16 bg-white pb-4">
         <div className="container mx-auto px-6">
           <div className="w-full h-[500px] bg-slate-100 rounded-sm relative overflow-hidden group">
             <img 
@@ -234,7 +234,7 @@ export default function GTM() {
 
       {/* Program Timeline Bar */}
       <section className="bg-[#8b68f6] py-6 border-y border-white/10 relative overflow-hidden">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto pt-2 px-6">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-12 text-center md:text-left">
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 flex-1">
               <div className="flex items-center gap-3 relative">
@@ -399,7 +399,7 @@ export default function GTM() {
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
              <div className="order-2 md:order-1">
-               <h3 className="text-2xl font-heading font-bold text-[#2b204c] uppercase mb-4">High-Level Networking</h3>
+               <h3 className="text-3xl md:text-4xl font-heading font-bold text-[#2b204c] uppercase mb-4">High-Level Networking</h3>
                <p className="text-slate-600 leading-relaxed">
                  Access exclusive networking events with local partners, potential clients, and fellow founders. Build the relationships that will drive your expansion.
                </p>
@@ -420,7 +420,7 @@ export default function GTM() {
       <section className="py-16 bg-[#F9FAFB] border-y border-slate-100">
         <div className="container mx-auto px-6">
           <div className="text-center mb-10">
-            <span className="text-[#2b204c] text-sm font-bold uppercase tracking-widest">Ecosystem Partners</span>
+            <span className="text-3xl md:text-4xl font-heading font-bold text-[#2b204c] uppercase">Ecosystem Partners</span>
           </div>
           <div className="flex gap-6 pb-8 items-center scrollbar-hide snap-x snap-mandatory -mx-6 px-6 md:mx-0 md:px-0">
             <PartnerLogoCarousel logos={partners} autoplay={true} loop={true} />

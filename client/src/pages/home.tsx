@@ -273,7 +273,7 @@ export default function Home() {
               
               <motion.h1 
                 variants={fadeIn}
-                className="text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-heading font-bold leading-[1.1] tracking-tight mb-6 text-white"
+                className="text-5xl md:text-6xl lg:text-7xl  font-heading font-bold leading-[1.1] tracking-tight mb-6 text-white"
               >
                 Building the Next <br />
                 Generation of <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8b68f6] to-[#b39bfb]">Deep Tech</span>

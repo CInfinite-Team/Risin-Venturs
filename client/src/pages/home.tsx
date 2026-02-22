@@ -698,7 +698,7 @@ export default function Home() {
               {[
                 { 
                   name: "Bigtrader", 
-                  logo: "src/assets/HomePortfolio/Bigtrader.png",
+                  logo: "/src/assets/HomePortfolio/Bigtrader.png",
                   website: "https://www.bigtrader.biz/",
                   category: "Marketplace",
                   accent: "#952828", // Saffron Red from logo
@@ -706,7 +706,7 @@ export default function Home() {
                 },
                 { 
                   name: "Madad Fintech", 
-                  logo: "src/assets/HomePortfolio/Madad.png", 
+                  logo: "/src/assets/HomePortfolio/Madad.png", 
                   website: "https://www.madadfintech.com/en",
                   category: "Fintech",
                   accent: "#2b204c", // Dark Indigo
@@ -714,7 +714,7 @@ export default function Home() {
                 },
                 { 
                   name: "iProcure", 
-                  logo: "src/assets/HomePortfolio/Iprocure.png", 
+                  logo: "/src/assets/HomePortfolio/Iprocure.png", 
                   website: "https://iprocure.ai/",
                   category: "AI",
                   accent: "#8b68f6", // Vivid Violet
@@ -722,7 +722,7 @@ export default function Home() {
                 },
                 { 
                   name: "Arisio", 
-                  logo: "src/assets/HomePortfolio/Arisio.png", 
+                  logo: "/src/assets/HomePortfolio/Arisio.png", 
                   website: "https://arisio.io/",
                   category: "AI / Marketplace",
                   accent: "#10b981", // Emerald/Startup green

@@ -311,7 +311,7 @@ export default function Sustainova() {
 
       {/* CTA Section */}
       <motion.section 
-        className="py-16 md:py-20 bg-gradient-to-br from-emerald-900 to-teal-900"
+        className="py-10 md:py-16 bg-gradient-to-br from-emerald-900 to-teal-900"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -335,7 +335,7 @@ export default function Sustainova() {
 
       {/* Related Content */}
       <motion.section 
-        className="py-16 md:py-20 bg-white"
+        className="py-10 md:py-16 bg-white"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}

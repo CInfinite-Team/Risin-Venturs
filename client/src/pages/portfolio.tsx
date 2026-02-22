@@ -153,7 +153,7 @@ export default function Portfolio() {
       </section>
 
       {/* Filter & Grid */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-10 md:py-16 bg-white">
         <div className="container mx-auto px-6">
           
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-12">

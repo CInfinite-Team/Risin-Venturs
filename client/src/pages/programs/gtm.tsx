@@ -430,7 +430,7 @@ export default function GTM() {
 
       {/* CTA Section */}
       <motion.section 
-        className="py-16 md:py-20 bg-[#2b204c]"
+        className="py-10 md:py-16 bg-[#2b204c]"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}

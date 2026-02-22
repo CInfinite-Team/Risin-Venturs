@@ -280,7 +280,7 @@ export default function AIX() {
 
       {/* CTA Section */}
       <motion.section 
-        className="py-16 md:py-20 bg-[#2b204c]"
+        className="py-10 md:py-16 bg-[#2b204c]"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -304,7 +304,7 @@ export default function AIX() {
 
       {/* Related Content */}
       <motion.section 
-        className="py-16 md:py-20 bg-white"
+        className="py-10 md:py-16 bg-white"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}

@@ -120,7 +120,7 @@ export default function News() {
 
       {/* Featured News */}
       <motion.section 
-        className="py-16 md:py-20 bg-white"
+        className="py-10 md:py-16 bg-white"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -163,7 +163,7 @@ export default function News() {
 
       {/* News Grid */}
       <motion.section 
-        className="py-16 md:py-20 bg-[#F9FAFB]"
+        className="py-10 md:py-16 bg-[#F9FAFB]"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -216,7 +216,7 @@ export default function News() {
 
       {/* Programs CTA */}
       <motion.section 
-        className="py-16 md:py-20 bg-white"
+        className="py-10 md:py-16 bg-white"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -254,7 +254,7 @@ export default function News() {
 
       {/* Cross-links */}
       <motion.section 
-        className="py-16 md:py-20 bg-[#F9FAFB]"
+        className="py-10 md:py-16 bg-[#F9FAFB]"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}

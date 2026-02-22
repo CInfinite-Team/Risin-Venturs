@@ -310,7 +310,7 @@ export default function EntrepreneurshipAwards() {
 
       {/* CTA Section */}
       <motion.section 
-        className="py-16 md:py-20 bg-gradient-to-br from-amber-900 to-orange-900"
+        className="py-10 md:py-16 bg-gradient-to-br from-amber-900 to-orange-900"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -334,7 +334,7 @@ export default function EntrepreneurshipAwards() {
 
       {/* Related Content */}
       <motion.section 
-        className="py-16 md:py-20 bg-white"
+        className="py-10 md:py-16 bg-white"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}

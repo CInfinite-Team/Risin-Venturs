@@ -125,7 +125,7 @@ export default function Partners() {
 
       {/* Why Partner */}
       <motion.section 
-        className="py-16 md:py-20 bg-white"
+        className="py-10 md:py-16 bg-white"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -166,7 +166,7 @@ export default function Partners() {
 
       {/* Our Investors - Faster Carousel with Arrows */}
       <motion.section 
-        className="py-16 md:py-20 bg-[#F9FAFB]"
+        className="py-10 md:py-16 bg-[#F9FAFB]"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -185,7 +185,7 @@ export default function Partners() {
 
       {/* Ecosystem Partners */}
       <motion.section 
-        className="py-16 md:py-20 bg-white"
+        className="py-10 md:py-16 bg-white"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -215,7 +215,7 @@ export default function Partners() {
 
       {/* GTM Partners */}
       <motion.section 
-        className="py-16 md:py-20 bg-[#F9FAFB]"
+        className="py-10 md:py-16 bg-[#F9FAFB]"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -247,7 +247,7 @@ export default function Partners() {
 
       {/* Partner CTA */}
       <motion.section 
-        className="py-16 md:py-20 bg-[#2b204c]"
+        className="py-10 md:py-16 bg-[#2b204c]"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -269,7 +269,7 @@ export default function Partners() {
 
       {/* Cross-links */}
       <motion.section 
-        className="py-16 md:py-20 bg-white"
+        className="py-10 md:py-16 bg-white"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}

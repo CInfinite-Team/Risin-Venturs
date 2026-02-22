@@ -391,7 +391,7 @@ export default function Contact() {
 
       {/* Map / Location Visual */}
       <motion.section 
-        className="py-16 md:py-20 bg-white"
+        className="py-10 md:py-16 bg-white"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}

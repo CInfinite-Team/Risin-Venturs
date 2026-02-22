@@ -113,7 +113,7 @@ export default function CaseStudies() {
       {/* Featured Case Study */}
       {featured && (
         <motion.section 
-          className="py-16 md:py-20 bg-white"
+          className="py-10 md:py-16 bg-white"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -157,7 +157,7 @@ export default function CaseStudies() {
 
       {/* Case Studies Grid */}
       <motion.section 
-        className="py-16 md:py-20 bg-[#F9FAFB]"
+        className="py-10 md:py-16 bg-[#F9FAFB]"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -205,7 +205,7 @@ export default function CaseStudies() {
 
       {/* CTA Section */}
       <motion.section 
-        className="py-16 md:py-20 bg-[#2b204c]"
+        className="py-10 md:py-16 bg-[#2b204c]"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -236,7 +236,7 @@ export default function CaseStudies() {
 
       {/* Cross-links */}
       <motion.section 
-        className="py-16 md:py-20 bg-white"
+        className="py-10 md:py-16 bg-white"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}

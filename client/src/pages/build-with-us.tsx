@@ -1186,7 +1186,7 @@ export default function BuildWithUs() {
 
       {/* Programs Cross-link */}
       <motion.section 
-        className="py-16 md:py-20 bg-[#F9FAFB]"
+        className="py-10 md:py-16 bg-[#F9FAFB]"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}

@@ -212,8 +212,8 @@ export default function Home() {
             <NavDropdown 
               title="Venture Studio" 
               items={[
-                { label: "Innovation", href: "#about" },
-                { label: "Incubation", href: "#about" },
+                { label: "Innovation", href: "#services" },
+                { label: "Incubation", href: "#services" },
                 { label: "Acceleration", href: "#programs" },
                 { label: "Venture Building", href: "#philosophy" }
               ]} 
@@ -262,8 +262,8 @@ export default function Home() {
                 { 
                   title: "Venture Studio", 
                   items: [
-                    { label: "Innovation", href: "#about" },
-                    { label: "Incubation", href: "#about" },
+                    { label: "Innovation", href: "#services " },
+                    { label: "Incubation", href: "#services " },
                     { label: "Acceleration", href: "#programs" },
                     { label: "Venture Building", href: "#philosophy" }
                   ] 
@@ -412,7 +412,7 @@ export default function Home() {
       
       {/* Venture Building Section (Core Differentiator) */}
       <motion.section 
-        id="venture-building"
+        id="philosophy"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
@@ -520,7 +520,7 @@ export default function Home() {
           </div>
 
           {/* Desktop Version */}
-          <div className="hidden md:grid md:grid-cols-3 gap-8">
+          <div  className="hidden md:grid md:grid-cols-3 gap-8">
             {[
               { 
                 icon: <Zap className="w-8 h-8" />, 
@@ -1093,7 +1093,7 @@ export default function Home() {
            </motion.div>
          </div>
       </section>
-      
+
       {/* Case Studies Section - Impact in Action */}
       <motion.section 
         id="case-studies"

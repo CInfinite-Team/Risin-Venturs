@@ -141,7 +141,7 @@ export default function Team() {
 
       {/* Team Grid */}
       <motion.section 
-        className="py-16 md:py-20 bg-white"
+        className="py-10 md:py-16 bg-white"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -187,7 +187,7 @@ export default function Team() {
 
       {/* Advisors Section */}
       <motion.section 
-        className="py-16 md:py-20 bg-[#F9FAFB]"
+        className="py-10 md:py-16 bg-[#F9FAFB]"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -242,7 +242,7 @@ export default function Team() {
 
       {/* Join the Team CTA */}
       <motion.section 
-        className="py-16 md:py-20 bg-[#2b204c]"
+        className="py-10 md:py-16 bg-[#2b204c]"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -266,7 +266,7 @@ export default function Team() {
 
       {/* Cross-links */}
       <motion.section 
-        className="py-16 md:py-20 bg-white"
+        className="py-10 md:py-16 bg-white"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}

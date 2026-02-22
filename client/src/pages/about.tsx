@@ -46,17 +46,17 @@ export default function About() {
 
       {/* Our Company Section */}
       <motion.section 
-        className="py-16 md:py-20 bg-white"
+        className="py-10 md:py-16 bg-white"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={sectionVariants}
       >
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row gap-12 md:gap-16 items-center">
-            <div className="md:w-1/2">
+          <div className="flex flex-col md:flex-row gap-12 md:gap-16 items-stretch">
+            <div className="md:w-1/2 flex flex-col justify-center">
               <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-3 block">Our Company</span>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#2b204c] mb-6 uppercase">
+              <h2 className="text-3xl md:text-4xl  font-heading font-bold text-[#2b204c] mb-6 uppercase">
                 Where Capital Meets Engineering
               </h2>
               <p className="text-slate-600 leading-relaxed mb-6">
@@ -65,7 +65,7 @@ export default function About() {
               <p className="text-slate-600 leading-relaxed mb-8">
                 We support entrepreneurship ventures through Startup Incubator/Accelerator Programs, funding, training, mentorship, and connection to the regional and global tech innovation ecosystem. We create an environment that fosters innovation and collaboration.
               </p>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3 mt-auto">
                 <Link href="/team">
                   <a className="text-sm font-bold text-[#2b204c] hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-2 transition-colors">
                     Meet the Team <ArrowRight size={14} />
@@ -74,11 +74,11 @@ export default function About() {
               </div>
             </div>
             <div className="md:w-1/2">
-              <div className="aspect-[4/3] bg-gradient-to-br from-[#2b204c] to-[#8b68f6] rounded-sm overflow-hidden relative">
+              <div className="h-64 md:h-full w-full bg-gradient-to-br from-[#2b204c] to-[#8b68f6] rounded-sm overflow-hidden relative min-h-[300px]">
                 <img 
                   src="https://risin.ventures/wp-content/uploads/2024/06/46-1024x768.jpeg" 
                   alt="Risin Ventures Team"
-                  className="w-full h-full object-cover opacity-80 mix-blend-luminosity"
+                  className="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-luminosity"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#2b204c]/80 to-transparent" />
               </div>
@@ -89,7 +89,7 @@ export default function About() {
 
       {/* Vision & Mission */}
       <motion.section 
-        className="py-16 md:py-20 bg-[#F9FAFB]"
+        className="py-10 md:py-16 bg-[#F9FAFB]"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -125,7 +125,7 @@ export default function About() {
 
       {/* Ecosystem Section */}
       <motion.section 
-        className="py-16 md:py-20 bg-white"
+        className="py-10 md:py-16 bg-white"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -166,7 +166,7 @@ export default function About() {
 
       {/* Why Choose Us */}
       <motion.section 
-        className="py-16 md:py-20 bg-[#2b204c]"
+        className="py-10 md:py-16 bg-[#2b204c]"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -195,7 +195,7 @@ export default function About() {
 
       {/* Parent Company Section */}
       <motion.section 
-        className="py-16 md:py-24 bg-white border-t border-slate-100"
+        className="py-10 md:py-16 bg-white border-t border-slate-100"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -203,8 +203,8 @@ export default function About() {
       >
         <div className="container mx-auto px-6">
           <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-             <h3 className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-4">Backed By Excellence</h3>
-             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-[#2b204c] uppercase mb-8">
+             <h3 className="text-[rgb(139,104,246)] text-sm font-bold uppercase tracking-widest mb-3">Backed By Excellence</h3>
+             <h2 className="text-3xl md:text-4xl  font-heading font-bold text-[#2b204c] uppercase mb-8">
                Strategic Heritage
              </h2>
              <p className="text-slate-600 leading-relaxed text-lg md:text-xl mb-8 font-light">
@@ -224,7 +224,7 @@ export default function About() {
 
       {/* Cross-links Section */}
       <motion.section 
-        className="py-16 md:py-20 bg-white"
+        className="py-10 md:py-16 bg-white"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { useState, useRef } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import { Link } from "wouter";
+import useEmblaCarousel from "embla-carousel-react";
 import { ArrowRight, ExternalLink, Leaf, Globe, Handshake, Award, Target, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -54,18 +55,22 @@ const stats = [
 const countries = ["Bahrain", "Qatar", "Kuwait", "UAE", "KSA", "Oman"];
 
 export default function Sustainova() {
-  const [activeBenefit, setActiveBenefit] = useState(0);
-  const sliderRef = useRef<HTMLDivElement>(null);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false, align: 'start', containScroll: 'trimSnaps' });
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const handleScroll = () => {
-    if (!sliderRef.current) return;
-    const scrollLeft = sliderRef.current.scrollLeft;
-    const cardWidth = sliderRef.current.children[0]?.clientWidth || 0;
-    if (cardWidth > 0) {
-      const index = Math.round(scrollLeft / cardWidth);
-      setActiveBenefit(index);
-    }
-  };
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi, setSelectedIndex]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on('select', onSelect);
+    emblaApi.on('reInit', onSelect);
+  }, [emblaApi, onSelect]);
+
+  const scrollTo = useCallback((index: number) => emblaApi?.scrollTo(index), [emblaApi]);
 
   return (
     <div className="min-h-screen bg-white font-sans">
@@ -217,11 +222,8 @@ export default function Sustainova() {
             <span className="text-emerald-600 text-sm font-bold uppercase tracking-widest mb-3 block">Why Apply</span>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#2b204c] uppercase">Benefits for Startups</h2>
           </div>
-          <div 
-            ref={sliderRef}
-            onScroll={handleScroll}
-            className="flex overflow-x-auto gap-6 pb-8 -mx-6 px-6 scrollbar-hide snap-x snap-mandatory"
-          >
+          {/* Desktop Version */}
+          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {benefits.map((item, i) => (
               <motion.div 
                 key={i}
@@ -229,34 +231,48 @@ export default function Sustainova() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white p-8 rounded-sm border border-slate-100 hover:shadow-lg hover:border-emerald-300 transition-all group w-[85vw] sm:w-[320px] snap-center flex-shrink-0"
+                className="bg-white p-8 rounded-sm border border-slate-100 hover:shadow-lg hover:border-emerald-300 transition-all group"
               >
                 <div className="w-14 h-14 bg-emerald-100 rounded-sm flex items-center justify-center mb-6 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-all">
                   {item.icon}
                 </div>
                 <h3 className="text-lg font-heading font-bold text-[#2b204c] mb-3 uppercase">{item.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed whitespace-normal">{item.description}</p>
+                <p className="text-slate-600 text-sm leading-relaxed">{item.description}</p>
               </motion.div>
             ))}
           </div>
 
-          {/* Mobile Pagination Dots */}
-          <div className="flex justify-center gap-2 mt-4">
-            {benefits.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => {
-                  if (sliderRef.current) {
-                    const cardWidth = sliderRef.current.children[0]?.clientWidth || 0;
-                    sliderRef.current.scrollTo({ left: i * cardWidth, behavior: 'smooth' });
-                  }
-                }}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  activeBenefit === i ? "bg-emerald-500 w-6" : "bg-slate-200 w-2"
-                }`}
-                aria-label={`Go to slide ${i + 1}`}
-              />
-            ))}
+          {/* Mobile Embla Carousel */}
+          <div className="md:hidden mt-8 relative">
+            <div className="overflow-hidden w-[calc(100%+3rem)] -ml-6 px-6" ref={emblaRef}>
+              <div className="flex touch-pan-y">
+                {benefits.map((item, i) => (
+                  <div key={i} className="flex-[0_0_85%] min-w-[300px] pr-4 pl-1 pb-4 snap-center">
+                    <div className="bg-white p-8 rounded-sm border border-slate-100 shadow-[0_2px_8px_-2px_rgba(0,0,0,0.05)] h-full group transition-all hover:border-emerald-300">
+                      <div className="w-14 h-14 bg-emerald-100 rounded-sm flex items-center justify-center mb-6 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-all">
+                        {item.icon}
+                      </div>
+                      <h3 className="text-lg font-heading font-bold text-[#2b204c] mb-3 uppercase">{item.title}</h3>
+                      <p className="text-slate-600 text-sm leading-relaxed">{item.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Carousel Navigation Dots */}
+            <div className="flex justify-center gap-2 mt-4 pb-2">
+              {benefits.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => scrollTo(index)}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    index === selectedIndex ? 'bg-emerald-500 w-6' : 'bg-slate-200 w-2'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </motion.section>

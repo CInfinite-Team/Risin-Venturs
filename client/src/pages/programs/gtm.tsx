@@ -17,6 +17,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useState, useRef } from "react";
 
+import {PartnerLogoCarousel} from '@/pages/partners'
 const sectionVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: { 
@@ -54,13 +55,11 @@ const highlights = [
   }
 ];
 
-const partners = [
-  "https://risin.ventures/wp-content/uploads/2024/06/logo-23.png",
-  "https://risin.ventures/wp-content/uploads/2024/06/logo-1.png",
-  "https://risin.ventures/wp-content/uploads/2024/06/logo-9.png", 
-  "https://risin.ventures/wp-content/uploads/2024/06/logo-24.png",
-  "https://risin.ventures/wp-content/uploads/2024/06/logo-2.png"
-];
+// Using import.meta.glob to dynamically load all images from the Ecosystem Partners folder
+const ecosystemModules = import.meta.glob('/src/assets/Ecosystem Partners/*', { eager: true }) as Record<string, { default: string }>;
+const ecosystemLogos = Object.values(ecosystemModules).map(module => module.default);
+
+const partners = ecosystemLogos;
 
 const RegistrationForm = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -423,29 +422,8 @@ export default function GTM() {
           <div className="text-center mb-10">
             <span className="text-[#2b204c] text-sm font-bold uppercase tracking-widest">Ecosystem Partners</span>
           </div>
-          <div className="flex overflow-x-auto gap-6 pb-8 items-center scrollbar-hide snap-x snap-mandatory -mx-6 px-6 md:mx-0 md:px-0">
-            {[
-              { name: "QSTP", url: "https://placehold.co/200x80/transparent/2b204c?text=QSTP" },
-              { name: "QDB", url: "https://placehold.co/200x80/transparent/2b204c?text=QDB" },
-              { name: "QFC", url: "https://placehold.co/200x80/transparent/2b204c?text=QFC" },
-              { name: "Monsha’at", url: "https://placehold.co/200x80/transparent/2b204c?text=Monsha%E2%80%99at" },
-              { name: "CODE", url: "https://placehold.co/200x80/transparent/2b204c?text=CODE" },
-              { name: "QFTH", url: "https://placehold.co/200x80/transparent/2b204c?text=QFTH" },
-              { name: "Itqan", url: "https://placehold.co/200x80/transparent/2b204c?text=Itqan" }, 
-              { name: "DTVC", url: "https://placehold.co/200x80/transparent/2b204c?text=DTVC" }
-            ].map((partner, i) => (
-              <motion.div 
-                key={i}
-                whileHover={{ scale: 1.05 }}
-                className="bg-white rounded-sm border border-slate-100 flex items-center justify-center min-w-[160px] h-40 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all snap-center flex-shrink-0"
-              >
-                <img 
-                  src={partner.url} 
-                  alt={`${partner.name} Logo`} 
-                  className="w-[70%] h-auto object-contain filter grayscale hover:grayscale-0 transition-all" 
-                />
-              </motion.div>
-            ))}
+          <div className="flex gap-6 pb-8 items-center scrollbar-hide snap-x snap-mandatory -mx-6 px-6 md:mx-0 md:px-0">
+            <PartnerLogoCarousel logos={partners} autoplay={true} loop={true} />
           </div>
         </div>
       </section>

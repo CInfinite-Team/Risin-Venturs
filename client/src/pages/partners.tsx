@@ -36,7 +36,7 @@ const partnerLogos = {
   gtm: gtmLogos
 };
 
-const PartnerLogoCarousel = ({ logos, autoplay = false, loop = false }: { logos: string[], autoplay?: boolean, loop?: boolean }) => {
+export const PartnerLogoCarousel = ({ logos, autoplay = false, loop = false }: { logos: string[], autoplay?: boolean, loop?: boolean }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop, align: "start", containScroll: "trimSnaps" }, 
     autoplay ? [Autoplay({ delay: 2000, stopOnInteraction: false })] : []

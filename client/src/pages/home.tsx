@@ -9,6 +9,12 @@ import qstpLogo from "@assets/image_1771155256224.png";
 import mtcitLogo from "@assets/image_1771155334710.png";
 import codeLogo from "@assets/image_1771155293821.png";
 import quLogo from "@assets/image_1771155208266.png";
+
+import bigtraderLogo from "@/assets/HomePortfolio/Bigtrader.png";
+import madadLogo from "@/assets/HomePortfolio/Madad.png";
+import iprocureLogo from "@/assets/HomePortfolio/Iprocure.png";
+import arisioLogo from "@/assets/HomePortfolio/Arisio.png";
+
 import { Button } from "@/components/ui/button";
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
@@ -698,7 +704,7 @@ export default function Home() {
               {[
                 { 
                   name: "Bigtrader", 
-                  logo: "/src/assets/HomePortfolio/Bigtrader.png",
+                  logo: bigtraderLogo,
                   website: "https://www.bigtrader.biz/",
                   category: "Marketplace",
                   accent: "#952828", // Saffron Red from logo
@@ -706,7 +712,7 @@ export default function Home() {
                 },
                 { 
                   name: "Madad Fintech", 
-                  logo: "/src/assets/HomePortfolio/Madad.png", 
+                  logo: madadLogo, 
                   website: "https://www.madadfintech.com/en",
                   category: "Fintech",
                   accent: "#2b204c", // Dark Indigo
@@ -714,7 +720,7 @@ export default function Home() {
                 },
                 { 
                   name: "iProcure", 
-                  logo: "/src/assets/HomePortfolio/Iprocure.png", 
+                  logo: iprocureLogo, 
                   website: "https://iprocure.ai/",
                   category: "AI",
                   accent: "#8b68f6", // Vivid Violet
@@ -722,7 +728,7 @@ export default function Home() {
                 },
                 { 
                   name: "Arisio", 
-                  logo: "/src/assets/HomePortfolio/Arisio.png", 
+                  logo: arisioLogo, 
                   website: "https://arisio.io/",
                   category: "AI / Marketplace",
                   accent: "#10b981", // Emerald/Startup green

@@ -30,7 +30,7 @@ const gtmLogos = Object.values(gtmModules).map(module => module.default);
 const ecosystemModules = import.meta.glob('/src/assets/Ecosystem Partners/*', { eager: true }) as Record<string, { default: string }>;
 const ecosystemLogos = Object.values(ecosystemModules).map(module => module.default);
 
-const partnerLogos = {
+export const partnerLogos = {
   investors: investorLogos,
   ecosystem: ecosystemLogos,
   gtm: gtmLogos

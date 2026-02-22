@@ -4,16 +4,13 @@ import heroBg from "@/assets/hero-concepts/option6-core.png";
 import gccGtmLogo from "@assets/GCC_GTM_with_ascending_gradient_arrow_1771153840911.png";
 import sustainovaLogo from "@assets/Sustain_Nova__1771154173735.png";
 import aixLogo from "@assets/AIX_LOGO_1771154224181.png";
-import qdbLogo from "@assets/image_1771155231377.png";
-import qstpLogo from "@assets/image_1771155256224.png";
-import mtcitLogo from "@assets/image_1771155334710.png";
-import codeLogo from "@assets/image_1771155293821.png";
-import quLogo from "@assets/image_1771155208266.png";
 
 import bigtraderLogo from "@/assets/HomePortfolio/Bigtrader.png";
 import madadLogo from "@/assets/HomePortfolio/Madad.png";
 import iprocureLogo from "@/assets/HomePortfolio/Iprocure.png";
 import arisioLogo from "@/assets/HomePortfolio/Arisio.png";
+
+import { PartnerLogoCarousel, partnerLogos } from "@/pages/partners";
 
 import { Button } from "@/components/ui/button";
 import { useState, useEffect, useRef } from "react";
@@ -355,13 +352,8 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="flex flex-nowrap md:flex-wrap overflow-x-auto md:overflow-visible items-center justify-start md:justify-center gap-12 md:gap-16 pb-4 md:pb-0 scrollbar-hide">
-            {/* Logo Row */}
-            <img src={qdbLogo} alt="Qatar Development Bank" className="h-[60px] md:h-[90px] w-auto object-contain opacity-85 hover:opacity-100 hover:scale-105 transition-all duration-200 flex-shrink-0" />
-            <img src={qstpLogo} alt="Qatar Science & Technology Park" className="h-[60px] md:h-[90px] w-auto object-contain opacity-85 hover:opacity-100 hover:scale-105 transition-all duration-200 flex-shrink-0" />
-            <img src={mtcitLogo} alt="Ministry of Transport, Communications and Information Technology" className="h-[60px] md:h-[90px] w-auto object-contain opacity-85 hover:opacity-100 hover:scale-105 transition-all duration-200 flex-shrink-0" />
-            <img src={codeLogo} alt="Center of Digital Entrepreneurship" className="h-[50px] md:h-[80px] w-auto object-contain opacity-85 hover:opacity-100 hover:scale-105 transition-all duration-200 flex-shrink-0" />
-            <img src={quLogo} alt="Qatar University" className="h-[60px] md:h-[90px] w-auto object-contain opacity-85 hover:opacity-100 hover:scale-105 transition-all duration-200 flex-shrink-0" />
+          <div className="px-4 md:px-12">
+            <PartnerLogoCarousel logos={partnerLogos.ecosystem} autoplay={true} loop={true} />
           </div>
         </div>
       </section>

@@ -319,7 +319,7 @@ export default function Home() {
               className="max-w-3xl w-full flex flex-col justify-center"
             >
               <motion.div variants={fadeIn} className="inline-block mb-5">
-                <span className="bg-[#8b68f6]/10 text-[#8b68f6] border border-[#8b68f6]/20 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide backdrop-blur-sm">
+                <span className="bg-[#8b68f6]/10 whitespace-nowrap text-[#8b68f6] border border-[#8b68f6]/20 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide backdrop-blur-sm">
                   Venture Studio • Deep Tech • Ecosystem
                 </span>
               </motion.div>

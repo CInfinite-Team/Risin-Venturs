@@ -154,6 +154,17 @@ export default function Footer() {
           <p className="text-slate-400 text-[10px] font-bold uppercase tracking-[0.2em]">
             © 2026 Risin Ventures. All rights reserved.
           </p>
+          <div className="hidden md:block w-1 h-1 rounded-full bg-slate-200"></div>
+          <p className="text-slate-400 text-[10px] uppercase tracking-[0.2em] font-bold">
+            Designed and Developed by{" "}
+            <a 
+              href="https://www.luxury-method.com" 
+              className="text-[#8b68f6] hover:text-[#2b204c] transition-colors"
+              target="_blank"
+            >
+              Luxury Method
+            </a>
+          </p>
         </div>
       </div>
     </footer>

@@ -310,19 +310,19 @@ export default function Home() {
                {/* Metrics Grid */}
               <div className="grid grid-cols-2 gap-4 w-full max-w-lg xl:max-w-xl">
                 <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 xl:p-8 rounded-sm hover:bg-white/10 transition-colors duration-300">
-                  <h3 className="text-3xl xl:text-4xl font-heading font-bold text-white mb-1">$100M+</h3>
+                  <h3 className="text-3xl xl:text-4xl 2xl:text-5xl font-heading font-bold text-white mb-1">$100M+</h3>
                   <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">Capital Enabled</p>
                 </div>
                 <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 xl:p-8 rounded-sm hover:bg-white/10 transition-colors duration-300">
-                  <h3 className="text-3xl xl:text-4xl font-heading font-bold text-white mb-1">8</h3>
+                  <h3 className="text-3xl xl:text-4xl 2xl:text-5xl font-heading font-bold text-white mb-1">8</h3>
                   <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">Active Ventures</p>
                 </div>
                 <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 xl:p-8 rounded-sm hover:bg-white/10 transition-colors duration-300">
-                  <h3 className="text-3xl xl:text-4xl font-heading font-bold text-white mb-1">15+</h3>
+                  <h3 className="text-3xl xl:text-4xl 2xl:text-5xl font-heading font-bold text-white mb-1">15+</h3>
                   <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">Gov't Partners</p>
                 </div>
                 <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 xl:p-8 rounded-sm hover:bg-white/10 transition-colors duration-300">
-                  <h3 className="text-3xl xl:text-4xl font-heading font-bold text-white mb-1">500+</h3>
+                  <h3 className="text-3xl xl:text-4xl 2xl:text-5xl font-heading font-bold text-white mb-1">500+</h3>
                   <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">Startups Supported</p>
                 </div>
               </div>

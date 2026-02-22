@@ -16,11 +16,20 @@ const sectionVariants = {
   }
 };
 
+import BigtraderLogo from '@/assets/Portfolio Page/Bigtrader.jpeg';
+import MadadLogo from '@/assets/Portfolio Page/Madad.jpg';
+import HashECMLogo from '@/assets/Portfolio Page/hashECM.png';
+import EnergygoLogo from '@/assets/Portfolio Page/EngerGO.png';
+import ArisioLogo from '@/assets/Portfolio Page/Arisio.png';
+import NufinLogo from '@/assets/Portfolio Page/Nuffin.png';
+import UrbanoLogo from '@/assets/Portfolio Page/Urbango.png';
+import IprocureLogo from '@/assets/Portfolio Page/Iprocure.jpg';
+
 const portfolioData = [
   {
     id: 1,
     name: "BigTrader",
-    logo: "https://placehold.co/200x80/transparent/2b204c?text=BigTrader",
+    logo: BigtraderLogo,
     desc: "B2B Marketplace that streamlines your business operations & unlocks growth opportunities. An all-in-one solution for B2B E-Commerce, Commodity Trade, & more.",
     sector: "E-Commerce",
     link: "#"
@@ -28,7 +37,7 @@ const portfolioData = [
   {
     id: 2,
     name: "Madad",
-    logo: "https://placehold.co/200x80/transparent/2b204c?text=MADAD",
+    logo: MadadLogo,
     desc: "Madad is an invoice discounting platform in Qatar that provides instant cash for MSMEs. Sources and related content.",
     sector: "Fintech",
     link: "#"
@@ -36,7 +45,7 @@ const portfolioData = [
   {
     id: 3,
     name: "hashECM",
-    logo: "https://placehold.co/200x80/transparent/2b204c?text=hashECM",
+    logo: HashECMLogo,
     desc: "AI-driven document intelligence and management platform built for enterprise clients to do more with documents and content, and integrates AI capabilities to work and collaborate with documents.",
     sector: "AI & Enterprise",
     link: "#"
@@ -44,7 +53,7 @@ const portfolioData = [
   {
     id: 4,
     name: "Energygo",
-    logo: "https://placehold.co/200x80/transparent/2b204c?text=Energygo",
+    logo: EnergygoLogo,
     desc: "Clean energy and sustainability-focused platform designed to accelerate the transition to renewable energy sources through innovative digital solutions and market access.",
     sector: "Energy & Sustainability",
     link: "#"
@@ -52,7 +61,7 @@ const portfolioData = [
   {
     id: 5,
     name: "Arisio",
-    logo: "https://placehold.co/200x80/transparent/2b204c?text=Arisio",
+    logo: ArisioLogo,
     desc: "Arisio is a cutting-edge platform designed to bridge the gaps in collaboration, funding access, and networking for startups and investors.",
     sector: "Fintech",
     link: "#"
@@ -60,7 +69,7 @@ const portfolioData = [
   {
     id: 6,
     name: "Nufin",
-    logo: "https://placehold.co/200x80/transparent/2b204c?text=NUFIN",
+    logo: NufinLogo,
     desc: "Nufin is a new age financial services and banking solution provider. Currently in stealth mode, working on new fintech regulatory approval from the Central Bank of Qatar.",
     sector: "Fintech",
     link: "#"
@@ -68,7 +77,7 @@ const portfolioData = [
   {
     id: 7,
     name: "Urbano",
-    logo: "https://placehold.co/200x80/transparent/2b204c?text=Urbano",
+    logo: UrbanoLogo,
     desc: "Urbano is an urban mobility platform delivering AI- and IoT-driven solutions including smart parking valet management, car wash, EV charging, and multimodal travel & ticketing.",
     sector: "Mobility",
     link: "#"
@@ -76,7 +85,7 @@ const portfolioData = [
   {
     id: 8,
     name: "Iprocure",
-    logo: "https://placehold.co/200x80/transparent/2b204c?text=Iprocure",
+    logo: IprocureLogo,
     desc: "Advanced procurement automation platform simplifying supply chain management and vendor relationships for enterprise and government sectors.",
     sector: "SaaS",
     link: "#"

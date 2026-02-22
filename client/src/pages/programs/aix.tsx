@@ -173,7 +173,7 @@ export default function AIX() {
             <div className="relative">
               <div className="bg-gradient-to-br from-[#2b204c] to-[#8b68f6] rounded-sm p-8 md:p-12">
                 <div className="text-white">
-                  <h3 className="text-2xl font-heading font-bold mb-4 uppercase">Join the Movement</h3>
+                  <h3 className="text-2xl font-heading font-bold mb-4 text-white uppercase">Join the Movement</h3>
                   <p className="text-white/80 mb-6">Be part of the AI revolution. Apply now to participate in the next AIX Summit & Hackathon.</p>
                   <a href="https://www.aixsummithack.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-white font-bold hover:text-[#8b68f6] transition-colors bg-white/10 px-6 py-3 rounded-sm">
                     Learn More <ArrowRight size={16} />

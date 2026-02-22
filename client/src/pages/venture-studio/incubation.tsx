@@ -164,7 +164,7 @@ export default function Incubation() {
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
-              <h3 className="text-2xl font-heading font-bold uppercase mb-2">From Idea to Impact</h3>
+              <h3 className="text-2xl font-heading text-white font-bold uppercase mb-2">From Idea to Impact</h3>
               <p className="text-slate-300 text-sm max-w-lg">
                 See how we transformed raw concepts into viable businesses in our "Ideas to Impact" program.
               </p>

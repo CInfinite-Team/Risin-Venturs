@@ -173,7 +173,7 @@ export default function EntrepreneurshipAwards() {
             <div className="relative">
               <div className="bg-gradient-to-br from-amber-500 to-orange-600 rounded-sm p-8 md:p-12 text-white">
                 <Trophy className="w-16 h-16 mb-6 text-amber-200" />
-                <h3 className="text-2xl font-heading font-bold mb-4 uppercase">Recognition Awaits</h3>
+                <h3 className="text-2xl font-heading font-bold mb-4 text-white uppercase">Recognition Awaits</h3>
                 <p className="text-white/80 mb-6">Join Qatar's most prestigious entrepreneurship awards and gain recognition for your innovation.</p>
                 <a href="https://qatarentrepreneurshipawards.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-white font-bold hover:text-amber-200 transition-colors bg-white/10 px-6 py-3 rounded-sm">
                   Apply Today <ArrowRight size={16} />

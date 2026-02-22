@@ -213,7 +213,7 @@ export default function Innovation() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
               <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-4 block">Proven Impact</span>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 uppercase">
+              <h2 className="text-3xl md:text-4xl text-white font-heading font-bold mb-6 uppercase">
                 See Innovation <br/> in Action
               </h2>
               <p className="text-slate-300 mb-8 leading-relaxed">

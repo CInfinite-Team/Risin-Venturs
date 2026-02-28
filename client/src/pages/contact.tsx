@@ -195,7 +195,7 @@ export default function Contact() {
         viewport={{ once: true }}
         variants={sectionVariants}
       >
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto md:px-6">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             {/* Left Column - Form */}
             <div className="bg-white p-8 md:p-10 rounded-sm border border-slate-100 shadow-lg">
@@ -314,9 +314,9 @@ export default function Contact() {
             </div>
 
             {/* Right Column - Additional Info */}
-            <div className="space-y-8">
+            <div className="md:space-y-8">
               {/* Quick Links */}
-              <div className="bg-white p-8 rounded-sm border border-slate-100">
+              <div className="bg-white p-4 max-w-full md:p-8 rounded-sm border border-slate-100">
                 <h3 className="text-lg font-heading font-bold text-[#2b204c] mb-6 uppercase">Looking for Something Specific?</h3>
                 <div className="space-y-4">
                   <Link href="/build-with-us" className="flex items-center justify-between p-4 bg-[#F9FAFB] rounded-sm hover:bg-[#8b68f6]/5 hover:border-[#8b68f6]/30 border border-transparent transition-all group">
@@ -346,7 +346,7 @@ export default function Contact() {
               </div>
 
               {/* Response Time */}
-              <div className="bg-gradient-to-br from-[#2b204c] to-[#1a1432] p-8 rounded-sm text-white">
+              <div className="bg-gradient-to-br max-w-full from-[#2b204c] to-[#1a1432] p-4 md:p-8 rounded-sm text-white">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-[#8b68f6] rounded-sm flex items-center justify-center">
                     <Clock className="w-6 h-6" />
@@ -356,8 +356,8 @@ export default function Contact() {
                     <p className="text-slate-300 text-sm">What to expect</p>
                   </div>
                 </div>
-                <p className="text-slate-300 text-sm leading-relaxed mb-4">
-                  We review every message personally. Expect a response within <span className="text-white font-bold">1-2 business days</span>. For urgent matters, please call us directly.
+                <p className="text-slate-300 text-sm text-wrap flex flex-wrap leading-relaxed mb-4">
+                  We review every message personally. Expect a response within <span className="text-white font-bold">1-2 business days.</span> For urgent matters, please call us directly.
                 </p>
                 <div className="flex items-center gap-2 text-sm">
                   <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>

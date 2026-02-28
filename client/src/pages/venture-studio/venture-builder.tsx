@@ -495,8 +495,8 @@ export default function VentureBuilder() {
                         { value: "85%", label: "Follow-on Success" },
                         { value: "$100M+", label: "Capital Enabled" }
                     ].map((metric, i) => (
-                        <div key={i} className="bg-white p-6 rounded-sm border border-slate-100 shadow-sm">
-                            <div className="text-3xl font-heading font-bold text-[#8b68f6] mb-2">{metric.value}</div>
+                        <div key={i} className="bg-white p-4 md:p-6 rounded-sm border border-slate-100 shadow-sm">
+                            <div className="text-2xl font-heading font-bold text-[#8b68f6] mb-2">{metric.value}</div>
                             <div className="text-xs font-bold text-[#2b204c] uppercase tracking-widest">{metric.label}</div>
                         </div>
                     ))}
@@ -507,14 +507,14 @@ export default function VentureBuilder() {
 
       {/* 3. In-House & Corporate Studio (Existing) */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="grid lg:grid-cols-2 gap-12">
             
             {/* In-House Studio */}
             <div className="flex flex-col h-full">
               <div className="mb-6">
                  <h2 className="text-3xl font-heading font-bold text-[#2b204c] uppercase mb-4">In-House Studio</h2>
-                 <p className="text-slate-500 leading-relaxed">
+                 <p className="text-slate-500 md:text-base text-sm leading-relaxed">
                    Our internal factory for deep tech startups. We identify white spaces in the market and deploy our own resources to capture them.
                  </p>
               </div>
@@ -545,9 +545,9 @@ export default function VentureBuilder() {
                    We help large enterprises build new revenue engines outside their core business, minimizing risk and maximizing agility.
                  </p>
               </div>
-              <div className="bg-[#2b204c] p-8 rounded-sm text-white flex-1 relative overflow-hidden">
+              <div className="bg-[#2b204c] p-4 md:p-8 rounded-sm text-white flex-1 relative overflow-hidden">
                 <div className="relative z-10">
-                  <h3 className="text-xl font-bold uppercase mb-6">Why Corporate Venturing?</h3>
+                  <h3 className="text-xl font-bold text-white uppercase mb-6">Why Corporate Venturing?</h3>
                   <div className="grid grid-cols-2 gap-6 mb-8">
                     <div>
                       <div className="text-3xl font-bold text-[#8b68f6] mb-1">5x</div>

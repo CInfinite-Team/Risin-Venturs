@@ -98,7 +98,7 @@ export default function CaseStudies() {
             </div>
             
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-[#111827] uppercase leading-none">
+              <h1 className="text-3xl md:text-6xl lg:text-7xl font-heading font-bold text-[#111827] uppercase leading-none">
                 STORIES OF <br className="hidden md:block"/>
                 <span className="text-[#2b204c]">TRANSFORMATION</span>
               </h1>

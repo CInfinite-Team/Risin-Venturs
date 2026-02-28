@@ -286,7 +286,7 @@ function SimpleApplicationForm({
       <Button
         onClick={onSubmit}
         disabled={isSubmitting}
-        className="w-full bg-[#8b68f6] hover:bg-[#2b204c] text-white rounded-sm py-4 h-auto font-bold text-sm uppercase tracking-widest transition-all disabled:opacity-50"
+        className="w-full bg-[#8b68f6] hover:bg-[#2b204c] text-white rounded-sm  py-4 h-auto font-bold text-sm uppercase tracking-widest transition-all disabled:opacity-50"
         data-testid="button-simple-submit"
       >
         {isSubmitting ? "Sending..." : "Submit Application"}
@@ -673,38 +673,119 @@ export default function BuildWithUs() {
           <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-[#952828] rounded-full blur-[100px]"></div>
         </div>
         <div className="container mx-auto px-6 relative z-10">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl"
-          >
-            <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-4 block">Venture Builder</span>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6 uppercase leading-none">
-              Growing Potential Ideas Into <br className="hidden md:block"/>
-              <span className="text-[#8b68f6]">Stellar Ventures</span>
-            </h1>
-            <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl mb-10">
-              Risin Ventures partners with visionary founders to co-create startups that are investor-ready—from ideation through validation to scale.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                onClick={scrollToForm}
-                className="bg-[#8b68f6] hover:bg-white hover:text-[#2b204c] text-white rounded-sm px-8 py-4 h-auto font-bold text-sm uppercase tracking-widest transition-all w-full sm:w-auto"
-                data-testid="button-apply-hero"
-              >
-                Start the Conversation <ArrowRight size={16} className="ml-2 inline" />
-              </Button>
-              <Button 
-                onClick={() => setIsModalOpen(true)}
-                variant="outline" 
-                className="border-white/30 text-white hover:bg-white/10 rounded-sm px-8 py-4 h-auto font-bold text-sm uppercase tracking-widest transition-all w-full sm:w-auto"
-                data-testid="button-join-venture"
-              >
-                Join an Active Venture
-              </Button>
-            </div>
-          </motion.div>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="max-w-2xl"
+            >
+              <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-4 block">Venture Builder</span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 uppercase leading-none">
+                Growing Potential Ideas Into <br className="hidden md:block"/>
+                <span className="text-[#8b68f6]">Stellar Ventures</span>
+              </h1>
+              <p className=" md:text-xl text-slate-300 leading-relaxed max-w-xl mb-10">
+                Risin Ventures partners with visionary founders to co-create startups that are investor-ready—from ideation through validation to scale.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button 
+                  onClick={scrollToForm}
+                  className="bg-[#8b68f6] hover:bg-white hover:text-[#2b204c] text-white rounded-sm md:px-8 py-4 h-auto font-bold text-sm uppercase tracking-widest transition-all w-full sm:w-auto"
+                  data-testid="button-apply-hero"
+                >
+                  Start the Conversation <ArrowRight size={16} className="md:ml-2 inline" />
+                </Button>
+                <Button 
+                  onClick={() => setIsModalOpen(true)}
+                  variant="outline" 
+                  className="border-white/30 text-white hover:bg-white/10 rounded-sm px-8 py-4 h-auto font-bold text-sm uppercase tracking-widest transition-all w-full sm:w-auto"
+                  data-testid="button-join-venture"
+                >
+                  Join an Active Venture
+                </Button>
+              </div>
+            </motion.div>
+
+            {/* Clean Animated Graphic */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+              className="relative hidden lg:flex justify-center items-center h-[500px]"
+            >
+              <div className="relative w-full max-w-[450px] aspect-square flex justify-center items-center">
+                {/* Background glow matrix */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#8b68f6]/20 to-[#952828]/20 rounded-full blur-3xl"></div>
+                
+                {/* Orbital dots */}
+                <svg className="absolute inset-0 w-full h-full animate-[spin_60s_linear_infinite] opacity-40" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="2 6" className="text-[#8b68f6]" />
+                  <circle cx="50" cy="5" r="1.5" className="fill-[#8b68f6]" />
+                  <circle cx="95" cy="50" r="1" className="fill-[#952828]" />
+                  <circle cx="50" cy="95" r="1.5" className="fill-[#8b68f6]" />
+                  <circle cx="5" cy="50" r="1" className="fill-white" />
+                </svg>
+
+                <svg className="absolute inset-4 w-[calc(100%-2rem)] h-[calc(100%-2rem)] animate-[spin_40s_linear_infinite_reverse] opacity-30" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="35" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="4 4" className="text-white" />
+                  <circle cx="15" cy="50" r="1.5" className="fill-[#8b68f6]" />
+                  <circle cx="85" cy="50" r="1.5" className="fill-white" />
+                </svg>
+
+                {/* Main floating card */}
+                <motion.div 
+                  initial={{ y: 20 }}
+                  animate={{ y: [0, -15, 0] }}
+                  transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+                  className="relative z-10 w-48 h-48 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md rounded-2xl border border-white/20 shadow-2xl flex items-center justify-center group overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-tr from-[#8b68f6]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <Rocket className="w-20 h-20 text-white drop-shadow-lg relative z-20 transition-transform duration-500 group-hover:scale-110 group-hover:-translate-y-2 group-hover:translate-x-2" strokeWidth={1} />
+                  
+                  {/* Subtle shine effect */}
+                  <motion.div 
+                    className="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12 z-30"
+                    animate={{ left: ['-100%', '200%'] }}
+                    transition={{ duration: 3, repeat: Infinity, repeatDelay: 6, ease: "easeInOut" }}
+                  />
+                </motion.div>
+
+                {/* Floating Elements (Lightbulb, CPU, Stars) */}
+                <motion.div 
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                  className="absolute p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 -left-6 top-16 shadow-xl"
+                >
+                  <Lightbulb className="w-6 h-6 text-[#8b68f6]" />
+                </motion.div>
+
+                <motion.div 
+                  animate={{ y: [0, 10, 0] }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2.5 }}
+                  className="absolute p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 -right-6 bottom-20 shadow-xl"
+                >
+                  <Cpu className="w-6 h-6 text-white" />
+                </motion.div>
+
+                <motion.div 
+                  animate={{ y: [0, 8, 0], opacity: [0.5, 1, 0.5] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+                  className="absolute top-8 right-12"
+                >
+                  <Sparkles className="w-8 h-8 text-[#952828]" />
+                </motion.div>
+                
+                <motion.div 
+                  animate={{ y: [0, -6, 0], opacity: [0.5, 1, 0.5] }}
+                  transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                  className="absolute bottom-12 left-16"
+                >
+                  <Sparkles className="w-6 h-6 text-[#8b68f6]" />
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
         </div>
         
         {/* Scroll indicator */}
@@ -1042,7 +1123,7 @@ export default function BuildWithUs() {
         viewport={{ once: true }}
         variants={sectionVariants}
       >
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-2 md:px-6">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
               <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-3 block">Apply Now</span>
@@ -1105,21 +1186,21 @@ export default function BuildWithUs() {
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-sm p-6 text-center">
-                <div className="text-4xl md:text-5xl font-heading font-bold text-white mb-2">1000+</div>
-                <div className="text-xs text-slate-400 uppercase tracking-widest">Entrepreneurs Network</div>
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-sm p-4 md:p-6 text-center">
+                <div className="text-3xl md:text-5xl font-heading font-bold text-white mb-2">1000+</div>
+                <div className="text-[10px] text-slate-400 uppercase tracking-widest">Entrepreneurs Network</div>
               </div>
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-sm p-6 text-center">
-                <div className="text-4xl md:text-5xl font-heading font-bold text-white mb-2">$50M+</div>
-                <div className="text-xs text-slate-400 uppercase tracking-widest">Ventures Built</div>
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-sm p-4 md:p-6 text-center">
+                <div className="text-3xl md:text-5xl font-heading font-bold text-white mb-2">$50M+</div>
+                <div className="text-[10px] text-slate-400 uppercase tracking-widest">Ventures Built</div>
               </div>
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-sm p-6 text-center">
-                <div className="text-4xl md:text-5xl font-heading font-bold text-white mb-2">20+</div>
-                <div className="text-xs text-slate-400 uppercase tracking-widest">Years Experience</div>
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-sm p-4 md:p-6 text-center">
+                <div className="text-3xl md:text-5xl font-heading font-bold text-white mb-2">20+</div>
+                <div className="text-[10px] text-slate-400 uppercase tracking-widest">Years Experience</div>
               </div>
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-sm p-6 text-center">
-                <div className="text-4xl md:text-5xl font-heading font-bold text-white mb-2">8+</div>
-                <div className="text-xs text-slate-400 uppercase tracking-widest">Portfolio Companies</div>
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-sm p-4 md:p-6 text-center">
+                <div className="text-3xl md:text-5xl font-heading font-bold text-white mb-2">8+</div>
+                <div className="text-[10px] text-slate-400 uppercase tracking-widest">Portfolio Companies</div>
               </div>
             </div>
           </div>

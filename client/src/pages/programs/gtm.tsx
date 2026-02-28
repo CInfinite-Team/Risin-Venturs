@@ -163,58 +163,121 @@ export default function GTM() {
           <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-cyan-500 rounded-full blur-[100px] opacity-10"></div>
         </div>
         <div className="container mx-auto px-6 relative z-10">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl"
-          >
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-slate-400 text-sm font-bold uppercase tracking-widest">Programs</span>
-              <span className="text-slate-500">/</span>
-              <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest">Go-To-Market – Qatar & GCC</span>
-            </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6 uppercase leading-none">
-              Your Gateway to <br className="hidden md:block"/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8b68f6] to-cyan-400">Qatar & GCC Market Access</span>
-            </h1>
-            <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl mb-8">
-              A specialized market access program designed to help high-growth tech companies expand into Qatar and the wider GCC region through strategic partnerships, investor connections, and expert guidance.
-            </p>
-            
-            <div className="flex flex-wrap gap-2 mb-10">
-              {sectors.map((sector, i) => (
-                <span key={i} className="bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-sm">
-                  {sector}
-                </span>
-              ))}
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Dialog>
-                <DialogTrigger asChild>
-                  <Button className="bg-[#8b68f6] hover:bg-white hover:text-[#2b204c] text-white rounded-sm px-8 py-5 h-auto font-bold text-sm uppercase tracking-widest transition-all w-full sm:w-auto">
-                    Apply for GTM Program <ArrowRight size={16} className="ml-2 inline" />
-                  </Button>
-                </DialogTrigger>
-                <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
-                  <DialogHeader>
-                    <DialogTitle className="text-2xl font-bold text-[#2b204c] uppercase">Apply for GTM Program</DialogTitle>
-                    <DialogDescription>
-                      Fill out the form below to register your interest for the upcoming cohort.
-                    </DialogDescription>
-                  </DialogHeader>
-                  <RegistrationForm />
-                </DialogContent>
-              </Dialog>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="max-w-xl"
+            >
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-slate-400 text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-widest">Programs</span>
+                <span className="text-slate-500">/</span>
+                <span className="text-[#8b68f6] text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-widest">Go-To-Market – Qatar & GCC</span>
+              </div>
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 uppercase leading-none">
+                Your Gateway to <br className="hidden md:block"/>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8b68f6] to-cyan-400">Qatar & GCC Market Access</span>
+              </h1>
+              <p className="md:text-lg md:text-xl text-slate-300 leading-relaxed max-w-xl mb-8">
+                A specialized market access program designed to help high-growth tech companies expand into Qatar and the wider GCC region through strategic partnerships, investor connections, and expert guidance.
+              </p>
               
-              <Link href="/contact">
-                <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 rounded-sm px-8 py-5 h-auto font-bold text-sm uppercase tracking-widest transition-all w-full sm:w-auto">
-                  Talk to Us
-                </Button>
-              </Link>
-            </div>
-          </motion.div>
+              <div className="flex flex-wrap gap-2 mb-10">
+                {sectors.map((sector, i) => (
+                  <span key={i} className="bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-sm">
+                    {sector}
+                  </span>
+                ))}
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button className="bg-[#8b68f6] hover:bg-white hover:text-[#2b204c] text-white rounded-sm px-4 md:px-8 py-5 h-auto font-bold text-sm uppercase tracking-widest transition-all w-full sm:w-auto">
+                      Apply for GTM Program <ArrowRight size={16} className="ml-2 inline" />
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
+                    <DialogHeader>
+                      <DialogTitle className="text-2xl font-bold text-[#2b204c] uppercase">Apply for GTM Program</DialogTitle>
+                      <DialogDescription>
+                        Fill out the form below to register your interest for the upcoming cohort.
+                      </DialogDescription>
+                    </DialogHeader>
+                    <RegistrationForm />
+                  </DialogContent>
+                </Dialog>
+                
+                <Link href="/contact">
+                  <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 rounded-sm px-8 py-5 h-auto font-bold text-sm uppercase tracking-widest transition-all w-full sm:w-auto">
+                    Talk to Us
+                  </Button>
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Clean Animated Graphic */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+              className="relative hidden lg:flex justify-center items-center h-[400px]"
+            >
+              <div className="relative w-full max-w-[320px] aspect-square flex justify-center items-center">
+                {/* Background glow matrix */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#8b68f6]/10 to-cyan-400/10 rounded-full blur-2xl"></div>
+                
+                {/* Minimal orbital rings */}
+                <svg className="absolute inset-0 w-full h-full animate-[spin_40s_linear_infinite] opacity-30" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-cyan-400/50" />
+                  <circle cx="50" cy="5" r="1.5" className="fill-cyan-400" />
+                  <circle cx="50" cy="95" r="1.5" className="fill-[#8b68f6]" />
+                </svg>
+
+                <svg className="absolute inset-6 w-[calc(100%-3rem)] h-[calc(100%-3rem)] animate-[spin_30s_linear_infinite_reverse] opacity-20" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="35" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="4 4" className="text-white" />
+                  <circle cx="15" cy="50" r="1" className="fill-[#8b68f6]" />
+                  <circle cx="85" cy="50" r="1" className="fill-white" />
+                </svg>
+
+                {/* Main floating icon */}
+                <motion.div 
+                  initial={{ y: 15 }}
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                  className="relative z-10 w-36 h-36 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md rounded-full border border-white/20 shadow-[0_0_30px_rgba(139,104,246,0.2)] flex items-center justify-center group overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-tr from-cyan-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <Globe className="w-14 h-14 text-white drop-shadow-lg relative z-20 transition-transform duration-500 group-hover:scale-110" strokeWidth={1} />
+                  
+                  {/* Subtle shine effect */}
+                  <motion.div 
+                    className="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 z-30"
+                    animate={{ left: ['-100%', '200%'] }}
+                    transition={{ duration: 4, repeat: Infinity, repeatDelay: 5, ease: "easeInOut" }}
+                  />
+                </motion.div>
+
+                {/* Floating Elements */}
+                <motion.div 
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                  className="absolute p-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 -left-2 top-16 shadow-lg"
+                >
+                  <MapPin className="w-4 h-4 text-cyan-400" />
+                </motion.div>
+
+                <motion.div 
+                  animate={{ y: [0, 8, 0] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2.5 }}
+                  className="absolute p-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 -right-2 bottom-16 shadow-lg"
+                >
+                  <Building2 className="w-4 h-4 text-[#8b68f6]" />
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 

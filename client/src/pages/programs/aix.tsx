@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { useState, useRef } from "react";
 import { Link } from "wouter";
 import { ArrowRight, ExternalLink, Cpu, Lightbulb, Users, Trophy, Calendar, MapPin } from "lucide-react";
@@ -7,12 +7,13 @@ import { Button } from "@/components/ui/button";
 import image1 from "@assets/38_1768830312329.JPG";
 import image2 from "@assets/2_1768830312328.JPG";
 import image3 from "@assets/11_1768830312327.jpg";
+import aixGif from "../../assets/AIXSummit.gif";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 
-const sectionVariants = {
+const sectionVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: { 
     opacity: 1, 
@@ -70,43 +71,65 @@ export default function AIX() {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-br from-[#2b204c] via-[#1a1432] to-[#0f0a1f] relative overflow-hidden">
+      <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-br from-[#2b204c] via-[#1a1432] to-[#40316e] relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#8b68f6] rounded-full blur-[150px] opacity-30"></div>
           <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-cyan-500 rounded-full blur-[100px] opacity-20"></div>
         </div>
         <div className="container mx-auto px-6 relative z-10">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl"
-          >
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-slate-400 text-sm font-bold uppercase tracking-widest">Programs</span>
-              <span className="text-slate-500">/</span>
-              <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest">AIX Summit & Hackathon</span>
-            </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6 uppercase leading-none">
-              AIX Summit <br className="hidden md:block"/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8b68f6] to-cyan-400">&amp; Hackathon</span>
-            </h1>
-            <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl mb-8">
-              The premier AI innovation event in the MENA region. Where breakthrough ideas meet world-class mentorship, funding, and the opportunity to shape the future of artificial intelligence.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href="https://www.aixsummithack.com/" target="_blank" rel="noopener noreferrer">
-                <Button className="bg-[#8b68f6] hover:bg-white hover:text-[#2b204c] text-white rounded-sm px-8 py-5 h-auto font-bold text-sm uppercase tracking-widest transition-all w-full sm:w-auto">
-                  Visit Program Website <ExternalLink size={16} className="ml-2 inline" />
-                </Button>
-              </a>
-              <Link href="/build-with-us">
-                <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 rounded-sm px-8 py-5 h-auto font-bold text-sm uppercase tracking-widest transition-all w-full sm:w-auto">
-                  Apply to Build
-                </Button>
-              </Link>
-            </div>
-          </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="max-w-xl"
+            >
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-slate-400 text-sm font-bold uppercase tracking-widest">Programs</span>
+                <span className="text-slate-500">/</span>
+                <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest">AIX Summit & Hackathon</span>
+              </div>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6 uppercase leading-none">
+                AIX Summit <br className="hidden md:block"/>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8b68f6] to-cyan-400">&amp; Hackathon</span>
+              </h1>
+              <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-xl mb-8">
+                The premier AI innovation event in the MENA region. Where breakthrough ideas meet world-class mentorship, funding, and the opportunity to shape the future of artificial intelligence.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a href="https://www.aixsummithack.com/" target="_blank" rel="noopener noreferrer">
+                  <Button className="bg-[#8b68f6] hover:bg-white hover:text-[#2b204c] text-white rounded-sm px-8 py-5 h-auto font-bold text-sm uppercase tracking-widest transition-all w-full sm:w-auto">
+                    Visit Program Website <ExternalLink size={16} className="ml-2 inline" />
+                  </Button>
+                </a>
+                <Link href="/build-with-us">
+                  <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 rounded-sm px-8 py-5 h-auto font-bold text-sm uppercase tracking-widest transition-all w-full sm:w-auto">
+                    Apply to Build
+                  </Button>
+                </Link>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="relative hidden lg:flex justify-center items-center"
+            >
+              <div className="relative w-full max-w-[500px]">
+                {/* Glow effect matching the theme */}
+                <div className="absolute inset-0 bg-[#8b68f6]/20 blur-3xl rounded-full scale-200"></div>
+                
+                {/* Image blended perfectly */}
+                <img 
+                  src={aixGif} 
+                  alt="AIX Summit Animation" 
+                  className="relative z-10 w-full h-auto object-contain mix-blend-screen opacity-90 drop-shadow-[0_0_20px_rgba(139,104,246,0.3)] animate-pulse-slow"
+                  style={{ maskImage: "radial-gradient(circle at center, black 60%, transparent 100%)", WebkitMaskImage: "radial-gradient(circle at center, black 60%, transparent 100%)" }}
+                />
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 

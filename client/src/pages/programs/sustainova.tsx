@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { useState, useRef, useCallback, useEffect } from "react";
 import { Link } from "wouter";
 import useEmblaCarousel from "embla-carousel-react";
@@ -8,12 +8,13 @@ import { Button } from "@/components/ui/button";
 import image1 from "@assets/DSC_0570_1768830927689.jpg";
 import image2 from "@assets/DSC_0559_1768830927689.jpg";
 import image3 from "@assets/1-(87_of_88)_(1)_1768830927690.jpg";
+import sustnovaGif from "../../assets/Sustainova/sustnova.gif";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 
-const sectionVariants = {
+const sectionVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: { 
     opacity: 1, 
@@ -77,43 +78,65 @@ export default function Sustainova() {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-br from-emerald-900 via-emerald-800 to-teal-900 relative overflow-hidden">
+      <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-[#02362e] relative overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-emerald-400 rounded-full blur-[150px] opacity-20"></div>
-          <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-teal-300 rounded-full blur-[100px] opacity-20"></div>
+          <div className="absolute top-1/4 left-1 w-60 h-96 bg-emerald-400 rounded-full blur-[150px] opacity-60"></div>
+          <div className="absolute bottom-1/4 left-1 w-64 h-64 bg-teal-300 rounded-full blur-[100px] opacity-20"></div>
         </div>
         <div className="container mx-auto px-6 relative z-10">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl"
-          >
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-emerald-300/70 text-sm font-bold uppercase tracking-widest">Programs</span>
-              <span className="text-emerald-500/50">/</span>
-              <span className="text-emerald-300 text-sm font-bold uppercase tracking-widest">Sustainova Challenge</span>
-            </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6 uppercase leading-none">
-              Sustainova <br className="hidden md:block"/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-teal-200">Challenge</span>
-            </h1>
-            <p className="text-lg md:text-xl text-emerald-100/80 leading-relaxed max-w-2xl mb-8">
-              Empowering innovations for a sustainable tomorrow. A platform for sustainability-focused startups across the Middle East to showcase technology and solutions that drive positive change.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href="https://sustainovachallenge.com/" target="_blank" rel="noopener noreferrer">
-                <Button className="bg-emerald-500 hover:bg-white hover:text-emerald-900 text-white rounded-sm px-8 py-5 h-auto font-bold text-sm uppercase tracking-widest transition-all w-full sm:w-auto">
-                  Visit Program Website <ExternalLink size={16} className="ml-2 inline" />
-                </Button>
-              </a>
-              <Link href="/contact?from=partner">
-                <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 rounded-sm px-8 py-5 h-auto font-bold text-sm uppercase tracking-widest transition-all w-full sm:w-auto">
-                  Become a Partner
-                </Button>
-              </Link>
-            </div>
-          </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="max-w-xl"
+            >
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-emerald-300/70 text-sm font-bold uppercase tracking-widest">Programs</span>
+                <span className="text-emerald-500/50">/</span>
+                <span className="text-emerald-300 text-sm font-bold uppercase tracking-widest">Sustainova Challenge</span>
+              </div>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6 uppercase leading-none">
+                Sustainova <br className="hidden md:block"/>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-teal-200">Challenge</span>
+              </h1>
+              <p className="text-lg md:text-xl text-emerald-100/80 leading-relaxed max-w-xl mb-8">
+                Empowering innovations for a sustainable tomorrow. A platform for sustainability-focused startups across the Middle East to showcase technology and solutions that drive positive change.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a href="https://sustainovachallenge.com/" target="_blank" rel="noopener noreferrer">
+                  <Button className="bg-emerald-500 hover:bg-white hover:text-emerald-900 text-white rounded-sm px-8 py-5 h-auto font-bold text-sm uppercase tracking-widest transition-all w-full sm:w-auto">
+                    Visit Program Website <ExternalLink size={16} className="ml-2 inline" />
+                  </Button>
+                </a>
+                <Link href="/contact?from=partner">
+                  <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 rounded-sm px-8 py-5 h-auto font-bold text-sm uppercase tracking-widest transition-all w-full sm:w-auto">
+                    Become a Partner
+                  </Button>
+                </Link>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="relative hidden lg:flex justify-center items-center"
+            >
+              <div className="relative w-full max-w-[400px]">
+                {/* Glow effect matching the theme */}
+                {/* <div className="absolute inset-0 bg-emerald-500/20 blur-3xl rounded-full scale-125"></div> */}
+                
+                {/* Image blended perfectly */}
+                <img 
+                  src={sustnovaGif} 
+                  alt="Sustainova Challenge Animation" 
+                  className="relative z-10 w-full h-auto object-contain mix-blend-multiply opacity-90 animate-pulse-slow"
+            
+                />
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 

@@ -98,37 +98,100 @@ export default function EntrepreneurshipAwards() {
           <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-orange-300 rounded-full blur-[100px] opacity-20"></div>
         </div>
         <div className="container mx-auto px-6 relative z-10">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl"
-          >
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-amber-300/70 text-sm font-bold uppercase tracking-widest">Programs</span>
-              <span className="text-amber-500/50">/</span>
-              <span className="text-amber-300 text-sm font-bold uppercase tracking-widest">Entrepreneurship Awards</span>
-            </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6 uppercase leading-none">
-              Qatar <br className="hidden md:block"/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-orange-200">Entrepreneurship Awards</span>
-            </h1>
-            <p className="text-lg md:text-xl text-amber-100/80 leading-relaxed max-w-2xl mb-8">
-              A national platform recognizing and celebrating excellence and innovation in ICT and digital entrepreneurship in Qatar and the wider region.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href="https://qatarentrepreneurshipawards.com/" target="_blank" rel="noopener noreferrer">
-                <Button className="bg-amber-500 hover:bg-white hover:text-amber-900 text-white rounded-sm px-8 py-5 h-auto font-bold text-sm uppercase tracking-widest transition-all w-full sm:w-auto">
-                  Apply Now <ExternalLink size={16} className="ml-2 inline" />
-                </Button>
-              </a>
-              <Link href="/contact?from=partner">
-                <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 rounded-sm px-8 py-5 h-auto font-bold text-sm uppercase tracking-widest transition-all w-full sm:w-auto">
-                  Become a Partner
-                </Button>
-              </Link>
-            </div>
-          </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="max-w-xl"
+            >
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-amber-300/70 text-sm font-bold uppercase tracking-widest">Programs</span>
+                <span className="text-amber-500/50">/</span>
+                <span className="text-amber-300 text-sm font-bold uppercase tracking-widest">Entrepreneurship Awards</span>
+              </div>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6 uppercase leading-none">
+                Qatar <br className="hidden md:block"/>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-orange-200">Entrepreneurship Awards</span>
+              </h1>
+              <p className="text-lg md:text-xl text-amber-100/80 leading-relaxed max-w-xl mb-8">
+                A national platform recognizing and celebrating excellence and innovation in ICT and digital entrepreneurship in Qatar and the wider region.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a href="https://qatarentrepreneurshipawards.com/" target="_blank" rel="noopener noreferrer">
+                  <Button className="bg-amber-500 hover:bg-white hover:text-amber-900 text-white rounded-sm px-8 py-5 h-auto font-bold text-sm uppercase tracking-widest transition-all w-full sm:w-auto">
+                    Apply Now <ExternalLink size={16} className="ml-2 inline" />
+                  </Button>
+                </a>
+                <Link href="/contact?from=partner">
+                  <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 rounded-sm px-8 py-5 h-auto font-bold text-sm uppercase tracking-widest transition-all w-full sm:w-auto">
+                    Become a Partner
+                  </Button>
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Animated Hero Graphic using Framer Motion */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+              className="relative hidden lg:flex justify-center items-center h-[500px]"
+            >
+              <div className="relative w-full max-w-[400px] aspect-square flex justify-center items-center">
+                {/* Clean, subtle background glow */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-amber-500/10 to-orange-500/10 rounded-full blur-3xl"></div>
+                
+             
+
+                {/* Main Icon Composition */}
+                <motion.div
+                 
+         
+                  className="relative z-10 flex flex-col items-center"
+                >
+                  <div className="p-8 rounded-2xl bg-gradient-to-br from-amber-100 to-amber-50 border border-amber-200/50 shadow-xl relative overflow-hidden group">
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/60 to-transparent z-10"></div>
+                    <Trophy className="w-24 h-24 text-amber-600 relative z-20 drop-shadow-md" strokeWidth={1.5} />
+                    
+                    {/* Inner shine effect */}
+                    <motion.div 
+                      className="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/80 to-transparent skew-x-12 z-30"
+                      animate={{ left: ['-100%', '200%'] }}
+                      transition={{ duration: 3, repeat: Infinity, repeatDelay: 5, ease: "easeInOut" }}
+                    />
+                  </div>
+                  
+                  {/* Floating modern badges */}
+                  <motion.div 
+                    animate={{ y: [0, 5, 0] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                    className="absolute -right-8 -top-8 bg-white px-4 py-2 rounded-xl shadow-lg border border-slate-100 flex items-center gap-2"
+                  >
+                    <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
+                    <span className="text-sm font-bold text-slate-800">2024</span>
+                  </motion.div>
+
+                  <motion.div 
+                    animate={{ y: [0, -5, 0] }}
+                    transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                    className="absolute -left-12 bottom-4 bg-slate-900 px-4 py-2 rounded-xl shadow-lg border border-slate-800/50 flex items-center gap-2"
+                  >
+                    <Sparkles className="w-4 h-4 text-orange-400" />
+                    <span className="text-sm font-bold text-white">Innovation</span>
+                  </motion.div>
+                </motion.div>
+                
+                {/* Modern dotted orbit */}
+                <svg className="absolute inset-0 w-full h-full animate-[spin_60s_linear_infinite] opacity-60" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="2 4" className="text-amber-200" />
+                  <circle cx="50" cy="5" r="1.5" className="fill-amber-400" />
+                  <circle cx="95" cy="50" r="1" className="fill-orange-400" />
+                  <circle cx="50" cy="95" r="1.5" className="fill-amber-300" />
+                </svg>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -339,7 +402,7 @@ export default function EntrepreneurshipAwards() {
             Applications are open for the next Qatar Entrepreneurship Awards. Submit your startup and join the ranks of Qatar's most innovative entrepreneurs.
           </p>
           <a href="https://qatarentrepreneurshipawards.com/" target="_blank" rel="noopener noreferrer">
-            <Button className="bg-amber-500 hover:bg-white hover:text-amber-900 text-white rounded-sm px-10 py-5 h-auto font-bold text-sm uppercase tracking-widest transition-all">
+            <Button className="bg-amber-500 hover:bg-white hover:text-amber-900 w-full sm:w-fit text-white rounded-sm px-2 sm:px-10 py-5 h-auto font-bold text-xs sm:text-sm uppercase tracking-widest transition-all">
               Submit Your Application <ExternalLink size={16} className="ml-2 inline" />
             </Button>
           </a>

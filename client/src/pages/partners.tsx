@@ -51,7 +51,7 @@ export const PartnerLogoCarousel = ({ logos, autoplay = false, loop = false }: {
   }, [emblaApi]);
 
   return (
-    <div className="relative group">
+    <div className="relative w-full group">
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex touch-pan-y">
           {logos.map((logo, i) => (

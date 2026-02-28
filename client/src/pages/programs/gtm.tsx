@@ -356,7 +356,7 @@ export default function GTM() {
               <div 
                 ref={highlightsRef}
                 onScroll={handleHighlightScroll}
-                className="flex overflow-x-auto gap-6 pb-4 -mx-6 px-6 md:mx-0 md:px-0 md:pb-0 md:grid md:grid-cols-2 md:overflow-visible scrollbar-hide snap-x snap-mandatory"
+                className="flex flex-wrap overflow-x-auto gap-6 pb-4 -mx-6 px-6 md:mx-0 md:px-0 md:pb-0 md:grid md:grid-cols-2 md:overflow-visible scrollbar-hide snap-x snap-mandatory"
               >
                 {highlights.map((item, i) => (
                   <div key={i} className="bg-white p-6 rounded-sm border border-slate-200 block hover:shadow-md transition-all w-[85vw] sm:w-[300px] md:w-auto snap-center flex-shrink-0">
@@ -371,24 +371,7 @@ export default function GTM() {
                 ))}
               </div>
 
-              {/* Mobile Pagination Dots */}
-              <div className="flex justify-center gap-2 md:hidden">
-                {highlights.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => {
-                      if (highlightsRef.current) {
-                        const cardWidth = highlightsRef.current.children[0]?.clientWidth || 0;
-                        highlightsRef.current.scrollTo({ left: i * cardWidth, behavior: 'smooth' });
-                      }
-                    }}
-                    className={`h-2 rounded-full transition-all duration-300 ${
-                      activeHighlight === i ? "bg-[#8b68f6] w-6" : "bg-slate-200 w-2"
-                    }`}
-                    aria-label={`Go to slide ${i + 1}`}
-                  />
-                ))}
-              </div>
+             
             </div>
           </div>
         </div>

@@ -318,7 +318,7 @@ export default function AIX() {
             Whether you're building, investing, or exploring—AIX is your gateway to the future of AI in the MENA region.
           </p>
           <a href="https://www.aixsummithack.com/" target="_blank" rel="noopener noreferrer">
-            <Button className="bg-[#8b68f6] hover:bg-white hover:text-[#2b204c] text-white rounded-sm px-10 py-5 h-auto font-bold text-sm uppercase tracking-widest transition-all">
+            <Button className="bg-[#8b68f6] hover:bg-white hover:text-[#2b204c] text-white rounded-sm w-full sm:w-fit px-2 sm:px-10 py-5 h-auto font-bold text-sm uppercase tracking-widest transition-all">
               Explore the Challenge <ExternalLink size={16} className="ml-2 inline" />
             </Button>
           </a>

@@ -365,7 +365,7 @@ export default function Sustainova() {
             Join the movement towards a sustainable future. Apply to the Sustainova Challenge and showcase your innovation.
           </p>
           <a href="https://sustainovachallenge.com/" target="_blank" rel="noopener noreferrer">
-            <Button className="bg-emerald-500 hover:bg-white hover:text-emerald-900 text-white rounded-sm px-10 py-5 h-auto font-bold text-sm uppercase tracking-widest transition-all">
+            <Button className="bg-emerald-500 hover:bg-white hover:text-emerald-900 text-white rounded-sm w-full sm:w-fit px-2 sm:px-10 py-5 h-auto font-bold text-sm uppercase tracking-widest transition-all">
               Explore the Challenge <ExternalLink size={16} className="ml-2 inline" />
             </Button>
           </a>

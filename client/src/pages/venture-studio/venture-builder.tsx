@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JourneyNav from "@/components/JourneyNav";
 import ScrollToTop from "@/components/ScrollToTop";
-import { ArrowRight, Hammer, Briefcase, TrendingUp, Layers, Cpu, Cloud, Database, Code, Zap, Shield, Server, Box, Globe, Smartphone, CreditCard, Sparkles, Car, CheckCircle, Upload, X } from "lucide-react";
+import { ArrowRight, Hammer, Briefcase, TrendingUp, Layers, Cpu, Cloud, Database, Code, Zap, Shield, Server, Box, Globe, Smartphone, CreditCard, Sparkles, Car, CheckCircle, Upload, X, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect, useRef } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from "@/components/ui/dialog";
@@ -448,28 +448,114 @@ export default function VentureBuilder() {
       {/* 1. New Hero Section */}
       <section className="pt-32 pb-20 md:pt-40 md:pb-32 bg-[#2b204c] relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
-          <motion.div 
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
-            className="max-w-4xl"
-          >
-            <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-4 block">Venture Builder</span>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white uppercase leading-none mb-6">
-              Co-Building and Scaling <br/>
-              <span className="text-white">Market-Defining Ventures</span>
-            </h1>
-            
-            <p className="text-xl text-slate-300 leading-relaxed mb-8 max-w-2xl">
-              We combine capital, elite talent, and enterprise-grade execution to build the next generation of deep tech giants.
-            </p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div 
+              initial="hidden"
+              animate="visible"
+              variants={fadeIn}
+              className="max-w-xl"
+            >
+              <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-4 block">Venture Builder</span>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white uppercase leading-none mb-6">
+                Co-Building and <br className="hidden md:block"/>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8b68f6] to-cyan-400">Scaling Ventures</span>
+              </h1>
+              
+              <p className="text-xl text-slate-300 leading-relaxed mb-8 max-w-xl">
+                We combine capital, elite talent, and enterprise-grade execution to build the next generation of deep tech giants.
+              </p>
 
-            <Link href="/build-with-us">
-              <Button className="bg-white text-[#2b204c] hover:bg-[#8b68f6] hover:text-white rounded-sm px-10 py-6 h-auto font-bold uppercase tracking-widest text-sm shadow-lg hover:shadow-xl transition-all">
-                Apply Now
-              </Button>
-            </Link>
-          </motion.div>
+              <Link href="/build-with-us">
+                <Button className="bg-white text-[#2b204c] hover:bg-[#8b68f6] hover:text-white rounded-sm px-10 py-6 h-auto font-bold uppercase tracking-widest text-sm shadow-lg hover:shadow-xl transition-all w-full sm:w-auto">
+                  Apply Now
+                </Button>
+              </Link>
+            </motion.div>
+
+            {/* Venture Builder Network Graphic */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+              className="relative hidden lg:flex justify-center items-center h-[400px]"
+            >
+              <div className="relative w-full max-w-[320px] aspect-square flex justify-center items-center">
+                {/* Background glow matrix */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#8b68f6]/20 to-cyan-400/10 rounded-full blur-3xl"></div>
+                
+                {/* Connecting lines SVG background */}
+                <svg className="absolute inset-0 w-[140%] h-[140%] -left-[20%] -top-[20%] opacity-20" viewBox="0 0 100 100">
+                  <path d="M50 50 L15 25 M50 50 L85 25 M50 50 L50 90 M50 50 L15 75 M50 50 L85 75" stroke="currentColor" strokeWidth="0.5" strokeDasharray="2 2" className="text-white" />
+                </svg>
+
+                {/* Outer rotating solid ring with glowing dots */}
+                <motion.div 
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
+                  className="absolute w-80 h-80 border border-white/10 rounded-full"
+                >
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-cyan-400 rounded-full shadow-[0_0_10px_#22d3ee]"></div>
+                  <div className="absolute bottom-1/4 right-0 w-1.5 h-1.5 bg-[#8b68f6] rounded-full shadow-[0_0_10px_#8b68f6]"></div>
+                </motion.div>
+
+                {/* Outer rotating dashed ring */}
+                <motion.div 
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+                  className="absolute w-64 h-64 border border-cyan-400/20 rounded-full border-dashed"
+                />
+
+                {/* Central animated node */}
+                <motion.div 
+                  initial={{ scale: 0.9 }}
+                  animate={{ scale: [0.9, 1.05, 0.9] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                  className="relative z-20 w-28 h-28 bg-gradient-to-br from-[#8b68f6] to-[#2b204c] rounded-2xl shadow-[0_0_30px_rgba(139,104,246,0.4)] border border-[#8b68f6]/50 flex items-center justify-center backdrop-blur-md"
+                >
+                  <motion.div 
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                    className="absolute inset-0 border-[1.5px] border-white/20 border-dashed rounded-2xl"
+                  />
+                  <Layers className="w-12 h-12 text-white drop-shadow-md z-10" />
+                </motion.div>
+
+                {/* Floating Tech Badges (Satellites) */}
+                <motion.div 
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute -top-4 left-0 p-3.5 bg-white/5 backdrop-blur-md rounded-xl border border-white/10 shadow-xl"
+                >
+                  <Rocket className="w-6 h-6 text-cyan-400" />
+                </motion.div>
+
+                <motion.div 
+                  animate={{ y: [0, 8, 0] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                  className="absolute top-10 -right-8 p-3.5 bg-white/5 backdrop-blur-md rounded-xl border border-[#8b68f6]/30 shadow-xl"
+                >
+                  <Code className="w-6 h-6 text-[#8b68f6]" />
+                </motion.div>
+
+                <motion.div 
+                  animate={{ y: [0, -6, 0] }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                  className="absolute bottom-8 -left-6 p-3.5 bg-[#8b68f6]/10 backdrop-blur-md rounded-xl border border-[#8b68f6]/20 shadow-xl"
+                >
+                  <Cpu className="w-6 h-6 text-purple-300" />
+                </motion.div>
+
+                <motion.div 
+                  animate={{ y: [0, 10, 0] }}
+                  transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 3 }}
+                  className="absolute -bottom-8 right-10 p-3.5 bg-cyan-400/5 backdrop-blur-md rounded-xl border border-cyan-400/20 shadow-xl"
+                >
+                  <TrendingUp className="w-6 h-6 text-cyan-400" />
+                </motion.div>
+
+              </div>
+            </motion.div>
+          </div>
         </div>
         {/* Abstract Background Element */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#8b68f6]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>

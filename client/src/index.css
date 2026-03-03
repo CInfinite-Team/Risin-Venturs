@@ -43,6 +43,10 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+.scrollbar-hide{
+  scrollbar-width: none;
+}
+
 :root {
   /* Serious VC Palette */
   --background: 210 20% 98%;    /* Light Gray #F9FAFB */

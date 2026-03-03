@@ -115,6 +115,9 @@ export default function Home() {
   const [portfolioEmblaRef, portfolioEmblaApi] = useEmblaCarousel({ loop: false, align: 'start', containScroll: 'trimSnaps' });
   const [portfolioSelectedIndex, setPortfolioSelectedIndex] = useState(0);
 
+  const [caseStudiesEmblaRef, caseStudiesEmblaApi] = useEmblaCarousel({ loop: false, align: 'start', containScroll: 'trimSnaps' });
+  const [caseStudiesSelectedIndex, setCaseStudiesSelectedIndex] = useState(0);
+
   const onSelectServices = useCallback(() => {
     if (!servicesEmblaApi) return;
     setServicesSelectedIndex(servicesEmblaApi.selectedScrollSnap());
@@ -129,6 +132,11 @@ export default function Home() {
     if (!portfolioEmblaApi) return;
     setPortfolioSelectedIndex(portfolioEmblaApi.selectedScrollSnap());
   }, [portfolioEmblaApi, setPortfolioSelectedIndex]);
+
+  const onSelectCaseStudies = useCallback(() => {
+    if (!caseStudiesEmblaApi) return;
+    setCaseStudiesSelectedIndex(caseStudiesEmblaApi.selectedScrollSnap());
+  }, [caseStudiesEmblaApi, setCaseStudiesSelectedIndex]);
 
   useEffect(() => {
     if (!servicesEmblaApi) return;
@@ -151,9 +159,17 @@ export default function Home() {
     portfolioEmblaApi.on('reInit', onSelectPortfolio);
   }, [portfolioEmblaApi, onSelectPortfolio]);
 
+  useEffect(() => {
+    if (!caseStudiesEmblaApi) return;
+    onSelectCaseStudies();
+    caseStudiesEmblaApi.on('select', onSelectCaseStudies);
+    caseStudiesEmblaApi.on('reInit', onSelectCaseStudies);
+  }, [caseStudiesEmblaApi, onSelectCaseStudies]);
+
   const scrollToService = useCallback((index: number) => servicesEmblaApi?.scrollTo(index), [servicesEmblaApi]);
   const scrollToProgram = useCallback((index: number) => programsEmblaApi?.scrollTo(index), [programsEmblaApi]);
   const scrollToPortfolio = useCallback((index: number) => portfolioEmblaApi?.scrollTo(index), [portfolioEmblaApi]);
+  const scrollToCaseStudy = useCallback((index: number) => caseStudiesEmblaApi?.scrollTo(index), [caseStudiesEmblaApi]);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -1213,9 +1229,10 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Mobile: Horizontal Scroll */}
+          {/* Mobile Carousel Version */}
           <div className="md:hidden">
-            <div className="flex overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory px-6 -mx-6 gap-4">
+            <div className="overflow-hidden" ref={caseStudiesEmblaRef}>
+              <div className="flex touch-pan-y">
               {[
                 {
                   title: "Bridging Ambition and Intelligence – AIX Summit",
@@ -1242,30 +1259,37 @@ export default function Home() {
                   link: "https://risin.ventures/scaling-sustainability-the-sustainova-2025-impact-report/"
                 }
               ].map((study, i) => (
-                <a 
-                  key={i}
-                  href={study.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-shrink-0 w-[260px] snap-center bg-white border border-slate-100 rounded-sm overflow-hidden shadow-sm"
-                >
-                  <div className="aspect-video relative">
-                    <img src={study.image} alt={study.title} className="w-full h-full object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#2b204c]/60 to-transparent" />
-                  </div>
-                  <div className="p-4">
-                    <h4 className="text-sm font-heading font-bold text-[#2b204c] uppercase mb-2 line-clamp-2">{study.title}</h4>
-                    <p className="text-xs text-slate-500 line-clamp-2 mb-3">{study.summary}</p>
-                    <span className="text-[9px] font-bold text-[#8b68f6] uppercase tracking-widest flex items-center gap-1">
-                      Read Case Study <ArrowRight size={10} />
-                    </span>
-                  </div>
-                </a>
+                <div key={i} className="flex-[0_0_85%] min-w-0 pr-4 pl-1 pb-4 snap-center">
+                  <a 
+                    href={study.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block bg-white border border-slate-100 rounded-sm overflow-hidden shadow-sm h-full"
+                  >
+                    <div className="aspect-video relative">
+                      <img src={study.image} alt={study.title} className="w-full h-full object-cover" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#2b204c]/60 to-transparent" />
+                    </div>
+                    <div className="p-4">
+                      <h4 className="text-sm font-heading font-bold text-[#2b204c] uppercase mb-2 line-clamp-2">{study.title}</h4>
+                      <p className="text-xs text-slate-500 line-clamp-2 mb-3">{study.summary}</p>
+                      <span className="text-[9px] font-bold text-[#8b68f6] uppercase tracking-widest flex items-center gap-1">
+                        Read Case Study <ArrowRight size={10} />
+                      </span>
+                    </div>
+                  </a>
+                </div>
               ))}
+              </div>
             </div>
             <div className="flex justify-center gap-2 mt-4">
               {[0, 1, 2, 3].map((dot) => (
-                <div key={dot} className={`w-1.5 h-1.5 rounded-full ${dot === 0 ? 'bg-[#8b68f6]' : 'bg-slate-300'}`} />
+                <button 
+                  key={dot} 
+                  onClick={() => scrollToCaseStudy(dot)}
+                  aria-label={`Go to slide ${dot + 1}`}
+                  className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${caseStudiesSelectedIndex === dot ? 'bg-[#8b68f6] scale-125' : 'bg-slate-300'}`} 
+                />
               ))}
             </div>
           </div>

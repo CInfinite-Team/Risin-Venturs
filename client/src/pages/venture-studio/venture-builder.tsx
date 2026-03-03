@@ -763,7 +763,7 @@ export default function VentureBuilder() {
       </section>
 
       {/* Proprietary Platforms (NEW) */}
-      <section className="py-20 bg-[#F9FAFB] border-t border-slate-100">
+      <section className="py-20 scrollbar-hide bg-[#F9FAFB] border-t border-slate-100">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mb-12">
             <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-3 block">Product Acceleration</span>

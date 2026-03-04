@@ -11,7 +11,15 @@ import madadLogo from "@/assets/HomePortfolio/Madad.png";
 import iprocureLogo from "@/assets/HomePortfolio/Iprocure.png";
 import arisioLogo from "@/assets/HomePortfolio/Arisio.png";
 
-import { PartnerLogoCarousel, partnerLogos } from "@/pages/partners";
+import { PartnerLogoCarousel } from "@/pages/partners";
+
+import qdbLogo from "@/assets/Ecosystem Partners/QDB.png";
+import qstpLogo from "@/assets/Ecosystem Partners/QSTP-Logo.png";
+import mtcitLogo from "@/assets/Ecosystem Partners/MTCIT.png";
+import codeLogo from "@/assets/Ecosystem Partners/CODE.jpg";
+import qatarUniversityLogo from "@/assets/Ecosystem Partners/Qatar University.png";
+
+const homeEcosystemLogos = [qdbLogo, qstpLogo, mtcitLogo, codeLogo, qatarUniversityLogo];
 
 import { Button } from "@/components/ui/button";
 import { useState, useEffect, useRef, useCallback } from "react";
@@ -269,7 +277,7 @@ export default function Home() {
           </motion.div>
 
           <div className="px-4 md:px-12">
-            <PartnerLogoCarousel logos={partnerLogos.ecosystem} autoplay={true} loop={true} />
+            <PartnerLogoCarousel logos={homeEcosystemLogos} autoplay={true} loop={true} />
           </div>
         </div>
       </section>

@@ -10,7 +10,6 @@ import bigtraderLogo from "@/assets/HomePortfolio/Bigtrader.png";
 import madadLogo from "@/assets/HomePortfolio/Madad.png";
 import iprocureLogo from "@/assets/HomePortfolio/Iprocure.png";
 import arisioLogo from "@/assets/HomePortfolio/Arisio.png";
-
 import { PartnerLogoCarousel } from "@/pages/partners";
 
 import qdbLogo from "@/assets/Ecosystem Partners/QDB.png";
@@ -276,8 +275,22 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="px-4 md:px-12">
+          {/* Mobile: Carousel */}
+          <div className="block md:hidden">
             <PartnerLogoCarousel logos={homeEcosystemLogos} autoplay={true} loop={true} showArrows={false} />
+          </div>
+
+          {/* Desktop: Even-size card grid */}
+          <div className="hidden md:flex flex-wrap items-center justify-center gap-8">
+            {homeEcosystemLogos.map((logo, i) => (
+              <div key={i} className="bg-white rounded-sm border border-slate-100 flex items-center justify-center w-52 h-52 p-6 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all shrink-0">
+                <img
+                  src={logo}
+                  alt={`Ecosystem Partner ${i + 1}`}
+                  className="w-full h-full object-contain filter grayscale hover:grayscale-0 transition-all"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>

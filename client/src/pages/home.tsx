@@ -2,7 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { ArrowRight, Globe, TrendingUp, Shield, Zap, Rocket, Cpu, Network, Building2 } from "lucide-react";
 import Header from "@/components/Header";
 import heroBg from "@/assets/hero-concepts/option6-core.png";
-import gccGtmLogo from "../../assets/GTM.png";
+import gccGtmLogo from "../assets/GTM.png";
 import sustainovaLogo from "@assets/Sustain_Nova__1771154173735.png";
 import aixLogo from "@assets/AIX_LOGO_1771154224181.png";
 

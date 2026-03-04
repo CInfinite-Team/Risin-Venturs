@@ -702,7 +702,6 @@ export default function BuildWithUs() {
               transition={{ duration: 0.8 }}
               className="max-w-2xl"
             >
-              <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-4 block">Venture Builder</span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 uppercase leading-none">
                 Growing Potential Ideas Into <br className="hidden md:block"/>
                 <span className="text-[#8b68f6]">Stellar Ventures</span>

@@ -165,6 +165,11 @@ export default function Header() {
     }
   ];
 
+  const ventureBuilderItems: NavItem[] = [
+    { label: "Venture Builder", href: "/venture-studio/venture-builder" },
+    { label: "Build With Us", href: "/build-with-us" }
+  ];
+
   return (
     <nav className={`fixed top-0 w-full z-[100] transition-all duration-300 h-20 md:h-24 flex items-center ${isScrolled ? "bg-white shadow-md border-b border-slate-100" : "bg-white border-b border-slate-50"}`}>
       <div className="container mx-auto px-6 flex items-center justify-between">
@@ -180,9 +185,7 @@ export default function Header() {
         <div className="hidden md:flex items-center gap-8">
           <NavDropdown title="About" items={aboutItems} />
           <NavDropdown title="Programs" isPrimary items={programsItems} />
-          <Link href="/venture-studio/venture-builder" className="text-sm font-bold text-[#2b204c] hover:text-[#8b68f6] transition-colors uppercase tracking-widest cursor-pointer outline-none">
-            Venture Builder
-          </Link>
+          <NavDropdown title="Venture Builder" items={ventureBuilderItems} />
           <Link href="/build-with-us" className="bg-[#2b204c] text-white hover:bg-[#8b68f6] transition-all uppercase tracking-widest text-xs font-bold rounded-sm px-6 h-12 border-0 shadow-lg inline-flex items-center justify-center">
             Build With Us
           </Link>

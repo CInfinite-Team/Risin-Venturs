@@ -10,20 +10,28 @@ interface NavItem {
   children?: NavItem[];
 }
 
-const NavDropdown = ({ title, items, isPrimary }: { title: string, items: NavItem[], isPrimary?: boolean }) => {
+const NavDropdown = ({ title, items }: { title: string, items: NavItem[] }) => {
+  const [location] = useLocation();
+  const isActive = items.some(item => 
+    item.href === location || 
+    (item.children && item.children.some(child => child.href === location))
+  );
+
   return (
     <div className="relative group py-4">
-      <button className={`text-sm font-bold ${isPrimary ? 'text-[#8b68f6]' : 'text-[#2b204c]'} hover:text-[#8b68f6] transition-colors uppercase tracking-widest flex items-center gap-1 cursor-pointer outline-none ${isPrimary ? 'after:content-[""] after:absolute after:bottom-3 after:left-0 after:w-full after:h-0.5 after:bg-[#8b68f6]' : ''}`}>
+      <button className={`text-sm font-bold ${isActive ? 'text-[#8b68f6]' : 'text-[#2b204c]'} hover:text-[#8b68f6] transition-colors uppercase tracking-widest flex items-center gap-1 cursor-pointer outline-none ${isActive ? 'after:content-[""] after:absolute after:bottom-3 after:left-0 after:w-full after:h-0.5 after:bg-[#8b68f6]' : ''}`}>
         {title} <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-300" />
       </button>
       <div className="absolute top-full left-0 pt-2 opacity-0 translate-y-2 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-300 z-50">
         <div className="bg-white border border-slate-100 shadow-xl p-4 min-w-[260px] flex flex-col gap-1 rounded-sm">
-          {items.map((item) => (
+          {items.map((item) => {
+            const isItemActive = location === item.href || (item.children && item.children.some(child => location === child.href));
+            return (
             <div key={item.label} className="relative group/sub">
               {item.children ? (
-                <div className="flex items-center justify-between w-full text-sm font-bold text-[#2b204c] hover:text-[#8b68f6] capitalize tracking-widest transition-colors px-2 py-2 cursor-pointer group-hover/sub:text-[#8b68f6]">
+                <div className={`flex items-center justify-between w-full text-sm font-bold ${isItemActive ? 'text-[#8b68f6]' : 'text-[#2b204c]'} hover:text-[#8b68f6] capitalize tracking-widest transition-colors px-2 py-2 cursor-pointer group-hover/sub:text-[#8b68f6]`}>
                   <span>{item.label}</span>
-                  <ChevronRight size={14} className="text-slate-400 group-hover/sub:text-[#8b68f6]" />
+                  <ChevronRight size={14} className={`group-hover/sub:text-[#8b68f6] ${isItemActive ? 'text-[#8b68f6]' : 'text-slate-400'}`} />
                   
                   {/* Level 2 Dropdown */}
                   <div className="absolute left-full top-0 pl-2 opacity-0 translate-x-2 invisible group-hover/sub:opacity-100 group-hover/sub:translate-x-0 group-hover/sub:visible transition-all duration-300 z-50">
@@ -32,7 +40,7 @@ const NavDropdown = ({ title, items, isPrimary }: { title: string, items: NavIte
                          <Link 
                            key={child.label} 
                            href={child.href}
-                           className="text-sm font-bold text-[#2b204c] hover:text-[#8b68f6] capitalize tracking-widest transition-colors whitespace-nowrap px-2 py-2 block"
+                           className={`text-sm font-bold ${location === child.href ? 'text-[#8b68f6]' : 'text-[#2b204c]'} hover:text-[#8b68f6] capitalize tracking-widest transition-colors whitespace-nowrap px-2 py-2 block`}
                          >
                            {child.label}
                          </Link>
@@ -53,14 +61,14 @@ const NavDropdown = ({ title, items, isPrimary }: { title: string, items: NavIte
                 ) : (
                   <Link 
                     href={item.href}
-                    className="text-sm font-bold text-[#2b204c] hover:text-[#8b68f6] capitalize tracking-widest transition-colors whitespace-nowrap px-2 py-2 block"
+                    className={`text-sm font-bold ${location === item.href ? 'text-[#8b68f6]' : 'text-[#2b204c]'} hover:text-[#8b68f6] capitalize tracking-widest transition-colors whitespace-nowrap px-2 py-2 block`}
                   >
                     {item.label}
                   </Link>
                 )
               )}
             </div>
-          ))}
+          )})}
         </div>
       </div>
     </div>
@@ -70,14 +78,18 @@ const NavDropdown = ({ title, items, isPrimary }: { title: string, items: NavIte
 // Mobile Accordion Item
 const MobileNavItem = ({ item, depth = 0, setIsMenuOpen }: { item: NavItem, depth?: number, setIsMenuOpen: (val: boolean) => void }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [location] = useLocation();
   const hasChildren = item.children && item.children.length > 0;
+  const isSelfActive = location === item.href;
+  const isChildActive = hasChildren && item.children?.some(child => child.href === location);
+  const isActive = isSelfActive || isChildActive;
 
   if (hasChildren) {
     return (
       <div className="flex flex-col">
         <button 
           onClick={() => setIsOpen(!isOpen)}
-          className={`flex items-center justify-between text-lg font-bold text-[#2b204c] capitalize py-2 ${depth > 0 ? 'text-base pl-4 text-slate-600' : ''}`}
+          className={`flex items-center justify-between text-lg font-bold capitalize py-2 ${isActive ? 'text-[#8b68f6]' : 'text-[#2b204c]'} ${depth > 0 ? (isActive ? 'text-base pl-4' : 'text-base pl-4 text-slate-600') : ''}`}
         >
           {item.label}
           <ChevronDown size={16} className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
@@ -114,7 +126,7 @@ const MobileNavItem = ({ item, depth = 0, setIsMenuOpen }: { item: NavItem, dept
     ) : (
       <Link
         href={item.href}
-        className={`text-lg font-bold text-[#2b204c] capitalize py-2 block ${depth > 0 ? 'text-base text-slate-600' : ''}`}
+        className={`text-lg font-bold capitalize py-2 block ${isSelfActive ? 'text-[#8b68f6]' : 'text-[#2b204c]'} ${depth > 0 ? (isSelfActive ? 'text-base' : 'text-base text-slate-600') : ''}`}
         onClick={() => setIsMenuOpen(false)}
       >
         {item.label}
@@ -184,9 +196,9 @@ export default function Header() {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           <NavDropdown title="About" items={aboutItems} />
-          <NavDropdown title="Programs" isPrimary items={programsItems} />
+          <NavDropdown title="Programs" items={programsItems} />
           <NavDropdown title="Venture Builder" items={ventureBuilderItems} />
-          <Link href="/build-with-us" className="bg-[#2b204c] text-white hover:bg-[#8b68f6] transition-all uppercase tracking-widest text-xs font-bold rounded-sm px-6 h-12 border-0 shadow-lg inline-flex items-center justify-center">
+          <Link href="/build-with-us" className={`${location === '/build-with-us' ? 'bg-[#8b68f6]' : 'bg-[#2b204c]'} text-white hover:bg-[#8b68f6] transition-all uppercase tracking-widest text-xs font-bold rounded-sm px-6 h-12 border-0 shadow-lg inline-flex items-center justify-center`}>
             Build With Us
           </Link>
         </div>
@@ -236,7 +248,7 @@ export default function Header() {
               <div className="flex flex-col gap-2">
                 <Link 
                   href="/venture-studio/venture-builder"
-                  className="text-lg font-bold text-[#2b204c] uppercase tracking-widest py-2 border-b border-slate-100"
+                  className={`text-lg font-bold ${location === '/venture-studio/venture-builder' ? 'text-[#8b68f6]' : 'text-[#2b204c]'} uppercase tracking-widest py-2 border-b border-slate-100`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Venture Builder
@@ -245,7 +257,7 @@ export default function Header() {
 
               <Link
                 href="/build-with-us"
-                className="bg-[#2b204c] text-white uppercase tracking-widest text-sm font-bold rounded-sm w-full h-14 mt-4 shadow-lg inline-flex items-center justify-center"
+                className={`${location === '/build-with-us' ? 'bg-[#8b68f6]' : 'bg-[#2b204c]'} text-white uppercase tracking-widest text-sm font-bold rounded-sm w-full h-14 mt-4 shadow-lg inline-flex items-center justify-center`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Build With Us

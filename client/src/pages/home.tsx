@@ -714,12 +714,12 @@ export default function Home() {
                   </span>
                   <span className="text-slate-300 flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#8b68f6]"></span>
-                    Date: TBA
+                    Date: 8th April 2026
                   </span>
-                  <span className="text-slate-300 flex items-center gap-2">
+                  {/* <span className="text-slate-300 flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#8b68f6]"></span>
                     Time: TBA
-                  </span>
+                  </span> */}
                 </div>
                 <p className="text-slate-400 text-sm max-w-lg mt-2">
                   Recognizing and celebrating excellence in ICT and digital entrepreneurship.

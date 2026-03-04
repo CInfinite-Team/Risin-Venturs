@@ -186,7 +186,7 @@ export default function Team() {
       </motion.section>
 
       {/* Advisors Section */}
-      <motion.section 
+      {/* <motion.section 
         className="py-10 md:py-16 bg-[#F9FAFB]"
         initial="hidden"
         whileInView="visible"
@@ -238,7 +238,7 @@ export default function Team() {
             ))}
           </div>
         </div>
-      </motion.section>
+      </motion.section> */}
 
       {/* Join the Team CTA */}
       <motion.section 

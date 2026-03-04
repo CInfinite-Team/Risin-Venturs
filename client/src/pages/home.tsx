@@ -277,7 +277,7 @@ export default function Home() {
           </motion.div>
 
           <div className="px-4 md:px-12">
-            <PartnerLogoCarousel logos={homeEcosystemLogos} autoplay={true} loop={true} />
+            <PartnerLogoCarousel logos={homeEcosystemLogos} autoplay={true} loop={true} showArrows={false} />
           </div>
         </div>
       </section>

@@ -36,7 +36,7 @@ export const partnerLogos = {
   gtm: gtmLogos
 };
 
-export const PartnerLogoCarousel = ({ logos, autoplay = false, loop = false }: { logos: string[], autoplay?: boolean, loop?: boolean }) => {
+export const PartnerLogoCarousel = ({ logos, autoplay = false, loop = false, showArrows = true }: { logos: string[], autoplay?: boolean, loop?: boolean, showArrows?: boolean }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop, align: "start", containScroll: "trimSnaps" }, 
     autoplay ? [Autoplay({ delay: 2000, stopOnInteraction: false })] : []
@@ -71,21 +71,24 @@ export const PartnerLogoCarousel = ({ logos, autoplay = false, loop = false }: {
         </div>
       </div>
       
-      {/* Navigation Arrows - Visible on Mobile and Desktop */}
-      <button 
-        onClick={scrollPrev}
-        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 bg-white border border-slate-200 text-slate-500 rounded-full w-10 h-10 flex items-center justify-center shadow-md hover:bg-[#8b68f6] hover:text-white transition-all focus:outline-none"
-        aria-label="Previous slide"
-      >
-        <ChevronLeft size={20} />
-      </button>
-      <button 
-        onClick={scrollNext}
-        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 bg-white border border-slate-200 text-slate-500 rounded-full w-10 h-10 flex items-center justify-center shadow-md hover:bg-[#8b68f6] hover:text-white transition-all focus:outline-none"
-        aria-label="Next slide"
-      >
-        <ChevronRight size={20} />
-      </button>
+      {showArrows && (
+        <>
+          <button 
+            onClick={scrollPrev}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 bg-white border border-slate-200 text-slate-500 rounded-full w-10 h-10 flex items-center justify-center shadow-md hover:bg-[#8b68f6] hover:text-white transition-all focus:outline-none"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft size={20} />
+          </button>
+          <button 
+            onClick={scrollNext}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 bg-white border border-slate-200 text-slate-500 rounded-full w-10 h-10 flex items-center justify-center shadow-md hover:bg-[#8b68f6] hover:text-white transition-all focus:outline-none"
+            aria-label="Next slide"
+          >
+            <ChevronRight size={20} />
+          </button>
+        </>
+      )}
     </div>
   );
 };

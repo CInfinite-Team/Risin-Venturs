@@ -1047,7 +1047,7 @@ export default function Home() {
             </motion.a>
 
             {/* Secondary Cards - Stacked */}
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 h-full">
               {[
                 {
                   title: "AI Hackathons for Enterprises: Beyond Buzzwords to Real ROI",
@@ -1077,9 +1077,9 @@ export default function Home() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="group flex gap-4 bg-white border border-slate-100 p-4 rounded-sm hover:shadow-lg hover:border-[#8b68f6]/30 transition-all duration-300 cursor-pointer"
+                  className="group flex gap-4 bg-white border border-slate-100 p-4 rounded-sm hover:shadow-lg hover:border-[#8b68f6]/30 transition-all duration-300 cursor-pointer flex-1 items-center"
                 >
-                  <div className="w-24 h-20 shrink-0 overflow-hidden rounded-sm">
+                  <div className="w-24 md:w-32 h-20 md:h-24 shrink-0 overflow-hidden rounded-sm">
                     <img 
                       src={study.image} 
                       alt={study.title}
@@ -1090,7 +1090,7 @@ export default function Home() {
                     <h4 className="text-sm font-heading font-bold text-[#2b204c] group-hover:text-[#8b68f6] transition-colors uppercase leading-tight line-clamp-2 mb-1">
                       {study.title}
                     </h4>
-                    <p className="text-xs text-slate-500 line-clamp-1 mb-2">{study.outcome}</p>
+                    <p className="text-xs text-slate-500 line-clamp-2 mb-2">{study.outcome}</p>
                     <span className="text-[9px] font-bold text-[#8b68f6] uppercase tracking-widest flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                       Read More <ArrowRight size={10} />
                     </span>

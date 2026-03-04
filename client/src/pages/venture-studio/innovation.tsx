@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { useState } from "react";
+import { useFormSubmit } from "@/hooks/useFormSubmit";
 
 import image1 from "@assets/4_1768828797237.JPG";
 import image2 from "@assets/31_1768828797240.JPG";
@@ -20,9 +21,12 @@ const fadeIn = {
 };
 
 const InnovationForm = () => {
-  const [submitted, setSubmitted] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [company, setCompany] = useState("");
+  const { isSubmitting, isSuccess, submit } = useFormSubmit();
 
-  if (submitted) {
+  if (isSuccess) {
     return (
       <div className="text-center py-10">
         <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -38,21 +42,24 @@ const InnovationForm = () => {
   }
 
   return (
-    <form className="space-y-4 py-4" onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}>
+    <form className="space-y-4 py-4" onSubmit={async (e) => {
+      e.preventDefault();
+      await submit({ formType: "Innovation Playbook", name, email, company });
+    }}>
       <div className="space-y-2">
-        <Label htmlFor="name">Full Name</Label>
-        <Input id="name" placeholder="John Doe" required />
+        <Label htmlFor="inno-name">Full Name</Label>
+        <Input id="inno-name" placeholder="John Doe" required value={name} onChange={(e) => setName(e.target.value)} />
       </div>
       <div className="space-y-2">
-        <Label htmlFor="email">Work Email</Label>
-        <Input id="email" type="email" placeholder="john@company.com" required />
+        <Label htmlFor="inno-email">Work Email</Label>
+        <Input id="inno-email" type="email" placeholder="john@company.com" required value={email} onChange={(e) => setEmail(e.target.value)} />
       </div>
       <div className="space-y-2">
-        <Label htmlFor="company">Company Name</Label>
-        <Input id="company" placeholder="Acme Corp" required />
+        <Label htmlFor="inno-company">Company Name</Label>
+        <Input id="inno-company" placeholder="Acme Corp" required value={company} onChange={(e) => setCompany(e.target.value)} />
       </div>
-      <Button type="submit" className="w-full bg-[#8b68f6] hover:bg-[#7a5bd6] text-white font-bold py-6 uppercase tracking-widest mt-4">
-        Get the Playbook
+      <Button type="submit" disabled={isSubmitting} className="w-full bg-[#8b68f6] hover:bg-[#7a5bd6] text-white font-bold py-6 uppercase tracking-widest mt-4">
+        {isSubmitting ? "Submitting..." : "Get the Playbook"}
       </Button>
       <p className="text-[10px] text-slate-400 text-center">
         We respect your privacy. No spam, just value.

@@ -8,6 +8,7 @@ import { ArrowRight, Hammer, Briefcase, TrendingUp, Layers, Cpu, Cloud, Database
 import { Button } from "@/components/ui/button";
 import { useState, useEffect, useRef } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from "@/components/ui/dialog";
+import { useFormSubmit } from "@/hooks/useFormSubmit";
 
 import image1 from "@assets/20231119_125834_(2)_1768914492428.jpg";
 import image2 from "@assets/7RV04162_1768914492429.JPG";
@@ -257,15 +258,18 @@ function LPInterestForm({ onClose }: { onClose: () => void }) {
     geography: "",
     note: ""
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
+  const { isSubmitting: lpSubmitting, isSuccess: isSuccess, submit: lpSubmit } = useFormSubmit();
 
-  const handleSubmit = () => {
-    setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-    }, 1500);
+  const handleSubmit = async () => {
+    await lpSubmit({
+      formType: "LP Interest",
+      fullName: formData.fullName,
+      organization: formData.organization,
+      email: formData.email,
+      investmentRange: formData.investmentRange,
+      geography: formData.geography,
+      note: formData.note,
+    });
   };
 
   if (isSuccess) {
@@ -396,8 +400,7 @@ export default function VentureBuilder() {
   const [isLPModalOpen, setIsLPModalOpen] = useState(false);
   const [selectedVenture, setSelectedVenture] = useState<string>("");
   const [formData, setFormData] = useState<FormData>(initialFormData);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
+  const { isSubmitting, isSuccess, submit } = useFormSubmit();
 
   // Slider refs and state
   const [activeTechCap, setActiveTechCap] = useState(0);
@@ -409,16 +412,19 @@ export default function VentureBuilder() {
     setSelectedVenture(ventureId);
     setFormData(prev => ({ ...prev, selectedIdea: ventureId }));
     setIsModalOpen(true);
-    setIsSuccess(false);
   };
 
-  const handleSubmit = () => {
-    setIsSubmitting(true);
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-    }, 1500);
+  const handleSubmit = async () => {
+    await submit({
+      formType: "Venture Builder",
+      fullName: formData.fullName,
+      email: formData.email,
+      linkedin: formData.linkedin,
+      selectedIdea: formData.selectedIdea || "",
+      role: formData.role,
+      message: formData.message,
+    });
+    if (isSuccess) setIsModalOpen(false);
   };
 
   const handleTechCapScroll = () => {

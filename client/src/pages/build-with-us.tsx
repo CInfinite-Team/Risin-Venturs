@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import { useFormSubmit } from "@/hooks/useFormSubmit";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -72,6 +73,7 @@ interface FormData {
   ideaDescription: string;
   teamDescription: string;
   referralName: string;
+  pitchDeckLink?: string;
   selectedIdea?: string;
   role?: string;
   message?: string;
@@ -91,6 +93,7 @@ const initialFormData: FormData = {
   ideaDescription: "",
   teamDescription: "",
   referralName: "",
+  pitchDeckLink: "",
   selectedIdea: "",
   role: "",
   message: ""
@@ -570,14 +573,18 @@ function ApplicationForm({
 
       <div className="grid md:grid-cols-2 gap-6">
         <div>
-          <label className="block text-sm font-bold text-[#2b204c] mb-2">
-            Upload Pitch Deck
+          <label htmlFor="pitchDeckLink" className="block text-sm font-bold text-[#2b204c] mb-2">
+            Link to Pitch Deck
           </label>
-          <div className="border-2 border-dashed border-slate-200 rounded-sm p-6 text-center hover:border-[#8b68f6]/50 transition-colors cursor-pointer group">
-            <Upload className="w-8 h-8 mx-auto mb-2 text-slate-400 group-hover:text-[#8b68f6] transition-colors" />
-            <p className="text-sm text-slate-500">Drop your pitch deck here or <span className="text-[#8b68f6] font-medium">browse</span></p>
-            <p className="text-xs text-slate-400 mt-1">PDF, PPT up to 10MB</p>
-          </div>
+          <input
+            id="pitchDeckLink"
+            type="url"
+            value={formData.pitchDeckLink || ""}
+            onChange={(e) => setFormData({ ...formData, pitchDeckLink: e.target.value })}
+            placeholder="Dropbox / Google Drive link"
+            className="w-full px-4 py-3 border border-slate-200 rounded-sm focus:border-[#8b68f6] focus:ring-2 focus:ring-[#8b68f6]/20 outline-none transition-all"
+          />
+          <p className="text-xs text-slate-400 mt-2">Please ensure the link is publicly accessible.</p>
         </div>
         <div>
           <label htmlFor="app-referral" className="block text-sm font-bold text-[#2b204c] mb-2">
@@ -618,8 +625,7 @@ export default function BuildWithUs() {
   const [primaryFormData, setPrimaryFormData] = useState<FormData>(initialFormData);
   const [ideaFormData, setIdeaFormData] = useState<FormData>(initialFormData);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
+  const { isSubmitting, isSuccess: showSuccess, submit } = useFormSubmit();
 
   // Check for URL query params to pre-select venture
   useState(() => {
@@ -631,16 +637,32 @@ export default function BuildWithUs() {
     }
   });
 
-  const handleSubmit = (formType: "primary" | "idea") => {
-    setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setShowSuccess(true);
-      if (formType === "idea") {
-        setIsModalOpen(false);
-      }
-      setTimeout(() => setShowSuccess(false), 5000);
-    }, 1500);
+  const handleSubmit = async (formType: "primary" | "idea") => {
+    const data = formType === "primary" ? primaryFormData : ideaFormData;
+    await submit({
+      formType: "Build With Us",
+      subType: formType,
+      fullName: data.fullName,
+      email: data.email,
+      phone: data.phone,
+      linkedin: data.linkedin,
+      location: data.location,
+      founderJourney: data.founderJourney,
+      startupExperience: data.startupExperience,
+      launchTimeline: data.launchTimeline,
+      thesisAlignment: data.thesisAlignment,
+      howHeard: data.howHeard,
+      ideaDescription: data.ideaDescription,
+      teamDescription: data.teamDescription,
+      referralName: data.referralName,
+      pitchDeckLink: data.pitchDeckLink || "",
+      selectedIdea: data.selectedIdea || "",
+      role: data.role || "",
+      message: data.message || "",
+    });
+    if (formType === "idea") {
+      setIsModalOpen(false);
+    }
   };
 
   const scrollToForm = () => {

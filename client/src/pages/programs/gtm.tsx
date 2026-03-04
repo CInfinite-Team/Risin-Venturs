@@ -16,6 +16,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useState, useRef } from "react";
+import { useFormSubmit } from "@/hooks/useFormSubmit";
 
 import {PartnerLogoCarousel} from '@/pages/partners'
 const sectionVariants = {
@@ -62,9 +63,17 @@ const ecosystemLogos = Object.values(ecosystemModules).map(module => module.defa
 const partners = ecosystemLogos;
 
 const RegistrationForm = () => {
-  const [submitted, setSubmitted] = useState(false);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [startupName, setStartupName] = useState("");
+  const [website, setWebsite] = useState("");
+  const [sector, setSector] = useState("");
+  const [pitchDeck, setPitchDeck] = useState("");
+  const [message, setMessage] = useState("");
+  const { isSubmitting, isSuccess, submit } = useFormSubmit();
 
-  if (submitted) {
+  if (isSuccess) {
     return (
       <div className="text-center py-10">
         <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -77,43 +86,49 @@ const RegistrationForm = () => {
   }
 
   return (
-    <form className="space-y-4 py-4" onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}>
+    <form className="space-y-4 py-4" onSubmit={async (e) => {
+      e.preventDefault();
+      await submit({
+        formType: "GTM Program",
+        firstName, lastName, email, startupName, website, sector, pitchDeck, message,
+      });
+    }}>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-2">
           <Label htmlFor="firstName">First Name</Label>
-          <Input id="firstName" placeholder="John" required />
+          <Input id="firstName" placeholder="John" required value={firstName} onChange={(e) => setFirstName(e.target.value)} />
         </div>
         <div className="space-y-2">
           <Label htmlFor="lastName">Last Name</Label>
-          <Input id="lastName" placeholder="Doe" required />
+          <Input id="lastName" placeholder="Doe" required value={lastName} onChange={(e) => setLastName(e.target.value)} />
         </div>
       </div>
       
       <div className="space-y-2">
-        <Label htmlFor="email">Work Email</Label>
-        <Input id="email" type="email" placeholder="john@company.com" required />
+        <Label htmlFor="gtm-email">Work Email</Label>
+        <Input id="gtm-email" type="email" placeholder="john@company.com" required value={email} onChange={(e) => setEmail(e.target.value)} />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-2">
           <Label htmlFor="startupName">Startup Name</Label>
-          <Input id="startupName" placeholder="Acme Inc." required />
+          <Input id="startupName" placeholder="Acme Inc." required value={startupName} onChange={(e) => setStartupName(e.target.value)} />
         </div>
         <div className="space-y-2">
           <Label htmlFor="website">Website URL</Label>
-          <Input id="website" placeholder="https://..." required />
+          <Input id="website" placeholder="https://..." required value={website} onChange={(e) => setWebsite(e.target.value)} />
         </div>
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="sector">Sector</Label>
-        <Select>
+        <Label htmlFor="gtm-sector">Sector</Label>
+        <Select onValueChange={setSector}>
           <SelectTrigger>
             <SelectValue placeholder="Select your primary sector" />
           </SelectTrigger>
           <SelectContent>
-            {sectors.map(sector => (
-              <SelectItem key={sector} value={sector.toLowerCase().replace(/\s/g, '-')}>{sector}</SelectItem>
+            {sectors.map(s => (
+              <SelectItem key={s} value={s.toLowerCase().replace(/\s/g, '-')}>{s}</SelectItem>
             ))}
             <SelectItem value="other">Other</SelectItem>
           </SelectContent>
@@ -122,16 +137,16 @@ const RegistrationForm = () => {
 
       <div className="space-y-2">
         <Label htmlFor="pitchDeck">Link to Pitch Deck</Label>
-        <Input id="pitchDeck" placeholder="Dropbox / Google Drive link" />
+        <Input id="pitchDeck" placeholder="Dropbox / Google Drive link" value={pitchDeck} onChange={(e) => setPitchDeck(e.target.value)} />
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="message">Why are you interested in Qatar & GCC Market?</Label>
-        <Textarea id="message" placeholder="Briefly describe your expansion goals..." className="min-h-[100px]" />
+        <Label htmlFor="gtm-message">Why are you interested in Qatar & GCC Market?</Label>
+        <Textarea id="gtm-message" placeholder="Briefly describe your expansion goals..." className="min-h-[100px]" value={message} onChange={(e) => setMessage(e.target.value)} />
       </div>
 
-      <Button type="submit" className="w-full bg-[#8b68f6] hover:bg-[#7a5bd6] text-white font-bold py-6 uppercase tracking-widest mt-4">
-        Submit Application
+      <Button type="submit" disabled={isSubmitting} className="w-full bg-[#8b68f6] hover:bg-[#7a5bd6] text-white font-bold py-6 uppercase tracking-widest mt-4">
+        {isSubmitting ? "Submitting..." : "Submit Application"}
       </Button>
     </form>
   );

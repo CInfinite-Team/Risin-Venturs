@@ -1,8 +1,12 @@
 import { Link } from "wouter";
 import { Linkedin, Facebook, Youtube, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import { useFormSubmit } from "@/hooks/useFormSubmit";
 
 export default function Footer() {
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const { isSubmitting: nlSubmitting, isSuccess: nlSuccess, submit: nlSubmit } = useFormSubmit();
   const aboutLinks = [
     { label: "About Us", href: "/about" },
     { label: "Team", href: "/team" },
@@ -141,11 +145,21 @@ export default function Footer() {
             <input 
               id="newsletter-email"
               type="email" 
-              placeholder="Email address" 
+              placeholder="Email address"
+              value={newsletterEmail}
+              onChange={(e) => setNewsletterEmail(e.target.value)}
               className="bg-white/10 border border-white/20 sm:rounded-l-sm sm:rounded-r-none rounded-sm px-6 py-4 text-sm text-white placeholder:text-slate-400 focus:ring-1 focus:ring-[#8b68f6] w-full md:min-w-[300px] outline-none transition-all min-w-0"
             />
-            <Button className="bg-[#8b68f6] hover:bg-white hover:text-[#2b204c] text-white sm:rounded-l-none sm:rounded-r-sm rounded-sm h-auto py-4 sm:py-0 px-8 border-0 font-bold uppercase tracking-widest transition-all whitespace-nowrap">
-              Subscribe
+            <Button
+              disabled={nlSubmitting || nlSuccess}
+              onClick={async () => {
+                if (!newsletterEmail) return;
+                await nlSubmit({ formType: "Newsletter", email: newsletterEmail });
+                setNewsletterEmail("");
+              }}
+              className="bg-[#8b68f6] hover:bg-white hover:text-[#2b204c] text-white sm:rounded-l-none sm:rounded-r-sm rounded-sm h-auto py-4 sm:py-0 px-8 border-0 font-bold uppercase tracking-widest transition-all whitespace-nowrap"
+            >
+              {nlSuccess ? "Subscribed!" : nlSubmitting ? "Subscribing..." : "Subscribe"}
             </Button>
           </div>
         </div>

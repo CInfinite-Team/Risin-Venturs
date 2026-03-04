@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import { useFormSubmit } from "@/hooks/useFormSubmit";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -45,8 +46,7 @@ const inquiryTypes = [
 
 export default function Contact() {
   const [formData, setFormData] = useState<FormData>(initialFormData);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
+  const { isSubmitting, isSuccess: showSuccess, submit } = useFormSubmit();
   
   const searchString = useSearch();
   const params = new URLSearchParams(searchString);
@@ -84,14 +84,17 @@ export default function Contact() {
 
   const contextual = getContextualIntro();
 
-  const handleSubmit = () => {
-    setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setShowSuccess(true);
-      setFormData(initialFormData);
-      setTimeout(() => setShowSuccess(false), 5000);
-    }, 1500);
+  const handleSubmit = async () => {
+    await submit({
+      formType: "Contact",
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      company: formData.company,
+      inquiryType: formData.inquiryType,
+      message: formData.message,
+    });
+    setFormData(initialFormData);
   };
 
   return (

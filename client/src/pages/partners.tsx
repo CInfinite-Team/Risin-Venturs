@@ -180,8 +180,20 @@ export default function Partners() {
             <span className="text-[#952828] text-sm font-bold uppercase tracking-widest mb-3 block">Capital Partners</span>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#2b204c] uppercase">Our Investors</h2>
           </div>
-          <div className="px-4 md:px-12">
-            <PartnerLogoCarousel logos={partnerLogos.investors} autoplay={true} loop={true} />
+          {/* Mobile Carousel */}
+          <div className="block md:hidden px-4">
+            <div className="bg-white p-4 rounded-sm border border-slate-100">
+               <PartnerLogoCarousel autoplay={true} loop={true} logos={partnerLogos.investors} />
+            </div>
+          </div>
+
+          {/* Desktop Grid */}
+          <div className="hidden md:flex flex-wrap justify-center gap-4">
+            {partnerLogos.investors.map((logo, i) => (
+              <div key={i} className="bg-white rounded-sm border border-slate-100 flex items-center justify-center w-40 h-40 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all">
+                <img src={logo} alt={`Investor ${i + 1}`} className="w-[70%] h-auto object-contain filter grayscale hover:grayscale-0 transition-all" />
+              </div>
+            ))}
           </div>
         </div>
       </motion.section>
@@ -202,7 +214,9 @@ export default function Partners() {
           
           {/* Mobile Carousel */}
           <div className="block md:hidden px-4">
-            <PartnerLogoCarousel autoplay={true} loop={true} logos={partnerLogos.ecosystem} />
+            <div className="bg-[#F9FAFB] p-4 rounded-sm border border-slate-100">
+               <PartnerLogoCarousel autoplay={true} loop={true} logos={partnerLogos.ecosystem} />
+            </div>
           </div>
 
           {/* Desktop Grid */}

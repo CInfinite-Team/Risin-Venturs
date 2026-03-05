@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/use-toast";
+import { useFormSubmit } from "@/hooks/useFormSubmit";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -20,15 +21,30 @@ const sectionVariants = {
 };
 
 export default function BridgingInvestmentCaseStudy() {
+  const { submit, isSubmitting } = useFormSubmit();
   const [commentForm, setCommentForm] = useState({ name: "", email: "", website: "", message: "" });
 
-  const handleCommentSubmit = (e: React.FormEvent) => {
+  const handleCommentSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Comment Submitted",
-      description: "Thank you for sharing your thoughts! Your comment is awaiting moderation.",
+    const success = await submit({ 
+      formType: "Case Study Comment",
+      caseStudy: "Bridging the Investment Gap",
+      ...commentForm 
     });
-    setCommentForm({ name: "", email: "", website: "", message: "" });
+    
+    if (success) {
+      toast({
+        title: "Comment Submitted",
+        description: "Thank you for sharing your thoughts! Your comment is awaiting moderation.",
+      });
+      setCommentForm({ name: "", email: "", website: "", message: "" });
+    } else {
+      toast({
+        title: "Submission Failed",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
@@ -222,6 +238,7 @@ export default function BridgingInvestmentCaseStudy() {
                           required 
                           placeholder="Your Name" 
                           className="bg-white border-slate-200 focus:border-[#8b68f6] rounded-sm" 
+                          disabled={isSubmitting}
                         />
                       </div>
                       <div className="space-y-2">
@@ -234,6 +251,7 @@ export default function BridgingInvestmentCaseStudy() {
                           required 
                           placeholder="your@email.com" 
                           className="bg-white border-slate-200 focus:border-[#8b68f6] rounded-sm" 
+                          disabled={isSubmitting}
                         />
                       </div>
                     </div>
@@ -246,6 +264,7 @@ export default function BridgingInvestmentCaseStudy() {
                         onChange={(e) => setCommentForm({...commentForm, website: e.target.value})}
                         placeholder="https://yourwebsite.com" 
                         className="bg-white border-slate-200 focus:border-[#8b68f6] rounded-sm" 
+                        disabled={isSubmitting}
                       />
                     </div>
                     <div className="space-y-2">
@@ -257,10 +276,11 @@ export default function BridgingInvestmentCaseStudy() {
                         required 
                         placeholder="Type your comment here..." 
                         className="bg-white border-slate-200 focus:border-[#8b68f6] rounded-sm min-h-[150px]" 
+                        disabled={isSubmitting}
                       />
                     </div>
-                    <Button type="submit" className="bg-[#2b204c] text-white hover:bg-[#8b68f6] rounded-sm px-8 py-3 font-bold text-sm uppercase tracking-widest transition-all w-full md:w-auto">
-                      Post Comment <Send size={16} className="ml-2" />
+                    <Button type="submit" disabled={isSubmitting} className="bg-[#2b204c] text-white hover:bg-[#8b68f6] rounded-sm px-8 py-3 font-bold text-sm uppercase tracking-widest transition-all w-full md:w-auto">
+                      {isSubmitting ? "Submitting..." : "Post Comment"} <Send size={16} className="ml-2" />
                     </Button>
                   </form>
                 </div>

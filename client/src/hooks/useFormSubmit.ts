@@ -7,7 +7,7 @@ interface UseFormSubmitResult {
   isSubmitting: boolean;
   isSuccess: boolean;
   isError: boolean;
-  submit: (data: Record<string, string>) => Promise<void>;
+  submit: (data: Record<string, any>) => Promise<boolean>;
   reset: () => void;
 }
 
@@ -16,7 +16,7 @@ export function useFormSubmit(): UseFormSubmitResult {
   const [isSuccess, setIsSuccess] = useState(false);
   const [isError, setIsError] = useState(false);
 
-  const submit = async (data: Record<string, string>) => {
+  const submit = async (data: Record<string, any>) => {
     setIsSubmitting(true);
     setIsError(false);
     try {
@@ -28,9 +28,11 @@ export function useFormSubmit(): UseFormSubmitResult {
       });
       setIsSuccess(true);
       setTimeout(() => setIsSuccess(false), 5000);
+      return true;
     } catch {
       setIsError(true);
       setTimeout(() => setIsError(false), 5000);
+      return false;
     } finally {
       setIsSubmitting(false);
     }

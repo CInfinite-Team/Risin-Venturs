@@ -3,6 +3,7 @@ import { Linkedin, Facebook, Youtube, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { useFormSubmit } from "@/hooks/useFormSubmit";
+import Logo from "../assets/Icon files/SVG/Basic 1.svg";
 
 export default function Footer() {
   const [newsletterEmail, setNewsletterEmail] = useState("");
@@ -37,7 +38,7 @@ export default function Footer() {
           <div className="lg:col-span-4">
             <Link href="/" className="flex items-center gap-2 mb-8">
               <img 
-                src="/favicon.svg" 
+                src={Logo} 
                 alt="Risin Ventures Logo" 
                 className="h-12 md:h-16 w-auto object-contain"
               />

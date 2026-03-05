@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
-
+import Logo from "../assets/Icon files/SVG/Basic 1.svg";
 interface NavItem {
   label: string;
   href: string;
@@ -187,9 +187,9 @@ export default function Header() {
       <div className="container mx-auto px-6 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group z-[110]">
           <img 
-            src="/favicon.svg" 
+            src={Logo} 
             alt="Risin Ventures Logo" 
-            className="h-12 md:h-16 w-auto object-contain"
+            className="h-8 md:h-10 w-auto object-contain"
           />
         </Link>
 

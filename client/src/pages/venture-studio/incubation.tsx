@@ -34,7 +34,7 @@ export default function Incubation() {
             </div>
             
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-[#2b204c] uppercase leading-none">
+              <h1 className="text-4xl md:text-6xl xl:text-7xl font-heading font-bold text-[#2b204c] uppercase leading-none">
                 Nurturing <br/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#952828] to-orange-400">The Seeds of Impact</span>
               </h1>

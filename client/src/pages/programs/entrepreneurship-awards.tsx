@@ -110,7 +110,7 @@ export default function EntrepreneurshipAwards() {
                 <span className="text-amber-500/50">/</span>
                 <span className="text-amber-300 text-sm font-bold uppercase tracking-widest">Entrepreneurship Awards</span>
               </div>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6 uppercase leading-none">
+              <h1 className="text-4xl md:text-6xl xl:text-7xl font-heading font-bold text-white mb-6 uppercase leading-none">
                 Qatar <br className="hidden md:block"/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-orange-200">Entrepreneurship Awards</span>
               </h1>

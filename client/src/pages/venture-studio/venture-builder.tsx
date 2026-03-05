@@ -462,7 +462,7 @@ export default function VentureBuilder() {
               className="max-w-xl"
             >
               <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-4 block">Venture Builder</span>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white uppercase leading-none mb-6">
+              <h1 className="text-4xl md:text-6xl xl:text-7xl font-heading font-bold text-white uppercase leading-none mb-6">
                 Co-Building and <br className="hidden md:block"/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8b68f6] to-cyan-400">Scaling Ventures</span>
               </h1>

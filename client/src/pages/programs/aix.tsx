@@ -89,7 +89,7 @@ export default function AIX() {
                 <span className="text-slate-500">/</span>
                 <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest">AIX Summit & Hackathon</span>
               </div>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6 uppercase leading-none">
+              <h1 className="text-4xl md:text-6xl xl:text-7xl font-heading font-bold text-white mb-6 uppercase leading-none">
                 AIX Summit <br className="hidden md:block"/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8b68f6] to-cyan-400">&amp; Hackathon</span>
               </h1>

@@ -96,7 +96,7 @@ export default function Sustainova() {
                 <span className="text-emerald-500/50">/</span>
                 <span className="text-emerald-300 text-sm font-bold uppercase tracking-widest">Sustainova Challenge</span>
               </div>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6 uppercase leading-none">
+              <h1 className="text-4xl md:text-6xl xl:text-7xl font-heading font-bold text-white mb-6 uppercase leading-none">
                 Sustainova <br className="hidden md:block"/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-teal-200">Challenge</span>
               </h1>

@@ -425,7 +425,7 @@ export default function AIHackathonsCaseStudy() {
                 {/* CTA */}
                 <div className="bg-gradient-to-br from-[#2b204c] to-[#1a1333] p-6 rounded-sm text-white text-center">
                   <Zap size={32} className="text-[#8b68f6] mx-auto mb-4" />
-                  <h4 className="font-bold uppercase mb-2">Have an Idea?</h4>
+                  <h4 className="font-bold uppercase mb-2 text-white">Have an Idea?</h4>
                   <p className="text-xs text-slate-300 mb-6">We help founders transform ideas into scalable ventures.</p>
                   <Link href="/contact">
                     <Button className="w-full bg-white text-[#2b204c] hover:bg-[#8b68f6] hover:text-white font-bold text-xs uppercase tracking-widest transition-all">

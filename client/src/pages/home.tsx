@@ -199,7 +199,7 @@ export default function Home() {
               
               <motion.h1 
                 variants={fadeIn}
-                className="text-5xl md:text-6xl lg:text-7xl  font-heading font-bold leading-[1.1] tracking-tight mb-6 text-white"
+                className="text-5xl md:text-6xl xl:text-7xl  font-heading font-bold leading-[1.1] tracking-tight mb-6 text-white"
               >
                 Building the Next <br />
                 Generation of <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8b68f6] to-[#b39bfb]">Deep Tech</span>
@@ -310,7 +310,7 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
             <div className="lg:w-1/2">
               <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-3 block">Core Differentiator</span>
-              <h2 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold leading-none tracking-tight mb-6 text-[#2b204c]">
+              <h2 className="text-4xl md:text-6xl xl:text-7xl font-heading font-bold leading-none tracking-tight mb-6 text-[#2b204c]">
                 Venture <br/>
                 <span className="relative inline-block">
                   Building
@@ -957,7 +957,7 @@ export default function Home() {
              transition={{ duration: 0.8 }}
              className="max-w-4xl mx-auto"
            >
-             <h2 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-8 uppercase leading-none tracking-tighter">
+             <h2 className="text-4xl md:text-6xl xl:text-7xl font-heading font-bold text-white mb-8 uppercase leading-none tracking-tighter">
                Ready to Build the <br/>
                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8b68f6] to-[#b39bfb]">Future?</span>
              </h2>

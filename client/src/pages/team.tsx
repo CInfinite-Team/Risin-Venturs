@@ -98,7 +98,7 @@ export default function Team() {
             </div>
             
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-[#111827] uppercase leading-none">
+              <h1 className="text-4xl md:text-6xl xl:text-7xl font-heading font-bold text-[#111827] uppercase leading-none">
                 THE PEOPLE BUILDING <br className="hidden md:block"/>
                 <span className="text-[#2b204c]">THE FUTURE</span>
               </h1>

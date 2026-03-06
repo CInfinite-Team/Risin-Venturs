@@ -32,7 +32,7 @@ const portfolioData = [
     logo: BigtraderLogo,
     desc: "B2B Marketplace that streamlines your business operations & unlocks growth opportunities. An all-in-one solution for B2B E-Commerce, Commodity Trade, & more.",
     sector: "E-Commerce",
-    link: "#"
+    link: "https://www.bigtrader.biz/"
   },
   {
     id: 2,
@@ -40,7 +40,7 @@ const portfolioData = [
     logo: MadadLogo,
     desc: "Madad is an invoice discounting platform in Qatar that provides instant cash for MSMEs. Sources and related content.",
     sector: "Fintech",
-    link: "#"
+    link: "https://www.madadfintech.com/"
   },
   {
     id: 3,
@@ -48,7 +48,7 @@ const portfolioData = [
     logo: HashECMLogo,
     desc: "AI-driven document intelligence and management platform built for enterprise clients to do more with documents and content, and integrates AI capabilities to work and collaborate with documents.",
     sector: "AI & Enterprise",
-    link: "#"
+    link: "https://hyperthinksys.com/hashecm-pistaceo/
   },
   {
     id: 4,
@@ -56,7 +56,7 @@ const portfolioData = [
     logo: EnergygoLogo,
     desc: "Clean energy and sustainability-focused platform designed to accelerate the transition to renewable energy sources through innovative digital solutions and market access.",
     sector: "Energy & Sustainability",
-    link: "#"
+    link: "https://myenergygo.com/"
   },
   {
     id: 5,
@@ -64,7 +64,7 @@ const portfolioData = [
     logo: ArisioLogo,
     desc: "Arisio is a cutting-edge platform designed to bridge the gaps in collaboration, funding access, and networking for startups and investors.",
     sector: "Fintech",
-    link: "#"
+    link: "https://arisio.io/"
   },
   {
     id: 6,
@@ -72,7 +72,7 @@ const portfolioData = [
     logo: NufinLogo,
     desc: "Nufin is a new age financial services and banking solution provider. Currently in stealth mode, working on new fintech regulatory approval from the Central Bank of Qatar.",
     sector: "Fintech",
-    link: "#"
+    link: "https://nufintech.com/"
   },
   {
     id: 7,
@@ -80,7 +80,7 @@ const portfolioData = [
     logo: UrbanoLogo,
     desc: "Urbano is an urban mobility platform delivering AI- and IoT-driven solutions including smart parking valet management, car wash, EV charging, and multimodal travel & ticketing.",
     sector: "Mobility",
-    link: "#"
+    link: "https://urbano.io/"
   },
   {
     id: 8,
@@ -88,7 +88,7 @@ const portfolioData = [
     logo: IprocureLogo,
     desc: "Advanced procurement automation platform simplifying supply chain management and vendor relationships for enterprise and government sectors.",
     sector: "SaaS",
-    link: "#"
+    link: "https://iprocure.ai/"
   }
 ];
 

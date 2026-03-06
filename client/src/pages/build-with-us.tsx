@@ -1277,8 +1277,8 @@ export default function BuildWithUs() {
                   </div>
                 </div>
                 {/* Circle marker */}
-                <div className="absolute left-0 md:left-1/2 w-8 h-8 bg-[#8b68f6] rounded-full flex items-center justify-center md:-translate-x-1/2 border-4 border-white shadow-lg">
-                  <span className="text-xs font-bold text-white">{i + 1}</span>
+                <div className="absolute left-0 md:left-1/2 w-6 h-6 bg-[#8b68f6] rounded-full flex items-center justify-center md:-translate-x-1/2 border-4 border-white shadow-lg">
+            
                 </div>
               </motion.div>
             ))}

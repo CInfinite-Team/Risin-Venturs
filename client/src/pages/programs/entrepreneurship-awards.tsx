@@ -163,14 +163,14 @@ export default function EntrepreneurshipAwards() {
                   </div>
                   
                   {/* Floating modern badges */}
-                  <motion.div 
+                  {/* <motion.div 
                     animate={{ y: [0, 5, 0] }}
                     transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                     className="absolute -right-8 -top-8 bg-white px-4 py-2 rounded-xl shadow-lg border border-slate-100 flex items-center gap-2"
                   >
                     <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
                     <span className="text-sm font-bold text-slate-800">2024</span>
-                  </motion.div>
+                  </motion.div> */}
 
                   <motion.div 
                     animate={{ y: [0, -5, 0] }}

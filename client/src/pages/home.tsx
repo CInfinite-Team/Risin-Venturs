@@ -12,6 +12,10 @@ import iprocureLogo from "@/assets/HomePortfolio/Iprocure.png";
 import arisioLogo from "@/assets/HomePortfolio/Arisio.png";
 import { PartnerLogoCarousel } from "@/pages/partners";
 
+import RiseStudio from "@/assets/CaseStudy/rise of venture studio.png";
+import Sustainovacasetudy from "@/assets/CaseStudy/Sustainova casetudy.png";
+import Sustainovacasetudy2 from "@/assets/CaseStudy/Sustainova casetudy.jpeg";
+
 import qdbLogo from "@/assets/Ecosystem Partners/QDB.png";
 import qstpLogo from "@/assets/Ecosystem Partners/QSTP-Logo.png";
 import mtcitLogo from "@/assets/Ecosystem Partners/MTCIT.png";
@@ -1051,19 +1055,19 @@ export default function Home() {
               {[
                 {
                   title: "AI Hackathons for Enterprises: Beyond Buzzwords to Real ROI",
-                  image: "https://risin.ventures/wp-content/uploads/2025/05/a-1.png",
+                  image: Sustainovacasetudy,
                   outcome: "Production-ready AI tools delivered in weeks, not months.",
                   link: "https://risin.ventures/ai-hackathons-for-enterprises-beyond-buzzwords-to-real-roi/"
                 },
                 {
                   title: "The Rise of Venture Studios in the GCC",
-                  image: "https://risin.ventures/wp-content/uploads/2025/05/v-1.png",
+                  image: RiseStudio,
                   outcome: "Shifting from traditional VC to hands-on venture building.",
                   link: "https://risin.ventures/the-rise-of-venture-studios-in-the-gcc-deep-tech-landscape/"
                 },
                 {
                   title: "Scaling Sustainability: Sustainova 2025 Impact",
-                  image: "https://risin.ventures/wp-content/uploads/2025/05/s-1.png",
+                  image: Sustainovacasetudy2,
                   outcome: "Measurable carbon reduction through our latest cohort.",
                   link: "https://risin.ventures/scaling-sustainability-the-sustainova-2025-impact-report/"
                 }
@@ -1113,19 +1117,19 @@ export default function Home() {
                 },
                 {
                   title: "AI Hackathons for Enterprises",
-                  image: "https://risin.ventures/wp-content/uploads/2025/05/a-1.png",
+                  image: Sustainovacasetudy2,
                   summary: "How enterprises leverage hackathons to build production-ready AI tools.",
                   link: "https://risin.ventures/ai-hackathons-for-enterprises-beyond-buzzwords-to-real-roi/"
                 },
                 {
                   title: "The Rise of Venture Studios",
-                  image: "https://risin.ventures/wp-content/uploads/2025/05/v-1.png",
+                  image: RiseStudio,
                   summary: "Analyzing the shift to hands-on venture building.",
                   link: "https://risin.ventures/the-rise-of-venture-studios-in-the-gcc-deep-tech-landscape/"
                 },
                 {
                   title: "Sustainova 2025 Impact",
-                  image: "https://risin.ventures/wp-content/uploads/2025/05/s-1.png",
+                  image: Sustainovacasetudy,
                   summary: "Measuring real-world carbon reduction from our cohort.",
                   link: "https://risin.ventures/scaling-sustainability-the-sustainova-2025-impact-report/"
                 }

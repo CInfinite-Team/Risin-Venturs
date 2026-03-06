@@ -287,7 +287,7 @@ export default function Home() {
                 <img
                   src={logo}
                   alt={`Ecosystem Partner ${i + 1}`}
-                  className="w-full h-full object-contain filter grayscale hover:grayscale-0 transition-all"
+                  className="w-full h-full object-contain filter  transition-all"
                 />
               </div>
             ))}

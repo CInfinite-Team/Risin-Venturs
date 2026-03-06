@@ -63,7 +63,7 @@ export const PartnerLogoCarousel = ({ logos, autoplay = false, loop = false, sho
                 <img 
                   src={logo} 
                   alt={`Partner ${i + 1}`} 
-                  className="w-[70%] h-auto object-contain filter grayscale hover:grayscale-0 transition-all" 
+                  className="w-[70%] h-auto object-contain filter  transition-all" 
                 />
               </div>
             </div>
@@ -191,7 +191,7 @@ export default function Partners() {
           <div className="hidden md:flex flex-wrap justify-center gap-4">
             {partnerLogos.investors.map((logo, i) => (
               <div key={i} className="bg-white rounded-sm border border-slate-100 flex items-center justify-center w-40 h-40 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all">
-                <img src={logo} alt={`Investor ${i + 1}`} className="w-[70%] h-auto object-contain filter grayscale hover:grayscale-0 transition-all" />
+                <img src={logo} alt={`Investor ${i + 1}`} className="w-[70%] h-auto object-contain filter  transition-all" />
               </div>
             ))}
           </div>
@@ -223,7 +223,7 @@ export default function Partners() {
           <div className="hidden md:flex flex-wrap justify-center gap-4">
             {partnerLogos.ecosystem.map((logo, i) => (
               <div key={i} className="bg-[#F9FAFB] rounded-sm border border-slate-100 flex items-center justify-center w-40 h-40 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all">
-                <img src={logo} alt={`Ecosystem Partner ${i + 1}`} className="w-[70%] h-auto object-contain filter grayscale hover:grayscale-0 transition-all" />
+                <img src={logo} alt={`Ecosystem Partner ${i + 1}`} className="w-[70%] h-auto object-contain filter  transition-all" />
               </div>
             ))}
           </div>
@@ -255,7 +255,7 @@ export default function Partners() {
           <div className="hidden md:flex flex-wrap justify-center gap-4">
             {partnerLogos.gtm.map((logo, i) => (
               <div key={i} className="bg-white rounded-sm border border-slate-100 flex items-center justify-center w-40 h-40 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all">
-                <img src={logo} alt={`GTM Partner ${i + 1}`} className="w-[70%] h-auto object-contain filter grayscale hover:grayscale-0 transition-all" />
+                <img src={logo} alt={`GTM Partner ${i + 1}`} className="w-[70%] h-auto object-contain filter  transition-all" />
               </div>
             ))}
           </div>

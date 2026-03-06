@@ -13,6 +13,13 @@ import { useFormSubmit } from "@/hooks/useFormSubmit";
 import image1 from "@assets/20231119_125834_(2)_1768914492428.jpg";
 import image2 from "@assets/7RV04162_1768914492429.JPG";
 
+import awsLogo from "../../assets/PoweredByBest/AWS.png";
+import dataikuLogo from "../../assets/PoweredByBest/Dataiku.png";
+import googleCloudLogo from "../../assets/PoweredByBest/GoogleCloud.png";
+import ibmLogo from "../../assets/PoweredByBest/IBM.png";
+import microsoftLogo from "../../assets/PoweredByBest/MicroSoft.png";
+import alteryxLogo from "../../assets/PoweredByBest/alteryx.png";
+
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -52,12 +59,12 @@ const techCapabilities = [
 ];
 
 const partners = [
-  { name: "AWS", logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
-  { name: "Microsoft", logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" },
-  { name: "Google Cloud", logo: "https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" },
-  { name: "IBM", logo: "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" },
-  { name: "Alteryx", logo: "https://upload.wikimedia.org/wikipedia/commons/e/e4/Alteryx_Logo.png" }, 
-  { name: "Dataiku", logo: "https://upload.wikimedia.org/wikipedia/commons/2/23/Dataiku_Logo.svg" } 
+  { name: "AWS", logo: awsLogo },
+  { name: "Microsoft", logo: microsoftLogo },
+  { name: "Google Cloud", logo: googleCloudLogo },
+  { name: "IBM", logo: ibmLogo },
+  { name: "Alteryx", logo: alteryxLogo },
+  { name: "Dataiku", logo: dataikuLogo }
 ];
 
 const currentBuilds = [
@@ -865,8 +872,8 @@ export default function VentureBuilder() {
              <div className="md:w-2/3">
                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                  {partners.map((partner, i) => (
-                   <div key={i} className="h-24 bg-[#F9FAFB] border border-slate-100 rounded-sm flex items-center justify-center p-6 hover:shadow-md transition-shadow">
-                     <div className="text-slate-400 font-bold text-xl uppercase">{partner.name}</div>
+                   <div key={i} className="h-24 bg-[#F9FAFB] border border-slate-100 rounded-sm flex items-center justify-center p-4 hover:shadow-md hover:border-[#8b68f6]/30 transition-all">
+                     <img src={partner.logo} alt={partner.name} className="max-h-full max-w-full object-contain" />
                    </div>
                  ))}
                </div>

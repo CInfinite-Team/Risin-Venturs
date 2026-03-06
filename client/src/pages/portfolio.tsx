@@ -48,7 +48,7 @@ const portfolioData = [
     logo: HashECMLogo,
     desc: "AI-driven document intelligence and management platform built for enterprise clients to do more with documents and content, and integrates AI capabilities to work and collaborate with documents.",
     sector: "AI & Enterprise",
-    link: "https://hyperthinksys.com/hashecm-pistaceo/
+    link: "https://hyperthinksys.com/hashecm-pistaceo/"
   },
   {
     id: 4,

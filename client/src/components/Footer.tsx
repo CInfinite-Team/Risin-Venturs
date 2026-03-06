@@ -34,8 +34,8 @@ export default function Footer() {
   return (
     <footer className="bg-white border-t border-slate-100 py-10 md:py-16">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 mb-16">
-          <div className="lg:col-span-4">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 mb-16">
+          <div className="col-span-2 md:col-span-4">
             <Link href="/" className="flex items-center gap-2 mb-8">
               <img 
                 src={Logo} 
@@ -88,7 +88,7 @@ export default function Footer() {
               ))}
             </ul>
             
-            <h5 className="font-bold uppercase tracking-widest text-[9px] mb-4 text-slate-400">Our Programs</h5>
+            <h5 className="font-bold uppercase tracking-widest text-[9px] mb-4 text-[#8b68f6]">Our Programs</h5>
             <ul className="space-y-3 pl-2 border-l border-slate-100">
               {otherPrograms.map((item) => (
                 <li key={item.label}>

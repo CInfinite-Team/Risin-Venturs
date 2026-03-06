@@ -945,45 +945,7 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* Final CTA Section */}
-      <section className="py-20 md:py-28 bg-[#2b204c] relative overflow-hidden">
-         <div className="absolute inset-0 bg-gradient-to-r from-[#2b204c] to-[#2b204c]/90 z-10"></div>
-         {/* Abstract background elements */}
-         <div className="absolute top-0 right-0 w-full h-full opacity-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-overlay z-0"></div>
-         <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#8b68f6] rounded-full blur-[100px] opacity-30 z-0"></div>
-         <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-[#952828] rounded-full blur-[100px] opacity-20 z-0"></div>
-
-         <div className="container mx-auto px-6 relative z-20 text-center">
-           <motion.div
-             initial={{ opacity: 0, y: 30 }}
-             whileInView={{ opacity: 1, y: 0 }}
-             viewport={{ once: true }}
-             transition={{ duration: 0.8 }}
-             className="max-w-4xl mx-auto"
-           >
-             <h2 className="text-4xl md:text-6xl xl:text-7xl font-heading font-bold text-white mb-8 uppercase leading-none tracking-tighter">
-               Ready to Build the <br/>
-               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8b68f6] to-[#b39bfb]">Future?</span>
-             </h2>
-             <p className="text-lg md:text-xl text-slate-300 mb-12 font-light leading-relaxed max-w-2xl mx-auto">
-               Whether you're a founder with a bold vision or an enterprise looking to innovate, we're your partner in building what's next.
-             </p>
-             
-             <div className="flex flex-col sm:flex-row justify-center gap-6">
-               <Link href="/build-with-us">
-                 <Button className="bg-[#8b68f6] text-white hover:bg-[#7a5bd6] transition-all rounded-sm h-16 px-10 text-lg font-bold uppercase tracking-widest shadow-2xl border-0 w-full sm:w-auto hover:scale-105 transform duration-300">
-                   Build With Us
-                 </Button>
-               </Link>
-               <Link href="/partners">
-                 <Button variant="outline" className="border-white/20 text-white hover:bg-white hover:text-[#2b204c] transition-all rounded-sm h-16 px-10 text-lg font-bold uppercase tracking-widest bg-white/5 w-full sm:w-auto backdrop-blur-sm hover:scale-105 transform duration-300">
-                   Partner With Us
-                 </Button>
-               </Link>
-             </div>
-           </motion.div>
-         </div>
-      </section>
+    
 
       {/* Case Studies Section - Impact in Action */}
       <motion.section 
@@ -1170,6 +1132,46 @@ export default function Home() {
           </div>
         </div>
       </motion.section>
+
+        {/* Final CTA Section */}
+      <section className="py-20 md:py-28 bg-[#2b204c] relative overflow-hidden">
+         <div className="absolute inset-0 bg-gradient-to-r from-[#2b204c] to-[#2b204c]/90 z-10"></div>
+         {/* Abstract background elements */}
+         <div className="absolute top-0 right-0 w-full h-full opacity-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-overlay z-0"></div>
+         <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#8b68f6] rounded-full blur-[100px] opacity-30 z-0"></div>
+         <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-[#952828] rounded-full blur-[100px] opacity-20 z-0"></div>
+
+         <div className="container mx-auto px-6 relative z-20 text-center">
+           <motion.div
+             initial={{ opacity: 0, y: 30 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             viewport={{ once: true }}
+             transition={{ duration: 0.8 }}
+             className="max-w-4xl mx-auto"
+           >
+             <h2 className="text-4xl md:text-6xl xl:text-7xl font-heading font-bold text-white mb-8 uppercase leading-none tracking-tighter">
+               Ready to Build the <br/>
+               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8b68f6] to-[#b39bfb]">Future?</span>
+             </h2>
+             <p className="text-lg md:text-xl text-slate-300 mb-12 font-light leading-relaxed max-w-2xl mx-auto">
+               Whether you're a founder with a bold vision or an enterprise looking to innovate, we're your partner in building what's next.
+             </p>
+             
+             <div className="flex flex-col sm:flex-row justify-center gap-6">
+               <Link href="/build-with-us">
+                 <Button className="bg-[#8b68f6] text-white hover:bg-[#7a5bd6] transition-all rounded-sm h-16 px-10 text-lg font-bold uppercase tracking-widest shadow-2xl border-0 w-full sm:w-auto hover:scale-105 transform duration-300">
+                   Build With Us
+                 </Button>
+               </Link>
+               <Link href="/partners">
+                 <Button variant="outline" className="border-white/20 text-white hover:bg-white hover:text-[#2b204c] transition-all rounded-sm h-16 px-10 text-lg font-bold uppercase tracking-widest bg-white/5 w-full sm:w-auto backdrop-blur-sm hover:scale-105 transform duration-300">
+                   Partner With Us
+                 </Button>
+               </Link>
+             </div>
+           </motion.div>
+         </div>
+      </section>
 
 
 

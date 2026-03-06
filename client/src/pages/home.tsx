@@ -283,7 +283,7 @@ export default function Home() {
           {/* Desktop: Even-size card grid */}
           <div className="hidden md:flex flex-wrap items-center justify-center gap-8">
             {homeEcosystemLogos.map((logo, i) => (
-              <div key={i} className="bg-white rounded-sm border border-slate-100 flex items-center justify-center w-52 h-52 p-6 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all shrink-0">
+              <div key={i} className="bg-white rounded-sm border border-slate-100 flex items-center justify-center w-52 h-52 p-1 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all shrink-0">
                 <img
                   src={logo}
                   alt={`Ecosystem Partner ${i + 1}`}

@@ -63,7 +63,7 @@ export const PartnerLogoCarousel = ({ logos, autoplay = false, loop = false, sho
                 <img 
                   src={logo} 
                   alt={`Partner ${i + 1}`} 
-                  className="w-[70%] h-auto object-contain filter  transition-all" 
+                  className="w-full h-auto object-contain filter  transition-all" 
                 />
               </div>
             </div>
@@ -182,7 +182,7 @@ export default function Partners() {
           </div>
           {/* Mobile Carousel */}
           <div className="block md:hidden px-4">
-            <div className="bg-white p-4 rounded-sm border border-slate-100">
+            <div className="bg-white p-1 rounded-sm border border-slate-100">
                <PartnerLogoCarousel autoplay={true} loop={true} logos={partnerLogos.investors} />
             </div>
           </div>
@@ -190,8 +190,8 @@ export default function Partners() {
           {/* Desktop Grid */}
           <div className="hidden md:flex flex-wrap justify-center gap-4">
             {partnerLogos.investors.map((logo, i) => (
-              <div key={i} className="bg-white rounded-sm border border-slate-100 flex items-center justify-center w-40 h-40 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all">
-                <img src={logo} alt={`Investor ${i + 1}`} className="w-[70%] h-auto object-contain filter  transition-all" />
+              <div key={i} className="bg-white rounded-sm border border-slate-100 flex items-center justify-center w-40 h-40 hover:shadow-lg p-3 hover:border-[#8b68f6]/30 transition-all">
+                <img src={logo} alt={`Investor ${i + 1}`} className="w-full h-auto object-contain filter  transition-all" />
               </div>
             ))}
           </div>

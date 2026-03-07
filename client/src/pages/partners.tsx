@@ -76,7 +76,7 @@ export const PartnerLogoCarousel = ({
           {duplicatedLogos.map((logo, i) => (
             <div 
               key={i} 
-              className="inline-block  px-3 md:px-4 shrink-0 transition-transform duration-300 hover:scale-110"
+              className="inline-block   shrink-0 transition-transform duration-300 hover:scale-110"
               style={{ width: "clamp(100px, 18vw, 220px)" }}
             >
               <div className={noBox

@@ -487,7 +487,7 @@ export default function GTM() {
           </div>
           {/* Mobile Marquee */}
           <div className="block md:hidden py-4">
-            <DualRowLogoMarquee logos={partners}  noBox={true} />
+            <DualRowLogoMarquee logos={partners}   />
           </div>
 
           {/* Desktop Grid */}

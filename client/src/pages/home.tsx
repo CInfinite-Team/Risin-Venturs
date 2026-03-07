@@ -281,7 +281,7 @@ export default function Home() {
 
           {/* Mobile: Marquee */}
           <div className="block md:hidden">
-            <PartnerLogoCarousel logos={homeEcosystemLogos} marquee={true} direction="left" speed={10} noBox={true} />
+            <PartnerLogoCarousel logos={homeEcosystemLogos} marquee={true} direction="left" speed={8} noBox={true} />
           </div>
 
           {/* Desktop: Even-size card grid */}

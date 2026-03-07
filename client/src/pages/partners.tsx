@@ -60,7 +60,7 @@ export const PartnerLogoCarousel = ({
     const isLeft = direction === "left";
     
     return (
-      <div className="relative overflow-hidden w-full py-2">
+      <div className="relative  mix-blend-multiply overflow-hidden w-full py-2">
         <motion.div 
           className="flex w-max"
           animate={{ x: isLeft ? ["0%", "-50%"] : ["-50%", "0%"] }}
@@ -76,16 +76,16 @@ export const PartnerLogoCarousel = ({
           {duplicatedLogos.map((logo, i) => (
             <div 
               key={i} 
-              className="inline-block px-3 md:px-4 shrink-0 transition-transform duration-300 hover:scale-110"
+              className="inline-block  px-3 md:px-4 shrink-0 transition-transform duration-300 hover:scale-110"
               style={{ width: "clamp(100px, 18vw, 220px)" }}
             >
               <div className={noBox
-                ? "flex items-center justify-center aspect-3/2 " 
+                ? "flex items-center justify-center aspect-3/2 w-20 " 
                 : "bg-white rounded-sm border border-slate-100 w-24 flex items-center justify-center aspect-3/2 p-2 shadow-sm"}>
                 <img 
                   src={logo} 
                   alt={`Partner ${i + 1}`} 
-                  className={`max-w-[100%] max-h-[100%] object-contain ${noBox ? 'mix-blend-multiply' : ''}`}
+                  className={`max-w-[100%] max-h-[100%] object-contain }`}
                 />
               </div>
             </div>

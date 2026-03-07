@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Calendar, Users, Target, Zap, Share2, Linkedin, Twitter, Facebook, MessageSquare, Send } from "lucide-react";
+import { ArrowRight, Calendar, Users, Target, Zap, Share2, Linkedin, Instagram, MessageSquare, Link2, Send } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -352,41 +352,37 @@ export default function AIXSummitCaseStudy() {
                   <div className="flex gap-3">
                     <button 
                       onClick={() => window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`, '_blank')}
-                      className="w-10 h-10 rounded-sm bg-[#F9FAFB] text-[#2b204c] hover:bg-[#0077b5] hover:text-white flex items-center justify-center transition-all"
+                      className="w-10 h-10 cursor-pointer rounded-sm bg-[#F9FAFB] text-[#2b204c] hover:bg-[#0077b5] hover:text-white flex items-center justify-center transition-all"
                       aria-label="Share on LinkedIn"
                     >
                       <Linkedin size={18} />
                     </button>
                     <button 
                       onClick={() => window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(document.title)}&url=${encodeURIComponent(window.location.href)}`, '_blank')}
-                      className="w-10 h-10 rounded-sm bg-[#F9FAFB] text-[#2b204c] hover:bg-[#1DA1F2] hover:text-white flex items-center justify-center transition-all"
-                      aria-label="Share on Twitter"
+                      className="w-10 h-10 cursor-pointer rounded-sm bg-[#F9FAFB] text-[#2b204c] hover:bg-black hover:text-white flex items-center justify-center transition-all"
+                      aria-label="Share on X"
                     >
-                      <Twitter size={18} />
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 462.799">
+                        <path fill="currentColor" fill-rule="nonzero" d="M403.229 0h78.506L310.219 196.04 512 462.799H354.002L230.261 301.007 88.669 462.799h-78.56l183.455-209.683L0 0h161.999l111.856 147.88L403.229 0zm-27.556 415.805h43.505L138.363 44.527h-46.68l283.99 371.278z"/>
+                      </svg>
                     </button>
                     <button 
-                      onClick={() => window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, '_blank')}
-                      className="w-10 h-10 rounded-sm bg-[#F9FAFB] text-[#2b204c] hover:bg-[#1877F2] hover:text-white flex items-center justify-center transition-all"
-                      aria-label="Share on Facebook"
+                      onClick={() => window.open(`https://www.instagram.com/risin.ventures/`, '_blank')}
+                      className="w-10 h-10 cursor-pointer rounded-sm bg-[#F9FAFB] text-[#2b204c] hover:bg-[#E1306C] hover:text-white flex items-center justify-center transition-all"
+                      aria-label="Share on Instagram"
                     >
-                      <Facebook size={18} />
+                      <Instagram size={18} />
                     </button>
                     <button 
                       onClick={() => {
-                        if (navigator.share) {
-                          navigator.share({
-                            title: document.title,
-                            url: window.location.href
-                          }).catch(console.error);
-                        } else {
-                          navigator.clipboard.writeText(window.location.href);
-                          toast({ title: "Link copied", description: "The link has been copied to your clipboard." });
-                        }
+                        navigator.clipboard.writeText(window.location.href);
+                        toast({ title: "Link copied", description: "The link has been copied to your clipboard." });
                       }}
-                      className="w-10 h-10 rounded-sm bg-[#F9FAFB] text-[#2b204c] hover:bg-[#8b68f6] hover:text-white flex items-center justify-center transition-all"
-                      aria-label="Share Link"
+                      className="w-10 h-10 cursor-pointer rounded-sm bg-[#F9FAFB] text-[#2b204c] hover:bg-[#8b68f6] hover:text-white flex items-center justify-center transition-all"
+                      aria-label="Copy Link"
+                      title="Copy Link"
                     >
-                      <Share2 size={18} />
+                      <Link2 size={18} />
                     </button>
                   </div>
                 </div>

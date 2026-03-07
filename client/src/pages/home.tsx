@@ -285,13 +285,13 @@ export default function Home() {
           </div>
 
           {/* Desktop: Even-size card grid */}
-          <div className="hidden md:flex flex-wrap items-center justify-center gap-12">
+          <div className="hidden md:flex flex-wrap items-center justify-center gap-5">
             {homeEcosystemLogos.map((logo, i) => (
-              <div key={i} className="flex items-center justify-center w-64 h-64 p-4 hover:scale-105 transition-transform shrink-0 mix-blend-multiply">
+              <div key={i} className="flex items-center justify-center w-56 h-56 p-4 hover:scale-105 transition-transform shrink-0 mix-blend-multiply">
                 <img
                   src={logo}
                   alt={`Ecosystem Partner ${i + 1}`}
-                  className="w-full h-full object-contain filter transition-all scale-110"
+                  className="w-full h-full object-contain aspect-[3/2] filter transition-all scale-110"
                 />
               </div>
             ))}

@@ -15,7 +15,8 @@ export default function Footer() {
     { label: "Career", href: "/careers" },
     { label: "Partners", href: "/partners" },
     { label: "Case Studies", href: "/case-studies" },
-    { label: "News & Insights", href: "/news" }
+    { label: "News & Insights", href: "/news" },
+    { label: "Venture Builder", href: "/venture-studio/venture-builder", mobileOnly: true }
   ];
 
   const mainPrograms = [
@@ -71,11 +72,18 @@ export default function Footer() {
             <h4 className="font-bold uppercase tracking-widest text-[10px] mb-6 md:mb-8 text-[#8b68f6]">About</h4>
             <ul className="space-y-3">
               {aboutLinks.map((item) => (
-                <li key={item.label}>
+                <li key={item.label} className={item.mobileOnly ? "lg:hidden" : ""}>
                   <Link href={item.href} className="text-[#2b204c] hover:text-[#8b68f6] transition-colors text-xs font-bold capitalize tracking-wider">{item.label}</Link>
                 </li>
               ))}
             </ul>
+            <div className="mt-6 lg:hidden">
+              <Link href="/build-with-us">
+                <Button className="w-full bg-[#2b204c] hover:bg-[#8b68f6] text-white uppercase tracking-widest text-[10px] font-bold h-10 rounded-sm shadow-md">
+                  Build With Us
+                </Button>
+              </Link>
+            </div>
           </div>
 
           <div className="lg:col-span-3">
@@ -98,7 +106,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="lg:col-span-3">
+          <div className="hidden lg:block lg:col-span-3">
             <h4 className="font-bold uppercase tracking-widest text-[10px] mb-6 md:mb-8 text-[#8b68f6]">Venture Builder</h4>
             <ul className="space-y-3">
               <li>

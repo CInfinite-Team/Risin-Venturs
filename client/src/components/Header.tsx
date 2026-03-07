@@ -194,17 +194,23 @@ export default function Header() {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-8">
           <NavDropdown title="About" items={aboutItems} />
           <NavDropdown title="Programs" items={programsItems} />
-          <NavDropdown title="Venture Builder" items={ventureBuilderItems} />
+            
+          <span className="relative">
+            <Link  href="/venture-studio/venture-builder" className={`text-sm font-bold ${location === '/venture-studio/venture-builder' ? 'text-[#8b68f6] after:content-[""] after:absolute after:bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#8b68f6]' : 'text-[#2b204c]'} hover:text-[#8b68f6] capitalize tracking-widest transition-colors whitespace-nowrap px-2 py-2 block`}
+                         >
+                         Venture Builder
+                         </Link>
+                         </span> 
           <Link href="/build-with-us" className={`${location === '/build-with-us' ? 'bg-[#8b68f6]' : 'bg-[#2b204c]'} text-white hover:bg-[#8b68f6] transition-all uppercase tracking-widest text-xs font-bold rounded-sm px-6 h-12 border-0 shadow-lg inline-flex items-center justify-center`}>
             Build With Us
           </Link>
         </div>
 
         {/* Mobile Menu Toggle */}
-        <button className="md:hidden text-[#2b204c] z-[110]" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        <button className="lg:hidden text-[#2b204c] z-[110]" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
@@ -217,7 +223,7 @@ export default function Header() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "tween", duration: 0.3 }}
-            className="fixed inset-0 bg-white z-[105] md:hidden flex flex-col p-8 pt-24 overflow-y-auto"
+            className="fixed inset-0 bg-white z-[105] lg:hidden flex flex-col p-8 pt-24 overflow-y-auto"
           >
             <div className="flex flex-col gap-6">
               {/* About Section */}

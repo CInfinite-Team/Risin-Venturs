@@ -22,7 +22,9 @@ import {PartnerLogoCarousel, DualRowLogoMarquee} from '@/pages/partners'
 const sectionVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: { 
-    transition: { duration: 0.6 }
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" }
   }
 };
 
@@ -313,35 +315,37 @@ export default function GTM() {
         <div className="container mx-auto pt-2 px-6">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-12 text-center md:text-left">
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 flex-1">
-              <div className="flex items-center gap-3 relative">
+              <div className="flex flex-col items-center gap-3 relative">
                  <motion.span 
                    initial={{ opacity: 0, y: 5 }}
                    whileInView={{ opacity: 1, y: 0 }}
                    transition={{ delay: 0.2, duration: 0.5 }}
-                   className="absolute -top-6 left-0 md:-left-2 bg-white/20 backdrop-blur-sm text-white text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full"
+                   className=" md:absolute w-[150px] -top-6 left-0 md:-left-2 bg-white/20 backdrop-blur-sm text-white text-[9px] font-bold uppercase px-2 py-0.5 rounded-full"
                  >
                    Program Showcase (Past)
                  </motion.span>
-                <Calendar className="text-white w-6 h-6" />
+                
                 <div>
                   <span className="block text-white/70 text-xs font-bold uppercase tracking-widest">Program Status</span>
-                  <span className="text-white font-bold text-lg">Concluded</span>
+                  <span className="text-white font-bold items-center flex gap-2 text-lg"><Calendar className="text-white w-5 h-5" /> Concluded</span>
                 </div>
               </div>
               <div className="hidden md:block w-px h-10 bg-white/20"></div>
-              <div className="flex items-center gap-3">
-                <MapPin className="text-white w-6 h-6" />
+              <div className="flex flex-col justify-center items-center gap-">
+                
+                <span className="block text-white/70 text-xs font-bold uppercase tracking-widest">Location</span>
                 <div>
-                  <span className="block text-white/70 text-xs font-bold uppercase tracking-widest">Location</span>
-                  <span className="text-white font-bold text-lg">Doha, Qatar</span>
+                  
+                  <span className="text-white font-bold items-center justify-center text-lg flex gap-2 "><MapPin className="text-white w-6 h-6" /> Doha, Qatar</span>
                 </div>
               </div>
               <div className="hidden md:block w-px h-10 bg-white/20"></div>
-              <div className="flex items-center gap-3">
-                <Rocket className="text-white w-6 h-6" />
+              <div className="flex flex-col justify-center items-center gap-">
+                
+                <span className="block text-white/70 text-xs font-bold uppercase tracking-widest">Location</span>
                 <div>
-                  <span className="block text-white/70 text-xs font-bold uppercase tracking-widest">Format</span>
-                  <span className="text-white font-bold text-lg">In-Person Immersion</span>
+                  
+                  <span className="text-white font-bold items-center justify-center text-lg flex gap-2 "><Rocket className="text-white w-6 h-6" /> In-Person Immersion</span>
                 </div>
               </div>
             </div>

@@ -82,7 +82,7 @@ export default function AIX() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="max-w-xl"
+              className="max-w-xl order-2 lg:order-1"
             >
               <div className="flex items-center gap-2 mb-4">
                 <span className="text-slate-400 text-sm font-bold uppercase tracking-widest">Programs</span>
@@ -114,7 +114,7 @@ export default function AIX() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.2 }}
-              className="relative hidden lg:flex justify-center items-center"
+              className="relative flex justify-center items-center h-[250px] md:h-auto order-1 lg:order-2"
             >
               <div className="relative w-full max-w-[500px]">
                 {/* Glow effect matching the theme */}

@@ -103,14 +103,14 @@ export default function EntrepreneurshipAwards() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="max-w-xl"
+              className="max-w-xl order-2 lg:order-1"
             >
               <div className="flex items-center gap-2 mb-4">
                 <span className="text-amber-300/70 text-sm font-bold uppercase tracking-widest">Programs</span>
                 <span className="text-amber-500/50">/</span>
                 <span className="text-amber-300 text-sm font-bold uppercase tracking-widest">Entrepreneurship Awards</span>
               </div>
-              <h1 className="text-4xl md:text-6xl xl:text-7xl font-heading font-bold text-white mb-6 uppercase leading-none">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl xl:text-7xl font-heading font-bold text-white mb-6 uppercase leading-none">
                 Qatar <br className="hidden md:block"/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-orange-200">Entrepreneurship Awards</span>
               </h1>
@@ -136,9 +136,9 @@ export default function EntrepreneurshipAwards() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
-              className="relative hidden lg:flex justify-center items-center h-[500px]"
+              className="relative flex justify-center items-center h-[300px] md:h-[500px] order-1 lg:order-2"
             >
-              <div className="relative w-full max-w-[400px] aspect-square flex justify-center items-center">
+              <div className="relative w-full max-w-[280px] sm:max-w-[400px] aspect-square flex justify-center items-center scale-90 sm:scale-100">
                 {/* Clean, subtle background glow */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-amber-500/10 to-orange-500/10 rounded-full blur-3xl"></div>
                 
@@ -175,7 +175,7 @@ export default function EntrepreneurshipAwards() {
                   <motion.div 
                     animate={{ y: [0, -5, 0] }}
                     transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                    className="absolute -left-12 bottom-4 bg-slate-900 px-4 py-2 rounded-xl shadow-lg border border-slate-800/50 flex items-center gap-2"
+                    className="absolute -left-12 bottom-4 bg-slate-900 px-4 py-2 rounded-xl z-40 shadow-lg border border-slate-800/50 flex items-center gap-2"
                   >
                     <Sparkles className="w-4 h-4 text-orange-400" />
                     <span className="text-sm font-bold text-white">Innovation</span>

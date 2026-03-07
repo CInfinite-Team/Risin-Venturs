@@ -178,12 +178,12 @@ export default function GTM() {
           <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-cyan-500 rounded-full blur-[100px] opacity-10"></div>
         </div>
         <div className="container mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="max-w-xl"
+              className="max-w-xl order-2 lg:order-1"
             >
               <div className="flex items-center gap-2 mb-4">
                 <span className="text-slate-400 text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-widest">Programs</span>
@@ -209,8 +209,8 @@ export default function GTM() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Dialog>
                   <DialogTrigger asChild>
-                    <Button className="bg-[#8b68f6] hover:bg-white hover:text-[#2b204c] text-white rounded-sm px-4 md:px-8 py-5 h-auto font-bold text-sm uppercase tracking-widest transition-all w-full sm:w-auto">
-                      Get Notified for Next Cohort <ArrowRight size={16} className="ml-2 inline" />
+                    <Button className="bg-[#8b68f6] hover:bg-white hover:text-[#2b204c] text-white rounded-sm px-4 md:px-8 py-5 h-auto font-bold text-xs md:text-sm uppercase tracking-widest transition-all w-full sm:w-auto">
+                      Get Notified for Next Cohort <ArrowRight size={16} className="ml- inline" />
                     </Button>
                   </DialogTrigger>
                   <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
@@ -237,9 +237,9 @@ export default function GTM() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
-              className="relative hidden lg:flex justify-center items-center h-[400px]"
+              className="relative flex justify-center items-center h-[280px] md:h-[400px] order-1 lg:order-2"
             >
-              <div className="relative w-full max-w-[320px] aspect-square flex justify-center items-center">
+              <div className="relative w-full max-w-[260px] sm:max-w-[320px] aspect-square flex justify-center items-center scale-90 sm:scale-100">
                 {/* Background glow matrix */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#8b68f6]/10 to-cyan-400/10 rounded-full blur-2xl"></div>
                 
@@ -250,7 +250,7 @@ export default function GTM() {
                   <circle cx="50" cy="95" r="1.5" className="fill-[#8b68f6]" />
                 </svg>
 
-                <svg className="absolute inset-6 w-[calc(100%-3rem)] h-[calc(100%-3rem)] animate-[spin_30s_linear_infinite_reverse] opacity-20" viewBox="0 0 100 100">
+                <svg className="absolute inset-6 w-[calc(100%-3rem)] h-[calc(100%-3rem)] animate-[spin_30s_linear_infinite_reverse] opacity-20 hidden sm:block" viewBox="0 0 100 100">
                   <circle cx="50" cy="50" r="35" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="4 4" className="text-white" />
                   <circle cx="15" cy="50" r="1" className="fill-[#8b68f6]" />
                   <circle cx="85" cy="50" r="1" className="fill-white" />
@@ -286,7 +286,7 @@ export default function GTM() {
                 <motion.div 
                   animate={{ y: [0, 8, 0] }}
                   transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2.5 }}
-                  className="absolute p-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 -right-2 bottom-16 shadow-lg"
+                  className="absolute p-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 -right-2 bottom-16 shadow-lg hidden sm:block"
                 >
                   <Building2 className="w-4 h-4 text-[#8b68f6]" />
                 </motion.div>

@@ -36,7 +36,7 @@ export const partnerLogos = {
   gtm: gtmLogos
 };
 
-export const PartnerLogoCarousel = ({ logos, autoplay = false, loop = false, showArrows = true }: { logos: string[], autoplay?: boolean, loop?: boolean, showArrows?: boolean }) => {
+export const PartnerLogoCarousel = ({ logos, autoplay = false, loop = false, showArrows = true, noBox = false }: { logos: string[], autoplay?: boolean, loop?: boolean, showArrows?: boolean, noBox?: boolean }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop, align: "start", containScroll: "trimSnaps" }, 
     autoplay ? [Autoplay({ delay: 2000, stopOnInteraction: false })] : []
@@ -52,18 +52,20 @@ export const PartnerLogoCarousel = ({ logos, autoplay = false, loop = false, sho
 
   return (
     <div className="relative w-full group">
-      <div className="overflow-hidden" ref={emblaRef}>
+      <div className={`overflow-hidden ${noBox ? "mix-blend-multiply" : ""}`} ref={emblaRef}>
         <div className="flex touch-pan-y">
           {logos.map((logo, i) => (
             <div 
               key={i} 
               className="flex-[0_0_50%] min-w-0 sm:flex-[0_0_33.33%] md:flex-[0_0_25%] lg:flex-[0_0_20%] pl-4"
             >
-              <div className="bg-white rounded-sm border border-slate-100 flex items-center justify-center aspect-square hover:shadow-lg hover:border-[#8b68f6]/30 transition-all">
+              <div className={noBox
+                ? "flex items-center justify-center aspect-[3/2] p-3 hover:scale-105 transition-transform" 
+                : "bg-white rounded-sm border border-slate-100 flex items-center justify-center aspect-[3/2] p-6 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all"}>
                 <img 
                   src={logo} 
                   alt={`Partner ${i + 1}`} 
-                  className="w-full h-auto object-contain filter  transition-all" 
+                  className="max-w-full max-h-full object-contain filter transition-all" 
                 />
               </div>
             </div>
@@ -190,8 +192,8 @@ export default function Partners() {
           {/* Desktop Grid */}
           <div className="hidden md:flex flex-wrap justify-center gap-4">
             {partnerLogos.investors.map((logo, i) => (
-              <div key={i} className="bg-white rounded-sm border border-slate-100 flex items-center justify-center w-40 h-40 hover:shadow-lg p-3 hover:border-[#8b68f6]/30 transition-all">
-                <img src={logo} alt={`Investor ${i + 1}`} className="w-full h-auto object-contain filter  transition-all" />
+              <div key={i} className="bg-white rounded-sm border border-slate-100 flex items-center justify-center w-48 h-32 hover:shadow-lg p-6 hover:border-[#8b68f6]/30 transition-all">
+                <img src={logo} alt={`Investor ${i + 1}`} className="max-w-full max-h-full object-contain filter transition-all" />
               </div>
             ))}
           </div>
@@ -222,8 +224,8 @@ export default function Partners() {
           {/* Desktop Grid */}
           <div className="hidden md:flex flex-wrap justify-center gap-4">
             {partnerLogos.ecosystem.map((logo, i) => (
-              <div key={i} className="bg-[#F9FAFB] rounded-sm border border-slate-100 flex items-center justify-center w-40 h-40 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all">
-                <img src={logo} alt={`Ecosystem Partner ${i + 1}`} className="w-[70%] h-auto object-contain filter  transition-all" />
+              <div key={i} className="bg-[#F9FAFB] rounded-sm border border-slate-100 flex items-center justify-center w-48 h-32 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all p-6">
+                <img src={logo} alt={`Ecosystem Partner ${i + 1}`} className="max-w-full max-h-full object-contain filter transition-all mix-blend-multiply" />
               </div>
             ))}
           </div>
@@ -254,8 +256,8 @@ export default function Partners() {
           {/* Desktop Grid */}
           <div className="hidden md:flex flex-wrap justify-center gap-4">
             {partnerLogos.gtm.map((logo, i) => (
-              <div key={i} className="bg-white rounded-sm border border-slate-100 flex items-center justify-center w-40 h-40 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all">
-                <img src={logo} alt={`GTM Partner ${i + 1}`} className="w-[70%] h-auto object-contain filter  transition-all" />
+              <div key={i} className="bg-white rounded-sm border border-slate-100 flex items-center justify-center w-48 h-32 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all p-6">
+                <img src={logo} alt={`GTM Partner ${i + 1}`} className="max-w-full max-h-full object-contain filter transition-all mix-blend-multiply" />
               </div>
             ))}
           </div>

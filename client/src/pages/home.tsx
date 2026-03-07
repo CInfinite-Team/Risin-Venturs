@@ -281,17 +281,17 @@ export default function Home() {
 
           {/* Mobile: Carousel */}
           <div className="block md:hidden">
-            <PartnerLogoCarousel logos={homeEcosystemLogos} autoplay={true} loop={true} showArrows={false} />
+            <PartnerLogoCarousel logos={homeEcosystemLogos} autoplay={true} loop={true} showArrows={false} noBox={true} />
           </div>
 
           {/* Desktop: Even-size card grid */}
-          <div className="hidden md:flex flex-wrap items-center justify-center gap-8">
+          <div className="hidden md:flex flex-wrap items-center justify-center gap-12">
             {homeEcosystemLogos.map((logo, i) => (
-              <div key={i} className="bg-white rounded-sm border border-slate-100 flex items-center justify-center w-52 h-52 p-1 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all shrink-0">
+              <div key={i} className="flex items-center justify-center w-64 h-64 p-4 hover:scale-105 transition-transform shrink-0 mix-blend-multiply">
                 <img
                   src={logo}
                   alt={`Ecosystem Partner ${i + 1}`}
-                  className="w-full h-full object-contain filter  transition-all"
+                  className="w-full h-full object-contain filter transition-all scale-110"
                 />
               </div>
             ))}

@@ -81,11 +81,11 @@ export const PartnerLogoCarousel = ({
             >
               <div className={noBox
                 ? "flex items-center justify-center aspect-3/2 " 
-                : "bg-white rounded-sm border border-slate-100 flex items-center justify-center aspect-3/2 p-3 shadow-sm"}>
+                : "bg-white rounded-sm border border-slate-100 w-24 flex items-center justify-center aspect-3/2 p-2 shadow-sm"}>
                 <img 
                   src={logo} 
                   alt={`Partner ${i + 1}`} 
-                  className={`max-w-[70%] max-h-[70%] object-contain ${noBox ? 'mix-blend-multiply' : ''}`}
+                  className={`max-w-[100%] max-h-[100%] object-contain ${noBox ? 'mix-blend-multiply' : ''}`}
                 />
               </div>
             </div>
@@ -260,7 +260,7 @@ export default function Partners() {
           </div>
           {/* Mobile Marquee */}
           <div className="block md:hidden py-4">
-            <DualRowLogoMarquee logos={partnerLogos.investors} />
+            <DualRowLogoMarquee  logos={partnerLogos.investors} />
           </div>
 
           {/* Desktop Grid */}
@@ -290,7 +290,7 @@ export default function Partners() {
           
           {/* Mobile Marquee */}
           <div className="block md:hidden py-4">
-            <DualRowLogoMarquee logos={partnerLogos.ecosystem} noBox={true} />
+            <DualRowLogoMarquee logos={partnerLogos.ecosystem}  />
           </div>
 
           {/* Desktop Grid */}
@@ -320,7 +320,7 @@ export default function Partners() {
 
           {/* Mobile Marquee */}
           <div className="block md:hidden py-4">
-            <DualRowLogoMarquee logos={partnerLogos.gtm} noBox={true} />
+            <PartnerLogoCarousel marquee={true} speed={10} logos={partnerLogos.gtm}  />
           </div>
 
           {/* Desktop Grid */}

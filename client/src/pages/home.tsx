@@ -981,57 +981,51 @@ export default function Home() {
           {/* Desktop: Featured + Secondary Layout */}
           <div className="hidden md:grid md:grid-cols-2 gap-6">
             {/* Featured Card - Large */}
-            <motion.a 
-              href="https://risin.ventures/inside-the-aix-summit-hackathon-qatar-edition/"
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="group relative overflow-hidden rounded-sm bg-[#2b204c] aspect-[4/3] flex flex-col justify-end cursor-pointer"
-            >
-              <img 
-                src="https://risin.ventures/wp-content/uploads/2025/12/blog-banner-aix.png" 
-                alt="AIX Summit"
-                className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700 grayscale-[30%]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#2b204c] via-[#2b204c]/60 to-transparent" />
-              <div className="relative z-10 p-8">
-                <span className="bg-[#952828] text-white text-[8px] font-bold uppercase tracking-widest px-2 py-1 rounded-sm mb-4 inline-block">
-                  Featured
-                </span>
-                <h3 className="text-2xl md:text-3xl font-heading font-bold text-white mb-3 uppercase leading-tight group-hover:text-[#8b68f6] transition-colors">
-                  Bridging Ambition and Intelligence – AIX Summit & Hackathon
-                </h3>
-                <p className="text-slate-300 text-sm leading-relaxed mb-4 line-clamp-2">
-                  Inside the high-stakes AI summit that brought together founders and enterprises to build real AI solutions.
-                </p>
-                <span className="text-[10px] font-bold text-white group-hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-2 transition-colors">
-                  Read Case Study <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
-                </span>
-              </div>
-            </motion.a>
+            <Link href="/case-studies/aix-summit">
+              <a className="group relative overflow-hidden rounded-sm bg-[#2b204c] aspect-[4/3] flex flex-col justify-end cursor-pointer">
+                <img 
+                  src="https://risin.ventures/wp-content/uploads/2025/12/blog-banner-aix.png" 
+                  alt="AIX Summit"
+                  className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700 grayscale-[30%]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#2b204c] via-[#2b204c]/60 to-transparent" />
+                <div className="relative z-10 p-8">
+                  <span className="bg-[#952828] text-white text-[8px] font-bold uppercase tracking-widest px-2 py-1 rounded-sm mb-4 inline-block">
+                    Featured
+                  </span>
+                  <h3 className="text-2xl md:text-3xl font-heading font-bold text-white mb-3 uppercase leading-tight group-hover:text-[#8b68f6] transition-colors">
+                    Bridging Ambition and Intelligence – AIX Summit & Hackathon
+                  </h3>
+                  <p className="text-slate-300 text-sm leading-relaxed mb-4 line-clamp-2">
+                    Inside the high-stakes AI summit that brought together founders and enterprises to build real AI solutions.
+                  </p>
+                  <span className="text-[10px] font-bold text-white group-hover:text-[#8b68f6] uppercase tracking-widest flex items-center gap-2 transition-colors">
+                    Read Case Study <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </div>
+              </a>
+            </Link>
 
             {/* Secondary Cards - Stacked */}
             <div className="flex flex-col gap-4 h-full">
               {[
                 {
                   title: "AI Hackathons for Enterprises: Beyond Buzzwords to Real ROI",
-                  image: Sustainovacasetudy,
+                  image: "https://risin.ventures/wp-content/uploads/2025/05/a-1.png",
                   outcome: "Production-ready AI tools delivered in weeks, not months.",
-                  link: "https://risin.ventures/ai-hackathons-for-enterprises-beyond-buzzwords-to-real-roi/"
+                  link: "/case-studies/ai-hackathons"
                 },
                 {
-                  title: "The Rise of Venture Studios in the GCC",
+                  title: "Sustainova Challenge: Empowering Sustainability",
+                  image: Sustainovacasetudy,
+                  outcome: "Transformative platform for sustainability-focused startups in the GCC.",
+                  link: "/case-studies/sustainova-challenge"
+                },
+                {
+                  title: "Why Corporate Venture Studios are Important",
                   image: RiseStudio,
-                  outcome: "Shifting from traditional VC to hands-on venture building.",
-                  link: "https://risin.ventures/the-rise-of-venture-studios-in-the-gcc-deep-tech-landscape/"
-                },
-                {
-                  title: "Scaling Sustainability: Sustainova 2025 Impact",
-                  image: Sustainovacasetudy2,
-                  outcome: "Measurable carbon reduction through our latest cohort.",
-                  link: "https://risin.ventures/scaling-sustainability-the-sustainova-2025-impact-report/"
+                  outcome: "Combining the best of both worlds to stay ahead of the curve.",
+                  link: "/case-studies/corporate-venture-studios"
                 }
               ].map((study, i) => (
                 <motion.a 
@@ -1074,26 +1068,26 @@ export default function Home() {
                 {
                   title: "Bridging Ambition and Intelligence – AIX Summit",
                   image: "https://risin.ventures/wp-content/uploads/2025/12/blog-banner-aix.png",
-                  summary: "Inside the high-stakes AI summit that brought together founders and enterprises.",
-                  link: "https://risin.ventures/inside-the-aix-summit-hackathon-qatar-edition/"
+                  summary: "Inside the high-stakes AI summit that brought together founders and enterprises to build real AI solutions.",
+                  link: "/case-studies/aix-summit"
                 },
                 {
                   title: "AI Hackathons for Enterprises",
-                  image: Sustainovacasetudy2,
+                  image: "https://risin.ventures/wp-content/uploads/2025/05/a-1.png",
                   summary: "How enterprises leverage hackathons to build production-ready AI tools.",
-                  link: "https://risin.ventures/ai-hackathons-for-enterprises-beyond-buzzwords-to-real-roi/"
+                  link: "/case-studies/ai-hackathons"
                 },
                 {
-                  title: "The Rise of Venture Studios",
-                  image: RiseStudio,
-                  summary: "Analyzing the shift to hands-on venture building.",
-                  link: "https://risin.ventures/the-rise-of-venture-studios-in-the-gcc-deep-tech-landscape/"
-                },
-                {
-                  title: "Sustainova 2025 Impact",
+                  title: "Sustainova Challenge",
                   image: Sustainovacasetudy,
-                  summary: "Measuring real-world carbon reduction from our cohort.",
-                  link: "https://risin.ventures/scaling-sustainability-the-sustainova-2025-impact-report/"
+                  summary: "Establishing itself as a transformative platform for sustainability-focused startups.",
+                  link: "/case-studies/sustainova-challenge"
+                },
+                {
+                  title: "Why Corporate Venture Studios are Important",
+                  image: RiseStudio,
+                  summary: "Helping businesses stay ahead of the curve.",
+                  link: "/case-studies/corporate-venture-studios"
                 }
               ].map((study, i) => (
                 <div key={i} className="flex-[0_0_85%] min-w-0 pr-4 pl-1 pb-4 snap-center">

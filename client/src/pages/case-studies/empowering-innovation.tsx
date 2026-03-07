@@ -341,20 +341,20 @@ export default function EmpoweringInnovationCaseStudy() {
                 <div className="bg-white border border-slate-100 p-6 rounded-sm">
                   <span className="text-[#2b204c] text-xs font-bold uppercase tracking-widest block mb-4">More Case Studies</span>
                   <div className="space-y-6">
+                    <Link href="/case-studies/aix-summit">
+                      <a className="group block">
+                        <div className="aspect-video bg-slate-100 rounded-sm overflow-hidden mb-3">
+                          <img src="https://risin.ventures/wp-content/uploads/2025/05/a-e1720361139454.png" alt="AIX Summit" className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+                        </div>
+                        <h4 className="font-bold text-[#2b204c] text-sm leading-snug group-hover:text-[#8b68f6] transition-colors">AIX Summit: Leading the AI Revolution</h4>
+                      </a>
+                    </Link>
                     <Link href="/case-studies/ai-hackathons">
                       <a className="group block">
                         <div className="aspect-video bg-slate-100 rounded-sm overflow-hidden mb-3">
                           <img src="https://risin.ventures/wp-content/uploads/2025/05/a-1.png" alt="AI Hackathons" className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
                         </div>
-                        <h4 className="font-bold text-[#2b204c] text-sm leading-snug group-hover:text-[#8b68f6] transition-colors">AI Hackathons for Enterprises: Beyond Buzzwords</h4>
-                      </a>
-                    </Link>
-                    <Link href="/case-studies/corporate-venture-studios">
-                      <a className="group block">
-                        <div className="aspect-video bg-slate-100 rounded-sm overflow-hidden mb-3">
-                          <img src="https://risin.ventures/wp-content/uploads/2024/07/Untitled-design-3.png" alt="Corporate Venture Studios" className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
-                        </div>
-                        <h4 className="font-bold text-[#2b204c] text-sm leading-snug group-hover:text-[#8b68f6] transition-colors">Why Corporate Venture Studios are Important</h4>
+                        <h4 className="font-bold text-[#2b204c] text-sm leading-snug group-hover:text-[#8b68f6] transition-colors">AI Hackathons for Enterprises</h4>
                       </a>
                     </Link>
                   </div>
@@ -389,9 +389,9 @@ export default function EmpoweringInnovationCaseStudy() {
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
+              { title: "AIX Summit: Leading the AI Revolution", image: "https://risin.ventures/wp-content/uploads/2025/05/a-e1720361139454.png", link: "/case-studies/aix-summit" },
               { title: "AI Hackathons for Enterprises", image: "https://risin.ventures/wp-content/uploads/2025/05/a-1.png", link: "/case-studies/ai-hackathons" },
-              { title: "Sustainova Challenge", image: "https://risin.ventures/wp-content/uploads/2024/11/photo-collage.png-2.png", link: "/case-studies/sustainova-challenge" },
-              { title: "Qatar's Startup Ecosystem Path", image: "https://risin.ventures/wp-content/uploads/2024/06/31-e1720361297587.jpeg", link: "/case-studies/ideas-to-impact" }
+              { title: "Sustainova Challenge", image: "https://risin.ventures/wp-content/uploads/2024/11/photo-collage.png-2.png", link: "/case-studies/sustainova-challenge" }
             ].map((item, i) => (
               <Link key={i} href={item.link}>
                 <a className="group bg-white border border-slate-100 rounded-sm overflow-hidden hover:shadow-md transition-all">

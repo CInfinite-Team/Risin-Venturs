@@ -447,9 +447,9 @@ export default function AIHackathonsCaseStudy() {
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { title: "Corporate Venture Studios Explained", image: "https://risin.ventures/wp-content/uploads/2024/07/Untitled-design-3.png", link: "/case-studies/corporate-venture-studios" },
-              { title: "Empowering Innovation via Hackathons", image: "https://risin.ventures/wp-content/uploads/2024/07/hk1-e1720358238143.jpg", link: "/case-studies/empowering-innovation" },
-              { title: "Qatar's Startup Ecosystem Path", image: "https://risin.ventures/wp-content/uploads/2024/06/31-e1720361297587.jpeg", link: "/case-studies/ideas-to-impact" }
+              { title: "AIX Summit: Leading the AI Revolution", image: "https://risin.ventures/wp-content/uploads/2025/05/a-e1720361139454.png", link: "/case-studies/aix-summit" },
+              { title: "Sustainova Challenge", image: "https://risin.ventures/wp-content/uploads/2024/11/photo-collage.png-2.png", link: "/case-studies/sustainova-challenge" },
+              { title: "Why Corporate Venture Studios are Important", image: "https://risin.ventures/wp-content/uploads/2024/07/Untitled-design-3.png", link: "/case-studies/corporate-venture-studios" }
             ].map((item, i) => (
               <Link key={i} href={item.link}>
                 <a className="group bg-white border border-slate-100 rounded-sm overflow-hidden hover:shadow-md transition-all">

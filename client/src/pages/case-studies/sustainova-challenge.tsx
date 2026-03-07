@@ -357,20 +357,20 @@ export default function SustainovaChallengeCaseStudy() {
                 <div className="bg-white border border-slate-100 p-6 rounded-sm">
                   <span className="text-[#2b204c] text-xs font-bold uppercase tracking-widest block mb-4">More Case Studies</span>
                   <div className="space-y-6">
-                    <Link href="/case-studies/corporate-venture-studios">
-                      <a className="group block">
-                        <div className="aspect-video bg-slate-100 rounded-sm overflow-hidden mb-3">
-                          <img src="https://risin.ventures/wp-content/uploads/2024/07/Untitled-design-3.png" alt="Corporate Venture Studios" className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
-                        </div>
-                        <h4 className="font-bold text-[#2b204c] text-sm leading-snug group-hover:text-[#8b68f6] transition-colors">Why Corporate Venture Studios are Important</h4>
-                      </a>
-                    </Link>
                     <Link href="/case-studies/ai-hackathons">
                       <a className="group block">
                         <div className="aspect-video bg-slate-100 rounded-sm overflow-hidden mb-3">
                           <img src="https://risin.ventures/wp-content/uploads/2025/05/a-1.png" alt="AI Hackathons" className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
                         </div>
                         <h4 className="font-bold text-[#2b204c] text-sm leading-snug group-hover:text-[#8b68f6] transition-colors">AI Hackathons for Enterprises</h4>
+                      </a>
+                    </Link>
+                    <Link href="/case-studies/corporate-venture-studios">
+                      <a className="group block">
+                        <div className="aspect-video bg-slate-100 rounded-sm overflow-hidden mb-3">
+                          <img src="https://risin.ventures/wp-content/uploads/2024/07/Untitled-design-3.png" alt="Corporate Venture Studios" className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+                        </div>
+                        <h4 className="font-bold text-[#2b204c] text-sm leading-snug group-hover:text-[#8b68f6] transition-colors">Why Corporate Venture Studios are Important</h4>
                       </a>
                     </Link>
                   </div>
@@ -405,9 +405,9 @@ export default function SustainovaChallengeCaseStudy() {
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { title: "Empowering Innovation via Hackathons", image: "https://risin.ventures/wp-content/uploads/2024/07/hk1-e1720358238143.jpg", link: "/case-studies/empowering-innovation" },
-              { title: "Qatar's Startup Ecosystem Path", image: "https://risin.ventures/wp-content/uploads/2024/06/31-e1720361297587.jpeg", link: "/case-studies/ideas-to-impact" },
-              { title: "Bridging the Investment Gap", image: "https://risin.ventures/wp-content/uploads/2024/07/aib3.jpg", link: "/case-studies/bridging-investment" }
+              { title: "AIX Summit: Leading the AI Revolution", image: "https://risin.ventures/wp-content/uploads/2025/05/a-e1720361139454.png", link: "/case-studies/aix-summit" },
+              { title: "AI Hackathons for Enterprises", image: "https://risin.ventures/wp-content/uploads/2025/05/a-1.png", link: "/case-studies/ai-hackathons" },
+              { title: "Why Corporate Venture Studios are Important", image: "https://risin.ventures/wp-content/uploads/2024/07/Untitled-design-3.png", link: "/case-studies/corporate-venture-studios" }
             ].map((item, i) => (
               <Link key={i} href={item.link}>
                 <a className="group bg-white border border-slate-100 rounded-sm overflow-hidden hover:shadow-md transition-all">

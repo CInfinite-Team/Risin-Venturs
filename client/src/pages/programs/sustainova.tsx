@@ -49,8 +49,8 @@ const benefits = [
 const stats = [
   { value: "6", label: "GCC Countries" },
   { value: "500+", label: "Applications" },
-  { value: "15", label: "Finalists" },
-  { value: "50+", label: "Speakers" }
+  { value: "20", label: "Finalists" },
+  { value: "20+", label: "Speakers" }
 ];
 
 const countries = ["Bahrain", "Qatar", "Kuwait", "UAE", "KSA", "Oman"];

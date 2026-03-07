@@ -36,7 +36,69 @@ export const partnerLogos = {
   gtm: gtmLogos
 };
 
-export const PartnerLogoCarousel = ({ logos, autoplay = false, loop = false, showArrows = true, noBox = false }: { logos: string[], autoplay?: boolean, loop?: boolean, showArrows?: boolean, noBox?: boolean }) => {
+export const PartnerLogoCarousel = ({ 
+  logos, 
+  autoplay = false, 
+  loop = false, 
+  showArrows = true, 
+  noBox = false,
+  marquee = false,
+  direction = "left",
+  speed = 40
+}: { 
+  logos: string[], 
+  autoplay?: boolean, 
+  loop?: boolean, 
+  showArrows?: boolean, 
+  noBox?: boolean,
+  marquee?: boolean,
+  direction?: "left" | "right",
+  speed?: number
+}) => {
+  if (marquee) {
+    const duplicatedLogos = [...logos, ...logos]; // Exactly two sets for seamless loop
+    const isLeft = direction === "left";
+    
+    return (
+      <div className="relative overflow-hidden w-full py-2">
+        <motion.div 
+          className="flex w-max"
+          animate={{ x: isLeft ? ["0%", "-50%"] : ["-50%", "0%"] }}
+          transition={{ 
+            x: {
+              repeat: Infinity,
+              repeatType: "loop",
+              duration: speed,
+              ease: "linear",
+            },
+          }}
+        >
+          {duplicatedLogos.map((logo, i) => (
+            <div 
+              key={i} 
+              className="inline-block px-3 md:px-4 shrink-0 transition-transform duration-300 hover:scale-110"
+              style={{ width: "clamp(100px, 18vw, 220px)" }}
+            >
+              <div className={noBox
+                ? "flex items-center justify-center aspect-3/2 " 
+                : "bg-white rounded-sm border border-slate-100 flex items-center justify-center aspect-3/2 p-3 shadow-sm"}>
+                <img 
+                  src={logo} 
+                  alt={`Partner ${i + 1}`} 
+                  className={`max-w-[70%] max-h-[70%] object-contain ${noBox ? 'mix-blend-multiply' : ''}`}
+                />
+              </div>
+            </div>
+          ))}
+        </motion.div>
+        
+        {/* Gradient overlays for smooth fade */}
+        <div className="absolute inset-y-0 left-0 w-24 bg-linear-to-r from-white to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-24 bg-linear-to-l from-white to-transparent z-10 pointer-events-none" />
+      </div>
+    );
+  }
+
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop, align: "start", containScroll: "trimSnaps" }, 
     autoplay ? [Autoplay({ delay: 2000, stopOnInteraction: false })] : []
@@ -57,7 +119,7 @@ export const PartnerLogoCarousel = ({ logos, autoplay = false, loop = false, sho
           {logos.map((logo, i) => (
             <div 
               key={i} 
-              className="flex-[0_0_50%] min-w-0 sm:flex-[0_0_33.33%] md:flex-[0_0_25%] lg:flex-[0_0_20%] pl-4"
+              className="flex-[0_0_33.33%] min-w-0 sm:flex-[0_0_25%] md:flex-[0_0_20%] lg:flex-[0_0_16.66%] pl-4"
             >
               <div className={noBox
                 ? "flex items-center justify-center aspect-[3/2] p-3 hover:scale-105 transition-transform" 
@@ -91,6 +153,20 @@ export const PartnerLogoCarousel = ({ logos, autoplay = false, loop = false, sho
           </button>
         </>
       )}
+    </div>
+  );
+};
+
+export const DualRowLogoMarquee = ({ logos, noBox = false }: { logos: string[], noBox?: boolean }) => {
+  // Split logos into two roughly equal halves
+  const half = Math.ceil(logos.length / 2);
+  const row1 = logos.slice(0, half);
+  const row2 = logos.slice(half);
+
+  return (
+    <div className="space-y-4 w-full overflow-hidden">
+      <PartnerLogoCarousel logos={row1} marquee={true} direction="left" speed={25} noBox={noBox} />
+      <PartnerLogoCarousel logos={row2} marquee={true} direction="right" speed={28} noBox={noBox} />
     </div>
   );
 };
@@ -182,11 +258,9 @@ export default function Partners() {
             <span className="text-[#952828] text-sm font-bold uppercase tracking-widest mb-3 block">Capital Partners</span>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#2b204c] uppercase">Our Investors</h2>
           </div>
-          {/* Mobile Carousel */}
-          <div className="block md:hidden px-4">
-            <div className="bg-white p-1 rounded-sm border border-slate-100">
-               <PartnerLogoCarousel autoplay={true} loop={true} logos={partnerLogos.investors} />
-            </div>
+          {/* Mobile Marquee */}
+          <div className="block md:hidden py-4">
+            <DualRowLogoMarquee logos={partnerLogos.investors} />
           </div>
 
           {/* Desktop Grid */}
@@ -214,11 +288,9 @@ export default function Partners() {
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#2b204c] uppercase">Ecosystem Partners</h2>
           </div>
           
-          {/* Mobile Carousel */}
-          <div className="block md:hidden px-4">
-            <div className="bg-[#F9FAFB] p-4 rounded-sm border border-slate-100">
-               <PartnerLogoCarousel autoplay={true} loop={true} logos={partnerLogos.ecosystem} />
-            </div>
+          {/* Mobile Marquee */}
+          <div className="block md:hidden py-4">
+            <DualRowLogoMarquee logos={partnerLogos.ecosystem} noBox={true} />
           </div>
 
           {/* Desktop Grid */}
@@ -246,11 +318,9 @@ export default function Partners() {
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#2b204c] uppercase">GTM Partners</h2>
           </div>
 
-          {/* Mobile Carousel */}
-          <div className="block md:hidden px-4">
-            <div className="bg-white p-4 rounded-sm border border-slate-100">
-               <PartnerLogoCarousel autoplay={true} loop={true} logos={partnerLogos.gtm} />
-            </div>
+          {/* Mobile Marquee */}
+          <div className="block md:hidden py-4">
+            <DualRowLogoMarquee logos={partnerLogos.gtm} noBox={true} />
           </div>
 
           {/* Desktop Grid */}

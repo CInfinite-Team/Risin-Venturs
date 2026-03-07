@@ -279,9 +279,9 @@ export default function Home() {
             </p>
           </motion.div>
 
-          {/* Mobile: Carousel */}
+          {/* Mobile: Marquee */}
           <div className="block md:hidden">
-            <PartnerLogoCarousel logos={homeEcosystemLogos} autoplay={true} loop={true} showArrows={false} noBox={true} />
+            <PartnerLogoCarousel logos={homeEcosystemLogos} marquee={true} direction="left" speed={10} noBox={true} />
           </div>
 
           {/* Desktop: Even-size card grid */}

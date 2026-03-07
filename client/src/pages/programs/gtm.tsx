@@ -18,13 +18,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useState, useRef } from "react";
 import { useFormSubmit } from "@/hooks/useFormSubmit";
 
-import {PartnerLogoCarousel} from '@/pages/partners'
+import {PartnerLogoCarousel, DualRowLogoMarquee} from '@/pages/partners'
 const sectionVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: { 
-    opacity: 1, 
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" }
+    transition: { duration: 0.6 }
   }
 };
 
@@ -210,7 +208,7 @@ export default function GTM() {
                 <Dialog>
                   <DialogTrigger asChild>
                     <Button className="bg-[#8b68f6] hover:bg-white hover:text-[#2b204c] text-white rounded-sm px-4 md:px-8 py-5 h-auto font-bold text-sm uppercase tracking-widest transition-all w-full sm:w-auto">
-                      Apply for GTM Program <ArrowRight size={16} className="ml-2 inline" />
+                      Get Notified for Next Cohort <ArrowRight size={16} className="ml-2 inline" />
                     </Button>
                   </DialogTrigger>
                   <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
@@ -322,12 +320,12 @@ export default function GTM() {
                    transition={{ delay: 0.2, duration: 0.5 }}
                    className="absolute -top-6 left-0 md:-left-2 bg-white/20 backdrop-blur-sm text-white text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full"
                  >
-                   Upcoming Program
+                   Program Showcase (Past)
                  </motion.span>
                 <Calendar className="text-white w-6 h-6" />
                 <div>
-                  <span className="block text-white/70 text-xs font-bold uppercase tracking-widest">Program Dates</span>
-                  <span className="text-white font-bold text-lg">1st - 4th Feb, 2026</span>
+                  <span className="block text-white/70 text-xs font-bold uppercase tracking-widest">Program Status</span>
+                  <span className="text-white font-bold text-lg">Concluded</span>
                 </div>
               </div>
               <div className="hidden md:block w-px h-10 bg-white/20"></div>
@@ -353,7 +351,7 @@ export default function GTM() {
             <Dialog>
               <DialogTrigger asChild>
                 <Button className="bg-white text-[#8b68f6] hover:bg-white/90 font-bold uppercase tracking-widest text-xs px-6 py-2 h-auto shadow-lg rounded-sm transition-all whitespace-nowrap">
-                  Register Now
+                  Join Waitlist
                 </Button>
               </DialogTrigger>
               <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
@@ -483,8 +481,18 @@ export default function GTM() {
           <div className="text-center mb-10">
             <span className="text-3xl md:text-4xl font-heading font-bold text-[#2b204c] uppercase">Ecosystem Partners</span>
           </div>
-          <div className="flex gap-6 pb-8 items-center scrollbar-hide snap-x snap-mandatory -mx-6 px-6 md:mx-0 md:px-0">
-            <PartnerLogoCarousel logos={partners} autoplay={true} loop={true} />
+          {/* Mobile Marquee */}
+          <div className="block md:hidden py-4">
+            <DualRowLogoMarquee logos={partners}  noBox={true} />
+          </div>
+
+          {/* Desktop Grid */}
+          <div className="hidden md:flex flex-wrap justify-center gap-4">
+            {partners.map((logo, i) => (
+              <div key={i} className="bg-[#F9FAFB] rounded-sm border border-slate-100 flex items-center justify-center w-48 h-32 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all p-4">
+                <img src={logo} alt={`Partner ${i + 1}`} className="max-w-full max-h-full object-contain filter transition-all mix-blend-multiply" />
+              </div>
+            ))}
           </div>
         </div>
       </section>

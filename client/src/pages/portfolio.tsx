@@ -48,7 +48,7 @@ const portfolioData = [
     logo: HashECMLogo,
     desc: "AI-driven document intelligence and management platform built for enterprise clients to do more with documents and content, and integrates AI capabilities to work and collaborate with documents.",
     sector: "AI & Enterprise",
-    link: "https://hyperthinksys.com/hashecm-pistaceo/"
+    
   },
   {
     id: 4,
@@ -56,7 +56,7 @@ const portfolioData = [
     logo: EnergygoLogo,
     desc: "Clean energy and sustainability-focused platform designed to accelerate the transition to renewable energy sources through innovative digital solutions and market access.",
     sector: "Energy & Sustainability",
-    link: "https://myenergygo.com/"
+  
   },
   {
     id: 5,
@@ -72,7 +72,7 @@ const portfolioData = [
     logo: NufinLogo,
     desc: "Nufin is a new age financial services and banking solution provider. Currently in stealth mode, working on new fintech regulatory approval from the Central Bank of Qatar.",
     sector: "Fintech",
-    link: "https://nufintech.com/"
+  
   },
   {
     id: 7,
@@ -80,7 +80,7 @@ const portfolioData = [
     logo: UrbanoLogo,
     desc: "Urbano is an urban mobility platform delivering AI- and IoT-driven solutions including smart parking valet management, car wash, EV charging, and multimodal travel & ticketing.",
     sector: "Mobility",
-    link: "https://urbano.io/"
+    
   },
   {
     id: 8,
@@ -214,10 +214,16 @@ export default function Portfolio() {
                   </p>
                 </div>
                 
-                <div className="mt-auto pt-6 border-t border-slate-100 flex justify-between items-center">
+              { company.link ? 
+              <a href={company.link} target="_blank" className="mt-auto pt-6 border-t border-slate-100 flex justify-between items-center">
                   <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest group-hover:text-[#2b204c] transition-colors">View Details</span>
                   <ArrowRight size={16} className="text-slate-300 group-hover:text-[#8b68f6] transition-colors" />
-                </div>
+                </a>
+                :
+              <div  className="mt-auto pt-6 border-t border-slate-100 flex justify-between items-center">
+                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest group-hover:text-[#2b204c] transition-colors">more details coming soon</span>
+                  
+                </div>}
               </motion.div>
             ))}
           </motion.div>

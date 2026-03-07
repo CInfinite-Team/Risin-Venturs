@@ -224,7 +224,7 @@ export default function Partners() {
           {/* Desktop Grid */}
           <div className="hidden md:flex flex-wrap justify-center gap-4">
             {partnerLogos.ecosystem.map((logo, i) => (
-              <div key={i} className="bg-[#F9FAFB] rounded-sm border border-slate-100 flex items-center justify-center w-48 h-32 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all p-6">
+              <div key={i} className="bg-[#F9FAFB] rounded-sm border border-slate-100 flex items-center justify-center w-48 h-32 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all p-4">
                 <img src={logo} alt={`Ecosystem Partner ${i + 1}`} className="max-w-full max-h-full object-contain filter transition-all mix-blend-multiply" />
               </div>
             ))}
@@ -256,7 +256,7 @@ export default function Partners() {
           {/* Desktop Grid */}
           <div className="hidden md:flex flex-wrap justify-center gap-4">
             {partnerLogos.gtm.map((logo, i) => (
-              <div key={i} className="bg-white rounded-sm border border-slate-100 flex items-center justify-center w-48 h-32 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all p-6">
+              <div key={i} className="bg-white rounded-sm border border-slate-100 flex items-center justify-center w-48 h-32 hover:shadow-lg hover:border-[#8b68f6]/30 transition-all p-4">
                 <img src={logo} alt={`GTM Partner ${i + 1}`} className="max-w-full max-h-full object-contain filter transition-all mix-blend-multiply" />
               </div>
             ))}

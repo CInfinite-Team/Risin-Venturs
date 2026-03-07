@@ -31,9 +31,10 @@ export default function About() {
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div>
                 <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-4 block">About Us</span>
-                <h1 className="text-3xl md:text-6xl xl:text-7xl font-heading font-bold text-[#111827] mb-6 uppercase leading-none">
-                  BUILDING THE FUTURE OF <br className="hidden md:block"/>
-                  <span className="text-[#2b204c]">INNOVATION & ENTREPRENEURSHIP</span>
+                <h1 className="text-3xl md:text-6xl lg:text-[2.85rem] xl:text-[3.4rem] font-heading font-bold text-[#111827] mb-6 uppercase leading-none">
+                  BUILDING THE FUTURE <br className="hidden md:block"/>
+                  OF INNOVATION & <br className="hidden md:block"/>
+                  <span className="text-[#2b204c]">ENTREPRENEURSHIP</span>
                 </h1>
               </div>
               <p className="text-lg md:text-xl text-slate-600 leading-relaxed border-l-4 border-[#8b68f6]/20 pl-6 lg:mt-12">

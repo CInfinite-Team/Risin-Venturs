@@ -47,7 +47,7 @@ const highlights = [
 
 const stats = [
   { value: "500+", label: "Participants" },
-  { value: "50+", label: "AI Startups" },
+  { value: "100+", label: "AI Startups" },
   { value: "$100K+", label: "In Prizes" },
   { value: "30+", label: "Expert Mentors" }
 ];

@@ -257,7 +257,7 @@ export default function Header() {
 
               <Link
                 href="/build-with-us"
-                className={`${location === '/build-with-us' ? 'bg-[#8b68f6]' : 'bg-[#2b204c]'} text-white uppercase tracking-widest text-sm font-bold rounded-sm w-full h-14 mt-4 shadow-lg inline-flex items-center justify-center`}
+                className={`${location === '/build-with-us' ? 'bg-[#8b68f6]' : 'bg-[#2b204c]'} text-white hover:bg-[#8b68f6] uppercase tracking-widest text-sm font-bold rounded-sm w-full h-14 mt-4 shadow-lg inline-flex items-center justify-center`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Build With Us

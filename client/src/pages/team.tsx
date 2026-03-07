@@ -120,7 +120,7 @@ export default function Team() {
         variants={sectionVariants}
       >
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="mx-auto text-center">
             <div className="bg-gradient-to-br from-[#8b68f6]/5 to-[#2b204c]/5 rounded-sm p-8 md:p-12 border border-[#8b68f6]/10">
               <h2 className="text-2xl md:text-3xl font-heading font-bold text-[#2b204c] mb-6 uppercase">
                 We Complement Each Other

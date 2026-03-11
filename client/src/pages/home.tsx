@@ -289,10 +289,10 @@ export default function Home() {
 
                 {/* Satellite Nodes */}
                 {[
-                  { icon: Building2, delay: 0, position: "top-4 right-1/4", color: "text-white", bg: "bg-[#2b204c]" },
-                  { icon: Cpu, delay: 1, position: "bottom-1/4 -right-2", color: "text-[#8b68f6]", bg: "bg-white/10" },
-                  { icon: Rocket, delay: 2, position: "bottom-8 left-1/4", color: "text-white", bg: "bg-[#952828]" },
-                  { icon: Globe, delay: 1.5, position: "top-1/4 -left-4", color: "text-white", bg: "bg-[#8b68f6]" }
+                  { icon: Building2, delay: 0, position: "top-[30%] left-[90%] -ml-6 -mt-6 lg:-ml-8 lg:-mt-8", color: "text-white", bg: "bg-[#2b204c]" },
+                  { icon: Cpu, delay: 1, position: "top-[70%] left-[90%] -ml-6 -mt-6 lg:-ml-8 lg:-mt-8", color: "text-[#8b68f6]", bg: "bg-white/10" },
+                  { icon: Rocket, delay: 2, position: "top-[70%] left-[10%] -ml-6 -mt-6 lg:-ml-8 lg:-mt-8", color: "text-white", bg: "bg-[#952828]" },
+                  { icon: Globe, delay: 1.5, position: "top-[30%] left-[10%] -ml-6 -mt-6 lg:-ml-8 lg:-mt-8", color: "text-white", bg: "bg-[#8b68f6]" }
                 ].map((node, i) => {
                   const Icon = node.icon;
                   return (

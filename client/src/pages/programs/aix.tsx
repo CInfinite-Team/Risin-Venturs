@@ -116,7 +116,7 @@ export default function AIX() {
               transition={{ duration: 1, delay: 0.2 }}
               className="relative flex justify-center items-center h-[250px] md:h-auto order-1 lg:order-2"
             >
-              <div className="relative w-full max-w-[500px]">
+              <div className="relative w-full max-w-[280px] sm:max-w-[500px]">
                 {/* Glow effect matching the theme */}
                 <div className="absolute inset-0 bg-[#8b68f6]/20 blur-3xl rounded-full scale-200"></div>
                 

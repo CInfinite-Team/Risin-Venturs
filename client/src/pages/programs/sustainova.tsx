@@ -78,13 +78,13 @@ export default function Sustainova() {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-[#02362e] relative overflow-hidden">
-        <div className="absolute inset-0">
+      <section className="pt-32 h-fit pb-16 md:pt-40 md:pb-24 bg-[#02362e] relative overflow-hidden">
+        <div className="absolute md:block hidden inset-0">
           <div className="absolute top-1/4 left-1 w-60 h-96 bg-emerald-400 rounded-full blur-[150px] opacity-60"></div>
           <div className="absolute bottom-1/4 left-1 w-64 h-64 bg-teal-300 rounded-full blur-[100px] opacity-20"></div>
         </div>
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="container mx-auto px-6 h-fit relative z-10">
+          <div className="grid grid-cols-1 min-h-[900px] md:min-h-fit lg:grid-cols-2 gap-12 items-center">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

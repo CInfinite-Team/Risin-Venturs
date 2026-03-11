@@ -1,5 +1,5 @@
 import { motion, useInView } from "framer-motion";
-import { ArrowRight, Globe, TrendingUp, Shield, Zap, Rocket, Cpu, Network, Building2 } from "lucide-react";
+import { ArrowRight, Globe, TrendingUp, Shield, Zap, Rocket, Cpu, Network, Building2, Lightbulb, Sparkles } from "lucide-react";
 import Header from "@/components/Header";
 import heroBg from "@/assets/hero-concepts/option6-core.png";
 import gccGtmLogo from "../assets/GTM.png";
@@ -193,7 +193,7 @@ export default function Home() {
               initial="initial"
               animate="animate"
               variants={stagger}
-              className="max-w-3xl w-full flex flex-col justify-center"
+              className="max-w-3xl w-full flex flex-col justify-center order-2 lg:order-1"
             >
               <motion.div variants={fadeIn} className="inline-block mb-5">
                 <span className="bg-[#8b68f6]/10 whitespace-nowrap text-[#8b68f6] border border-[#8b68f6]/20 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide backdrop-blur-sm">
@@ -230,33 +230,143 @@ export default function Home() {
               </motion.div>
             </motion.div>
 
-            {/* Right Visual / Metrics */}
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              className="relative w-full flex items-center justify-center lg:justify-end"
+            {/* Right Visual (New Animated Graphic) */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+              className="relative flex justify-center items-center h-[280px] sm:h-[350px] lg:h-[500px] mb-8 lg:mb-0 w-full order-1 lg:order-2"
             >
-               {/* Metrics Grid */}
-              <div className="grid grid-cols-2 gap-4 w-full max-w-lg xl:max-w-xl">
-                <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 xl:p-8 rounded-sm hover:bg-white/10 transition-colors duration-300">
-                  <h3 className="text-3xl xl:text-4xl 2xl:text-5xl font-heading font-bold text-white mb-1">$100M+</h3>
-                  <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">Capital Enabled</p>
-                </div>
-                <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 xl:p-8 rounded-sm hover:bg-white/10 transition-colors duration-300">
-                  <h3 className="text-3xl xl:text-4xl 2xl:text-5xl font-heading font-bold text-white mb-1">8</h3>
-                  <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">Active Ventures</p>
-                </div>
-                <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 xl:p-8 rounded-sm hover:bg-white/10 transition-colors duration-300">
-                  <h3 className="text-3xl xl:text-4xl 2xl:text-5xl font-heading font-bold text-white mb-1">15+</h3>
-                  <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">Gov't Partners</p>
-                </div>
-                <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 xl:p-8 rounded-sm hover:bg-white/10 transition-colors duration-300">
-                  <h3 className="text-3xl xl:text-4xl 2xl:text-5xl font-heading font-bold text-white mb-1">500+</h3>
-                  <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">Startups Supported</p>
-                </div>
+              <div className="relative w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[480px] aspect-square flex justify-center items-center">
+                
+                {/* Center Glow */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#8b68f6]/30 to-[#952828]/10 rounded-full blur-[80px] animate-pulse"></div>
+                
+                {/* Connecting Lines / Network Background */}
+                <svg className="absolute inset-0 w-full h-full opacity-30" viewBox="0 0 200 200">
+                  <motion.path 
+                    d="M100 20 L180 60 L180 140 L100 180 L20 140 L20 60 Z" 
+                    fill="none" 
+                    stroke="#8b68f6" 
+                    strokeWidth="0.5"
+                    initial={{ pathLength: 0, opacity: 0 }}
+                    animate={{ pathLength: 1, opacity: 1 }}
+                    transition={{ duration: 4, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+                  />
+                  <motion.path 
+                    d="M100 50 L150 75 L150 125 L100 150 L50 125 L50 75 Z" 
+                    fill="none" 
+                    stroke="#ffffff" 
+                    strokeWidth="0.5"
+                    strokeDasharray="4 4"
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 30, repeat: Infinity, ease: "linear", transformOrigin: "100px 100px" }}
+                  />
+                  {/* Internal connections */}
+                  <line x1="100" y1="20" x2="100" y2="100" stroke="#8b68f6" strokeWidth="0.5" opacity="0.5" />
+                  <line x1="180" y1="60" x2="100" y2="100" stroke="#8b68f6" strokeWidth="0.5" opacity="0.5" />
+                  <line x1="180" y1="140" x2="100" y2="100" stroke="#8b68f6" strokeWidth="0.5" opacity="0.5" />
+                  <line x1="100" y1="180" x2="100" y2="100" stroke="#8b68f6" strokeWidth="0.5" opacity="0.5" />
+                  <line x1="20" y1="140" x2="100" y2="100" stroke="#8b68f6" strokeWidth="0.5" opacity="0.5" />
+                  <line x1="20" y1="60" x2="100" y2="100" stroke="#8b68f6" strokeWidth="0.5" opacity="0.5" />
+                </svg>
+
+                {/* Central Core Element */}
+                <motion.div 
+                  className="absolute z-20 flex items-center justify-center w-24 h-24 lg:w-32 lg:h-32 rounded-full border border-white/20 bg-gradient-to-br from-white/10 to-[#8b68f6]/20 backdrop-blur-md shadow-[0_0_40px_rgba(139,104,246,0.3)]"
+                  animate={{ scale: [1, 1.05, 1] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <Network className="w-10 h-10 lg:w-14 lg:h-14 text-white drop-shadow-lg" strokeWidth={1.5} />
+                  
+                  {/* Radar ping effect */}
+                  <motion.div 
+                    className="absolute inset-0 rounded-full border border-[#8b68f6]"
+                    animate={{ scale: [1, 2], opacity: [0.8, 0] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "easeOut" }}
+                  />
+                </motion.div>
+
+                {/* Satellite Nodes */}
+                {[
+                  { icon: Building2, delay: 0, position: "top-4 right-1/4", color: "text-white", bg: "bg-[#2b204c]" },
+                  { icon: Cpu, delay: 1, position: "bottom-1/4 -right-2", color: "text-[#8b68f6]", bg: "bg-white/10" },
+                  { icon: Rocket, delay: 2, position: "bottom-8 left-1/4", color: "text-white", bg: "bg-[#952828]" },
+                  { icon: Globe, delay: 1.5, position: "top-1/4 -left-4", color: "text-white", bg: "bg-[#8b68f6]" }
+                ].map((node, i) => {
+                  const Icon = node.icon;
+                  return (
+                    <motion.div
+                      key={i}
+                      className={`absolute z-30 flex items-center justify-center w-12 h-12 lg:w-16 lg:h-16 rounded-xl border border-white/20 backdrop-blur-md shadow-xl ${node.bg} ${node.position}`}
+                      animate={{ 
+                        y: [0, -12, 0],
+                        rotate: [0, 5, -5, 0]
+                      }}
+                      transition={{ 
+                        duration: 5 + i, 
+                        delay: node.delay, 
+                        repeat: Infinity, 
+                        ease: "easeInOut" 
+                      }}
+                    >
+                      <Icon className={`w-6 h-6 lg:w-8 lg:h-8 ${node.color}`} strokeWidth={1.5} />
+                    </motion.div>
+                  );
+                })}
+
+                {/* Data particles flowing */}
+                <svg className="absolute inset-0 w-full h-full z-10 overflow-visible" viewBox="0 0 200 200">
+                  <motion.circle 
+                    cx="0" cy="0" r="2" fill="#fff" 
+                    animate={{ 
+                      cx: [100, 180, 150, 100], 
+                      cy: [100, 60, 75, 50],
+                      opacity: [0, 1, 1, 0]
+                    }} 
+                    transition={{ duration: 3, repeat: Infinity, ease: "linear" }} 
+                  />
+                  <motion.circle 
+                    cx="0" cy="0" r="2" fill="#8b68f6" 
+                    animate={{ 
+                      cx: [20, 100, 150, 100], 
+                      cy: [140, 100, 125, 150],
+                      opacity: [0, 1, 1, 0]
+                    }} 
+                    transition={{ duration: 4, repeat: Infinity, ease: "linear", delay: 1 }} 
+                  />
+                  <motion.circle 
+                    cx="0" cy="0" r="1.5" fill="#952828" 
+                    animate={{ 
+                      cx: [100, 20, 50, 100], 
+                      cy: [100, 60, 75, 50],
+                      opacity: [0, 1, 1, 0]
+                    }} 
+                    transition={{ duration: 3.5, repeat: Infinity, ease: "linear", delay: 2 }} 
+                  />
+                </svg>
+
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Bar */}
+      <section className="bg-[#8b68f6] py-10 relative z-20">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6 text-center">
+            {[
+              { value: "$100M+", label: "Capital Enabled" },
+              { value: "8", label: "Active Ventures" },
+              { value: "15+", label: "Gov't Partners" },
+              { value: "500+", label: "Startups Supported" }
+            ].map((stat, i) => (
+              <div key={i}>
+                <div className="text-3xl lg:text-5xl font-heading font-bold text-white mb-2">{stat.value}</div>
+                <div className="text-white/80 text-[10px] md:text-xs uppercase tracking-widest font-bold">{stat.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

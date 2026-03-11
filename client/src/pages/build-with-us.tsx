@@ -700,7 +700,7 @@ export default function BuildWithUs() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="max-w-2xl"
+              className="max-w-2xl order-2 lg:order-1"
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 uppercase leading-none">
                 Growing Potential Ideas Into <br className="hidden md:block"/>
@@ -733,9 +733,9 @@ export default function BuildWithUs() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
-              className="relative hidden lg:flex justify-center items-center h-[500px]"
+              className="relative flex justify-center items-center h-[280px] sm:h-[350px] lg:h-[500px] mb-8 lg:mb-0 w-full order-1 lg:order-2"
             >
-              <div className="relative w-full max-w-[450px] aspect-square flex justify-center items-center">
+              <div className="relative w-full max-w-[300px] sm:max-w-[300px] lg:max-w-[450px] aspect-square flex justify-center items-center">
                 {/* Background glow matrix */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#8b68f6]/20 to-[#952828]/20 rounded-full blur-3xl"></div>
                 
@@ -827,6 +827,25 @@ export default function BuildWithUs() {
       </section>
 
 
+      {/* Stats Bar */}
+      <section className="bg-[#8b68f6] py-10 relative z-20">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            {[
+              { value: "1000+", label: "Entrepreneurs Network" },
+              { value: "$50M+", label: "Ventures Built" },
+              { value: "20+", label: "Years Experience" },
+              { value: "8+", label: "Portfolio Companies" }
+            ].map((stat, i) => (
+              <div key={i}>
+                <div className="text-3xl md:text-5xl font-heading font-bold text-white mb-2">{stat.value}</div>
+                <div className="text-white/80 text-[10px] md:text-xs uppercase tracking-widest font-bold">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
        {/* Why Build With Us */}
       <motion.section 
         className="py-16 md:py-24 bg-[#2b204c] relative overflow-hidden"
@@ -837,49 +856,31 @@ export default function BuildWithUs() {
       >
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#8b68f6] opacity-10 rounded-full blur-[100px]"></div>
         <div className="container mx-auto px-6 relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-12">
               <span className="text-[#8b68f6] text-sm font-bold uppercase tracking-widest mb-3 block">Why Us</span>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-8 uppercase leading-tight">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6 uppercase leading-tight">
                 Why Build With Risin Ventures?
               </h2>
-              <div className="space-y-6">
-                {[
-                  { title: "Shared Resources & Infrastructure", desc: "Access to technology, talent, and operational support without the overhead." },
-                  { title: "Proven Playbooks", desc: "Battle-tested frameworks for product development, GTM, and fundraising." },
-                  { title: "Flexible Team Support", desc: "Cross-functional experts who plug in when and where you need them." },
-                  { title: "High-Impact Network", desc: "Direct access to mentors, domain experts, investors, and enterprise partners." },
-                  { title: "Smart Capital", desc: "Strategic funding designed to accelerate product-market fit and prepare for scale." }
-                ].map((item, i) => (
-                  <div key={i} className="flex gap-4">
-                    <div className="w-8 h-8 bg-[#8b68f6] rounded-sm flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <CheckCircle size={16} className="text-white" />
-                    </div>
-                    <div>
-                      <h4 className="text-white font-bold mb-1">{item.title}</h4>
-                      <p className="text-slate-400 text-sm">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-sm p-4 md:p-6 text-center">
-                <div className="text-3xl md:text-5xl font-heading font-bold text-white mb-2">1000+</div>
-                <div className="text-[10px] text-slate-400 uppercase tracking-widest">Entrepreneurs Network</div>
-              </div>
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-sm p-4 md:p-6 text-center">
-                <div className="text-3xl md:text-5xl font-heading font-bold text-white mb-2">$50M+</div>
-                <div className="text-[10px] text-slate-400 uppercase tracking-widest">Ventures Built</div>
-              </div>
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-sm p-4 md:p-6 text-center">
-                <div className="text-3xl md:text-5xl font-heading font-bold text-white mb-2">20+</div>
-                <div className="text-[10px] text-slate-400 uppercase tracking-widest">Years Experience</div>
-              </div>
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-sm p-4 md:p-6 text-center">
-                <div className="text-3xl md:text-5xl font-heading font-bold text-white mb-2">8+</div>
-                <div className="text-[10px] text-slate-400 uppercase tracking-widest">Portfolio Companies</div>
-              </div>
+            <div className="space-y-6">
+              {[
+                { title: "Shared Resources & Infrastructure", desc: "Access to technology, talent, and operational support without the overhead." },
+                { title: "Proven Playbooks", desc: "Battle-tested frameworks for product development, GTM, and fundraising." },
+                { title: "Flexible Team Support", desc: "Cross-functional experts who plug in when and where you need them." },
+                { title: "High-Impact Network", desc: "Direct access to mentors, domain experts, investors, and enterprise partners." },
+                { title: "Smart Capital", desc: "Strategic funding designed to accelerate product-market fit and prepare for scale." }
+              ].map((item, i) => (
+                <div key={i} className="flex gap-4 p-4 rounded-sm bg-white/5 border border-white/10 backdrop-blur-sm">
+                  <div className="w-8 h-8 bg-[#8b68f6] rounded-sm flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <CheckCircle size={16} className="text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-bold mb-1">{item.title}</h4>
+                    <p className="text-slate-400 text-sm">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

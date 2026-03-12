@@ -8,7 +8,7 @@ import { ArrowRight, Sprout, Users, School, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 import image1 from "@assets/10_1768829196459.JPG";
-import image2 from "@assets/8_Large_1768829455274.jpeg";
+import image2 from "../../assets/incubation.webp";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -111,11 +111,11 @@ export default function Incubation() {
       {/* Image Placeholder - Mid Page */}
       <section className="bg-[#F9FAFB] pb-20">
         <div className="container mx-auto px-6">
-           <div className="w-full h-[300px] bg-white border border-slate-100 rounded-sm relative overflow-hidden group">
+           <div className="w-full h-[600px] bg-white border border-slate-100 rounded-sm relative overflow-hidden group">
             <img 
               src={image2} 
               alt="Demo Day Pitching" 
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              className="absolute object-top inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-40"></div>
           </div>

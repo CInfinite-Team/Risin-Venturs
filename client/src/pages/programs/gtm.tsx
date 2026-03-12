@@ -296,6 +296,25 @@ export default function GTM() {
         </div>
       </section>
 
+      {/* Metrics Strip */}
+      <section className="bg-[#8b68f6] py-10 relative z-20">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6 text-center">
+            {[
+              { value: "40+", label: "Startups Scaled" },
+              { value: "5", label: "Countries Reached" },
+              { value: "15+", label: "Gov't Partners" },
+              { value: "$50M+", label: "Capital Facilitated" }
+            ].map((stat, i) => (
+              <div key={i}>
+                <div className="text-3xl lg:text-5xl font-heading font-bold text-white mb-2">{stat.value}</div>
+                <div className="text-white/80 text-[10px] md:text-xs uppercase tracking-widest font-bold">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Image Placeholder - Full Width Program Launch */}
       <section className="py-16 bg-white pb-4">
         <div className="container mx-auto px-6">

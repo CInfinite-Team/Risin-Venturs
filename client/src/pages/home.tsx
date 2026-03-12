@@ -175,7 +175,7 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative flex flex-col items-center pt-32 pb-20 lg:pt-20 lg:pb-0  bg-[#2b204c] border-b border-slate-100 box-border">
+      <section className="relative flex flex-col items-center pt-32  lg:pt-20 lg:pb-0  bg-[#2b204c] border-b border-slate-100 box-border">
         <div className="absolute inset-0 z-0">
            {/* Background gradient/overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#2b204c] via-[#2b204c] to-[#2b204c]/90 z-10" />
@@ -187,7 +187,7 @@ export default function Home() {
         </div>
 
         <div className="container relative z-20 px-6 xl:px-12 mx-auto max-w-[1400px]">
-          <div className="grid lg:grid-cols-2 pt-5 gap-12 lg:gap-16 xl:gap-24 items-center">
+          <div className="grid lg:grid-cols-2 pt-5  md:gap-12 lg:gap-16 xl:gap-24 items-center">
             {/* Left Content */}
             <motion.div 
               initial="initial"
@@ -352,7 +352,7 @@ export default function Home() {
           </div>
         </div>
             {/* Stats Bar */}
-      <section className="bg-[#8b68f6] w-full py-10 relative z-20">
+      <section className="bg-[#8b68f6] w-full mt-5 py-10 relative z-20">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6 text-center">
             {[
